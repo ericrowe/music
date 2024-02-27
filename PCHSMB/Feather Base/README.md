@@ -30,3 +30,7 @@ Lessons learned
 2. The black paint used did not hold up to rough treatment, and by finals was covered in scratches.  Future props with large awkward pvc bases such as this should take more care in the application of the paint (we did not pre-sand the PVC for example, and relied on the "plastic rated" paint).
 3. Double or even triple bag the sand.  We had several instances where bags started leaking.
 4. Don't use cheap PETG.  I found the Sunlu branded PETG I used originally was significantly weaker than the replacement parts I printed from a different manufacturer.  I was able to hit the Sunlu parts with a hammer and have them shatter - which is not something PETG should be doing.
+
+
+![Fully Assembled Feather](./images/IMG_9064.jpg)
+![Fully Assembled Feather](./images/FeatherSlotBlock.png)

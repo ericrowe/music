@@ -23,3 +23,8 @@ To assemble:
 Lessons Learned:
 1. We did not cement the retaining pieces to the PVC.  In at least two cases, the retaining pieces pulled out and had to be hastily repaired on the field.
 2. We did not pin the side pieces.  In at least two cases, some of those side pieces pulled out and had to be hastily repaired on the field.
+
+
+
+![Detail of Top](./images/TopDetail.png)
+![Model Image](./images/BirdCageTop.png)
