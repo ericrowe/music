@@ -1,0 +1,1 @@
+This folder contains iterations on test designs used to prove out and/or develop the concept.
