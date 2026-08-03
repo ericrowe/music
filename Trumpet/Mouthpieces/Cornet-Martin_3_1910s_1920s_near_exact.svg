@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="129.86501mm"
+   height="280.10199mm"
+   viewBox="0 -13.17 129.86501 280.10199"
+   preserveAspectRatio="none"
+   version="1.1"
+   id="svg6"
+   sodipodi:docname="Cornet-Martin_3_1910s_1920s_near_exact.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs10" />
+  <sodipodi:namedview
+     id="namedview8"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false" />
+  <title
+     id="title2">Martin 3 test 2 (Cornet (Short/UK))</title>
+  <g
+     transform="matrix(0,4.75,-4.75,0,65.4075,-11.27)"
+     id="g6">
+    <path
+       d="M 5.18,13.27 H 1.9051 C 0.37076,13.27 0.1,11.189 0.1,10.495 0.1,9.4264 0.36152,9.0218 0.39058,8.9712 0.55304,8.6883 0.89296,8.3188 2.1651,8.1066 3.7622,7.8401 4.6047,7.8595 6.2291,7.0286 8.7816,5.723 9.0055,4.9574 10.28,3.6542 11.642,2.2625 12.285,2.4331 12.49,2.4303 13.817,2.4126 14.084,2.3893 14.283,2.372 14.444,2.358 14.56,2.3479 15.157,2.3479 h 8.617 l 4.27,0.1905 3.802,0.1778 3.771,0.1651 3.885,0.1778 3.326,0.1778 4.152,0.1778 2.974,0.1651 4.065,0.1778 2.29,0.1143 1.329,0.0635 0.907,0.0433 M 5.18,-13.07 H 1.9051 c -1.53434,0 -1.8051,2.081 -1.8051,2.775 0,1.0686 0.26152,1.4732 0.29058,1.5238 0.16246,0.2829 0.50238,0.6524 1.77452,0.8646 1.5971,0.2665 2.4396,0.2471 4.064,1.078 2.5525,1.3056 2.7764,2.0712 4.0509,3.3744 1.362,1.3917 2.005,1.2211 2.21,1.2239 1.327,0.0177 1.594,0.041 1.793,0.0583 0.161,0.014 0.277,0.0241 0.874,0.0241 h 8.617 l 4.27,-0.1905 3.802,-0.1778 3.771,-0.1651 3.885,-0.1778 3.326,-0.1778 4.152,-0.1778 2.974,-0.1651 4.065,-0.1778 2.29,-0.1143 1.329,-0.0635 0.907,-0.0433"
+       fill="none"
+       stroke="#ff0000"
+       stroke-width="1"
+       id="path4"
+       vector-effect="non-scaling-stroke" />
+  </g>
+</svg>
