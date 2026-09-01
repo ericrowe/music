@@ -66,3 +66,29 @@
   - **Rule 8.08:** 12-foot rigid height limit (sideline screen is 4 ft nominal height, safely compliant).
   - **Rule 8.09:** Staging flow & USAFA Falcon Stadium clearance (note: 9'6" restriction obsolete after 2025 crossbeam removal).
   - **Rule 9.07:** 25 parent Field Pass wristbands allocation limit.
+
+---
+
+## 6. Estimated Fabrication Cost Breakdown
+
+### A. Per Sideline Screen / Duck Blind (Excl. Vinyl)
+
+| Item / Category | Description | Est. Cost |
+|---|---|:---:|
+| **3/4-in. EMT Conduit** | 7 sticks of 10-ft EMT (Home Depot SKU 0550110000) | $40.50 |
+| **Corner Brackets (F)** | 6x 3-way EMT corner clamp brackets (Amazon B0D5BBKCKG) | $27.00 |
+| **T-Brackets (G)** | 8x 3/4-in. EMT T-brackets (Amazon B0CKQW11SJ) | $23.00 |
+| **Fasteners (J)** | 36x #8 x 1/2-in. hex flange self-drilling screws | $4.00 |
+| **3D-Printed Hardware** | 6x Plugs H, 2x Clips I, 2x Weight Clips in Black ASA | $10.00 |
+| **TOTAL PER SCREEN** | | **~$105.00** |
+
+*Optional Rule 8.05 Ballast Pack: 2x 15-lb double-bagged sandbags + suspension hardware: +$18.00 per screen.*
+
+### B. Sideline Screen Transport Cart (Component 2 Estimate)
+
+| Item / Category | Description | Est. Cost |
+|---|---|:---:|
+| **Rolling Base Chassis** | Backdrop-spec 2x4 framing, 1/2" plywood deck, 4x heavy-duty casters w/ brakes, paint | $155.00 |
+| **Side Guide Rails** | Vertical framing / conduit dividers to hold screens upright | $35.00 |
+| **Front & Rear Retention Gates** | Hinged gate framing, strap/barrel hinges, and 3D-printed latches | $30.00 |
+| **TOTAL PER TRANSPORT CART** | | **~$220.00** |

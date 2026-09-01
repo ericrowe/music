@@ -53,3 +53,30 @@ All 3D-printed parts should be printed in **Black ASA** (or UV/weather-stable PE
 - **2x** 3D-Printed Hinged Arm Clips (I)
 - **36x** #8 x 1/2-in. External-Hex Flange Self-Drilling Screws (J)
 - **1x** 4 ft x 8 ft Heavyweight Vinyl Banner with hem and grommets
+
+---
+
+## 💰 Estimated Cost Breakdown
+
+### 1. Per Sideline Screen / Duck Blind (Excl. Vinyl)
+
+| Component Category | Key Items Included | Est. Cost |
+|---|---|:---:|
+| **Conduit Framing** | 7x 3/4" x 10-ft EMT conduit sticks | $40.50 |
+| **Corner Brackets (F)** | 6x 3/4" 3-way corner brackets | $27.00 |
+| **T-Brackets (G)** | 8x 3/4" T-brackets | $23.00 |
+| **Fasteners (J)** | 36x #8 x 1/2" self-drilling screws | $4.00 |
+| **3D-Printed Parts** | 6x Plugs H, 2x Clips I, 2x Weight Clips in Black ASA | $10.00 |
+| **TOTAL PER SCREEN** | | **~$105.00** |
+
+> **Optional Ballast Pack (Rule 8.05 Compliant):**
+> 2x 15-lb double-bagged sandbags suspended from weight clips: **+$18.00 per screen**.
+
+### 2. Sideline Screen Transport Cart (Component 2 Estimate)
+
+| Subsystem / Category | Key Items Included | Est. Cost |
+|---|---|:---:|
+| **Rolling Base Chassis** | Backdrop-spec 2x4 framing, 1/2" plywood deck, 4x heavy-duty casters w/ brakes, paint | $155.00 |
+| **Side Guide Rails** | Vertical framing / conduit dividers to hold screens upright | $35.00 |
+| **Front & Rear Retention Gates** | Hinged gate framing, strap/barrel hinges, and 3D-printed latches | $30.00 |
+| **TOTAL PER TRANSPORT CART** | | **~$220.00** |

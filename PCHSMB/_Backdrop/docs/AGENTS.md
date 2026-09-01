@@ -21,6 +21,7 @@ This project is configured for multi-agent support:
 
 - **Audience:** PCHS Marching Band parent volunteers, fabrication crew, and field logistics handlers.
 - **Purpose:** Provide complete, step-by-step instructions for fabricating the rolling wood cart base (96" x 44.5"), assembling the 10' x 8' steel fence post upright frame, installing diagonal support struts, mounting vinyl banners with snap clamps, and operating/ballasting on the field.
+- **Universal Architecture Standard:** Adheres strictly to the canonical document architecture defined in [`PCHSMB/AGENTS.md`](../../AGENTS.md). The Cost Breakdown must always appear in Appendix B immediately preceding the assembly stages.
 
 ## Durable Terminology
 

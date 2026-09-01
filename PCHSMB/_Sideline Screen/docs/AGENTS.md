@@ -20,6 +20,7 @@
 
 - **Audience:** Pine Creek High School Marching Band (PCHSMB) prop crew, parent volunteers, fabrication volunteers, and color guard field operators.
 - **Purpose:** Provide complete, illustrated instructions for fabricating the folding EMT frame, installing vinyl coverings, deploying/folding on the field, ballasting, and maintaining the screens.
+- **Universal Architecture Standard:** Adheres strictly to the canonical document architecture defined in [`PCHSMB/AGENTS.md`](../../AGENTS.md). The Cost Breakdown must always appear in Appendix B immediately preceding the assembly stages.
 - **Independently Printable Sections:**
   - **Appendix A (Field Operations):** Labeled A-1, A-2... for field crew and transport.
   - **Appendix B (Construction Manual):** Labeled B-1, B-2... for fabrication crew.

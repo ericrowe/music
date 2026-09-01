@@ -111,10 +111,28 @@
 
 ---
 
-## 6. Source References
+## 6. Estimated Fabrication Cost Breakdown (Per Backdrop Prop)
 
-- `Drawing.afdesign` / `Drawing.png`: Top-down 2x4 cart framing and screw map.
-- `Bases/Corner Brace.FCStd`: 3D printed corner bumper model.
-- `Bases/Plywood V2 Symmetrical.afdesign`: Plywood decking template.
-- `Steel Support Strut Bracket Marker.FCStd`: Strut alignment tool.
-- `Drill Alignment Jig.3mf`: Slicer print file for drilling jig.
+*Excludes the custom-printed 10 ft x 8 ft vinyl banner.*
+
+| Component Group | Items Included | Estimated Cost |
+|---|---|:---:|
+| **Rolling Cart Base Framing** | 8x 2x4 SPF lumber, 1/2 sheet 1/2" plywood, GRK #9/#10 screws, caster fasteners, black paint | $98.00 |
+| **Casters & Bumpers** | 4x Heavy-duty swivel plate casters with brakes, 4x 3D-printed ASA corner bumpers | $51.00 |
+| **Ballast Retention Posts & Tote** | 2x 3/4" floor flanges, 2x 3/4" x 18" black iron pipes, carriage bolts, 1x HDX 14-gal tough tote | $46.00 |
+| **Upright Steel Frame** | 2x 10-ft 16-ga fence posts, 2x 8-ft top rails, 4x 3-way clamp brackets, 2x base tension bands | $121.00 |
+| **Diagonal Struts & Mounts** | 1x 10-ft top rail (strut tube), 4x end caps, 2x upper tension bands, 2x heavy-duty U-bolts | $49.50 |
+| **Vinyl Attachment Hardware** | 1-5/8" pipe snap clamps pack, double-sided heavy-duty carpet tape, pilot hardware | $25.00 |
+| **TOTAL ESTIMATED COST (PER BACKDROP PROP)** | | **~$390.00** |
+
+*Optional Rule 8.05 Ballast Pack: 4–6 Abccanopy 15-lb handle sandbags + inner liners + traction sand: +$37.00 per cart.*
+
+---
+
+## 7. Source References
+
+- `docs/assets/approved/Drawing.afdesign` / `Drawing.png`: Top-down 2x4 cart framing and screw map.
+- `Hardware/Corner Brace.FCStd`: 3D printed corner bumper model.
+- `Hardware/Plywood V2 Symmetrical.afdesign`: Plywood decking template.
+- `Hardware/Steel Support Strut Bracket Marker.FCStd`: Strut alignment tool.
+- `Hardware/Drill Alignment Jig.3mf`: Slicer print file for drilling jig.

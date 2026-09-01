@@ -62,3 +62,22 @@ All 3D-printed parts should be printed in **Black ASA** (or UV/heat-stable PETG)
 - **1x** [GRK #9 x 2-1/2" Star-Drive Wood Screws](https://www.homedepot.com/p/GRK-Fasteners-9-x-2-1-2-in-Star-Drive-Torx-Bugle-Head-R4-Multi-Purpose-Wood-Screw-300-Pack-100101/203533402)
 - **1x** [GRK #10 x 4" Star-Drive Structural Screws](https://www.homedepot.com/p/GRK-Fasteners-10-x-4-in-R4-Self-Countersinking-Flat-Head-Multi-Purpose-Screw-50-per-Pack-103141/203525231)
 - **1x** 1/8" HSS / Cobalt drill bit rated for steel
+
+---
+
+## 💰 Estimated Cost Breakdown (Per Backdrop Prop)
+
+*Excludes custom printed 10 ft x 8 ft vinyl banner.*
+
+| Component Category | Key Items Included | Est. Cost |
+|---|---|:---:|
+| **Rolling Cart Base Framing** | 8x 2x4 lumber, 1/2 sheet 1/2" plywood, GRK screws, black paint | $98.00 |
+| **Casters & Bumpers** | 4x Heavy-duty swivel plate casters with brakes, 4x ASA corner bumpers | $51.00 |
+| **Ballast Retention Posts & Tote** | 2x 3/4" floor flanges & 18" iron pipes, 1x HDX 14-gal storage tote | $46.00 |
+| **Upright Steel Frame** | 2x 10-ft 16-ga fence posts, 2x 8-ft top rails, 4x 3-way clamp brackets, tension bands | $121.00 |
+| **Diagonal Support Struts** | 1x 10-ft top rail (2 struts), 4x end caps, tension bands, 2x base U-bolts | $49.50 |
+| **Vinyl Attachment Hardware** | 1-5/8" pipe snap clamps pack, heavy-duty carpet tape, pilot hardware | $25.00 |
+| **TOTAL ESTIMATED COST PER PROP** | | **~$390.00** |
+
+> **Optional Ballast Pack (Rule 8.05 Compliant):**
+> 4–6 Abccanopy 15-lb handle sandbags + inner double-bag liners + traction sand: **+$37.00 per cart**.

@@ -31,8 +31,8 @@
       "process_state": "working_draft",
       "visible_status": "working_draft",
       "file": "Sideline_Screen_Duck_Blind_Build_Instructions.docx",
-      "sha256": "61b6479c1f1ce6ead6df5ac7840a7842229d3dbea11535f8c66da0cb96cab9a7",
-      "controlled_at": "2026-09-01T23:13:00+00:00"
+      "sha256": "02170577fc4e48c2ba9f9c46678568abf050ba512de73d3362b3ebbaacc57917",
+      "controlled_at": "2026-09-01T23:31:00+00:00"
     },
     "candidate": null
   },
@@ -67,8 +67,8 @@
       "release": "v0",
       "status": "working_draft",
       "date": "2026-09-01",
-      "sha256": "61b6479c1f1ce6ead6df5ac7840a7842229d3dbea11535f8c66da0cb96cab9a7",
-      "summary": "Added 2026 CBA competition prop rules, transport cart specifications with side rails and latching gates, and updated index"
+      "sha256": "02170577fc4e48c2ba9f9c46678568abf050ba512de73d3362b3ebbaacc57917",
+      "summary": "Standardized document architecture, 2026 CBA rules, transport cart specifications, and canonical cost breakdown tables"
     }
   ]
 }
