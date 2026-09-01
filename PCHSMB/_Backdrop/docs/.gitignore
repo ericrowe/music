@@ -1,0 +1,18 @@
+# Transient Word files
+~$*.docx
+*.tmp
+
+# Active working copy and reproducible visual renders
+documents/working/
+qa/renders/
+qa/baselines/**/*.png
+qa/baselines/**/*.pdf
+
+# Working image derivatives and incoming raw photos; approved sources remain tracked
+assets/working/
+assets/incoming/
+!assets/incoming/.gitkeep
+
+# Keep compact QA reports in version control.
+!qa/reports/
+!qa/reports/*.json

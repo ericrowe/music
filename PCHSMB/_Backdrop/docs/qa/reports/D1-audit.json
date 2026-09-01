@@ -1,0 +1,426 @@
+{
+  "schema_version": 2,
+  "generated_at": "2026-09-01T22:53:55+00:00",
+  "file": "/Volumes/T9/Sync/Working/Shop/Projects/__Music/PCHSMB/_Backdrop/docs/Backdrop_Assembly_Guide.docx",
+  "file_sha256": "e8ac032f26fe42e34eea85a7a2263cb90a2577c607e1f7ffce3e40149822a2f0",
+  "expected_build": "D1",
+  "expected_release": "v0",
+  "expected_status": "working_draft",
+  "expected_status_label": "WORKING DRAFT \u2014 NOT FOR USE",
+  "expected_text": [],
+  "forbid_development_builds": false,
+  "require_stable_filename": true,
+  "status": "pass",
+  "errors": [],
+  "warnings": [
+    "Word is configured to update fields when the document opens"
+  ],
+  "info": [],
+  "package": {
+    "part_count": 42,
+    "broken_internal_relationships": [],
+    "relationship_type_counts": {
+      "core-properties": 1,
+      "customXmlProps": 1,
+      "extended-properties": 1,
+      "footer": 1,
+      "header": 1,
+      "hyperlink": 17,
+      "image": 9,
+      "numbering": 1,
+      "officeDocument": 1,
+      "styles": 1,
+      "thumbnail": 1
+    },
+    "external_relationships": [
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId6",
+        "type": "hyperlink",
+        "target": "https://www.homedepot.com/p/GRK-Fasteners-9-x-2-1-2-in-Star-Drive-Torx-Bugle-Head-R4-Multi-Purpose-Wood-Screw-300-Pack-100101/203533402"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId7",
+        "type": "hyperlink",
+        "target": "https://www.homedepot.com/p/GRK-Fasteners-10-x-4-in-R4-Self-Countersinking-Flat-Head-Multi-Purpose-Screw-50-per-Pack-103141/203525231"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId8",
+        "type": "hyperlink",
+        "target": "https://www.amazon.com/dp/B0CPXFJCJL"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId9",
+        "type": "hyperlink",
+        "target": "https://www.homedepot.com/p/Everbilt-1-5-8-in-Dia-x-8-ft-16-Gauge-Galvanized-Steel-Chain-Link-Fence-Line-Post-328923DPTSEB/312373067"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId10",
+        "type": "hyperlink",
+        "target": "https://www.amazon.com/dp/B0CD7QT6L6"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId11",
+        "type": "hyperlink",
+        "target": "https://www.homedepot.com/p/Everbilt-1-5-8-in-Galvanized-Steel-Chain-Link-Fence-Tension-Band-328521EB/312373099"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId12",
+        "type": "hyperlink",
+        "target": "https://www.amazon.com/dp/B09L41JFMS"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId13",
+        "type": "hyperlink",
+        "target": "https://www.amazon.com/dp/B0CDZP8YVF"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId14",
+        "type": "hyperlink",
+        "target": "https://www.homedepot.com/p/The-Plumber-s-Choice-3-4-in-Black-Malleable-Iron-Floor-Flange-5-Pack-FBNF034-5/308967916"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId15",
+        "type": "hyperlink",
+        "target": "https://github.com/ericrowe/music/blob/main/PCHSMB/_Backdrop/Hardware/Corner%20Brace.FCStd"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId16",
+        "type": "hyperlink",
+        "target": "https://github.com/ericrowe/music/blob/main/PCHSMB/_Backdrop/Hardware/Drill%20Alignment%20Jig.3mf"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId17",
+        "type": "hyperlink",
+        "target": "https://github.com/ericrowe/music/blob/main/PCHSMB/_Backdrop/Hardware/Steel%20Support%20Strut%20Bracket%20Marker.FCStd"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId18",
+        "type": "hyperlink",
+        "target": "https://www.amazon.com/dp/B0DFVVZDVK"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId19",
+        "type": "hyperlink",
+        "target": "https://www.amazon.com/dp/B0BG3F5XVS"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId28",
+        "type": "hyperlink",
+        "target": "https://www.lowes.com/pd/Sakrete-0-07-cu-ft-70-lb-Traction-Sand/5015728687"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId29",
+        "type": "hyperlink",
+        "target": "https://ebf5c7e8-3869-4325-bd98-ce10f57d7545.filesusr.com/ugd/83f67e_cb5fe6efdbdb4ce98f619580f694bc94.pdf"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId30",
+        "type": "hyperlink",
+        "target": "https://www.homedepot.com/p/HDX-14-Gal-Tough-Storage-Tote-in-Black-with-Yellow-Lid-999-14G-HDX/328027053"
+      }
+    ],
+    "external_hyperlinks": [
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId6",
+        "type": "hyperlink",
+        "target": "https://www.homedepot.com/p/GRK-Fasteners-9-x-2-1-2-in-Star-Drive-Torx-Bugle-Head-R4-Multi-Purpose-Wood-Screw-300-Pack-100101/203533402"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId7",
+        "type": "hyperlink",
+        "target": "https://www.homedepot.com/p/GRK-Fasteners-10-x-4-in-R4-Self-Countersinking-Flat-Head-Multi-Purpose-Screw-50-per-Pack-103141/203525231"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId8",
+        "type": "hyperlink",
+        "target": "https://www.amazon.com/dp/B0CPXFJCJL"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId9",
+        "type": "hyperlink",
+        "target": "https://www.homedepot.com/p/Everbilt-1-5-8-in-Dia-x-8-ft-16-Gauge-Galvanized-Steel-Chain-Link-Fence-Line-Post-328923DPTSEB/312373067"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId10",
+        "type": "hyperlink",
+        "target": "https://www.amazon.com/dp/B0CD7QT6L6"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId11",
+        "type": "hyperlink",
+        "target": "https://www.homedepot.com/p/Everbilt-1-5-8-in-Galvanized-Steel-Chain-Link-Fence-Tension-Band-328521EB/312373099"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId12",
+        "type": "hyperlink",
+        "target": "https://www.amazon.com/dp/B09L41JFMS"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId13",
+        "type": "hyperlink",
+        "target": "https://www.amazon.com/dp/B0CDZP8YVF"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId14",
+        "type": "hyperlink",
+        "target": "https://www.homedepot.com/p/The-Plumber-s-Choice-3-4-in-Black-Malleable-Iron-Floor-Flange-5-Pack-FBNF034-5/308967916"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId15",
+        "type": "hyperlink",
+        "target": "https://github.com/ericrowe/music/blob/main/PCHSMB/_Backdrop/Hardware/Corner%20Brace.FCStd"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId16",
+        "type": "hyperlink",
+        "target": "https://github.com/ericrowe/music/blob/main/PCHSMB/_Backdrop/Hardware/Drill%20Alignment%20Jig.3mf"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId17",
+        "type": "hyperlink",
+        "target": "https://github.com/ericrowe/music/blob/main/PCHSMB/_Backdrop/Hardware/Steel%20Support%20Strut%20Bracket%20Marker.FCStd"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId18",
+        "type": "hyperlink",
+        "target": "https://www.amazon.com/dp/B0DFVVZDVK"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId19",
+        "type": "hyperlink",
+        "target": "https://www.amazon.com/dp/B0BG3F5XVS"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId28",
+        "type": "hyperlink",
+        "target": "https://www.lowes.com/pd/Sakrete-0-07-cu-ft-70-lb-Traction-Sand/5015728687"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId29",
+        "type": "hyperlink",
+        "target": "https://ebf5c7e8-3869-4325-bd98-ce10f57d7545.filesusr.com/ugd/83f67e_cb5fe6efdbdb4ce98f619580f694bc94.pdf"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId30",
+        "type": "hyperlink",
+        "target": "https://www.homedepot.com/p/HDX-14-Gal-Tough-Storage-Tote-in-Black-with-Yellow-Lid-999-14G-HDX/328027053"
+      }
+    ],
+    "external_content_relationships": []
+  },
+  "images": {
+    "counts": {
+      "inline": 9,
+      "anchor": 0
+    },
+    "rows": [
+      {
+        "part": "word/document.xml",
+        "kind": "inline",
+        "name": "Figure 2",
+        "alt_text": "High-angle stadium view of multiple rolling backdrops deployed along 10 to 50 yard lines during marching band performance setup."
+      },
+      {
+        "part": "word/document.xml",
+        "kind": "inline",
+        "name": "Figure 3",
+        "alt_text": "Close-up view of assembled rolling backdrop props with printed vinyl banners and diagonal support struts staged in stadium entrance area."
+      },
+      {
+        "part": "word/document.xml",
+        "kind": "inline",
+        "name": "Figure 4",
+        "alt_text": "Equipment trailer interior showing wooden backdrop cart bases secured vertically against the front nose wall with heavy-duty E-track ratchet straps."
+      },
+      {
+        "part": "word/document.xml",
+        "kind": "inline",
+        "name": "Figure 5",
+        "alt_text": "Stack of completed steel pipe frames with vinyl banners attached and pipe snap clamps holding edges during transit."
+      },
+      {
+        "part": "word/document.xml",
+        "kind": "inline",
+        "name": "Figure 1",
+        "alt_text": "Top-down 2x4 rolling cart frame layout showing outer rails A, end rails B, inner rails C, and six cross joists D with red and blue screw fastening markers."
+      },
+      {
+        "part": "word/document.xml",
+        "kind": "inline",
+        "name": "Figure 7",
+        "alt_text": "Batch of assembled 2x4 cart bases painted black with plywood decking wings installed."
+      },
+      {
+        "part": "word/document.xml",
+        "kind": "inline",
+        "name": "Figure 9",
+        "alt_text": "Underside view of heavy-duty swivel caster plate mounted with structural fasteners to 2x4 lumber intersection."
+      },
+      {
+        "part": "word/document.xml",
+        "kind": "inline",
+        "name": "Figure 8",
+        "alt_text": "Full upright 10 ft x 8 ft steel pipe frame mounted to rolling wooden base with rear diagonal support struts standing outdoors."
+      },
+      {
+        "part": "word/document.xml",
+        "kind": "inline",
+        "name": "Figure 6",
+        "alt_text": "Volunteer build crew stretching vinyl banner across steel frame over protective blankets with faces blurred for privacy."
+      }
+    ],
+    "missing_alt_text": [],
+    "linked_blips": [],
+    "ole_object_count": 0
+  },
+  "navigation": {
+    "bookmark_count": 0,
+    "hyperlink_counts": {
+      "external": 17
+    },
+    "heading_levels": [
+      1,
+      2,
+      2,
+      2,
+      2,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      3,
+      3,
+      2,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      3,
+      1,
+      2,
+      1,
+      2,
+      2
+    ],
+    "heading_skips": []
+  },
+  "tables": {
+    "count": 3,
+    "header_row_flags": 3
+  },
+  "fields": {
+    "counts": {
+      "PAGE": 8
+    },
+    "instructions": [
+      {
+        "part": "word/footer1.xml",
+        "instruction": "PAGE"
+      },
+      {
+        "part": "word/footer2.xml",
+        "instruction": "PAGE"
+      },
+      {
+        "part": "word/footer3.xml",
+        "instruction": "PAGE"
+      },
+      {
+        "part": "word/footer4.xml",
+        "instruction": "PAGE"
+      },
+      {
+        "part": "word/footer5.xml",
+        "instruction": "PAGE"
+      },
+      {
+        "part": "word/footer6.xml",
+        "instruction": "PAGE"
+      },
+      {
+        "part": "word/footer7.xml",
+        "instruction": "PAGE"
+      },
+      {
+        "part": "word/footer8.xml",
+        "instruction": "PAGE"
+      }
+    ],
+    "forbidden_external_data": [],
+    "update_fields_on_open": true
+  },
+  "version_markers": {
+    "development_build_locations": {
+      "D1": [
+        "word/document.xml",
+        "word/footer1.xml",
+        "word/footer2.xml",
+        "word/footer3.xml",
+        "word/footer4.xml",
+        "word/footer5.xml",
+        "word/footer6.xml",
+        "word/footer7.xml",
+        "word/footer8.xml"
+      ]
+    },
+    "release_locations": {
+      "v0": [
+        "word/document.xml",
+        "word/footer1.xml",
+        "word/footer2.xml",
+        "word/footer3.xml",
+        "word/footer4.xml",
+        "word/footer5.xml",
+        "word/footer6.xml",
+        "word/footer7.xml",
+        "word/footer8.xml"
+      ]
+    },
+    "visible_status_label_found": true,
+    "missing_expected_text": []
+  }
+}

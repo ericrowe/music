@@ -1,0 +1,56 @@
+{
+  "schema_version": 2,
+  "project": {
+    "title": "Backdrop Construction and Assembly Guide",
+    "slug": "backdrop-construction-and-assembly-guide",
+    "document_stem": "Backdrop_Assembly_Guide",
+    "document_filename": "Backdrop_Assembly_Guide.docx",
+    "created_at": "2026-09-01T21:24:31+00:00",
+    "status": "active"
+  },
+  "policy": {
+    "document_format": "docx",
+    "stable_document_filename": true,
+    "development_build_prefix": "D",
+    "release_prefix": "v",
+    "visible_status_labels": {
+      "working_draft": "WORKING DRAFT — NOT FOR USE",
+      "manual_review_required": "MANUAL REVIEW REQUIRED — NOT RELEASED",
+      "release_candidate": "RELEASE CANDIDATE — APPROVAL REQUIRED",
+      "released": "RELEASED — APPROVED FOR USE"
+    },
+    "full_page_review_required": true,
+    "changed_figure_zoom_percent": 200,
+    "allow_external_hyperlinks": true,
+    "allow_external_content": false
+  },
+  "document": {
+    "current": {
+      "build": "D1",
+      "release": "v0",
+      "process_state": "working_draft",
+      "visible_status": "working_draft",
+      "file": "Backdrop_Assembly_Guide.docx",
+      "sha256": "e8ac032f26fe42e34eea85a7a2263cb90a2577c607e1f7ffce3e40149822a2f0",
+      "controlled_at": "2026-09-01T22:54:00+00:00"
+    },
+    "candidate": null
+  },
+  "versioning": {
+    "current_release": "v0",
+    "next_release": "v1",
+    "next_build_number": 2
+  },
+  "releases": [],
+  "history": [
+    {
+      "id": "D1",
+      "kind": "development_build",
+      "release": "v0",
+      "status": "working_draft",
+      "date": "2026-09-01",
+      "sha256": "e8ac032f26fe42e34eea85a7a2263cb90a2577c607e1f7ffce3e40149822a2f0",
+      "summary": "Master manual with 2026 CBA competition prop rules, Falcon Stadium 2025/2026 renovation clearance note, 3/4\" wing ballast retention posts, double-bagged handle sandbags, HDX 14-gal student instrument carrier tote, and future cradle roadmap"
+    }
+  ]
+}
