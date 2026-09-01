@@ -26,20 +26,20 @@
   },
   "document": {
     "current": {
-      "build": "D25",
+      "build": "D26",
       "release": "v0",
       "process_state": "working_draft",
       "visible_status": "working_draft",
       "file": "Sideline_Screen_Duck_Blind_Build_Instructions.docx",
-      "sha256": "a29b58c810be134c3385203e8ddd9362f33f8c74af77fa3d94c548de1072c96b",
-      "controlled_at": "2026-09-01T21:12:43+00:00"
+      "sha256": "61b6479c1f1ce6ead6df5ac7840a7842229d3dbea11535f8c66da0cb96cab9a7",
+      "controlled_at": "2026-09-01T23:13:00+00:00"
     },
     "candidate": null
   },
   "versioning": {
     "current_release": "v0",
     "next_release": "v1",
-    "next_build_number": 26
+    "next_build_number": 27
   },
   "releases": [],
   "history": [
@@ -59,7 +59,16 @@
       "status": "working_draft",
       "date": "2026-09-01",
       "sha256": "a29b58c810be134c3385203e8ddd9362f33f8c74af77fa3d94c548de1072c96b",
-      "summary": "Normalized legacy v24 draft to controlled D25 standards with visible status, version table, and updated footers"
+      "summary": "Standardized status markings, footers, and added visible version history table"
+    },
+    {
+      "id": "D26",
+      "kind": "development_build",
+      "release": "v0",
+      "status": "working_draft",
+      "date": "2026-09-01",
+      "sha256": "61b6479c1f1ce6ead6df5ac7840a7842229d3dbea11535f8c66da0cb96cab9a7",
+      "summary": "Added 2026 CBA competition prop rules, transport cart specifications with side rails and latching gates, and updated index"
     }
   ]
 }

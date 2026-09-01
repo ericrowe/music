@@ -1,0 +1,383 @@
+{
+  "schema_version": 2,
+  "generated_at": "2026-09-01T23:13:39+00:00",
+  "file": "/Volumes/T9/Sync/Working/Shop/Projects/__Music/PCHSMB/_Sideline Screen/docs/Sideline_Screen_Duck_Blind_Build_Instructions.docx",
+  "file_sha256": "61b6479c1f1ce6ead6df5ac7840a7842229d3dbea11535f8c66da0cb96cab9a7",
+  "expected_build": "D26",
+  "expected_release": "v0",
+  "expected_status": "working_draft",
+  "expected_status_label": "WORKING DRAFT \u2014 NOT FOR USE",
+  "expected_text": [],
+  "forbid_development_builds": false,
+  "require_stable_filename": true,
+  "status": "pass",
+  "errors": [],
+  "warnings": [
+    "Word is configured to update fields when the document opens"
+  ],
+  "info": [],
+  "package": {
+    "part_count": 46,
+    "broken_internal_relationships": [],
+    "relationship_type_counts": {
+      "core-properties": 1,
+      "customXml": 1,
+      "customXmlProps": 1,
+      "extended-properties": 1,
+      "fontTable": 1,
+      "footer": 8,
+      "header": 8,
+      "hyperlink": 12,
+      "image": 13,
+      "numbering": 1,
+      "officeDocument": 1,
+      "settings": 1,
+      "styles": 1,
+      "stylesWithEffects": 1,
+      "theme": 1,
+      "thumbnail": 1,
+      "webSettings": 1
+    },
+    "external_relationships": [
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId15",
+        "type": "hyperlink",
+        "target": "https://www.homedepot.com/p/3-4-in-x-10-ft-Electrical-Metallic-Tubing-EMT-Conduit-0550110000/202068040"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId17",
+        "type": "hyperlink",
+        "target": "https://www.amazon.com/dp/B0D5BBKCKG"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId18",
+        "type": "hyperlink",
+        "target": "https://www.amazon.com/dp/B0CKQW11SJ"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId19",
+        "type": "hyperlink",
+        "target": "https://www.homedepot.com/p/Teks-8-x-1-2-in-External-Hex-Flange-Hex-Head-Self-Drilling-Screws-280-Pack-21308/100188836"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId20",
+        "type": "hyperlink",
+        "target": "https://www.amazon.com/dp/B09TR84J5M"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId21",
+        "type": "hyperlink",
+        "target": "https://github.com/ericrowe/music/blob/7ab68c66b4ecbd72d9e039212acab02a002df1bb/PCHSMB/_Sideline%20Screen/Corner%20Plug.FCStd"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId22",
+        "type": "hyperlink",
+        "target": "https://github.com/ericrowe/music/blob/7ab68c66b4ecbd72d9e039212acab02a002df1bb/PCHSMB/_Sideline%20Screen/STEP/Corner%20Plug-Part.step"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId23",
+        "type": "hyperlink",
+        "target": "https://github.com/ericrowe/music/blob/7ab68c66b4ecbd72d9e039212acab02a002df1bb/PCHSMB/_Sideline%20Screen/3MF/Corner%20Plug-Part.step.3mf"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId24",
+        "type": "hyperlink",
+        "target": "https://github.com/ericrowe/music/blob/7ab68c66b4ecbd72d9e039212acab02a002df1bb/PCHSMB/_Sideline%20Screen/Hinged%20Arm%20Clip.FCStd"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId25",
+        "type": "hyperlink",
+        "target": "https://github.com/ericrowe/music/blob/7ab68c66b4ecbd72d9e039212acab02a002df1bb/PCHSMB/_Sideline%20Screen/STEP/Hinged%20Arm%20Clip-Part001.step"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId26",
+        "type": "hyperlink",
+        "target": "https://github.com/ericrowe/music/blob/7ab68c66b4ecbd72d9e039212acab02a002df1bb/PCHSMB/_Sideline%20Screen/3MF/Hinged%20Arm%20Clip-Part001.3mf"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId49",
+        "type": "hyperlink",
+        "target": "https://ebf5c7e8-3869-4325-bd98-ce10f57d7545.filesusr.com/ugd/83f67e_cb5fe6efdbdb4ce98f619580f694bc94.pdf"
+      }
+    ],
+    "external_hyperlinks": [
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId15",
+        "type": "hyperlink",
+        "target": "https://www.homedepot.com/p/3-4-in-x-10-ft-Electrical-Metallic-Tubing-EMT-Conduit-0550110000/202068040"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId17",
+        "type": "hyperlink",
+        "target": "https://www.amazon.com/dp/B0D5BBKCKG"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId18",
+        "type": "hyperlink",
+        "target": "https://www.amazon.com/dp/B0CKQW11SJ"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId19",
+        "type": "hyperlink",
+        "target": "https://www.homedepot.com/p/Teks-8-x-1-2-in-External-Hex-Flange-Hex-Head-Self-Drilling-Screws-280-Pack-21308/100188836"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId20",
+        "type": "hyperlink",
+        "target": "https://www.amazon.com/dp/B09TR84J5M"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId21",
+        "type": "hyperlink",
+        "target": "https://github.com/ericrowe/music/blob/7ab68c66b4ecbd72d9e039212acab02a002df1bb/PCHSMB/_Sideline%20Screen/Corner%20Plug.FCStd"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId22",
+        "type": "hyperlink",
+        "target": "https://github.com/ericrowe/music/blob/7ab68c66b4ecbd72d9e039212acab02a002df1bb/PCHSMB/_Sideline%20Screen/STEP/Corner%20Plug-Part.step"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId23",
+        "type": "hyperlink",
+        "target": "https://github.com/ericrowe/music/blob/7ab68c66b4ecbd72d9e039212acab02a002df1bb/PCHSMB/_Sideline%20Screen/3MF/Corner%20Plug-Part.step.3mf"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId24",
+        "type": "hyperlink",
+        "target": "https://github.com/ericrowe/music/blob/7ab68c66b4ecbd72d9e039212acab02a002df1bb/PCHSMB/_Sideline%20Screen/Hinged%20Arm%20Clip.FCStd"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId25",
+        "type": "hyperlink",
+        "target": "https://github.com/ericrowe/music/blob/7ab68c66b4ecbd72d9e039212acab02a002df1bb/PCHSMB/_Sideline%20Screen/STEP/Hinged%20Arm%20Clip-Part001.step"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId26",
+        "type": "hyperlink",
+        "target": "https://github.com/ericrowe/music/blob/7ab68c66b4ecbd72d9e039212acab02a002df1bb/PCHSMB/_Sideline%20Screen/3MF/Hinged%20Arm%20Clip-Part001.3mf"
+      },
+      {
+        "part": "word/_rels/document.xml.rels",
+        "id": "rId49",
+        "type": "hyperlink",
+        "target": "https://ebf5c7e8-3869-4325-bd98-ce10f57d7545.filesusr.com/ugd/83f67e_cb5fe6efdbdb4ce98f619580f694bc94.pdf"
+      }
+    ],
+    "external_content_relationships": []
+  },
+  "images": {
+    "counts": {
+      "inline": 11,
+      "anchor": 0
+    },
+    "rows": [
+      {
+        "part": "word/document.xml",
+        "kind": "inline",
+        "name": "Picture 1",
+        "alt_text": "Rear view of the sideline screen frame unfolded in a garage."
+      },
+      {
+        "part": "word/document.xml",
+        "kind": "inline",
+        "name": "Picture 2",
+        "alt_text": "Sideline screen frame folded flat on a garage floor."
+      },
+      {
+        "part": "word/document.xml",
+        "kind": "inline",
+        "name": "Picture 3",
+        "alt_text": "A two-column illustrated inventory labeled A through J. Components A through E are opaque conduit views: each tube shows one annular opening at the camera-facing end, while the far end shows only its outer silhouette. The figure shows four 92.5-inch A rails; two 44.5-inch B rails; one 86.5-inch C rail; two 37-inch D arms; two 27.5-inch E arms; six three-way F corner brackets; eight complete, uncropped G T-brackets; six cylindrical H corner plugs with round side pegs; two I hinged arm clips; and thirty-six J number 8 by one-half-inch self-drilling screws with external-hex flange heads and split drill points."
+      },
+      {
+        "part": "word/document.xml",
+        "kind": "inline",
+        "name": "Picture 4",
+        "alt_text": "Seven horizontal 120-inch stock lengths shown to scale. Sticks 1 through 4 each yield one 92.5-inch A rail. Stick 5 yields one 86.5-inch C rail and one 27.5-inch E arm. Stick 6 yields two 44.5-inch B rails and one 27.5-inch E arm. Stick 7 yields two 37-inch D arms. Gray hatched areas are nominal offcuts before cutting loss."
+      },
+      {
+        "part": "word/document.xml",
+        "kind": "inline",
+        "name": "Figure 3",
+        "alt_text": "Framed folded-state component and connector map labeled A through I. Red connector markers identify fixed joints that receive screws, blue markers identify interfaces that remain unfastened to pivot, and green blocks identify the two I hinged arm clips. A connector-identification key illustrates F corner brackets and G T-brackets."
+      },
+      {
+        "part": "word/document.xml",
+        "kind": "inline",
+        "name": "Figure 3A",
+        "alt_text": "Exploded folded-state frame diagram labeled A through I, with the frame members separated at their connector locations. Red connector markers indicate joints to affix with screws, blue markers indicate interfaces where no screws are installed, and green blocks identify the two I hinged arm clips. A connector-identification key illustrates F corner brackets and G T-brackets."
+      },
+      {
+        "part": "word/document.xml",
+        "kind": "inline",
+        "name": "Picture 5",
+        "alt_text": "Two-panel Stage 1 assembly drawing. Left: beneath the retained Assemble and Square heading, a framed supplied diagram shows two A rails and two B rails joined as a rectangle, crossed diagonal measuring lines, and a green instruction to adjust both diagonals until they match; a connector key identifies F, G, fixed, and unfastened connections. Right: one enlarged corner shows the H plug oriented with its peg toward the rear and aligned with the F bracket outside-bend hole, plus two J screw locations."
+      },
+      {
+        "part": "word/document.xml",
+        "kind": "inline",
+        "name": "Picture 6",
+        "alt_text": "Single framed Stage 2 assembly drawing beneath the Place Two Inner A Rails heading. The diagram shows two additional A rails immediately inside the outer frame and a green instruction to place their G connectors next to the outer F connectors. A connector key identifies F corner brackets, G T-brackets, fixed connections, and unfastened connections."
+      },
+      {
+        "part": "word/document.xml",
+        "kind": "inline",
+        "name": "Picture 7",
+        "alt_text": "Single framed Stage 3 assembly drawing beneath the Build and Square the Rear Frame heading. The diagram shows two D arms hinged from the upper A rail and joined by the C rail. Green notes direct the builder not to screw G to A so the assembly rotates freely and to position G to match the C length. A connector key identifies fixed and unfastened connections."
+      },
+      {
+        "part": "word/document.xml",
+        "kind": "inline",
+        "name": "Figure 7",
+        "alt_text": "Single framed Stage 4 assembly drawing labeled A through I. Two green notes direct the builder to attach the E arms to C with G connectors, deploy the assembly according to Figure 8 before fastening the I clips, and leave each C/G joint free to rotate. Red markers identify fixed connections, blue markers identify unscrewed pivots, and a connector key identifies F corner brackets and G T-brackets."
+      },
+      {
+        "part": "word/document.xml",
+        "kind": "inline",
+        "name": "Figure 8",
+        "alt_text": "Framed side elevation of one deployed screen end labeled A, B, C, D, E, and I. The B and D tubes form the triangular support, E connects the lower A location to C, and the vinyl-facing side is identified. Red connector regions mark fixed connections, blue marks the C pivot, and green marks the I hinged arm clip. Both lower connection points rest on the labeled ground line."
+      }
+    ],
+    "missing_alt_text": [],
+    "linked_blips": [],
+    "ole_object_count": 0
+  },
+  "navigation": {
+    "bookmark_count": 7,
+    "hyperlink_counts": {
+      "internal": 12,
+      "external": 12
+    },
+    "heading_levels": [
+      1,
+      2,
+      2,
+      2,
+      1,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      3,
+      3,
+      2,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      2,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      2,
+      2,
+      1,
+      1,
+      2,
+      2
+    ],
+    "heading_skips": []
+  },
+  "tables": {
+    "count": 3,
+    "header_row_flags": 5
+  },
+  "fields": {
+    "counts": {
+      "PAGE": 6
+    },
+    "instructions": [
+      {
+        "part": "word/footer1.xml",
+        "instruction": "PAGE"
+      },
+      {
+        "part": "word/footer2.xml",
+        "instruction": "PAGE"
+      },
+      {
+        "part": "word/footer4.xml",
+        "instruction": "PAGE"
+      },
+      {
+        "part": "word/footer5.xml",
+        "instruction": "PAGE"
+      },
+      {
+        "part": "word/footer6.xml",
+        "instruction": "PAGE"
+      },
+      {
+        "part": "word/footer7.xml",
+        "instruction": "PAGE"
+      }
+    ],
+    "forbidden_external_data": [],
+    "update_fields_on_open": true
+  },
+  "version_markers": {
+    "development_build_locations": {
+      "D24": [
+        "word/document.xml"
+      ],
+      "D25": [
+        "word/document.xml"
+      ],
+      "D26": [
+        "word/document.xml",
+        "word/footer1.xml",
+        "word/footer2.xml",
+        "word/footer4.xml",
+        "word/footer5.xml",
+        "word/footer6.xml",
+        "word/footer7.xml"
+      ]
+    },
+    "release_locations": {
+      "v0": [
+        "word/document.xml"
+      ],
+      "v24": [
+        "docProps/core.xml",
+        "word/document.xml"
+      ]
+    },
+    "visible_status_label_found": true,
+    "missing_expected_text": []
+  }
+}

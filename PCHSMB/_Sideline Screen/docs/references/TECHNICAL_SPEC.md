@@ -52,3 +52,17 @@
   - The four upper G T-brackets rotate freely around the upper inner A rail.
   - The two rear G T-brackets rotate freely around the C rear cross rail.
   - Never install screws into pivoting interfaces.
+
+---
+
+## 5. Field Operations, Ballasting & 2026 CBA Rules
+
+- **Field Form Factor:** 4 ft x 8 ft folding frame with triangular self-supporting stance.
+- **Ballast Attachment:** Weights / sandbags must be suspended from upper weight clips; never place weights directly over bottom support arms/clips.
+- **Mandatory Double-Bagging Rule (CBA Rule 8.05):** All sandbags MUST utilize heavy-duty inner liner bags or secondary containment to prevent turf contamination.
+- **2026 CBA Competition Rules Compliance:**
+  - **Rule 8.05:** Heavy-duty plastic protection on all turf-contacting wood surfaces, continuous movement off field, mandatory secondary containment / double-bagging on sandbags.
+  - **Rule 8.07:** Pneumatic-like turf-compatible wheels required for rolling equipment.
+  - **Rule 8.08:** 12-foot rigid height limit (sideline screen is 4 ft nominal height, safely compliant).
+  - **Rule 8.09:** Staging flow & USAFA Falcon Stadium clearance (note: 9'6" restriction obsolete after 2025 crossbeam removal).
+  - **Rule 9.07:** 25 parent Field Pass wristbands allocation limit.
