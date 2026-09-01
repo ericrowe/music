@@ -39,7 +39,7 @@ python3 .agents/skills/develop-versioned-documents/scripts/init_document_project
 This creates:
 - `PCHSMB/_Backdrop/project.json` (starts at `D1`, `v0`)
 - `PCHSMB/_Backdrop/AGENTS.md`, `GEMINI.md`, `CLAUDE.md` (isolated backdrop instructions)
-- `PCHSMB/_Backdrop/documents/` (`working/`, `current/`, `builds/`, `releases/`)
+- `PCHSMB/_Backdrop/documents/` (`working/`, `releases/`)
 - `PCHSMB/_Backdrop/references/` (`TECHNICAL_SPEC.md`, `FIGURE_STYLE.md`, `FIGURE_REGISTER.csv`)
 - `PCHSMB/_Backdrop/qa/` (`reports/`, `renders/`, `baselines/`)
 
@@ -62,8 +62,9 @@ python3 .agents/skills/develop-versioned-documents/scripts/init_document_project
 ```
 *(Note: Codex users may alternatively invoke `.codex/skills/develop-versioned-documents/scripts/...`)*
 
-This creates `documents/current/Example_Manual.docx` and the immutable snapshot
-`documents/builds/D24/Example_Manual.docx`.
+This creates `projects/example-manual/Example_Manual.docx` directly at the project root,
+avoiding deeply nested paths and eliminating redundant on-disk backup files. Git provides
+the immutable version history.
 
 If there is no document yet, omit the base arguments. After the first stable-
 named DOCX passes its audit and all-page review, register it:

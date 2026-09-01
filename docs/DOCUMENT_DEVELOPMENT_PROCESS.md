@@ -87,21 +87,16 @@ An unreleased document colloquially called “v24” is normalized as follows:
 ## 3. Repository model
 
 ```text
-project/
+docs/
+|-- <stable-name>.docx          <-- Current controlled document right at top of docs/
 |-- AGENTS.md
+|-- GEMINI.md / CLAUDE.md
 |-- project.json
 |-- CHANGELOG.md
-|-- source/
-|   `-- originals/
+|-- .gitignore
 |-- documents/
-|   |-- current/
-|   |   `-- <stable-name>.docx
 |   |-- working/
-|   |   `-- <stable-name>.docx
-|   |-- builds/
-|   |   `-- D24/<stable-name>.docx
-|   |-- abandoned/
-|   |   `-- D23/<stable-name>.docx
+|   |   `-- <stable-name>.docx  <-- Active build working copy
 |   `-- releases/
 |       `-- v1/<stable-name>.docx
 |-- assets/
@@ -109,6 +104,7 @@ project/
 |   |-- working/
 |   `-- approved/
 |-- changes/
+|   `-- D24.md
 |-- qa/
 |   |-- baselines/
 |   |-- renders/

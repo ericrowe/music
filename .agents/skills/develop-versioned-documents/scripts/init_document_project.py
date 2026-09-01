@@ -28,10 +28,6 @@ from _common import (
 
 
 DIRECTORIES = (
-    "source/originals",
-    "documents/current",
-    "documents/builds",
-    "documents/abandoned",
     "documents/working",
     "documents/releases",
     "assets/incoming",
@@ -81,7 +77,8 @@ def render_template(source: Path, destination: Path, values: dict[str, str]) -> 
 
 def copy_verified(source: Path, destination: Path) -> str:
     destination.parent.mkdir(parents=True, exist_ok=True)
-    shutil.copy2(source, destination)
+    if source.resolve() != destination.resolve():
+        shutil.copy2(source, destination)
     source_hash = sha256_file(source)
     if sha256_file(destination) != source_hash:
         raise WorkflowError(f"copied file failed digest verification: {destination}")
@@ -99,8 +96,8 @@ def main() -> int:
     document_filename = f"{document_stem}.docx"
     if bool(args.base_docx) != bool(args.base_build):
         raise WorkflowError("--base-docx and --base-build must be supplied together")
-    if project_dir.exists() and any(project_dir.iterdir()):
-        raise WorkflowError(f"refusing to populate nonempty project directory: {project_dir}")
+    if (project_dir / "project.json").exists():
+        raise WorkflowError(f"refusing to re-initialize existing project: {project_dir / 'project.json'}")
 
     base_source: Path | None = None
     base_build: str | None = None
@@ -129,22 +126,16 @@ def main() -> int:
     releases: list[dict] = []
     created_at = utc_now()
     if base_source and base_build:
-        original = project_dir / "source" / "originals" / base_source.name
-        current_path = project_dir / "documents" / "current" / document_filename
-        snapshot_path = project_dir / "documents" / "builds" / base_build / document_filename
-        base_hash = copy_verified(base_source, original)
-        copy_verified(base_source, current_path)
-        copy_verified(base_source, snapshot_path)
+        current_path = project_dir / document_filename
+        base_hash = copy_verified(base_source, current_path)
         current = {
             "build": base_build,
             "release": base_release,
             "process_state": args.base_status,
             "visible_status": args.base_status,
             "file": current_path.relative_to(project_dir).as_posix(),
-            "snapshot_file": snapshot_path.relative_to(project_dir).as_posix(),
             "sha256": base_hash,
             "controlled_at": created_at,
-            "imported_from": original.relative_to(project_dir).as_posix(),
         }
         history.append(
             {

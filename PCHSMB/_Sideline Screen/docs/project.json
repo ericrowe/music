@@ -1,0 +1,65 @@
+{
+  "schema_version": 2,
+  "project": {
+    "title": "Sideline Screen / Duck Blind Construction and Field Operations Manual",
+    "slug": "sideline-screen-duck-blind-construction-and-field-operations-manual",
+    "document_stem": "Sideline_Screen_Duck_Blind_Build_Instructions",
+    "document_filename": "Sideline_Screen_Duck_Blind_Build_Instructions.docx",
+    "created_at": "2026-09-01T21:11:43+00:00",
+    "status": "active"
+  },
+  "policy": {
+    "document_format": "docx",
+    "stable_document_filename": true,
+    "development_build_prefix": "D",
+    "release_prefix": "v",
+    "visible_status_labels": {
+      "working_draft": "WORKING DRAFT — NOT FOR USE",
+      "manual_review_required": "MANUAL REVIEW REQUIRED — NOT RELEASED",
+      "release_candidate": "RELEASE CANDIDATE — APPROVAL REQUIRED",
+      "released": "RELEASED — APPROVED FOR USE"
+    },
+    "full_page_review_required": true,
+    "changed_figure_zoom_percent": 200,
+    "allow_external_hyperlinks": true,
+    "allow_external_content": false
+  },
+  "document": {
+    "current": {
+      "build": "D25",
+      "release": "v0",
+      "process_state": "working_draft",
+      "visible_status": "working_draft",
+      "file": "Sideline_Screen_Duck_Blind_Build_Instructions.docx",
+      "sha256": "a29b58c810be134c3385203e8ddd9362f33f8c74af77fa3d94c548de1072c96b",
+      "controlled_at": "2026-09-01T21:12:43+00:00"
+    },
+    "candidate": null
+  },
+  "versioning": {
+    "current_release": "v0",
+    "next_release": "v1",
+    "next_build_number": 26
+  },
+  "releases": [],
+  "history": [
+    {
+      "id": "D24",
+      "kind": "development_build",
+      "release": "v0",
+      "status": "working_draft",
+      "date": "2026-09-01",
+      "sha256": "53db7df6b3f6647088d80e2fe51618a0ba5da81a5fc29e9b5d82f02051a2ee85",
+      "summary": "Imported as controlled base"
+    },
+    {
+      "id": "D25",
+      "kind": "development_build",
+      "release": "v0",
+      "status": "working_draft",
+      "date": "2026-09-01",
+      "sha256": "a29b58c810be134c3385203e8ddd9362f33f8c74af77fa3d94c548de1072c96b",
+      "summary": "Normalized legacy v24 draft to controlled D25 standards with visible status, version table, and updated footers"
+    }
+  ]
+}
