@@ -76,8 +76,12 @@ Master Document (.docx)
    - Appendix A must have its dedicated cover page with all pages running headers `APPENDIX A | OPERATIONS MANUAL` and footer numbering `Page A-#`.
    - Appendix B must have its dedicated cover page with all pages running headers `APPENDIX B | CONSTRUCTION MANUAL` and footer numbering `Page B-#`.
 
+5. **Dual PDF & DOCX Publication & README Linking:**
+   - Prior to committing and pushing any documentation update to GitHub, a complete PDF render **MUST** be generated alongside the `.docx` file (using `.agents/skills/develop-versioned-documents/scripts/render_pdf.py`).
+   - The subproject `README.md` **MUST** prominently link to the `.pdf` render as the primary recommended format for web/mobile reading, accompanied by a secondary link to the `.docx` editable source.
+
 ---
 
 ## 3. Subproject Conformity
 
-All current subprojects (`PCHSMB/_Backdrop`, `PCHSMB/_Sideline Screen`) and any future projects created in `PCHSMB/` must strictly adhere to this architectural standard.
+All current subprojects (`PCHSMB/_Backdrop`, `PCHSMB/_Sideline Screen`) and any future projects created in `PCHSMB/` must strictly adhere to this architectural and delivery standard.

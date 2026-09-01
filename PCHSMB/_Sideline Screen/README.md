@@ -12,7 +12,8 @@ The frame is constructed from 3/4-in. EMT conduit, off-the-shelf clamp brackets,
 
 The authoritative, fully illustrated manual is maintained in the [`docs/`](docs/) directory:
 
-👉 **[Sideline Screen / Duck Blind Construction and Field Operations Manual (DOCX)](docs/Sideline_Screen_Duck_Blind_Build_Instructions.docx)**
+👉 **[View Complete Manual (PDF)](docs/Sideline_Screen_Duck_Blind_Build_Instructions.pdf)** *(Recommended for easy online/mobile viewing)*  
+📄 **[Download Editable Source (DOCX)](docs/Sideline_Screen_Duck_Blind_Build_Instructions.docx)**
 
 The manual covers:
 - **Intro & Overview:** System geometry, folding mechanics, and print units.

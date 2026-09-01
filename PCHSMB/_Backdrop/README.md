@@ -12,7 +12,8 @@ The **Rolling Backdrop System** is a modular, mobile field prop developed for th
 
 The authoritative, fully illustrated manual is maintained in the [`docs/`](docs/) directory:
 
-👉 **[Backdrop Construction and Assembly Guide (DOCX)](docs/Backdrop_Assembly_Guide.docx)**
+👉 **[View Complete Manual (PDF)](docs/Backdrop_Assembly_Guide.pdf)** *(Recommended for easy online/mobile viewing)*  
+📄 **[Download Editable Source (DOCX)](docs/Backdrop_Assembly_Guide.docx)**
 
 The manual covers:
 - **System Overview & Technical Geometry:** Base cart dimensions (96" x 44.5"), 10' x 8' steel frame, diagonal bracing, and print units.
