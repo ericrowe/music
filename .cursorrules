@@ -1,0 +1,15 @@
+# Cursor IDE Rules
+
+All AI instructions for this repository are centralized in AGENTS.md.
+
+## Core Directives
+
+1. Read and follow AGENTS.md, nearest project AGENTS.md, and project.json before making changes.
+2. For controlled document deliverables, run scripts located in `.agents/skills/develop-versioned-documents/scripts/` (or `.codex/skills/...`).
+3. Never alter stable DOCX filenames to include version or build suffixes (D24, v1, etc.).
+4. Enforce strict lifecycle status labels:
+   - `WORKING DRAFT — NOT FOR USE`
+   - `MANUAL REVIEW REQUIRED — NOT RELEASED`
+   - `RELEASE CANDIDATE — APPROVAL REQUIRED`
+   - `RELEASED — APPROVED FOR USE`
+5. Keep edits strictly localized; preserve unrelated text, drawings, bookmarks, and formatting.

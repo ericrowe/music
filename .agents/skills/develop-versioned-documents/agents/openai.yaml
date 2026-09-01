@@ -1,0 +1,4 @@
+interface:
+  display_name: "Controlled Document Development"
+  short_description: "Build and release controlled Word documents"
+  default_prompt: "Use $develop-versioned-documents to revise this Word manual under its stable filename, update its internal build and status, and verify it for review or release."

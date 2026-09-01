@@ -1,0 +1,10 @@
+# Windsurf Rules
+
+This repository follows the unified instructions defined in AGENTS.md.
+
+## Core Rules
+
+1. Source of truth is AGENTS.md and project.json manifests.
+2. For Word document projects, use the workflow scripts in `.agents/skills/develop-versioned-documents/scripts/` (or `.codex/skills/...`).
+3. Maintain stable filenames across builds and releases without appending version numbers.
+4. Ensure 100% all-page review and automated QA passes before promoting review builds or releases.

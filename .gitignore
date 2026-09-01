@@ -1,6 +1,49 @@
+# macOS metadata and system files
 ._*
+.DS_Store
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.Trashes
+
+# Affinity Designer / Photo / Publisher lock & temp files
+*~lock~*
+*.afdesign~lock~
+*.afphoto~lock~
+*.afpub~lock~
+
+# FreeCAD autosaves and numbered backup files
 *.FCStd1
+*.FCStd[0-9]*
+*.FCBak
+*.FCStd-autosave*
+
+# Slicer and 3D printing temporary files
+*.gcode.tmp
+*.3mf.tmp
+
+# Microsoft Office / Word transient files
+~$*.docx
+~$*.doc
+~$*.xlsx
+~$*.pptx
+*.tmp
+
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.ruff_cache/
+
+# Editor and IDE backup / swap files
+*~
+*.swp
+*.swo
+.idea/
+.vscode/*.log
+
+# Custom personal / one-off luggage tag prints
 Luggage Tags/3MF/Base Tag - Alex CTMS.3mf
 Luggage Tags/3MF/Base Tag - Eric.3mf
 Luggage Tags/3MF/Base Tag - Isabella PCHS.3mf
-*.FCBak
