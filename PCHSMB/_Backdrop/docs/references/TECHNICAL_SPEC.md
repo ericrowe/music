@@ -177,6 +177,15 @@ To maintain vertical stability against outdoor wind shear while protecting stadi
 
 ---
 
+
+- **Parent Volunteer Field Guide & CBA Rules (Appendix D):**
+  - Dedicated one-page operational summary on Page 42 for parent pit crew and prop volunteers.
+  - Contains fillable event blanks, comprehensive milestone call schedule (trailer arrival, assembly, pit warmup, pre-staging, prelims entry, continuous uphill egress, two-shot inter-show check, finals entry, teardown) plus 4 custom rows.
+  - Detailed on-field rules citing exact 2026 CBA Rulebook paragraphs: Rule 9.07 (Field Pass Wristbands), Rule 5.06 & 5.03 (Field Entry Permission & Pre-staging), Rule 4.03 & 5.06 (Clear Field Before Performance; 0.2 pt penalty), Rule 4.03 (Re-Entry Prohibition; 0.2 pt penalty), Rule 4.02(c) (Medical Emergency Assistance Exception; NO PENALTY), Rule 4.02(a) (High-Wind Prop Restraint Exception), and Rule 8.05 (Continuous Uphill Egress & Double-Bagging).
+  - Official 2026 CBA Rulebook PDF archived in repository at `PCHSMB/rules/CBA_Marching_Band_Rules.pdf`.
+
+---
+
 ## 6. Estimated Fabrication Cost Breakdown (Per Backdrop Prop)
 
 *Excludes the custom-printed 10 ft x 8 ft vinyl banner.*

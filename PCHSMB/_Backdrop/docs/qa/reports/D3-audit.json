@@ -1,8 +1,8 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-10T21:01:26+00:00",
+  "generated_at": "2026-09-10T21:41:17+00:00",
   "file": "/Volumes/T9/Sync/Working/Shop/Projects/__Music/PCHSMB/_Backdrop/docs/Backdrop_Assembly_Guide.docx",
-  "file_sha256": "a3bfb5a8023b785cb584824b69cbd698b4698ba76d84b0eccedd3c5a93735740",
+  "file_sha256": "b61eec7f754a4b12072a7848ea22b51dcb82244a2769f65547ed8d268f10db20",
   "expected_build": "D3",
   "expected_release": "v0",
   "expected_status": "working_draft",
@@ -375,13 +375,17 @@
       2,
       2,
       1,
+      2,
+      1,
+      2,
+      2,
       2
     ],
     "heading_skips": []
   },
   "tables": {
-    "count": 10,
-    "header_row_flags": 8
+    "count": 12,
+    "header_row_flags": 9
   },
   "fields": {
     "counts": {
