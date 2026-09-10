@@ -144,9 +144,13 @@ To maintain vertical stability against outdoor wind shear while protecting stadi
 ---
 
 
-### E. Modular Trailer Transport, Loading & Unloading Protocol
+### E. Modular Trailer Transport, "Two-Shot" Staging & Field Placard Protocol
 
 - **Modular Prop Architecture:** To fit inside standard band equipment trailers and trucks, each rolling backdrop travels with the 10 ft × 8 ft upright steel frame detached from the wooden rolling cart base.
+- **No De-Ballasting at Exit Chute (Continuous Egress):** Per CBA Rule 8.05, props must maintain continuous movement off the field. Props **CANNOT be de-ballasted at the stadium exit chute or tunnel**. Props remain fully ballasted (213–288 lbs) and are pushed all the way up the stadium hill/ramp to the equipment trailer staging lot. On steep inclines (such as the USAFA Falcon Stadium concrete tunnel ramp), 3 to 4 student handlers must be assigned per cart to supply adequate uphill pushing power.
+- **"Two-Shot" Competition Protocol (Prelims & Finals Inter-Show Staging):** Most marching band competitions follow a two-shot format with afternoon Preliminaries and evening Finals.
+  - *Inter-Show Staging:* Between shows, props remain staged in the trailer lot with all sandbag ballast left in place on the carts to conserve volunteer labor and prevent hardware wear.
+  - *Wind Mitigation (Laying Vinyls Flat):* If wind gusts threaten while staged in the lot between shows, the vinyl frames are laid flat directly onto the cart bases by pulling the quick-release pin from each two-piece diagonal support strut. This eliminates wind sail area while keeping props fully ballasted and ready for rapid re-erection before Finals.
 - **Two-Piece Modular Support Struts:** The diagonal support struts utilize a two-piece modular telescoping design pinned at mid-span:
   - *Disassembly:* Remove the quick-release wire-lock retaining pin and stow it in the hardware container inside the center HDX tough tote.
   - *Lower Arm Section:* Remains anchored to the cart base U-bolt and folds down flat against the cart decking throughout transit.
@@ -156,13 +160,13 @@ To maintain vertical stability against outdoor wind shear while protecting stadi
   - *Vinyl Frames:* Staged horizontally or vertically across the trailer's interior **cross support beams** (load bars / shoring beams / attic deck racks).
   - *Cart Bases:* Placed vertically on their **short ends** up against the **front nose wall** of the trailer, nested bumper-to-bumper with 3D-printed ASA corner bumpers protecting edges, and cinched firmly in place using heavy-duty E-track ratchet straps across the 2x4 framing rails.
   - *Ballast:* De-ballasted sandbags are stacked low over the trailer axles on rubber floor mats for balanced trailer weight distribution.
-- **Venue Unloading Sequence (Exact Reverse of Loading):**
+- **Venue Unloading Sequence (Exact Reverse of Final Teardown):**
   1. Unhook ratchet straps, lower cart bases from their vertical short ends onto all four swivel casters, and roll down the ramp to the venue staging chute.
   2. Retrieve vinyl frames from the trailer cross support beams; pull off the protective tennis balls from the upper strut arms and stow them in the cart tote.
   3. Seat the upright frame onto the front cart rail; rapidly tighten the mounting nuts and bolts using a cordless power driver.
   4. Mate the two-piece strut sections, align pin holes, and lock the quick-release retaining pin.
   5. Inspect casters for free 360° swivel action, stage tiered ballast (Tier 0–3) on wing posts (and rear rail if high wind), stage extra ground sandbag wheel chocks, and align backdrops in numerical show drill order.
-- **On-Prop Field Placard (Appendix C):** Each backdrop cart carries a laminated one-page quick-reference operations placard attached to the cart framing for field use, containing the wind velocity/ballast schedule, safety rules, teardown steps, and a dedicated 4" × 6" show drill coordinate diagram space.
+- **On-Prop Field Placard (Appendix C & C.1):** Each backdrop cart carries a laminated one-page quick-reference operations placard attached to the cart framing for field use (Appendix C), containing the wind velocity/ballast schedule, safety rules, teardown steps, and an exact 6.0" × 4.0" card placeholder. A printable 4" × 6" Field Placement Card template with a blank football field diagram is provided in Appendix C.1.
 
 ---
 

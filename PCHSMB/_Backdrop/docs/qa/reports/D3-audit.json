@@ -1,8 +1,8 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-10T20:45:02+00:00",
+  "generated_at": "2026-09-10T20:50:35+00:00",
   "file": "/Volumes/T9/Sync/Working/Shop/Projects/__Music/PCHSMB/_Backdrop/docs/Backdrop_Assembly_Guide.docx",
-  "file_sha256": "013a49ea18593d569a96b90a053b7eae0bf46f6e4c74a0eac7c08e867739ee07",
+  "file_sha256": "c9648598b6eac6a7e82e7d647adaf579235c0f76dc139792c053af8892d78520",
   "expected_build": "D3",
   "expected_release": "v0",
   "expected_status": "working_draft",
@@ -17,7 +17,7 @@
   ],
   "info": [],
   "package": {
-    "part_count": 42,
+    "part_count": 43,
     "broken_internal_relationships": [],
     "relationship_type_counts": {
       "core-properties": 1,
@@ -26,7 +26,7 @@
       "footer": 1,
       "header": 1,
       "hyperlink": 17,
-      "image": 9,
+      "image": 10,
       "numbering": 1,
       "officeDocument": 1,
       "styles": 1,
@@ -244,7 +244,7 @@
   },
   "images": {
     "counts": {
-      "inline": 9,
+      "inline": 10,
       "anchor": 0
     },
     "rows": [
@@ -301,6 +301,12 @@
         "kind": "inline",
         "name": "Figure 6",
         "alt_text": "Volunteer build crew stretching vinyl banner across steel frame over protective blankets with faces blurred for privacy."
+      },
+      {
+        "part": "word/document.xml",
+        "kind": "inline",
+        "name": "Figure 10",
+        "alt_text": "Blank regulation high school marching band field diagram for marking backdrop drill coordinates and prop orientation."
       }
     ],
     "missing_alt_text": [],
@@ -367,12 +373,14 @@
       1,
       2,
       2,
+      2,
+      1,
       2
     ],
     "heading_skips": []
   },
   "tables": {
-    "count": 9,
+    "count": 10,
     "header_row_flags": 8
   },
   "fields": {
