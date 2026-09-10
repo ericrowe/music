@@ -9,7 +9,7 @@
 - **Major Sub-Assemblies:**
   1. **Rolling Cart Base:** 96" x 44.5" wood-framed cart with 4 casters, left/right plywood decking, open central ballast/storage bin bay, and 3D printed corner bumper braces.
   2. **Upright Backdrop Frame:** 10 ft H x 8 ft W open rectangle fabricated from 1-5/8" diameter galvanized steel fence post top rail with clamp corner brackets.
-  3. **Diagonal Support Struts:** Steel fence post diagonal braces attaching frame to cart via tension bands, steel end caps, and U-bolts.
+  3. **Diagonal Support Struts:** Two-piece modular steel fence post diagonal braces attaching frame to cart via upper tension bands, steel end caps, and base U-bolts, coupled with a quick-release wire-lock retaining pin for rapid trailer disassembly.
 
 ---
 
@@ -41,9 +41,11 @@
 | **Cross Rails** | 1-5/8 in. Dia. x 8 ft Steel Fence Post Top Rail | 2 | Home Depot (1-5/8" top rail) |
 | **Corner Brackets** | 1-5/8 in. 3-way fence clamp elbow brackets | 4 | Amazon ([B0CD7QT6L6](https://www.amazon.com/dp/B0CD7QT6L6)) |
 | **Base Tension Bands** | 1-5/8 in. Galvanized Steel Fence Tension Bands | 2 | Home Depot ([SKU 312373099](https://www.homedepot.com/p/Everbilt-1-5-8-in-Galvanized-Steel-Chain-Link-Fence-Tension-Band-328521EB/312373099)) |
-| **Diagonal Struts** | 1-5/8 in. Dia. fence post diagonal tubes | 2 | Cut to length |
+| **Diagonal Struts (Two-Piece)** | 1-5/8 in. Dia. fence post diagonal tubes (2-piece modular telescoping design with mid-span joint) | 2 | Cut to length |
 | **Strut Top Attachment**| 1-5/8 in. Tension Band + Steel Fence Post End Cap | 2 | Amazon (steel end cap) |
 | **Strut Base Attachment**| Steel Fence Post End Cap + Heavy-Duty Steel U-Bolt | 2 | Amazon ([B09L41JFMS](https://www.amazon.com/dp/B09L41JFMS)) mounted through wood base |
+| **Strut Retaining Pins** | 1/4 in. or 5/16 in. Wire lock hitch pins / linchpins for two-piece strut joint | 2 | Hardware stock; stowed in cart tote |
+| **Protective Tennis Balls** | Standard tennis balls with cut hole (protective caps for upper strut arms during transit) | 2 | Pit crew equipment; protects vinyl banner |
 | **Strut Screws** | Self-tapping sheet metal screws | Var. | Fastens steel end caps to fence post tubing |
 | **Drill Bit (Pilot)** | 1/8-in. HSS / Cobalt drill bit rated for steel | 1+ | Required: pre-drill pilot holes through tough 16-ga. galvanized steel |
 | **15-lb Handle Sandbags**| Abccanopy 15-lb Heavy-Duty Sandbags with Handle | 4–9 | Amazon ([B0DFVVZDVK](https://www.amazon.com/dp/B0DFVVZDVK)); primary ballast (4–6 on wings, 3 on rear rail for high wind) |
@@ -119,7 +121,7 @@ To maintain vertical stability against outdoor wind shear while protecting stadi
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|---|
 | **Tier 0: Calm** | Calm / Light Air ($0–8\text{ mph}$, gusts $\le 10\text{ mph}$) | 0 bags (unballasted) | None | **$0\text{ lbs}$** | $153\text{ lbs}$ | **$10.0\text{ mph}$** (limit $14.4\text{ mph}$) | **$9.0\text{ mph}$** (limit $12.8\text{ mph}$) | Calm day deployment. FoS $\ge 2.07$ fwd. Mandatory upgrade to Tier 1 if sustained wind exceeds $8\text{ mph}$ or gusts exceed $10\text{ mph}$. |
 | **Tier 1: Normal** | Light Breeze ($8–12\text{ mph}$) | 4× 15-lb bags (2 per wing post: 30 lb/side) | None | **$60\text{ lbs}$** | $213\text{ lbs}$ | **$16.9\text{ mph}$** | $15.2\text{ mph}$ | Standard staging. 2 handlers move cart easily. Zero turf compaction. |
-| **Tier 2: Advisory** | Moderate Breeze / Gusts ($12–18\text{ mph}$) | 6× 15-lb bags (3 per wing post: 45 lb/side) | None | **$90\text{ lbs}$** | $243\text{ lbs}$ | **$18.4\text{ mph}$** | $16.6\text{ mph}$ | Handlers remain attentive. Verify all four caster locks engaged on field. |
+| **Tier 2: Advisory** | Moderate Breeze / Gusts ($12–18\text{ mph}$) | 6× 15-lb bags (3 per wing post: 45 lb/side) | None | **$90\text{ lbs}$** | $243\text{ lbs}$ | **$18.4\text{ mph}$** | $16.6\text{ mph}$ | Handlers remain attentive. Deploy ground sandbag chocks if breezy. |
 | **Tier 3: High-Wind** | High-Wind Advisory ($18–22\text{ mph}$) | 6× 15-lb bags (3 per wing post: 45 lb/side) | 3× 15-lb bags laid flat along **rear 2x4 rail (A)** | **$135\text{ lbs}$** | $288\text{ lbs}$ | **$22.5\text{ mph}$** | $20.3\text{ mph}$ | Maximum turf-safe ballast. Rear-rail placement balances forward tipping. |
 | **Tier 4: Safety Abort** | Severe Wind / Gale ($> 20\text{ mph}$ sustained / $> 25\text{ mph}$ gusts) | — | — | — | — | **UNSAFE** | **UNSAFE** | **NO-GO / WITHDRAWAL.** Props laid flat or kept off field. |
 
@@ -138,6 +140,28 @@ To maintain vertical stability against outdoor wind shear while protecting stadi
 - **Rule 8.08 (Height Limit):** 12-foot rigid height limit strictly observed (prop is ~10.8 ft total).
 - **Rule 8.09 (Falcon Stadium Clearance):** Crossbeam removed during stadium renovations prior to 2025; props clear tunnel at full ~10.8 ft height.
 - **Rule 9.07 (Field Passes):** 25 parent Field Pass wristbands allocation limit. De-ballasting crew must hold valid wristbands.
+
+---
+
+
+### E. Modular Trailer Transport, Loading & Unloading Protocol
+
+- **Modular Prop Architecture:** To fit inside standard band equipment trailers and trucks, each rolling backdrop travels with the 10 ft × 8 ft upright steel frame detached from the wooden rolling cart base.
+- **Two-Piece Modular Support Struts:** The diagonal support struts utilize a two-piece modular telescoping design pinned at mid-span:
+  - *Disassembly:* Remove the quick-release wire-lock retaining pin and stow it in the hardware container inside the center HDX tough tote.
+  - *Lower Arm Section:* Remains anchored to the cart base U-bolt and folds down flat against the cart decking throughout transit.
+  - *Upper Arm Section & Vinyl Protection:* Remains attached to the vertical upright of the steel frame. Pit crew install a standard tennis ball with a hole cut into it securely over each exposed metal tube end. This cushioned ball prevents the metal tube end from puncturing, tearing, or abrading the printed scrim vinyl during handling and road transit.
+- **Fastening & Power Driver Acceleration:** The upright frame is clamped to the front 2x4 rail of the cart base via base tension bands / mounting brackets. Pit crew use a **cordless power drill/driver with socket adapter** to rapidly unbolt the frame during teardown and re-bolt it during venue staging, minimizing turnaround time. All hardware (bolts, nuts, washers) is stowed in the cart tote.
+- **Trailer Stowing Geometry:**
+  - *Vinyl Frames:* Staged horizontally or vertically across the trailer's interior **cross support beams** (load bars / shoring beams / attic deck racks).
+  - *Cart Bases:* Placed vertically on their **short ends** up against the **front nose wall** of the trailer, nested bumper-to-bumper with 3D-printed ASA corner bumpers protecting edges, and cinched firmly in place using heavy-duty E-track ratchet straps across the 2x4 framing rails.
+  - *Ballast:* De-ballasted sandbags are stacked low over the trailer axles on rubber floor mats for balanced trailer weight distribution.
+- **Venue Unloading Sequence (Exact Reverse of Loading):**
+  1. Unhook ratchet straps, lower cart bases from their vertical short ends onto all four swivel casters, and roll down the ramp to the venue staging chute.
+  2. Retrieve vinyl frames from the trailer cross support beams; pull off the protective tennis balls from the upper strut arms and stow them in the cart tote.
+  3. Seat the upright frame onto the front cart rail; rapidly tighten the mounting nuts and bolts using a cordless power driver.
+  4. Mate the two-piece strut sections, align pin holes, and lock the quick-release retaining pin.
+  5. Inspect casters for free 360° swivel action, stage tiered ballast (Tier 0–3) on wing posts (and rear rail if high wind), stage extra ground sandbag wheel chocks, and align backdrops in numerical show drill order.
 
 ---
 
