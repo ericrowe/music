@@ -154,7 +154,7 @@ To maintain vertical stability against outdoor wind shear while protecting stadi
 | **Vinyl Attachment Hardware** | 1-5/8" pipe snap clamps pack, double-sided heavy-duty carpet tape, pilot hardware | $25.00 |
 | **TOTAL ESTIMATED COST (PER BACKDROP PROP)** | | **~$390.00** |
 
-*Optional Rule 8.05 Ballast Pack: 4–6 Abccanopy 15-lb handle sandbags + inner liners + traction sand: +$37.00 per cart.*
+*Optional Rule 8.05 Ballast Pack: 4–9 Abccanopy 15-lb handle sandbags + inner liners + traction sand: +$37.00 to $55.00 per cart (scaled to the Tiered Ballasting Schedule in Section 5).* 
 
 ---
 
