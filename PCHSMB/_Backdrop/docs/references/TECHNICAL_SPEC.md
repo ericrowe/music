@@ -162,6 +162,7 @@ To maintain vertical stability against outdoor wind shear while protecting stadi
   3. Seat the upright frame onto the front cart rail; rapidly tighten the mounting nuts and bolts using a cordless power driver.
   4. Mate the two-piece strut sections, align pin holes, and lock the quick-release retaining pin.
   5. Inspect casters for free 360° swivel action, stage tiered ballast (Tier 0–3) on wing posts (and rear rail if high wind), stage extra ground sandbag wheel chocks, and align backdrops in numerical show drill order.
+- **On-Prop Field Placard (Appendix C):** Each backdrop cart carries a laminated one-page quick-reference operations placard attached to the cart framing for field use, containing the wind velocity/ballast schedule, safety rules, teardown steps, and a dedicated 4" × 6" show drill coordinate diagram space.
 
 ---
 
