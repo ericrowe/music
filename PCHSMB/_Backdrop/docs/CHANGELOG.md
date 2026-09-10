@@ -8,4 +8,4 @@ exact current file and digest remain authoritative in `project.json`.
 |---|---|---|---|---|---|
 | 2026-09-01 | D1 | v0 | working_draft | Master manual with 2026 CBA competition prop rules, Falcon Stadium clearance, wing ballast retention posts, and cost breakdown | `56eab9e3bd7827d2e14f1b6538919386906a2d9fe1942adff91a7e1eb7ee9fa9` |
 | 2026-09-10 | D2 | v0 | working_draft | Add detailed vinyl installation procedure, specifications table, hardware relief slits, and snap clamp fastening | `6262fdc7dfc982a174fb63b9fbe3c4ade7dc77fb4cb3532d0c3eb2003931b15e` |
-| 2026-09-10 | D3 | v0 | working_draft | Add engineered wind relief slit specifications, tiered 15-lb handle sandbag ballast schedule, rear-rail leverage optimization, and high-wind emergency protocol | `cd178121062c3ff23c6b3f0b453e47691b300183467f74b369e6054239c35119` |
+| 2026-09-10 | D3 | v0 | working_draft | Add engineered wind relief slit specifications, tiered 15-lb handle sandbag ballast schedule, rear-rail leverage optimization, and high-wind emergency protocol | `f88e6802be88fcb7a68150ca2b45f34d72c1bb93c6eccb0e80a0e2704b28d717` |
