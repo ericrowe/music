@@ -1,8 +1,8 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-10T20:41:11+00:00",
+  "generated_at": "2026-09-10T20:42:31+00:00",
   "file": "/Volumes/T9/Sync/Working/Shop/Projects/__Music/PCHSMB/_Backdrop/docs/Backdrop_Assembly_Guide.docx",
-  "file_sha256": "06b108f324969b3000ca6823039ad319692131f6264ef64f083f8c2912acfb22",
+  "file_sha256": "9c03ced4a5ab02aa7797df8038ab7d709d5a3bfb7849dd05d0359d76525febf5",
   "expected_build": "D3",
   "expected_release": "v0",
   "expected_status": "working_draft",

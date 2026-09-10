@@ -120,7 +120,7 @@ To maintain vertical stability against outdoor wind shear while protecting stadi
 | Tier | Wind Conditions | Wing Retention Posts (Left & Right) | Supplemental Rear Frame Ballast | Total Ballast | Prop Weight | Max Gust Resistance (6,500 ft ASL) | Max Gust Resistance (Sea Level) | Operational Action |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|---|
 | **Tier 0: Calm** | Calm / Light Air ($0–8\text{ mph}$, gusts $\le 10\text{ mph}$) | 0 bags (unballasted) | None | **$0\text{ lbs}$** | $153\text{ lbs}$ | **$10.0\text{ mph}$** (limit $14.4\text{ mph}$) | **$9.0\text{ mph}$** (limit $12.8\text{ mph}$) | Calm day deployment. FoS $\ge 2.07$ fwd. Mandatory upgrade to Tier 1 if sustained wind exceeds $8\text{ mph}$ or gusts exceed $10\text{ mph}$. |
-| **Tier 1: Normal** | Light Breeze ($8–12\text{ mph}$) | 4× 15-lb bags (2 per wing post: 30 lb/side) | None | **$60\text{ lbs}$** | $213\text{ lbs}$ | **$16.9\text{ mph}$** | $15.2\text{ mph}$ | Standard staging. 2 handlers move cart easily. Zero turf compaction. |
+| **Tier 1: Normal** | Light Breeze ($8–12\text{ mph}$) | 4× 15-lb bags (2 per wing post: 30 lb/side) | None | **$60\text{ lbs}$** | $213\text{ lbs}$ | **$16.9\text{ mph}$** | $15.2\text{ mph}$ | Standard staging. No fewer than 2 handlers per cart (3–4 on steep ramps or in high winds). Zero turf compaction. |
 | **Tier 2: Advisory** | Moderate Breeze / Gusts ($12–18\text{ mph}$) | 6× 15-lb bags (3 per wing post: 45 lb/side) | None | **$90\text{ lbs}$** | $243\text{ lbs}$ | **$18.4\text{ mph}$** | $16.6\text{ mph}$ | Handlers remain attentive. Deploy ground sandbag chocks if breezy. |
 | **Tier 3: High-Wind** | High-Wind Advisory ($18–22\text{ mph}$) | 6× 15-lb bags (3 per wing post: 45 lb/side) | 3× 15-lb bags laid flat along **rear 2x4 rail (A)** | **$135\text{ lbs}$** | $288\text{ lbs}$ | **$22.5\text{ mph}$** | $20.3\text{ mph}$ | Maximum turf-safe ballast. Rear-rail placement balances forward tipping. |
 | **Tier 4: Safety Abort** | Severe Wind / Gale ($> 20\text{ mph}$ sustained / $> 25\text{ mph}$ gusts) | — | — | — | — | **UNSAFE** | **UNSAFE** | **NO-GO / WITHDRAWAL.** Props laid flat or kept off field. |
@@ -138,7 +138,7 @@ To maintain vertical stability against outdoor wind shear while protecting stadi
 - **Rule 8.05 (Turf Protection & Double-Bagging):** All 15-lb sandbags MUST utilize heavy-duty inner liner bags ([Amazon B0BG3F5XVS](https://www.amazon.com/dp/B0BG3F5XVS)). Under no circumstances may single-layer sandbags be brought onto any competition turf. All wood surfaces contacting turf must be smooth/protected.
 - **Rule 8.07 (Wheels):** Heavy-duty turf-compatible non-locking plate casters required. Carts use double-bagged 15-lb sandbags on the ground as wheel chocks when needed on field. Hex nuts used for high-speed drill/driver removal.
 - **Rule 8.08 (Height Limit):** 12-foot rigid height limit strictly observed (prop is ~10.8 ft total).
-- **Rule 8.09 (Falcon Stadium Clearance):** Crossbeam removed during stadium renovations prior to 2025; props clear tunnel at full ~10.8 ft height.
+- **Rule 8.09 (Falcon Stadium Clearance & Tunnel Incline):** Crossbeam removed during renovations prior to 2025; props clear tunnel at full ~10.8 ft height. Steep concrete tunnel entrance ramp requires additional handlers (3–4 students per cart) for deceleration and pushing.
 - **Rule 9.07 (Field Passes):** 25 parent Field Pass wristbands allocation limit. De-ballasting crew must hold valid wristbands.
 
 ---

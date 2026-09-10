@@ -31,7 +31,7 @@
       "process_state": "working_draft",
       "visible_status": "working_draft",
       "file": "Backdrop_Assembly_Guide.docx",
-      "sha256": "06b108f324969b3000ca6823039ad319692131f6264ef64f083f8c2912acfb22",
+      "sha256": "9c03ced4a5ab02aa7797df8038ab7d709d5a3bfb7849dd05d0359d76525febf5",
       "controlled_at": "2026-09-10T14:15:00+00:00"
     },
     "candidate": null
@@ -73,7 +73,7 @@
       "started_at": "2026-09-10T20:09:35+00:00",
       "base_build": "D2",
       "summary": "Add engineered wind relief slit specifications, tiered 15-lb handle sandbag ballast schedule, rear-rail leverage optimization, and high-wind emergency protocol",
-      "sha256": "06b108f324969b3000ca6823039ad319692131f6264ef64f083f8c2912acfb22"
+      "sha256": "9c03ced4a5ab02aa7797df8038ab7d709d5a3bfb7849dd05d0359d76525febf5"
     }
   ]
 }
