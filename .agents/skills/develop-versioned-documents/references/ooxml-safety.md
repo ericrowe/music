@@ -9,6 +9,13 @@ headers, and inline pictures. Use OOXML only for features the semantic layer
 cannot preserve, such as exact relationships, fields, bookmarks, comments,
 cross-references, or a precisely identified image run.
 
+When direct package editing is required, follow [direct-ooxml-patching.md](direct-ooxml-patching.md)
+for surgical string/fragment replacements. **NEVER** re-serialize full XML parts with
+generic DOM serializers like `xml.etree.ElementTree` without strict namespace handling:
+1. Re-serializing `word/_rels/document.xml.rels` with default ElementTree prefixes the root tag (`<pr:Relationships>`), instantly corrupting Word's package loader.
+2. Re-serializing `word/document.xml` strips unreferenced namespace declarations (e.g. `xmlns:w14`, `xmlns:wp14`) required by `mc:Ignorable`.
+3. In table properties (`<w:tblPr>`), child elements must strictly follow ECMA-376 schema order (`w:tblW`, `w:tblInd`, `w:tblBorders`, `w:tblLayout`). Out-of-order tags will cause Word to reject the file.
+
 ## Package invariants
 
 A valid edit preserves agreement among:

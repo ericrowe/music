@@ -38,8 +38,10 @@ whenever version history, status, review publication, or release is involved.
   [references/figure-workflow.md](references/figure-workflow.md).
 - **Integration:** Integrate only an approved source or identified presentation
   derivative. Update its caption, alt text, register, and coupled instructions.
-- **Package repair:** Before direct OOXML work, read
-  [references/ooxml-safety.md](references/ooxml-safety.md).
+- **Package repair & direct patching:** Before direct OOXML work, read
+  [references/ooxml-safety.md](references/ooxml-safety.md) and follow
+  [references/direct-ooxml-patching.md](references/direct-ooxml-patching.md) for surgical
+  fragment substitution without namespace corruption.
 
 ## Non-negotiable controls
 
@@ -75,6 +77,7 @@ For a review build:
 6. Apply [references/quality-gates.md](references/quality-gates.md).
 7. Bind the reports with `transition_status.py`, then run
    `publish_review_build.py`.
+8. Render companion PDF using `render_pdf.py` alongside the `.docx`.
 
 For a public release, start a new `--prepare-release` build, compress the table,
 complete release-candidate QA, then change the final bytes to
@@ -107,6 +110,7 @@ or `.codex/skills/develop-versioned-documents/scripts/`:
   text, stable filename, build/release markers, status, and release-history text.
 - `compare_docx_packages.py`: Report package and extracted-text differences.
 - `record_visual_review.py`: Bind an all-pages render inspection to the DOCX digest.
+- `render_pdf.py`: Render the finished DOCX to PDF using native Microsoft Word (macOS) or headless LibreOffice.
 
 Run a helper with `--help` before first use in an unfamiliar repository.
 

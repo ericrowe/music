@@ -23,12 +23,25 @@ def render_docx_to_pdf(docx_path, output_pdf_path=None):
 
     # 1. Try Microsoft Word via AppleScript on macOS
     if sys.platform == "darwin":
+        # Clear quarantine attributes that might cause sandbox prompts
+        subprocess.run(["xattr", "-d", "com.apple.quarantine", docx_path], capture_output=True)
+        
+        # Remove preexisting target PDF so Word does not prompt to overwrite
+        if os.path.exists(output_pdf_path):
+            try:
+                os.remove(output_pdf_path)
+            except OSError:
+                pass
+
         apple_script = f"""
         tell application "Microsoft Word"
             set wasRunning to running
-            set doc to open file name "{docx_path}"
-            save as doc file name "{output_pdf_path}" file format format PDF
-            close doc saving no
+            set display alerts to alerts none
+            with timeout of 120 seconds
+                set doc to open file name "{docx_path}"
+                save as doc file name "{output_pdf_path}" file format format PDF
+                close doc saving no
+            end timeout
             if not wasRunning then
                 quit
             end if
@@ -38,6 +51,8 @@ def render_docx_to_pdf(docx_path, output_pdf_path=None):
         if proc.returncode == 0 and os.path.exists(output_pdf_path):
             print(f"Successfully rendered PDF via Microsoft Word: {output_pdf_path}")
             return True
+        elif proc.stderr.strip():
+            print(f"Notice: Word AppleScript stderr: {proc.stderr.strip()}", file=sys.stderr)
 
     # 2. Try LibreOffice / soffice CLI
     soffice_cmd = shutil.which("libreoffice") or shutil.which("soffice") or "/Applications/LibreOffice.app/Contents/MacOS/soffice"

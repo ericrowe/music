@@ -51,13 +51,14 @@ Do not silently expand the scope to repair a baseline defect.
 
 ## Author in short verified batches
 
-1. Make one coherent change batch in the stable working file.
-2. Save and render it.
+1. Make one coherent change batch in the stable working file (using semantic tools or direct OOXML patching per [direct-ooxml-patching.md](direct-ooxml-patching.md)).
+2. Generate the PDF render using `render_pdf.py`.
 3. Inspect affected pages and adjacent page flow.
 4. Continue only when the batch is sound.
 
-After the final batch, render and inspect every page. A local edit can change
-distant pagination, fields, or section geometry.
+After the final batch, render the full PDF and inspect every page. A local edit can change
+distant pagination, fields, or section geometry. Every documentation commit must have
+its companion `.pdf` generated alongside the `.docx`.
 
 ## Synchronize coupled information
 
