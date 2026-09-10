@@ -166,6 +166,13 @@ To maintain vertical stability against outdoor wind shear while protecting stadi
   3. Seat the upright frame onto the front cart rail; rapidly tighten the mounting nuts and bolts using a cordless power driver.
   4. Mate the two-piece strut sections, align pin holes, and lock the quick-release retaining pin.
   5. Inspect casters for free 360° swivel action, stage tiered ballast (Tier 0–3) on wing posts (and rear rail if high wind), stage extra ground sandbag wheel chocks, and align backdrops in numerical show drill order.
+- **CBA Field Entrance & Exit Routing (Rule 8.05 & Timing Regulations):**
+  - *Permitted Route:* Props and handlers must enter and exit the performance area strictly via designated **back sideline or rear end zone gates (above the goal posts)**.
+  - *Strictly Prohibited Front Zone:* Props, handlers, and pit crew are strictly prohibited from crossing, staging, or exiting through the **front sideline end zone area below the goal posts** (indicated by a bold red 'X' on Appendix C.1 drill cards). This restriction protects the front ensemble (pit) staging area, field timing lines, and judge sightlines.
+  - *Continuous Uphill Egress:* Per Rule 8.05, props cannot stop or de-ballast at the stadium exit chute or concourse; they maintain continuous rolling motion uphill directly to the equipment trailer staging lot.
+- **Season-Once Card Fabrication Protocol (Appendix C.1):**
+  - Drill cards are generated and printed **once per season** with all static header data (Prop #, Show Segment, Coordinate, Show Side, Handlers) filled in advance, cut to 6" × 4", and laminated.
+  - On competition days, staff and students only use dry/wet-erase markers to sketch field entrance, staging, facing, and exit trajectory arrows into the chart.
 - **On-Prop Field Placard (Appendix C & C.1):** Each backdrop cart carries a laminated one-page quick-reference operations placard attached to the cart framing for field use (Appendix C), containing the wind velocity/ballast schedule, safety rules, teardown steps, and an exact 6.0" × 4.0" card placeholder. A printable 4" × 6" Field Placement Card template with a blank football field diagram is provided in Appendix C.1.
 
 ---

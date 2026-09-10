@@ -1,8 +1,8 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-10T20:54:25+00:00",
+  "generated_at": "2026-09-10T20:57:59+00:00",
   "file": "/Volumes/T9/Sync/Working/Shop/Projects/__Music/PCHSMB/_Backdrop/docs/Backdrop_Assembly_Guide.docx",
-  "file_sha256": "8c7c2a1a23bcf74b8f29f5e3ed1879c8c099f898f6b864666041cceb932008f5",
+  "file_sha256": "ed5af67fc98345b56df4a0745cf3814eb1cfa8845359b3d908c2cbff194cf3d4",
   "expected_build": "D3",
   "expected_release": "v0",
   "expected_status": "working_draft",
@@ -306,7 +306,7 @@
         "part": "word/document.xml",
         "kind": "inline",
         "name": "Figure 10",
-        "alt_text": "Blank regulation high school marching band field diagram for marking backdrop drill coordinates and prop orientation."
+        "alt_text": "Regulation high school marching band field diagram showing goal posts and CBA front sideline end zone restricted area for marking entrance and exit routes."
       }
     ],
     "missing_alt_text": [],
