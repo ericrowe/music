@@ -14,10 +14,10 @@
     "development_build_prefix": "D",
     "release_prefix": "v",
     "visible_status_labels": {
-      "working_draft": "WORKING DRAFT — NOT FOR USE",
-      "manual_review_required": "MANUAL REVIEW REQUIRED — NOT RELEASED",
-      "release_candidate": "RELEASE CANDIDATE — APPROVAL REQUIRED",
-      "released": "RELEASED — APPROVED FOR USE"
+      "working_draft": "WORKING DRAFT \u2014 NOT FOR USE",
+      "manual_review_required": "MANUAL REVIEW REQUIRED \u2014 NOT RELEASED",
+      "release_candidate": "RELEASE CANDIDATE \u2014 APPROVAL REQUIRED",
+      "released": "RELEASED \u2014 APPROVED FOR USE"
     },
     "full_page_review_required": true,
     "changed_figure_zoom_percent": 200,
@@ -26,20 +26,20 @@
   },
   "document": {
     "current": {
-      "build": "D1",
+      "build": "D2",
       "release": "v0",
       "process_state": "working_draft",
       "visible_status": "working_draft",
       "file": "Backdrop_Assembly_Guide.docx",
-      "sha256": "56eab9e3bd7827d2e14f1b6538919386906a2d9fe1942adff91a7e1eb7ee9fa9",
-      "controlled_at": "2026-09-01T23:20:00+00:00"
+      "sha256": "6262fdc7dfc982a174fb63b9fbe3c4ade7dc77fb4cb3532d0c3eb2003931b15e",
+      "controlled_at": "2026-09-10T14:50:00+00:00"
     },
     "candidate": null
   },
   "versioning": {
     "current_release": "v0",
     "next_release": "v1",
-    "next_build_number": 2
+    "next_build_number": 3
   },
   "releases": [],
   "history": [
@@ -51,6 +51,18 @@
       "date": "2026-09-01",
       "sha256": "56eab9e3bd7827d2e14f1b6538919386906a2d9fe1942adff91a7e1eb7ee9fa9",
       "summary": "Master manual with 2026 CBA competition prop rules, Falcon Stadium renovation clearance note, 3/4\" wing ballast retention posts, double-bagged handle sandbags, HDX 14-gal student instrument carrier tote, and estimated fabrication cost breakdown"
+    },
+    {
+      "id": "D2",
+      "kind": "development_build",
+      "release": "v0",
+      "status": "working_draft",
+      "date": "2026-09-10",
+      "started_at": "2026-09-10T14:33:41+00:00",
+      "base_build": "D1",
+      "summary": "Add detailed vinyl installation procedure, specifications table, hardware relief slits, and snap clamp fastening",
+      "sha256": "6262fdc7dfc982a174fb63b9fbe3c4ade7dc77fb4cb3532d0c3eb2003931b15e",
+      "file": "Backdrop_Assembly_Guide.docx"
     }
   ]
 }

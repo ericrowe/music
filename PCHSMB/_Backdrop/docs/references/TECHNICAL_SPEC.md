@@ -49,9 +49,10 @@
 | **15-lb Handle Sandbags**| Abccanopy 15-lb Heavy-Duty Sandbags with Handle | 4–6 | Amazon ([B0DFVVZDVK](https://www.amazon.com/dp/B0DFVVZDVK)); primary ballast on wing posts |
 | **Sandbag Inner Liners**| Heavy-Duty Plastic Sandbag Liner Bags | 4–6 | Amazon ([B0BG3F5XVS](https://www.amazon.com/dp/B0BG3F5XVS)); satisfies mandatory double-bag rule |
 | **70-lb Tube Sand (Reserve)**| Sakrete 70-lb Traction Tube Sand + Contractor Bags | 1–2 | Lowe's ([SKU 5015728687](https://www.lowes.com/pd/Sakrete-0-07-cu-ft-70-lb-Traction-Sand/5015728687)) |
-| **Banner Face** | Custom printed vinyl backdrop banner (10' x 8') | 1 | Attached with carpet tape & 1-5/8" snap clamps |
-| **Vinyl Snap Clamps** | 1-5/8 in. Pipe Snap Clamps / Film Grip Clips | Var. | Amazon ([B0CDZP8YVF](https://www.amazon.com/dp/B0CDZP8YVF)) |
-| **Carpet Tape** | Heavy-duty double-sided indoor/outdoor carpet tape | 1 roll | Used along frame pipes under snap clamps |
+| **Banner Face** | Custom printed outdoor scrim vinyl backdrop banner (dimensions TBD; flush straight cut, no hems/grommets) | 1 | Custom printed |
+| **Greenhouse Snap Clamps** | 1-1/4 in. Greenhouse Snap Clamps (14 pcs per backdrop: 4 per long side, 3 per short side; sized for 1-5/8" fence pipe w/ vinyl) | 14 | Amazon ([B0CDZP8YVF](https://www.amazon.com/dp/B0CDZP8YVF?th=1)) |
+| **Double-Sided Tape** | 1-in. heavy-duty outdoor mounting tape (14x ~4-in. strips; TBD) | 1 roll | Hardware supplier |
+| **Moving Blankets** | Clean protective floor pads for scratch-free vinyl staging | 3–4 | Shop stock |
 
 ---
 
@@ -89,10 +90,14 @@
    - Pre-drill 1/8" pilot holes through the galvanized steel tubing at the jig-guided locations (galvanized steel is too hard for direct self-tapping screws without pilot holes).
    - Drive self-tapping metal screws through end caps into the pre-drilled pilot holes.
    - Secure bottom of struts to wood base with heavy-duty U-bolts.
-5. **Stage 5: Vinyl Banner Installation**
-   - Position and stretch the 10' x 8' vinyl banner over the steel pipe perimeter.
-   - Apply heavy-duty double-sided carpet tape along the pipe-to-vinyl contact areas.
-   - Snap 1-5/8" snap clamps (Amazon B0CDZP8YVF) over the vinyl directly over the taped sections to mechanically lock the banner in place.
+5. **Stage 5: Vinyl Banner Installation Protocol**
+   - **Surface Protection:** Staged face down on clean moving blankets; zero floor grit contact.
+   - **Bleed Centering:** 10' x 8' steel upright frame centered over vinyl with equal bleed reveal on all four sides.
+   - **Hardware Relief Slits:** Small razor slits cut in vinyl bleed wrap allowance at long-edge support strut brackets and two slits on bottom rail for cart-mounting tension bands.
+   - **Perimeter Double-Sided Tape (Optional IPA Prep):** 14x 4-in. strips of 1-in. heavy-duty mounting tape applied to rear of steel pipes (4 per 10-ft vertical upright, with 2 placed immediately above/below the strut bracket; 3 per 8-ft cross rail). Degreasing is optional; weaker bond to tubing is preferred for seasonal tape removal.
+   - **Dual-Axis Tensioning Sequence:** First long upright wrapped; opposing long upright pulled taut across frame and wrapped. Top and bottom rails pulled outward simultaneously by dual operators.
+   - **Mechanical Snap Clamping:** 14x 1-1/4 in. greenhouse snap clamps ([Amazon B0CDZP8YVF](https://www.amazon.com/dp/B0CDZP8YVF?th=1)) snapped directly over vinyl at tape locations. Two clamps on each long upright go immediately above and below the support strut bracket to hold it firmly in place against wind loads.
+   - **Teardown & Seasonal Timing:** NEVER attempt vinyl or tape removal below 80°F (27°C) to prevent tearing. Defer removal to summer band camp of following season; staging in direct sun for a few minutes softens tape adhesive for effortless release.
 
 ---
 
