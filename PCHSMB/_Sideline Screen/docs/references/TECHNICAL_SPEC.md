@@ -23,7 +23,10 @@
 | **H** | 6 | Corner plugs | 3D printed, black ASA | `Corner Plug.FCStd` / `Corner Plug-Part.step` |
 | **I** | 2 | Hinged arm clips | 3D printed, black ASA | `Hinged Arm Clip.FCStd` / `Hinged Arm Clip-Part001.step` |
 | **J** | 36 | Self-drilling screws | #8 x 1/2-in. external-hex flange head | Home Depot (Teks 21308) |
-| **-** | 1 | Face covering | Heavyweight vinyl banner with hem and grommets | Custom printed |
+| **-** | 1 | Face covering | Heavyweight outdoor scrim vinyl banner (dimensions TBD: visual image, bleed wrap, overall cut size; flush straight cut, no hems/grommets) | Custom printed |
+| **-** | 1 roll | Double-sided tape | 1-in. heavy-duty mounting tape (16x ~4-in. strips per screen: 5 per long rail, 3 per short rail; TBD) | Amazon (B07BBL4JXJ) |
+| **-** | 16 | Greenhouse snap clamps | 1-in. pipe clamp clips (sized for 3/4-in. EMT with wrapped vinyl) | Amazon (B0BJJYKZ5L) |
+| **-** | 2-3 | Moving blankets | Clean protective floor pads for scratch-free vinyl staging | Shop stock |
 
 ---
 
@@ -52,6 +55,15 @@
   - The four upper G T-brackets rotate freely around the upper inner A rail.
   - The two rear G T-brackets rotate freely around the C rear cross rail.
   - Never install screws into pivoting interfaces.
+- **Vinyl Installation Protocol:**
+  - **Surface Protection:** Staged face down on clean moving blankets; zero debris contact.
+  - **Bleed Centering:** Frame centered over vinyl with equal bleed margin on all four edges.
+  - **Surface Preparation (Optional):** Conduit degreasing is optional; the tape is aggressive, and a lighter bond to tubing is advantageous for easier seasonal removal.
+  - **Tape Schedule:** 16x 4-in. strips of 1-in. heavy-duty double-sided tape applied to rear of perimeter EMT tubing (5 per long rail, 3 per short rail; quantities provisional TBD).
+  - **Tensioning Sequence:** First long side wrapped to tape; opposing long side pulled taut and wrapped. Opposing short ends pulled outward simultaneously by two operators and wrapped.
+  - **Mechanical Retention:** 16x 1-in. greenhouse snap clamps installed over vinyl directly aligned with each tape strip location (5 per long rail, 3 per short rail). Note: While 3/4-in. trade size EMT is used, its actual OD is ~0.922 in. (nearly 1 in.); wrapped with vinyl and tape, 1-in. greenhouse snap clamps provide a snug, secure mechanical fit. Ensure zero interference with hinges and clips.
+  - **Vinyl Removal Temperature Requirement:** NEVER attempt vinyl or tape removal unless ambient temperature is above 80°F (27°C). Peeling vinyl at lower temperatures causes material tearing and permanent graphic damage.
+  - **Seasonal Teardown Timing & Solar Advantage:** It is usually much easier to leave the vinyl on the frames over the winter and wait until summer band camp of the following season before attempting removal. The warmer outside, the better—leaving the frames in direct sunlight for just a few minutes naturally warms the conduit and softens the adhesive, allowing the tape and vinyl to release cleanly and effortlessly with minimal pull resistance.
 
 ---
 
@@ -82,7 +94,8 @@
 | **3D-Printed Hardware** | 6x Plugs H, 2x Clips I, 2x Weight Clips in Black ASA | $10.00 |
 | **TOTAL PER SCREEN** | | **~$105.00** |
 
-*Optional Rule 8.05 Ballast Pack: 2x 15-lb double-bagged sandbags + suspension hardware: +$18.00 per screen.*
+*Optional Rule 8.05 Ballast Pack: 2x 15-lb double-bagged sandbags + suspension hardware: +$18.00 per screen.*  
+*Optional Vinyl Mounting Pack: 16x 1" greenhouse clamps (Amazon B0BJJYKZ5L) + 1 roll 1" heavy-duty tape (Amazon B07BBL4JXJ): ~$20.00 per screen (custom vinyl banner quoted separately).*
 
 ### B. Sideline Screen Transport Cart (Component 2 Estimate)
 

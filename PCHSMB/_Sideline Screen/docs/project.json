@@ -14,10 +14,10 @@
     "development_build_prefix": "D",
     "release_prefix": "v",
     "visible_status_labels": {
-      "working_draft": "WORKING DRAFT — NOT FOR USE",
-      "manual_review_required": "MANUAL REVIEW REQUIRED — NOT RELEASED",
-      "release_candidate": "RELEASE CANDIDATE — APPROVAL REQUIRED",
-      "released": "RELEASED — APPROVED FOR USE"
+      "working_draft": "WORKING DRAFT \u2014 NOT FOR USE",
+      "manual_review_required": "MANUAL REVIEW REQUIRED \u2014 NOT RELEASED",
+      "release_candidate": "RELEASE CANDIDATE \u2014 APPROVAL REQUIRED",
+      "released": "RELEASED \u2014 APPROVED FOR USE"
     },
     "full_page_review_required": true,
     "changed_figure_zoom_percent": 200,
@@ -26,20 +26,20 @@
   },
   "document": {
     "current": {
-      "build": "D26",
+      "build": "D27",
       "release": "v0",
       "process_state": "working_draft",
       "visible_status": "working_draft",
       "file": "Sideline_Screen_Duck_Blind_Build_Instructions.docx",
-      "sha256": "02170577fc4e48c2ba9f9c46678568abf050ba512de73d3362b3ebbaacc57917",
-      "controlled_at": "2026-09-01T23:31:00+00:00"
+      "sha256": "f715620d3a5c285125d78446e2ee349896b5cfde0d7106ff8241f496a339fc50",
+      "controlled_at": "2026-09-10T04:15:00+00:00"
     },
     "candidate": null
   },
   "versioning": {
     "current_release": "v0",
     "next_release": "v1",
-    "next_build_number": 27
+    "next_build_number": 28
   },
   "releases": [],
   "history": [
@@ -69,6 +69,18 @@
       "date": "2026-09-01",
       "sha256": "02170577fc4e48c2ba9f9c46678568abf050ba512de73d3362b3ebbaacc57917",
       "summary": "Standardized document architecture, 2026 CBA rules, transport cart specifications, and canonical cost breakdown tables"
+    },
+    {
+      "id": "D27",
+      "kind": "development_build",
+      "release": "v0",
+      "status": "working_draft",
+      "date": "2026-09-10",
+      "started_at": "2026-09-10T04:09:37+00:00",
+      "base_build": "D26",
+      "summary": "Add vinyl installation procedure, dimensions specifications, and tape/clip fastening",
+      "sha256": "f715620d3a5c285125d78446e2ee349896b5cfde0d7106ff8241f496a339fc50",
+      "file": "Sideline_Screen_Duck_Blind_Build_Instructions.docx"
     }
   ]
 }
