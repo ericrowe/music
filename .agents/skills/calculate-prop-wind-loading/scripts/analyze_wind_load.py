@@ -229,16 +229,16 @@ def print_table_format(res):
     print("=" * 80)
 
 def print_markdown_format(res):
-    print(f"# Wind Loading & Stability Analysis: {res['prop_title']}
-")
-    print(f"- **Elevation:** {res['elevation_ft']:.0f} ft ASL (Air density $\rho = {res['air_density_lb_cuft']:.4f}\text{{ lb/ft}}^3$)")
-    print(f"- **Frontal Sail Area:** {res['frontal_area_sqft']:.1f} sq ft (Center of pressure $h_{{cp}} = {res['center_of_pressure_ft']:.2f}\text{{ ft}}$)")
+    print(f"# Wind Loading & Stability Analysis: {res['prop_title']}")
+    print()
+    print(f"- **Elevation:** {res['elevation_ft']:.0f} ft ASL (Air density rho = {res['air_density_lb_cuft']:.4f} lb/ft^3)")
+    print(f"- **Frontal Sail Area:** {res['frontal_area_sqft']:.1f} sq ft (Center of pressure h_cp = {res['center_of_pressure_ft']:.2f} ft)")
     print(f"- **Surface Treatment:** {res['surface_treatment']}")
     print(f"- **Total Weight on Turf:** {res['total_weight_lb']:.1f} lbs (Dry: {res['dry_weight_lb']:.1f} lbs + Ballast: {res['ballast_wings_lb'] + res['ballast_rear_lb']:.1f} lbs)")
     print(f"- **Critical Forward Tipping Speed (Rear Wind):** **{res['critical_tipping_forward_mph']:.1f} mph**")
     print(f"- **Critical Backward Tipping Speed (Front Wind):** **{res['critical_tipping_backward_mph']:.1f} mph**")
-    print(f"- **Critical Turf Sliding Speed:** **{res['critical_sliding_turf_mph']:.1f} mph**
-")
+    print(f"- **Critical Turf Sliding Speed:** **{res['critical_sliding_turf_mph']:.1f} mph**")
+    print()
     print("| Wind Speed | Drag Force | Overturning Moment | FoS (Forward Tip) | FoS (Backward Tip) | FoS (Turf Slide) |")
     print("|:---:|:---:|:---:|:---:|:---:|:---:|")
     for r in res['wind_table']:
