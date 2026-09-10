@@ -28,7 +28,7 @@
 | **Ballast Flanges** | 3/4" Black Iron Floor Flanges | 3/4" female threaded flange | 2 | Centered on left & right plywood wings; bolted with 1/4-20 carriage bolts |
 | **Ballast Posts** | 3/4" x 18" Threaded Iron Pipe | 3/4" OD x 18 in. pipe nipples | 2 | Screws into floor flanges; retains sandbag handles |
 | **Flange Fasteners** | 1/4-20 x 1-1/2" Carriage Bolts | Grade 5 with washers & nyloc nuts | 8 | Through-bolts flanges to 1/2" plywood decking |
-| **Casters** | Heavy-Duty Swivel Casters | 4x plate casters with brakes | 4 | Amazon ([B0CPXFJCJL](https://www.amazon.com/dp/B0CPXFJCJL)); Note: Standard hex nuts are used in production instead of wing nuts for high-speed drill/driver removal |
+| **Casters** | Heavy-Duty Swivel Casters | 4x non-locking swivel plate casters | 4 | Amazon ([B0CPXFJCJL](https://www.amazon.com/dp/B0CPXFJCJL)); Note: Non-locking casters used for rapid agility; extra 15-lb sandbags deployed on ground as wheel chocks when needed |
 | **Corner Braces** | Corner Bumper Braces | 3D printed, Black ASA / PETG | 4 | Protects corners from scuffing (`Bases/Corner Brace.FCStd`) |
 | **Screws (Red)** | GRK #9 x 2-1/2" Star-Drive R4 Multi-Purpose Wood Screws | T-25 Star drive, bugle head | ~40 | Home Depot ([SKU 203533402](https://www.homedepot.com/p/GRK-Fasteners-9-x-2-1-2-in-Star-Drive-Torx-Bugle-Head-R4-Multi-Purpose-Wood-Screw-300-Pack-100101/203533402)) |
 | **Screws (Blue)** | GRK #10 x 4" Star-Drive R4 Self-Countersinking Structural Screws | T-25 Star drive, flat head | 12 | Home Depot ([SKU 203525231](https://www.homedepot.com/p/GRK-Fasteners-10-x-4-in-R4-Self-Countersinking-Flat-Head-Multi-Purpose-Screw-50-per-Pack-103141/203525231)) |
@@ -133,7 +133,7 @@ To maintain vertical stability against outdoor wind shear while protecting stadi
 
 ### D. 2026 CBA Rules Compliance
 - **Rule 8.05 (Turf Protection & Double-Bagging):** All 15-lb sandbags MUST utilize heavy-duty inner liner bags ([Amazon B0BG3F5XVS](https://www.amazon.com/dp/B0BG3F5XVS)). Under no circumstances may single-layer sandbags be brought onto any competition turf. All wood surfaces contacting turf must be smooth/protected.
-- **Rule 8.07 (Wheels):** Heavy-duty turf-compatible plate casters required. Hex nuts used for high-speed drill/driver removal.
+- **Rule 8.07 (Wheels):** Heavy-duty turf-compatible non-locking plate casters required. Carts use double-bagged 15-lb sandbags on the ground as wheel chocks when needed on field. Hex nuts used for high-speed drill/driver removal.
 - **Rule 8.08 (Height Limit):** 12-foot rigid height limit strictly observed (prop is ~10.8 ft total).
 - **Rule 8.09 (Falcon Stadium Clearance):** Crossbeam removed during stadium renovations prior to 2025; props clear tunnel at full ~10.8 ft height.
 - **Rule 9.07 (Field Passes):** 25 parent Field Pass wristbands allocation limit. De-ballasting crew must hold valid wristbands.
@@ -147,7 +147,7 @@ To maintain vertical stability against outdoor wind shear while protecting stadi
 | Component Group | Items Included | Estimated Cost |
 |---|---|:---:|
 | **Rolling Cart Base Framing** | 8x 2x4 SPF lumber, 1/2 sheet 1/2" plywood, GRK #9/#10 screws, caster fasteners, black paint | $98.00 |
-| **Casters & Bumpers** | 4x Heavy-duty swivel plate casters with brakes, 4x 3D-printed ASA corner bumpers | $51.00 |
+| **Casters & Bumpers** | 4x Heavy-duty swivel plate casters (non-locking), 4x 3D-printed ASA corner bumpers | $51.00 |
 | **Ballast Retention Posts & Tote** | 2x 3/4" floor flanges, 2x 3/4" x 18" black iron pipes, carriage bolts, 1x HDX 14-gal tough tote | $46.00 |
 | **Upright Steel Frame** | 2x 10-ft 16-ga fence posts, 2x 8-ft top rails, 4x 3-way clamp brackets, 2x base tension bands | $121.00 |
 | **Diagonal Struts & Mounts** | 1x 10-ft top rail (strut tube), 4x end caps, 2x upper tension bands, 2x heavy-duty U-bolts | $49.50 |

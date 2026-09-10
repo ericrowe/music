@@ -220,7 +220,7 @@ def print_table_format(res):
     print("CRITICAL STABILITY THRESHOLDS:")
     print(f"  * FORWARD TIPPING (Wind from Rear) [CRITICAL]:  {res['critical_tipping_forward_mph']:.1f} mph (M_rest = {res['restoring_moment_fwd_ft_lb']} ft-lb)")
     print(f"  * BACKWARD TIPPING (Wind from Front):          {res['critical_tipping_backward_mph']:.1f} mph (M_rest = {res['restoring_moment_bwd_ft_lb']} ft-lb)")
-    print(f"  * SLIDING ON ARTIFICIAL TURF (Locked Casters): {res['critical_sliding_turf_mph']:.1f} mph")
+    print(f"  * SLIDING / DRIFT ON ARTIFICIAL TURF (With Ground Sandbag Chocks): {res['critical_sliding_turf_mph']:.1f} mph")
     print("-" * 80)
     print(f"{'Wind Speed':<12} | {'Force':<10} | {'Moment':<14} | {'FoS (Tip Fwd)':<14} | {'FoS (Tip Bwd)':<14} | {'FoS (Slide)':<12}")
     print("-" * 80)
