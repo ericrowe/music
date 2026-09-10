@@ -26,20 +26,20 @@
   },
   "document": {
     "current": {
-      "build": "D2",
+      "build": "D3",
       "release": "v0",
       "process_state": "working_draft",
       "visible_status": "working_draft",
       "file": "Backdrop_Assembly_Guide.docx",
-      "sha256": "6262fdc7dfc982a174fb63b9fbe3c4ade7dc77fb4cb3532d0c3eb2003931b15e",
-      "controlled_at": "2026-09-10T14:50:00+00:00"
+      "sha256": "73813d1ea34a522e229898eb671d745b4e0f3391aa86fcf85b457844cc3989db",
+      "controlled_at": "2026-09-10T14:15:00+00:00"
     },
     "candidate": null
   },
   "versioning": {
     "current_release": "v0",
     "next_release": "v1",
-    "next_build_number": 3
+    "next_build_number": 4
   },
   "releases": [],
   "history": [
@@ -63,6 +63,16 @@
       "summary": "Add detailed vinyl installation procedure, specifications table, hardware relief slits, and snap clamp fastening",
       "sha256": "6262fdc7dfc982a174fb63b9fbe3c4ade7dc77fb4cb3532d0c3eb2003931b15e",
       "file": "Backdrop_Assembly_Guide.docx"
+    },
+    {
+      "id": "D3",
+      "kind": "development_build",
+      "release": "v0",
+      "status": "working_draft",
+      "date": "2026-09-10",
+      "started_at": "2026-09-10T20:09:35+00:00",
+      "base_build": "D2",
+      "summary": "Add engineered wind relief slit specifications, tiered 15-lb handle sandbag ballast schedule, rear-rail leverage optimization, and high-wind emergency protocol"
     }
   ]
 }
