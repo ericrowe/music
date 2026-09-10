@@ -173,8 +173,9 @@ def evaluate_prop(args):
     # Standard Tiered Schedule generator
     if args.preset == "backdrop":
         tiers = [
-            {"tier": "Tier 1: Normal", "range": "0–12 mph", "wing_ballast": 60, "rear_ballast": 0, "total_ballast": 60, "v_tip_fwd": 16.9 if args.slits else 15.6, "action": "Standard deployment (4x 15-lb bags on wings)"},
-            {"tier": "Tier 2: Advisory", "range": "12–18 mph", "wing_ballast": 90, "rear_ballast": 0, "total_ballast": 90, "v_tip_fwd": 18.4 if args.slits else 17.0, "action": "Attentive staging (6x 15-lb bags on wings)"},
+            {"tier": "Tier 0: Calm", "range": "0–8 mph (gusts ≤10 mph)", "wing_ballast": 0, "rear_ballast": 0, "total_ballast": 0, "v_tip_fwd": 14.4 if args.slits else 13.3, "action": "Calm day deployment (0 bags). FoS ≥ 2.07. Upgrade to Tier 1 if wind >8 mph."},
+            {"tier": "Tier 1: Normal", "range": "8–12 mph", "wing_ballast": 60, "rear_ballast": 0, "total_ballast": 60, "v_tip_fwd": 16.9 if args.slits else 15.6, "action": "Standard deployment (4x 15-lb bags on wings)"},
+            {"tier": "Tier 2: Advisory", "range": "12–18 mph", "wing_ballast": 90, "rear_ballast": 0, "total_ballast": 90, "v_tip_fwd": 18.4 if args.slits else 17.0, "action": "Attentive staging (6x 15-lb bags on wings; deploy ground chocks if breezy)"},
             {"tier": "Tier 3: High-Wind", "range": "18–22 mph", "wing_ballast": 90, "rear_ballast": 45, "total_ballast": 135, "v_tip_fwd": 22.5 if args.slits else 20.8, "action": "High-wind reserve (6 on wings + 3 across rear rail)"},
             {"tier": "Tier 4: Safety Abort", "range": ">20 sustained / >25 gusts", "wing_ballast": 0, "rear_ballast": 0, "total_ballast": 0, "v_tip_fwd": 0.0, "action": "STRICT NO-GO / WITHDRAWAL. Lay props flat."}
         ]
@@ -227,6 +228,15 @@ def print_table_format(res):
     for row in res['wind_table']:
         print(f"{row['speed_mph']:>4.0f} mph     | {row['force_lb']:>6.1f} lb  | {row['moment_ft_lb']:>7.0f} ft-lb   | {row['fos_tip_forward']:>8.2f}       | {row['fos_tip_backward']:>8.2f}       | {row['fos_sliding']:>7.2f}")
     print("=" * 80)
+    if res.get('tiered_schedule'):
+        print()
+        print("STANDARDIZED TIERED BALLASTING SCHEDULE:")
+        print("-" * 80)
+        print(f"{'Tier':<20} | {'Wind Range':<24} | {'Ballast':<10} | {'Tip Limit':<10} | {'Action / Staging Protocol'}")
+        print("-" * 80)
+        for t in res['tiered_schedule']:
+            print(f"{t['tier']:<20} | {t['range']:<24} | {t['total_ballast']:>3.0f} lbs   | {t['v_tip_fwd']:>5.1f} mph | {t['action']}")
+        print("=" * 80)
 
 def print_markdown_format(res):
     print(f"# Wind Loading & Stability Analysis: {res['prop_title']}")
@@ -243,6 +253,14 @@ def print_markdown_format(res):
     print("|:---:|:---:|:---:|:---:|:---:|:---:|")
     for r in res['wind_table']:
         print(f"| {r['speed_mph']:.0f} mph | {r['force_lb']:.1f} lbs | {r['moment_ft_lb']:.0f} ft-lbs | {r['fos_tip_forward']:.2f} | {r['fos_tip_backward']:.2f} | {r['fos_sliding']:.2f} |")
+    if res.get('tiered_schedule'):
+        print()
+        print("### Standardized Tiered Ballasting Schedule")
+        print()
+        print("| Tier | Wind Range | Ballast | Max Gust / Tipping Limit | Staging Action |")
+        print("|:---|:---|:---:|:---:|:---|")
+        for t in res['tiered_schedule']:
+            print(f"| **{t['tier']}** | {t['range']} | {t['total_ballast']:.0f} lbs | {t['v_tip_fwd']:.1f} mph | {t['action']} |")
 
 def main():
     parser = argparse.ArgumentParser(description="Calculate marching band prop wind loading, overturning stability, and ballasting.")

@@ -26,7 +26,8 @@ Activate this skill when:
 ## Core Engineering Concepts
 
 1. **Velocity Pressure ($q$):**  
-   Governed by Bernoulli's equation $q = rac{1}{2} ho V^2$. At high altitude ($6,500\text{ ft}$ ASL), air density is $\approx 0.0620\text{ lb/ft}^3$ ($\sim 23\%$ less dense than sea level at $0.0765\text{ lb/ft}^3$). A prop experiences $23\%$ higher lateral load at sea level for the identical wind speed.
+   Governed by Bernoulli's equation $q = rac{1}{2} 
+ho V^2$. At high altitude ($6,500\text{ ft}$ ASL), air density is $\approx 0.0620\text{ lb/ft}^3$ ($\sim 23\%$ less dense than sea level at $0.0765\text{ lb/ft}^3$). A prop experiences $23\%$ higher lateral load at sea level for the identical wind speed.
 2. **Critical Tipping Asymmetry on Rolling Carts:**  
    When vertical upright frames are mounted at the front perimeter rail of a cart, the critical failure mode is **tipping forward over the front casters under rear wind**. Upright deadweight provides zero restoring moment to the front wheels, whereas front wind has the entire cart depth as restoring leverage.
 3. **Rear-Rail Ballast Leverage:**  
@@ -69,7 +70,8 @@ python3 .agents/skills/calculate-prop-wind-loading/scripts/analyze_wind_load.py 
 2. **Execute Wind Load Analysis:**  
    Run `analyze_wind_load.py` for both the local elevation ($6,500\text{ ft}$) and sea level. Note the unballasted forward tipping wind speed and sliding threshold.
 3. **Establish Tiered Ballast Schedule:**  
-   - Tier 1 (Normal 0–12 mph): Baseline wing post ballast.
+   - Tier 0 (Calm 0–8 mph, gusts ≤10 mph): Zero-ballast calm day deployment (FoS ≥ 2.07 fwd). Upgrade to Tier 1 if wind >8 mph.
+   - Tier 1 (Normal 8–12 mph): Baseline wing post ballast.
    - Tier 2 (Advisory 12–18 mph): Moderate wing post ballast.
    - Tier 3 (High-Wind 18–22 mph): Maximize wing ballast + rear rail ballast to reach ~135–140 lbs total.
    - Tier 4 (Safety Abort >20 sustained / >25 gusts): Strict field NO-GO.

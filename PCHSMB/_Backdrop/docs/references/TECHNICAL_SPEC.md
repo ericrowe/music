@@ -117,7 +117,8 @@ To maintain vertical stability against outdoor wind shear while protecting stadi
 
 | Tier | Wind Conditions | Wing Retention Posts (Left & Right) | Supplemental Rear Frame Ballast | Total Ballast | Prop Weight | Max Gust Resistance (6,500 ft ASL) | Max Gust Resistance (Sea Level) | Operational Action |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|---|
-| **Tier 1: Normal** | Calm to Light Breeze ($0–12\text{ mph}$) | 4× 15-lb bags (2 per wing post: 30 lb/side) | None | **$60\text{ lbs}$** | $213\text{ lbs}$ | **$16.9\text{ mph}$** | $15.2\text{ mph}$ | Standard staging. 2 handlers move cart easily. Zero turf compaction. |
+| **Tier 0: Calm** | Calm / Light Air ($0–8\text{ mph}$, gusts $\le 10\text{ mph}$) | 0 bags (unballasted) | None | **$0\text{ lbs}$** | $153\text{ lbs}$ | **$10.0\text{ mph}$** (limit $14.4\text{ mph}$) | **$9.0\text{ mph}$** (limit $12.8\text{ mph}$) | Calm day deployment. FoS $\ge 2.07$ fwd. Mandatory upgrade to Tier 1 if sustained wind exceeds $8\text{ mph}$ or gusts exceed $10\text{ mph}$. |
+| **Tier 1: Normal** | Light Breeze ($8–12\text{ mph}$) | 4× 15-lb bags (2 per wing post: 30 lb/side) | None | **$60\text{ lbs}$** | $213\text{ lbs}$ | **$16.9\text{ mph}$** | $15.2\text{ mph}$ | Standard staging. 2 handlers move cart easily. Zero turf compaction. |
 | **Tier 2: Advisory** | Moderate Breeze / Gusts ($12–18\text{ mph}$) | 6× 15-lb bags (3 per wing post: 45 lb/side) | None | **$90\text{ lbs}$** | $243\text{ lbs}$ | **$18.4\text{ mph}$** | $16.6\text{ mph}$ | Handlers remain attentive. Verify all four caster locks engaged on field. |
 | **Tier 3: High-Wind** | High-Wind Advisory ($18–22\text{ mph}$) | 6× 15-lb bags (3 per wing post: 45 lb/side) | 3× 15-lb bags laid flat along **rear 2x4 rail (A)** | **$135\text{ lbs}$** | $288\text{ lbs}$ | **$22.5\text{ mph}$** | $20.3\text{ mph}$ | Maximum turf-safe ballast. Rear-rail placement balances forward tipping. |
 | **Tier 4: Safety Abort** | Severe Wind / Gale ($> 20\text{ mph}$ sustained / $> 25\text{ mph}$ gusts) | — | — | — | — | **UNSAFE** | **UNSAFE** | **NO-GO / WITHDRAWAL.** Props laid flat or kept off field. |
@@ -154,7 +155,7 @@ To maintain vertical stability against outdoor wind shear while protecting stadi
 | **Vinyl Attachment Hardware** | 1-5/8" pipe snap clamps pack, double-sided heavy-duty carpet tape, pilot hardware | $25.00 |
 | **TOTAL ESTIMATED COST (PER BACKDROP PROP)** | | **~$390.00** |
 
-*Optional Rule 8.05 Ballast Pack: 4–9 Abccanopy 15-lb handle sandbags + inner liners + traction sand: +$37.00 to $55.00 per cart (scaled to the Tiered Ballasting Schedule in Section 5).* 
+*Optional Rule 8.05 Ballast Pack: 4–9 Abccanopy 15-lb handle sandbags + inner liners + traction sand: +$37.00 to $55.00 per cart (scaled to the Tiered Ballasting Schedule in Section 5). Note: 0 sandbags deployed during Tier 0 calm conditions (≤8 mph).* 
 
 ---
 
