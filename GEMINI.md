@@ -6,6 +6,7 @@ This repository is configured with a unified multi-agent system. All authoritati
 
 - **Primary Instruction File:** [AGENTS.md](AGENTS.md)
 - **Controlled Documents Skill:** `$develop-versioned-documents` located in `.agents/skills/develop-versioned-documents/`
+- **Wind Loading & Stability Skill:** `$calculate-prop-wind-loading` located in `.agents/skills/calculate-prop-wind-loading/`
 - **Helper Scripts:** `.agents/skills/develop-versioned-documents/scripts/` (and `.codex/skills/develop-versioned-documents/scripts/`)
 - **Key Invariants:**
   - Stable filename only; no version tokens in filename (e.g., `Sideline_Screen_Duck_Blind_Build_Instructions.docx`).
