@@ -307,8 +307,12 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
 #job-card(
   role: "Job A.1: Adult Duck Blind Cart Pusher",
   personnel: "2 Adult Volunteers (1 per Cart: Side 1 or Side 2)",
-  tag: "Front Sideline Carts"
 )[
+  #text(size: 8.5pt, style: "italic", fill: rgb("#2b6cb0"))[
+    You will be in charge of one of two carts for transporting the duck blinds to and from the field. You will be in charge of ensuring it is loaded properly with 8 duck blinds and the correct amount of ballast, ensuring that it gets to the field on time, and removing the ballast from the field after the show. You will have student helpers to assist on field.
+  ]
+
+  #v(2pt)
   #grid(
     columns: (1.15fr, 1.4fr),
     gutter: 6pt,
@@ -381,7 +385,7 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
   + *Post-Show Ballast Sweep:* Once the show is completed, re-enter the front sideline at the far screen and move along the line of ballast bags you previously deposited. Scoop ballast bags placed on the turf by students directly into the cart hopper as you advance without doubling back. A student will be assigned to assist you in getting this done timely.
   + *Exit Chute Cart Loading:* We will be pausing at the exit chute with the carts to load the blinds. *DO NOT STOP FOR ANY LONGER THAN NECESSARY TO QUICKLY LOAD THE BLINDS.*
   + *Return to Staging Area or Truck:* Return the carts to the staging area (between Prelims and Finals), or directly to the trailer/truck if after Finals.
-  + *Final Performance Teardown & Loading:* At the end of the final performance, tear down all equipment, stow sandbags in totes, and assist with loading the truck and trailer.
+  + *Final Performance Teardown & Loading:* At the end of the final performance, tear down all equipment and assist with loading the truck and trailer.
 ]
 
 #pagebreak()
