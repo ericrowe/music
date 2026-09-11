@@ -28,7 +28,7 @@
   - **Zero Doubling Back:** Neither pusher ever walks a single wasted foot backward with a loaded cart!
 * **2 Cart Unloaders (Students):** 1 student jogging alongside each cart. As the cart rolls along the sideline, pulls each 2"-thick folded blind from the rack and drops it flat on the turf at each yard mark. **Does NOT set them up.**
 * **16 Pre-Show Screen Setters (Students):** 1 student assigned per blind (8 per side), chosen specifically because their **opening drill set (Dot 1) is right next to that blind** on the front sideline. On entry, waits at the mark; as soon as the blind drops, lifts it, unfolds the triangular frame, and latches the internal brace clips (~6s).
-* **16 Post-Show Egress Performers (Students):** 1 student assigned per blind (8 per side), chosen specifically because their **final closing drill set finishes nearest that blind** on the front sideline. *(Note: Because drill staging moves across the field, these are typically a completely different set of 16 students than the pre-show setters, eliminating cross-field transit lag!)* At the final cutoff chord, each unclips, folds the 26-lb frame flat (~6s), and hand-carries it directly down the sideline corridor into the exit chute / tunnel.
+* **16 Post-Show Egress Performers (Students):** 1 student assigned per blind (8 per side), chosen specifically because their **final closing drill set finishes nearest that blind** on the front sideline. *(Note: Because drill staging moves across the field, these are typically a completely different set of 16 students than the pre-show setters, eliminating cross-field transit lag!)* At the final cutoff chord, each unclips, folds the 26-lb frame flat (~6s), removes the ballast sandbag and leaves it in place resting on the turf (careful not to drop or throw it), and hand-carries the frame directly down the sideline corridor into the exit chute / tunnel.
 
 ---
 
@@ -51,7 +51,7 @@
 
 #### Post-Show Egress Walkthrough (Expected: 1 min 40 sec | Official Clock Stops at Tunnel)
 1. **Final Chord ($T = 0:00$):** The 16 designated egress performers (whose closing drill set finishes adjacent to each screen) simultaneously unclip internal braces and fold each 3-panel frame flat to its 2" nested profile (~6s).
-2. **The Hand-Carry Sprint:** Each student picks up their 26-lb folded frame and jogs straight down the front sideline corridor directly into the stadium exit chute / tunnel ($35\text{--}50\text{s}$).
+2. **Ballast Removal & Hand-Carry Sprint:** Students remove the ballast sandbags from the frame base and leave them in place resting on the turf—being careful **not to throw or drop them** (protecting bag seams and synthetic turf). Each student then picks up their 26-lb folded frame and jogs straight down the front sideline corridor directly into the stadium exit chute / tunnel ($35\text{--}50\text{s}$).
 3. **The Zero-Doubling-Back Ballast Sweep:** Both parent pushers step directly onto the sideline from their park spots and sweep ballast bags **straight toward the exit**:
    - **Exit-Side Cart:** Starts at 42-yd line and sweeps **outward (42 $\to$ 22)** toward the exit gate. The 8th bag is loaded at the 22-yard line, and the cart rolls straight off into the tunnel chute!
    - **Far-Side Cart:** Starts at 22-yd line and sweeps **inward (22 $\to$ 42)** toward midfield. The 8th bag is loaded at the 42-yard line, and the cart rolls straight across midfield directly into the tunnel chute!
