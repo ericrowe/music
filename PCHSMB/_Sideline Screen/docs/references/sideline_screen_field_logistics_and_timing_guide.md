@@ -119,11 +119,11 @@ Under CBA Rule 5.06, total field time runs from permission to enter until the la
 
 #### Recommended: 2-Cart Dedicated Fleet (Parallel Half-Field Deployment)
 ```mermaid
-flowchart TD
-    TC1["<b>Carts 1 & 2 Dedicated Fleet (8 Screens / Cart)</b><br/>Tare: 130 lbs + Screens: 208 lbs + Ballast: 120 lbs = <b>458 lbs Gross</b>"]
-    TC2["<b>Parallel Half-Field Ingress & Drop</b><br/>Both carts roll simultaneously (55 yd ingress + 18.7 yd drop line)"]
-    TC3["<b>Sustained Pusher Velocity: 0.97 – 1.15 yd/s</b><br/>Manageable payload preserves parent pusher energy throughout push"]
-    TC4["<b>Deployment Time: 133.9s (2:14)</b><br/>★ 100.0% Success Rate (+61s Slack Banked for Egress) ★"]
+flowchart LR
+    TC1["<b>2-Cart Fleet</b><br/>8 Screens / Cart<br/><b>458 lbs Gross</b>"]
+    TC2["<b>Parallel Ingress</b><br/>Dual 55-yd push<br/>+ 18.7-yd drop"]
+    TC3["<b>Sustained Pace</b><br/>0.97 – 1.15 yd/s<br/>No pusher fatigue"]
+    TC4["<b>Time: 133.9s (2:14)</b><br/>★ 100.0% Success ★<br/>+61s Banked Slack"]
     TC1 --> TC2 --> TC3 --> TC4
 
     classDef win fill:#1b4332,stroke:#40916c,stroke-width:2px,color:#fff;
@@ -132,11 +132,11 @@ flowchart TD
 
 #### Failure Mode: 1-Cart Fleet (Sequential Full-Field Exhaustion)
 ```mermaid
-flowchart TD
-    OC1["<b>Single Cart Serving Entire Fleet (16 Screens Total)</b><br/>Tare: 130 lbs + Screens: 416 lbs + Ballast: 240 lbs = <b>786 lbs Gross</b>"]
-    OC2["<b>Sequential Full-Field Ingress & Drop</b><br/>Single pusher must push 786 lbs across entire 100-yard field"]
-    OC3["<b>Velocity Collapses to 0.63 yd/s (1.3 mph)</b><br/>Severe muscle fatigue due to high synthetic turf rolling resistance"]
-    OC4["<b>Deployment Time: 234.5s (3:55)</b><br/>✖ 0.2% Success Rate (Violates 3:15 Cap by 40s; 99.8% Penalty Risk) ✖"]
+flowchart LR
+    OC1["<b>1-Cart Fleet</b><br/>All 16 Screens<br/><b>786 lbs Gross</b>"]
+    OC2["<b>Sequential Ingress</b><br/>Single 100-yd push<br/>across entire field"]
+    OC3["<b>Severe Fatigue</b><br/>Pace: 0.63 yd/s (1.3 mph)<br/>Extreme turf drag"]
+    OC4["<b>Time: 234.5s (3:55)</b><br/>✖ 0.2% Success ✖<br/>+40s Over 3:15 Cap"]
     OC1 --> OC2 --> OC3 --> OC4
 
     classDef fail fill:#5c1d1d,stroke:#b03a2e,stroke-width:2px,color:#fff;
