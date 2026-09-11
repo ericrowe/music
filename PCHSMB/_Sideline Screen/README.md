@@ -30,7 +30,7 @@ The manual covers:
 
 To transport the complete competition fleet of **16 folded sideline screens (8 per side)** efficiently between the equipment trailer and the stadium field, two dedicated rolling transport carts are built (Cart 1 for Side 1, Cart 2 for Side 2):
 - **Shared Chassis:** Uses the standardized 96 in. x 44.5 in. 2x4 lumber base framing, 1/2" plywood decking, and heavy-duty swivel casters from the [PCHSMB Backdrop System](../_Backdrop/).
-- **Capacity (8 Screens per Cart):** The 44.5-in. cart bed width comfortably accommodates 8 folded screens (approx. 4.5 in. folded thickness per screen) with clearance for guide rails and staged ballast bags.
+- **Internal Nesting & Cart Capacity (8 Screens per Cart):** Because the screen framing nests completely coplanar when folded, each folded screen is **no more than 2.0 inches thick** (the thickest part of the folded assembly is the 3D-printed hinged arm clip). Eight folded screens take only **16.0 inches** of the 44.5-in. cart deck width, leaving over 28 inches of deck space for ballast sandbag staging, guide rails, and auxiliary prop storage.
 - **Side Guide Rails:** Vertical guide rails installed along the left and right sides contain folded screens upright.
 - **Front & Rear Latching Gates:** Retaining gates secured with 3D-printed latches ([`Cart Gate Latch.FCStd`](Cart%20Gate%20Latch.FCStd)) keep screens contained during transit and open for rapid sideline unloading and loading.
 - **Sideline Stowage:** During field performance, the empty transport carts are rolled across the front sideline and parked outside the performance area.

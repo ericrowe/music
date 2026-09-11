@@ -6,10 +6,11 @@
 - **Application:** Pine Creek High School Marching Band (PCHSMB) field prop
 - **Primary Function:** Conceals color guard equipment and provides private area for costume/equipment changes during field show performances.
 - **Form Factor:** Nominal 4 ft x 8 ft face; folding frame that folds flat for transport/storage and unfolds to self-supporting triangular geometry for field deployment.
+- **Folded Envelope & Internal Nesting:** Engineered with complete internal nesting where the rear frame arms (D), rear cross rail (C), and bottom support arms (E) collapse coplanar inside the perimeter framing. Maximum folded thickness is **no more than 2.0 inches** (governed by the 3D-printed hinged arm clip (I) profile; conduit OD is 0.922 in.).
 - **Fleet Production Quantity:** **16 screens total** deployed on the performance field:
   - **Side 1 (Left):** 8 screens positioned along the front sideline flanking the front ensemble.
   - **Side 2 (Right):** 8 screens positioned along the front sideline flanking the front ensemble.
-  - **Transport Logistics:** 2 dedicated transport carts (Component 2), each carrying 8 folded screens (44.5-in. cart width accommodates 8 folded frames at ~4.5-in. thickness).
+  - **Transport Logistics:** 2 dedicated transport carts (Component 2), each carrying 8 folded screens. Because each screen is $\le 2.0\text{ in.}$ thick, 8 screens consume only **16.0 inches** of the 44.5-inch cart bed width, leaving 28.5 inches of deck space for ballast sandbag staging, guide rails, and auxiliary prop storage.
 
 ---
 

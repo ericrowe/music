@@ -31,8 +31,8 @@
       "process_state": "working_draft",
       "visible_status": "working_draft",
       "file": "Sideline_Screen_Duck_Blind_Build_Instructions.docx",
-      "sha256": "b229386753d2b5c92d33928fe3986261a68d17c7da556b902c9d3cf7bd12dbb5",
-      "controlled_at": "2026-09-10T23:15:00+00:00"
+      "sha256": "ce95b21cbf199f8ba899481c8e927bbc520eb1697c4dbc6adae3922e13d3056c",
+      "controlled_at": "2026-09-11T00:16:00+00:00"
     },
     "candidate": null
   },
@@ -87,13 +87,13 @@
       "kind": "development_build",
       "release": "v0",
       "status": "working_draft",
-      "date": "2026-09-10",
+      "date": "2026-09-11",
       "started_at": "2026-09-10T21:58:33+00:00",
       "base_build": "D27",
-      "summary": "Add aerodynamic wind loading analysis, tiered ballasting schedule, rear-rail leverage optimization, on-prop field placard, 4x6 coordinate card template, and parent volunteer guide",
-      "sha256": "b229386753d2b5c92d33928fe3986261a68d17c7da556b902c9d3cf7bd12dbb5",
+      "summary": "Add aerodynamic wind loading analysis, tiered ballasting schedule, rear-rail leverage optimization, on-prop field placard, 4x6 coordinate card template, parent volunteer guide, 16-screen fleet (8 per side), <=2.0 inch coplanar internal nesting thickness, and 3-person pincer deployment protocol",
+      "sha256": "ce95b21cbf199f8ba899481c8e927bbc520eb1697c4dbc6adae3922e13d3056c",
       "file": "Sideline_Screen_Duck_Blind_Build_Instructions.docx",
-      "pdf_sha256": "a25191b7b1cfd98f8777a3471c077ad74c4802cd9c391fc1a840cccd5d273ec9",
+      "pdf_sha256": "ab4e75fabf094421e0357190afc04ae00ad00a04370d1bef31cce5ed282ab619",
       "page_count": 36
     }
   ]
