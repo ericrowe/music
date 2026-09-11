@@ -7,7 +7,7 @@
 // Document typography and page geometry
 #set page(
   paper: "us-letter",
-  margin: (x: 0.7in, top: 0.85in, bottom: 0.85in),
+  margin: (x: 0.68in, top: 0.72in, bottom: 0.72in),
   header: context {
     if counter(page).get().first() == 1 { return none }
     [
@@ -47,20 +47,20 @@
 
 // Styled Heading Hierarchy
 #show heading.where(level: 1): it => {
-  v(12pt)
-  text(fill: rgb("#1a365d"), weight: "bold", size: 13.5pt)[#it]
-  v(3pt)
+  v(10pt)
+  text(fill: rgb("#1a365d"), weight: "bold", size: 13pt)[#it]
+  v(2.5pt)
 }
 
 #show heading.where(level: 2): it => {
-  v(9pt)
-  text(fill: rgb("#2b6cb0"), weight: "bold", size: 11pt)[#it]
+  v(8pt)
+  text(fill: rgb("#2b6cb0"), weight: "bold", size: 10.5pt)[#it]
   v(2pt)
 }
 
 #show heading.where(level: 3): it => {
-  v(6pt)
-  text(fill: rgb("#2d3748"), weight: "bold", size: 10pt)[#it]
+  v(5pt)
+  text(fill: rgb("#2d3748"), weight: "bold", size: 9.5pt)[#it]
   v(2pt)
 }
 
@@ -71,7 +71,7 @@
     fill: fill,
     stroke: 1pt + stroke,
     radius: 4pt,
-    inset: (x: 10pt, y: 7pt)
+    inset: (x: 9pt, y: 6pt)
   )[
     #if title != none [
       #text(weight: "bold", size: 9.5pt)[#title]
@@ -96,13 +96,13 @@
 )
 
 #let job-card(role: "", personnel: "", tag: "", body) = {
-  v(5pt)
+  v(4pt)
   rect(
     width: 100%,
     fill: rgb("#f8fafc"),
     stroke: 1.2pt + rgb("#3182ce"),
     radius: 5pt,
-    inset: (x: 10pt, y: 8pt)
+    inset: (x: 9pt, y: 7pt)
   )[
     #grid(
       columns: (1fr, auto),
@@ -258,23 +258,26 @@ The Colorado Bandmasters Association (CBA) strictly enforces prop and adult volu
 // -------------------------------------------------------------------------
 // SECTION 4: 2026 CONTINUUM PROP FLEET OVERVIEW
 // -------------------------------------------------------------------------
+// SECTION 4: 2026 CONTINUUM PROP FLEET OVERVIEW
+// -------------------------------------------------------------------------
 
 = 4. 2026 Continuum Prop Fleet Summary
 
 The 2026 visual design for *Continuum* incorporates three prop families totaling 30 field elements:
 
 #table(
-  columns: (1.3fr, 1fr, 1.4fr, 1.8fr, 2.2fr),
+  columns: (1.3fr, 1fr, 1.3fr, 1.8fr, 2.2fr),
   align: (left + horizon, center + horizon, center + horizon, left + horizon, left + horizon),
   stroke: 0.5pt + rgb("#cbd5e0"),
   fill: (col, row) => if row == 0 { rgb("#edf2f7") } else { none },
+  inset: (x: 5pt, y: 3.5pt),
   [*Prop Category*], [*Quantity*], [*Transport Unit*], [*Field Placement*], [*Crew Allocation*],
   [*Duck Blinds* \ (Sideline Screens)], [16 screens (8 per side)], [2 Rolling Carts \ (8 screens/cart)], [Front Sideline \ (Side 1: 20–41 yd; Side 2: 59–80 yd)], [2 Adult Pushers, 2 Student Unloaders, 16 Student Receivers],
   [*Rolling Backdrops*], [10 backdrops], [10 Rolling Carts \ (1 cart/prop)], [Backfield / Back Hash \ (Spanned across 30–70 yds)], [10–20 Parent Volunteers \ (1–2 pushers per backdrop)],
   [*Performance Stages*], [4 stages], [4 Mobile Platforms \ (Integrated casters)], [Midfield / Side Stages \ (Exact drill marks per show)], [8 Parent Volunteers \ (2 pushers per stage platform)],
 )
 
-#v(4pt)
+#v(2pt)
 
 // -------------------------------------------------------------------------
 // SECTION 5: STEP-BY-STEP JOB DESCRIPTIONS
@@ -287,33 +290,59 @@ The 2026 visual design for *Continuum* incorporates three prop families totaling
 == Job Group A: Duck Blind Crew (16 Sideline Screens on 2 Dedicated Carts)
 
 #job-card(
-  role: "Job A.1: Side 1 Duck Blind Cart Pusher",
-  personnel: "1 Adult Volunteer",
-  tag: "Side 1 (Left / Stage Right)"
+  role: "Job A.1: Duck Blind Cart Pusher",
+  personnel: "2 Adult Volunteers (1 per Cart: Side 1 or Side 2)",
+  tag: "Front Sideline Carts"
 )[
-  + *Pre-Show Staging:* Report to Equipment Trailer 45 minutes before step-off. Push the loaded Side 1 Cart (containing Screens 1–8 and 16 double-bagged sandbags) to the rear stadium entrance gate. Queue on the back sideline at the *Back 20-yard line*.
-  + *Field Ingress:* When the CBA judge signals entry permission, push the cart forward around the perimeter track toward the front sideline. Coordinate with your Student Unloader walking alongside.
-  + *Directional Delivery (Away from Exit Gate):* Enter the front sideline at the 20-yard line and roll *away* from the exit gate toward the 41-yard line. Pause for ~6–8 seconds at each 2-yard mark while the unloader deposits one folded screen and ballast to the pre-set student receiver.
-  + *Cart Clearance Before Announcement:* Once the 8th screen is dropped at the 41-yard line, immediately push the empty cart across the front boundary line into the front staging area. *You must be off the turf by the 2:15 mark.* Park cart facing the exit gate.
-  + *Post-Show Zero-Doubling-Back Ballast Sweep:* On the final show chord, push the cart back onto the front sideline, starting at the far end (Screen 8) and rolling *toward the stadium exit gate*. Scoop ballast bags placed on the turf by students into the cart hopper. Keep moving continuously across the exit gate line to stop the official CBA 2:00 egress clock. Do not stop until you reach the trailer lot!
+  #rect(
+    width: 100%,
+    fill: rgb("#ffffff"),
+    stroke: 0.8pt + rgb("#cbd5e0"),
+    radius: 3pt,
+    inset: (x: 7pt, y: 3.5pt)
+  )[
+    #text(weight: "bold", size: 8pt, fill: rgb("#2b6cb0"))[DAY-OF CART ASSIGNMENT (Fill in at morning check-in):] \
+    #v(1pt)
+    #grid(
+      columns: (1.3fr, 1.3fr, 2fr),
+      gutter: 6pt,
+      [
+        *Assigned Side:* \
+        #box(stroke: 0.5pt + rgb("#a0aec0"), inset: (x: 3pt, y: 1.5pt), radius: 2pt)[#h(4pt)] Side 1 (Left / Stage Right) \
+        #box(stroke: 0.5pt + rgb("#a0aec0"), inset: (x: 3pt, y: 1.5pt), radius: 2pt)[#h(4pt)] Side 2 (Right / Stage Left)
+      ],
+      [
+        *Backfield Staging:* \
+        Back \_\_\_\_\_ Yard Line \
+        #text(size: 7.5pt, style: "italic", fill: rgb("#718096"))[(e.g., Back 20 or Back 40)]
+      ],
+      [
+        *Delivery Route & Direction:* \
+        Start at \_\_\_\_\_ yd $->$ Roll toward: \
+        #box(stroke: 0.5pt + rgb("#a0aec0"), inset: (x: 3pt, y: 1.5pt), radius: 2pt)[#h(4pt)] Center (50 yd) / #box(stroke: 0.5pt + rgb("#a0aec0"), inset: (x: 3pt, y: 1.5pt), radius: 2pt)[#h(4pt)] End Zone \
+        #text(size: 7.5pt, style: "italic", fill: rgb("#718096"))[(Always roll AWAY from stadium exit gate)]
+      ]
+    )
+  ]
+  #v(1pt)
+  #text(size: 8pt, fill: rgb("#4a5568"))[
+    *Day-of Directive Example:* The Prop Lead assigns coordinates based on the venue's exit gate: \
+    _“You are on Side 1, stage at Back 20, and roll toward the center (41-yd line)”_ or \
+    _“You are on Side 2, stage at Back 40, and roll toward the end zone (80-yd line).”_
+  ]
+  #v(1pt)
+
+  + *Pre-Show Staging:* Report to trailer 45 min prior. Push loaded cart (8 screens + 16 double-bagged sandbags) to rear stadium gate. Queue at assigned yard marker (e.g., Back 20 on gate side, Back 40 on far side to eliminate bottlenecking).
+  + *Field Ingress:* On CBA judge's entry signal, push cart forward along perimeter track toward front sideline with Student Unloader.
+  + *Directional Delivery (Roll Away from Exit Gate):* Enter front sideline at starting yard mark and roll *away* from exit gate (e.g., 20 toward 41, or 59 toward 80). Pause ~6–8 sec at each 2-yd mark while unloader deposits one folded screen and two sandbags to student receiver.
+  + *Cart Clearance Before Announcement:* After 8th screen, immediately push empty cart across front boundary into front staging area. *Must be off turf before the 2:15 mark.* Park cart facing stadium exit gate ready for post-show egress.
+  + *Post-Show Zero-Doubling-Back Ballast Sweep:* On final show chord, re-enter front sideline at far screen and roll *toward the stadium exit gate*. Scoop ballast bags placed on turf by students into cart hopper as you advance without doubling back. Keep moving continuously across exit gate threshold to stop official CBA 2:00 clock. Do not stop until reaching trailer lot!
 ]
 
 #pagebreak()
 
 #job-card(
-  role: "Job A.2: Side 2 Duck Blind Cart Pusher",
-  personnel: "1 Adult Volunteer",
-  tag: "Side 2 (Right / Stage Left)"
-)[
-  + *Pre-Show Staging:* Report to Equipment Trailer 45 minutes before step-off. Push the loaded Side 2 Cart (Screens 9–16 + ballast) to the rear stadium entrance gate. Queue on the back sideline at the *Back 40-yard line* (asymmetric staging prevents bottlenecking at the gate).
-  + *Field Ingress:* On the judge's signal, push the cart across the backfield to the Side 2 perimeter lane, then transit down to the front sideline at the 59-yard line.
-  + *Directional Delivery (Away from Exit Gate):* Roll along the front sideline from the 59-yard line toward the 80-yard line, pausing ~6–8 seconds per screen mark for unloader deposition.
-  + *Cart Clearance Before Announcement:* After dropping Screen 16, exit the cart over the front boundary into the Side 2 front staging area. Clear the turf before the 2:15 mark.
-  + *Post-Show Ballast Sweep:* On the final chord, execute the directional ballast sweep toward the stadium exit gate. Scoop all ballast bags into the cart, cross the stadium exit threshold to stop the clock, and proceed directly up the hill to the trailer lot.
-]
-
-#job-card(
-  role: "Job A.3: Duck Blind Cart Unloaders",
+  role: "Job A.2: Duck Blind Cart Unloaders",
   personnel: "2 Volunteers (1 Student / 1 Parent per Cart)",
   tag: "Cart Operations"
 )[
@@ -324,7 +353,7 @@ The 2026 visual design for *Continuum* incorporates three prop families totaling
 ]
 
 #job-card(
-  role: "Job A.4: Student Receivers & Post-Show Screen Egress",
+  role: "Job A.3: Student Receivers & Post-Show Screen Egress",
   personnel: "16 Student Performers (8 per side)",
   tag: "Student Role — Reference for Parents"
 )[
@@ -333,9 +362,7 @@ The 2026 visual design for *Continuum* incorporates three prop families totaling
   - *Post-Show Egress:* On the final chord, students disengage clips, lay screens flat, set ballast on turf without dropping/throwing, and hand-carry collapsed screens off the field in pairs (13 lbs/student) in a ~35-second sprint.
 ]
 
-#pagebreak()
-
-== Job Group B: Rolling Backdrop Crew (10 Props, Props #1 through #10)
+== Job Group B: Rolling Backdrop Crew (10 Backdrops on Dedicated Carts)
 
 #job-card(
   role: "Job B.1: Rolling Backdrop Pushers",
@@ -352,6 +379,8 @@ The 2026 visual design for *Continuum* incorporates three prop families totaling
   + *Continuous Motion (Rule 8.05):* *DO NOT STOP in the stadium tunnel or exit chute to talk, rest, or de-ballast.* Keep moving until the cart is fully parked in the equipment trailer lot.
 ]
 
+#pagebreak()
+
 == Job Group C: Performance Stage Crew (4 Mobile Platforms, Stages #1 through #4)
 
 #job-card(
@@ -366,8 +395,6 @@ The 2026 visual design for *Continuum* incorporates three prop families totaling
   + *Post-Show Egress:* At the final chord, immediately return to the stage platform, retract outriggers, disengage wheel locks, and push the platform off the field through the exit gate in continuous motion to the trailer lot.
 ]
 
-#pagebreak()
-
 == Job Group D: Prop Lead & Field Safety Coordinator
 
 #job-card(
@@ -380,6 +407,8 @@ The 2026 visual design for *Continuum* incorporates three prop families totaling
   + *The 2:45 Clearance Call:* Monitor stopwatch. At 2:30, loudly call *"PROPS CLEAR!"* down the sideline and confirm all 25 adult volunteers are across the boundary line before the 3:15 announcement begins.
   + *Exit Chute Traffic Management:* Stand at the stadium exit gate during post-show egress to prevent cart bottlenecks and ensure continuous flow into the trailer parking lot.
 ]
+
+#pagebreak()
 
 // -------------------------------------------------------------------------
 // SECTION 6: POST-SHOW DEBALLASTING & TRAILER PACKDOWN
@@ -394,7 +423,40 @@ All teardown and packdown procedures occur *exclusively in the equipment trailer
 + *Trailer Loading:* Roll backdrops and carts into the trailer in reverse numerical order. Set wheel brakes, engage wheel chocks, and secure ratcheting cargo straps across each frame before transit.
 + *All-Clear Check:* Inspect the staging lot for personal belongings, water bottles, and tools. Verify all 25 volunteer wristbands are accounted for.
 
-#v(14pt)
+#v(8pt)
+
+#rect(
+  width: 100%,
+  fill: rgb("#f7fafc"),
+  stroke: 1pt + rgb("#cbd5e0"),
+  radius: 4pt,
+  inset: (x: 10pt, y: 8pt)
+)[
+  #text(weight: "bold", size: 9.5pt, fill: rgb("#1a365d"))[📋 Competition Day Volunteer Quick Reference Checklist]
+  #v(3pt)
+  #grid(
+    columns: (1fr, 1fr),
+    gutter: 8pt,
+    [
+      *Before Entering Gate:*
+      - Official CBA wristband secured to wrist (Rule 9.07)
+      - Arrive at trailer 45 minutes prior to step-off
+      - Verify all sandbags loaded on carts/props
+      - Review assigned yard marker & roll direction
+      - Lock backdrop caster brakes in UNLOCKED position
+    ],
+    [
+      *On Field & Post-Show:*
+      - Push cart directly to yard mark on judge's signal
+      - Lock all wheel brakes immediately upon arrival
+      - *Exit turf before 2:45* (behind front/back line)
+      - NEVER step onto field during the performance
+      - *Continuous motion* through exit gate to trailer lot!
+    ]
+  )
+]
+
+#v(10pt)
 
 #rect(
   width: 100%,
