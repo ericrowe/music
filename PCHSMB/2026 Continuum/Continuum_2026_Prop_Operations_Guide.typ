@@ -258,26 +258,24 @@ The Colorado Bandmasters Association (CBA) strictly enforces prop and adult volu
 // -------------------------------------------------------------------------
 // SECTION 4: 2026 CONTINUUM PROP FLEET OVERVIEW
 // -------------------------------------------------------------------------
-// SECTION 4: 2026 CONTINUUM PROP FLEET OVERVIEW
-// -------------------------------------------------------------------------
 
 = 4. 2026 Continuum Prop Fleet Summary
 
 The 2026 visual design for *Continuum* incorporates three prop families totaling 30 field elements:
 
 #table(
-  columns: (1.3fr, 1fr, 1.3fr, 1.8fr, 2.2fr),
+  columns: (1.6fr, 0.8fr, 1.4fr, 1.8fr, 2.4fr),
   align: (left + horizon, center + horizon, center + horizon, left + horizon, left + horizon),
   stroke: 0.5pt + rgb("#cbd5e0"),
   fill: (col, row) => if row == 0 { rgb("#edf2f7") } else { none },
-  inset: (x: 5pt, y: 3.5pt),
+  inset: (x: 5pt, y: 4.5pt),
   [*Prop Category*], [*Quantity*], [*Transport Unit*], [*Field Placement*], [*Crew Allocation*],
   [*Duck Blinds* \ (Sideline Screens)], [16 screens (8 per side)], [2 Rolling Carts \ (8 screens/cart)], [Front Sideline \ (Side 1: 20–41 yd; Side 2: 59–80 yd)], [2 Adult Pushers, 2 Student Unloaders, 16 Student Receivers],
   [*Rolling Backdrops*], [10 backdrops], [10 Rolling Carts \ (1 cart/prop)], [Backfield / Back Hash \ (Spanned across 30–70 yds)], [10–20 Parent Volunteers \ (1–2 pushers per backdrop)],
   [*Performance Stages*], [4 stages], [4 Mobile Platforms \ (Integrated casters)], [Midfield / Side Stages \ (Exact drill marks per show)], [8 Parent Volunteers \ (2 pushers per stage platform)],
 )
 
-#v(2pt)
+#v(8pt)
 
 // -------------------------------------------------------------------------
 // SECTION 5: STEP-BY-STEP JOB DESCRIPTIONS
@@ -285,12 +283,27 @@ The 2026 visual design for *Continuum* incorporates three prop families totaling
 
 = 5. Individual Job Descriptions & Step-by-Step Instructions
 
-*Find your assigned job below. Follow the numbered steps exactly as written.*
+*Find your assigned job card on the following pages. Each job is formatted as an independent, single-page operations sheet that can be printed and carried during competition day.*
+
+The field prop operation is organized into four primary divisions:
+
+1. *Job Group A: Duck Blind Operations (Pages 4–7):* Divided into four specialized single-page job blocks covering cart pushing, rapid cart offloading, on-field concurrent deployment, and post-show egress.
+2. *Job Group B: Rolling Backdrop Crew (Page 8):* Dedicated operations sheet for the 10 parent pushers handling backfield rolling backdrops (#1 through #10).
+3. *Job Group C: Performance Stage Crew (Page 9):* Dedicated operations sheet for the 4 midfield mobile platform handler teams.
+4. *Job Group D: Prop Lead & Field Safety Coordinator (Page 9):* Master oversight, weather telemetry monitoring, judge liaison, and timing control.
+
+Follow all instructions in strict sequential order. Adhere to all safety warnings and CBA competition boundaries.
+
+#pagebreak()
+
+// =========================================================================
+// PAGE 4: JOB A.1 — ADULT DUCK BLIND CART PUSHER
+// =========================================================================
 
 == Job Group A: Duck Blind Crew (16 Sideline Screens on 2 Dedicated Carts)
 
 #job-card(
-  role: "Job A.1: Duck Blind Cart Pusher",
+  role: "Job A.1: Adult Duck Blind Cart Pusher",
   personnel: "2 Adult Volunteers (1 per Cart: Side 1 or Side 2)",
   tag: "Front Sideline Carts"
 )[
@@ -299,10 +312,10 @@ The 2026 visual design for *Continuum* incorporates three prop families totaling
     fill: rgb("#ffffff"),
     stroke: 0.8pt + rgb("#cbd5e0"),
     radius: 3pt,
-    inset: (x: 7pt, y: 3.5pt)
+    inset: (x: 8pt, y: 5pt)
   )[
-    #text(weight: "bold", size: 8pt, fill: rgb("#2b6cb0"))[DAY-OF CART ASSIGNMENT (Fill in at morning check-in):] \
-    #v(1pt)
+    #text(weight: "bold", size: 8.5pt, fill: rgb("#2b6cb0"))[DAY-OF CART ASSIGNMENT (Fill in at morning check-in):] \
+    #v(2pt)
     #grid(
       columns: (1.3fr, 1.3fr, 2fr),
       gutter: 6pt,
@@ -324,43 +337,149 @@ The 2026 visual design for *Continuum* incorporates three prop families totaling
       ]
     )
   ]
-  #v(1pt)
-  #text(size: 8pt, fill: rgb("#4a5568"))[
-    *Day-of Directive Example:* The Prop Lead assigns coordinates based on the venue's exit gate: \
+  #v(3pt)
+  #text(size: 8.5pt, fill: rgb("#4a5568"))[
+    *Day-of Directive Example:* The Prop Lead will assign your exact coordinates based on the venue's exit gate: \
     _“You are on Side 1, stage at Back 20, and roll toward the center (41-yd line)”_ or \
     _“You are on Side 2, stage at Back 40, and roll toward the end zone (80-yd line).”_
   ]
-  #v(1pt)
+  #v(4pt)
 
-  + *Pre-Show Staging:* Report to trailer 45 min prior. Push loaded cart (8 screens + 16 double-bagged sandbags) to rear stadium gate. Queue at assigned yard marker (e.g., Back 20 on gate side, Back 40 on far side to eliminate bottlenecking).
-  + *Field Ingress:* On CBA judge's entry signal, push cart forward along perimeter track toward front sideline with Student Unloader.
-  + *Directional Delivery (Roll Away from Exit Gate):* Enter front sideline at starting yard mark and roll *away* from exit gate (e.g., 20 toward 41, or 59 toward 80). Pause ~6–8 sec at each 2-yd mark while unloader deposits one folded screen and two sandbags to student receiver.
-  + *Cart Clearance Before Announcement:* After 8th screen, immediately push empty cart across front boundary into front staging area. *Must be off turf before the 2:15 mark.* Park cart facing stadium exit gate ready for post-show egress.
-  + *Post-Show Zero-Doubling-Back Ballast Sweep:* On final show chord, re-enter front sideline at far screen and roll *toward the stadium exit gate*. Scoop ballast bags placed on turf by students into cart hopper as you advance without doubling back. Keep moving continuously across exit gate threshold to stop official CBA 2:00 clock. Do not stop until reaching trailer lot!
+  *You remain with this cart through the entire cycle (Truck $->$ Field $->$ Standby $->$ Sweep $->$ Truck):*
+
+  + *Phase 1: Pre-Show Staging & Inspection (Equipment Trailer -45 min):* Report to trailer. Confirm cart is loaded with 8 folded screens and 16 double-bagged 15-lb sandbags in hopper. Check pneumatic tires. Push loaded cart to the rear stadium entrance gate. Queue on back sideline track at your assigned marker (e.g., Back 20 on gate side, Back 40 on far side to eliminate traffic bottlenecking). Meet your assigned Student Unloader at the gate.
+  + *Phase 2: Field Ingress & Directional Delivery (3:15 Window):* On the CBA judge's entry signal, push cart forward along the perimeter track toward the front sideline. Coordinate pace with your Student Unloader. Enter the front sideline at your starting yard mark and roll *away* from the exit gate (e.g., from 20 toward 41, or 59 toward 80). Pause ~6–8 seconds at each 2-yard mark while the unloader deposits one folded screen and two sandbags to the pre-set student receiver.
+  + *Phase 3: In-Show Standby at Sideline Boundary (Off-Turf by 2:15):* Once your 8th screen is delivered, immediately push the empty cart across the front boundary line into the front staging area. *You must be completely off the turf before the 2:15 mark.* Park the cart facing the stadium exit gate ready for post-show egress. *Stay with your cart at the boundary for the entire performance.* Never step onto the turf during the show (Rule 4.03 penalty).
+  + *Phase 4: Post-Show Zero-Doubling-Back Ballast Sweep (2:00 Egress Clock):* On the final show chord, re-enter the front sideline at the far screen and roll *toward the stadium exit gate*. Scoop ballast bags placed on the turf by students directly into the cart hopper as you advance without doubling back.
+  + *Phase 5: Exit Chute Transit & Return to Trailer Lot (Continuous Motion):* Keep moving continuously across the exit gate threshold to stop the official CBA 2:00 clock. *DO NOT STOP in the tunnel or exit gate to talk or rest (Rule 8.05).* Push the cart directly back to the equipment trailer parking lot. Assist trailer crew with screen packing and sandbag tote storage.
 ]
 
 #pagebreak()
 
-#job-card(
-  role: "Job A.2: Duck Blind Cart Unloaders",
-  personnel: "2 Volunteers (1 Student / 1 Parent per Cart)",
-  tag: "Cart Operations"
-)[
-  + *Transit:* Walk immediately adjacent to the cart rack during perimeter transit. Hold the retaining gate latch securely in place.
-  + *Screen & Ballast Deposition:* At each marked yard line, slide one folded screen horizontally off the cart rack and set it flat on the turf directly at the feet of the pre-set student receiver. Hand two 15-lb sandbags to the student.
-  + *Pacing:* Complete each drop within 6 seconds. Move in cadence with the cart pusher down the 8-screen line.
-  + *Exit:* Once the 8th screen is handed off, step over the front boundary line with the cart pusher. Remain off the field during the performance.
-]
+// =========================================================================
+// PAGE 5: JOB A.2 — STUDENT DUCK BLIND CART UNLOADER
+// =========================================================================
+
+== Job Group A: Duck Blind Crew (Continued)
 
 #job-card(
-  role: "Job A.3: Student Receivers & Post-Show Screen Egress",
-  personnel: "16 Student Performers (8 per side)",
-  tag: "Student Role — Reference for Parents"
+  role: "Job A.2: Student Duck Blind Cart Unloader",
+  personnel: "2 Student Performers / Crew (1 per Cart: Side 1 or Side 2)",
+  tag: "Cart Operations & Rapid Offloading"
 )[
-  *Parent Notice:* Parents do NOT handle screen assembly or disassembly on the field. Students handle this entirely:
-  - *Setup:* Pre-set student receivers unfold the rear triangular support, seat snap clips (*I*) into Rail 3, latch adjacent screens, and place ballast on the rear rail. All 8 screens deploy concurrently in ~15 seconds.
-  - *Post-Show Egress:* On the final chord, students disengage clips, lay screens flat, set ballast on turf without dropping/throwing, and hand-carry collapsed screens off the field in pairs (13 lbs/student) in a ~35-second sprint.
+  #text(size: 8.5pt, style: "italic", fill: rgb("#2b6cb0"))[
+    *Student Instructions:* You accompany the Adult Cart Pusher from the rear gate to the front sideline, rapidly offload the 8 screens and 16 sandbags to your fellow student performers, and clear the turf to take your opening drill position.
+  ]
+  #v(4pt)
+
+  + *Phase 1: Rear Gate Rendezvous (-10 min to Gate Opening):*
+    - Meet your assigned Adult Cart Pusher at the rear stadium entrance gate 10 minutes prior to gate release.
+    - Confirm whether you are assigned to Cart 1 (Side 1) or Cart 2 (Side 2).
+    - Walk alongside the cart during back sideline staging queue. Confirm the retaining gate latch and safety pin are securely engaged.
+  + *Phase 2: Perimeter Track Transit & Rack Security:*
+    - When the CBA judge gives the entry signal, walk immediately alongside the cart rack along the perimeter track toward the front sideline.
+    - Keep one hand resting on the retaining gate latch to ensure locking pins and screens remain fully stabilized during rolling transit.
+    - Coordinate pace with the adult pusher so you stay aligned with the rack.
+  + *Phase 3: Screen & Ballast Deposition (6-Second Drop Cadence):*
+    - As the cart enters the front sideline and rolls past each marked 2-yard line (screens 1 through 8):
+      - Slide one folded screen horizontally off the cart rack.
+      - Set the folded screen flat on the synthetic turf directly at the feet of the pre-set student receiver.
+      - Reach into the cart hopper and hand two 15-lb double-bagged sandbags to the student receiver.
+    - Maintain a crisp, rapid pace: complete each handoff within *6 seconds* so the cart maintains forward momentum without stalling.
+    - Repeat down the entire 8-screen line.
+  + *Phase 4: Field Clearance to Opening Show Drill Set:*
+    - Once the 8th screen and final sandbags are deposited, immediately step over the front boundary line with the adult cart pusher.
+    - *You must be off the turf before the 2:15 mark.*
+    - Briskly transition to your assigned pre-show warm-up mark or opening performance drill set. You are now cleared for the show!
+  + *Phase 5: Post-Show Coordination:*
+    - At the final chord, you do not need to return to the cart—your cart responsibilities are complete.
+    - Exit the field with the marching band block or assist your designated section according to director instructions.
 ]
+
+#pagebreak()
+
+// =========================================================================
+// PAGE 6: JOB A.3 — STUDENT SCREEN DEPLOYMENT & BALLASTING
+// =========================================================================
+
+== Job Group A: Duck Blind Crew (Continued)
+
+#job-card(
+  role: "Job A.3: Student Screen Deployment & Ballasting",
+  personnel: "16 Student Performers (8 on Side 1, 8 on Side 2)",
+  tag: "On-Field Screen Deployment & Rigidity"
+)[
+  #text(size: 8.5pt, style: "italic", fill: rgb("#2b6cb0"))[
+    *Student Instructions:* You are responsible for receiving, unfolding, latching, and ballasting the 16 duck blind sideline screens. Parents are strictly forbidden from touching props on the turf; this setup is executed 100% by students in ~15 seconds.
+  ]
+  #v(4pt)
+
+  + *Phase 1: Pre-Show Field Positioning:*
+    - March onto the field with the band during entry and proceed directly to your assigned front sideline coordinate.
+    - *Side 1:* Spans from 20 to 41-yard line at 2-yard intervals (Screens #1 through #8).
+    - *Side 2:* Spans from 59 to 80-yard line at 2-yard intervals (Screens #9 through #16).
+    - Stand at attention facing the backfield awaiting the arrival of your transport cart.
+  + *Phase 2: Receiving Screen & Ballast:*
+    - As your transport cart arrives at your mark:
+      - Receive 1 folded screen from the Student Unloader and position it upright on the turf, display face toward the front spectator stands.
+      - Receive two 15-lb double-bagged sandbags and place them temporarily at your feet.
+  + *Phase 3: Concurrent Unfolding & Lockup (15 Seconds):*
+    - As soon as the screen is on the turf, all 8 performers on your side deploy simultaneously:
+      - Swing the rear triangular support frame outward perpendicular to the front display panel.
+      - Seat the snap clips (*I*) firmly into Rail 3 until fully engaged with an audible snap.
+      - Reach across to the adjacent screen and engage the inter-screen connecting latches to lock the 8 screens into a rigid continuous front visual wall.
+  + *Phase 4: Ballast Installation:*
+    - Lift both 15-lb sandbags and set them squarely across the rear bottom horizontal rail.
+    - Ensure bags rest evenly on the rail so weight is centered directly over the base.
+    - Confirm inner plastic liner is not protruding or pinched.
+  + *Phase 5: Rigidity Check & Show Posture:*
+    - Give the frame a firm tap to confirm the snap clips and latches are fully seated and the screen is 100% rigid.
+    - Step back into your opening visual set posture before the introductory announcement ends.
+]
+
+#pagebreak()
+
+// =========================================================================
+// PAGE 7: JOB A.4 — STUDENT SCREEN TEARDOWN, EGRESS & DEBALLASTING
+// =========================================================================
+
+== Job Group A: Duck Blind Crew (Continued)
+
+#job-card(
+  role: "Job A.4: Student Screen Teardown & Egress",
+  personnel: "16 Student Performers (8 on Side 1, 8 on Side 2)",
+  tag: "Post-Show Deballasting & Egress Sprint"
+)[
+  #text(size: 8.5pt, style: "italic", fill: rgb("#2b6cb0"))[
+    *Student Instructions:* The 2-minute CBA egress clock starts the instant the final note of the show sounds. Disengage, collapse, and sprint your screens off the field in pairs within 35 seconds.
+  ]
+  #v(4pt)
+
+  + *Phase 1: Immediate Teardown on Final Show Chord:*
+    - The instant the final cutoff rings:
+      - *Safe Ballast Placement:* Lift both 15-lb sandbags off the rear bottom rail and place them directly onto the synthetic turf next to the rail.  
+        #text(weight: "bold", fill: rgb("#c53030"))[CRITICAL SAFETY MANDATE: NEVER THROW OR DROP SANDBAGS.] Dropping sandbags causes severe seam rupture and leaks sand, resulting in catastrophic facility fines and CBA score penalties. Place bags gently on the turf. Leave them in place for the Adult Cart Pusher to scoop during their sweep.
+      - *Disengage Latches & Clips:* Disengage inter-screen side latches. Disengage snap clips (*I*) from Rail 3.
+      - *Collapse Screen:* Swing the rear triangular brace flat against the front display frame.
+  + *Phase 2: Pair Up for Transport (13 lbs per Performer):*
+    - Pair up immediately with your assigned partner on the adjacent screen:
+      - Screen 1 pairs with Screen 2; Screen 3 with Screen 4; Screen 5 with Screen 6; Screen 7 with Screen 8.
+      - Screen 9 pairs with Screen 10; Screen 11 with Screen 12; Screen 13 with Screen 14; Screen 15 with Screen 16.
+    - Each pair grips one collapsed screen by the dedicated carry handles / upright frame rails. Total collapsed weight is ~26 lbs (*only 13 lbs per student*).
+  + *Phase 3: The 35-Second Egress Sprint:*
+    - Sprint in pairs hand-carrying the collapsed screens across the front sideline boundary and toward the designated stadium exit gate chute.
+    - *Goal:* All 16 screens must clear the field boundaries within *35 seconds* of the final chord!
+  + *Phase 4: Trailer Lot Stacking:*
+    - Carry the collapsed screens directly to the equipment trailer parking lot.
+    - Stack screens flat in the transport cart racks (8 screens per cart, alternating hinges to maintain coplanar nesting $<= 2.0$ inches).
+    - Insert 3D-printed locking pins into the retaining gate latches. Rejoin the band for awards / debrief.
+]
+
+#pagebreak()
+
+// =========================================================================
+// PAGE 8: JOB B.1 — ROLLING BACKDROP PUSHERS
+// =========================================================================
 
 == Job Group B: Rolling Backdrop Crew (10 Backdrops on Dedicated Carts)
 
@@ -381,6 +500,10 @@ The 2026 visual design for *Continuum* incorporates three prop families totaling
 
 #pagebreak()
 
+// =========================================================================
+// PAGE 9: JOB C.1 & JOB D.1 — STAGES & PROP LEAD
+// =========================================================================
+
 == Job Group C: Performance Stage Crew (4 Mobile Platforms, Stages #1 through #4)
 
 #job-card(
@@ -394,6 +517,8 @@ The 2026 visual design for *Continuum* incorporates three prop families totaling
   + *Field Clearance:* Clear the performance field before the 2:45 mark and stand by at the nearest boundary.
   + *Post-Show Egress:* At the final chord, immediately return to the stage platform, retract outriggers, disengage wheel locks, and push the platform off the field through the exit gate in continuous motion to the trailer lot.
 ]
+
+#v(8pt)
 
 == Job Group D: Prop Lead & Field Safety Coordinator
 
@@ -410,9 +535,9 @@ The 2026 visual design for *Continuum* incorporates three prop families totaling
 
 #pagebreak()
 
-// -------------------------------------------------------------------------
-// SECTION 6: POST-SHOW DEBALLASTING & TRAILER PACKDOWN
-// -------------------------------------------------------------------------
+// =========================================================================
+// PAGE 10: SECTION 6 — POST-SHOW PACKDOWN, CHECKLIST & SIGNOFF
+// =========================================================================
 
 = 6. Post-Show Deballasting & Trailer Packdown
 
