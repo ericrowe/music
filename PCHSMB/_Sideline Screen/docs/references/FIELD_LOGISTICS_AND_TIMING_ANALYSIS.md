@@ -113,15 +113,15 @@ $$T_{\text{total}} = T_{\text{deploy}} + T_{\text{announce}} + T_{\text{show}} +
 
 ---
 
-### 2.2 Where the Clock Stops: The Falcon Stadium Tunnel Protocol (State Championships)
+### 2.2 Where the Clock Stops: Standard Stadium Gates vs. Falcon Stadium Tunnel
 
-* **Official Boundary Threshold (Rule 5.06 & 5.08):**
-  * The official 15-minute contest clock stops the moment the last band member, auxiliary performer, cart, and prop **crosses the boundary line at the field exit chute / tunnel mouth**.
-* **Off-Clock Staging in the Tunnel (Falcon Stadium - USAFA):**
-  * At the Colorado State Championships held at **Falcon Stadium (USAFA)**, there is a prominent, long egress tunnel and incline ramp immediately past the field exit chute:
-  * **Crossing into the mouth of the tunnel stops the official 15:00 clock.**
-  * Inside the tunnel mouth, the crew is legally permitted to pause, slide the folded blinds into the cart racks, lash equipment down, and prepare for the push up the tunnel hill.
-  * **This reload takes place off the clock while the next band is entering the field and setting up within their 3:15 window.**
+* **Standard Stadiums & The Exit Gate Bottleneck:**
+  * At regular-season invitational and regional venues (stadiums other than Falcon Stadium), the official 15:00 contest clock typically does not stop until the last band member, prop, and cart **physically exits through the perimeter gate off the track**.
+  * Narrow double-swing or service gates frequently create a severe physical bottleneck where front ensemble carts, large backfield props, duck blinds, and marching students converge simultaneously into a single exit lane.
+  * **Contingency Buffer Absorption:** This exit gate bottleneck is precisely where the **45-second contingency buffer** (banked under the recommended 8:45 director performance ceiling) is utilized to guarantee zero penalty risk even during exit delays.
+* **Falcon Stadium Tunnel Protocol (State Championships - USAFA):**
+  * At Falcon Stadium, the official contest clock stops the moment the last element **crosses the boundary line into the mouth of the tunnel chute** (CBA Rule 5.06 & 5.08).
+  * Inside the tunnel mouth, the crew is legally permitted to pause, slide folded blinds into the cart racks, and lash equipment down **completely off the clock** while the next band enters and sets up in their 3:15 window.
   * Under **Rule 8.09**, props must clear the 9'6" tunnel ceiling limit and maintain continuous forward movement so as not to hinder subsequent bands before their performance begins (~4 minutes later).
 
 ---
