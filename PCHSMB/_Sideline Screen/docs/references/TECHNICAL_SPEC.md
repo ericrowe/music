@@ -88,10 +88,23 @@
   - **Tier 2 (Advisory, 12–18 mph):** 2x 15-lb bags over rear rail C + 1x 15-lb bag suspended from Rail 2 (total wt 71 lbs). Balanced stability: 23.7 mph fwd / 24.5 mph bwd.
   - **Tier 3 (High-Wind, 18–22 mph):** 2x 15-lb bags over rear rail C + 2x 15-lb bags suspended from Rail 2 (total wt 86 lbs). Safe to 24.5–28.4 mph max gust. Turf contact pressure ~0.25 psi (zero turf compaction).
   - **Tier 4 (Safety Abort, >20 mph sustained or >25 mph peak gusts):** STRICT NO-GO. Disengage clips (I), collapse rear support frame, and lay screen flat on turf.
-- **Severe Wind Feasibility Analysis (30 mph Limits):** For detailed engineering calculations and failure mode evaluations regarding extreme wind regimes, see [30 mph Wind Loading & Ballasting Feasibility Analysis](WIND_LOADING_30MPH_ANALYSIS.md). Ballasting for 30 mph on the field is prohibited due to lateral sliding drift on turf (requires >161 lbs ballast), tensile detachment of 3D-printed snap clips (I) under 153 lbs pull load, and CBA 15-second timed entry limits.
+- **Severe Wind Feasibility Analysis (30 mph Limits):** For detailed engineering calculations and failure mode evaluations regarding extreme wind regimes, see [30 mph Wind Loading & Ballasting Feasibility Analysis](WIND_LOADING_30MPH_ANALYSIS.md). Ballasting for 30 mph on the field is prohibited due to lateral sliding drift on turf (requires >161 lbs ballast), tensile detachment of 3D-printed snap clips (I) under 153 lbs pull load, and logistical breakdown of the 3-person crew deployment timeline under CBA Rule 5.06 (3:15 clock).
+- **Field Deployment Crew Architecture & Pincer Deployment Protocol:**
+  - **Crew Size:** Minimum 3-person crew per cart (single cart = 3 handlers; dual carts flanking Side 1 and Side 2 = 2x 3-person crews, 6 handlers total).
+  - **Role 1 (Cart Driver / Pusher):** Pushes loaded cart from rear entrance gate (Rule 5.02) along perimeter to front sideline. Regulates pace, pauses momentarily at yard-line marks, and once the final screen is pulled, immediately rolls empty cart off the field over the front boundary into the sideline staging zone. Driver clears the field first (at ~1:55).
+  - **Role 2 (Offloader / Opposite-End Deployer):** Walks alongside cart, pulls folded screens, and drops them flat on turf at rough coordinate marks. Once the final screen is dropped, moves to that far end of the line and deploys inward (swings triangle, snaps clips into Rail 3, sets ballast).
+  - **Role 3 (Trailing Deployer):** Follows behind cart. Begins final deployment on Screen 1 as soon as it is dropped, advancing down the line toward the middle.
+  - **Pincer Convergence & Egress:** Handlers 2 and 3 meet in the middle to complete center screens, then step across the front sideline boundary together (~2:15 to 2:25 total elapsed time).
+  - **Extrapolated Field Timeline vs. CBA Rule 5.06 (3:15 Clock):**
+    - Perimeter Ingress (~200–240 ft @ ~3.4 ft/s): 60–70s
+    - Drop-and-Go Deposition (4–6 screens along 51 ft span): 35–45s
+    - Pincer Setup Convergence (12–15s per screen): 30–40s
+    - Driver Cart Egress & Crew Field Clearance: 10s
+    - **Total Elapsed Time:** **~2:15 to 2:25** (Single Cart) / **~2:30 to 2:45** (Dual Carts, accounting for +80 ft far-side transit).
+    - **Safety Margin:** **+30 to +50 seconds** of safety buffer before the introductory announcement ends (3:15), ensuring zero Rule 4.03 timing penalties.
 - **2026 CBA Marching Band Competition Rules Compliance:**
   - **Rule 5.02 (Mandatory Rear Entrance for Props):** CRITICAL MANDATE — All props must enter from the back sideline or rear end zone gates (above goal posts). Never cross directly across front boundary (reserved for pit equipment). Handlers transit around perimeter to front sideline coordinates.
-  - **Rule 5.03 & 5.06 (Entry Permission & Timing):** Pre-stage in rear half of end zone up to goal line. Never enter field before T&P judge signals official permission.
+  - **Rule 5.03 & 5.06 (Entry Permission & Timing):** Pre-stage in rear half of end zone up to goal line. Never enter field before T&P judge signals official permission. Total setup and adult clearance window is 3 minutes 15 seconds.
   - **Rule 4.03 & 5.06 (Field Clearance Before Performance):** All adult volunteers assisting props must be COMPLETELY CLEAR of field before introductory announcement ends (3:15 after entry permission; 0.2 pt penalty per occurrence).
   - **Rule 4.03 (Re-Entry Prohibition):** Adults strictly prohibited from entering/re-entering field during performance (0.2 pt penalty per occurrence).
   - **Rule 4.02(c) (Medical Emergency Assistance Exception):** NO PENALTY. Any band member ill or injured may be assisted from the field by adult volunteers, parents, or staff without penalty.
