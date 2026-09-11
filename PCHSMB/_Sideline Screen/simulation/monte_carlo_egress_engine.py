@@ -8,7 +8,8 @@ Evaluates post-show field clearance within the CBA 15-minute total field budget:
   pre-show deployment (max 3:15) and performance duration (~8:30).
   Shaving time off deployment (e.g. 2:15 vs 3:15) transfers directly to egress (expanding to 3:00).
 - Clock Stoppage: The official 15-minute clock stops when the last cart/person crosses the
-  field boundary line into the exit chute / stadium tunnel (e.g. Canvas Stadium / Falcon Stadium).
+  field boundary line into the exit chute / stadium tunnel (specifically at Falcon Stadium - USAFA
+  for State Championships, featuring the tunnel ramp).
   Reloading and securing equipment in the tunnel occurs OFF THE CLOCK while the next band sets up.
 - Fleet Scope: 2 Carts Fleet only (Cart 1 on Side 1, Cart 2 on Side 2; 8 screens each)
 - Single Exit Gate per stadium (with dual exit benchmark)

@@ -44,7 +44,7 @@ $$T_{\text{total}} = T_{\text{deploy}} + T_{\text{announce}} + T_{\text{show}} +
 
 * **Where the Clock Stops (Rule 5.06 & 5.08):**
   * The official contest clock stops the instant the last band member, auxiliary performer, cart, and prop **crosses the boundary line at the field exit**.
-  * At championship venues like **CSU Canvas Stadium (State Championships)**, **Falcon Stadium (USAFA)**, and major regional venues, there is a designated egress chute leading into a long stadium tunnel.
+  * At championship venues like **Falcon Stadium (USAFA - State Championships)** and major regional venues, there is a designated egress chute leading into a long stadium tunnel and incline ramp.
   * **Crossing into the mouth of the tunnel stops the official 15:00 clock.**
 * **Off-Clock Staging & Reload in the Tunnel:**
   * Once across the field boundary and inside the tunnel / chute, the ensemble is **off the competition clock**.

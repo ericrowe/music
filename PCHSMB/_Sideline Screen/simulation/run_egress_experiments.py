@@ -294,7 +294,7 @@ def write_egress_markdown_report(path: str, exp1, exp2, exp3, exp4, n_trials):
     lines.append("- **Rule 5.09 Early Signal Advantage:** A director may signal the Timing & Penalties judge to start the announcement as soon as the band and props are set.\n")
     lines.append("- **Fungibility:** Shaving 60s off deployment (e.g. finishing setup at 2:15 instead of 3:15) transfers directly into the egress budget, expanding post-show clearance time from 2:00 up to **3:00 (180 seconds)**!\n\n")
     lines.append("### 1.2 Where the Clock Stops: The State Championship Tunnel Protocol\n\n")
-    lines.append("- **Where the Clock Stops (Rule 5.06 & 5.08):** The official 15:00 contest clock stops the instant the last performer, cart, and prop crosses the boundary line at the field exit chute / tunnel mouth (e.g. at CSU Canvas Stadium or Falcon Stadium).\n")
+    lines.append("- **Where the Clock Stops (Rule 5.06 & 5.08):** The official 15:00 contest clock stops the instant the last performer, cart, and prop crosses the boundary line at the field exit chute / tunnel mouth (specifically at Falcon Stadium - USAFA for State Championships).\n")
     lines.append("- **Off-Clock Reload in Tunnel:** Inside the tunnel, the crew pauses to reload blinds onto the carts and lash down hardware off the competition clock while the next band enters and sets up in their 3:15 window.\n\n")
     lines.append("---\n\n")
     lines.append("## 2. Executive Summary & Tactical Verdicts\n\n")
