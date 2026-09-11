@@ -1,21 +1,5 @@
 # Sideline Screen / Duck Blind: Field Logistics, Deployment & Egress Timing Analysis
 
-<div style="font-size: 0.82em; color: #444444; line-height: 1.5;">
-<sub>
-<b>Document Status:</b> Authoritative Operational Logistics & Timing Standard (Multi-Year Planning Reference)<br>
-<b>Subproject:</b> Pine Creek High School Marching Band (PCHSMB) Sideline Screen / Duck Blind Fleet (16 Units)<br>
-<b>Circuit Standard:</b> Colorado Bandmasters Association (CBA) Marching Band Rules (Class 4A/5A)<br>
-<b>Total Allotted Field Block (Rule 5.01 / 5.06):</b> 15 minutes 00 seconds (900.0 seconds)<br>
-<b>Simulation Baseline:</b> High-Precision Stochastic Engine (<i>N</i> = 50,000 Randomized Trials per Scenario)<br>
-<b>Authoritative Cross-References:</b><br>
-• Technical Specification: <a href="https://github.com/ericrowe/music/blob/main/PCHSMB/_Sideline%20Screen/docs/references/TECHNICAL_SPEC.md" style="color: #444444; text-decoration: underline;">TECHNICAL_SPEC.md</a><br>
-• Wind Loading & Ballast Analysis: <a href="https://github.com/ericrowe/music/blob/main/PCHSMB/_Sideline%20Screen/docs/references/WIND_LOADING_30MPH_ANALYSIS.md" style="color: #444444; text-decoration: underline;">WIND_LOADING_30MPH_ANALYSIS.md</a><br>
-• Operations & Build Manual (DOCX): <a href="https://github.com/ericrowe/music/blob/main/PCHSMB/_Sideline%20Screen/docs/Sideline_Screen_Duck_Blind_Build_Instructions.docx" style="color: #444444; text-decoration: underline;">Sideline_Screen_Duck_Blind_Build_Instructions.docx</a><br>
-• Operations & Build Manual (PDF): <a href="https://github.com/ericrowe/music/blob/main/PCHSMB/_Sideline%20Screen/docs/Sideline_Screen_Duck_Blind_Build_Instructions.pdf" style="color: #444444; text-decoration: underline;">Sideline_Screen_Duck_Blind_Build_Instructions.pdf</a><br>
-• Simulation Engine Code: <a href="https://github.com/ericrowe/music/blob/main/PCHSMB/_Sideline%20Screen/simulation/monte_carlo_engine.py" style="color: #444444; text-decoration: underline;">monte_carlo_engine.py</a>, <a href="https://github.com/ericrowe/music/blob/main/PCHSMB/_Sideline%20Screen/simulation/monte_carlo_egress_engine.py" style="color: #444444; text-decoration: underline;">monte_carlo_egress_engine.py</a>
-</sub>
-</div>
-
 ---
 
 ## 1. Executive Summary & Recommended Strategy
@@ -285,3 +269,19 @@ Within the CBA **15 minutes 00 seconds (900.0 seconds)** block, this lookup tabl
 - [ ] **T + 0:45 to T + 1:35:** Both carts push through the exit chute into the tunnel.
 - [ ] **T + 1:40 (★ CLOCK STOPS ★):** Last cart crosses the exit threshold into the tunnel mouth. The official CBA timing clock stops!
 - [ ] **T + 1:40 to T + 2:00 (Off-Clock):** Crew pauses in tunnel mouth, slides folded blinds into cart racks, lashes down hardware, and rolls up tunnel hill at normal walking pace.
+
+---
+
+## 7. Document Metadata & Technical Cross-References
+
+* **Document Status:** Authoritative Operational Logistics & Timing Standard (Multi-Year Planning Reference)
+* **Subproject:** Pine Creek High School Marching Band (PCHSMB) Sideline Screen / Duck Blind Fleet (16 Units)
+* **Circuit Standard:** Colorado Bandmasters Association (CBA) Marching Band Rules (Class 4A/5A)
+* **Total Allotted Field Block (Rule 5.01 / 5.06):** 15 minutes 00 seconds (900.0 seconds)
+* **Simulation Baseline:** High-Precision Stochastic Engine ($N = 50,000$ Randomized Trials per Scenario)
+* **Authoritative Cross-References:**
+  * Technical Specification: [`TECHNICAL_SPEC.md`](https://github.com/ericrowe/music/blob/main/PCHSMB/_Sideline%20Screen/docs/references/TECHNICAL_SPEC.md)
+  * Wind Loading & Ballast Analysis: [`WIND_LOADING_30MPH_ANALYSIS.md`](https://github.com/ericrowe/music/blob/main/PCHSMB/_Sideline%20Screen/docs/references/WIND_LOADING_30MPH_ANALYSIS.md)
+  * Operations & Build Manual (DOCX): [`Sideline_Screen_Duck_Blind_Build_Instructions.docx`](https://github.com/ericrowe/music/blob/main/PCHSMB/_Sideline%20Screen/docs/Sideline_Screen_Duck_Blind_Build_Instructions.docx)
+  * Operations & Build Manual (PDF): [`Sideline_Screen_Duck_Blind_Build_Instructions.pdf`](https://github.com/ericrowe/music/blob/main/PCHSMB/_Sideline%20Screen/docs/Sideline_Screen_Duck_Blind_Build_Instructions.pdf)
+  * Simulation Engine Code: [`monte_carlo_engine.py`](https://github.com/ericrowe/music/blob/main/PCHSMB/_Sideline%20Screen/simulation/monte_carlo_engine.py), [`monte_carlo_egress_engine.py`](https://github.com/ericrowe/music/blob/main/PCHSMB/_Sideline%20Screen/simulation/monte_carlo_egress_engine.py)

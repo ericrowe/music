@@ -1,16 +1,5 @@
 # Sideline Screen (Duck Blind) Operational Logistics, Timing & Field Clearance Guide
 
-<div style="font-size: 0.82em; color: #EEEEEE; line-height: 1.5;">
-<sub>
-<b>Document Status:</b> Authoritative Operational Timing Standard (Multi-Year Planning Reference)<br>
-<b>Subproject:</b> Pine Creek High School Marching Band (PCHSMB) Sideline Screen / Duck Blind Fleet (16 Units)<br>
-<b>Circuit Standard:</b> Colorado Bandmasters Association (CBA) Marching Band Rules (Class 4A/5A)<br>
-<b>Total Allotted Field Block (Rule 5.01 / 5.06):</b> 15 minutes 00 seconds (900.0 seconds)<br>
-<b>Simulation Engine:</b> High-Precision Stochastic Monte Carlo (<i>N</i> = 50,000 Randomized Trials per Scenario)<br>
-<b>Authoritative Cross-Reference:</b> <a href="https://github.com/ericrowe/music/blob/main/PCHSMB/_Sideline%20Screen/docs/references/FIELD_LOGISTICS_AND_TIMING_ANALYSIS.md" style="color: #444444; text-decoration: underline;">FIELD_LOGISTICS_AND_TIMING_ANALYSIS.md</a>
-</sub>
-</div>
-
 ---
 
 ## 1. Executive Summary & Recommended Strategy
@@ -236,3 +225,14 @@ sequenceDiagram
 - [ ] **T + 0:45 to T + 1:35:** Both carts push through the exit chute into the tunnel.
 - [ ] **T + 1:40 (★ CLOCK STOPS ★):** Last cart crosses the exit threshold into the tunnel mouth. The official CBA timing clock stops!
 - [ ] **T + 1:40 to T + 2:00 (Off-Clock):** Crew pauses in tunnel mouth, slides folded blinds into cart racks, lashes down hardware, and rolls up tunnel hill at normal walking pace.
+
+---
+
+## 8. Document Metadata & Authoritative Cross-References
+
+* **Document Status:** Authoritative Operational Timing Standard (Multi-Year Planning Reference)
+* **Subproject:** Pine Creek High School Marching Band (PCHSMB) Sideline Screen / Duck Blind Fleet (16 Units)
+* **Circuit Standard:** Colorado Bandmasters Association (CBA) Marching Band Rules (Class 4A/5A)
+* **Total Allotted Field Block (Rule 5.01 / 5.06):** 15 minutes 00 seconds (900.0 seconds)
+* **Simulation Engine:** High-Precision Stochastic Monte Carlo ($N = 50,000$ Randomized Trials per Scenario)
+* **Authoritative Cross-Reference:** [`FIELD_LOGISTICS_AND_TIMING_ANALYSIS.md`](https://github.com/ericrowe/music/blob/main/PCHSMB/_Sideline%20Screen/docs/references/FIELD_LOGISTICS_AND_TIMING_ANALYSIS.md)
