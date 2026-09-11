@@ -331,9 +331,9 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
         [
           *Side:* \
           #v(2pt)
-          #box(stroke: 0.5pt + rgb("#a0aec0"), inset: (x: 2.5pt, y: 1pt), radius: 2pt)[#h(3pt)] Side 1 (Left) \
+          #box(stroke: 0.5pt + rgb("#a0aec0"), inset: (x: 2.5pt, y: 1pt), radius: 2pt)[#h(3pt)] Side 1 (Right)#footnote[Side 1 is on the right when standing on the backfield and facing the front stands.] \
           #v(2pt)
-          #box(stroke: 0.5pt + rgb("#a0aec0"), inset: (x: 2.5pt, y: 1pt), radius: 2pt)[#h(3pt)] Side 2 (Right)
+          #box(stroke: 0.5pt + rgb("#a0aec0"), inset: (x: 2.5pt, y: 1pt), radius: 2pt)[#h(3pt)] Side 2 (Left)
         ],
         [
           *Staging Location:* \
