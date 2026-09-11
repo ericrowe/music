@@ -267,7 +267,7 @@ The Colorado Bandmasters Association (CBA) strictly enforces prop and adult volu
 
 = 4. 2026 Continuum Prop Fleet Summary
 
-The 2026 visual design for *Continuum* incorporates three prop families totaling 30 field elements:
+The 2026 visual design for *Continuum* incorporates three prop families totaling 34 field elements (16 Duck Blinds, 10 Rolling Backdrops, 4 Performance Stages, and 4 Mobile Staircases):
 
 #table(
   columns: (1.6fr, 0.8fr, 1.4fr, 1.8fr, 2.4fr),
@@ -801,14 +801,17 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
   tag: "Master Operations, Weather Monitoring, Gate Liaison & Timing Control"
 )[
   #text(size: 8.5pt, style: "italic", fill: rgb("#2b6cb0"))[
-    You are the overall director and safety coordinator for the 30 field props and 25+ Adult Volunteers. You maintain authoritative weather telemetry, coordinate directly with CBA timing and penalty officials at the stadium gate, execute the countdown clearance call, and manage exit flow.
+    You are the overall director and safety coordinator for the 34 field props and the 6 to 8 dedicated Prop Crew Adult Volunteers (the majority of the band's 25 CBA adult credentials support the Pit / Front Ensemble). You maintain authoritative weather telemetry, coordinate directly with CBA timing and penalty officials at the stadium gate, execute the countdown clearance call, and manage exit flow.
   ]
-  #v(4pt)
+  #v(3pt)
 
-  + *Weather Telemetry & Go / No-Go Authority:*
-    - Carry a calibrated handheld digital anemometer and monitor live airport METAR weather feeds and local radar.
-    - Record wind speeds during morning check-in and 30 minutes prior to gate step-off.
-    - Authorize the operational wind tier (Tier 0 through Tier 3) and direct the ballast loading for all carts and backdrops.
+  + *Weather Monitoring & Plain-English Weather Sources:*
+    - *Handheld Anemometer:* Carry a calibrated handheld digital anemometer to measure live surface wind speed at field level in the trailer lot, staging area, and sideline at morning check-in and 30 minutes prior to gate step-off.
+    - *Decoded Airport Weather Feeds:* Official airport weather reports (METARs) use pilot shorthand (e.g., `18015G24KT`). *Do not try to decipher raw pilot code.* Use these recommended tools in plain-English / decoded mode:
+      - *AviationWeather.gov (Decoded Mode):* Enter the 4-letter station code for the nearest airport (`KCOS` for Colorado Springs Airport, `KFLY` for Meadow Lake / Falcon, `KBJC` for Rocky Mountain Metro / North Denver, `KAPA` for Centennial / South Denver, `KFNL` for Northern Colorado). Toggle *"Decoded"* to read sustained wind speed and gusts in plain MPH.
+      - *Windy.com / Windy App:* Set display units to MPH. Displays real-time surface wind animations, local airport readings, and forecasted wind gusts at stadium coordinates.
+      - *Weather Underground (Wunderground):* Search the venue address to view live 1-minute wind and gust readings from Personal Weather Stations (PWS) in the stadium's immediate neighborhood.
+    - *Wind Tier Authorization:* Authorize the day's operational wind tier (Tier 0 through Tier 3) and direct ballast loading across carts and backdrops per the Ballast Schedules.
     - *HARD RULE:* If sustained winds exceed 20 mph OR gusts reach 25–30 mph, issue an immediate *NO-GO* directive. Props remain locked in trailers. Notify Band Directors immediately.
   + *Judge Liaison & Gate Release:*
     - Coordinate directly with the CBA Timing & Penalty (T&P) judge at the stadium gate.
@@ -816,15 +819,12 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
     - Signal the prop and cart pushers the instant official entry permission is granted.
   + *The 2:45 Clearance Call & Field Safety:*
     - Monitor stopwatch from the moment props cross the gate boundary.
-    - At the 2:30 mark, loudly call *"PROPS CLEAR!"* down the sideline and confirm all Adult Volunteers are moving behind boundary lines.
+    - At the 2:30 mark, loudly call *"PROPS CLEAR!"* down the sideline and confirm all 6–8 Prop Crew Adult Volunteers (and nearby Pit crew adults) are moving behind boundary lines.
     - Ensure 100% of adult personnel are completely off the turf and across the front/back sideline markers before the 3:15 announcement begins (*strictly avoid Rule 4.03 penalties*).
   + *Exit Chute & Traffic Management:*
     - Position yourself at the stadium exit gate during post-show egress.
     - Ensure continuous rolling motion through the tunnel chute per CBA Rule 8.05; prevent student or cart bottlenecks.
     - Direct returning props along designated perimeter paths back to the staging area or equipment trailer lot.
-  + *Radio Communications & Emergency Protocol:*
-    - Maintain active radio contact with Pit Crew Lead, Band Directors, and Equipment Truck Drivers on Band Channel 1.
-    - In the event of an injured student or mechanical failure on field, coordinate immediate response without delaying egress clock.
 ]
 
 #pagebreak()
@@ -840,7 +840,7 @@ All teardown and packdown procedures occur *exclusively in the equipment trailer
 + *Deballasting Safety:* Remove sandbags from backdrop retention posts and duck blind carts. Place bags gently into the designated heavy-duty storage totes inside the equipment trailer. *Never drop or throw sandbags* (protects seams and plastic liners).
 + *Screen Packing:* Stack collapsed sideline screens flat in the transport cart racks (8 screens per cart, hinges alternating to maintain coplanar nesting $<= 2.0$ inches). Secure retaining gate latches with 3D-printed locking pins.
 + *Trailer Loading:* Roll backdrops and carts into the trailer in reverse numerical order. Set wheel brakes, engage wheel chocks, and secure ratcheting cargo straps across each frame before transit.
-+ *All-Clear Check:* Inspect the staging lot for personal belongings, water bottles, and tools. Verify all 25 Adult Volunteer wristbands are accounted for.
++ *All-Clear Check:* Inspect the staging lot for personal belongings, water bottles, and tools. Verify all adult volunteer wristbands across prop and pit crews are accounted for before departing.
 
 #v(8pt)
 
