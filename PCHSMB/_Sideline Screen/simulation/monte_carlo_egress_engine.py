@@ -3,21 +3,32 @@
 Monte Carlo Simulation Engine for Post-Performance Egress / Extraction.
 
 Evaluates post-show field clearance under the strict CBA 2:00 (120.0s) rule:
-- 1 Cart vs 2 Carts
-- Exit Gate Geometry: 'dual' (each cart exits own end zone) vs 'side1_only' (all exit Side 1)
-- 3 Teardown Strategies:
-    1. 'parallel_pre_fold': 8 on-field students per side fold screens concurrently; cart team loads.
-    2. 'crew_only_fold': Only the 2 cart students unclip, fold, and load screens sequentially.
-    3. 'direct_hand_carry': On-field students hand-carry folded screens off; cart carries ballast.
-- Pusher Fitness Tiers ('average', 'lower_fitness', 'higher_fitness')
-- Ballast States ('tier1', 'tier2', 'none')
+- 2 Carts Fleet only (Cart 1 on Side 1, Cart 2 on Side 2; 8 screens each)
+- Single Exit Gate per stadium (or dual exit benchmark)
+- Reload Modes:
+    1. 'outside_gate': Students hand-carry to gate, cross gate (clock stops); reload outside.
+    2. 'inside_gate': Students hand-carry to end zone staging area; reload inside gate; loaded cart rolls through gate (clock stops).
+    3. 'on_field_loading': Traditional baseline: carts load screens & ballast on field, then push loaded carts to exit.
+    4. 'hybrid_split': Near cart loads on field; Far cart hand-carries & reloads at gate.
+- Stadium Layouts:
+    - 'same_side': Enter Side 1, Exit Side 1 (Cart 2 has long cross-field push on entrance + long cross-field push on egress).
+    - 'opposite_side': Enter Side 1, Exit Side 2 (Cart 2 had long entrance push, but has short egress; Cart 1 has long egress).
+    - 'dual_exit': Both end zones open for exit.
+- Far-Cart Sweep Directions:
+    - 'inward': Screen 8 to Screen 1 (saves 20 yd of cross-field push).
+    - 'outward': Screen 1 to Screen 8 (88 yd cross-field push).
+- Ballast States ('none', 'tier1', 'tier2')
+- Pusher Fitness Profiles ('average', 'lower_fitness', 'higher_fitness')
 """
 
 import math
 import numpy as np
 from typing import Dict, List, NamedTuple, Optional
 
-from egress_model import compute_egress_route, EgressRoute, CART_PARK_LOCATIONS
+from egress_model import (
+    compute_cart_egress_route, get_student_carry_distances,
+    CartEgressRoute, CART_PARK_LOCATIONS
+)
 from field_model import SCREENS_PER_SIDE, TOTAL_SCREENS, SCREEN_WIDTH_YARDS
 from pusher_physics import (
     CART_TARE_WEIGHT_LBS, SCREEN_UNIT_WEIGHT_LBS, BALLAST_BAG_WEIGHT_LBS,
@@ -29,48 +40,49 @@ CBA_EGRESS_LIMIT_SECONDS = 120.0  # 2 minutes post-show clearance window
 
 class EgressTrialResult(NamedTuple):
     trial_id: int
-    total_time_seconds: float
-    success: bool
-    slack_seconds: float
-    t_approach_s: float
-    t_load_line_s: float
-    t_sprint_exit_s: float
-    t_screens_folded_s: float
-    gross_final_weight_lbs: float
+    field_clearance_time_s: float   # Official CBA clock time (when all clear the exit gate)
+    total_operation_time_s: float   # Includes outside reload time if reloaded outside
+    success: bool                   # True if field_clearance_time_s <= 120.0s
+    slack_seconds: float            # 120.0 - field_clearance_time_s
+    t_cart1_gate_s: float
+    t_cart2_gate_s: float
+    t_students_gate_s: float
+    t_reload_s: float
     bottleneck: str
 
 class EgressScenarioSummary(NamedTuple):
-    config: str
-    exit_gate_mode: str
-    strategy: str
+    stadium_layout: str
+    reload_mode: str
+    far_sweep_dir: str
     ballast_mode: str
     pusher_profile: str
-    park_location: str
     num_trials: int
     success_rate: float
-    mean_time: float
-    median_time: float
-    std_time: float
-    p90_time: float
-    p95_time: float
-    p99_time: float
-    min_time: float
-    max_time: float
+    mean_clearance_time: float
+    median_clearance_time: float
+    std_clearance_time: float
+    p90_clearance_time: float
+    p95_clearance_time: float
+    p99_clearance_time: float
+    min_clearance_time: float
+    max_clearance_time: float
     mean_slack: float
-    all_times: np.ndarray
+    mean_total_operation_time: float
+    all_clearance_times: np.ndarray
 
-def simulate_single_cart_egress(
-    route: EgressRoute,
-    strategy: str,
+def simulate_cart_and_crew(
+    cart_id: int,
+    route: CartEgressRoute,
+    reload_mode: str,
     ballast_mode: str,
     pusher_fitness: float,
     pusher_profile: str,
     rng: np.random.Generator
 ) -> Dict[str, float]:
     """
-    Simulates egress for one cart handling 8 screens on one side.
+    Simulates one cart (8 screens) and its 8 student handlers.
     """
-    num_screens = len(route.screen_order)
+    num_screens = SCREENS_PER_SIDE # 8
     
     if ballast_mode == "tier1":
         ballast_per_screen = BALLAST_BAG_WEIGHT_LBS * 1.0  # 15 lbs
@@ -79,334 +91,226 @@ def simulate_single_cart_egress(
     else:
         ballast_per_screen = 0.0
         
-    # Cart starts EMPTY at parked location
+    # Student hand-carry distances to gate
+    student_dists = get_student_carry_distances(cart_id, route.stadium_layout)
+    student_gate_times = []
+    student_fold_times = []
+    
+    # -------------------------------------------------------------
+    # Step 1: Student Folding & Hand-Carry Transit
+    # -------------------------------------------------------------
+    for i in range(num_screens):
+        t_fold = rng.triangular(4.5, 6.0, 8.5)
+        # If student unclips ballast bag from screen:
+        if ballast_mode != "none":
+            t_fold += rng.triangular(1.5, 2.2, 3.5)
+        # 5% latch hitch
+        if rng.random() < 0.05:
+            t_fold += rng.uniform(2.0, 4.0)
+        student_fold_times.append(t_fold)
+        
+        # Student jogging/walking with 26-lb screen to gate
+        # Speed: 1.6 to 2.8 yd/s (approx 3.3 to 5.7 mph)
+        v_student = rng.triangular(1.6, 2.2, 2.8)
+        t_transit = student_dists[i] / v_student
+        student_gate_times.append(t_fold + t_transit)
+        
+    t_last_student_at_gate = max(student_gate_times)
+    
+    # -------------------------------------------------------------
+    # Step 2: Cart Movement
+    # -------------------------------------------------------------
     current_weight = CART_TARE_WEIGHT_LBS
     current_time = 0.0
-    dist_accum = 0.0
+    # Pushers rest on sideline during the 7-8 min show; 80% recovery of muscular energy
+    SHOW_RECOVERY_FACTOR = 0.80
+    dist_accum = route.prior_entrance_dist_yd * (1.0 - SHOW_RECOVERY_FACTOR)
     
-    # -------------------------------------------------------------
-    # Step 1: Pre-Fold / Disassembly Phase
-    # -------------------------------------------------------------
-    screen_fold_timestamps = []
-    
-    if strategy == "parallel_pre_fold":
-        # All 8 on-field students unclip and fold simultaneously upon show end!
-        for i in range(num_screens):
-            t_uf = rng.triangular(4.5, 6.0, 8.5)
-            if ballast_mode != "none":
-                t_uf += rng.triangular(1.5, 2.5, 3.8)
-            # Clip latch release hitch
-            if rng.random() < 0.05:
-                t_uf += rng.uniform(2.0, 4.0)
-            screen_fold_timestamps.append(t_uf)
-        t_all_folded = max(screen_fold_timestamps)
-        
-    elif strategy == "direct_hand_carry":
-        # Students fold and carry screens directly to end zone
-        for i in range(num_screens):
-            t_uf = rng.triangular(4.5, 6.0, 8.5)
-            # Carry 32-53 yards to end line at ~2.8 yd/s
-            dist_to_ez = 32.0 + (num_screens - 1 - i) * SCREEN_WIDTH_YARDS
-            t_carry = dist_to_ez / rng.triangular(2.4, 2.8, 3.3)
-            screen_fold_timestamps.append(t_uf + t_carry)
-        t_all_folded = max(screen_fold_timestamps)
-        
-    else: # crew_only_fold (sequential)
-        t_all_folded = 0.0 # Handled on the fly at each screen
-        
-    # -------------------------------------------------------------
-    # Step 2: Approach from Park Location to Screen 1
-    # -------------------------------------------------------------
+    # Cart Approach to first screen
     approach_seg = route.segments[0]
     current_time += compute_acceleration_penalty_seconds(current_weight, rng)
     for _ in range(approach_seg.turns_90deg):
         current_time += compute_turn_penalty_seconds(current_weight, rng)
-        
     v_app = compute_cart_velocity_yards_per_sec(current_weight, pusher_fitness, dist_accum, pusher_profile, rng)
-    t_app = approach_seg.distance_yards / v_app
-    current_time += t_app
+    current_time += approach_seg.distance_yards / v_app
     dist_accum += approach_seg.distance_yards
-    t_approach_end = current_time
     
-    # -------------------------------------------------------------
-    # Step 3: Collection along Front Sideline (Screen 1 to Screen 8)
-    # -------------------------------------------------------------
-    inter_screen_dist = SCREEN_WIDTH_YARDS # 2.667 yd
-    t_load_start = current_time
+    # Cart Collection along Front Sideline
+    inter_screen_dist = SCREEN_WIDTH_YARDS
+    
+    is_on_field_loading = (reload_mode == "on_field_loading") or (reload_mode == "hybrid_split" and route.is_near_cart)
     
     for i in range(num_screens):
-        if strategy == "parallel_pre_fold":
-            # Cart arrives at pre-folded screen; just lift and slide onto cart
-            # If cart arrives before student finished folding, wait for it
-            current_time = max(current_time, screen_fold_timestamps[i])
-            t_l = rng.triangular(2.2, 3.2, 4.6)
+        if is_on_field_loading:
+            # Cart stops at screen, waits for student to finish folding, loads screen + ballast
+            current_time = max(current_time, student_fold_times[i])
+            t_l = rng.triangular(2.2, 3.2, 4.6) # load folded frame
             if ballast_mode != "none":
-                t_l += rng.triangular(1.8, 2.6, 3.8) # Load sandbag into bin
+                t_l += rng.triangular(1.8, 2.6, 3.8) # load sandbag
             if rng.random() < 0.05:
                 t_l += rng.uniform(2.0, 4.0)
             current_time += t_l
-            
-        elif strategy == "direct_hand_carry":
-            # Screen is carried by student; cart only loads ballast sandbag!
+            current_weight += (SCREEN_UNIT_WEIGHT_LBS + ballast_per_screen)
+        else:
+            # Hand-carry mode: cart only loads ballast sandbag!
             if ballast_mode != "none":
                 t_l = rng.triangular(1.8, 2.5, 3.5)
                 current_time += t_l
+                current_weight += ballast_per_screen
             else:
-                current_time += 0.5 # Cart rolls past without stopping
+                current_time += 0.4 # rolls straight past
                 
-        else: # crew_only_fold (sequential disassemble + load)
-            t_dl = rng.triangular(8.5, 11.5, 15.0)
-            if ballast_mode != "none":
-                t_dl += rng.triangular(2.5, 3.8, 5.0)
-            if rng.random() < 0.08:
-                t_dl += rng.uniform(2.5, 5.0)
-            current_time += t_dl
-            
-        # Accumulate weight onto cart
-        if strategy == "direct_hand_carry":
-            current_weight += ballast_per_screen
-        else:
-            current_weight += (SCREEN_UNIT_WEIGHT_LBS + ballast_per_screen)
-            
-        # Move to next screen
+        # Inter-screen transit
         if i < num_screens - 1:
             v_move = compute_cart_velocity_yards_per_sec(current_weight, pusher_fitness, dist_accum, pusher_profile, rng)
             current_time += inter_screen_dist / v_move
             dist_accum += inter_screen_dist
             
-    t_load_total = current_time - t_load_start
-    final_gross_weight = current_weight
-    
-    # -------------------------------------------------------------
-    # Step 4: Sprint Exit through Front Half of End Zone
-    # -------------------------------------------------------------
-    # At Screen 8, the cart is at X = -28.0 yd (already past the 30-yd line!)
-    # Sprint straight through the front half of the end zone to End Line (X = -60.0 yd) = 32 yards
+    # Cart Sprint / Cross-Field Transit to Exit Threshold
     exit_seg = route.segments[-1]
-    t_sprint_start = current_time
-    
-    current_time += compute_acceleration_penalty_seconds(final_gross_weight, rng)
+    current_time += compute_acceleration_penalty_seconds(current_weight, rng)
     for _ in range(exit_seg.turns_90deg):
-        current_time += compute_turn_penalty_seconds(final_gross_weight, rng)
-        
-    v_sprint = compute_cart_velocity_yards_per_sec(final_gross_weight, pusher_fitness, dist_accum, pusher_profile, rng)
-    current_time += exit_seg.distance_yards / v_sprint
-    dist_accum += exit_seg.distance_yards
-    t_sprint_total = current_time - t_sprint_start
-    
-    # Students running off field
-    if strategy == "direct_hand_carry":
-        total_time = max(current_time, t_all_folded)
-    else:
-        # Student helpers running off field alongside/behind cart
-        t_students_clear = current_time + rng.triangular(2.0, 4.0, 7.0)
-        total_time = max(current_time, t_students_clear)
-        
-    bottleneck = "cart_loading" if t_load_total > t_sprint_total else "sprint_exit"
-    
-    return {
-        "total_time": total_time,
-        "t_approach": t_approach_end,
-        "t_load": t_load_total,
-        "t_sprint": t_sprint_total,
-        "t_screens_folded": t_all_folded,
-        "final_weight": final_gross_weight,
-        "bottleneck": bottleneck
-    }
-
-def simulate_single_cart_fleet_egress(
-    route: EgressRoute,
-    strategy: str,
-    ballast_mode: str,
-    pusher_fitness: float,
-    pusher_profile: str,
-    rng: np.random.Generator
-) -> Dict[str, float]:
-    """
-    Simulates a single cart attempting to extract all 16 screens across both sides!
-    """
-    total_screens = TOTAL_SCREENS # 16
-    
-    if ballast_mode == "tier1":
-        ballast_per_screen = BALLAST_BAG_WEIGHT_LBS * 1.0
-    elif ballast_mode == "tier2":
-        ballast_per_screen = BALLAST_BAG_WEIGHT_LBS * 2.0
-    else:
-        ballast_per_screen = 0.0
-        
-    current_weight = CART_TARE_WEIGHT_LBS
-    current_time = 0.0
-    dist_accum = 0.0
-    
-    # Step 1: Pre-fold on both sides
-    s1_fold_times = []
-    s2_fold_times = []
-    
-    if strategy == "parallel_pre_fold":
-        for _ in range(SCREENS_PER_SIDE):
-            t_uf = rng.triangular(4.5, 6.0, 8.5)
-            if ballast_mode != "none":
-                t_uf += rng.triangular(1.5, 2.5, 3.8)
-            s2_fold_times.append(t_uf)
-            s1_fold_times.append(t_uf)
-    else:
-        s2_fold_times = [0.0] * SCREENS_PER_SIDE
-        s1_fold_times = [0.0] * SCREENS_PER_SIDE
-        
-    # Step 2: Approach Side 2 Screen 16 (parked near 20-yd line)
-    app_seg = route.segments[0]
-    current_time += compute_acceleration_penalty_seconds(current_weight, rng)
-    v_app = compute_cart_velocity_yards_per_sec(current_weight, pusher_fitness, dist_accum, pusher_profile, rng)
-    current_time += app_seg.distance_yards / v_app
-    dist_accum += app_seg.distance_yards
-    t_approach = current_time
-    
-    # Step 3: Collect Side 2 screens (16 inward to 9)
-    inter_screen_dist = SCREEN_WIDTH_YARDS
-    for i in range(SCREENS_PER_SIDE):
-        if strategy == "parallel_pre_fold":
-            current_time = max(current_time, s2_fold_times[i])
-            t_l = rng.triangular(2.2, 3.2, 4.6)
-            if ballast_mode != "none":
-                t_l += rng.triangular(1.8, 2.6, 3.8)
-            current_time += t_l
-        else:
-            t_dl = rng.triangular(8.5, 11.5, 15.0)
-            if ballast_mode != "none":
-                t_dl += rng.triangular(2.5, 3.8, 5.0)
-            current_time += t_dl
-            
-        current_weight += (SCREEN_UNIT_WEIGHT_LBS + ballast_per_screen)
-        if i < SCREENS_PER_SIDE - 1:
-            v_move = compute_cart_velocity_yards_per_sec(current_weight, pusher_fitness, dist_accum, pusher_profile, rng)
-            current_time += inter_screen_dist / v_move
-            dist_accum += inter_screen_dist
-            
-    # Step 4: Cross Front Ensemble (Pit) to Side 1 (16 yd)
-    pit_seg = route.segments[2]
-    v_pit = compute_cart_velocity_yards_per_sec(current_weight, pusher_fitness, dist_accum, pusher_profile, rng)
-    current_time += pit_seg.distance_yards / v_pit
-    dist_accum += pit_seg.distance_yards
-    
-    # Step 5: Collect Side 1 screens (1 outward to 8)
-    for i in range(SCREENS_PER_SIDE):
-        if strategy == "parallel_pre_fold":
-            current_time = max(current_time, s1_fold_times[i])
-            t_l = rng.triangular(2.2, 3.2, 4.6)
-            if ballast_mode != "none":
-                t_l += rng.triangular(1.8, 2.6, 3.8)
-            current_time += t_l
-        else:
-            t_dl = rng.triangular(8.5, 11.5, 15.0)
-            if ballast_mode != "none":
-                t_dl += rng.triangular(2.5, 3.8, 5.0)
-            current_time += t_dl
-            
-        current_weight += (SCREEN_UNIT_WEIGHT_LBS + ballast_per_screen)
-        if i < SCREENS_PER_SIDE - 1:
-            v_move = compute_cart_velocity_yards_per_sec(current_weight, pusher_fitness, dist_accum, pusher_profile, rng)
-            current_time += inter_screen_dist / v_move
-            dist_accum += inter_screen_dist
-            
-    # Step 6: Sprint to Side 1 Exit (32 yd)
-    exit_seg = route.segments[-1]
-    current_time += compute_acceleration_penalty_seconds(current_weight, rng)
+        current_time += compute_turn_penalty_seconds(current_weight, rng)
     v_exit = compute_cart_velocity_yards_per_sec(current_weight, pusher_fitness, dist_accum, pusher_profile, rng)
-    current_time += exit_seg.distance_yards / v_exit
-    dist_accum += exit_seg.distance_yards
     
+    # If reloading inside the gate, staging area is 10 yards before gate
+    if reload_mode == "inside_gate" and not is_on_field_loading:
+        d_to_staging = max(5.0, exit_seg.distance_yards - 10.0)
+        current_time += d_to_staging / v_exit
+        dist_accum += d_to_staging
+        t_cart_at_staging = current_time
+        
+        # Staging reload: wait for all 8 screens to arrive at staging area
+        # Staging is 10 yd before gate, so students arrive ~4s earlier than gate
+        t_students_at_staging = max(0.0, t_last_student_at_gate - (10.0 / 2.2))
+        t_reload_start = max(t_cart_at_staging, t_students_at_staging)
+        
+        # 8 students load 8 folded screens onto cart
+        t_reload = rng.triangular(10.0, 14.0, 20.0)
+        if rng.random() < 0.05:
+            t_reload += rng.uniform(3.0, 6.0) # minor slot alignment
+        current_time = t_reload_start + t_reload
+        current_weight += (SCREEN_UNIT_WEIGHT_LBS * num_screens)
+        
+        # Roll final 10 yards through exit gate
+        current_time += compute_acceleration_penalty_seconds(current_weight, rng)
+        v_final = compute_cart_velocity_yards_per_sec(current_weight, pusher_fitness, dist_accum, pusher_profile, rng)
+        current_time += 10.0 / v_final
+        dist_accum += 10.0
+        
+        t_cart_cleared_gate = current_time
+        t_operation_total = current_time
+        
+    elif reload_mode == "outside_gate" and not is_on_field_loading:
+        # Cart pushes all the way through the gate carrying only ballast
+        current_time += exit_seg.distance_yards / v_exit
+        dist_accum += exit_seg.distance_yards
+        t_cart_cleared_gate = current_time
+        
+        # Reload happens OUTSIDE the gate (off the CBA clock)
+        t_reload_start = max(t_cart_cleared_gate, t_last_student_at_gate)
+        t_reload = rng.triangular(10.0, 14.0, 20.0)
+        if rng.random() < 0.05:
+            t_reload += rng.uniform(3.0, 6.0)
+        t_operation_total = t_reload_start + t_reload
+        
+    else:
+        # on_field_loading: Cart is already fully loaded, rolls through gate
+        current_time += exit_seg.distance_yards / v_exit
+        dist_accum += exit_seg.distance_yards
+        t_cart_cleared_gate = current_time
+        t_reload = 0.0
+        t_operation_total = current_time
+        
     return {
-        "total_time": current_time,
-        "t_approach": t_approach,
-        "t_load": current_time - t_approach - (32.0 / v_exit),
-        "t_sprint": 32.0 / v_exit,
-        "t_screens_folded": max(s1_fold_times),
-        "final_weight": current_weight,
-        "bottleneck": "full_field_sweep"
+        "t_cart_gate": t_cart_cleared_gate,
+        "t_students_gate": t_last_student_at_gate,
+        "t_operation_total": t_operation_total,
+        "t_reload": t_reload if not is_on_field_loading else 0.0,
+        "final_weight": current_weight
     }
 
 def run_egress_monte_carlo(
-    config: str = "2_carts",
-    exit_gate_mode: str = "dual",
-    strategy: str = "parallel_pre_fold",
+    stadium_layout: str = "same_side",
+    reload_mode: str = "outside_gate",
+    far_sweep_dir: str = "inward",
     ballast_mode: str = "tier1",
     pusher_profile: str = "average",
-    park_location: str = "Sideline_20",
     num_trials: int = 5000,
     seed: Optional[int] = 42
 ) -> EgressScenarioSummary:
     """
-    Executes N Monte Carlo trials for post-performance egress.
+    Runs N stochastic Monte Carlo trials for 2-cart post-show egress.
     """
     rng = np.random.default_rng(seed)
-    times = np.empty(num_trials, dtype=float)
+    
+    route1 = compute_cart_egress_route(1, stadium_layout=stadium_layout, far_sweep_dir=far_sweep_dir)
+    route2 = compute_cart_egress_route(2, stadium_layout=stadium_layout, far_sweep_dir=far_sweep_dir)
+    
+    clearance_times = np.empty(num_trials, dtype=float)
+    operation_times = np.empty(num_trials, dtype=float)
     slacks = np.empty(num_trials, dtype=float)
     successes = 0
     
-    if config == "2_carts":
-        route1 = compute_egress_route("2_carts", cart_id=1, park_key=park_location, exit_gate_mode=exit_gate_mode)
-        route2 = compute_egress_route("2_carts", cart_id=2, park_key=park_location, exit_gate_mode=exit_gate_mode)
+    for i in range(num_trials):
+        f1 = sample_pusher_fitness(pusher_profile, rng)
+        f2 = sample_pusher_fitness(pusher_profile, rng)
         
-        for i in range(num_trials):
-            f1 = sample_pusher_fitness(pusher_profile, rng)
-            f2 = sample_pusher_fitness(pusher_profile, rng)
+        res1 = simulate_cart_and_crew(1, route1, reload_mode, ballast_mode, f1, pusher_profile, rng)
+        res2 = simulate_cart_and_crew(2, route2, reload_mode, ballast_mode, f2, pusher_profile, rng)
+        
+        # Field clearance time: when BOTH carts and ALL students have crossed the gate boundary
+        t_clearance = max(
+            res1["t_cart_gate"],
+            res2["t_cart_gate"],
+            res1["t_students_gate"],
+            res2["t_students_gate"]
+        )
+        
+        t_op = max(res1["t_operation_total"], res2["t_operation_total"])
+        
+        clearance_times[i] = t_clearance
+        operation_times[i] = t_op
+        slacks[i] = CBA_EGRESS_LIMIT_SECONDS - t_clearance
+        
+        if t_clearance <= CBA_EGRESS_LIMIT_SECONDS:
+            successes += 1
             
-            res1 = simulate_single_cart_egress(route1, strategy, ballast_mode, f1, pusher_profile, rng)
-            res2 = simulate_single_cart_egress(route2, strategy, ballast_mode, f2, pusher_profile, rng)
-            
-            # Egress completes when BOTH carts have cleared the field
-            t_fleet = max(res1["total_time"], res2["total_time"])
-            times[i] = t_fleet
-            slacks[i] = CBA_EGRESS_LIMIT_SECONDS - t_fleet
-            if t_fleet <= CBA_EGRESS_LIMIT_SECONDS:
-                successes += 1
-                
-    else: # 1_cart
-        route = compute_egress_route("1_cart", cart_id=1, park_key=park_location, exit_gate_mode=exit_gate_mode)
-        for i in range(num_trials):
-            f = sample_pusher_fitness(pusher_profile, rng)
-            res = simulate_single_cart_fleet_egress(route, strategy, ballast_mode, f, pusher_profile, rng)
-            t_fleet = res["total_time"]
-            times[i] = t_fleet
-            slacks[i] = CBA_EGRESS_LIMIT_SECONDS - t_fleet
-            if t_fleet <= CBA_EGRESS_LIMIT_SECONDS:
-                successes += 1
-                
     return EgressScenarioSummary(
-        config=config,
-        exit_gate_mode=exit_gate_mode,
-        strategy=strategy,
+        stadium_layout=stadium_layout,
+        reload_mode=reload_mode,
+        far_sweep_dir=far_sweep_dir,
         ballast_mode=ballast_mode,
         pusher_profile=pusher_profile,
-        park_location=park_location,
         num_trials=num_trials,
         success_rate=successes / num_trials,
-        mean_time=float(np.mean(times)),
-        median_time=float(np.median(times)),
-        std_time=float(np.std(times)),
-        p90_time=float(np.percentile(times, 90)),
-        p95_time=float(np.percentile(times, 95)),
-        p99_time=float(np.percentile(times, 99)),
-        min_time=float(np.min(times)),
-        max_time=float(np.max(times)),
+        mean_clearance_time=float(np.mean(clearance_times)),
+        median_clearance_time=float(np.median(clearance_times)),
+        std_clearance_time=float(np.std(clearance_times)),
+        p90_clearance_time=float(np.percentile(clearance_times, 90)),
+        p95_clearance_time=float(np.percentile(clearance_times, 95)),
+        p99_clearance_time=float(np.percentile(clearance_times, 99)),
+        min_clearance_time=float(np.min(clearance_times)),
+        max_clearance_time=float(np.max(clearance_times)),
         mean_slack=float(np.mean(slacks)),
-        all_times=times
+        mean_total_operation_time=float(np.mean(operation_times)),
+        all_clearance_times=clearance_times
     )
 
 if __name__ == "__main__":
-    print("=== EGRESS MONTE CARLO ENGINE TEST (1,000 trials each) ===")
-    
+    print("=== TESTING UPDATED EGRESS MONTE CARLO ENGINE ===")
     test_cases = [
-        ("2_carts", "dual", "parallel_pre_fold", "tier1", "average"),
-        ("2_carts", "dual", "crew_only_fold", "tier1", "average"),
-        ("2_carts", "dual", "direct_hand_carry", "tier1", "average"),
-        ("2_carts", "side1_only", "parallel_pre_fold", "tier1", "average"),
-        ("1_cart", "dual", "parallel_pre_fold", "tier1", "average"),
-        ("1_cart", "dual", "parallel_pre_fold", "none", "average"),
+        ("same_side", "outside_gate", "inward", "tier1"),
+        ("same_side", "inside_gate", "inward", "tier1"),
+        ("same_side", "on_field_loading", "inward", "tier1"),
+        ("same_side", "hybrid_split", "inward", "tier1"),
+        ("opposite_side", "outside_gate", "inward", "tier1"),
+        ("opposite_side", "inside_gate", "inward", "tier1"),
+        ("dual_exit", "outside_gate", "inward", "tier1"),
     ]
     
-    print(f"{'Config':<8} {'Exit Gates':<12} {'Strategy':<18} {'Mean (s)':<10} {'Median (s)':<12} {'P95 (s)':<10} {'Success (<=2:00)':<16}")
-    print("-" * 92)
-    for cfg, egm, strat, bal, push in test_cases:
-        res = run_egress_monte_carlo(cfg, egm, strat, bal, push, num_trials=1000)
-        print(f"{cfg:<8} {egm:<12} {strat:<18} {res.mean_time:<10.1f} {res.median_time:<12.1f} {res.p95_time:<10.1f} {res.success_rate * 100:<15.1f}%")
+    print(f"{'Layout':<14} {'Reload Mode':<18} {'Sweep':<8} {'Mean Time':<12} {'P95 Time':<12} {'Success (<=2:00)':<18}")
+    print("-" * 88)
+    for lay, rel, swp, bal in test_cases:
+        res = run_egress_monte_carlo(lay, rel, swp, bal, num_trials=1000)
+        print(f"{lay:<14} {rel:<18} {swp:<8} {res.mean_clearance_time:<12.1f} {res.p95_clearance_time:<12.1f} {res.success_rate * 100:<17.1f}%")

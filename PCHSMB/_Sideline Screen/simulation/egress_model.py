@@ -8,6 +8,17 @@ Complies with Colorado Bandmasters Association (CBA) 2026 Rules:
 - Rule 5.03: Exiting band has exclusive right-of-way through the front half of the end zone.
 - Rule 8.05: Continuous movement required; props cannot stop or de-ballast at exit chute.
 - Target Clock: 2 minutes (120.0 seconds) post-show clearance interval.
+
+Updated Assumptions:
+1. 2-Cart Fleet only (1 cart per side, 8 screens per cart).
+2. Single exit point per stadium (or dual exit benchmark).
+3. Stadium layout variations:
+   - 'same_side': Entrance at Side 1, Exit at Side 1 (Same gate used for enter & leave).
+   - 'opposite_side': Entrance at Side 1, Exit at Side 2 (Two openings: enter one side, exit the other).
+   - 'dual_exit': Benchmark stadium with independent exit gates at both end zones.
+4. Far-cart collection direction:
+   - 'inward': Screen 8 to Screen 1 (finishes at 42-yd line, saving 20 yards of cross-field push).
+   - 'outward': Screen 1 to Screen 8 (finishes at 22-yd line, 88-yard cross-field push).
 """
 
 import math
@@ -17,7 +28,6 @@ from field_model import (
     SCREEN_WIDTH_YARDS, GOAL_POST_Y, FRONT_SIDELINE_Y
 )
 
-# Egress Boundary Definitions
 # 30-yard line is 20 yards from centerfield (X = +/- 20.0 yd)
 EXIT_30_YARD_LINE_X_SIDE1 = -20.0
 EXIT_30_YARD_LINE_X_SIDE2 = 20.0
@@ -51,116 +61,115 @@ class EgressSegment(NamedTuple):
     turns_90deg: int
     load_state: str  # 'empty', 'loading', 'loaded'
 
-class EgressRoute(NamedTuple):
-    config: str            # '2_carts' or '1_cart'
+class CartEgressRoute(NamedTuple):
     cart_id: int
-    exit_gate_side: str    # 'dual' or 'side1_only'
+    is_near_cart: bool
+    stadium_layout: str      # 'same_side', 'opposite_side', 'dual_exit'
+    far_sweep_dir: str       # 'inward' or 'outward'
+    prior_entrance_dist_yd: float
     segments: List[EgressSegment]
     total_distance_yards: float
     total_turns: int
     screen_order: List[int]
     passes_30yd_rule: bool
 
-def compute_egress_route(
-    config: str = "2_carts",
-    cart_id: int = 1,
-    park_key: str = "Sideline_20",
-    exit_gate_mode: str = "dual"  # 'dual' (each exits own end zone) or 'side1_only'
-) -> EgressRoute:
+def get_entrance_distance_pushed(cart_id: int, stadium_layout: str) -> float:
     """
-    Computes post-show egress route from parked location, collecting screens,
-    and exiting straight through the front half of the end zone.
+    Returns the distance pushed by this cart during pre-show deployment.
+    This informs the cumulative fatigue model.
+    Assuming deployment entered from Side 1:
+    - Cart 1 deployed Side 1: ~35 yards
+    - Cart 2 deployed Side 2: ~100 yards (crossed field loaded)
+    """
+    if cart_id == 1:
+        return 35.0
+    else:
+        return 100.0
+
+def compute_cart_egress_route(
+    cart_id: int,
+    stadium_layout: str = "same_side",
+    far_sweep_dir: str = "inward",
+    park_key: str = "Sideline_20"
+) -> CartEgressRoute:
+    """
+    Computes post-show egress route for Cart 1 (Side 1) or Cart 2 (Side 2).
     
-    Collection Sequence:
-    - Cart starts at parked spot, rolls to Screen 1 (42yd line)
-    - Rolls outward from Screen 1 to Screen 8, loading screens on the move
-    - At Screen 8 (X = -28.0 yd), the cart is ALREADY past the 30-yard line (X = -20.0 yd)!
-    - Cart runs straight down front sideline / front half of end zone to exit threshold (X = -60.0 yd)!
+    Layout mapping:
+    - 'same_side': Exit is at Side 1 End Zone.
+      Cart 1 is Near Cart. Cart 2 is Far Cart (crosses field to Side 1).
+    - 'opposite_side': Exit is at Side 2 End Zone (entered Side 1, exits Side 2).
+      Cart 2 is Near Cart. Cart 1 is Far Cart (crosses field to Side 2).
+    - 'dual_exit': Both end zones have exits. Both carts are Near Carts.
     """
     screens = get_screen_coordinates()
     segments = []
     
-    if config == "2_carts":
-        sign = -1.0 if cart_id == 1 else 1.0
-        park_pt = CART_PARK_LOCATIONS[park_key]["side1" if cart_id == 1 else "side2"]
+    # Determine Near vs Far Cart
+    if stadium_layout == "dual_exit":
+        is_near = True
+    elif stadium_layout == "same_side":
+        is_near = (cart_id == 1)
+    else: # 'opposite_side' (exit is at Side 2)
+        is_near = (cart_id == 2)
         
-        # Screen collection sequence: Inner (42yd line) to Outer (22yd line)
-        # This guarantees that upon loading the last screen, the cart is already moving
-        # toward the exit end zone at full sprint!
-        screen_order = list(range(1, 9)) if cart_id == 1 else list(range(9, 17))
-        s_first = screens[screen_order[0]]
-        s_last = screens[screen_order[-1]]
-        
-        # Segment 1: Approach from park spot to Screen 1 (42yd line)
-        d_approach_x = abs(park_pt.x - s_first.center_x)
-        d_approach_y = abs(park_pt.y - FRONT_SIDELINE_Y)
-        d_approach = math.hypot(d_approach_x, d_approach_y)
-        segments.append(EgressSegment("approach_screen1", d_approach, 1, "empty"))
-        
-        # Segment 2: Collection line along front sideline (from Screen 1 to Screen 8)
-        # 7 intervals * 2.667 yd = 18.67 yd
-        d_collect = (SCREENS_PER_SIDE - 1) * SCREEN_WIDTH_YARDS
-        segments.append(EgressSegment("collection_line", d_collect, 0, "loading"))
-        
-        # Segment 3: Sprint from last screen (Screen 8) to End Line through front half of end zone
-        # Screen 8 center is at |X| = 28.0 yd.
-        # End line is at |X| = 60.0 yd.
-        # Front half of end zone: Y in [0, 26.67]. Path is straight along Y = 4.0 yd (inside front half).
-        if exit_gate_mode == "dual":
-            # Direct straight sprint through own end zone!
-            target_end_line = END_LINE_X_SIDE1 if cart_id == 1 else END_LINE_X_SIDE2
-            d_exit = abs(target_end_line - s_last.center_x) # 60.0 - 28.0 = 32.0 yards!
-            segments.append(EgressSegment("sprint_to_end_zone", d_exit, 0, "loaded"))
-        elif cart_id == 1:
-            d_exit = abs(END_LINE_X_SIDE1 - s_last.center_x)
-            segments.append(EgressSegment("sprint_to_end_zone", d_exit, 0, "loaded"))
+    prior_entrance_dist = get_entrance_distance_pushed(cart_id, stadium_layout)
+    park_pt = CART_PARK_LOCATIONS[park_key]["side1" if cart_id == 1 else "side2"]
+    
+    # Screen order for collection
+    base_screens = list(range(1, 9)) if cart_id == 1 else list(range(9, 17))
+    
+    if is_near:
+        # Near Cart always sweeps from Inner (42-yd line) to Outer (22-yd line)
+        # so it is already rolling toward its own exit end zone!
+        screen_order = base_screens  # Screen 1 -> 8 (or 9 -> 16)
+    else:
+        # Far Cart has option:
+        if far_sweep_dir == "inward":
+            # Start at outer 22-yd line, sweep inward toward centerfield/50!
+            # Finishes at 42-yd line, leaving only 68 yards to the exit end line!
+            screen_order = list(reversed(base_screens))
         else:
-            # Cart 2 on Side 2 must exit through Side 1!
-            # From Side 2 Screen 16 (X = +28.0) across to Side 1 End Line (X = -60.0) = 88 yards
-            d_exit = abs(END_LINE_X_SIDE1 - s_last.center_x) # 60 + 28 = 88 yards across field
-            segments.append(EgressSegment("cross_field_to_side1_exit", d_exit, 0, "loaded"))
+            # Sweep outward to 22-yd line, leaving 88 yards to exit
+            screen_order = base_screens
             
-    else: # 1_cart
-        # 1 Cart parked on Side 2 (where it finished deployment)
-        park_pt = CART_PARK_LOCATIONS[park_key]["side2"]
-        
-        # Must collect Side 2 screens first (Screens 16 down to 9),
-        # transit across the front ensemble to Side 1,
-        # collect Side 1 screens (Screens 1 out to 8),
-        # and sprint out Side 1 end zone!
-        side2_order = list(range(16, 8, -1))
-        side1_order = list(range(1, 9))
-        screen_order = side2_order + side1_order
-        
-        # Approach Side 2 outer screen (Screen 16)
-        s16 = screens[16]
-        d_app = math.hypot(park_pt.x - s16.center_x, park_pt.y - FRONT_SIDELINE_Y)
-        segments.append(EgressSegment("approach_side2_s16", d_app, 1, "empty"))
-        
-        # Collect Side 2 screens (16 inward to 9, moving toward centerfield)
-        d_collect2 = (SCREENS_PER_SIDE - 1) * SCREEN_WIDTH_YARDS # 18.67 yd
-        segments.append(EgressSegment("collect_side2", d_collect2, 0, "loading"))
-        
-        # Cross front ensemble to Side 1 Screen 1 (42yd line to 42yd line = 16 yd)
-        d_pit = 16.0
-        segments.append(EgressSegment("cross_pit", d_pit, 0, "transit_half_loaded"))
-        
-        # Collect Side 1 screens (1 outward to 8, moving toward Side 1 endzone)
-        d_collect1 = (SCREENS_PER_SIDE - 1) * SCREEN_WIDTH_YARDS # 18.67 yd
-        segments.append(EgressSegment("collect_side1", d_collect1, 0, "loading"))
-        
-        # Sprint from Side 1 Screen 8 (X = -28.0) through Side 1 End Line (X = -60.0) = 32.0 yd
-        s8 = screens[8]
-        d_exit = abs(END_LINE_X_SIDE1 - s8.center_x) # 32.0 yd
-        segments.append(EgressSegment("sprint_to_side1_exit", d_exit, 0, "loaded"))
+    s_first = screens[screen_order[0]]
+    s_last = screens[screen_order[-1]]
+    
+    # Segment 1: Approach from park spot to first screen
+    d_approach_x = abs(park_pt.x - s_first.center_x)
+    d_approach_y = abs(park_pt.y - FRONT_SIDELINE_Y)
+    d_approach = math.hypot(d_approach_x, d_approach_y)
+    segments.append(EgressSegment("approach_first_screen", d_approach, 1, "empty"))
+    
+    # Segment 2: Collection line along front sideline (7 inter-screen intervals)
+    d_collect = (SCREENS_PER_SIDE - 1) * SCREEN_WIDTH_YARDS  # 18.67 yd
+    segments.append(EgressSegment("collection_line", d_collect, 0, "loading"))
+    
+    # Segment 3: Sprint from last screen to exit threshold
+    if is_near:
+        # Near cart sprints straight out its own end zone
+        # Distance from Screen 8 (X = +/- 28.0) to End line (+/- 60.0) = 32.0 yd
+        d_exit = 32.0
+        segments.append(EgressSegment("sprint_to_near_exit", d_exit, 0, "loaded"))
+    else:
+        # Far cart must cross the field to the opposite end line
+        # Target end line is -60.0 if exit is Side 1, or +60.0 if exit is Side 2
+        target_end_line = END_LINE_X_SIDE1 if (stadium_layout == "same_side") else END_LINE_X_SIDE2
+        d_exit = abs(target_end_line - s_last.center_x)
+        # If inward sweep: 60 + 8.0 = 68.0 yards!
+        # If outward sweep: 60 + 28.0 = 88.0 yards!
+        segments.append(EgressSegment(f"cross_field_to_exit_{far_sweep_dir}", d_exit, 0, "loaded"))
         
     total_dist = sum(s.distance_yards for s in segments)
     total_turns = sum(s.turns_90deg for s in segments)
     
-    return EgressRoute(
-        config=config,
+    return CartEgressRoute(
         cart_id=cart_id,
-        exit_gate_side=exit_gate_mode,
+        is_near_cart=is_near,
+        stadium_layout=stadium_layout,
+        far_sweep_dir=far_sweep_dir,
+        prior_entrance_dist_yd=prior_entrance_dist,
         segments=segments,
         total_distance_yards=total_dist,
         total_turns=total_turns,
@@ -168,20 +177,49 @@ def compute_egress_route(
         passes_30yd_rule=True
     )
 
-if __name__ == "__main__":
-    print("=== EGRESS ROUTE GEOMETRY VERIFICATION ===")
-    r2_dual = compute_egress_route("2_carts", cart_id=1, park_key="Sideline_20", exit_gate_mode="dual")
-    r2_single = compute_egress_route("2_carts", cart_id=2, park_key="Sideline_20", exit_gate_mode="side1_only")
-    r1 = compute_egress_route("1_cart", cart_id=1, park_key="Sideline_20")
+def get_student_carry_distances(cart_id: int, stadium_layout: str) -> List[float]:
+    """
+    Returns the distance (in yards) each of the 8 students on this side must walk/jog
+    to reach the designated exit gate.
     
-    print(f"2 Carts (Side 1 Dual Exit): {r2_dual.total_distance_yards:.1f} yd, {r2_dual.total_turns} turns")
-    for s in r2_dual.segments:
-        print(f"   -> {s.name:<24}: {s.distance_yards:.1f} yd ({s.load_state})")
+    Near Side:
+    - Screen 8 (22-yd line) is 32.0 yd from end line.
+    - Screen 1 (42-yd line) is 50.7 yd from end line.
+    
+    Far Side:
+    - Screen 1 (42-yd line) is 69.3 yd from opposite end line.
+    - Screen 8 (22-yd line) is 88.0 yd from opposite end line.
+    """
+    if stadium_layout == "dual_exit":
+        is_near = True
+    elif stadium_layout == "same_side":
+        is_near = (cart_id == 1)
+    else:
+        is_near = (cart_id == 2)
         
-    print(f"\n2 Carts (Side 2 Cross-to-Side1 Exit): {r2_single.total_distance_yards:.1f} yd")
-    for s in r2_single.segments:
-        print(f"   -> {s.name:<24}: {s.distance_yards:.1f} yd ({s.load_state})")
+    distances = []
+    for i in range(1, SCREENS_PER_SIDE + 1):
+        # i = 1 is 42yd line, i = 8 is 22yd line
+        dist_from_50 = 8.0 + (i - 0.5) * SCREEN_WIDTH_YARDS
+        if is_near:
+            # End line is at 60 yd from 50
+            d = 60.0 - dist_from_50
+        else:
+            # Opposite end line is at 60 yd + dist_from_50
+            d = 60.0 + dist_from_50
+        distances.append(d)
         
-    print(f"\n1 Cart Fleet Egress: {r1.total_distance_yards:.1f} yd")
-    for s in r1.segments:
-        print(f"   -> {s.name:<24}: {s.distance_yards:.1f} yd ({s.load_state})")
+    return distances
+
+if __name__ == "__main__":
+    print("=== UPDATED EGRESS ROUTE GEOMETRY VERIFICATION ===")
+    for layout in ["same_side", "opposite_side", "dual_exit"]:
+        print(f"\n--- Layout: {layout.upper()} ---")
+        for cid in [1, 2]:
+            r_in = compute_cart_egress_route(cid, stadium_layout=layout, far_sweep_dir="inward")
+            r_out = compute_cart_egress_route(cid, stadium_layout=layout, far_sweep_dir="outward")
+            carry_dists = get_student_carry_distances(cid, layout)
+            print(f"Cart {cid} (Near={r_in.is_near_cart}): Total Dist (Inward Sweep) = {r_in.total_distance_yards:.1f} yd, Exit Sprint = {r_in.segments[-1].distance_yards:.1f} yd")
+            if not r_in.is_near_cart:
+                print(f"   -> Outward Sweep Dist = {r_out.total_distance_yards:.1f} yd (Exit Sprint = {r_out.segments[-1].distance_yards:.1f} yd)")
+            print(f"   -> Student Hand-Carry Distances: Min = {min(carry_dists):.1f} yd, Max = {max(carry_dists):.1f} yd")
