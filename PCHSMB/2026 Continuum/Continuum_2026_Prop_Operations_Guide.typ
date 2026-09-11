@@ -106,10 +106,11 @@
   )[
     #grid(
       columns: (1fr, auto),
-      align(left)[
+      gutter: 10pt,
+      align(left + horizon)[
         #text(size: 10.5pt, weight: "bold", fill: rgb("#1a365d"))[#role]
         #if tag != "" [
-          #h(6pt)
+          \ #v(2pt)
           #rect(
             fill: rgb("#ebf8ff"),
             stroke: 0.5pt + rgb("#bee3f8"),
@@ -118,7 +119,7 @@
           )[#text(size: 7.5pt, weight: "bold", fill: rgb("#2b6cb0"))[#tag]]
         ]
       ],
-      align(right)[#text(size: 8.5pt, weight: "bold", fill: rgb("#4a5568"))[Crew: #personnel]]
+      align(right + top)[#text(size: 8.5pt, weight: "bold", fill: rgb("#4a5568"))[Crew: #personnel]]
     )
     #v(2pt)
     #line(length: 100%, stroke: 0.5pt + rgb("#cbd5e0"))
@@ -163,7 +164,7 @@
 
 = 1. Wind Safety Plan & Mandatory NO-GO Contingencies
 
-Because Pine Creek High School operates in the high-altitude, wind-prone environment of Colorado Springs (6,500 ft ASL) and competes in open stadium venues, wind safety controls must be understood by every parent and volunteer before touching a prop. 
+Because Pine Creek High School operates in the high-altitude, wind-prone environment of Colorado Springs (6,500 ft ASL) and competes in open stadium venues, wind safety controls must be understood by every Adult Volunteer before touching a prop. 
 
 #nogo-box[
   *HARD RULE: If sustained winds exceed 20 mph OR gusts are forecasted/reported at 25–30 mph, PROPS DO NOT LEAVE THE TRUCK/TRAILER.*
@@ -189,7 +190,7 @@ Because Pine Creek High School operates in the high-altitude, wind-prone environ
 
 #v(3pt)
 #callout(title: "Why There Is No Emergency Lay-Flat Plan in This Handout")[
-  Previous operational drafts included field procedures for laying props flat on the turf during sudden gusts. For volunteer safety and competition clarity, *that procedure has been retired.* If 25–30 mph gusts are even remotely possible, the props will never be staged or moved onto the field.
+  Previous operational drafts included field procedures for laying props flat on the turf during sudden gusts. For Adult Volunteer safety and competition clarity, *that procedure has been retired.* If 25–30 mph gusts are even remotely possible, the props will never be staged or moved onto the field.
 ]
 
 #pagebreak()
@@ -214,7 +215,7 @@ Because Pine Creek High School operates in the high-altitude, wind-prone environ
   [Staging Area Location], [ Location / Area: ], [ \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ ],
   [Prop Staging Time], [ \_\_\_\_\_ : \_\_\_\_\_ AM / PM ], [ Staged once; props return here between Prelims & Finals ],
   [Equipment Truck Arrival], [ \_\_\_\_\_ : \_\_\_\_\_ AM / PM ], [ Parking Lot / Bay: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ ],
-  [Volunteer Crew Call Time], [ \_\_\_\_\_ : \_\_\_\_\_ AM / PM ], [ Check-in at Equipment Trailer ],
+  [Adult Volunteer Call Time], [ \_\_\_\_\_ : \_\_\_\_\_ AM / PM ], [ Check-in at Equipment Trailer ],
   [Truck Unload & Assembly], [ \_\_\_\_\_ : \_\_\_\_\_ AM / PM ], [ Equipment Trailer Lot / Staging Lot ],
   [Band Warm-up Departure], [ \_\_\_\_\_ : \_\_\_\_\_ AM / PM ], [ Escort carts to Warm-up Zone / Gate ],
   [Prelims Prop Gate Queue], [ \_\_\_\_\_ : \_\_\_\_\_ AM / PM ], [ *Rear Entrance Gate* (Back Sideline) ],
@@ -231,7 +232,7 @@ Because Pine Creek High School operates in the high-altitude, wind-prone environ
 // SECTION 3: CBA COMPETITION RULES FOR VOLUNTEERS
 // -------------------------------------------------------------------------
 
-= 3. Critical CBA Rules for Parent Volunteers
+= 3. Critical CBA Rules for Adult Volunteers
 
 The Colorado Bandmasters Association (CBA) strictly enforces prop and adult volunteer regulations. *Penalties directly deduct points from the students' score.* Adhere strictly to the following:
 
@@ -239,16 +240,16 @@ The Colorado Bandmasters Association (CBA) strictly enforces prop and adult volu
   columns: (1fr, 1fr),
   gutter: 7pt,
   rule-box(title: "Rule 9.07 — Field Passes")[
-    *Maximum 25 wristbands per band.* Every parent stepping past the gate must wear the official CBA wristband on their wrist (not in pocket or on badge). Prelims and Finals use different colors.
+    *Maximum 25 wristbands per band.* Every Adult Volunteer stepping past the gate must wear the official CBA wristband on their wrist (not in pocket or on badge). Prelims and Finals use different colors.
   ],
   rule-box(title: "Rule 5.02 — Rear Entrance Mandate")[
     *Props must enter from the back sideline or rear end zone.* Never wheel props across the front boundary line (reserved strictly for pit/percussion equipment). Handlers transit perimeter tracks.
   ],
   rule-box(title: "Rule 4.03 & 5.06 — 3:15 Setup Window")[
-    The introductory announcement begins 3 minutes 15 seconds after judge's entry signal. *ALL adults must be completely clear of the field before the announcement ends.* Target all adults off turf by *2:45*.
+    The introductory announcement begins 3 minutes 15 seconds after judge's entry signal. *ALL adults must be completely clear of the field before the announcement ends.* Target all Adult Volunteers off turf by *2:45*.
   ],
   rule-box(title: "Rule 4.03 — In-Show Turf Prohibition")[
-    *Parents are strictly forbidden from touching the field during the performance.* 0.2-point penalty per occurrence. Once you exit, remain behind the front sideline or rear perimeter track.
+    *Adult Volunteers are strictly forbidden from touching the field during the performance.* 0.2-point penalty per occurrence. Once you exit, remain behind the front sideline or rear perimeter track.
   ],
   rule-box(title: "Rule 8.05 — 2:00 Egress Clock")[
     Timing clock begins on final chord. All equipment and personnel must clear field boundaries within 2 minutes. Once past the gate/tunnel threshold, carts pause in the exit chute to load the duck blinds.
@@ -275,9 +276,9 @@ The 2026 visual design for *Continuum* incorporates three prop families totaling
   fill: (col, row) => if row == 0 { rgb("#edf2f7") } else { none },
   inset: (x: 5pt, y: 4.5pt),
   [*Prop Category*], [*Quantity*], [*Transport Unit*], [*Field Placement*], [*Crew Allocation*],
-  [*Duck Blinds* \ (Sideline Screens)], [16 screens (8 per side)], [2 Rolling Carts \ (8 screens/cart)], [Front Sideline \ (Side 1: 20–41 yd; Side 2: 59–80 yd)], [2 Adult Pushers, 2 Student Unloaders, 16 Student Receivers],
-  [*Rolling Backdrops*], [10 backdrops], [10 Rolling Carts \ (1 cart/prop)], [Backfield / Back Hash \ (Spanned across 30–70 yds)], [10–20 Parent Volunteers \ (1–2 pushers per backdrop)],
-  [*Performance Stages*], [4 stages], [4 Mobile Platforms \ (Integrated casters)], [Midfield / Side Stages \ (Exact drill marks per show)], [8 Parent Volunteers \ (2 pushers per stage platform)],
+  [*Duck Blinds* \ (Sideline Screens)], [16 screens (8 per side)], [2 Rolling Carts \ (8 screens/cart)], [Front Sideline \ (Side 1: 20–41 yd; Side 2: 59–80 yd)], [2 Adult Volunteers (Pushers), 2 Student Unloaders, 16 Student Receivers],
+  [*Rolling Backdrops*], [10 backdrops], [10 Rolling Carts \ (1 cart/prop)], [Backfield / Back Hash \ (Spanned across 30–70 yds)], [2 Adult Volunteers (Managers), 20–40 Student Pushers (2–4 per backdrop)],
+  [*Performance Stages*], [4 stages], [4 Mobile Platforms \ (Integrated casters)], [Midfield / Side Stages \ (Exact drill marks per show)], [8 Adult Volunteers (2 handlers per stage platform)],
 )
 
 #v(8pt)
@@ -293,9 +294,9 @@ The 2026 visual design for *Continuum* incorporates three prop families totaling
 The field prop operation is organized into four primary divisions:
 
 1. *Job Group A: Duck Blind Operations (Pages 4–7):* Divided into four specialized single-page job blocks covering cart pushing, rapid cart offloading, on-field concurrent deployment, and post-show egress.
-2. *Job Group B: Rolling Backdrop Crew (Page 8):* Dedicated operations sheet for the 10 parent pushers handling backfield rolling backdrops (#1 through #10).
-3. *Job Group C: Performance Stage Crew (Page 9):* Dedicated operations sheet for the 4 midfield mobile platform handler teams.
-4. *Job Group D: Prop Lead & Field Safety Coordinator (Page 9):* Master oversight, weather telemetry monitoring, judge liaison, and timing control.
+2. *Job Group B: Rolling Backdrop Operations (Pages 8–10):* Divided into three specialized single-page job blocks covering adult backdrop managers (B.1), on-field student pushers (B.2), and off-field student pushers (B.3).
+3. *Job Group C: Performance Stage Crew (Page 11):* Dedicated operations sheet for the 8 Adult Volunteers handling midfield mobile platforms.
+4. *Job Group D: Prop Lead & Field Safety Coordinator (Page 11):* Master oversight, weather telemetry monitoring, judge liaison, and timing control.
 
 Follow all instructions in strict sequential order. Adhere to all safety warnings and CBA competition boundaries.
 
@@ -504,37 +505,149 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
 #pagebreak()
 
 // =========================================================================
-// PAGE 8: JOB B.1 — ROLLING BACKDROP PUSHERS
+// PAGE 8: JOB B.1 — ADULT ROLLING BACKDROP MANAGERS
 // =========================================================================
 
 == Job Group B: Rolling Backdrop Crew (10 Backdrops on Dedicated Carts)
 
 #job-card(
-  role: "Job B.1: Rolling Backdrop Pushers",
-  personnel: "10 to 20 Parent Volunteers (1–2 per Cart)",
-  tag: "Backdrop Props #1 through #10"
+  role: "Job B.1: Adult Rolling Backdrop Managers",
+  personnel: "2 Adult Volunteers (Overseeing Backdrops #1 through #10)",
+  tag: "Assembly Supervision, Staging Logistics, Ballast & Student Oversight"
 )[
-  + *Staging & Inspection (45 min prior):* Locate your assigned backdrop cart (#1 through #10) in the staging lot. Verify: (a) graphic banner faces the correct direction; (b) 4 to 6 double-bagged 15-lb sandbags (or up to 9 bags in Tier 3) are securely seated over the two vertical iron pipe posts; (c) swivel casters roll freely; (d) caster foot brake levers are in the unlocked (UP) position.
-  + *Gate Queue Order:* Queue on the back sideline track in strict numerical order (#1 at front, #10 at rear).
-  + *Field Ingress:* When the judge signals, push the cart onto the field following the perimeter lane to your marked backfield yard coordinate. *Safety:* Push using the wooden 2x4 frame uprights or dedicated push handles. *NEVER push directly against the vinyl display face.*
-  + *Positioning & Brake Lock:* Align the front edge of the wood base cart precisely with the yard line and hash mark specified on your drill card. *Immediately step on the caster foot brake levers on all four swivel casters to lock wheels.*
-  + *Ballast Check:* Confirm the sandbags are resting fully on the plywood deck wings over the iron posts.
-  + *Clear Field Before 2:45:* Once the cart is locked, turn and walk briskly off the back sideline into the rear staging area. *Do not linger.* Ensure you are across the boundary before the introductory announcement begins.
-  + *Post-Show Egress:* At the final chord of the show, immediately step onto the turf, kick the caster brake levers into the unlocked (UP) position, and push the cart continuously toward the designated stadium exit chute.
-  + *Continuous Motion (Rule 8.05):* *DO NOT STOP in the stadium tunnel or exit chute to talk, rest, or de-ballast.* Keep moving until the cart is fully parked in the equipment trailer lot.
+  #text(size: 8.5pt, style: "italic", fill: rgb("#2b6cb0"))[
+    You are one of two Adult Volunteers in charge of the 10 rolling backdrops. You supervise and direct the assembly and disassembly of these props with assistance from prop and pit crew members, ensure all 10 props are transported to and from staging with appropriate wind ballast installed, and meet, supervise, and assist the student pusher teams at the staging area.
+  ]
+
+  #v(2pt)
+  #rect(
+    width: 100%,
+    fill: rgb("#ffffff"),
+    stroke: 0.8pt + rgb("#cbd5e0"),
+    radius: 3pt,
+    inset: (x: 5pt, y: 3.5pt)
+  )[
+    #text(weight: "bold", size: 8pt, fill: rgb("#2b6cb0"))[ROLLING BACKDROP BALLAST SCHEDULE (PER BACKDROP):] \
+    #v(1pt)
+    #table(
+      columns: (0.85fr, 0.95fr, 1.8fr, 1.4fr),
+      align: center + horizon,
+      stroke: 0.3pt + rgb("#cbd5e0"),
+      inset: (x: 4pt, y: 2pt),
+      fill: (col, row) => if row == 0 { rgb("#edf2f7") } else if row == 5 { rgb("#fff5f5") } else { none },
+      [*Tier*], [*Wind MPH*], [*15-lb Sandbags (Wing Iron Posts)*], [*Supplemental Rail Ballast*],
+      [Tier 0], [0 – 8], [0 bags (unballasted, 153 lb dry prop)], [None],
+      [Tier 1], [8 – 12], [4 bags (2 per wing post, 60 lb ballast)], [None],
+      [Tier 2], [12 – 18], [6 bags (3 per wing post, 90 lb ballast)], [None],
+      [Tier 3], [18 – 22], [6 bags (3 per wing post, 90 lb ballast)], [3 bags flat across rear 2x4 rail (45 lb)],
+      table.cell(colspan: 2)[#text(weight: "bold", fill: rgb("#c53030"))[Tier 4 (>20 mph)]],
+      table.cell(colspan: 2)[#text(weight: "bold", fill: rgb("#c53030"))[ABSOLUTE NO-GO — Keep Locked in Equipment Trailer]],
+    )
+  ]
+
+  #v(2pt)
+  #text(size: 8pt, weight: "bold", fill: rgb("#1a365d"))[Step-by-Step Manager Lifecycle:]
+
+  + *Arrival & Assembly Supervision:* Meet at the equipment trailer at the Adult Volunteer call time. Supervise and direct the mechanical assembly of the 10 rolling backdrop carts (installing steel upright posts, diagonal struts, retaining pins, and vinyl banners with snap clamps). Direct help from other prop and pit crew members who may not have done this assembly before. Verify all strut pins and safety cotters are fully engaged.
+  + *Ballast Installation & Pre-Staging Inspection:* Confirm the day's wind tier with the Prop Lead. Seat double-bagged 15-lb sandbags securely over the two vertical iron pipe posts on each cart per the table above (4 bags for Tier 1; 6 bags for Tier 2; 6 wing + 3 rear rail bags for Tier 3). Inspect swivel casters and confirm caster foot brakes are in the unlocked (UP) position for transit.
+  + *Transport to Staging Area:* Lead the transport of all 10 ballasted backdrops from the trailer lot to the designated staging area at the designated staging time. Park carts in numerical order (#1 through #10) and engage wheel brakes.
+  + *Student Rendezvous & Supervision at Staging Area:* Meet the assigned Student Backdrop Pushers (2–4 students per backdrop) at the staging area 45 minutes prior to show time. Confirm each student team knows their backdrop number, entry queue sequence, and field position. Supervise and assist the students as they prepare for gate movement.
+  + *Adult Field Boundary Rule:* Adults do not push backdrops onto the field. Clear behind stadium perimeter boundaries before the performance begins. *Never step onto the turf during the show (Rule 4.03 penalty).*
+  + *Post-Show Reception & Return to Trailer:* Meet the student pushers as they return with the backdrops to the staging area following their end zone egress. Take custody of the backdrops from the students so they can rejoin the band block. Push the backdrops back to the staging area (between Prelims and Finals) or to the equipment trailer (after Finals).
+  + *Post-Finals Disassembly Supervision:* Direct the safe deballasting (gently transfer sandbags into trailer totes; never drop or throw) and mechanical disassembly of frames for secure trailer packing.
 ]
 
 #pagebreak()
 
 // =========================================================================
-// PAGE 9: JOB C.1 & JOB D.1 — STAGES & PROP LEAD
+// PAGE 9: JOB B.2 — STUDENT BACKDROP PUSHERS (ON FIELD)
+// =========================================================================
+
+== Job Group B: Rolling Backdrop Crew (Continued)
+
+#job-card(
+  role: "Job B.2: Student Backdrop Pushers — On Field",
+  personnel: "20–40 Students (2–4 per Backdrop, #1 through #10)",
+  tag: "Staging Takeover, Backfield Entry & Show Positioning"
+)[
+  #text(size: 8.5pt, style: "italic", fill: rgb("#2b6cb0"))[
+    *Student Instructions:* You are part of the team of 2 to 4 students assigned to roll your backdrop (#1 through #10) from the staging area onto the field, position it at your marked coordinate, rotate it per training instructions, and lock it down for the performance.
+  ]
+  #v(4pt)
+
+  + *Staging Area Takeover:*
+    - Meet the Adult Backdrop Managers at the designated staging area 45 minutes prior to show time (following your section warm-ups).
+    - Locate your assigned backdrop (#1 through #10).
+    - Coordinate with your section leader regarding instrument placement while performing your prop duties (the backdrop carts do not have instrument storage).
+  + *Perimeter Transit to Back Sideline:*
+    - When directed by the Adult Managers / Prop Lead, take custody of your backdrop and roll it along the designated perimeter track toward the rear stadium entrance gate.
+    - Queue in strict numerical order (#1 at front, #10 at rear).
+    - Always push using the wooden 2x4 frame uprights or dedicated push handles. *NEVER push directly against the vinyl display face.*
+  + *Back Sideline Staging:*
+    - Move through the rear gate and stage along the back sideline directly in line with your final field coordinate.
+    - *CRITICAL BOUNDARY RULE: DO NOT CROSS THE BACK SIDELINE MARKERS.* Keep cart wheels completely behind the sideline until the on-field judge gives official entry permission. Doing so will immediately invoke a CBA penalty.
+  + *Field Ingress & Positioning:*
+    - When the CBA judge signals entry permission, push your backdrop briskly straight forward onto the field toward your marked coordinate.
+    - Steer smoothly; avoid sharp pivots that could scrub or tear synthetic turf infill.
+    - Align the front edge of the wood base cart precisely with the yard line and hash mark specified on your coordinate sheet.
+  + *Orientation, Rotation & Brake Lock:*
+    - Rotate the backdrop display face to the exact angle and orientation instructed during rehearsal training.
+    - *Immediately step on all four swivel caster foot brake levers to lock wheels.* Confirm the cart will not roll.
+    - Confirm all sandbags remain securely seated over the iron posts.
+  + *Transition to Opening Show Position:*
+    - Once the backdrop is locked and rigid, briskly transition to your opening drill position or warm-up mark before the introductory announcement ends. You are now cleared for the show!
+]
+
+#pagebreak()
+
+// =========================================================================
+// PAGE 10: JOB B.3 — STUDENT BACKDROP PUSHERS (OFF FIELD)
+// =========================================================================
+
+== Job Group B: Rolling Backdrop Crew (Continued)
+
+#job-card(
+  role: "Job B.3: Student Backdrop Pushers — Off Field",
+  personnel: "20–40 Students (2–4 per Backdrop, #1 through #10)",
+  tag: "Post-Show Egress Sprint & Staging Hand-Off"
+)[
+  #text(size: 8.5pt, style: "italic", fill: rgb("#2b6cb0"))[
+    *Student Instructions:* The 2-minute CBA egress clock begins the instant the final note of the show sounds. You are responsible for immediately reaching your assigned backdrop, unlocking the brakes, rolling it off the field via the nearest front-half end zone route, and returning it to the staging area.
+  ]
+  #v(4pt)
+
+  + *Immediate Post-Show Rendezvous:*
+    - The instant the final cutoff chord sounds, move immediately to your assigned backdrop (#1 through #10).
+    - *(Note: Your final closing drill position is coordinated so you finish nearest your assigned backdrop to eliminate cross-field transit lag.)*
+  + *Brake Release:*
+    - Kick all four swivel caster foot brake levers UP into the UNLOCKED position.
+    - Confirm all 2 to 4 student handlers have secure two-handed grips on the wooden 2x4 frame uprights before rolling.
+  + *Straight-Line Egress to Front Half of End Zone:*
+    - Push the backdrop in a straight line toward the closest point located on the *front half of the end zone* (away from the backfield pit/battery flow per CBA field clearance routing).
+    - Maintain brisk, continuous forward momentum. *NEVER stop on the turf to adjust equipment, rest, or talk.*
+    - Push strictly by the wooden framing uprights; *never push against the vinyl graphic face*.
+  + *Continuous Motion Past Gate to Staging Area:*
+    - Roll through the end zone boundary line and directly into the stadium exit gate / tunnel chute.
+    - Per CBA Rule 8.05, maintain continuous motion through the tunnel—do not halt or de-ballast in the exit chute.
+    - Roll the backdrop along the perimeter path directly to the designated staging area.
+  + *Hand-Off to Adult Backdrop Managers:*
+    - Park the backdrop in proper numerical alignment in the staging area.
+    - Step on the caster brake levers to lock wheels in place.
+    - Hand custody of the backdrop back to the Adult Backdrop Managers.
+    - Rejoin the band block for post-show debrief, uniform check, or awards ceremony.
+]
+
+#pagebreak()
+
+// =========================================================================
+// PAGE 11: JOB C.1 & JOB D.1 — STAGES & PROP LEAD
 // =========================================================================
 
 == Job Group C: Performance Stage Crew (4 Mobile Platforms, Stages #1 through #4)
 
 #job-card(
   role: "Job C.1: Performance Stage Handlers",
-  personnel: "8 Parent Volunteers (2 Handlers per Stage Platform)",
+  personnel: "8 Adult Volunteers (2 Handlers per Stage Platform)",
   tag: "Stages #1 through #4"
 )[
   + *Staging & Safety Inspection:* Inspect your assigned stage platform. Verify decking surface is clean, dry, and non-slip. Confirm wheel lock levers and retractable leveling outriggers operate smoothly.
@@ -555,14 +668,14 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
 )[
   + *Weather Monitoring:* Carry a handheld digital anemometer and monitor live airport METAR weather feeds. Issue the *NO-GO* directive if wind speeds exceed 20 mph sustained or gusts reach 25–30 mph.
   + *Judge Liaison & Gate Release:* Coordinate directly with the CBA Timing & Penalty judge at the gate. Signal the prop crew the instant entry permission is granted.
-  + *The 2:45 Clearance Call:* Monitor stopwatch. At 2:30, loudly call *"PROPS CLEAR!"* down the sideline and confirm all 25 adult volunteers are across the boundary line before the 3:15 announcement begins.
+  + *The 2:45 Clearance Call:* Monitor stopwatch. At 2:30, loudly call *"PROPS CLEAR!"* down the sideline and confirm all 25 Adult Volunteers are across the boundary line before the 3:15 announcement begins.
   + *Exit Chute Traffic Management:* Stand at the stadium exit gate during post-show egress to prevent cart bottlenecks and ensure continuous flow into the trailer parking lot.
 ]
 
 #pagebreak()
 
 // =========================================================================
-// PAGE 10: SECTION 6 — POST-SHOW PACKDOWN, CHECKLIST & SIGNOFF
+// PAGE 12: SECTION 6 — POST-SHOW PACKDOWN, CHECKLIST & SIGNOFF
 // =========================================================================
 
 = 6. Post-Show Deballasting & Trailer Packdown
@@ -572,7 +685,7 @@ All teardown and packdown procedures occur *exclusively in the equipment trailer
 + *Deballasting Safety:* Remove sandbags from backdrop retention posts and duck blind carts. Place bags gently into the designated heavy-duty storage totes inside the equipment trailer. *Never drop or throw sandbags* (protects seams and plastic liners).
 + *Screen Packing:* Stack collapsed sideline screens flat in the transport cart racks (8 screens per cart, hinges alternating to maintain coplanar nesting $<= 2.0$ inches). Secure retaining gate latches with 3D-printed locking pins.
 + *Trailer Loading:* Roll backdrops and carts into the trailer in reverse numerical order. Set wheel brakes, engage wheel chocks, and secure ratcheting cargo straps across each frame before transit.
-+ *All-Clear Check:* Inspect the staging lot for personal belongings, water bottles, and tools. Verify all 25 volunteer wristbands are accounted for.
++ *All-Clear Check:* Inspect the staging lot for personal belongings, water bottles, and tools. Verify all 25 Adult Volunteer wristbands are accounted for.
 
 #v(8pt)
 
@@ -583,7 +696,7 @@ All teardown and packdown procedures occur *exclusively in the equipment trailer
   radius: 4pt,
   inset: (x: 10pt, y: 8pt)
 )[
-  #text(weight: "bold", size: 9.5pt, fill: rgb("#1a365d"))[📋 Competition Day Volunteer Quick Reference Checklist]
+  #text(weight: "bold", size: 9.5pt, fill: rgb("#1a365d"))[📋 Competition Day Adult Volunteer Quick Reference Checklist]
   #v(3pt)
   #grid(
     columns: (1fr, 1fr),
@@ -592,13 +705,13 @@ All teardown and packdown procedures occur *exclusively in the equipment trailer
       *Before Entering Gate:*
       - Official CBA wristband secured to wrist (Rule 9.07)
       - Arrive at trailer 45 minutes prior to step-off
-      - Verify all sandbags loaded on carts/props
-      - Review assigned yard marker & roll direction
-      - Lock backdrop caster brakes in UNLOCKED position
+      - Verify all sandbags loaded on carts/props per Ballast Schedules
+      - Review assigned tasks & staging locations
+      - Check backdrop caster brakes in UNLOCKED position
     ],
     [
       *On Field & Post-Show:*
-      - Push cart directly to yard mark on judge's signal
+      - Adult handlers: push stage platforms directly to mark on signal
       - Lock all wheel brakes immediately upon arrival
       - *Exit turf before 2:45* (behind front/back line)
       - NEVER step onto field during the performance
