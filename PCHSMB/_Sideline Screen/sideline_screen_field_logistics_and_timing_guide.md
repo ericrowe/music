@@ -10,17 +10,23 @@
 |                                    GOLDEN LOGISTICS PROTOCOL                                      |
 +---------------------------------------------------------------------------------------------------+
 |  FLEET:           Dedicated 2-Cart Fleet (Cart 1 = Side 1, Cart 2 = Side 2; 8 screens per cart)  |
-|  CREW:            2 Adults (Pushers) + 2 Student Unloaders + 16 Entry Setters + 16 Exit Performers |
-|  DEPLOYMENT:      Pre-Set Student Receivers starting from Back Sideline (20 or 40-yard line)      |
-|  FAR-SIDE SWEEP:  Inward Collection Sweep (Screen 8 at 22-yd line -> Screen 1 at 42-yd line)     |
+|  CREW:            2 Adults (Pushers) + 2 Student Unloaders + 16 Entry Setters + 16 Exit Performers|
+|  STAGING:         Asymmetric Backfield Staging based on Stadium Exit Gate Location:               |
+|                   - Cart on Exit Side stages at 20-yard line (closest marker to exit)             |
+|                   - Cart on Far Side stages at 40-yard line (closest marker to exit)              |
+|  DEPLOYMENT:      Pre-Set Student Receivers; Carts roll dropping blinds moving AWAY from exit     |
+|  BALLAST SWEEP:   Zero-Doubling-Back Sweep moving TOWARDS exit (Exit side: 42->22; Far side: 22->42)|
 |  EGRESS:          Direct Hand-Carry by Student Performers straight into Single Exit Chute/Tunnel  |
 |  RELOAD:          Off-Clock Cart Reloading in Stadium Tunnel Mouth / Apron (e.g. Falcon Stadium)  |
 +---------------------------------------------------------------------------------------------------+
 ```
 
 #### Crew Roster & Job Assignments (2 Adults + Up to 34 Student Performers Total)
-* **2 Adults (Parent Cart Pushers):** 1 adult per cart. Pushes the cart straight down the yard line from the backfield to the front sideline, corners 90°, and controls roll speed while blinds are dropped. On egress, pushes the cart along the sideline to sweep ballast bags and exits into the tunnel.
-* **2 Cart Unloaders (Students):** 1 student jogging alongside each cart. As the cart rolls outward, pulls each 2"-thick folded blind from the rack and drops it flat on the turf at each yard mark. **Does NOT set them up.**
+* **2 Adults (Parent Cart Pushers):** 1 adult per cart.
+  - **Exit-Side Pusher:** Stages on back sideline at the **20-yard line**. Rolls straight forward across the field, turns inward, and drops blinds from 22 $\to$ 42-yard line (away from exit), parking at the 42. On egress, immediately sweeps ballast outward from 42 $\to$ 22-yard line (straight toward exit) and rolls directly into the tunnel chute!
+  - **Far-Side Pusher:** Stages on back sideline at the **40-yard line**. Rolls straight forward across the field, turns outward, and drops blinds from 42 $\to$ 22-yard line (away from exit), parking at the 22. On egress, immediately sweeps ballast inward from 22 $\to$ 42-yard line (straight toward exit across midfield) and rolls into the tunnel chute!
+  - **Zero Doubling Back:** Neither pusher ever walks a single wasted foot backward with a loaded cart!
+* **2 Cart Unloaders (Students):** 1 student jogging alongside each cart. As the cart rolls along the sideline, pulls each 2"-thick folded blind from the rack and drops it flat on the turf at each yard mark. **Does NOT set them up.**
 * **16 Pre-Show Screen Setters (Students):** 1 student assigned per blind (8 per side), chosen specifically because their **opening drill set (Dot 1) is right next to that blind** on the front sideline. On entry, waits at the mark; as soon as the blind drops, lifts it, unfolds the triangular frame, and latches the internal brace clips (~6s).
 * **16 Post-Show Egress Performers (Students):** 1 student assigned per blind (8 per side), chosen specifically because their **final closing drill set finishes nearest that blind** on the front sideline. *(Note: Because drill staging moves across the field, these are typically a completely different set of 16 students than the pre-show setters, eliminating cross-field transit lag!)* At the final cutoff chord, each unclips, folds the 26-lb frame flat (~6s), and hand-carries it directly down the sideline corridor into the exit chute / tunnel.
 
@@ -29,16 +35,26 @@
 ### 1.2 Step-by-Step Field Walkthrough
 
 #### Pre-Show Deployment Walkthrough (Expected: 2 min 14 sec | Cap: 3 min 15 sec)
-1. **Starting Line:** The 2 carts start on the back sideline at either the **20 or 40-yard line** (55.0 yards straight across to the front sideline—both take identical time, so staff selects whichever lane has a clear, unobstructed path to the front sideline).
-2. **The Charge:** At permission to enter ($T = 0:00$), both adults push their carts straight forward across the field ($1.1\text{ yd/s}$ pace), make a 90° turn at the front sideline, and begin rolling outward toward the end zone.
-3. **The Drop:** The cart unloader student pulls one folded blind every 2.7 yards and drops it onto the turf. They keep moving—no stopping to assemble!
-4. **The Setup:** The 16 opening setters (already standing at their drill sets near the marks) catch their blind, stand it up, and latch the internal brace clips in parallel (~6s each).
-5. **Clear Field & Early Signal:** By **$T = 2:14$**, all 16 blinds are locked upright, and both carts are parked safely off the field. The director signals the Timing & Penalties judge **60 seconds early**, cueing the introductory announcement and banking an extra minute for egress!
+1. **The Universal Backfield Staging Rule:** Before entering, the logistics coordinator identifies the stadium's exit tunnel. Both carts stage on the backfield marker on their side that is **closest to the exit**:
+   - **Exit-Side Cart:** Stages at the **20-yard line**.
+   - **Far-Side Cart:** Stages at the **40-yard line**.
+   *(Both have an unobstructed 55.0-yard straight lane to the front sideline).*
+2. **The Charge ($T = 0:00$):** At permission to enter, both adults push their carts straight forward across the field ($1.1\text{ yd/s}$ pace). Upon reaching the front sideline, both carts make a 90° turn and begin rolling **away from the exit**:
+   - Exit-side cart rolls inward (22 $\to$ 42-yard line).
+   - Far-side cart rolls outward (42 $\to$ 22-yard line).
+3. **The Drop:** As each cart rolls, the student unloader pulls one folded blind every 2.7 yards and drops it flat on the turf. The cart never stops!
+4. **The Parallel Setup:** The 16 opening setters (already standing at their opening drill sets near the marks) catch their blind, stand it up, and latch the internal brace clips in parallel (~6s each).
+5. **Clear Field, Parked for Egress & Early Signal ($T = 2:14$):**
+   - Both carts drop their final blind and step just outside the front boundary line into parking.
+   - **Crucial Positioning:** Because carts dropped moving away from the exit, they finish deployment **already positioned at the exact starting points for post-show ballast pickup** (Exit-side cart parked at 42; Far-side cart parked at 22)!
+   - The director signals the Timing & Penalties judge **60 seconds early**, cueing the official announcement and banking an extra minute for egress!
 
 #### Post-Show Egress Walkthrough (Expected: 1 min 40 sec | Official Clock Stops at Tunnel)
-1. **Final Chord ($T = 0:00$):** The 16 assigned egress performers (whose closing drill set finishes adjacent to each screen) instantly unclip their blind's internal braces and fold the 3-panel frame flat to its 2" nested profile (~6s). Having a designated set of closing performers at each blind ensures zero delay.
-2. **The Hand-Carry Sprint:** Each student picks up their light 26-lb folded frame and jogs straight down the front sideline corridor directly into the stadium exit chute / tunnel ($35\text{--}50\text{s}$).
-3. **The Ballast Sweep:** The 2 adult pushers roll their carts along the sideline collecting only the 8 ballast sandbags ($250\text{ lbs}$ total cart weight). On the far side, Cart 2 starts at Screen 8 (22-yd line) and sweeps **inward to Screen 1** (42-yd line), saving 20 yards of heavy pushing. Both carts sprint into the exit tunnel.
+1. **Final Chord ($T = 0:00$):** The 16 designated egress performers (whose closing drill set finishes adjacent to each screen) simultaneously unclip internal braces and fold each 3-panel frame flat to its 2" nested profile (~6s).
+2. **The Hand-Carry Sprint:** Each student picks up their 26-lb folded frame and jogs straight down the front sideline corridor directly into the stadium exit chute / tunnel ($35\text{--}50\text{s}$).
+3. **The Zero-Doubling-Back Ballast Sweep:** Both parent pushers step directly onto the sideline from their park spots and sweep ballast bags **straight toward the exit**:
+   - **Exit-Side Cart:** Starts at 42-yd line and sweeps **outward (42 $\to$ 22)** toward the exit gate. The 8th bag is loaded at the 22-yard line, and the cart rolls straight off into the tunnel chute!
+   - **Far-Side Cart:** Starts at 22-yd line and sweeps **inward (22 $\to$ 42)** toward midfield. The 8th bag is loaded at the 42-yard line, and the cart rolls straight across midfield directly into the tunnel chute!
 4. **★ THE CLOCK STOPS ★ ($T \approx 1:40$):** Under CBA Rule 5.06, the official 15-minute competition clock stops the exact second the last cart and student cross the field boundary into the tunnel mouth!
 5. **Off-Clock Reload in the Tunnel:** Inside the tunnel mouth (e.g., at Falcon Stadium for State Championships), the crew pauses **completely off the clock** to slide the blinds into the cart racks and lash them down while the next band takes the field.
 
@@ -50,9 +66,9 @@ All statistics derived from $N = 50,000$ continuous Monte Carlo trials incorpora
 
 | Operational Phase | Protocol & Logistics Details | Expected Time (Mean) | P95 Time (95% CI) | P99 Time (99% CI) | 99.999% Confidence Rail ($5\sigma$) | Safety Margin vs Rule Limit |
 |---|---|:---:|:---:|:---:|:---:|:---:|
-| **Pre-Show Deployment** | 2 Carts, Pre-Set Receivers, Start: Back Sideline (20 or 40-yd line) | **133.9 s (2:14)** | 148.3 s (2:28) | 156.6 s (2:37) | **182.8 s (3:03)** | **+12.2 s vs 3:15 cap** ($100\%$ pass) |
+| **Pre-Show Deployment** | 2 Carts, Pre-Set Receivers, Asymmetric Back 20/40 Start | **133.9 s (2:14)** | 148.3 s (2:28) | 156.6 s (2:37) | **182.8 s (3:03)** | **+12.2 s vs 3:15 cap** ($100\%$ pass) |
 | **Official Announcement** | Standard CBA Script (Rule 5.09) | **35.0 s (0:35)** | 35.0 s (0:35) | 35.0 s (0:35) | **35.0 s (0:35)** | *Standardized Script* |
-| **Post-Show Field Clearance** | Direct Hand-Carry, Single Exit Chute / Tunnel (Inward Sweep) | **100.1 s (1:40)** | 114.2 s (1:54) | 121.7 s (2:02) | **148.7 s (2:29)** | **+25.8 s vs 2:00 mark** at P95 |
+| **Post-Show Field Clearance** | Direct Hand-Carry, Single Exit Chute / Tunnel (Directional Sweep) | **100.1 s (1:40)** | 114.2 s (1:54) | 121.7 s (2:02) | **148.7 s (2:29)** | **+25.8 s vs 2:00 mark** at P95 |
 | **Total Non-Show Overhead** | Deployment + 35s Announcement + Single-Gate Clearance | **268.9 s (4:29)** | 288.6 s (4:49) | 298.8 s (4:59) | **330.3 s (5:30)** | **+5 min 30 sec Slack** (vs 15:00 block) |
 
 ---
@@ -85,23 +101,7 @@ Within the CBA **15 minutes 00 seconds (900.0 seconds)** total field block (Rule
 
 ## 2. The Dynamic 15-Minute Time Budget Architecture
 
-```mermaid
-flowchart LR
-    subgraph MasterBlock["CBA 15:00 Total Field Block (Class 4A / 5A)"]
-        direction LR
-        Dep["1. Deployment & Entry<br/><b>Max 3:15</b><br/>(Target: 2:14)"] --> Ann["2. Announcement<br/><b>~0:35</b><br/>(Rule 5.09)"]
-        Ann --> Show["3. Performance<br/><b>~8:30</b><br/>(Min: 5:30)"]
-        Show --> Egr["4. Field Egress<br/><b>Dynamic: 2:00 - 3:00</b><br/>(Stops at Tunnel)"]
-    end
-
-    Tradeoff["<b>Time Tradeoff:</b><br/>Shaving 60s off Deployment<br/>transfers directly to Egress!"] -.-> Dep
-    Tradeoff -.-> Egr
-
-    classDef block fill:#1f2937,stroke:#4b5563,stroke-width:2px,color:#fff;
-    classDef trade fill:#065f46,stroke:#10b981,stroke-width:2px,color:#fff;
-    class Dep,Ann,Show,Egr block;
-    class Tradeoff trade;
-```
+![CBA 15-Minute Dynamic Time Budget & Operational Flow](simulation/plots/cba_15min_time_budget_cycle.png)
 
 ### 2.1 The Time-Budget Tradeoff: Shaving Deployment Expands Egress
 Under CBA Rule 5.06, total field time runs from permission to enter until the last representative exits the performance field ($T_{\text{total}} \le 15:00$).
@@ -143,10 +143,13 @@ flowchart TD
 
 ![Pre-Show Deployment Probability Distribution (1 Cart vs. 2 Carts)](simulation/plots/cdf_comparison.png)
 
-### 3.1 Starting Location Rankings
-1. **`Back_20` / `Back_40` (Back Sideline):** **133.9 s (2:14)** mean, $148.3\text{s}$ P95, **+61.1 s slack**. Ingress distance is only 55.0 yards straight down the yard line.
-2. **`Back_50` (Centerfield):** **144.9 s (2:25)** mean, $161.4\text{s}$ P95, **+50.1 s slack**.
-3. **`EZ_Behind_Goal` (End Zone Gate):** **145.2 s (2:25)** mean, $160.9\text{s}$ P95, **+49.8 s slack**. Standard stadium gate path.
+### 3.1 Starting Location Rankings & Asymmetric Alignment
+1. **Asymmetric `Back_20` & `Back_40` (Recommended Standard):** **133.9 s (2:14)** mean, $148.3\text{s}$ P95, **+61.1 s slack**.
+   - The cart on the exit side stages at the **20-yard line** (55 yd straight to 22-yd line drop start).
+   - The cart on the opposite side stages at the **40-yard line** (55 yd straight to 42-yd line drop start).
+   - Both pushers travel identical straight-line entry distances (55.0 yd), drop away from the exit (18.7 yd), and park at the exact spot required for post-show collection.
+2. **`Back_50` (Centerfield):** **144.9 s (2:25)** mean, $161.4\text{s}$ P95, **+50.1 s slack**. Incurs cornering turn penalties at the 50.
+3. **`EZ_Behind_Goal` (End Zone Gate):** **145.2 s (2:25)** mean, $160.9\text{s}$ P95, **+49.8 s slack**. Requires rolling through end zone clutter.
 
 ### 3.2 Setup Strategy: Pre-Set Student Receivers vs. Mobile Pincer
 * **Pre-Set Student Receivers:** Students jog to yard marks on entry. Carts roll dropping blinds ($3.4\text{s}$ each); waiting students stand and latch in parallel. **133.9s (2:14) — 100% Success.**
@@ -168,8 +171,8 @@ sequenceDiagram
     Field->>Field: Unclip internal braces & collapse to 2" nested profile (6s)
     Field->>Line: Jog 32 to 69 yd straight along sideline carrying 26 lb frames (25-45s)
     Field->>Tunnel: Cross exit boundary line into tunnel (T ≈ 35 - 55s)
-    Cart->>Cart: Sweep sideline collecting 8 ballast sandbags (35s)
-    Cart->>Line: Sprint across field with ballast payload (40-50s)
+    Cart->>Cart: Sweep sideline collecting 8 ballast sandbags TOWARD EXIT (35s)
+    Cart->>Line: Sprint straight into exit chute with zero doubling back (40-50s)
     Cart->>Tunnel: Cross exit boundary line into tunnel (T ≈ 99.9s)
     Note over Line,Tunnel: ★ MASTER CBA 15:00 TIMING CLOCK STOPS ★
     Note over Tunnel: CONTEST CLOCK STOPPED — ALL CLEAR
@@ -177,9 +180,15 @@ sequenceDiagram
     Cart->>Tunnel: Push loaded carts up tunnel hill at normal walking pace
 ```
 
-### 4.1 The "Inward Sweep" Tactical Discovery
-* **Outward Sweep (Screen 1 $\to$ 8):** Finishes at far 22-yard line, leaving $88.0\text{ yards}$ of heavy cross-field pushing. Mean clearance: **$126.8\text{s}$ ($2:07$) — 26.6% Pass Rate.**
-* **Inward Sweep (Screen 8 $\to$ 1):** Finishes at 42-yard line, leaving only $69.3\text{ yards}$ to exit. Mean clearance: **$99.9\text{s}$ ($1:40$) — 98.8% Pass Rate (Saves 20 yards & 27 seconds!).**
+### 4.1 The Directional Sweep & Zero Doubling Back
+To maximize egress velocity and avoid pushing heavy loaded carts ($250\text{ lbs}$) backward across the turf, both carts sweep ballast bags **strictly in the direction of the exit gate**:
+
+| Cart Assignment | Show Park Location | Ballast Sweep Direction | Sweep Span | Finish Location | Exit Sprint Route | Doubling Back |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Exit-Side Cart** | 42-yd line | **Outward** (toward exit) | 42 $\to$ 22-yd line | 22-yd line | Straight 22 yd into exit gate | **0.0 yd** |
+| **Far-Side Cart** | 22-yd line | **Inward** (toward exit) | 22 $\to$ 42-yd line | 42-yd line | 69.3 yd across 50 into exit gate | **0.0 yd** |
+
+* **The Inward Sweep Discovery:** By sweeping from the 22 inward to the 42, the Far-Side cart finishes collection at the 42-yard line (saving 20 yards of heavy cross-field pushing vs. an outward sweep). Mean clearance: **$99.9\text{s}$ ($1:40$) — 98.8% Pass Rate.**
 
 ![Post-Show Field Clearance Distribution](simulation/plots/egress_cdf_comparison.png)
 
@@ -214,19 +223,27 @@ Wind ballast weight directly affects pusher fatigue and cornering scrub. As show
 
 ## 6. Standard Operating Procedure (SOP) Field Checklist
 
+### Venue Reconnaissance & Assignment Rule (Before Entering Gate)
+- [ ] **Locate Exit Tunnel:** Identify whether the single stadium exit chute is on Side 1 or Side 2.
+- [ ] **Assign Staging Lines (Closest-to-Exit Rule):**
+  - **Cart on Exit Side:** Stages on the back sideline at the **20-yard line**.
+  - **Cart on Far Side:** Stages on the back sideline at the **40-yard line**.
+
 ### Pre-Show Deployment Checklist
-- [ ] **T - 0:30:** Carts 1 & 2 staged at designated starting line (Back sideline at either the 20 or 40-yard line).
-- [ ] **T = 0:00 (Permission to Enter):** Both carts roll briskly down their entry corridors toward the 42-yard line ($1.1\text{ yd/s}$).
-- [ ] **T + 0:35:** On-field student receivers take up positions at assigned yard marks on the front sideline.
-- [ ] **T + 0:45 to T + 1:45:** Carts roll outward (42 to 22-yard line), dropping blinds at each mark. Waiting students stand up and latch frames in parallel.
-- [ ] **T + 2:14:** Last screen latched. Both carts parked clear outside boundary line.
+- [ ] **T - 0:30:** Both carts positioned at their assigned 20 / 40 backfield lines with unobstructed paths to the front sideline.
+- [ ] **T = 0:00 (Permission to Enter):** Both carts roll straight forward across the field ($1.1\text{ yd/s}$).
+- [ ] **T + 0:35:** Opening screen setters jog to their assigned yard marks along the front sideline.
+- [ ] **T + 0:45 to T + 1:45:** Both carts turn and roll **away from the exit**, dropping blinds at each mark (Exit side: 22 $\to$ 42; Far side: 42 $\to$ 22). Setters lift, unfold, and latch internal braces in parallel (~6s each).
+- [ ] **T + 2:14:** Last screen latched. Both carts step off into out-of-bounds parking (pre-staged for egress!).
 - [ ] **T + 2:15:** Director signals Timing & Penalties judge early to begin introductory announcement under Rule 5.09!
 
 ### Post-Show Egress Checklist
 - [ ] **T = 0:00 (Final Chord / Salute):** The 16 closing egress performers (positioned adjacent to screens on final drill set) simultaneously unclip internal braces and collapse blinds to flat profile (~6s).
 - [ ] **T + 0:06 to T + 0:45:** Performers jog down the sideline carrying 26-lb folded frames directly through the exit chute into the tunnel.
-- [ ] **T + 0:06 to T + 0:45:** Cart 1 sweeps Side 1 (Screen 1 $\to$ 8) collecting sandbags. Cart 2 sweeps Side 2 **inward (Screen 8 $\to$ 1)** collecting sandbags.
-- [ ] **T + 0:45 to T + 1:35:** Both carts push through the exit chute into the tunnel.
+- [ ] **T + 0:06 to T + 0:45:** Pushers step onto sideline and sweep ballast bags **directly toward the exit**:
+  - Exit-side cart sweeps outward ($42 \to 22$).
+  - Far-side cart sweeps inward ($22 \to 42$).
+- [ ] **T + 0:45 to T + 1:35:** Both carts push through the exit chute into the tunnel with zero doubling back.
 - [ ] **T + 1:40 (★ CLOCK STOPS ★):** Last cart crosses the exit threshold into the tunnel mouth. The official CBA timing clock stops!
 - [ ] **T + 1:40 to T + 2:00 (Off-Clock):** Crew pauses in tunnel mouth, slides folded blinds into cart racks, lashes down hardware, and rolls up tunnel hill at normal walking pace.
 

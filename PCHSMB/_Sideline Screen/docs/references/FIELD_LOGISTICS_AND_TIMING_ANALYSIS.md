@@ -85,6 +85,8 @@ Within the CBA **15 minutes 00 seconds (900.0 seconds)** total field block (Rule
 
 ## 2. The CBA 15-Minute Dynamic Time Budget Framework
 
+![CBA 15-Minute Dynamic Time Budget & Operational Flow](../../simulation/plots/cba_15min_time_budget_cycle.png)
+
 ### 2.1 The Time-Budget Tradeoff: Shaving Deployment Expands Egress
 
 Under CBA Rule 5.06, the official competition timing interval begins when the Timing & Penalties judge gives permission to enter the field, and ends when the last representative, cart, or prop exits the performance field:
@@ -169,6 +171,12 @@ flowchart TD
 | **4** | `EZ_Behind_Goal` | End zone behind goal post | 88.0 yd | **145.2 s (2:25)** | 160.9 s | **+49.8 s** | **Standard championship stadium entry gate.** |
 | **5** | `EZ_Corner_Back` | Back corner of end zone | 108.0 yd | **171.9 s (2:52)** | 192.8 s | **+23.1 s** | Usable, but tightest safety margin. |
 
+* **The Closest-to-Exit Asymmetric Staging Rule:**  
+  To eliminate doubling back on both entry and egress, the two carts do not stage at the same marker. Each cart stages at the marker on its side that is closest to the stadium exit gate:
+  * **Exit-Side Cart:** Stages at **`Back_20`** (closest to exit end zone), rolls straight across, drops blinds $22 \to 42$ (moving away from exit), and parks at the 42.
+  * **Far-Side Cart:** Stages at **`Back_40`** (closest to midfield and the exit across the field), rolls straight across, drops blinds $42 \to 22$ (moving away from exit), and parks at the 22.
+  * Both pushers cover identical 55.0-yard straight ingress corridors, drop blinds moving away from the exit, and finish pre-staged for the post-show egress sweep!
+
 ---
 
 ### 3.3 Setup Strategy: Pre-Set Student Receivers vs. Mobile Pincer
@@ -226,6 +234,11 @@ On the side opposite the exit gate (Far Side):
   * Cart starts at Screen 8 (22-yard line) and sweeps **inward toward centerfield** to Screen 1 (42-yard line).
   * When collection finishes, the cart is at the 42-yard line, only **$69.3\text{ yards}$** from the exit gate!
   * **Mean Clearance: 99.9s (1:40) — 98.8% Pass Rate.**
+
+| Cart Assignment | Show Park Location | Ballast Sweep Direction | Sweep Span | Finish Location | Exit Sprint Route | Doubling Back |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Exit-Side Cart** | 42-yd line | **Outward** (toward exit) | 42 $\to$ 22-yd line | 22-yd line | Straight 22 yd into exit gate | **0.0 yd** |
+| **Far-Side Cart** | 22-yd line | **Inward** (toward exit) | 22 $\to$ 42-yd line | 42-yd line | 69.3 yd across 50 into exit gate | **0.0 yd** |
 
 ![Post-Show Field Clearance Distribution](../../simulation/plots/egress_cdf_comparison.png)
 
