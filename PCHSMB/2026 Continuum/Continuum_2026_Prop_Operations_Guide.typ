@@ -310,7 +310,7 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
   tag: "Front Sideline Carts"
 )[
   #grid(
-    columns: (1.25fr, 1fr),
+    columns: (1.15fr, 1.4fr),
     gutter: 6pt,
     rect(
       width: 100%,
@@ -320,44 +320,50 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
       inset: (x: 6pt, y: 4pt)
     )[
       #text(weight: "bold", size: 8pt, fill: rgb("#2b6cb0"))[DAY-OF CART ASSIGNMENT:] \
-      #v(1pt)
+      #v(3pt)
       #grid(
-        columns: (1fr, 1.2fr),
+        columns: (1fr, 1.25fr),
         gutter: 4pt,
         [
           *Side:* \
+          #v(2pt)
           #box(stroke: 0.5pt + rgb("#a0aec0"), inset: (x: 2.5pt, y: 1pt), radius: 2pt)[#h(3pt)] Side 1 (Left) \
+          #v(2pt)
           #box(stroke: 0.5pt + rgb("#a0aec0"), inset: (x: 2.5pt, y: 1pt), radius: 2pt)[#h(3pt)] Side 2 (Right)
         ],
         [
-          *Staging & Route:* \
-          Back \_\_\_\_\_ Yard Line \
-          Roll toward: \
-          #box(stroke: 0.5pt + rgb("#a0aec0"), inset: (x: 2.5pt, y: 1pt), radius: 2pt)[#h(3pt)] Center / #box(stroke: 0.5pt + rgb("#a0aec0"), inset: (x: 2.5pt, y: 1pt), radius: 2pt)[#h(3pt)] End Zone
+          *Staging Location:* \
+          #v(2pt)
+          Back \_\_\_\_\_ Yard Line
         ]
       )
-      #v(1pt)
-      #text(size: 7pt, style: "italic", fill: rgb("#718096"))[(Directive: "Side 1, Back 20, roll toward center")]
     ],
     rect(
       width: 100%,
       fill: rgb("#ffffff"),
       stroke: 0.8pt + rgb("#cbd5e0"),
       radius: 3pt,
-      inset: (x: 6pt, y: 4pt)
+      inset: (x: 4pt, y: 3pt)
     )[
       #text(weight: "bold", size: 8pt, fill: rgb("#2b6cb0"))[DUCK BLIND BALLAST SCHEDULE:] \
       #v(1pt)
       #table(
-        columns: (1.2fr, 1fr, 1fr),
-        align: (left + horizon, center + horizon, center + horizon),
+        columns: (0.55fr, 0.95fr, 1.3fr, 1.1fr),
+        align: center + horizon,
         stroke: 0.3pt + rgb("#cbd5e0"),
-        inset: (x: 3pt, y: 2pt),
-        fill: (col, row) => if row == 0 { rgb("#edf2f7") } else if row == 3 { rgb("#fff5f5") } else { none },
-        [*Wind Regime*], [*Per Rail*], [*Per Cart*],
-        [Tier 1 (0–12 mph)], [1 bag (15 lb)], [8 sandbags],
-        [Tier 2 (13–18 mph)], [2 bags (30 lb)], [16 sandbags],
-        [Tier 3 (>20 mph)], [NO-GO], [In Trailer],
+        inset: (x: 2pt, y: 2pt),
+        fill: (col, row) => if row == 0 or row == 1 { rgb("#edf2f7") } else if row == 4 { rgb("#fff5f5") } else { none },
+        table.cell(colspan: 2)[#text(size: 7.5pt, weight: "bold")[Wind Regime]],
+        table.cell(rowspan: 2)[#text(size: 7.5pt, weight: "bold")[Per Rail]],
+        table.cell(rowspan: 2)[#text(size: 7.5pt, weight: "bold")[Per Cart]],
+        [#text(size: 7pt, weight: "bold")[Tier]],
+        [#text(size: 7pt, weight: "bold")[MPH]],
+        [#text(size: 7.5pt)[1]], [#text(size: 7.5pt)[0–12]], [#text(size: 7.5pt)[1 bag (15 lb)]], [#text(size: 7.5pt)[8 sandbags]],
+        [#text(size: 7.5pt)[2]], [#text(size: 7.5pt)[13–18]], [#text(size: 7.5pt)[2 bags (30 lb)]], [#text(size: 7.5pt)[16 sandbags]],
+        [#text(size: 7.5pt, weight: "bold", fill: rgb("#c53030"))[3]],
+        [#text(size: 7.5pt, weight: "bold", fill: rgb("#c53030"))[>20]],
+        [#text(size: 7.5pt, weight: "bold", fill: rgb("#c53030"))[NO-GO]],
+        [#text(size: 7.5pt, weight: "bold", fill: rgb("#c53030"))[In Trailer]],
       )
     ]
   )
