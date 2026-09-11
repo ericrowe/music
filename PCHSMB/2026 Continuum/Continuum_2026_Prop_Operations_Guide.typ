@@ -278,10 +278,10 @@ The 2026 visual design for *Continuum* incorporates three prop families totaling
   [*Prop Category*], [*Quantity*], [*Transport Unit*], [*Field Placement*], [*Crew Allocation*],
   [*Duck Blinds* \ (Sideline Screens)], [16 screens (8 per side)], [2 Rolling Carts \ (8 screens/cart)], [Front Sideline \ (Side 1: 20–41 yd; Side 2: 59–80 yd)], [2 Adult Volunteers (Pushers), 2 Student Unloaders, 16 Student Receivers],
   [*Rolling Backdrops*], [10 backdrops], [10 Rolling Carts \ (1 cart/prop)], [Backfield / Back Hash \ (Spanned across 30–70 yds)], [2 Adult Volunteers (Managers), 20–40 Student Pushers (2–4 per backdrop)],
-  [*Performance Stages*], [4 stages], [4 Mobile Platforms \ (Integrated casters)], [Midfield / Side Stages \ (Exact drill marks per show)], [8 Adult Volunteers (2 handlers per stage platform)],
+  [*Performance Stages*], [4 stages \ (8 mobile pieces)], [8 Half-Platforms \ (Casters & vinyl flap)], [Midfield / Side Stages \ (Exact drill marks per show)], [2 Adult Volunteers (Stage Managers), 16 Students (2 handlers/piece)],
 )
 
-#v(8pt)
+#v(6pt)
 
 // -------------------------------------------------------------------------
 // SECTION 5: STEP-BY-STEP JOB DESCRIPTIONS
@@ -295,8 +295,8 @@ The field prop operation is organized into four primary divisions:
 
 1. *Job Group A: Duck Blind Operations (Pages 4–7):* Divided into four specialized single-page job blocks covering cart pushing, rapid cart offloading, on-field concurrent deployment, and post-show egress.
 2. *Job Group B: Rolling Backdrop Operations (Pages 8–10):* Divided into three specialized single-page job blocks covering adult backdrop managers (B.1), on-field student pushers (B.2), and off-field student pushers (B.3).
-3. *Job Group C: Performance Stage Crew (Page 11):* Dedicated operations sheet for the 8 Adult Volunteers handling midfield mobile platforms.
-4. *Job Group D: Prop Lead & Field Safety Coordinator (Page 11):* Master oversight, weather telemetry monitoring, judge liaison, and timing control.
+3. *Job Group C: Performance Stage Crew (Pages 11–12):* Divided into two specialized single-page job blocks covering Adult Stage Managers (C.1, Page 11) and Student Stage Handlers (C.2, Page 12).
+4. *Job Group D: Prop Lead & Field Safety Coordinator (Page 13):* Master oversight, weather telemetry monitoring, judge liaison, and timing control.
 
 Follow all instructions in strict sequential order. Adhere to all safety warnings and CBA competition boundaries.
 
@@ -640,42 +640,150 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
 #pagebreak()
 
 // =========================================================================
-// PAGE 11: JOB C.1 & JOB D.1 — STAGES & PROP LEAD
+// PAGE 11: JOB C.1 — ADULT STAGE MANAGERS
 // =========================================================================
 
-== Job Group C: Performance Stage Crew (4 Mobile Platforms, Stages #1 through #4)
+== Job Group C: Performance Stage Crew (4 Platforms / 8 Mobile Pieces)
 
 #job-card(
-  role: "Job C.1: Performance Stage Handlers",
-  personnel: "8 Adult Volunteers (2 Handlers per Stage Platform)",
-  tag: "Stages #1 through #4"
+  role: "Job C.1: Adult Stage Managers",
+  personnel: "2 Adult Volunteers (Overseeing Platforms #1 through #4)",
+  tag: "Assembly, Vinyl Installation, Staging Lineup & Student Oversight"
 )[
-  + *Staging & Safety Inspection:* Inspect your assigned stage platform. Verify decking surface is clean, dry, and non-slip. Confirm wheel lock levers and retractable leveling outriggers operate smoothly.
-  + *Ingress & Positioning:* On the entry signal, two handlers push the stage platform from the rear gate to its designated performance mark. Avoid sudden pivoting on turf.
-  + *Locking & Rigidity Verification:* Once at the mark, engage all caster wheel locks and extend/tighten stability outriggers until platform is 100% rigid. Give the platform a firm hand-shake to confirm zero wobble before student performers approach.
-  + *Field Clearance:* Clear the performance field before the 2:45 mark and stand by at the nearest boundary.
-  + *Post-Show Egress:* At the final chord, immediately return to the stage platform, retract outriggers, disengage wheel locks, and push the platform off the field through the exit gate in continuous motion to the trailer lot.
-]
+  #text(size: 8.5pt, style: "italic", fill: rgb("#2b6cb0"))[
+    You are one of two Adult Volunteers in charge of the 4 performance stage platforms (8 total mobile stage pieces). You supervise and direct the mechanical assembly of the stage pieces per their manual and the installation of the vinyl coverings, organize the labeled lineup order, manage staging and destaging logistics, and supervise and assist the student handlers on and off the field.
+  ]
 
-#v(8pt)
+  #v(2pt)
+  #rect(
+    width: 100%,
+    fill: rgb("#ffffff"),
+    stroke: 0.8pt + rgb("#cbd5e0"),
+    radius: 3pt,
+    inset: (x: 5pt, y: 3pt)
+  )[
+    #text(weight: "bold", size: 8pt, fill: rgb("#2b6cb0"))[STAGE PLATFORM FLEET & LABELING CONFIGURATION:] \
+    #v(1pt)
+    #table(
+      columns: (1fr, 1.2fr, 1.4fr, 1.4fr),
+      align: center + horizon,
+      stroke: 0.3pt + rgb("#cbd5e0"),
+      inset: (x: 4pt, y: 2pt),
+      fill: (col, row) => if row == 0 { rgb("#edf2f7") } else { none },
+      [*Platform*], [*Stage Pieces*], [*Labeled Position*], [*Assembly & Transport Configuration*],
+      [Platform \#1], [2 Pieces (Front + Back)], [Piece \#1F & Piece \#1B], [Vinyl pinned back; lineup front-to-back],
+      [Platform \#2], [2 Pieces (Front + Back)], [Piece \#2F & Piece \#2B], [Vinyl pinned back; lineup front-to-back],
+      [Platform \#3], [2 Pieces (Front + Back)], [Piece \#3F & Piece \#3B], [Vinyl pinned back; lineup front-to-back],
+      [Platform \#4], [2 Pieces (Front + Back)], [Piece \#4F & Piece \#4B], [Vinyl pinned back; lineup front-to-back],
+    )
+  ]
 
-== Job Group D: Prop Lead & Field Safety Coordinator
+  #v(2pt)
+  #text(size: 8pt, weight: "bold", fill: rgb("#1a365d"))[Step-by-Step Manager Lifecycle:]
 
-#job-card(
-  role: "Job D.1: Prop Lead & Field Safety Coordinator",
-  personnel: "1–2 Experienced Prop Directors / Leads",
-  tag: "Overall Field Operations & Safety"
-)[
-  + *Weather Monitoring:* Carry a handheld digital anemometer and monitor live airport METAR weather feeds. Issue the *NO-GO* directive if wind speeds exceed 20 mph sustained or gusts reach 25–30 mph.
-  + *Judge Liaison & Gate Release:* Coordinate directly with the CBA Timing & Penalty judge at the gate. Signal the prop crew the instant entry permission is granted.
-  + *The 2:45 Clearance Call:* Monitor stopwatch. At 2:30, loudly call *"PROPS CLEAR!"* down the sideline and confirm all 25 Adult Volunteers are across the boundary line before the 3:15 announcement begins.
-  + *Exit Chute Traffic Management:* Stand at the stadium exit gate during post-show egress to prevent cart bottlenecks and ensure continuous flow into the trailer parking lot.
+  + *Arrival & Frame Assembly Supervision:* Meet at the equipment trailer at the Adult Volunteer call time. Supervise and direct the mechanical assembly of the 8 mobile stage pieces per the *Performance Stage Assembly Manual*. Direct help from prop and pit crew members who may not have done this assembly before. Verify all locking hardware, structural pins, and caster mounts are securely seated.
+  + *Vinyl Covering Installation:* Install the designated vinyl coverings and skirt graphics onto each assembled stage piece. Ensure that the bridging seam flap on each front piece is folded and pinned back securely for transport so it will not drag or catch on turf during movement.
+  + *Label Verification & Lineup Order:* Verify that every stage piece is clearly labeled for its field position (Platform \#1–\#4, Front "F" vs Back "B"). *Lineup order is critical:* organize pieces in strict entry sequence with front pieces positioned immediately ahead of their corresponding back pieces.
+  + *Transport to Staging Area:* Lead the transport of all 8 stage pieces from the trailer lot to the designated staging area at the designated staging time. Park pieces in numerical/lineup order and engage wheel brakes.
+  + *Student Handler Rendezvous & Supervision:* Meet the 16 Student Stage Handlers (2 handlers per piece) at the staging area 45 minutes prior to show time. Confirm each student pair knows their assigned piece label, lineup position, and field coordinate. Supervise and assist the students as they prepare for gate movement.
+  + *On-Field Setup & Boundary Rule:* Adults do not push stage pieces onto the field (students push). Move with the students onto the field during setup to assist any that need help, verify piece alignment, and ensure the vinyl seam flap is velcroed flat. *Quickly move off the field before the performance begins to the adult volunteer waiting area in front of the front sideline. Never step onto the turf during the show (Rule 4.03 penalty).*
+  + *Post-Show Reception & Return to Trailer:* Meet the student handlers at the staging area following their end zone egress. Take custody of the stage pieces so students can rejoin the band block. Push the pieces back to the staging area (between Prelims and Finals) or to the equipment trailer (after Finals).
+  + *Post-Finals Disassembly Supervision:* Direct the careful removal of vinyl coverings and mechanical disassembly of stage pieces per the manual for secure trailer packing.
+  + *Trailer Loading & Unloading:* Assist the transport team with the secure loading of the trailer for return to Pine Creek, and return to Pine Creek to assist with unloading and prop storage.
 ]
 
 #pagebreak()
 
 // =========================================================================
-// PAGE 12: SECTION 6 — POST-SHOW PACKDOWN, CHECKLIST & SIGNOFF
+// PAGE 12: JOB C.2 — STUDENT STAGE HANDLERS
+// =========================================================================
+
+== Job Group C: Performance Stage Crew (Continued)
+
+#job-card(
+  role: "Job C.2: Student Stage Handlers",
+  personnel: "16 Students (2 Handlers per Piece, Platforms #1–#4)",
+  tag: "Staging Takeover, Field Alignment, Seam Velcro & Egress"
+)[
+  #text(size: 8.5pt, style: "italic", fill: rgb("#2b6cb0"))[
+    *Student Instructions:* You are part of the team of 2 students assigned to your labeled stage piece (Front Half or Back Half of Platform \#1, \#2, \#3, or \#4). You roll your piece from staging onto the field, lock it in precision alignment with your partner piece, seal the center vinyl seam flap, and sprint it off the field at the end of the show.
+  ]
+  #v(4pt)
+
+  + *Staging Area Takeover:*
+    - Meet the Adult Stage Managers at the designated staging area 45 minutes prior to show time.
+    - Locate your assigned labeled stage piece (e.g., Piece \#1F Front, Piece \#1B Back, Piece \#2F Front, Piece \#2B Back, etc.).
+    - Confirm with your partner and Adult Managers that your caster wheel brakes are unlocked for transit.
+  + *Perimeter Transit to Back Sideline:*
+    - When directed by the Adult Stage Managers / Prop Lead, roll your piece along the perimeter track toward the rear stadium entrance gate.
+    - *Queue in strict labeled lineup order:* Front pieces (\#F) must lead immediately ahead of their corresponding back pieces (\#B).
+    - Stage along the back sideline directly in line with your final field coordinate.
+    - *CRITICAL BOUNDARY RULE: DO NOT CROSS THE BACK SIDELINE MARKERS.* Keep wheels completely behind the sideline until the on-field judge signals official entry permission.
+  + *Field Ingress & Front Piece Positioning:*
+    - When the CBA entry signal is given, push your piece briskly straight forward onto the field toward your marked coordinate.
+    - *Front Half (\#F) Team:* Roll directly onto your coordinate mark, align the front edge flush with the yard line and hash mark specified on your sheet, and *immediately step on all caster foot brake levers to lock wheels.*
+  + *Back Piece Alignment & Caster Lock:*
+    - *Back Half (\#B) Team:* Push directly behind the front half, align the framing flush and tight against the rear edge of the front piece, and *immediately step on all caster foot brake levers to lock wheels.*
+  + *Seam Closure (Vinyl Flap & Velcro):*
+    - Unpin the protective vinyl flap that was pinned back for transport on the front piece.
+    - Pull the flap smoothly across the joint seam to bridge the gap between the front and back pieces.
+    - Press the flap firmly down along the heavy-duty velcro strip on the rear piece to create a smooth, seamless performance surface.
+  + *Transition to Opening Performance Position:*
+    - Briskly transition to your opening drill position before the introductory announcement ends. You are now cleared for the show!
+  + *Immediate Post-Show Rendezvous & Prep:*
+    - As directed by your section leader following the show, move immediately to your assigned stage piece.
+    - *Pull up the velcro seam flap and pin it back securely* onto the front piece for transport.
+    - Kick all caster foot brake levers UP into the UNLOCKED position.
+  + *Straight-Line Egress & Handoff:*
+    - Push your piece in a straight line toward the closest point located on the *front half of the end zone*.
+    - Maintain continuous rolling motion through the gate chute along the perimeter path to the staging area as directed by the Adult Stage Managers.
+    - Park in numerical alignment, hand custody back to the Adult Stage Managers, and rejoin the band.
+]
+
+#pagebreak()
+
+// =========================================================================
+// PAGE 13: JOB D.1 — PROP LEAD & FIELD SAFETY COORDINATOR
+// =========================================================================
+
+== Job Group D: Prop Lead & Field Safety Coordinator
+
+#job-card(
+  role: "Job D.1: Prop Lead & Field Safety Coordinator",
+  personnel: "1–2 Experienced Prop Directors / Adult Leads",
+  tag: "Master Operations, Weather Monitoring, Gate Liaison & Timing Control"
+)[
+  #text(size: 8.5pt, style: "italic", fill: rgb("#2b6cb0"))[
+    You are the overall director and safety coordinator for the 30 field props and 25+ Adult Volunteers. You maintain authoritative weather telemetry, coordinate directly with CBA timing and penalty officials at the stadium gate, execute the countdown clearance call, and manage exit flow.
+  ]
+  #v(4pt)
+
+  + *Weather Telemetry & Go / No-Go Authority:*
+    - Carry a calibrated handheld digital anemometer and monitor live airport METAR weather feeds and local radar.
+    - Record wind speeds during morning check-in and 30 minutes prior to gate step-off.
+    - Authorize the operational wind tier (Tier 0 through Tier 3) and direct the ballast loading for all carts and backdrops.
+    - *HARD RULE:* If sustained winds exceed 20 mph OR gusts reach 25–30 mph, issue an immediate *NO-GO* directive. Props remain locked in trailers. Notify Band Directors immediately.
+  + *Judge Liaison & Gate Release:*
+    - Coordinate directly with the CBA Timing & Penalty (T&P) judge at the stadium gate.
+    - Confirm official clock start protocols and verify gate chute clearances.
+    - Signal the prop and cart pushers the instant official entry permission is granted.
+  + *The 2:45 Clearance Call & Field Safety:*
+    - Monitor stopwatch from the moment props cross the gate boundary.
+    - At the 2:30 mark, loudly call *"PROPS CLEAR!"* down the sideline and confirm all Adult Volunteers are moving behind boundary lines.
+    - Ensure 100% of adult personnel are completely off the turf and across the front/back sideline markers before the 3:15 announcement begins (*strictly avoid Rule 4.03 penalties*).
+  + *Exit Chute & Traffic Management:*
+    - Position yourself at the stadium exit gate during post-show egress.
+    - Ensure continuous rolling motion through the tunnel chute per CBA Rule 8.05; prevent student or cart bottlenecks.
+    - Direct returning props along designated perimeter paths back to the staging area or equipment trailer lot.
+  + *Radio Communications & Emergency Protocol:*
+    - Maintain active radio contact with Pit Crew Lead, Band Directors, and Equipment Truck Drivers on Band Channel 1.
+    - In the event of an injured student or mechanical failure on field, coordinate immediate response without delaying egress clock.
+]
+
+#pagebreak()
+
+// =========================================================================
+// PAGE 14: SECTION 6 — POST-SHOW PACKDOWN, CHECKLIST & SIGNOFF
 // =========================================================================
 
 = 6. Post-Show Deballasting & Trailer Packdown
@@ -704,17 +812,19 @@ All teardown and packdown procedures occur *exclusively in the equipment trailer
     [
       *Before Entering Gate:*
       - Official CBA wristband secured to wrist (Rule 9.07)
-      - Arrive at trailer 45 minutes prior to step-off
+      - Arrive at trailer at scheduled Adult Volunteer call time
       - Verify all sandbags loaded on carts/props per Ballast Schedules
-      - Review assigned tasks & staging locations
-      - Check backdrop caster brakes in UNLOCKED position
+      - Confirm assigned role, labeled prop numbers & staging locations
+      - Check backdrop and stage caster brakes in UNLOCKED position
+      - Verify stage vinyl flaps pinned back securely for transit
     ],
     [
       *On Field & Post-Show:*
-      - Adult handlers: push stage platforms directly to mark on signal
-      - Lock all wheel brakes immediately upon arrival
-      - *Exit turf before 2:45* (behind front/back line)
-      - NEVER step onto field during the performance
+      - Students push props; adults assist with placement & verify setup
+      - Verify stage casters locked and velcro seam flaps sealed
+      - *Exit turf before 2:45* (to waiting area in front of front line)
+      - NEVER step onto field turf during the performance (Rule 4.03)
+      - Meet students at staging area post-show for prop hand-off
       - *Continuous motion* through exit gate to trailer lot!
     ]
   )
