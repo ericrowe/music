@@ -196,39 +196,47 @@ def plot_egress_results(
     plt.close(fig)
     print(f"  Saved Egress CDF plot: {cdf_path}")
 
-    # FIGURE 2: Stadium Gate & Layout Bar Chart
+    # FIGURE 2: Single Exit Gate Strategy Comparison Bar Chart
     fig, ax = plt.subplots(figsize=(10, 6), dpi=300)
     
-    layouts = ["Same-Side Gate\n(Enter S1, Exit S1)", "Opposite-Side Gates\n(Enter S1, Exit S2)", "Dual Exit Gates\n(Benchmark)"]
-    x = np.arange(len(layouts))
-    width = 0.35
+    strategies = [
+        ("Direct Hand-Carry\n+ Tunnel Reload\n(Recommended)", exp1["outside_gate"], "#1b9e77"),
+        ("Direct Hand-Carry\n+ Gate Apron Reload\n(Staging Area)", exp1["inside_gate"], "#386cb0"),
+        ("Hybrid Protocol\n(Near On-Field,\nFar at Gate)", exp1["hybrid_split"], "#7570b3"),
+        ("Traditional Sequential\nOn-Field Cart Loading\n(High Risk)", exp1["on_field_loading"], "#d95f02")
+    ]
+    x = np.arange(len(strategies))
+    labels = [s[0] for s in strategies]
+    means = [s[1].mean_clearance_time for s in strategies]
+    p95s = [s[1].p95_clearance_time for s in strategies]
+    colors = [s[2] for s in strategies]
     
-    means_out = [exp2["same_side_outside_gate"].mean_clearance_time, exp2["opposite_side_outside_gate"].mean_clearance_time, exp2["dual_exit_outside_gate"].mean_clearance_time]
-    p95_out = [exp2["same_side_outside_gate"].p95_clearance_time, exp2["opposite_side_outside_gate"].p95_clearance_time, exp2["dual_exit_outside_gate"].p95_clearance_time]
+    rects = ax.bar(x, means, width=0.55, color=colors)
+    ax.errorbar(x, means, yerr=[np.array(p95s) - np.array(means)], fmt='none', ecolor='black', capsize=5, linewidth=1.5)
     
-    means_in = [exp2["same_side_inside_gate"].mean_clearance_time, exp2["opposite_side_inside_gate"].mean_clearance_time, exp2["dual_exit_inside_gate"].mean_clearance_time]
-    p95_in = [exp2["same_side_inside_gate"].p95_clearance_time, exp2["opposite_side_inside_gate"].p95_clearance_time, exp2["dual_exit_inside_gate"].p95_clearance_time]
-    
-    rects1 = ax.bar(x - width/2, means_out, width, label="Reload Outside Gate (Off-Field)", color="#1b9e77")
-    rects2 = ax.bar(x + width/2, means_in, width, label="Reload Inside Gate (Staging Area)", color="#386cb0")
-    
-    ax.errorbar(x - width/2, means_out, yerr=[np.array(p95_out) - np.array(means_out)], fmt='none', ecolor='black', capsize=4)
-    ax.errorbar(x + width/2, means_in, yerr=[np.array(p95_in) - np.array(means_in)], fmt='none', ecolor='black', capsize=4)
+    for i, rect in enumerate(rects):
+        h = rect.get_height()
+        p95_val = p95s[i]
+        pass_rate = strategies[i][1].success_rate * 100
+        ax.text(rect.get_x() + rect.get_width()/2.0, h/2.0,
+                f"Mean: {h:.1f}s\nP95: {p95_val:.1f}s\n({pass_rate:.0f}% Pass)",
+                ha='center', va='center', color='white', fontweight='bold', fontsize=10)
     
     ax.axhline(CBA_EGRESS_LIMIT_SECONDS, color="red", linestyle="--", linewidth=2.0, label="CBA 2:00 Limit (120 s)")
-    ax.set_title("Field Clearance Time Across Stadium Layouts (with 95th Percentile Whiskers)", fontsize=13, fontweight="bold", pad=12)
+    ax.set_title("Single Exit Gate Stadium: Field Clearance Time by Egress Strategy\n(N = 50,000 Monte Carlo Trials | 95th Percentile Whiskers)", fontsize=13, fontweight="bold", pad=12)
     ax.set_xticks(x)
-    ax.set_xticklabels(layouts, fontsize=10)
+    ax.set_xticklabels(labels, fontsize=10, fontweight="bold")
     ax.set_ylabel("Official Field Clearance Time (seconds)", fontsize=11, fontweight="bold")
-    ax.legend(loc="upper right", fontsize=10)
-    ax.grid(True, linestyle="--", alpha=0.6)
+    ax.set_ylim(0, 195)
+    ax.legend(loc="upper left", fontsize=10)
+    ax.grid(True, linestyle="--", alpha=0.6, axis="y")
     
     fig.tight_layout()
     bar_path = os.path.join(PLOTS_DIR, "egress_strategy_comparison.png")
     fig.savefig(bar_path)
     fig.savefig(os.path.join(BRAIN_DIR, "egress_strategy_comparison.png"))
     plt.close(fig)
-    print(f"  Saved Stadium Layout plot: {bar_path}")
+    print(f"  Saved Single Exit Strategy plot: {bar_path}")
 
     # FIGURE 3: Gate/Ballast & Sweep Sensitivity
     fig, (ax_bal, ax_swp) = plt.subplots(1, 2, figsize=(14, 6), dpi=300)

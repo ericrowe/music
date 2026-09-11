@@ -1,13 +1,12 @@
 # Sideline Screen (Duck Blind) Post-Show Egress Monte Carlo Simulation Report
 
-**Simulation Methodology:** Stochastic Egress Engine ($N = 5,000$ randomized iterations per scenario)  
-**Circuit Standard:** Colorado Bandmasters Association (CBA) 2026 Marching Band Rules  
-**Timing Framework:** Dynamic 15-Minute Block Budget (Class 4A/5A Rule 5.01 / 5.06)  
-**Fleet Architecture:** Dedicated 2-Cart Fleet (1 Cart per Side, 8 Screens per Cart)  
-**Primary Venue Constraint:** Single Stadium Exit Gate (with Dual-Exit Benchmark)  
+**Simulation Methodology:** Stochastic Egress Engine ($N = 5,000$ randomized iterations per scenario)
+**Circuit Standard:** Colorado Bandmasters Association (CBA) 2026 Marching Band Rules
+**Timing Framework:** Dynamic 15-Minute Block Budget (Class 4A/5A Rule 5.01 / 5.06)
+**Fleet Architecture:** Dedicated 2-Cart Fleet (1 Cart per Side, 8 Screens per Cart)
+**Venue Constraint:** Single Stadium Exit Gate (with Dual Exit Benchmark)
 
 ---
-
 ## 1. The Dynamic 15-Minute Time Budget Architecture
 
 > [!IMPORTANT]
@@ -16,80 +15,53 @@
 
 ### 1.1 The Time-Budget Tradeoff: Shaving Deployment Expands Egress
 
-Under CBA Rule 5.06, the official 15-minute timing interval begins when the Timing & Penalty judge gives permission to enter the field, and ends when the last representative, prop, or cart exits the performance field:
-
-$$T_{\text{total}} = T_{\text{deploy}} + T_{\text{announce}} + T_{\text{show}} + T_{\text{egress}} \le 15:00 \text{ (900 seconds)}$$
-
-* **Rule 5.09 Early Signal Rule:** CBA Rule 5.09 explicitly states that *"A director may signal the Timing & Penalties judge to start the announcement when the band is ready; otherwise the announcement will occur 3:15 after a band has been given permission to enter the field."*
-* **Deployment-to-Egress Fungibility:**
-  * If the 2-cart crew deploys the 16 duck blinds in **2:15** (saving 60 seconds compared to the 3:15 cap), the director signals early.
-  * The announcement (~35s) and performance (~8:30) start and finish 60 seconds earlier on the master 15:00 clock.
-  * **That saved 60 seconds transfers directly into the egress budget**, expanding the post-show clearance window from **2:00 up to 3:00 (180 seconds)**!
-  * Conversely, if deployment takes the full 3:15, and the musical show runs 8:45, the egress budget tightens to ~1:45 to 2:00.
-
-```
-+---------------------------------------------------------------------------------------+
-|                              15:00 TOTAL FIELD BLOCK                                  |
-+---------------------+-------------+-----------------------------+---------------------+
-| Deployment / Entry  | Announce    | Competitive Performance     | Egress / Clearance  |
-| Budget: 3:15 (max)  | ~0:35 - 0:45| Minimum 5:30; Typ: 8:00-8:45| Dynamic: 2:00 - 3:00|
-+---------------------+-------------+-----------------------------+---------------------+
-        |                                                                 ^
-        +---- Shaving 60s off Deployment (e.g. 2:15) transfers here ------+
-```
-
----
+Under CBA Rule 5.06, total field time runs from permission to enter until the last representative exits the performance field ($T_{total} \le 15:00$).
+- **Rule 5.09 Early Signal Advantage:** A director may signal the Timing & Penalties judge to start the announcement as soon as the band and props are set.
+- **Fungibility:** Shaving 60s off deployment (e.g. finishing setup at 2:15 instead of 3:15) transfers directly into the egress budget, expanding post-show clearance time from 2:00 up to **3:00 (180 seconds)**!
 
 ### 1.2 Where the Clock Stops: The State Championship Tunnel Protocol
 
-* **Where the Clock Stops (Rule 5.06 & 5.08):**
-  * The official contest clock stops the instant the last band member, auxiliary performer, cart, and prop **crosses the boundary line at the field exit**.
-  * At championship venues like **Falcon Stadium (USAFA - State Championships)** and major regional venues, there is a designated egress chute leading into a long stadium tunnel and incline ramp.
-  * **Crossing into the mouth of the tunnel stops the official 15:00 clock.**
-* **Off-Clock Staging & Reload in the Tunnel:**
-  * Once across the field boundary and inside the tunnel / chute, the ensemble is **off the competition clock**.
-  * Bands are permitted to pause in the tunnel mouth / run-off apron to reload folded duck blinds onto the carts, lash down hardware, and stage equipment before pushing up the tunnel incline/ramp.
-  * This reload takes place **while the next band is entering the field and setting up in their 3:15 block**.
-  * The only operational constraint in the tunnel is **Rule 8.09** (equipment must not block the tunnel entrance or delay the contest, which gives an additional 3 to 4 minutes before the next band begins playing).
+- **Where the Clock Stops (Rule 5.06 & 5.08):** The official 15:00 contest clock stops the instant the last performer, cart, and prop crosses the boundary line at the field exit chute / tunnel mouth (specifically at Falcon Stadium - USAFA for State Championships).
+- **Off-Clock Reload in Tunnel:** Inside the tunnel, the crew pauses to reload blinds onto the carts and lash down hardware off the competition clock while the next band enters and sets up in their 3:15 window.
 
 ---
 
-## 2. Executive Summary of Egress Simulation Findings ($N = 5,000$ Trials)
+## 2. Executive Summary & Tactical Verdicts
 
-1. **Direct Hand-Carry to the Exit Line Guarantees Clock Stoppage in Under 1:40:**
-   * **Mean Field Clearance Time: 99.9 seconds (1:40)**; **95th Percentile: 113.8 seconds (1:54)** in Same-Side single-gate venues.
-   * In Opposite-Side venues (Enter Side 1, Exit Side 2), mean clearance is **100.1 seconds (1:40)** with a **98.4%** success rate under the 120s benchmark.
-   * In Dual-Exit venues, clearance finishes in **83.7 seconds (1:24)** with **100.0%** success.
-   * **Mechanism:** Students fold their 26-lb screen (~6s) and jog straight out through the exit gate. The carts roll down the sideline collecting ballast bags and cross the gate. **The official contest clock stops at ~99.9s**.
-   * Reloading the folded screens onto the carts then takes place in the stadium tunnel / apron outside the gate (~14s), completely off the contest clock!
+1. **Direct Hand-Carry to the Tunnel Guarantees Clock Stoppage in Under 1:40 (98.4% - 100%):**
+   - **Mean Field Clearance Time: 99.9 seconds (1:40)**; **95th Percentile: 113.8 seconds (1:54)** in Same-Side single-gate venues.
+   - In Opposite-Side venues (Enter Side 1, Exit Side 2), mean clearance is **100.1 seconds (1:40)** with **98.4%** success.
+   - In Dual-Exit venues, clearance finishes in **83.7 seconds (1:24)** with **100.0%** success.
+   - **Mechanism:** Students fold and hand-carry the 26-lb frames straight through the exit gate into the tunnel. Carts collect ballast bags and cross into the tunnel. The official contest clock stops at ~99.9s. Reloading onto carts occurs safely inside the tunnel off the contest clock!
 
-2. **Reloading Just Inside the Gate (On-Field Staging) is Feasible Under Calm Winds:**
-   * If venue staff ever demand that all blinds be loaded onto carts before crossing the field boundary:
-     * Under Tier 1 ballast, reloading inside the gate averages **121.4 seconds (2:01)**, passing 46.7% of the time under a strict 120s limit (and 100% passing if deployment shaved even 15 seconds!).
-     * If unballasted (calm conditions), reloading inside the gate averages **91.7 seconds (1:32)** with a **99.8% success rate**!
+2. **Reloading Just Inside the Gate is Viable Under Calm/Low Ballast Conditions:**
+   - Under Tier 1 ballast, reloading inside the gate averages **121.4 seconds (2:01)**, succeeding in **46.7%** of trials under 120s (and 100% if deployment saved 15s).
+   - If **unballasted**, reloading inside the gate averages **91.7 seconds (1:32)** with a **99.8% success rate**!
 
 3. **Traditional On-Field Cart Loading Fails 100% of the Time in Single-Exit Stadiums:**
-   * Stopping at each screen location on the active field to load screens and ballast forces the far-side cart to push a $458\text{-lb}$ deadweight across the field.
-   * Mean clearance time is **153.4 seconds (2:33)** ($0.0\%$ success under 2:00), which would eat deeply into the buffer and risk delay-of-contest penalties.
+   - Stopping at each screen on the field to load screens and ballast results in an average field clearance time of **153.4 seconds (2:33)**, exceeding 2:00 by over 33 seconds on every trial.
 
-4. **The "Inward Sweep" Tactical Discovery (Saves 20 Yards & 27 Seconds):**
-   * On the side opposite the exit gate (Far Side), having the cart start at Screen 8 (22-yard line) and sweep **inward toward centerfield** to Screen 1 (42-yard line) drops cross-field travel from $88.0\text{ yards}$ down to $69.3\text{ yards}$.
-   * This cuts heavy pushing by 20 yards and reduces mean transit by 27 seconds, boosting 2:00 compliance from **26.6% to 98.8%**!
+4. **Inward Sweep (Screen 8 -> 1) Saves 20 Yards of Cross-Field Pushing:**
+   - Sweeping from the 22-yard line inward toward the 42-yard line (centerfield) cuts cross-field travel from 88 yards to 69.3 yards, saving ~10 seconds of fatigue and boosting compliance from 26.6% to 98.8%.
 
 ---
+## 2. Master Egress Comparison Table
 
-## 3. Master Egress Comparison Table
-
-| Stadium Layout | Reload Mode & Location | Sweep Direction | Ballast State | Mean Clearance | Median | P95 Time | Success Rate ($\le 2:00$) | Safety Slack (vs 2:00) |
+| Stadium Layout | Reload Mode | Sweep Direction | Ballast State | Mean Clearance | Median | P95 Time | Success ($\le 2:00$) | Safety Slack |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Same-Side Gate (Enter S1, Exit S1)** | **Reload in Tunnel / Outside Gate** | **Inward (8 $\to$ 1)** | **Tier 1 (15 lb/screen)** | **99.9 s (1:39)** | **99.2 s** | **113.8 s (1:54)** | **98.8%** | **+20.1 s** |
-| **Opposite-Side (Enter S1, Exit S2)** | **Reload in Tunnel / Outside Gate** | **Inward (8 $\to$ 1)** | **Tier 1 (15 lb/screen)** | **100.1 s (1:40)** | **99.4 s** | **114.7 s (1:55)** | **98.4%** | **+19.9 s** |
-| **Dual-Exit Gates (Benchmark)** | **Reload in Tunnel / Outside Gate** | **Inward (8 $\to$ 1)** | **Tier 1 (15 lb/screen)** | **83.7 s (1:23)** | **83.3 s** | **92.8 s (1:33)** | **100.0%** | **+36.3 s** |
-| Same-Side Gate | Reload Inside Gate *(Staging)* | Inward (8 $\to$ 1) | Tier 1 (15 lb/screen) | 121.4 s (2:01) | 120.7 s | 136.7 s (2:17) | 46.7% | -1.4 s |
-| Opposite-Side Gate | Reload Inside Gate *(Staging)* | Inward (8 $\to$ 1) | Tier 1 (15 lb/screen) | 121.3 s (2:01) | 120.7 s | 136.8 s (2:17) | 47.1% | -1.3 s |
-| **Dual-Exit Gates (Benchmark)** | **Reload Inside Gate** *(Staging)* | **Inward (8 $\to$ 1)** | **Tier 1 (15 lb/screen)** | **105.0 s (1:44)** | **104.4 s** | **115.4 s (1:55)** | **98.5%** | **+15.0 s** |
-| **Same-Side Gate** | **Reload in Tunnel / Outside Gate** | **Inward (8 $\to$ 1)** | **Unballasted (0 lb)** | **71.0 s (1:11)** | **70.4 s** | **83.5 s (1:24)** | **100.0%** | **+49.0 s** |
-| **Same-Side Gate** | **Reload Inside Gate** *(Staging)* | **Inward (8 $\to$ 1)** | **Unballasted (0 lb)** | **91.7 s (1:31)** | **91.1 s** | **104.5 s (1:45)** | **99.8%** | **+28.3 s** |
-| Same-Side Gate | Traditional On-Field | Inward (8 $\to$ 1) | Tier 1 (15 lb/screen) | 153.4 s (2:33) | 152.5 s | 171.2 s (2:51) | 0.0% | -33.4 s |
-| Same-Side Gate | Reload in Tunnel / Outside Gate | Outward (1 $\to$ 8) | Tier 1 (15 lb/screen) | 126.8 s (2:07) | 125.8 s | 146.0 s (2:26) | 26.6% | -6.8 s |
-| Same-Side Gate | Reload in Tunnel / Outside Gate | Inward (8 $\to$ 1) | Tier 2 (30 lb/screen) | 112.4 s (1:52) | 111.7 s | 128.7 s (2:09) | 80.9% | +7.6 s |
+| `same_side` | `outside_gate` | `inward` | `tier1` | 99.9 s (1:39) | 99.2 s | 113.8 s | **98.8%** | +20.1 s |
+| `same_side` | `inside_gate` | `inward` | `tier1` | 121.4 s (2:01) | 120.7 s | 136.7 s | **46.7%** | -1.4 s |
+| `same_side` | `hybrid_split` | `inward` | `tier1` | 121.4 s (2:01) | 120.7 s | 134.6 s | **46.3%** | -1.4 s |
+| `same_side` | `on_field_loading` | `inward` | `tier1` | 153.4 s (2:33) | 152.5 s | 171.2 s | **0.0%** | -33.4 s |
+| `opposite_side` | `outside_gate` | `inward` | `tier1` | 100.1 s (1:40) | 99.4 s | 114.7 s | **98.4%** | +19.9 s |
+| `opposite_side` | `inside_gate` | `inward` | `tier1` | 121.3 s (2:01) | 120.7 s | 136.8 s | **47.1%** | -1.3 s |
+| `dual_exit` | `outside_gate` | `inward` | `tier1` | 83.7 s (1:23) | 83.3 s | 92.8 s | **100.0%** | +36.3 s |
+| `dual_exit` | `inside_gate` | `inward` | `tier1` | 105.0 s (1:44) | 104.4 s | 115.4 s | **98.5%** | +15.0 s |
+| `same_side` | `outside_gate` | `inward` | `none` | 71.0 s (1:11) | 70.4 s | 83.5 s | **100.0%** | +49.0 s |
+| `same_side` | `inside_gate` | `inward` | `none` | 91.7 s (1:31) | 91.1 s | 104.5 s | **99.8%** | +28.3 s |
+| `same_side` | `on_field_loading` | `inward` | `none` | 116.6 s (1:56) | 115.8 s | 133.0 s | **67.8%** | +3.4 s |
+| `same_side` | `outside_gate` | `inward` | `tier2` | 112.4 s (1:52) | 111.7 s | 128.7 s | **80.9%** | +7.6 s |
+| `same_side` | `inside_gate` | `inward` | `tier2` | 134.7 s (2:14) | 133.8 s | 152.5 s | **4.9%** | -14.7 s |
+| `same_side` | `on_field_loading` | `inward` | `tier2` | 167.7 s (2:47) | 166.7 s | 188.3 s | **0.0%** | -47.7 s |
+
+---

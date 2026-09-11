@@ -152,6 +152,8 @@ flowchart TD
     class TC4 win;
 ```
 
+![Pre-Show Deployment Probability Distribution (1 Cart vs. 2 Carts)](../../simulation/plots/cdf_comparison.png)
+
 * **Gross Weight & Turf Friction:** Rolling resistance on rubber infill turf escalates non-linearly with payload. A single cart carrying 16 blinds and Tier 1 ballast weighs **$786\text{ lbs}$**, dropping pushing velocity to $0.63\text{ yd/s}$ ($1.3\text{ mph}$) and inducing rapid physical exhaustion.
 * **Parallel Advantage:** Two dedicated carts weigh only **$458\text{ lbs}$ each** and travel half the distance, allowing parent pushers to sustain a brisk $1.0\text{--}1.2\text{ yd/s}$ stride.
 
@@ -225,13 +227,23 @@ On the side opposite the exit gate (Far Side):
   * When collection finishes, the cart is at the 42-yard line, only **$69.3\text{ yards}$** from the exit gate!
   * **Mean Clearance: 99.9s (1:40) — 98.8% Pass Rate.**
 
+![Post-Show Field Clearance Distribution](../../simulation/plots/egress_cdf_comparison.png)
+
 ---
 
-### 4.3 Stadium Layout Invariance (Same-Side vs. Opposite-Side Gates)
+### 4.3 Single Exit Gate Dynamics & Strategy Comparison
 
-* **Same-Side Gate (Enter Side 1, Exit Side 1):** Mean clearance is **$99.9\text{ seconds}$** ($98.8\%$ pass).
-* **Opposite-Side Gates (Enter Side 1, Exit Side 2):** Mean clearance is **$100.1\text{ seconds}$** ($98.4\%$ pass).
-* Because the field is symmetric, field clearance time is determined by whichever cart and screen team is on the far side of the exit gate. Layout differences simply swap which crew has the cross-field sprint (Cart 2 in Same-Side, Cart 1 in Opposite-Side), with virtually zero impact on total clearance time.
+Because the field layout and screen fleet are completely symmetric (8 blinds on Side 1, 8 blinds on Side 2), all competition stadiums operate under the identical dynamics of a **single exit gate**. Whether a band enters on the same side or opposite side as the exit chute has zero material impact—in every case, one cart crew clears the near half while the second cart crew sweeps inward across the field. Layout differences simply swap which crew performs the far-side sweep, resulting in identical clearance timing (**100.0 seconds mean**, **114.0 seconds P95**).
+
+As demonstrated below across $N = 50,000$ Monte Carlo trials, Direct Hand-Carry with off-field tunnel reloading achieves a **98.8% compliance rate** within the 2:00 mark, whereas traditional on-field cart loading fails 100% of the time:
+
+![Single Exit Gate Strategy Comparison](../../simulation/plots/egress_strategy_comparison.png)
+
+### 4.4 Sweep Direction & Ballast Payload Sensitivity
+
+Wind ballast weight directly affects pusher fatigue and cornering scrub. As shown below, Tier 1 ballast ($15\text{ lbs/screen}$) easily clears the 2:00 mark under the recommended inward sweep, whereas an outward sweep leaves the cart stranded on the far 22-yard line:
+
+![Ballast Payload and Sweep Direction Sensitivity](../../simulation/plots/egress_gate_and_ballast_sensitivity.png)
 
 ---
 

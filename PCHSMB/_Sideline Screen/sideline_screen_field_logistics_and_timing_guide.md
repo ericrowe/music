@@ -83,23 +83,7 @@ Within the CBA **15 minutes 00 seconds (900.0 seconds)** total field block (Rule
 
 ---
 
-## 2. Master Visual Simulation Charts
-
-### 2.1 Pre-Show Deployment Probability Distribution (1 Cart vs. 2 Carts)
-![Cumulative Distribution Function of Deployment Times](simulation/plots/cdf_comparison.png)
-
-### 2.2 Post-Show Field Clearance Distribution (Inward Sweep vs. Outward vs. Sequential)
-![Cumulative Distribution Function of Field Clearance Times](simulation/plots/egress_cdf_comparison.png)
-
-### 2.3 Stadium Gate Layout Robustness (Same-Side vs. Opposite-Side vs. Dual Exits)
-![Field Clearance Time Across Stadium Layouts](simulation/plots/egress_strategy_comparison.png)
-
-### 2.4 Spatial Sweep Direction & Ballast Weight Sensitivity
-![Ballast Payload and Sweep Direction Sensitivity](simulation/plots/egress_gate_and_ballast_sensitivity.png)
-
----
-
-## 3. The Dynamic 15-Minute Time Budget Architecture
+## 2. The Dynamic 15-Minute Time Budget Architecture
 
 ```mermaid
 flowchart LR
@@ -119,19 +103,19 @@ flowchart LR
     class Tradeoff trade;
 ```
 
-### 3.1 The Time-Budget Tradeoff: Shaving Deployment Expands Egress
+### 2.1 The Time-Budget Tradeoff: Shaving Deployment Expands Egress
 Under CBA Rule 5.06, total field time runs from permission to enter until the last representative exits the performance field ($T_{\text{total}} \le 15:00$).
 * **Rule 5.09 Early Signal Advantage:** A director may signal the Timing & Penalties judge to start the announcement as soon as the band and props are set.
 * **Fungibility:** Shaving 61s off deployment (finishing setup at **2:14** instead of 3:15) transfers directly into the egress budget, expanding post-show clearance time from 2:00 up to **3:01 (181 seconds)**!
 
-### 3.2 Where the Clock Stops: The Falcon Stadium Tunnel Protocol
+### 2.2 Where the Clock Stops: The Falcon Stadium Tunnel Protocol
 * **Where the Clock Stops (Rule 5.06 & 5.08):** The official 15:00 contest clock stops the instant the last performer, cart, and prop crosses the boundary line at the field exit chute / tunnel mouth (**Falcon Stadium - USAFA for State Championships**).
 * **Off-Clock Reload in Tunnel:** Inside the tunnel mouth, the crew pauses to reload blinds onto the carts and lash down hardware **off the competition clock** while the next band enters and sets up in their 3:15 window.
 * Under **Rule 8.09**, props must clear the 9'6" tunnel height restriction and maintain continuous movement so as not to hinder subsequent bands before their performance begins (~4 minutes later).
 
 ---
 
-## 4. Detailed Entry & Deployment Analysis
+## 3. Detailed Entry & Deployment Analysis
 
 ```mermaid
 flowchart TD
@@ -157,18 +141,20 @@ flowchart TD
     class TC4 win;
 ```
 
-### 4.1 Starting Location Rankings
+![Pre-Show Deployment Probability Distribution (1 Cart vs. 2 Carts)](simulation/plots/cdf_comparison.png)
+
+### 3.1 Starting Location Rankings
 1. **`Back_20` / `Back_40` (Back Sideline):** **133.9 s (2:14)** mean, $148.3\text{s}$ P95, **+61.1 s slack**. Ingress distance is only 55.0 yards straight down the yard line.
 2. **`Back_50` (Centerfield):** **144.9 s (2:25)** mean, $161.4\text{s}$ P95, **+50.1 s slack**.
 3. **`EZ_Behind_Goal` (End Zone Gate):** **145.2 s (2:25)** mean, $160.9\text{s}$ P95, **+49.8 s slack**. Standard stadium gate path.
 
-### 4.2 Setup Strategy: Pre-Set Student Receivers vs. Mobile Pincer
+### 3.2 Setup Strategy: Pre-Set Student Receivers vs. Mobile Pincer
 * **Pre-Set Student Receivers:** Students jog to yard marks on entry. Carts roll dropping blinds ($3.4\text{s}$ each); waiting students stand and latch in parallel. **133.9s (2:14) — 100% Success.**
 * **Mobile Pincer:** Cart crew does everything sequentially. **198.0s (3:18) — Only 38.6% Success (Violates 3:15 cap!).**
 
 ---
 
-## 5. Detailed Post-Show Egress Analysis
+## 4. Detailed Post-Show Egress Analysis
 
 ```mermaid
 sequenceDiagram
@@ -191,13 +177,27 @@ sequenceDiagram
     Cart->>Tunnel: Push loaded carts up tunnel hill at normal walking pace
 ```
 
-### 5.1 The "Inward Sweep" Tactical Discovery
+### 4.1 The "Inward Sweep" Tactical Discovery
 * **Outward Sweep (Screen 1 $\to$ 8):** Finishes at far 22-yard line, leaving $88.0\text{ yards}$ of heavy cross-field pushing. Mean clearance: **$126.8\text{s}$ ($2:07$) — 26.6% Pass Rate.**
 * **Inward Sweep (Screen 8 $\to$ 1):** Finishes at 42-yard line, leaving only $69.3\text{ yards}$ to exit. Mean clearance: **$99.9\text{s}$ ($1:40$) — 98.8% Pass Rate (Saves 20 yards & 27 seconds!).**
 
+![Post-Show Field Clearance Distribution](simulation/plots/egress_cdf_comparison.png)
+
+### 4.2 Single Exit Gate Strategy Comparison
+Because the field layout and screen fleet are completely symmetric (8 blinds on Side 1, 8 blinds on Side 2), all competition stadiums operate under the identical dynamics of a **single exit gate**. Whether a band enters on the same side or opposite side as the exit chute has zero material impact—in every case, one cart crew clears the near half while the second cart crew sweeps inward across the field, yielding identical clearance timing (100.0s mean, 114s P95).
+
+As demonstrated below across $N = 50,000$ Monte Carlo trials, the Direct Hand-Carry + Off-Field Tunnel Reload achieves a **98.8% pass rate**, whereas traditional on-field cart loading fails 100% of the time:
+
+![Single Exit Gate Strategy Comparison](simulation/plots/egress_strategy_comparison.png)
+
+### 4.3 Sweep Direction & Ballast Payload Sensitivity
+Wind ballast weight directly affects pusher fatigue and cornering scrub. As shown below, Tier 1 ballast ($15\text{ lbs/screen}$) easily clears the 2:00 mark under the recommended inward sweep, whereas an outward sweep leaves the cart stranded on the far 22-yard line:
+
+![Ballast Payload and Sweep Direction Sensitivity](simulation/plots/egress_gate_and_ballast_sensitivity.png)
+
 ---
 
-## 6. Multi-Year Show Planning Matrix for Band Directors
+## 5. Multi-Year Show Planning Matrix for Band Directors
 
 | Musical Show Length | Total Logistics Overhead (Mean) | Elapsed Field Time at Final Exit | Safety Slack Remaining vs 15:00 | Overstay Penalty Probability | Risk Assessment & Director Guidance |
 |:---:|:---:|:---:|:---:|:---:|---|
@@ -212,7 +212,7 @@ sequenceDiagram
 
 ---
 
-## 7. Standard Operating Procedure (SOP) Field Checklist
+## 6. Standard Operating Procedure (SOP) Field Checklist
 
 ### Pre-Show Deployment Checklist
 - [ ] **T - 0:30:** Carts 1 & 2 staged at designated starting line (Back sideline at either the 20 or 40-yard line).
@@ -232,7 +232,7 @@ sequenceDiagram
 
 ---
 
-## 8. Document Metadata & Authoritative Cross-References
+## 7. Document Metadata & Authoritative Cross-References
 
 * **Document Status:** Authoritative Operational Timing Standard (Multi-Year Planning Reference)
 * **Subproject:** Pine Creek High School Marching Band (PCHSMB) Sideline Screen / Duck Blind Fleet (16 Units)
