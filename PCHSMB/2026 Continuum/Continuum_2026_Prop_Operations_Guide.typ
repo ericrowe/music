@@ -40,10 +40,10 @@
   font: ("Helvetica Neue", "Helvetica", "Arial"),
   size: 9.5pt,
   fill: rgb("#1a202c"),
-  spacing: 120%,
 )
 
 #set par(justify: true, leading: 0.65em)
+#show table.cell: set par(justify: false)
 
 // Styled Heading Hierarchy
 #show heading.where(level: 1): it => {
