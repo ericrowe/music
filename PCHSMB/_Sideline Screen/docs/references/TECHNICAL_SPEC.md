@@ -88,6 +88,7 @@
   - **Tier 2 (Advisory, 12–18 mph):** 2x 15-lb bags over rear rail C + 1x 15-lb bag suspended from Rail 2 (total wt 71 lbs). Balanced stability: 23.7 mph fwd / 24.5 mph bwd.
   - **Tier 3 (High-Wind, 18–22 mph):** 2x 15-lb bags over rear rail C + 2x 15-lb bags suspended from Rail 2 (total wt 86 lbs). Safe to 24.5–28.4 mph max gust. Turf contact pressure ~0.25 psi (zero turf compaction).
   - **Tier 4 (Safety Abort, >20 mph sustained or >25 mph peak gusts):** STRICT NO-GO. Disengage clips (I), collapse rear support frame, and lay screen flat on turf.
+- **Severe Wind Feasibility Analysis (30 mph Limits):** For detailed engineering calculations and failure mode evaluations regarding extreme wind regimes, see [30 mph Wind Loading & Ballasting Feasibility Analysis](WIND_LOADING_30MPH_ANALYSIS.md). Ballasting for 30 mph on the field is prohibited due to lateral sliding drift on turf (requires >161 lbs ballast), tensile detachment of 3D-printed snap clips (I) under 153 lbs pull load, and CBA 15-second timed entry limits.
 - **2026 CBA Marching Band Competition Rules Compliance:**
   - **Rule 5.02 (Mandatory Rear Entrance for Props):** CRITICAL MANDATE — All props must enter from the back sideline or rear end zone gates (above goal posts). Never cross directly across front boundary (reserved for pit equipment). Handlers transit around perimeter to front sideline coordinates.
   - **Rule 5.03 & 5.06 (Entry Permission & Timing):** Pre-stage in rear half of end zone up to goal line. Never enter field before T&P judge signals official permission.

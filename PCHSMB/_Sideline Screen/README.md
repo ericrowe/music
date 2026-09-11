@@ -19,6 +19,10 @@ The manual covers:
 - **Intro & Overview:** System geometry, folding mechanics, and print units.
 - **Appendix A (Field Operations):** Field deployment, transport cart staging, unfolding/folding procedures, wind ballasting, 2026 CBA competition rules compliance, and post-use storage.
 - **Appendix B (Construction Manual):** Illustrated parts inventory, conduit cut plan, 4-stage frame assembly, transport cart fabrication (backdrop base + side rails + front/back latching gates), vinyl installation, and digital/purchase source lookup.
+- **Appendices C, C.1, & D:** On-prop field placard, 4" × 6" coordinate card template, and parent volunteer competition day guide.
+- **Engineering References:**
+  - Technical specifications & ballasting model: [`docs/references/TECHNICAL_SPEC.md`](docs/references/TECHNICAL_SPEC.md)
+  - Severe wind feasibility study (30 mph limits & failure modes): [`docs/references/WIND_LOADING_30MPH_ANALYSIS.md`](docs/references/WIND_LOADING_30MPH_ANALYSIS.md)
 
 ---
 
