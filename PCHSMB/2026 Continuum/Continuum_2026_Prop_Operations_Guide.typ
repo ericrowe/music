@@ -801,7 +801,7 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
   tag: "Master Operations, Weather Monitoring, Gate Liaison & Timing Control"
 )[
   #text(size: 8.5pt, style: "italic", fill: rgb("#2b6cb0"))[
-    You are the overall director and safety coordinator for the 34 field props and the 6 to 8 dedicated Prop Crew Adult Volunteers (the majority of the band's 25 CBA adult credentials support the Pit / Front Ensemble). You maintain authoritative weather telemetry, coordinate directly with CBA timing and penalty officials at the stadium gate, execute the countdown clearance call, and manage exit flow.
+    You are the overall director and safety coordinator for the 34 field props and the 6 dedicated Prop Crew Adult Volunteers (the majority of the band's 25 CBA adult credentials support the Pit / Front Ensemble). You maintain authoritative weather telemetry, coordinate directly with CBA timing and penalty officials at the stadium gate, execute the countdown clearance call, and manage exit flow.
   ]
   #v(3pt)
 
@@ -819,7 +819,7 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
     - Signal the prop and cart pushers the instant official entry permission is granted.
   + *The 2:45 Clearance Call & Field Safety:*
     - Monitor stopwatch from the moment props cross the gate boundary.
-    - At the 2:30 mark, loudly call *"PROPS CLEAR!"* down the sideline and confirm all 6–8 Prop Crew Adult Volunteers (and nearby Pit crew adults) are moving behind boundary lines.
+    - At the 2:30 mark, loudly call *"PROPS CLEAR!"* down the sideline and confirm all 6 Prop Crew Adult Volunteers (and nearby Pit crew adults) are moving behind boundary lines.
     - Ensure 100% of adult personnel are completely off the turf and across the front/back sideline markers before the 3:15 announcement begins (*strictly avoid Rule 4.03 penalties*).
   + *Exit Chute & Traffic Management:*
     - Position yourself at the stadium exit gate during post-show egress.
