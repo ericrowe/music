@@ -9,13 +9,15 @@
 
 ---
 
-## 1. Recommended Strategy & Director's Master Timing Ceilings (Up Front)
+## 1. Executive Summary & Recommended Strategy
 
+### 1.1 The Golden Logistics Protocol
 ```
 +---------------------------------------------------------------------------------------------------+
 |                                    GOLDEN LOGISTICS PROTOCOL                                      |
 +---------------------------------------------------------------------------------------------------+
 |  FLEET:           Dedicated 2-Cart Fleet (Cart 1 = Side 1, Cart 2 = Side 2; 8 screens per cart)  |
+|  CREW:            2 Adults (Cart Pushers) + 2 Students (Unloaders) + 16 Students (Field Setters)  |
 |  DEPLOYMENT:      Pre-Set Student Receivers starting from Back Sideline (20 or 40-yard line)      |
 |  FAR-SIDE SWEEP:  Inward Collection Sweep (Screen 8 at 22-yd line -> Screen 1 at 42-yd line)     |
 |  EGRESS:          Direct Hand-Carry by Student Performers straight into Single Exit Chute/Tunnel  |
@@ -23,13 +25,32 @@
 +---------------------------------------------------------------------------------------------------+
 ```
 
-* **Starting Line (20 vs. 40-Yard Line):** Both the 20-yard line (`Back_20`) and 40-yard line (`Back_40`) entry corridors require an identical **55.0 yards** straight-line push from the back boundary to the front sideline with zero diagonal turning penalties. Staff will adjust year-by-year between the 20 and 40 based on show-specific field props, backdrop trailers, and front ensemble staging to ensure an unobstructed straight path.
-* **Single Stadium Exit Architecture:** All competition venues are modeled under the conservative reality of a **single stadium exit gate**. Dual-gate assumptions are completely excluded.
-* **Clock Stoppage & Off-Clock Reload:** The official 15:00 competition clock stops the instant students and carts cross the field boundary line into the exit chute / tunnel mouth. Equipment is reloaded and secured on the carts in the tunnel mouth **off the contest clock** while the next band takes the field.
+#### Crew Roster & Job Assignments (2 Adults + 18 Students Total)
+* **2 Adults (Parent Cart Pushers):** 1 adult per cart. Pushes the cart straight down the yard line from the backfield to the front sideline, corners 90°, and controls roll speed while blinds are dropped. On egress, pushes the cart along the sideline to sweep ballast bags and exits into the tunnel.
+* **2 Cart Unloaders (Students):** 1 student jogging alongside each cart. As the cart rolls outward, pulls each 2"-thick folded blind from the rack and drops it flat on the turf at each yard mark. **Does NOT set them up.**
+* **16 Screen Setters / Receivers (Students):** 1 student assigned per blind (8 per side), chosen specifically because their **opening drill set is right next to that blind** on the front sideline. On entry, waits at the mark; as soon as the blind drops, lifts it, unfolds the triangular frame, and latches the internal brace clips. On egress, unclips and folds the blind, and hand-carries it straight off the field into the exit tunnel.
 
 ---
 
-### 1.1 Expected Times & 99.999% Confidence Rails ($N = 50,000$ Trials)
+### 1.2 Step-by-Step Field Walkthrough
+
+#### Pre-Show Deployment Walkthrough (Expected: 2 min 14 sec | Cap: 3 min 15 sec)
+1. **Starting Line:** The 2 carts start on the back sideline at either the **20 or 40-yard line** (55.0 yards straight across to the front sideline—both take identical time, so staff selects whichever lane has a clear, unobstructed path between backfield props and trailers).
+2. **The Charge:** At permission to enter ($T = 0:00$), both adults push their carts straight forward across the field ($1.1\text{ yd/s}$ pace), make a 90° turn at the front sideline, and begin rolling outward toward the end zone.
+3. **The Drop:** The cart unloader student pulls one folded blind every 2.7 yards and drops it onto the turf. They keep moving—no stopping to assemble!
+4. **The Setup:** The 16 assigned students (already standing at their drill sets near the marks) catch their blind, stand it up, and latch the internal brace clips in parallel (~6s each).
+5. **Clear Field & Early Signal:** By **$T = 2:14$**, all 16 blinds are locked upright, and both carts are parked safely off the field. The director signals the Timing & Penalties judge **60 seconds early**, cueing the introductory announcement and banking an extra minute for egress!
+
+#### Post-Show Egress Walkthrough (Expected: 1 min 40 sec | Official Clock Stops at Tunnel)
+1. **Final Chord ($T = 0:00$):** The 16 assigned students instantly unclip their blind's internal braces and fold the 3-panel frame flat to its 2" nested profile (~6s).
+2. **The Hand-Carry Sprint:** Each student picks up their light 26-lb folded frame and jogs straight down the front sideline corridor directly into the stadium exit chute / tunnel ($35\text{--}50\text{s}$).
+3. **The Ballast Sweep:** The 2 adult pushers roll their carts along the sideline collecting only the 8 ballast sandbags ($250\text{ lbs}$ total cart weight). On the far side, Cart 2 starts at Screen 8 (22-yd line) and sweeps **inward to Screen 1** (42-yd line), saving 20 yards of heavy pushing. Both carts sprint into the exit tunnel.
+4. **★ THE CLOCK STOPS ★ ($T \approx 1:40$):** Under CBA Rule 5.06, the official 15-minute competition clock stops the exact second the last cart and student cross the field boundary into the tunnel mouth!
+5. **Off-Clock Reload in the Tunnel:** Inside the tunnel mouth (e.g., at Falcon Stadium for State Championships), the crew pauses **completely off the clock** to slide the blinds into the cart racks and lash them down while the next band takes the field.
+
+---
+
+### 1.3 Summary of Backing Simulation Data & 99.999% Confidence Rails
 
 All statistics derived from $N = 50,000$ continuous Monte Carlo trials incorporating middle-aged parent pusher biomechanics, synthetic infill turf rolling resistance, Tier 1 wind ballast ($15\text{ lbs/screen}$), corner scrub penalties, and student transit dynamics under the recommended solution:
 
@@ -42,7 +63,7 @@ All statistics derived from $N = 50,000$ continuous Monte Carlo trials incorpora
 
 ---
 
-### 1.2 Maximum Show Time Recommendations for Band Directors
+### 1.4 Maximum Show Time Recommendations for Band Directors
 
 Within the CBA **15 minutes 00 seconds (900.0 seconds)** total field block (Rule 5.01 / 5.06), subtracting the 99.999% extreme upper-bound logistics overhead yields the following non-negotiable performance limits:
 
@@ -196,7 +217,7 @@ sequenceDiagram
 ## 7. Standard Operating Procedure (SOP) Field Checklist
 
 ### Pre-Show Deployment Checklist
-- [ ] **T - 0:30:** Carts 1 & 2 staged at designated starting line (`Back_20` preferred, or `EZ_Behind_Goal`).
+- [ ] **T - 0:30:** Carts 1 & 2 staged at designated starting line (Back sideline at either the 20 or 40-yard line).
 - [ ] **T = 0:00 (Permission to Enter):** Both carts roll briskly down their entry corridors toward the 42-yard line ($1.1\text{ yd/s}$).
 - [ ] **T + 0:35:** On-field student receivers take up positions at assigned yard marks on the front sideline.
 - [ ] **T + 0:45 to T + 1:45:** Carts roll outward (42 to 22-yard line), dropping blinds at each mark. Waiting students stand up and latch frames in parallel.
