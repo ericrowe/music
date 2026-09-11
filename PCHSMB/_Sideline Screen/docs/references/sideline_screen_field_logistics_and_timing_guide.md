@@ -85,13 +85,17 @@ Within the CBA **15 minutes 00 seconds (900.0 seconds)** total field block (Rule
 
 ## 2. Master Visual Simulation Charts
 
-````carousel
-![Cumulative Distribution Function (CDF) of Field Clearance Times](/Users/ericrowe/.gemini/antigravity-cli/brain/480e0d48-2cd8-4c43-8b70-48d3dc0ab38e/egress_cdf_comparison.png)
-<!-- slide -->
-![Field Clearance Time Across Stadium Layouts (Same-Side vs Opposite-Side vs Dual Exits)](/Users/ericrowe/.gemini/antigravity-cli/brain/480e0d48-2cd8-4c43-8b70-48d3dc0ab38e/egress_strategy_comparison.png)
-<!-- slide -->
-![Ballast Payload & Spatial Sweep Direction Sensitivity Analysis](/Users/ericrowe/.gemini/antigravity-cli/brain/480e0d48-2cd8-4c43-8b70-48d3dc0ab38e/egress_gate_and_ballast_sensitivity.png)
-````
+### 2.1 Pre-Show Deployment Probability Distribution (1 Cart vs. 2 Carts)
+![Cumulative Distribution Function of Deployment Times](../../simulation/plots/cdf_comparison.png)
+
+### 2.2 Post-Show Field Clearance Distribution (Inward Sweep vs. Outward vs. Sequential)
+![Cumulative Distribution Function of Field Clearance Times](../../simulation/plots/egress_cdf_comparison.png)
+
+### 2.3 Stadium Gate Layout Robustness (Same-Side vs. Opposite-Side vs. Dual Exits)
+![Field Clearance Time Across Stadium Layouts](../../simulation/plots/egress_strategy_comparison.png)
+
+### 2.4 Spatial Sweep Direction & Ballast Weight Sensitivity
+![Ballast Payload and Sweep Direction Sensitivity](../../simulation/plots/egress_gate_and_ballast_sensitivity.png)
 
 ---
 
