@@ -2,11 +2,18 @@
 """
 Monte Carlo Simulation Engine for Post-Performance Egress / Extraction.
 
-Evaluates post-show field clearance under the strict CBA 2:00 (120.0s) rule:
-- 2 Carts Fleet only (Cart 1 on Side 1, Cart 2 on Side 2; 8 screens each)
-- Single Exit Gate per stadium (or dual exit benchmark)
+Evaluates post-show field clearance within the CBA 15-minute total field budget:
+- Total Field Time (Rule 5.01 / 5.06): 15:00 total block (4A/5A).
+- The 2:00 (120.0s) egress window is an operational planning benchmark, balanced against
+  pre-show deployment (max 3:15) and performance duration (~8:30).
+  Shaving time off deployment (e.g. 2:15 vs 3:15) transfers directly to egress (expanding to 3:00).
+- Clock Stoppage: The official 15-minute clock stops when the last cart/person crosses the
+  field boundary line into the exit chute / stadium tunnel (e.g. Canvas Stadium / Falcon Stadium).
+  Reloading and securing equipment in the tunnel occurs OFF THE CLOCK while the next band sets up.
+- Fleet Scope: 2 Carts Fleet only (Cart 1 on Side 1, Cart 2 on Side 2; 8 screens each)
+- Single Exit Gate per stadium (with dual exit benchmark)
 - Reload Modes:
-    1. 'outside_gate': Students hand-carry to gate, cross gate (clock stops); reload outside.
+    1. 'outside_gate': Students hand-carry to tunnel gate, cross gate (clock stops); reload in tunnel.
     2. 'inside_gate': Students hand-carry to end zone staging area; reload inside gate; loaded cart rolls through gate (clock stops).
     3. 'on_field_loading': Traditional baseline: carts load screens & ballast on field, then push loaded carts to exit.
     4. 'hybrid_split': Near cart loads on field; Far cart hand-carries & reloads at gate.
