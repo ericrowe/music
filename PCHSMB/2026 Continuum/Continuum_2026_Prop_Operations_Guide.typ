@@ -278,7 +278,7 @@ The 2026 visual design for *Continuum* incorporates three prop families totaling
   [*Prop Category*], [*Quantity*], [*Transport Unit*], [*Field Placement*], [*Crew Allocation*],
   [*Duck Blinds* \ (Sideline Screens)], [16 screens (8 per side)], [2 Rolling Carts \ (8 screens/cart)], [Front Sideline \ (Side 1: 20–41 yd; Side 2: 59–80 yd)], [2 Adult Volunteers (Pushers), 2 Student Unloaders, 16 Student Receivers],
   [*Rolling Backdrops*], [10 backdrops], [10 Rolling Carts \ (1 cart/prop)], [Backfield / Back Hash \ (Spanned across 30–70 yds)], [2 Adult Volunteers (Managers), 20–40 Student Pushers (2–4 per backdrop)],
-  [*Performance Stages*], [4 stages \ (8 mobile pieces)], [8 Half-Platforms \ (Casters & vinyl flap)], [Midfield / Side Stages \ (Exact drill marks per show)], [2 Adult Volunteers (Stage Managers), 16 Students (2 handlers/piece)],
+  [*Performance Stages & Stairs*], [4 stages (8 pieces) \ + 4 staircases], [8 Half-Platforms & \ 4 Mobile Staircases], [Midfield / Side Stages \ (Exact drill marks per show)], [2 Adult Volunteers (Stage Managers), 16 Student Stage Handlers, 8 Student Staircase Handlers],
 )
 
 #v(6pt)
@@ -295,8 +295,8 @@ The field prop operation is organized into four primary divisions:
 
 1. *Job Group A: Duck Blind Operations (Pages 4–7):* Divided into four specialized single-page job blocks covering cart pushing, rapid cart offloading, on-field concurrent deployment, and post-show egress.
 2. *Job Group B: Rolling Backdrop Operations (Pages 8–10):* Divided into three specialized single-page job blocks covering adult backdrop managers (B.1), on-field student pushers (B.2), and off-field student pushers (B.3).
-3. *Job Group C: Performance Stage Crew (Pages 11–12):* Divided into two specialized single-page job blocks covering Adult Stage Managers (C.1, Page 11) and Student Stage Handlers (C.2, Page 12).
-4. *Job Group D: Prop Lead & Field Safety Coordinator (Page 13):* Master oversight, weather telemetry monitoring, judge liaison, and timing control.
+3. *Job Group C: Performance Stage Crew (Pages 11–13):* Divided into three specialized single-page job blocks covering Adult Stage Managers (C.1, Page 11), Student Stage Handlers (C.2, Page 12), and Student Staircase Handlers (C.3, Page 13).
+4. *Job Group D: Prop Lead & Field Safety Coordinator (Page 14):* Master oversight, weather telemetry monitoring, judge liaison, and timing control.
 
 Follow all instructions in strict sequential order. Adhere to all safety warnings and CBA competition boundaries.
 
@@ -643,15 +643,15 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
 // PAGE 11: JOB C.1 — ADULT STAGE MANAGERS
 // =========================================================================
 
-== Job Group C: Performance Stage Crew (4 Platforms / 8 Mobile Pieces)
+== Job Group C: Performance Stage Crew (4 Platforms, 8 Pieces & 4 Staircases)
 
 #job-card(
   role: "Job C.1: Adult Stage Managers",
-  personnel: "2 Adult Volunteers (Overseeing Platforms #1 through #4)",
+  personnel: "2 Adult Volunteers (Overseeing Platforms & Staircases #1–#4)",
   tag: "Assembly, Vinyl Installation, Staging Lineup & Student Oversight"
 )[
   #text(size: 8.5pt, style: "italic", fill: rgb("#2b6cb0"))[
-    You are one of two Adult Volunteers in charge of the 4 performance stage platforms (8 total mobile stage pieces). You supervise and direct the mechanical assembly of the stage pieces per their manual and the installation of the vinyl coverings, organize the labeled lineup order, manage staging and destaging logistics, and supervise and assist the student handlers on and off the field.
+    You are one of two Adult Volunteers in charge of the 4 performance stage platforms (8 total mobile stage pieces) and 4 mobile staircases. You supervise and direct mechanical assembly, vinyl installation, labeled lineup order, staging/destaging logistics, and student oversight for both the 16 Stage Handlers and 8 Staircase Handlers.
   ]
 
   #v(2pt)
@@ -662,33 +662,33 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
     radius: 3pt,
     inset: (x: 5pt, y: 3pt)
   )[
-    #text(weight: "bold", size: 8pt, fill: rgb("#2b6cb0"))[STAGE PLATFORM FLEET & LABELING CONFIGURATION:] \
+    #text(weight: "bold", size: 8pt, fill: rgb("#2b6cb0"))[STAGE PLATFORM & STAIRCASE FLEET CONFIGURATION:] \
     #v(1pt)
     #table(
-      columns: (1fr, 1.2fr, 1.4fr, 1.4fr),
+      columns: (0.9fr, 1.25fr, 1fr, 1.6fr),
       align: center + horizon,
       stroke: 0.3pt + rgb("#cbd5e0"),
       inset: (x: 4pt, y: 2pt),
       fill: (col, row) => if row == 0 { rgb("#edf2f7") } else { none },
-      [*Platform*], [*Stage Pieces*], [*Labeled Position*], [*Assembly & Transport Configuration*],
-      [Platform \#1], [2 Pieces (Front + Back)], [Piece \#1F & Piece \#1B], [Vinyl pinned back; lineup front-to-back],
-      [Platform \#2], [2 Pieces (Front + Back)], [Piece \#2F & Piece \#2B], [Vinyl pinned back; lineup front-to-back],
-      [Platform \#3], [2 Pieces (Front + Back)], [Piece \#3F & Piece \#3B], [Vinyl pinned back; lineup front-to-back],
-      [Platform \#4], [2 Pieces (Front + Back)], [Piece \#4F & Piece \#4B], [Vinyl pinned back; lineup front-to-back],
+      [*Platform*], [*Stage Pieces*], [*Assigned Stairs*], [*Lineup Order & Configuration*],
+      [Platform \#1], [2 Pieces (Front + Back)], [Staircase \#1], [\#1F $->$ \#1B $->$ Stairs \#1 (vinyl pinned)],
+      [Platform \#2], [2 Pieces (Front + Back)], [Staircase \#2], [\#2F $->$ \#2B $->$ Stairs \#2 (vinyl pinned)],
+      [Platform \#3], [2 Pieces (Front + Back)], [Staircase \#3], [\#3F $->$ \#3B $->$ Stairs \#3 (vinyl pinned)],
+      [Platform \#4], [2 Pieces (Front + Back)], [Staircase \#4], [\#4F $->$ \#4B $->$ Stairs \#4 (vinyl pinned)],
     )
   ]
 
   #v(2pt)
   #text(size: 8pt, weight: "bold", fill: rgb("#1a365d"))[Step-by-Step Manager Lifecycle:]
 
-  + *Arrival & Frame Assembly Supervision:* Meet at the equipment trailer at the Adult Volunteer call time. Supervise and direct the mechanical assembly of the 8 mobile stage pieces per the *Performance Stage Assembly Manual*. Direct help from prop and pit crew members who may not have done this assembly before. Verify all locking hardware, structural pins, and caster mounts are securely seated.
+  + *Arrival & Frame Assembly Supervision:* Meet at the equipment trailer at the Adult Volunteer call time. Supervise and direct the mechanical assembly of the 8 mobile stage pieces and 4 staircases per their manuals. Direct help from prop and pit crew members who may not have done this assembly before. Verify all locking hardware, structural pins, and caster mounts are securely seated.
   + *Vinyl Covering Installation:* Install the designated vinyl coverings and skirt graphics onto each assembled stage piece. Ensure that the bridging seam flap on each front piece is folded and pinned back securely for transport so it will not drag or catch on turf during movement.
-  + *Label Verification & Lineup Order:* Verify that every stage piece is clearly labeled for its field position (Platform \#1–\#4, Front "F" vs Back "B"). *Lineup order is critical:* organize pieces in strict entry sequence with front pieces positioned immediately ahead of their corresponding back pieces.
-  + *Transport to Staging Area:* Lead the transport of all 8 stage pieces from the trailer lot to the designated staging area at the designated staging time. Park pieces in numerical/lineup order and engage wheel brakes.
-  + *Student Handler Rendezvous & Supervision:* Meet the 16 Student Stage Handlers (2 handlers per piece) at the staging area 45 minutes prior to show time. Confirm each student pair knows their assigned piece label, lineup position, and field coordinate. Supervise and assist the students as they prepare for gate movement.
-  + *On-Field Setup & Boundary Rule:* Adults do not push stage pieces onto the field (students push). Move with the students onto the field during setup to assist any that need help, verify piece alignment, and ensure the vinyl seam flap is velcroed flat. *Quickly move off the field before the performance begins to the adult volunteer waiting area in front of the front sideline. Never step onto the turf during the show (Rule 4.03 penalty).*
-  + *Post-Show Reception & Return to Trailer:* Meet the student handlers at the staging area following their end zone egress. Take custody of the stage pieces so students can rejoin the band block. Push the pieces back to the staging area (between Prelims and Finals) or to the equipment trailer (after Finals).
-  + *Post-Finals Disassembly Supervision:* Direct the careful removal of vinyl coverings and mechanical disassembly of stage pieces per the manual for secure trailer packing.
+  + *Label Verification & Lineup Order:* Verify that every stage piece and staircase is clearly labeled for its field position (Platform \#1–\#4, Front "F" vs Back "B", Staircase \#1–\#4). *Lineup order is critical:* organize pieces in strict entry sequence with front pieces leading, back pieces following, and assigned staircases queued directly behind.
+  + *Transport to Staging Area:* Lead the transport of all 8 stage pieces and 4 staircases (rolled on their sides on dedicated casters) from the trailer lot to the designated staging area at the designated staging time. Park pieces in lineup order and engage wheel brakes.
+  + *Student Handler Rendezvous & Supervision:* Meet the 16 Student Stage Handlers and 8 Student Staircase Handlers at the staging area 45 minutes prior to show time. Confirm each student team knows their assigned label, lineup position, and field coordinate. Supervise and assist the students as they prepare for gate movement.
+  + *On-Field Setup & Boundary Rule:* Adults do not push props onto the field (students push). Move with the students onto the field during setup to assist any that need help, verify piece alignment, ensure the vinyl seam flap is velcroed flat, and confirm staircases are seated with minimal gap to the platform. *Quickly move off the field before the performance begins to the adult volunteer waiting area in front of the front sideline. Never step onto the turf during the show (Rule 4.03 penalty).*
+  + *Post-Show Reception & Return to Trailer:* Meet the student handlers at the staging area following their end zone egress. Take custody of the stage pieces and staircases so students can rejoin the band block. Push props back to the staging area (between Prelims and Finals) or to the equipment trailer (after Finals).
+  + *Post-Finals Disassembly Supervision:* Direct the careful removal of vinyl coverings and mechanical disassembly of stage pieces and staircases per their manuals for secure trailer packing.
   + *Trailer Loading & Unloading:* Assist the transport team with the secure loading of the trailer for return to Pine Creek, and return to Pine Creek to assist with unloading and prop storage.
 ]
 
@@ -743,7 +743,54 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
 #pagebreak()
 
 // =========================================================================
-// PAGE 13: JOB D.1 — PROP LEAD & FIELD SAFETY COORDINATOR
+// PAGE 13: JOB C.3 — STUDENT STAIRCASE HANDLERS
+// =========================================================================
+
+== Job Group C: Performance Stage Crew (Continued)
+
+#job-card(
+  role: "Job C.3: Student Staircase Handlers",
+  personnel: "8 Students (2 Handlers per Staircase, Staircases #1–#4)",
+  tag: "Transport on Side, Stage Flip, Precision Placement & Egress"
+)[
+  #text(size: 8.5pt, style: "italic", fill: rgb("#2b6cb0"))[
+    *Student Instructions:* You are part of the team of 2 students assigned to one of the 4 mobile staircases (assigned to Stage Platforms \#1 through \#4). Under the supervision of the Adult Stage Managers, you roll your staircase on its side using its integrated transport casters, wait for your stage platform to assemble on field, then push the staircase into place, flip it upright onto its base, and seat it tight against the stage.
+  ]
+  #v(4pt)
+
+  + *Staging Area Takeover:*
+    - Meet the Adult Stage Managers at the designated staging area 45 minutes prior to show time.
+    - Locate your assigned labeled staircase (Staircase \#1, \#2, \#3, or \#4, matching your assigned Stage Platform).
+    - Confirm the staircase is resting on its side on its dedicated transport casters and that wheels roll smoothly.
+  + *Perimeter Transit to Back Sideline:*
+    - When directed by the Adult Stage Managers / Prop Lead, push your staircase along the perimeter track toward the rear stadium entrance gate.
+    - *Queue in sequence immediately behind your assigned Stage Platform:* The two stage platform pieces (\#F and \#B) lead first, followed immediately by their assigned staircase (\#1 through \#4).
+    - Stage along the back sideline directly in line with your final stage field coordinate.
+    - *CRITICAL BOUNDARY RULE: DO NOT CROSS THE BACK SIDELINE MARKERS.* Keep casters completely behind the sideline until the on-field judge signals official entry permission.
+  + *Field Ingress & Standby Behind Stage:*
+    - When the CBA entry signal is given, push your staircase briskly straight forward onto the field following directly behind your stage platform pieces.
+    - Hold the staircase on its side 5 to 10 feet behind the stage mark while the Stage Handlers (Job C.2) align the front and back pieces, lock casters, and seal the center velcro seam.
+  + *Stage Approach, Flip & Handle Lift:*
+    - Once the stage platform pieces are fully locked and rigid, push your staircase up to its designated access side.
+    - With both students coordinating firmly, carefully flip the staircase from its transport side onto its bottom base.
+    - Using the built-in lifting handles, lift and slide the staircase snugly into its final position against the stage platform framing.
+    - *CRITICAL FIT CHECK:* Minimize any physical gap between the top stair tread and the stage platform decking. Ensure the staircase rests completely flat, level, and stable on the turf.
+  + *Transition to Opening Performance Position:*
+    - Briskly transition to your opening drill position before the introductory announcement ends. You are now cleared for the show!
+  + *Post-Show Rendezvous & Flip to Transport:*
+    - As directed by your section leader following the show, move immediately to your assigned staircase.
+    - Grasp the built-in lifting handles and pull the staircase back slightly from the stage platform.
+    - Carefully flip the staircase back onto its side onto its transport casters.
+  + *Straight-Line Egress & Handoff:*
+    - Push your staircase on its casters in a straight line toward the closest point located on the *front half of the end zone*.
+    - Maintain continuous rolling motion through the gate chute along the perimeter path to the staging area as directed by the Adult Stage Managers.
+    - Park in proper numerical alignment, hand custody back to the Adult Stage Managers, and rejoin the band.
+]
+
+#pagebreak()
+
+// =========================================================================
+// PAGE 14: JOB D.1 — PROP LEAD & FIELD SAFETY COORDINATOR
 // =========================================================================
 
 == Job Group D: Prop Lead & Field Safety Coordinator
@@ -783,7 +830,7 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
 #pagebreak()
 
 // =========================================================================
-// PAGE 14: SECTION 6 — POST-SHOW PACKDOWN, CHECKLIST & SIGNOFF
+// PAGE 15: SECTION 6 — POST-SHOW PACKDOWN, CHECKLIST & SIGNOFF
 // =========================================================================
 
 = 6. Post-Show Deballasting & Trailer Packdown
