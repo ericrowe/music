@@ -110,22 +110,26 @@
   - **Tier 3 (High-Wind, 18–22 mph):** 2x 15-lb bags over rear rail C + 2x 15-lb bags suspended from Rail 2 (total wt 86 lbs). Safe to 24.5–28.4 mph max gust. Turf contact pressure ~0.25 psi (zero turf compaction).
   - **Tier 4 (Safety Abort, >20 mph sustained or >25 mph peak gusts):** STRICT NO-GO. Disengage clips (I), collapse rear support frame, and lay screen flat on turf.
 - **Severe Wind Feasibility Analysis (30 mph Limits):** For detailed engineering calculations and failure mode evaluations regarding extreme wind regimes, see [30 mph Wind Loading & Ballasting Feasibility Analysis](WIND_LOADING_30MPH_ANALYSIS.md). Ballasting for 30 mph on the field is prohibited due to lateral sliding drift on turf (requires >161 lbs ballast), tensile detachment of 3D-printed snap clips (I) under 153 lbs pull load, and logistical breakdown of the 3-person crew deployment timeline under CBA Rule 5.06 (3:15 clock).
-- **Field Deployment Crew Architecture & Pincer Deployment Protocol (16 Screens Total, 8 Per Side):**
-  - **Fleet & Crew Sizing:** Total fleet consists of **16 screens** deployed across two 8-screen lines flanking the front ensemble. Transported on **2 dedicated carts** (8 screens per cart). Deployed by **two 3-person crews** (6 handlers total), operating concurrently on Side 1 and Side 2.
+- **Field Deployment Crew Architecture & Pre-Set Receiver Protocol (16 Screens Total, 8 Per Side):**
+  - **Fleet & Crew Sizing:** Total fleet consists of **16 screens** deployed across two 8-screen lines flanking the front ensemble. Transported on **2 dedicated carts** (8 screens per cart). Operated by **2 adult cart pushers** (1 per cart), **2 student unloaders** (1 per cart), and **16 pre-set student performers/receivers** (8 per side, 1 per screen).
   - **Front Sideline Placement Zones:**
     - **Side 1 (Left / Stage Right):** 8 screens spanning ~64 ft along the front sideline (approx. 20-yd to 41-yd line flanking left of pit).
     - **Side 2 (Right / Stage Left):** 8 screens spanning ~64 ft along the front sideline (approx. 59-yd to 80-yd line flanking right of pit).
-  - **Role 1 (Cart Driver / Pusher):** Pushes loaded cart (8 screens + ballast) from rear entrance gate (Rule 5.02) along perimeter to front sideline. Regulates pace, pauses momentarily at yard-line marks (~6s per drop), and once the 8th screen is pulled, immediately rolls empty cart off the field over the front boundary into the sideline staging zone. Driver clears the field first (at ~1:55–2:15).
-  - **Role 2 (Offloader / Opposite-End Deployer):** Walks alongside cart, slides 8 folded screens from cart, and drops them flat on turf at coordinate marks. Once Screen 8 is dropped, moves to that far end and deploys inward (Screens 8, 7, 6, 5: swings triangle, snaps clips into Rail 3, sets ballast).
-  - **Role 3 (Trailing Deployer):** Follows behind cart. Begins final deployment on Screen 1 as soon as it is dropped, advancing down the line inward (Screens 1, 2, 3, 4).
-  - **Pincer Convergence & Egress:** Handlers 2 and 3 meet between Screen 4 and Screen 5 (each setting 4 screens simultaneously in ~48s), verify ballast down the line, and step across the front boundary together.
-  - **Extrapolated Field Timeline vs. CBA Rule 5.06 (3:15 Clock):**
-    - Perimeter Ingress: ~65s (Side 1, ~220 ft @ ~3.4 ft/s) / ~85s (Side 2, ~300 ft with +80 ft back-sideline transit).
-    - Drop-and-Go Deposition (8 screens across 64 ft span @ ~6s per drop): ~48s.
-    - Pincer Setup Convergence (4 screens per handler in parallel @ ~12s/screen): ~48–55s.
-    - Driver Cart Egress & Crew Field Clearance: 10s.
-    - **Total Elapsed Time:** **~2:30 (150 seconds)** for Side 1 / **~2:50 (170 seconds)** for Side 2.
-    - **Safety Margin:** **+25 to +45 seconds** of safety buffer before the introductory announcement ends (3:15 / 195s), ensuring zero Rule 4.03 adult field-presence penalties.
+  - **Continuous Deployment Choreography:**
+    - **Asymmetric Backfield Staging:** Carts pre-stage on the back sideline at the yard line closest to the entry gate on their side (typically Back 20 on gate side, Back 40 on far side) to eliminate traffic bunching.
+    - **Transit & Directional Rolling:** Carts transit along perimeter lanes and roll along the front sideline *away from the stadium exit chute* at ~6–8s per screen, finishing at the opposite side so carts are positioned for egress.
+    - **Pre-Set Student Receivers:** Student performers are already in position at their assigned yard marks. As the cart passes, unloader drops the folded screen flat on turf with ballast; receiver immediately unfolds the rear triangle, seats arm clips (I) into Rail 3, latches adjacent screens, and places ballast.
+    - **Parallel Setup & Cart Staging:** All 8 screens per side are latched and ballasted concurrently in ~15–18s. Carts exit the front sideline and park in front staging areas ready for immediate post-show egress.
+  - **Field Egress Protocol (Zero-Doubling-Back Ballast Sweep):**
+    - **Final Chord Collapse:** At show conclusion, 16 student performers immediately disengage clips, collapse screens flat, remove ballast bags, and place them carefully on the turf without dropping or throwing.
+    - **Hand-Carry Sprint:** Pairs of students hand-carry collapsed screens (13 lbs/student) directly off the field to the stadium exit gate without waiting for carts (~35–45s).
+    - **Zero-Doubling-Back Ballast Sweep:** Cart pushers enter from the far end (away from exit gate) and sweep along the front sideline toward the exit gate, rolling ballast into carts without backtracking.
+    - **Clock Stop & Off-Field Reload:** Carts cross the stadium exit boundary to stop the official CBA 2:00 egress clock; full secure reload of screens onto carts occurs off-clock in the parking/warmup zone.
+  - **Operational Field Timeline vs. CBA Rule 5.06 (3:15 Clock) & Rule 8.05 (2:00 Egress):**
+    - Perimeter Ingress & Continuous Delivery: ~1:15–1:35.
+    - Concurrent Pre-Set Receiver Latching & Ballasting: ~15–20s.
+    - Total Deployment Elapsed Time: **~2:14 (134s)**, banking a safety buffer of **+61 seconds** before the 3:15 announcement ends (zero adult field-presence penalties).
+    - Post-Show Egress: Hand-carry sprint clears screens in **~45s**; directional ballast sweep clears field in **~1:15–1:30**, banking **+30 to +45s** before the 2:00 egress penalty clock expires.
 - **2026 CBA Marching Band Competition Rules Compliance:**
   - **Rule 5.02 (Mandatory Rear Entrance for Props):** CRITICAL MANDATE — All props must enter from the back sideline or rear end zone gates (above goal posts). Never cross directly across front boundary (reserved for pit equipment). Handlers transit around perimeter to front sideline coordinates.
   - **Rule 5.03 & 5.06 (Entry Permission & Timing):** Pre-stage in rear half of end zone up to goal line. Never enter field before T&P judge signals official permission. Total setup and adult clearance window is 3 minutes 15 seconds.

@@ -1,0 +1,210 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-11T17:21:45+00:00",
+  "status": "pass",
+  "errors": [],
+  "file": "/Volumes/T9/Sync/Working/Shop/Projects/__Music/PCHSMB/_Sideline Screen/docs/documents/working/Sideline_Screen_Duck_Blind_Build_Instructions.docx",
+  "file_sha256": "e641646d1763275a58958703800e4883d1af3c3e7ef94bac77b4b96f0cae5b08",
+  "render_dir": "/Volumes/T9/Sync/Working/Shop/Projects/__Music/PCHSMB/_Sideline Screen/docs/qa/renders/D29",
+  "page_count": 36,
+  "page_numbers": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36
+  ],
+  "page_dimensions": {
+    "1": {
+      "width": 1224,
+      "height": 1584
+    },
+    "2": {
+      "width": 1224,
+      "height": 1584
+    },
+    "3": {
+      "width": 1224,
+      "height": 1584
+    },
+    "4": {
+      "width": 1224,
+      "height": 1584
+    },
+    "5": {
+      "width": 1224,
+      "height": 1584
+    },
+    "6": {
+      "width": 1224,
+      "height": 1584
+    },
+    "7": {
+      "width": 1224,
+      "height": 1584
+    },
+    "8": {
+      "width": 1224,
+      "height": 1584
+    },
+    "9": {
+      "width": 1224,
+      "height": 1584
+    },
+    "10": {
+      "width": 1224,
+      "height": 1584
+    },
+    "11": {
+      "width": 1224,
+      "height": 1584
+    },
+    "12": {
+      "width": 1224,
+      "height": 1584
+    },
+    "13": {
+      "width": 1224,
+      "height": 1584
+    },
+    "14": {
+      "width": 1224,
+      "height": 1584
+    },
+    "15": {
+      "width": 1224,
+      "height": 1584
+    },
+    "16": {
+      "width": 1224,
+      "height": 1584
+    },
+    "17": {
+      "width": 1224,
+      "height": 1584
+    },
+    "18": {
+      "width": 1224,
+      "height": 1584
+    },
+    "19": {
+      "width": 1224,
+      "height": 1584
+    },
+    "20": {
+      "width": 1224,
+      "height": 1584
+    },
+    "21": {
+      "width": 1224,
+      "height": 1584
+    },
+    "22": {
+      "width": 1224,
+      "height": 1584
+    },
+    "23": {
+      "width": 1224,
+      "height": 1584
+    },
+    "24": {
+      "width": 1224,
+      "height": 1584
+    },
+    "25": {
+      "width": 1224,
+      "height": 1584
+    },
+    "26": {
+      "width": 1224,
+      "height": 1584
+    },
+    "27": {
+      "width": 1224,
+      "height": 1584
+    },
+    "28": {
+      "width": 1224,
+      "height": 1584
+    },
+    "29": {
+      "width": 1224,
+      "height": 1584
+    },
+    "30": {
+      "width": 1224,
+      "height": 1584
+    },
+    "31": {
+      "width": 1224,
+      "height": 1584
+    },
+    "32": {
+      "width": 1224,
+      "height": 1584
+    },
+    "33": {
+      "width": 1224,
+      "height": 1584
+    },
+    "34": {
+      "width": 1224,
+      "height": 1584
+    },
+    "35": {
+      "width": 1224,
+      "height": 1584
+    },
+    "36": {
+      "width": 1224,
+      "height": 1584
+    }
+  },
+  "all_pages_reviewed": true,
+  "changed_pages": [
+    1,
+    2,
+    3,
+    4,
+    6,
+    7,
+    9,
+    10,
+    34,
+    36
+  ],
+  "changed_figures_reviewed_at-200": true,
+  "reviewer": "Antigravity Agent",
+  "notes": "Verified 36 pages total; verified Section 1.2 pre-set receiver deployment and Section 1.6 zero-doubling-back ballast sweep egress; verified Appendices C, C.1, and D single-page fit"
+}

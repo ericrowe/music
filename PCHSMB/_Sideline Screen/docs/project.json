@@ -26,20 +26,20 @@
   },
   "document": {
     "current": {
-      "build": "D28",
+      "build": "D29",
       "release": "v0",
       "process_state": "working_draft",
       "visible_status": "working_draft",
       "file": "Sideline_Screen_Duck_Blind_Build_Instructions.docx",
-      "sha256": "ce95b21cbf199f8ba899481c8e927bbc520eb1697c4dbc6adae3922e13d3056c",
-      "controlled_at": "2026-09-11T00:16:00+00:00"
+      "sha256": "e641646d1763275a58958703800e4883d1af3c3e7ef94bac77b4b96f0cae5b08",
+      "controlled_at": "2026-09-11T17:25:00+00:00"
     },
     "candidate": null
   },
   "versioning": {
     "current_release": "v0",
     "next_release": "v1",
-    "next_build_number": 29
+    "next_build_number": 30
   },
   "releases": [],
   "history": [
@@ -94,6 +94,20 @@
       "sha256": "ce95b21cbf199f8ba899481c8e927bbc520eb1697c4dbc6adae3922e13d3056c",
       "file": "Sideline_Screen_Duck_Blind_Build_Instructions.docx",
       "pdf_sha256": "ab4e75fabf094421e0357190afc04ae00ad00a04370d1bef31cce5ed282ab619",
+      "page_count": 36
+    },
+    {
+      "id": "D29",
+      "kind": "development_build",
+      "release": "v0",
+      "status": "working_draft",
+      "date": "2026-09-11",
+      "started_at": "2026-09-11T17:15:07+00:00",
+      "base_build": "D28",
+      "summary": "Update field operations with parallel 2-cart deployment, pre-set student receivers, asymmetric backfield staging, and zero-doubling-back ballast sweep",
+      "sha256": "e641646d1763275a58958703800e4883d1af3c3e7ef94bac77b4b96f0cae5b08",
+      "file": "Sideline_Screen_Duck_Blind_Build_Instructions.docx",
+      "pdf_sha256": "a9a351e241f83f5af514d3cedf6cb34971147c12548abd55251319bc6bbc0f51",
       "page_count": 36
     }
   ]
