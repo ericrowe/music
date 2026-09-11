@@ -117,28 +117,30 @@ Under CBA Rule 5.06, total field time runs from permission to enter until the la
 
 ## 3. Detailed Entry & Deployment Analysis
 
+#### Recommended: 2-Cart Dedicated Fleet (Parallel Half-Field Deployment)
 ```mermaid
 flowchart TD
-    subgraph OneCart["1 Cart Fleet (16 Screens Total)"]
-        OC1["Cart Tare: 130 lbs + Screens: 416 lbs + Ballast: 240 lbs = 786 lbs Gross"]
-        OC2["Pusher Pushes 786 lbs Across Entire 100-yd Field"]
-        OC3["Velocity Drops to 0.63 yd/s Due to Severe Muscle Fatigue"]
-        OC4["Deployment Time: 234.5s (3:55) -> 0.2% Success Rate (99.8% FAILS)"]
-        OC1 --> OC2 --> OC3 --> OC4
-    end
+    TC1["<b>Carts 1 & 2 Dedicated Fleet (8 Screens / Cart)</b><br/>Tare: 130 lbs + Screens: 208 lbs + Ballast: 120 lbs = <b>458 lbs Gross</b>"]
+    TC2["<b>Parallel Half-Field Ingress & Drop</b><br/>Both carts roll simultaneously (55 yd ingress + 18.7 yd drop line)"]
+    TC3["<b>Sustained Pusher Velocity: 0.97 – 1.15 yd/s</b><br/>Manageable payload preserves parent pusher energy throughout push"]
+    TC4["<b>Deployment Time: 133.9s (2:14)</b><br/>★ 100.0% Success Rate (+61s Slack Banked for Egress) ★"]
+    TC1 --> TC2 --> TC3 --> TC4
 
-    subgraph TwoCarts["2 Carts Dedicated Fleet (8 Screens per Cart)"]
-        TC1["Cart Tare: 130 lbs + Screens: 208 lbs + Ballast: 120 lbs = 458 lbs Gross"]
-        TC2["Carts 1 & 2 Deploy Both Sides in Parallel (Half Distance)"]
-        TC3["Velocity Maintained at 0.97 - 1.15 yd/s (Light Load & Short Run)"]
-        TC4["Deployment Time: 133.9s (2:14) -> 100.0% Success Rate (+61s Slack)"]
-        TC1 --> TC2 --> TC3 --> TC4
-    end
+    classDef win fill:#1b4332,stroke:#40916c,stroke-width:2px,color:#fff;
+    class TC4 win;
+```
+
+#### Failure Mode: 1-Cart Fleet (Sequential Full-Field Exhaustion)
+```mermaid
+flowchart TD
+    OC1["<b>Single Cart Serving Entire Fleet (16 Screens Total)</b><br/>Tare: 130 lbs + Screens: 416 lbs + Ballast: 240 lbs = <b>786 lbs Gross</b>"]
+    OC2["<b>Sequential Full-Field Ingress & Drop</b><br/>Single pusher must push 786 lbs across entire 100-yard field"]
+    OC3["<b>Velocity Collapses to 0.63 yd/s (1.3 mph)</b><br/>Severe muscle fatigue due to high synthetic turf rolling resistance"]
+    OC4["<b>Deployment Time: 234.5s (3:55)</b><br/>✖ 0.2% Success Rate (Violates 3:15 Cap by 40s; 99.8% Penalty Risk) ✖"]
+    OC1 --> OC2 --> OC3 --> OC4
 
     classDef fail fill:#5c1d1d,stroke:#b03a2e,stroke-width:2px,color:#fff;
-    classDef win fill:#1b4332,stroke:#40916c,stroke-width:2px,color:#fff;
     class OC4 fail;
-    class TC4 win;
 ```
 
 ![Pre-Show Deployment Probability Distribution (1 Cart vs. 2 Carts)](../../simulation/plots/cdf_comparison.png)
