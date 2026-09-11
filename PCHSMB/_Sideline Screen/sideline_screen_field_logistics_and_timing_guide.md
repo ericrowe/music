@@ -1,6 +1,6 @@
 # Sideline Screen (Duck Blind) Operational Logistics, Timing & Field Clearance Guide
 
-<div style="font-size: 0.82em; color: #444444; line-height: 1.5;">
+<div style="font-size: 0.82em; color: #222222; line-height: 1.5;">
 <sub>
 <b>Document Status:</b> Authoritative Operational Timing Standard (Multi-Year Planning Reference)<br>
 <b>Subproject:</b> Pine Creek High School Marching Band (PCHSMB) Sideline Screen / Duck Blind Fleet (16 Units)<br>
