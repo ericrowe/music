@@ -40,7 +40,9 @@ def render_docx_to_pdf(docx_path, output_pdf_path=None):
             with timeout of 120 seconds
                 set doc to open file name "{docx_path}"
                 save as doc file name "{output_pdf_path}" file format format PDF
-                close doc saving no
+                try
+                    close doc saving no
+                end try
             end timeout
             if not wasRunning then
                 quit

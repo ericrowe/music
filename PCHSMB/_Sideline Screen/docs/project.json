@@ -26,20 +26,20 @@
   },
   "document": {
     "current": {
-      "build": "D27",
+      "build": "D28",
       "release": "v0",
       "process_state": "working_draft",
       "visible_status": "working_draft",
       "file": "Sideline_Screen_Duck_Blind_Build_Instructions.docx",
-      "sha256": "f715620d3a5c285125d78446e2ee349896b5cfde0d7106ff8241f496a339fc50",
-      "controlled_at": "2026-09-10T04:15:00+00:00"
+      "sha256": "77a4e11cec037f0387cfe239ecb5219934af32a686ee7e34bbbde43190cb2122",
+      "controlled_at": "2026-09-10T23:15:00+00:00"
     },
     "candidate": null
   },
   "versioning": {
     "current_release": "v0",
     "next_release": "v1",
-    "next_build_number": 28
+    "next_build_number": 29
   },
   "releases": [],
   "history": [
@@ -81,6 +81,20 @@
       "summary": "Add vinyl installation procedure, dimensions specifications, and tape/clip fastening",
       "sha256": "f715620d3a5c285125d78446e2ee349896b5cfde0d7106ff8241f496a339fc50",
       "file": "Sideline_Screen_Duck_Blind_Build_Instructions.docx"
+    },
+    {
+      "id": "D28",
+      "kind": "development_build",
+      "release": "v0",
+      "status": "working_draft",
+      "date": "2026-09-10",
+      "started_at": "2026-09-10T21:58:33+00:00",
+      "base_build": "D27",
+      "summary": "Add aerodynamic wind loading analysis, tiered ballasting schedule, rear-rail leverage optimization, on-prop field placard, 4x6 coordinate card template, and parent volunteer guide",
+      "sha256": "77a4e11cec037f0387cfe239ecb5219934af32a686ee7e34bbbde43190cb2122",
+      "file": "Sideline_Screen_Duck_Blind_Build_Instructions.docx",
+      "pdf_sha256": "ac41a5b834c016b5ae1750e08c470423f7f93c2c59818d7aae31ae869e0bda1c",
+      "page_count": 36
     }
   ]
 }

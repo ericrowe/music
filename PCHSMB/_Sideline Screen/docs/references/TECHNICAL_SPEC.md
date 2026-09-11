@@ -67,17 +67,37 @@
 
 ---
 
-## 5. Field Operations, Ballasting & 2026 CBA Rules
+## 5. Aerodynamic Wind Loading, Ballasting & 2026 CBA Competition Rules
 
-- **Field Form Factor:** 4 ft x 8 ft folding frame with triangular self-supporting stance.
-- **Ballast Attachment:** Weights / sandbags must be suspended from upper weight clips; never place weights directly over bottom support arms/clips.
-- **Mandatory Double-Bagging Rule (CBA Rule 8.05):** All sandbags MUST utilize heavy-duty inner liner bags or secondary containment to prevent turf contamination.
-- **2026 CBA Competition Rules Compliance:**
-  - **Rule 8.05:** Heavy-duty plastic protection on all turf-contacting wood surfaces, continuous movement off field, mandatory secondary containment / double-bagging on sandbags.
-  - **Rule 8.07:** Pneumatic-like turf-compatible wheels required for rolling equipment.
-  - **Rule 8.08:** 12-foot rigid height limit (sideline screen is 4 ft nominal height, safely compliant).
-  - **Rule 8.09:** Staging flow & USAFA Falcon Stadium clearance (note: 9'6" restriction obsolete after 2025 crossbeam removal).
-  - **Rule 9.07:** 25 parent Field Pass wristbands allocation limit.
+- **Aerodynamic & Geometric Properties:**
+  - **Nominal Dimensions:** 4 ft nominal height × 8 ft nominal width.
+  - **Actual Vinyl Sail Area:** $A = 30.5\text{ sq ft}$ (3.875 ft H × 7.875 ft W).
+  - **Center of Pressure Height:** $h_{cp} = 1.94\text{ ft}$ (at centroid of vertical face).
+  - **Triangular Base Stance:** $L_{base} = 2.29\text{ ft}$ (27.5 in. between front bottom rail and rear rail C).
+  - **Atmospheric Scaling (Colorado Springs):** Altitude 6,500 ft ASL, air density $\rho = 0.0595\text{ lb/cu ft}$ (~23% reduction vs sea level $\rho = 0.0765\text{ lb/cu ft}$).
+  - **Dry Frame Weight:** 26.0 lbs (without vinyl/ballast).
+- **Critical Forward-Tipping Asymmetry:**
+  - **Backward Tipping (Front Wind):** Pivots about rear rail C. Front frame has full 2.29 ft lever arm ($M_{rest, bwd} = 50.4\text{ ft-lb}$). Tips at 18.9 mph unballasted.
+  - **Forward Tipping (Rear Wind - Critical Mode):** Pivots about front bottom rail. Heavy front frame sits directly on pivot with zero lever arm; rear frame provides only 9.2 ft-lb of restoring moment ($M_{rest, fwd} = 9.2\text{ ft-lb}$). Tips at just 8.1 mph unballasted!
+- **Ballast Leverage Optimization (Rear Rail C vs Rail 2 Suspension):**
+  - **Primary Ballast (Placed over Rear Ground Rail C):** Acts at the maximum possible restoring lever arm ($d = 2.29\text{ ft}$). Two 15-lb bags (30 lbs) add 68.7 ft-lb of restoring moment, boosting forward tipping resistance to 23.5 mph. Imposes ZERO mechanical stress on 3D-printed clips (I) as weight rests directly on turf.
+  - **Supplemental Ballast (Suspended from Upper Inner Rail 2):** Has near-zero lever arm to front rail (0 ft-lb against forward tipping). However, provides full 2.29 ft lever arm against backward tipping (34.4 ft-lb per bag). Strictly used for Tier 2/3 bidirectional wind balancing.
+- **Standardized Tiered Ballasting Schedule:**
+  - **Tier 0 (Calm, 0–8 mph, gusts ≤10 mph):** 0 bags (dry wt 26 lbs). Safe to 8.1 mph fwd / 18.9 mph bwd. Upgrade to Tier 1 if wind >8 mph.
+  - **Tier 1 (Normal, 8–12 mph):** 1x to 2x 15-lb bags placed over rear ground rail C (total wt 41–56 lbs). Safe to 17.6–23.5 mph fwd / 18.9 mph bwd. Zero clip stress.
+  - **Tier 2 (Advisory, 12–18 mph):** 2x 15-lb bags over rear rail C + 1x 15-lb bag suspended from Rail 2 (total wt 71 lbs). Balanced stability: 23.7 mph fwd / 24.5 mph bwd.
+  - **Tier 3 (High-Wind, 18–22 mph):** 2x 15-lb bags over rear rail C + 2x 15-lb bags suspended from Rail 2 (total wt 86 lbs). Safe to 24.5–28.4 mph max gust. Turf contact pressure ~0.25 psi (zero turf compaction).
+  - **Tier 4 (Safety Abort, >20 mph sustained or >25 mph peak gusts):** STRICT NO-GO. Disengage clips (I), collapse rear support frame, and lay screen flat on turf.
+- **2026 CBA Marching Band Competition Rules Compliance:**
+  - **Rule 5.02 (Mandatory Rear Entrance for Props):** CRITICAL MANDATE — All props must enter from the back sideline or rear end zone gates (above goal posts). Never cross directly across front boundary (reserved for pit equipment). Handlers transit around perimeter to front sideline coordinates.
+  - **Rule 5.03 & 5.06 (Entry Permission & Timing):** Pre-stage in rear half of end zone up to goal line. Never enter field before T&P judge signals official permission.
+  - **Rule 4.03 & 5.06 (Field Clearance Before Performance):** All adult volunteers assisting props must be COMPLETELY CLEAR of field before introductory announcement ends (3:15 after entry permission; 0.2 pt penalty per occurrence).
+  - **Rule 4.03 (Re-Entry Prohibition):** Adults strictly prohibited from entering/re-entering field during performance (0.2 pt penalty per occurrence).
+  - **Rule 4.02(c) (Medical Emergency Assistance Exception):** NO PENALTY. Any band member ill or injured may be assisted from the field by adult volunteers, parents, or staff without penalty.
+  - **Rule 4.02(a) (High-Wind Prop Restraint Exception):** In high winds when props are in danger of falling over, adults may enter performance field solely to secure props (never move props as choreography).
+  - **Rule 8.05 (Continuous Egress & Double-Bagging):** Continuous movement off field to trailer lot required; never de-ballast or park carts at stadium exit chutes. All sandbags MUST be double-bagged with intact plastic inner liners.
+  - **Rule 8.07 & 8.08 (Wheels & Height):** Pneumatic-like turf-compatible wheels required on carts; 12-foot rigid height limit strictly observed (screen is 4 ft deployed).
+  - **Rule 9.07 (Field Pass Wristbands):** Maximum 25 wristbands per band; separate colors for Prelims vs Finals.
 
 ---
 
