@@ -28,7 +28,7 @@
     #text(size: 8pt, fill: rgb("#4a5568"))[
       #grid(
         columns: (1.5fr, 1.2fr, 1fr),
-        align(left)[*WORKING DRAFT — NOT FOR USE*],
+        align(left)[*FIELD VALIDATION — NOT RELEASED*],
         align(center)[*Release v0 (D1)* | September 2026],
         align(right)[Page #counter(page).display() of #counter(page).final().first()]
       )
