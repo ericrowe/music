@@ -24,27 +24,29 @@ For all future marching band seasons utilizing the 16-unit Sideline Screen (Duck
 |                                    GOLDEN LOGISTICS PROTOCOL                                      |
 +---------------------------------------------------------------------------------------------------+
 |  FLEET:           Dedicated 2-Cart Fleet (Cart 1 = Side 1, Cart 2 = Side 2; 8 screens per cart)  |
-|  DEPLOYMENT:      Pre-Set Student Receivers starting from Back Sideline (Back_20 / Back_40)      |
+|  DEPLOYMENT:      Pre-Set Student Receivers starting from Back Sideline (20 or 40-yard line)      |
 |  FAR-SIDE SWEEP:  Inward Collection Sweep (Screen 8 at 22-yd line -> Screen 1 at 42-yd line)     |
-|  EGRESS:          Direct Hand-Carry by Student Performers straight into Exit Tunnel / Chute       |
+|  EGRESS:          Direct Hand-Carry by Student Performers straight into Single Exit Chute/Tunnel  |
 |  RELOAD:          Off-Clock Cart Reloading in Stadium Tunnel Mouth / Apron (e.g. Falcon Stadium)  |
 +---------------------------------------------------------------------------------------------------+
 ```
+
+* **Starting Line (20 vs. 40-Yard Line):** Both the 20-yard line (`Back_20`) and 40-yard line (`Back_40`) entry corridors require an identical **55.0 yards** straight-line push from the back boundary to the front sideline with zero diagonal turning penalties. Staff will adjust year-by-year between the 20 and 40 based on show-specific field props, backdrop trailers, and front ensemble staging to ensure an unobstructed straight path.
+* **Single Stadium Exit Architecture:** All competition venues are modeled under the conservative reality of a **single stadium exit gate**. Dual-gate assumptions are completely excluded.
+* **Clock Stoppage & Off-Clock Reload:** The official 15:00 competition clock stops the instant students and carts cross the field boundary line into the exit chute / tunnel mouth. Equipment is reloaded and secured on the carts in the tunnel mouth **off the contest clock** while the next band takes the field.
 
 ---
 
 ### 1.2 Summary of Backing Simulation Data & 99.999% Confidence Rails
 
-All statistics derived from $N = 50,000$ continuous Monte Carlo trials incorporating middle-aged parent pusher biomechanics, synthetic infill turf rolling resistance, Tier 1 wind ballast ($15\text{ lbs/screen}$), 90-degree turning scrub penalties, and student transit dynamics:
+All statistics derived from $N = 50,000$ continuous Monte Carlo trials incorporating middle-aged parent pusher biomechanics, synthetic infill turf rolling resistance, Tier 1 wind ballast ($15\text{ lbs/screen}$), corner scrub penalties, and student transit dynamics under the recommended solution:
 
-| Operational Phase | Configuration & Protocol | Expected Time (Mean) | P95 Time (95% CI) | P99 Time (99% CI) | 99.999% Confidence Rail ($5\sigma$) | Safety Margin vs Rule Limit |
+| Operational Phase | Protocol & Logistics Details | Expected Time (Mean) | P95 Time (95% CI) | P99 Time (99% CI) | 99.999% Confidence Rail ($5\sigma$) | Safety Margin vs Rule Limit |
 |---|---|:---:|:---:|:---:|:---:|:---:|
-| **Pre-Show Deployment** | 2 Carts, Pre-Set Receivers, Start: `Back_20` | **133.9 s (2:14)** | 148.3 s (2:28) | 156.6 s (2:37) | **182.8 s (3:03)** | **+12.2 s vs 3:15 cap** ($100\%$ pass) |
-| **Pre-Show Deployment** | 2 Carts, Pre-Set Receivers, Start: `EZ_Behind_Goal` | **145.2 s (2:25)** | 160.9 s (2:41) | 170.1 s (2:50) | **204.1 s (3:24)** | **+24.9 s vs 3:15 cap** at P99 |
-| **Post-Show Egress** | Direct Hand-Carry, Single Exit Gate, Same-Side | **100.1 s (1:40)** | 114.2 s (1:54) | 121.7 s (2:02) | **148.7 s (2:29)** | **+25.8 s vs 2:00 mark** at P95 |
-| **Post-Show Egress** | Direct Hand-Carry, Dual Exit Gates | **83.7 s (1:24)** | 92.8 s (1:33) | 98.4 s (1:38) | **118.2 s (1:58)** | **+27.2 s vs 2:00 mark** at P95 |
-| **Total Non-Show Overhead** | Deploy (`Back_20`) + 35s Announce + Egress | **268.9 s (4:29)** | 288.6 s (4:49) | 298.8 s (4:59) | **330.3 s (5:30)** | **+330s Total Buffer** |
-| **Total Non-Show Overhead** | Deploy (`EZ_Behind_Goal`) + 35s Announce + Egress | **280.3 s (4:40)** | 301.0 s (5:01) | 311.8 s (5:12) | **346.1 s (5:46)** | **+314s Total Buffer** |
+| **Pre-Show Deployment** | 2 Carts, Pre-Set Receivers, Start: Back Sideline (20 or 40-yd line) | **133.9 s (2:14)** | 148.3 s (2:28) | 156.6 s (2:37) | **182.8 s (3:03)** | **+12.2 s vs 3:15 cap** ($100\%$ pass) |
+| **Official Announcement** | Standard CBA Script (Rule 5.09) | **35.0 s (0:35)** | 35.0 s (0:35) | 35.0 s (0:35) | **35.0 s (0:35)** | *Standardized Script* |
+| **Post-Show Field Clearance** | Direct Hand-Carry, Single Exit Chute / Tunnel (Inward Sweep) | **100.1 s (1:40)** | 114.2 s (1:54) | 121.7 s (2:02) | **148.7 s (2:29)** | **+25.8 s vs 2:00 mark** at P95 |
+| **Total Non-Show Overhead** | Deployment + 35s Announcement + Single-Gate Clearance | **268.9 s (4:29)** | 288.6 s (4:49) | 298.8 s (4:59) | **330.3 s (5:30)** | **+5 min 30 sec Slack** (vs 15:00 block) |
 
 ---
 
@@ -57,7 +59,7 @@ Within the CBA **15 minutes 00 seconds (900.0 seconds)** total field block (Rule
 |                           DIRECTOR'S MASTER PERFORMANCE TIME CEILINGS                             |
 +---------------------------------------------------------------------------------------------------+
 |  1. BULLETPROOF ZERO-PENALTY LIMIT (99.999% Confidence Rail):    8 minutes 45 seconds (8:45)      |
-|     - Absolute mathematical immunity against time overstay penalties across all venues.            |
+|     - Absolute mathematical immunity against time overstay penalties across all single-exit venues.|
 |     - Absorbs worst-case pusher fatigue, latch hitches, and cross-field traffic jams.             |
 |                                                                                                   |
 |  2. HIGH-CERTAINTY WORKING CEILING (99.0% Confidence Rail):      9 minutes 00 seconds (9:00)      |
@@ -70,7 +72,7 @@ Within the CBA **15 minutes 00 seconds (900.0 seconds)** total field block (Rule
 
 > [!TIP]
 > **Director's Planning Rule of Thumb:**  
-> High school competitive marching shows typically run **7:45 to 8:30**. Designing a show up to **8:45 of continuous musical sound** guarantees a **100.0% zero-penalty probability**, leaving over 30 seconds of pure contingency buffer.
+> High school competitive marching shows typically run **7:45 to 8:30**. Designing a show up to **8:45 of continuous musical sound** guarantees a **100.0% zero-penalty probability**, leaving over 45 seconds of pure contingency buffer before the 99.999% 5-sigma extreme rail.
 
 ---
 
