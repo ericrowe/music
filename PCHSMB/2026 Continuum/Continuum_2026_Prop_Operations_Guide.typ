@@ -200,27 +200,29 @@ Because Pine Creek High School operates in the high-altitude, wind-prone environ
 *Volunteers: Fill in the times and contacts below during morning check-in.* Keep this sheet accessible in your pocket or clipboard throughout competition day.
 
 #table(
-  columns: (2.2fr, 2fr, 3fr),
+  columns: (2.3fr, 2fr, 3.2fr),
   align: (left + horizon, left + horizon, left + horizon),
   stroke: 0.5pt + rgb("#cbd5e0"),
   fill: (col, row) => if row == 0 { rgb("#edf2f7") } else { none },
+  inset: (x: 5pt, y: 3pt),
   [*Logistical Milestone*], [*Scheduled Time*], [*Specific Location / Gate Instructions*],
   [Competition & Venue], [ \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ ], [ Stadium: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ ],
   [Prop Lead of the Day], [ Name: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ ], [ *Cell Phone:* ( \_\_\_\_\_ ) \_\_\_\_\_ - \_\_\_\_\_\_\_\_ ],
-  [Safety Coordinator], [ Name: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ ], [ Cell: ( \_\_\_\_\_ ) \_\_\_\_\_ - \_\_\_\_\_\_\_\_ ],
+  [Staging Area Location], [ Location / Area: ], [ \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ ],
+  [Prop Staging Time], [ \_\_\_\_\_ : \_\_\_\_\_ AM / PM ], [ Staged once; props return here between Prelims & Finals ],
   [Equipment Truck Arrival], [ \_\_\_\_\_ : \_\_\_\_\_ AM / PM ], [ Parking Lot / Bay: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ ],
   [Volunteer Crew Call Time], [ \_\_\_\_\_ : \_\_\_\_\_ AM / PM ], [ Check-in at Equipment Trailer ],
-  [Truck Unload & Staging], [ \_\_\_\_\_ : \_\_\_\_\_ AM / PM ], [ Staging Area behind Stadium ],
+  [Truck Unload & Assembly], [ \_\_\_\_\_ : \_\_\_\_\_ AM / PM ], [ Equipment Trailer Lot / Staging Lot ],
   [Band Warm-up Departure], [ \_\_\_\_\_ : \_\_\_\_\_ AM / PM ], [ Escort carts to Warm-up Zone / Gate ],
   [Prelims Prop Gate Queue], [ \_\_\_\_\_ : \_\_\_\_\_ AM / PM ], [ *Rear Entrance Gate* (Back Sideline) ],
   [*Prelims Performance*], [ *\_\_\_\_\_ : \_\_\_\_\_ AM / PM* ], [ *T&P Clock Starts on Judge's Signal* ],
-  [Post-Show Deballast], [ Immediate post-show ], [ Equipment Trailer Lot (Never at gate!) ],
+  [Prelims Return to Staging], [ Immediate post-prelims ], [ Return props to Staging Area between runs ],
   [Finals Gate Queue (if adv.)], [ \_\_\_\_\_ : \_\_\_\_\_ AM / PM ], [ Rear Entrance Gate ],
   [*Finals Performance*], [ *\_\_\_\_\_ : \_\_\_\_\_ AM / PM* ], [ Evening Performance Slot ],
   [Final Packdown & Depart], [ \_\_\_\_\_ : \_\_\_\_\_ AM / PM ], [ Trailer locked & ready for transit ],
 )
 
-#v(6pt)
+#v(4pt)
 
 // -------------------------------------------------------------------------
 // SECTION 3: CBA COMPETITION RULES FOR VOLUNTEERS
@@ -232,7 +234,7 @@ The Colorado Bandmasters Association (CBA) strictly enforces prop and adult volu
 
 #grid(
   columns: (1fr, 1fr),
-  gutter: 8pt,
+  gutter: 7pt,
   rule-box(title: "Rule 9.07 — Field Passes")[
     *Maximum 25 wristbands per band.* Every parent stepping past the gate must wear the official CBA wristband on their wrist (not in pocket or on badge). Prelims and Finals use different colors.
   ],
@@ -246,7 +248,7 @@ The Colorado Bandmasters Association (CBA) strictly enforces prop and adult volu
     *Parents are strictly forbidden from touching the field during the performance.* 0.2-point penalty per occurrence. Once you exit, remain behind the front sideline or rear perimeter track.
   ],
   rule-box(title: "Rule 8.05 — 2:00 Egress Clock")[
-    Timing clock begins on the final chord. All equipment and personnel must clear the field within 2 minutes. *Egress movement must be continuous.* Never stop or de-ballast in the exit gate chute.
+    Timing clock begins on final chord. All equipment and personnel must clear field boundaries within 2 minutes. Once past the gate/tunnel threshold, carts pause in the exit chute to load the duck blinds.
   ],
   rule-box(title: "Rule 8.05 — Double-Bagged Sandbags")[
     All ballast sandbags must be heavy-duty and double-bagged with intact plastic inner liners. Leaking sand on synthetic turf results in severe facility fines and competition penalties.
@@ -307,51 +309,73 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
   personnel: "2 Adult Volunteers (1 per Cart: Side 1 or Side 2)",
   tag: "Front Sideline Carts"
 )[
-  #rect(
-    width: 100%,
-    fill: rgb("#ffffff"),
-    stroke: 0.8pt + rgb("#cbd5e0"),
-    radius: 3pt,
-    inset: (x: 8pt, y: 5pt)
-  )[
-    #text(weight: "bold", size: 8.5pt, fill: rgb("#2b6cb0"))[DAY-OF CART ASSIGNMENT (Fill in at morning check-in):] \
-    #v(2pt)
-    #grid(
-      columns: (1.3fr, 1.3fr, 2fr),
-      gutter: 6pt,
-      [
-        *Assigned Side:* \
-        #box(stroke: 0.5pt + rgb("#a0aec0"), inset: (x: 3pt, y: 1.5pt), radius: 2pt)[#h(4pt)] Side 1 (Left / Stage Right) \
-        #box(stroke: 0.5pt + rgb("#a0aec0"), inset: (x: 3pt, y: 1.5pt), radius: 2pt)[#h(4pt)] Side 2 (Right / Stage Left)
-      ],
-      [
-        *Backfield Staging:* \
-        Back \_\_\_\_\_ Yard Line \
-        #text(size: 7.5pt, style: "italic", fill: rgb("#718096"))[(e.g., Back 20 or Back 40)]
-      ],
-      [
-        *Delivery Route & Direction:* \
-        Start at \_\_\_\_\_ yd $->$ Roll toward: \
-        #box(stroke: 0.5pt + rgb("#a0aec0"), inset: (x: 3pt, y: 1.5pt), radius: 2pt)[#h(4pt)] Center (50 yd) / #box(stroke: 0.5pt + rgb("#a0aec0"), inset: (x: 3pt, y: 1.5pt), radius: 2pt)[#h(4pt)] End Zone \
-        #text(size: 7.5pt, style: "italic", fill: rgb("#718096"))[(Always roll AWAY from stadium exit gate)]
-      ]
-    )
-  ]
-  #v(3pt)
-  #text(size: 8.5pt, fill: rgb("#4a5568"))[
-    *Day-of Directive Example:* The Prop Lead will assign your exact coordinates based on the venue's exit gate: \
-    _“You are on Side 1, stage at Back 20, and roll toward the center (41-yd line)”_ or \
-    _“You are on Side 2, stage at Back 40, and roll toward the end zone (80-yd line).”_
-  ]
-  #v(4pt)
+  #grid(
+    columns: (1.25fr, 1fr),
+    gutter: 6pt,
+    rect(
+      width: 100%,
+      fill: rgb("#ffffff"),
+      stroke: 0.8pt + rgb("#cbd5e0"),
+      radius: 3pt,
+      inset: (x: 6pt, y: 4pt)
+    )[
+      #text(weight: "bold", size: 8pt, fill: rgb("#2b6cb0"))[DAY-OF CART ASSIGNMENT:] \
+      #v(1pt)
+      #grid(
+        columns: (1fr, 1.2fr),
+        gutter: 4pt,
+        [
+          *Side:* \
+          #box(stroke: 0.5pt + rgb("#a0aec0"), inset: (x: 2.5pt, y: 1pt), radius: 2pt)[#h(3pt)] Side 1 (Left) \
+          #box(stroke: 0.5pt + rgb("#a0aec0"), inset: (x: 2.5pt, y: 1pt), radius: 2pt)[#h(3pt)] Side 2 (Right)
+        ],
+        [
+          *Staging & Route:* \
+          Back \_\_\_\_\_ Yard Line \
+          Roll toward: \
+          #box(stroke: 0.5pt + rgb("#a0aec0"), inset: (x: 2.5pt, y: 1pt), radius: 2pt)[#h(3pt)] Center / #box(stroke: 0.5pt + rgb("#a0aec0"), inset: (x: 2.5pt, y: 1pt), radius: 2pt)[#h(3pt)] End Zone
+        ]
+      )
+      #v(1pt)
+      #text(size: 7pt, style: "italic", fill: rgb("#718096"))[(Directive: "Side 1, Back 20, roll toward center")]
+    ],
+    rect(
+      width: 100%,
+      fill: rgb("#ffffff"),
+      stroke: 0.8pt + rgb("#cbd5e0"),
+      radius: 3pt,
+      inset: (x: 6pt, y: 4pt)
+    )[
+      #text(weight: "bold", size: 8pt, fill: rgb("#2b6cb0"))[DUCK BLIND BALLAST SCHEDULE:] \
+      #v(1pt)
+      #table(
+        columns: (1.2fr, 1fr, 1fr),
+        align: (left + horizon, center + horizon, center + horizon),
+        stroke: 0.3pt + rgb("#cbd5e0"),
+        inset: (x: 3pt, y: 2pt),
+        fill: (col, row) => if row == 0 { rgb("#edf2f7") } else if row == 3 { rgb("#fff5f5") } else { none },
+        [*Wind Regime*], [*Per Rail*], [*Per Cart*],
+        [Tier 1 (0–12 mph)], [1 bag (15 lb)], [8 sandbags],
+        [Tier 2 (13–18 mph)], [2 bags (30 lb)], [16 sandbags],
+        [Tier 3 (>20 mph)], [NO-GO], [In Trailer],
+      )
+    ]
+  )
 
-  *You remain with this cart through the entire cycle (Truck $->$ Field $->$ Standby $->$ Sweep $->$ Truck):*
+  #v(2pt)
+  #text(size: 8pt, weight: "bold", fill: rgb("#1a365d"))[Complete Event Lifecycle (Truck $->$ Staging $->$ Field $->$ Standby $->$ Exit Chute $->$ Staging/Truck):]
 
-  + *Phase 1: Pre-Show Staging & Inspection (Equipment Trailer -45 min):* Report to trailer. Confirm cart is loaded with 8 folded screens and 16 double-bagged 15-lb sandbags in hopper. Check pneumatic tires. Push loaded cart to the rear stadium entrance gate. Queue on back sideline track at your assigned marker (e.g., Back 20 on gate side, Back 40 on far side to eliminate traffic bottlenecking). Meet your assigned Student Unloader at the gate.
-  + *Phase 2: Field Ingress & Directional Delivery (3:15 Window):* On the CBA judge's entry signal, push cart forward along the perimeter track toward the front sideline. Coordinate pace with your Student Unloader. Enter the front sideline at your starting yard mark and roll *away* from the exit gate (e.g., from 20 toward 41, or 59 toward 80). Pause ~6–8 seconds at each 2-yard mark while the unloader deposits one folded screen and two sandbags to the pre-set student receiver.
-  + *Phase 3: In-Show Standby at Sideline Boundary (Off-Turf by 2:15):* Once your 8th screen is delivered, immediately push the empty cart across the front boundary line into the front staging area. *You must be completely off the turf before the 2:15 mark.* Park the cart facing the stadium exit gate ready for post-show egress. *Stay with your cart at the boundary for the entire performance.* Never step onto the turf during the show (Rule 4.03 penalty).
-  + *Phase 4: Post-Show Zero-Doubling-Back Ballast Sweep (2:00 Egress Clock):* On the final show chord, re-enter the front sideline at the far screen and roll *toward the stadium exit gate*. Scoop ballast bags placed on the turf by students directly into the cart hopper as you advance without doubling back.
-  + *Phase 5: Exit Chute Transit & Return to Trailer Lot (Continuous Motion):* Keep moving continuously across the exit gate threshold to stop the official CBA 2:00 clock. *DO NOT STOP in the tunnel or exit gate to talk or rest (Rule 8.05).* Push the cart directly back to the equipment trailer parking lot. Assist trailer crew with screen packing and sandbag tote storage.
+  + *Phase 1 (Arrival, Unload & Assembly):* Meet at the equipment trailer at the volunteer crew call time. Assist with unloading the props and pit equipment from the trucks and trailers. Assist with assembly of the props.
+  + *Phase 2 (Move to Staging Area):* Move props and carts to the designated staging area at the designated staging time (may be immediately after unload or several hours later, depending on the venue schedule).
+  + *Phase 3 (Pre-Show Inspection):* Meet at the Staging Area 45 minutes prior to step-off. Conduct a visual inspection of the cart, screen racks, and latches. Confirm sandbag quantity in the hopper matches the Ballast Schedule above (8 bags for Tier 1; 16 bags for Tier 2). Push cart to the ready area as directed by the Prop Lead. Meet your assigned Student Unloader.
+  + *Phase 4 (Field Staging A):* When directed by the on-field judge, enter the gates and stage at the prescribed location.
+  + *Phase 5 (Field Staging B):* When directed by the on-field judge, move to the defined yard line along the back sideline. *DO NOT CROSS THE SIDELINE MARKERS.* Doing so will immediately invoke an official penalty.
+  + *Phase 6 (Field Ingress & Directional Delivery):* When the CBA judge signals entry permission, push the cart forward around the perimeter track toward the front sideline with your Student Unloader. Enter at your starting yard mark and roll *away from the exit gate* (e.g., from 20 toward 41, or 59 toward 80), pausing 6–8 seconds at each 2-yard mark while the unloader deposits one folded screen and sandbags to the pre-set student receiver.
+  + *Phase 7 (In-Show Standby at Sideline Boundary):* Once the 8th screen is delivered, immediately push the empty cart across the front boundary into the front staging area. *You must be completely off the turf before the 2:15 mark.* Park the cart facing the stadium exit gate ready for post-show egress. *Stay with your cart at the boundary for the entire performance.* Never step onto the turf during the show (Rule 4.03 penalty).
+  + *Phase 8 (Post-Show Ballast Sweep):* On the final show chord, re-enter the front sideline at the far screen and roll *toward the stadium exit gate*. Scoop ballast bags placed on the turf by students directly into the cart hopper as you advance without doubling back.
+  + *Phase 9 (Exit Chute Cart Loading):* We will be pausing at the exit chute with the carts to load the blinds. *This is standard procedure.* Rule 8.05 does not mean continuous motion forever after—once we cross the threshold into the tunnel, pause, load the carts with the collapsed screens, and then continue up the tunnel.
+  + *Phase 10 (Return to Staging Area or Truck):* Return the carts to the staging area (between Prelims and Finals), or directly to the trailer/truck if after Finals.
+  + *Phase 11 (Final Performance Teardown & Loading):* At the end of the final performance, tear down all equipment, stow sandbags in totes, and assist with loading the truck and trailer.
 ]
 
 #pagebreak()
