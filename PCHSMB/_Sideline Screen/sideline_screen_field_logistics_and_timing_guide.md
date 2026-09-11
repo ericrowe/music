@@ -21,7 +21,7 @@
 |                                    GOLDEN LOGISTICS PROTOCOL                                      |
 +---------------------------------------------------------------------------------------------------+
 |  FLEET:           Dedicated 2-Cart Fleet (Cart 1 = Side 1, Cart 2 = Side 2; 8 screens per cart)  |
-|  CREW:            2 Adults (Cart Pushers) + 2 Students (Unloaders) + 16 Students (Field Setters)  |
+|  CREW:            2 Adults (Pushers) + 2 Student Unloaders + 16 Entry Setters + 16 Exit Performers |
 |  DEPLOYMENT:      Pre-Set Student Receivers starting from Back Sideline (20 or 40-yard line)      |
 |  FAR-SIDE SWEEP:  Inward Collection Sweep (Screen 8 at 22-yd line -> Screen 1 at 42-yd line)     |
 |  EGRESS:          Direct Hand-Carry by Student Performers straight into Single Exit Chute/Tunnel  |
@@ -29,10 +29,11 @@
 +---------------------------------------------------------------------------------------------------+
 ```
 
-#### Crew Roster & Job Assignments (2 Adults + 18 Students Total)
+#### Crew Roster & Job Assignments (2 Adults + Up to 34 Student Performers Total)
 * **2 Adults (Parent Cart Pushers):** 1 adult per cart. Pushes the cart straight down the yard line from the backfield to the front sideline, corners 90°, and controls roll speed while blinds are dropped. On egress, pushes the cart along the sideline to sweep ballast bags and exits into the tunnel.
 * **2 Cart Unloaders (Students):** 1 student jogging alongside each cart. As the cart rolls outward, pulls each 2"-thick folded blind from the rack and drops it flat on the turf at each yard mark. **Does NOT set them up.**
-* **16 Screen Setters / Receivers (Students):** 1 student assigned per blind (8 per side), chosen specifically because their **opening drill set is right next to that blind** on the front sideline. On entry, waits at the mark; as soon as the blind drops, lifts it, unfolds the triangular frame, and latches the internal brace clips. On egress, unclips and folds the blind, and hand-carries it straight off the field into the exit tunnel.
+* **16 Pre-Show Screen Setters (Students):** 1 student assigned per blind (8 per side), chosen specifically because their **opening drill set (Dot 1) is right next to that blind** on the front sideline. On entry, waits at the mark; as soon as the blind drops, lifts it, unfolds the triangular frame, and latches the internal brace clips (~6s).
+* **16 Post-Show Egress Performers (Students):** 1 student assigned per blind (8 per side), chosen specifically because their **final closing drill set finishes nearest that blind** on the front sideline. *(Note: Because drill staging moves across the field, these are typically a completely different set of 16 students than the pre-show setters, eliminating cross-field transit lag!)* At the final cutoff chord, each unclips, folds the 26-lb frame flat (~6s), and hand-carries it directly down the sideline corridor into the exit chute / tunnel.
 
 ---
 
@@ -42,11 +43,11 @@
 1. **Starting Line:** The 2 carts start on the back sideline at either the **20 or 40-yard line** (55.0 yards straight across to the front sideline—both take identical time, so staff selects whichever lane has a clear, unobstructed path between backfield props and trailers).
 2. **The Charge:** At permission to enter ($T = 0:00$), both adults push their carts straight forward across the field ($1.1\text{ yd/s}$ pace), make a 90° turn at the front sideline, and begin rolling outward toward the end zone.
 3. **The Drop:** The cart unloader student pulls one folded blind every 2.7 yards and drops it onto the turf. They keep moving—no stopping to assemble!
-4. **The Setup:** The 16 assigned students (already standing at their drill sets near the marks) catch their blind, stand it up, and latch the internal brace clips in parallel (~6s each).
+4. **The Setup:** The 16 opening setters (already standing at their drill sets near the marks) catch their blind, stand it up, and latch the internal brace clips in parallel (~6s each).
 5. **Clear Field & Early Signal:** By **$T = 2:14$**, all 16 blinds are locked upright, and both carts are parked safely off the field. The director signals the Timing & Penalties judge **60 seconds early**, cueing the introductory announcement and banking an extra minute for egress!
 
 #### Post-Show Egress Walkthrough (Expected: 1 min 40 sec | Official Clock Stops at Tunnel)
-1. **Final Chord ($T = 0:00$):** The 16 assigned students instantly unclip their blind's internal braces and fold the 3-panel frame flat to its 2" nested profile (~6s).
+1. **Final Chord ($T = 0:00$):** The 16 assigned egress performers (whose closing drill set finishes adjacent to each screen) instantly unclip their blind's internal braces and fold the 3-panel frame flat to its 2" nested profile (~6s). Having a designated set of closing performers at each blind ensures zero delay.
 2. **The Hand-Carry Sprint:** Each student picks up their light 26-lb folded frame and jogs straight down the front sideline corridor directly into the stadium exit chute / tunnel ($35\text{--}50\text{s}$).
 3. **The Ballast Sweep:** The 2 adult pushers roll their carts along the sideline collecting only the 8 ballast sandbags ($250\text{ lbs}$ total cart weight). On the far side, Cart 2 starts at Screen 8 (22-yd line) and sweeps **inward to Screen 1** (42-yd line), saving 20 yards of heavy pushing. Both carts sprint into the exit tunnel.
 4. **★ THE CLOCK STOPS ★ ($T \approx 1:40$):** Under CBA Rule 5.06, the official 15-minute competition clock stops the exact second the last cart and student cross the field boundary into the tunnel mouth!
@@ -229,7 +230,7 @@ sequenceDiagram
 - [ ] **T + 2:15:** Director signals Timing & Penalties judge early to begin introductory announcement under Rule 5.09!
 
 ### Post-Show Egress Checklist
-- [ ] **T = 0:00 (Final Chord / Salute):** All 16 student performers simultaneously unclip internal braces and collapse blinds to flat profile (~6s).
+- [ ] **T = 0:00 (Final Chord / Salute):** The 16 closing egress performers (positioned adjacent to screens on final drill set) simultaneously unclip internal braces and collapse blinds to flat profile (~6s).
 - [ ] **T + 0:06 to T + 0:45:** Performers jog down the sideline carrying 26-lb folded frames directly through the exit chute into the tunnel.
 - [ ] **T + 0:06 to T + 0:45:** Cart 1 sweeps Side 1 (Screen 1 $\to$ 8) collecting sandbags. Cart 2 sweeps Side 2 **inward (Screen 8 $\to$ 1)** collecting sandbags.
 - [ ] **T + 0:45 to T + 1:35:** Both carts push through the exit chute into the tunnel.
