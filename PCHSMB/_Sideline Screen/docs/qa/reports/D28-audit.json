@@ -1,8 +1,8 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-11T05:44:27+00:00",
+  "generated_at": "2026-09-11T05:55:58+00:00",
   "file": "/Volumes/T9/Sync/Working/Shop/Projects/__Music/PCHSMB/_Sideline Screen/docs/Sideline_Screen_Duck_Blind_Build_Instructions.docx",
-  "file_sha256": "a5873266f6b417e33adad6b90fdac76b9bd80654792b2a678bc837359a2ba0cf",
+  "file_sha256": "b229386753d2b5c92d33928fe3986261a68d17c7da556b902c9d3cf7bd12dbb5",
   "expected_build": "D28",
   "expected_release": "v0",
   "expected_status": "working_draft",

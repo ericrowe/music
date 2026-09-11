@@ -6,6 +6,10 @@
 - **Application:** Pine Creek High School Marching Band (PCHSMB) field prop
 - **Primary Function:** Conceals color guard equipment and provides private area for costume/equipment changes during field show performances.
 - **Form Factor:** Nominal 4 ft x 8 ft face; folding frame that folds flat for transport/storage and unfolds to self-supporting triangular geometry for field deployment.
+- **Fleet Production Quantity:** **16 screens total** deployed on the performance field:
+  - **Side 1 (Left):** 8 screens positioned along the front sideline flanking the front ensemble.
+  - **Side 2 (Right):** 8 screens positioned along the front sideline flanking the front ensemble.
+  - **Transport Logistics:** 2 dedicated transport carts (Component 2), each carrying 8 folded screens (44.5-in. cart width accommodates 8 folded frames at ~4.5-in. thickness).
 
 ---
 
@@ -27,6 +31,22 @@
 | **-** | 1 roll | Double-sided tape | 1-in. heavy-duty mounting tape (16x ~4-in. strips per screen: 5 per long rail, 3 per short rail; TBD) | Amazon (B07BBL4JXJ) |
 | **-** | 16 | Greenhouse snap clamps | 1-in. pipe clamp clips (sized for 3/4-in. EMT with wrapped vinyl) | Amazon (B0BJJYKZ5L) |
 | **-** | 2-3 | Moving blankets | Clean protective floor pads for scratch-free vinyl staging | Shop stock |
+
+### Fleet Totals (Full Production Run: 16 Screens + 2 Transport Carts)
+
+| Item / Material | Quantity Required | Notes / Specifications |
+|---|:---:|---|
+| **10-ft 3/4-in. EMT Conduit** | **112 sticks** | 7 sticks per screen × 16 screens (Home Depot SKU 0550110000) |
+| **3-Way Corner Brackets (F)** | **96 pcs** | 6 per screen × 16 screens (Amazon B0D5BBKCKG) |
+| **3/4-in. T-Brackets (G)** | **128 pcs** | 8 per screen × 16 screens (Amazon B0CKQW11SJ: 64 fixed, 64 pivots) |
+| **3D Corner Plugs (H)** | **96 pcs** | 6 per screen × 16 screens (Black ASA) |
+| **3D Hinged Arm Clips (I)** | **32 pcs** | 2 per screen × 16 screens (Black ASA) |
+| **3D Weight Clips** | **32–64 pcs** | 2 to 4 per screen for hanging ballast (Black ASA) |
+| **Self-Drilling Screws (J)** | **576 pcs** | 36 per screen × 16 screens (#8 x 1/2-in. hex flange) |
+| **1-in. Greenhouse Snap Clamps** | **256 pcs** | 16 per screen × 16 screens (Amazon B0BJJYKZ5L) |
+| **1-in. Double-Sided Tape** | **3–4 rolls** | 256 strips of 4-in. tape (~85 linear feet) |
+| **Custom Vinyl Banners** | **16 banners** | 4 ft × 8 ft nominal custom printed graphic |
+| **Transport Carts** | **2 carts** | 1 cart per side (carries 8 folded screens + staged ballast) |
 
 ---
 
@@ -89,19 +109,22 @@
   - **Tier 3 (High-Wind, 18–22 mph):** 2x 15-lb bags over rear rail C + 2x 15-lb bags suspended from Rail 2 (total wt 86 lbs). Safe to 24.5–28.4 mph max gust. Turf contact pressure ~0.25 psi (zero turf compaction).
   - **Tier 4 (Safety Abort, >20 mph sustained or >25 mph peak gusts):** STRICT NO-GO. Disengage clips (I), collapse rear support frame, and lay screen flat on turf.
 - **Severe Wind Feasibility Analysis (30 mph Limits):** For detailed engineering calculations and failure mode evaluations regarding extreme wind regimes, see [30 mph Wind Loading & Ballasting Feasibility Analysis](WIND_LOADING_30MPH_ANALYSIS.md). Ballasting for 30 mph on the field is prohibited due to lateral sliding drift on turf (requires >161 lbs ballast), tensile detachment of 3D-printed snap clips (I) under 153 lbs pull load, and logistical breakdown of the 3-person crew deployment timeline under CBA Rule 5.06 (3:15 clock).
-- **Field Deployment Crew Architecture & Pincer Deployment Protocol:**
-  - **Crew Size:** Minimum 3-person crew per cart (single cart = 3 handlers; dual carts flanking Side 1 and Side 2 = 2x 3-person crews, 6 handlers total).
-  - **Role 1 (Cart Driver / Pusher):** Pushes loaded cart from rear entrance gate (Rule 5.02) along perimeter to front sideline. Regulates pace, pauses momentarily at yard-line marks, and once the final screen is pulled, immediately rolls empty cart off the field over the front boundary into the sideline staging zone. Driver clears the field first (at ~1:55).
-  - **Role 2 (Offloader / Opposite-End Deployer):** Walks alongside cart, pulls folded screens, and drops them flat on turf at rough coordinate marks. Once the final screen is dropped, moves to that far end of the line and deploys inward (swings triangle, snaps clips into Rail 3, sets ballast).
-  - **Role 3 (Trailing Deployer):** Follows behind cart. Begins final deployment on Screen 1 as soon as it is dropped, advancing down the line toward the middle.
-  - **Pincer Convergence & Egress:** Handlers 2 and 3 meet in the middle to complete center screens, then step across the front sideline boundary together (~2:15 to 2:25 total elapsed time).
+- **Field Deployment Crew Architecture & Pincer Deployment Protocol (16 Screens Total, 8 Per Side):**
+  - **Fleet & Crew Sizing:** Total fleet consists of **16 screens** deployed across two 8-screen lines flanking the front ensemble. Transported on **2 dedicated carts** (8 screens per cart). Deployed by **two 3-person crews** (6 handlers total), operating concurrently on Side 1 and Side 2.
+  - **Front Sideline Placement Zones:**
+    - **Side 1 (Left / Stage Right):** 8 screens spanning ~64 ft along the front sideline (approx. 20-yd to 41-yd line flanking left of pit).
+    - **Side 2 (Right / Stage Left):** 8 screens spanning ~64 ft along the front sideline (approx. 59-yd to 80-yd line flanking right of pit).
+  - **Role 1 (Cart Driver / Pusher):** Pushes loaded cart (8 screens + ballast) from rear entrance gate (Rule 5.02) along perimeter to front sideline. Regulates pace, pauses momentarily at yard-line marks (~6s per drop), and once the 8th screen is pulled, immediately rolls empty cart off the field over the front boundary into the sideline staging zone. Driver clears the field first (at ~1:55–2:15).
+  - **Role 2 (Offloader / Opposite-End Deployer):** Walks alongside cart, slides 8 folded screens from cart, and drops them flat on turf at coordinate marks. Once Screen 8 is dropped, moves to that far end and deploys inward (Screens 8, 7, 6, 5: swings triangle, snaps clips into Rail 3, sets ballast).
+  - **Role 3 (Trailing Deployer):** Follows behind cart. Begins final deployment on Screen 1 as soon as it is dropped, advancing down the line inward (Screens 1, 2, 3, 4).
+  - **Pincer Convergence & Egress:** Handlers 2 and 3 meet between Screen 4 and Screen 5 (each setting 4 screens simultaneously in ~48s), verify ballast down the line, and step across the front boundary together.
   - **Extrapolated Field Timeline vs. CBA Rule 5.06 (3:15 Clock):**
-    - Perimeter Ingress (~200–240 ft @ ~3.4 ft/s): 60–70s
-    - Drop-and-Go Deposition (4–6 screens along 51 ft span): 35–45s
-    - Pincer Setup Convergence (12–15s per screen): 30–40s
-    - Driver Cart Egress & Crew Field Clearance: 10s
-    - **Total Elapsed Time:** **~2:15 to 2:25** (Single Cart) / **~2:30 to 2:45** (Dual Carts, accounting for +80 ft far-side transit).
-    - **Safety Margin:** **+30 to +50 seconds** of safety buffer before the introductory announcement ends (3:15), ensuring zero Rule 4.03 timing penalties.
+    - Perimeter Ingress: ~65s (Side 1, ~220 ft @ ~3.4 ft/s) / ~85s (Side 2, ~300 ft with +80 ft back-sideline transit).
+    - Drop-and-Go Deposition (8 screens across 64 ft span @ ~6s per drop): ~48s.
+    - Pincer Setup Convergence (4 screens per handler in parallel @ ~12s/screen): ~48–55s.
+    - Driver Cart Egress & Crew Field Clearance: 10s.
+    - **Total Elapsed Time:** **~2:30 (150 seconds)** for Side 1 / **~2:50 (170 seconds)** for Side 2.
+    - **Safety Margin:** **+25 to +45 seconds** of safety buffer before the introductory announcement ends (3:15 / 195s), ensuring zero Rule 4.03 adult field-presence penalties.
 - **2026 CBA Marching Band Competition Rules Compliance:**
   - **Rule 5.02 (Mandatory Rear Entrance for Props):** CRITICAL MANDATE — All props must enter from the back sideline or rear end zone gates (above goal posts). Never cross directly across front boundary (reserved for pit equipment). Handlers transit around perimeter to front sideline coordinates.
   - **Rule 5.03 & 5.06 (Entry Permission & Timing):** Pre-stage in rear half of end zone up to goal line. Never enter field before T&P judge signals official permission. Total setup and adult clearance window is 3 minutes 15 seconds.

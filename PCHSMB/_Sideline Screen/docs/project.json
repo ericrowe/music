@@ -31,7 +31,7 @@
       "process_state": "working_draft",
       "visible_status": "working_draft",
       "file": "Sideline_Screen_Duck_Blind_Build_Instructions.docx",
-      "sha256": "a5873266f6b417e33adad6b90fdac76b9bd80654792b2a678bc837359a2ba0cf",
+      "sha256": "b229386753d2b5c92d33928fe3986261a68d17c7da556b902c9d3cf7bd12dbb5",
       "controlled_at": "2026-09-10T23:15:00+00:00"
     },
     "candidate": null
@@ -91,9 +91,9 @@
       "started_at": "2026-09-10T21:58:33+00:00",
       "base_build": "D27",
       "summary": "Add aerodynamic wind loading analysis, tiered ballasting schedule, rear-rail leverage optimization, on-prop field placard, 4x6 coordinate card template, and parent volunteer guide",
-      "sha256": "a5873266f6b417e33adad6b90fdac76b9bd80654792b2a678bc837359a2ba0cf",
+      "sha256": "b229386753d2b5c92d33928fe3986261a68d17c7da556b902c9d3cf7bd12dbb5",
       "file": "Sideline_Screen_Duck_Blind_Build_Instructions.docx",
-      "pdf_sha256": "1ef82ace483564af8ff0a6e19eb310270e227a8e70e648daca480639d669efc9",
+      "pdf_sha256": "a25191b7b1cfd98f8777a3471c077ad74c4802cd9c391fc1a840cccd5d273ec9",
       "page_count": 36
     }
   ]

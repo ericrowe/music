@@ -26,13 +26,14 @@ The manual covers:
 
 ---
 
-## 🛒 Transport Cart System (Component 2)
+## 🛒 Transport Cart System (Component 2 — 2 Carts Required)
 
-To transport multiple folded sideline screens efficiently between the equipment trailer and the stadium field, a dedicated rolling transport cart is built:
+To transport the complete competition fleet of **16 folded sideline screens (8 per side)** efficiently between the equipment trailer and the stadium field, two dedicated rolling transport carts are built (Cart 1 for Side 1, Cart 2 for Side 2):
 - **Shared Chassis:** Uses the standardized 96 in. x 44.5 in. 2x4 lumber base framing, 1/2" plywood decking, and heavy-duty swivel casters from the [PCHSMB Backdrop System](../_Backdrop/).
+- **Capacity (8 Screens per Cart):** The 44.5-in. cart bed width comfortably accommodates 8 folded screens (approx. 4.5 in. folded thickness per screen) with clearance for guide rails and staged ballast bags.
 - **Side Guide Rails:** Vertical guide rails installed along the left and right sides contain folded screens upright.
 - **Front & Rear Latching Gates:** Retaining gates secured with 3D-printed latches ([`Cart Gate Latch.FCStd`](Cart%20Gate%20Latch.FCStd)) keep screens contained during transit and open for rapid sideline unloading and loading.
-- **Sideline Stowage:** During field performance, the empty transport cart is parked along the sideline outside the performance area.
+- **Sideline Stowage:** During field performance, the empty transport carts are rolled across the front sideline and parked outside the performance area.
 
 ---
 
@@ -85,3 +86,13 @@ All 3D-printed parts should be printed in **Black ASA** (or UV/weather-stable PE
 | **Side Guide Rails** | Vertical framing / conduit dividers to hold screens upright | $35.00 |
 | **Front & Rear Retention Gates** | Hinged gate framing, strap/barrel hinges, and 3D-printed latches | $30.00 |
 | **TOTAL PER TRANSPORT CART** | | **~$220.00** |
+
+### 3. Total Fleet Fabrication Estimate (16 Screens + 2 Transport Carts)
+
+| Fleet Category | Breakdown | Est. Total Cost |
+|---|---|:---:|
+| **16x Sideline Screens** | 16 frames @ ~$105.00 (EMT, brackets, 3D parts, fasteners; excl. vinyl) | ~$1,680.00 |
+| **2x Transport Carts** | 2 dedicated carts @ ~$220.00 (8 screens per cart) | ~$440.00 |
+| **TOTAL HARDWARE ESTIMATE** | | **~$2,120.00** |
+
+> *Note: Custom printed vinyl banners (16x 4'x8' outdoor scrim vinyl) and double-bagged sandbags are quoted separately.*
