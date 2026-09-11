@@ -174,17 +174,17 @@ Because Pine Creek High School operates in the high-altitude, wind-prone environ
 #v(2pt)
 
 #table(
-  columns: (1.1fr, 1.1fr, 2.5fr, 1.1fr),
-  align: (center + horizon, center + horizon, left + horizon, center + horizon),
+  columns: (1fr, 0.85fr, 1.25fr, 1.35fr, 0.95fr),
+  align: (center + horizon, center + horizon, left + horizon, left + horizon, center + horizon),
   stroke: 0.5pt + rgb("#cbd5e0"),
-  inset: (x: 4pt, y: 2.5pt),
+  inset: (x: 3.5pt, y: 2.5pt),
   fill: (col, row) => if row == 0 { rgb("#edf2f7") } else if row == 5 { rgb("#fff5f5") } else { none },
-  [*Wind Regime*], [*Wind Velocity*], [*Operational Action & Ballasting*], [*Decision Status*],
-  [⚪ *Tier 0: Calm*], [0 – 8 mph], [Nominal calm conditions. 0 ballast needed on duck blinds / backdrops. Normal transit and entry.], [*GO* (Dry)],
-  [🟢 *Tier 1: Normal*], [8 – 12 mph], [Standard deployment. Ground rail ballast (Duck Blinds: 1–2 bags; Backdrops: 4 bags [2/wing post]; Stages: wheel locks).], [*GO* (Normal)],
-  [🟡 *Tier 2: Advisory*], [12 – 18 mph], [Elevated vigilance. Full ballast deployed (Duck Blinds: 3 bags [2 ground + 1 hanging]; Backdrops: 6 bags [3/wing post]). Maintain two-hand grip.], [*GO* (With Ballast)],
-  [🟠 *Tier 3: High-Wind*], [18 – 22 mph], [Maximum safe limit. Heavy ballast (Duck Blinds: 4 bags [2 ground + 2 hanging]; Backdrops: 9 bags [6 wing + 3 rear rail]). Extra handlers.], [*CAUTION* (Max Limit)],
-  [🔴 *Tier 4: Abort*], [*> 20 mph sust.* \ or *> 25 mph gusts*], [*ABSOLUTE NO-GO.* Props remain in trailer / truck. Field props will not be fielded. Prop Lead notifies Directors and CBA judge.], [*NO-GO* (Hold in Truck)],
+  [*Wind Regime*], [*Wind Velocity*], [*Duck Blind Ballasting*], [*Backdrop Ballasting*], [*Decision Status*],
+  [⚪ *Tier 0: Calm*], [0 – 8 mph], [None], [None], [*GO* (Dry)],
+  [🟢 *Tier 1: Normal*], [8 – 12 mph], [2 bags], [4 bags (2/wing post)], [*GO* (Normal)],
+  [🟡 *Tier 2: Advisory*], [12 – 18 mph], [3 bags (2 ground + 1 hanging)], [6 bags (3/wing post)], [*GO* (With Ballast)],
+  [🟠 *Tier 3: High-Wind*], [18 – 22 mph], [4 bags (2 ground + 2 hanging)], [9 bags (6 wing + 3 rear rail)], [*CAUTION* (Max Limit)],
+  [🔴 *Tier 4: Abort*], [*> 20 mph sust.* \ or *> 25 mph gusts*], table.cell(colspan: 2)[*ABSOLUTE NO-GO.* Props remain in trailer / truck. Field props will not be fielded. Prop Lead notifies Directors and CBA judge.], [*NO-GO* (Hold in Truck)],
 )
 
 #v(3pt)
