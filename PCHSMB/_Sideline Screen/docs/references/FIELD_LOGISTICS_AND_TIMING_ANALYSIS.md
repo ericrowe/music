@@ -29,7 +29,7 @@
 ### 1.2 Step-by-Step Field Walkthrough
 
 #### Pre-Show Deployment Walkthrough (Expected: 2 min 14 sec | Cap: 3 min 15 sec)
-1. **Starting Line:** The 2 carts start on the back sideline at either the **20 or 40-yard line** (55.0 yards straight across to the front sideline—both take identical time, so staff selects whichever lane has a clear, unobstructed path between backfield props and trailers).
+1. **Starting Line:** The 2 carts start on the back sideline at either the **20 or 40-yard line** (55.0 yards straight across to the front sideline—both take identical time, so staff selects whichever lane has a clear, unobstructed path to the front sideline).
 2. **The Charge:** At permission to enter ($T = 0:00$), both adults push their carts straight forward across the field ($1.1\text{ yd/s}$ pace), make a 90° turn at the front sideline, and begin rolling outward toward the end zone.
 3. **The Drop:** The cart unloader student pulls one folded blind every 2.7 yards and drops it onto the turf. They keep moving—no stopping to assemble!
 4. **The Setup:** The 16 opening setters (already standing at their drill sets near the marks) catch their blind, stand it up, and latch the internal brace clips in parallel (~6s each).
