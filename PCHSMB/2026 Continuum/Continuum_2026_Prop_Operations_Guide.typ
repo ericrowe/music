@@ -835,47 +835,11 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
 
 = 6. Post-Show Deballasting & Trailer Packdown
 
-All teardown and packdown procedures occur *exclusively in the equipment trailer parking lot* after clearing the stadium exit gate:
+All teardown and packdown procedures occur *exclusively in the equipment trailer parking lot* after clearing the stadium exit gate.  The transportation team is responsible for all loading activity, and will direct props personnel in the correct loading method and sequence.
 
-+ *Deballasting Safety:* Remove sandbags from backdrop retention posts and duck blind carts. Place bags gently into the designated heavy-duty storage totes inside the equipment trailer. *Never drop or throw sandbags* (protects seams and plastic liners).
-+ *Screen Packing:* Stack collapsed sideline screens flat in the transport cart racks (8 screens per cart, hinges alternating to maintain coplanar nesting $<= 2.0$ inches). Secure retaining gate latches with 3D-printed locking pins.
-+ *Trailer Loading:* Roll backdrops and carts into the trailer in reverse numerical order. Set wheel brakes, engage wheel chocks, and secure ratcheting cargo straps across each frame before transit.
++ *Deballasting Safety:* Remove sandbags from backdrop retention posts and duck blind carts. Place bags gently into the designated area inside the equipment trailer. *Never drop or throw sandbags* (protects seams and plastic liners).
++ *Screen Packing:* Stack collapsed sideline screens and backdrop screens onto the truck cross braces, and secure.
 + *All-Clear Check:* Inspect the staging lot for personal belongings, water bottles, and tools. Verify all adult volunteer wristbands across prop and pit crews are accounted for before departing.
-
-#v(8pt)
-
-#rect(
-  width: 100%,
-  fill: rgb("#f7fafc"),
-  stroke: 1pt + rgb("#cbd5e0"),
-  radius: 4pt,
-  inset: (x: 10pt, y: 8pt)
-)[
-  #text(weight: "bold", size: 9.5pt, fill: rgb("#1a365d"))[📋 Competition Day Adult Volunteer Quick Reference Checklist]
-  #v(3pt)
-  #grid(
-    columns: (1fr, 1fr),
-    gutter: 8pt,
-    [
-      *Before Entering Gate:*
-      - Official CBA wristband secured to wrist (Rule 9.07)
-      - Arrive at trailer at scheduled Adult Volunteer call time
-      - Verify all sandbags loaded on carts/props per Ballast Schedules
-      - Confirm assigned role, labeled prop numbers & staging locations
-      - Check backdrop and stage caster brakes in UNLOCKED position
-      - Verify stage vinyl flaps pinned back securely for transit
-    ],
-    [
-      *On Field & Post-Show:*
-      - Students push props; adults assist with placement & verify setup
-      - Verify stage casters locked and velcro seam flaps sealed
-      - *Exit turf before 2:45* (to waiting area in front of front line)
-      - NEVER step onto field turf during the performance (Rule 4.03)
-      - Meet students at staging area post-show for prop hand-off
-      - *Continuous motion* through exit gate to trailer lot!
-    ]
-  )
-]
 
 #v(10pt)
 
