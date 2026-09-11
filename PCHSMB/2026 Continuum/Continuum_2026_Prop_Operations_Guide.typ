@@ -148,11 +148,11 @@
   fill: rgb("#edf2f7"),
   stroke: 1pt + rgb("#cbd5e0"),
   radius: 4pt,
-  inset: (x: 10pt, y: 7pt)
+  inset: (x: 8pt, y: 4.5pt)
 )[
   #text(weight: "bold", fill: rgb("#2d3748"))[🌟 CORE PROGRAM PHILOSOPHY:]
   #v(2pt)
-  #text(size: 9.5pt, fill: rgb("#1a202c"))[
+  #text(size: 9pt, fill: rgb("#1a202c"))[
     *The focus is always on the kids' performance, not the props.* Props exist strictly to support and enhance the visual spectacle of the students' musicianship and marching. If conditions become hazardous or timing breaks down, props are abandoned or held back without hesitation. *Nothing we do on the prop crew will ever compromise a student's safety or their competitive show.*
   ]
 ]
@@ -171,20 +171,23 @@ Because Pine Creek High School operates in the high-altitude, wind-prone environ
   Last season confirmed that props in >20 mph winds create unacceptable safety risks for students and handlers. When this threshold is met, the Prop Lead makes an immediate *NO-GO* call. Props remain securely locked in the equipment trailer or behind stadium bleachers. *The band performs a clean visual show without props.* There is no middle ground, and no emergency lay-flat abort on the field is permitted—if high winds are even possible, props stay off the turf.
 ]
 
-#v(4pt)
+#v(2pt)
 
 #table(
-  columns: (1.1fr, 1fr, 2.5fr, 1.2fr),
+  columns: (1.1fr, 1.1fr, 2.5fr, 1.1fr),
   align: (center + horizon, center + horizon, left + horizon, center + horizon),
   stroke: 0.5pt + rgb("#cbd5e0"),
-  fill: (col, row) => if row == 0 { rgb("#edf2f7") } else if row == 3 { rgb("#fff5f5") } else { none },
+  inset: (x: 4pt, y: 2.5pt),
+  fill: (col, row) => if row == 0 { rgb("#edf2f7") } else if row == 5 { rgb("#fff5f5") } else { none },
   [*Wind Regime*], [*Wind Velocity*], [*Operational Action & Ballasting*], [*Decision Status*],
-  [🟢 *Tier 1: Calm*], [0 – 12 mph], [Standard deployment. Nominal ballast (Duck Blinds: 1 bag/rail; Backdrops: 4 bags/post; Stages: wheel locks). Normal entry and exit.], [*GO* (Normal)],
-  [🟡 *Tier 2: Elevated*], [13 – 18 mph], [Elevated vigilance. Full ballast schedule deployed. Prop pushers maintain positive two-hand grip during transit. Lead monitors gusts.], [*GO* (With Ballast)],
-  [🔴 *Tier 3: Extreme*], [*> 20 mph sustained* \ or *25–30 mph gusts*], [*ABSOLUTE NO-GO.* Props remain in trailer. No props touch the field. Prop Lead notifies Band Directors and CBA timing judge.], [*NO-GO* (Hold in Truck)],
+  [⚪ *Tier 0: Calm*], [0 – 8 mph], [Nominal calm conditions. 0 ballast needed on duck blinds / backdrops. Normal transit and entry.], [*GO* (Dry)],
+  [🟢 *Tier 1: Normal*], [8 – 12 mph], [Standard deployment. Ground rail ballast (Duck Blinds: 1–2 bags; Backdrops: 4 bags [2/wing post]; Stages: wheel locks).], [*GO* (Normal)],
+  [🟡 *Tier 2: Advisory*], [12 – 18 mph], [Elevated vigilance. Full ballast deployed (Duck Blinds: 3 bags [2 ground + 1 hanging]; Backdrops: 6 bags [3/wing post]). Maintain two-hand grip.], [*GO* (With Ballast)],
+  [🟠 *Tier 3: High-Wind*], [18 – 22 mph], [Maximum safe limit. Heavy ballast (Duck Blinds: 4 bags [2 ground + 2 hanging]; Backdrops: 9 bags [6 wing + 3 rear rail]). Extra handlers.], [*CAUTION* (Max Limit)],
+  [🔴 *Tier 4: Abort*], [*> 20 mph sust.* \ or *> 25 mph gusts*], [*ABSOLUTE NO-GO.* Props remain in trailer / truck. Field props will not be fielded. Prop Lead notifies Directors and CBA judge.], [*NO-GO* (Hold in Truck)],
 )
 
-#v(10pt)
+#v(3pt)
 #callout(title: "Why There Is No Emergency Lay-Flat Plan in This Handout")[
   Previous operational drafts included field procedures for laying props flat on the turf during sudden gusts. For volunteer safety and competition clarity, *that procedure has been retired.* If 25–30 mph gusts are even remotely possible, the props will never be staged or moved onto the field.
 ]
@@ -347,27 +350,29 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
       fill: rgb("#ffffff"),
       stroke: 0.8pt + rgb("#cbd5e0"),
       radius: 3pt,
-      inset: (x: 4pt, y: 3pt)
+      inset: (x: 3pt, y: 3pt)
     )[
       #text(weight: "bold", size: 8pt, fill: rgb("#2b6cb0"))[DUCK BLIND BALLAST SCHEDULE:] \
       #v(1pt)
       #table(
-        columns: (0.55fr, 0.95fr, 1.3fr, 1.1fr),
+        columns: (0.45fr, 0.85fr, 1.5fr, 0.95fr),
         align: center + horizon,
         stroke: 0.3pt + rgb("#cbd5e0"),
-        inset: (x: 2pt, y: 2pt),
-        fill: (col, row) => if row == 0 or row == 1 { rgb("#edf2f7") } else if row == 4 { rgb("#fff5f5") } else { none },
-        table.cell(colspan: 2)[#text(size: 7.5pt, weight: "bold")[Wind Regime]],
-        table.cell(rowspan: 2)[#text(size: 7.5pt, weight: "bold")[Per Rail]],
-        table.cell(rowspan: 2)[#text(size: 7.5pt, weight: "bold")[Per Cart]],
-        [#text(size: 7pt, weight: "bold")[Tier]],
-        [#text(size: 7pt, weight: "bold")[MPH]],
-        [#text(size: 7.5pt)[1]], [#text(size: 7.5pt)[0–12]], [#text(size: 7.5pt)[1 bag (15 lb)]], [#text(size: 7.5pt)[8 sandbags]],
-        [#text(size: 7.5pt)[2]], [#text(size: 7.5pt)[13–18]], [#text(size: 7.5pt)[2 bags (30 lb)]], [#text(size: 7.5pt)[16 sandbags]],
-        [#text(size: 7.5pt, weight: "bold", fill: rgb("#c53030"))[3]],
-        [#text(size: 7.5pt, weight: "bold", fill: rgb("#c53030"))[>20]],
-        [#text(size: 7.5pt, weight: "bold", fill: rgb("#c53030"))[NO-GO]],
-        [#text(size: 7.5pt, weight: "bold", fill: rgb("#c53030"))[In Trailer]],
+        inset: (x: 2pt, y: 1.5pt),
+        fill: (col, row) => if row == 0 or row == 1 { rgb("#edf2f7") } else if row == 6 { rgb("#fff5f5") } else { none },
+        table.cell(colspan: 2)[#text(size: 7pt, weight: "bold")[Wind Regime]],
+        table.cell(rowspan: 2)[#text(size: 7pt, weight: "bold")[Per Blind (15-lb Bags)]],
+        table.cell(rowspan: 2)[#text(size: 7pt, weight: "bold")[Per Cart]],
+        [#text(size: 6.5pt, weight: "bold")[Tier]],
+        [#text(size: 6.5pt, weight: "bold")[MPH]],
+        [#text(size: 6.5pt)[0]], [#text(size: 6.5pt)[0–8]], [#text(size: 6.5pt)[0 bags (dry frame)]], [#text(size: 6.5pt)[0 bags]],
+        [#text(size: 6.5pt)[1]], [#text(size: 6.5pt)[8–12]], [#text(size: 6.5pt)[1–2 on ground (15–30 lb)]], [#text(size: 6.5pt)[8–16 bags]],
+        [#text(size: 6.5pt)[2]], [#text(size: 6.5pt)[12–18]], [#text(size: 6.5pt)[2 ground + 1 hang (45 lb)]], [#text(size: 6.5pt)[24 bags]],
+        [#text(size: 6.5pt)[3]], [#text(size: 6.5pt)[18–22]], [#text(size: 6.5pt)[2 ground + 2 hang (60 lb)]], [#text(size: 6.5pt)[32 bags]],
+        [#text(size: 6.5pt, weight: "bold", fill: rgb("#c53030"))[4]],
+        [#text(size: 6.5pt, weight: "bold", fill: rgb("#c53030"))[>20]],
+        [#text(size: 6.5pt, weight: "bold", fill: rgb("#c53030"))[NO-GO (Hold in Trailer)]],
+        [#text(size: 6.5pt, weight: "bold", fill: rgb("#c53030"))[In Trailer]],
       )
     ]
   )
@@ -377,7 +382,7 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
 
   + *Arrival, Unload & Assembly:* Meet at the equipment trailer at the volunteer crew call time. Assist with unloading the props and pit equipment from the trucks and trailers. Assist with assembly of the props. Note: duck blinds are fully assembled, but the backdrops and stages both require multiple people to perform the assembly work.
   + *Move to Staging Area:* Move props and carts to the designated staging area at the designated staging time.
-  + *Pre-Show Inspection:* Meet at the Staging Area 45 minutes prior to show time. Conduct a visual inspection of the cart, screen racks, and latches. Confirm sandbag quantity in the hopper matches the Ballast Schedule above (8 bags for Tier 1; 16 bags for Tier 2). Push cart to the ready area as directed by the Prop Lead. Meet your assigned Student Unloader who will join you following their warm-ups.
+  + *Pre-Show Inspection:* Meet at the Staging Area 45 minutes prior to show time. Conduct a visual inspection of the cart, screen racks, and latches. Confirm sandbag quantity in the hopper matches the Ballast Schedule above (e.g., 8–16 bags for Tier 1; 24 bags for Tier 2; 32 bags for Tier 3). Push cart to the ready area as directed by the Prop Lead. Meet your assigned Student Unloader who will join you following their warm-ups.
   + *Field Staging A:* When directed by the on-field judge, enter the gates and stage at the prescribed location.
   + *Field Staging B:* When directed by the on-field judge, move to the defined yard line along the back sideline. *DO NOT CROSS THE SIDELINE MARKERS.* Doing so will immediately invoke an official penalty.
   + *Field Ingress & Directional Delivery:* When the CBA judge signals entry permission, push the cart forward toward the front sideline with your Student Unloader. When you reach the front sideline, turn and walk along the front sideline, pausing 6–8 seconds at each 2-yard mark while the unloader deposits one folded screen and sandbags to the pre-set student receiver.
@@ -402,32 +407,27 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
   tag: "Cart Operations & Rapid Offloading"
 )[
   #text(size: 8.5pt, style: "italic", fill: rgb("#2b6cb0"))[
-    *Student Instructions:* You accompany the Adult Cart Pusher from the rear gate to the front sideline, rapidly offload the 8 screens and 16 sandbags to your fellow student performers, and clear the turf to take your opening drill position.
+    *Student Instructions:* You accompany the Adult Cart Pusher from the rear gate to the front sideline, rapidly offload the 8 screens and assigned ballast bags to your fellow student performers, and clear the turf to take your opening drill position.
   ]
   #v(4pt)
 
-  + *Phase 1: Rear Gate Rendezvous (-10 min to Gate Opening):*
-    - Meet your assigned Adult Cart Pusher at the rear stadium entrance gate 10 minutes prior to gate release.
-    - Confirm whether you are assigned to Cart 1 (Side 1) or Cart 2 (Side 2).
-    - Walk alongside the cart during back sideline staging queue. Confirm the retaining gate latch and safety pin are securely engaged.
-  + *Phase 2: Perimeter Track Transit & Rack Security:*
-    - When the CBA judge gives the entry signal, walk immediately alongside the cart rack along the perimeter track toward the front sideline.
-    - Keep one hand resting on the retaining gate latch to ensure locking pins and screens remain fully stabilized during rolling transit.
-    - Coordinate pace with the adult pusher so you stay aligned with the rack.
-  + *Phase 3: Screen & Ballast Deposition (6-Second Drop Cadence):*
-    - As the cart enters the front sideline and rolls past each marked 2-yard line (screens 1 through 8):
-      - Slide one folded screen horizontally off the cart rack.
-      - Set the folded screen flat on the synthetic turf directly at the feet of the pre-set student receiver.
-      - Reach into the cart hopper and hand two 15-lb double-bagged sandbags to the student receiver.
+  + *Rear Gate Rendezvous:*
+    - Meet your assigned Adult Cart Pusher at the rear stadium entrance gate as directed by your section leader.
+    - Work with your section leader to get your instrument to your starting location on the field. The cart does not have instrument storage capabilities.
+    - Confirm with the Adult Cart Pusher the number of ballast bags to unload with each duck blind. Note this value will change depending on the wind conditions that day.
+  + *Perimeter Track Transit:*
+    - Remain with the cart during entry and backfield staging as directed.
+  + *Field Entrance:*
+    - When given the go-ahead by the on-field judge, move quickly with the cart straight forward to the front sideline.
+  + *Screen & Ballast Deposition (6-Second Drop Cadence):*
+    - Once you reach the front sideline, walk along the sideline with the cart. As it rolls past each marked 2-yard line (screens 1 through 8):
+      - Slide one folded screen off the cart rack.
+      - Set the folded screen flat on the turf near the final location for that screen. Additional student helpers will be there to set the blind up.
+      - Set the correct amount of ballast bags with each duck blind.
     - Maintain a crisp, rapid pace: complete each handoff within *6 seconds* so the cart maintains forward momentum without stalling.
-    - Repeat down the entire 8-screen line.
-  + *Phase 4: Field Clearance to Opening Show Drill Set:*
-    - Once the 8th screen and final sandbags are deposited, immediately step over the front boundary line with the adult cart pusher.
-    - *You must be off the turf before the 2:15 mark.*
-    - Briskly transition to your assigned pre-show warm-up mark or opening performance drill set. You are now cleared for the show!
-  + *Phase 5: Post-Show Coordination:*
-    - At the final chord, you do not need to return to the cart—your cart responsibilities are complete.
-    - Exit the field with the marching band block or assist your designated section according to director instructions.
+      - Repeat down the entire 8-screen line.
+  + *Field Clearance to Opening Show Drill Set:*
+    - Once the 8th screen and final sandbags are deposited, briskly transition to your assigned opening performance location. You are now cleared for the show!
 ]
 
 #pagebreak()
@@ -444,29 +444,27 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
   tag: "On-Field Screen Deployment & Rigidity"
 )[
   #text(size: 8.5pt, style: "italic", fill: rgb("#2b6cb0"))[
-    *Student Instructions:* You are responsible for receiving, unfolding, latching, and ballasting the 16 duck blind sideline screens. Parents are strictly forbidden from touching props on the turf; this setup is executed 100% by students in ~15 seconds.
+    *Student Instructions:* You are responsible for receiving, unfolding, latching, and ballasting the 16 duck blind sideline screens. You will be assigned one or more duck blinds to be your responsibility.
   ]
   #v(4pt)
 
-  + *Phase 1: Pre-Show Field Positioning:*
-    - March onto the field with the band during entry and proceed directly to your assigned front sideline coordinate.
-    - *Side 1:* Spans from 20 to 41-yard line at 2-yard intervals (Screens #1 through #8).
-    - *Side 2:* Spans from 59 to 80-yard line at 2-yard intervals (Screens #9 through #16).
+  + *Pre-Show Field Positioning:*
+    - March onto the field with the band during entry and proceed to your assigned front sideline coordinate. Coordinate with your section leader for instrument placement while you perform your duties.
     - Stand at attention facing the backfield awaiting the arrival of your transport cart.
-  + *Phase 2: Receiving Screen & Ballast:*
+  + *Receiving Screen & Ballast:*
     - As your transport cart arrives at your mark:
-      - Receive 1 folded screen from the Student Unloader and position it upright on the turf, display face toward the front spectator stands.
-      - Receive two 15-lb double-bagged sandbags and place them temporarily at your feet.
-  + *Phase 3: Concurrent Unfolding & Lockup (15 Seconds):*
+      - Receive 1 folded screen and ballast bags from the Student Unloader. Note that the ballast bag quantity will change based on wind conditions.
+      - Place the folded screen standing vertically, display face toward the front audience.
+  + *Concurrent Unfolding & Lockup (15 Seconds):*
     - As soon as the screen is on the turf, all 8 performers on your side deploy simultaneously:
       - Swing the rear triangular support frame outward perpendicular to the front display panel.
       - Seat the snap clips (*I*) firmly into Rail 3 until fully engaged with an audible snap.
-      - Reach across to the adjacent screen and engage the inter-screen connecting latches to lock the 8 screens into a rigid continuous front visual wall.
-  + *Phase 4: Ballast Installation:*
-    - Lift both 15-lb sandbags and set them squarely across the rear bottom horizontal rail.
-    - Ensure bags rest evenly on the rail so weight is centered directly over the base.
-    - Confirm inner plastic liner is not protruding or pinched.
-  + *Phase 5: Rigidity Check & Show Posture:*
+      - Adjust the position from center field outwards to ensure all blinds are aligned continuously into one front visual wall.
+  + *Ballast Installation:*
+    - Place the ballast provided onto the duck blind in this order:
+      - Place up to 2 bags across the rear ground rail.
+      - Place up to 2 bags hanging from the top rail using the attached clips.
+  + *Rigidity Check & Show Posture:*
     - Give the frame a firm tap to confirm the snap clips and latches are fully seated and the screen is 100% rigid.
     - Step back into your opening visual set posture before the introductory announcement ends.
 ]
@@ -485,28 +483,22 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
   tag: "Post-Show Deballasting & Egress Sprint"
 )[
   #text(size: 8.5pt, style: "italic", fill: rgb("#2b6cb0"))[
-    *Student Instructions:* The 2-minute CBA egress clock starts the instant the final note of the show sounds. Disengage, collapse, and sprint your screens off the field in pairs within 35 seconds.
+    *Student Instructions:* The 2-minute CBA egress clock starts the instant the final note of the show sounds. Disengage, collapse, and move your screens off the field quickly within the 2-minute egress window.
   ]
   #v(4pt)
 
-  + *Phase 1: Immediate Teardown on Final Show Chord:*
-    - The instant the final cutoff rings:
-      - *Safe Ballast Placement:* Lift both 15-lb sandbags off the rear bottom rail and place them directly onto the synthetic turf next to the rail.  
-        #text(weight: "bold", fill: rgb("#c53030"))[CRITICAL SAFETY MANDATE: NEVER THROW OR DROP SANDBAGS.] Dropping sandbags causes severe seam rupture and leaks sand, resulting in catastrophic facility fines and CBA score penalties. Place bags gently on the turf. Leave them in place for the Adult Cart Pusher to scoop during their sweep.
-      - *Disengage Latches & Clips:* Disengage inter-screen side latches. Disengage snap clips (*I*) from Rail 3.
+  + *Immediate Teardown on Final Show Chord:*
+    - After the show as directed by your section leader:
+      - *Safe Ballast Placement:* Lift all sandbags off the rear ground rail and unclip any hanging bags; place them gently onto the synthetic turf next to the rail.  
+        #text(weight: "bold", fill: rgb("#c53030"))[CRITICAL SAFETY MANDATE: NEVER THROW OR DROP SANDBAGS.] Dropping sandbags causes severe seam rupture and leaks sand, resulting in CBA score penalties. Place bags gently on the turf. Leave them in place for the Adult Cart Pusher to scoop during their sweep.
+      - *Disengage Latches & Clips:* Disengage inter-screen side latches. Disengage snap clips (*I*) from Rail 3. Swing the cross arms up into alignment with the rear brace.
       - *Collapse Screen:* Swing the rear triangular brace flat against the front display frame.
-  + *Phase 2: Pair Up for Transport (13 lbs per Performer):*
-    - Pair up immediately with your assigned partner on the adjacent screen:
-      - Screen 1 pairs with Screen 2; Screen 3 with Screen 4; Screen 5 with Screen 6; Screen 7 with Screen 8.
-      - Screen 9 pairs with Screen 10; Screen 11 with Screen 12; Screen 13 with Screen 14; Screen 15 with Screen 16.
-    - Each pair grips one collapsed screen by the dedicated carry handles / upright frame rails. Total collapsed weight is ~26 lbs (*only 13 lbs per student*).
-  + *Phase 3: The 35-Second Egress Sprint:*
-    - Sprint in pairs hand-carrying the collapsed screens across the front sideline boundary and toward the designated stadium exit gate chute.
-    - *Goal:* All 16 screens must clear the field boundaries within *35 seconds* of the final chord!
-  + *Phase 4: Trailer Lot Stacking:*
-    - Carry the collapsed screens directly to the equipment trailer parking lot.
-    - Stack screens flat in the transport cart racks (8 screens per cart, alternating hinges to maintain coplanar nesting $<= 2.0$ inches).
-    - Insert 3D-printed locking pins into the retaining gate latches. Rejoin the band for awards / debrief.
+  + *The 35-Second Egress Sprint:*
+    - Move quickly, hand-carrying the collapsed screens across the front sideline boundary and toward the designated stadium exit gate chute.
+  + *Replace on Cart:*
+    - Exit the field to the pre-coordinated area to meet the cart rack.
+    - Replace screens in the transport cart racks (8 screens per cart).
+    - Rejoin the band.
 ]
 
 #pagebreak()
@@ -522,7 +514,7 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
   personnel: "10 to 20 Parent Volunteers (1–2 per Cart)",
   tag: "Backdrop Props #1 through #10"
 )[
-  + *Staging & Inspection (45 min prior):* Locate your assigned backdrop cart (#1 through #10) in the staging lot. Verify: (a) graphic banner faces the correct direction; (b) 4 to 6 double-bagged 15-lb sandbags are securely seated over the two vertical iron pipe posts; (c) swivel casters roll freely; (d) caster foot brake levers are in the unlocked (UP) position.
+  + *Staging & Inspection (45 min prior):* Locate your assigned backdrop cart (#1 through #10) in the staging lot. Verify: (a) graphic banner faces the correct direction; (b) 4 to 6 double-bagged 15-lb sandbags (or up to 9 bags in Tier 3) are securely seated over the two vertical iron pipe posts; (c) swivel casters roll freely; (d) caster foot brake levers are in the unlocked (UP) position.
   + *Gate Queue Order:* Queue on the back sideline track in strict numerical order (#1 at front, #10 at rear).
   + *Field Ingress:* When the judge signals, push the cart onto the field following the perimeter lane to your marked backfield yard coordinate. *Safety:* Push using the wooden 2x4 frame uprights or dedicated push handles. *NEVER push directly against the vinyl display face.*
   + *Positioning & Brake Lock:* Align the front edge of the wood base cart precisely with the yard line and hash mark specified on your drill card. *Immediately step on the caster foot brake levers on all four swivel casters to lock wheels.*
