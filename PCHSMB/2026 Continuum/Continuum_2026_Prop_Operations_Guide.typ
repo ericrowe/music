@@ -185,7 +185,7 @@ Because Pine Creek High School operates in the high-altitude, wind-prone environ
   [🟢 *Tier 1: Normal*], [8 – 12 mph], [2 bags], [4 bags (2/wing post)], [*GO* (Normal)],
   [🟡 *Tier 2: Advisory*], [12 – 18 mph], [3 bags (2 ground + 1 hanging)], [6 bags (3/wing post)], [*GO* (With Ballast)],
   [🟠 *Tier 3: High-Wind*], [18 – 22 mph], [4 bags (2 ground + 2 hanging)], [9 bags (6 wing + 3 rear rail)], [*CAUTION* (Max Limit)],
-  [🔴 *Tier 4: Abort*], [*> 20 mph sust.* \ or *> 25 mph gusts*], table.cell(colspan: 2)[*ABSOLUTE NO-GO.* Props remain in trailer / truck. Field props will not be fielded. Prop Lead notifies Directors and CBA judge.], [*NO-GO* (Hold in Truck)],
+  [🔴 *Tier 4: Abort*], [*> 20 mph sust.* \ or *> 25 mph gusts*], table.cell(colspan: 2)[*ABSOLUTE NO-GO.* Props remain in trailer / truck. Field props will not be fielded. Prop Lead notifies Directors.], [*NO-GO* (Hold in Truck)],
 )
 
 #v(3pt)
@@ -552,9 +552,11 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
   + *Ballast Installation & Pre-Staging Inspection:* Confirm the day's wind tier with the Prop Lead. Seat double-bagged 15-lb sandbags securely over the two vertical iron pipe posts on each cart per the table above (4 bags for Tier 1; 6 bags for Tier 2; 6 wing + 3 rear rail bags for Tier 3). Inspect swivel casters and confirm caster foot brakes are in the unlocked (UP) position for transit.
   + *Transport to Staging Area:* Lead the transport of all 10 ballasted backdrops from the trailer lot to the designated staging area at the designated staging time. Park carts in numerical order (#1 through #10) and engage wheel brakes.
   + *Student Rendezvous & Supervision at Staging Area:* Meet the assigned Student Backdrop Pushers (2–4 students per backdrop) at the staging area 45 minutes prior to show time. Confirm each student team knows their backdrop number, entry queue sequence, and field position. Supervise and assist the students as they prepare for gate movement.
-  + *Adult Field Boundary Rule:* Adults do not push backdrops onto the field. Clear behind stadium perimeter boundaries before the performance begins. *Never step onto the turf during the show (Rule 4.03 penalty).*
+  + *Adult Field Boundary Rule:* Adults do not push backdrops onto the field. Move with the students onto the field during setup to assist any that need help and check field placement, and then quickly move off the field to the adult volunteer waiting area in front of the front sideline. *Never step onto the turf during the show (Rule 4.03 penalty).*
   + *Post-Show Reception & Return to Trailer:* Meet the student pushers as they return with the backdrops to the staging area following their end zone egress. Take custody of the backdrops from the students so they can rejoin the band block. Push the backdrops back to the staging area (between Prelims and Finals) or to the equipment trailer (after Finals).
-  + *Post-Finals Disassembly Supervision:* Direct the safe deballasting (gently transfer sandbags into trailer totes; never drop or throw) and mechanical disassembly of frames for secure trailer packing.
+  + *Post-Finals Disassembly Supervision:* Direct the safe deballasting (never drop or throw) and mechanical disassembly of frames for secure trailer packing.
+  + *Trailer Loading:* Assist the transport team with the secure loading of the trailer for return to Pine Creek.
+  + *Trailer Unloading:* Return to Pine Creek and assist with the unloading of the trailer and storage of the props.
 ]
 
 #pagebreak()
@@ -571,18 +573,19 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
   tag: "Staging Takeover, Backfield Entry & Show Positioning"
 )[
   #text(size: 8.5pt, style: "italic", fill: rgb("#2b6cb0"))[
-    *Student Instructions:* You are part of the team of 2 to 4 students assigned to roll your backdrop (#1 through #10) from the staging area onto the field, position it at your marked coordinate, rotate it per training instructions, and lock it down for the performance.
+    *Student Instructions:* You are part of the team of 2 to 4 students assigned to roll your backdrop (#1 through #10) from the staging area onto the field and position it as directed at your marked coordinate.
   ]
   #v(4pt)
 
   + *Staging Area Takeover:*
     - Meet the Adult Backdrop Managers at the designated staging area 45 minutes prior to show time (following your section warm-ups).
     - Locate your assigned backdrop (#1 through #10).
-    - Coordinate with your section leader regarding instrument placement while performing your prop duties (the backdrop carts do not have instrument storage).
+    - Coordinate with your section leader regarding instrument placement while performing your prop duties (the backdrop carts do not have large instrument storage).
+    - Note that the backdrops have one set of fixed wheels that do not rotate, and one set that do rotate for steering.  It is typically recommended for stability to push from the side with the rotating steering wheels, however you must plan ahead for turns.
   + *Perimeter Transit to Back Sideline:*
     - When directed by the Adult Managers / Prop Lead, take custody of your backdrop and roll it along the designated perimeter track toward the rear stadium entrance gate.
     - Queue in strict numerical order (#1 at front, #10 at rear).
-    - Always push using the wooden 2x4 frame uprights or dedicated push handles. *NEVER push directly against the vinyl display face.*
+    - Always push using the steel frame uprights. *NEVER push directly against the vinyl display face.*
   + *Back Sideline Staging:*
     - Move through the rear gate and stage along the back sideline directly in line with your final field coordinate.
     - *CRITICAL BOUNDARY RULE: DO NOT CROSS THE BACK SIDELINE MARKERS.* Keep cart wheels completely behind the sideline until the on-field judge gives official entry permission. Doing so will immediately invoke a CBA penalty.
@@ -590,12 +593,12 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
     - When the CBA judge signals entry permission, push your backdrop briskly straight forward onto the field toward your marked coordinate.
     - Steer smoothly; avoid sharp pivots that could scrub or tear synthetic turf infill.
     - Align the front edge of the wood base cart precisely with the yard line and hash mark specified on your coordinate sheet.
-  + *Orientation, Rotation & Brake Lock:*
+  + *Orientation, Rotation & Securing:*
     - Rotate the backdrop display face to the exact angle and orientation instructed during rehearsal training.
-    - *Immediately step on all four swivel caster foot brake levers to lock wheels.* Confirm the cart will not roll.
     - Confirm all sandbags remain securely seated over the iron posts.
+    - If directed by the Adult Backdrop Managers, place additional sandbags across the rear frame and/or use sandbags to chock the wheels in place.
   + *Transition to Opening Show Position:*
-    - Once the backdrop is locked and rigid, briskly transition to your opening drill position or warm-up mark before the introductory announcement ends. You are now cleared for the show!
+    - Briskly transition to your opening drill position before the introductory announcement ends. You are now cleared for the show!
 ]
 
 #pagebreak()
@@ -612,29 +615,26 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
   tag: "Post-Show Egress Sprint & Staging Hand-Off"
 )[
   #text(size: 8.5pt, style: "italic", fill: rgb("#2b6cb0"))[
-    *Student Instructions:* The 2-minute CBA egress clock begins the instant the final note of the show sounds. You are responsible for immediately reaching your assigned backdrop, unlocking the brakes, rolling it off the field via the nearest front-half end zone route, and returning it to the staging area.
+    *Student Instructions:* The 2-minute CBA egress clock begins the instant the final note of the show sounds. You are responsible for immediately reaching your assigned backdrop, preparing it for transport, rolling it off the field via the nearest front-half end zone route, and returning it to the staging area.
   ]
   #v(4pt)
 
   + *Immediate Post-Show Rendezvous:*
-    - The instant the final cutoff chord sounds, move immediately to your assigned backdrop (#1 through #10).
-    - *(Note: Your final closing drill position is coordinated so you finish nearest your assigned backdrop to eliminate cross-field transit lag.)*
-  + *Brake Release:*
-    - Kick all four swivel caster foot brake levers UP into the UNLOCKED position.
-    - Confirm all 2 to 4 student handlers have secure two-handed grips on the wooden 2x4 frame uprights before rolling.
+    - As directed by your section leader following the show, move immediately to your assigned backdrop (#1 through #10).
+  + *Prep for Moving:*
+    - If any sandbags were placed across the back rail, move them to the iron posts for transport.
+    - If any sandbags were placed as wheel chocks, move them to the iron posts for transport.
   + *Straight-Line Egress to Front Half of End Zone:*
     - Push the backdrop in a straight line toward the closest point located on the *front half of the end zone* (away from the backfield pit/battery flow per CBA field clearance routing).
     - Maintain brisk, continuous forward momentum. *NEVER stop on the turf to adjust equipment, rest, or talk.*
-    - Push strictly by the wooden framing uprights; *never push against the vinyl graphic face*.
+    - Push strictly by the steel uprights; *never push against the vinyl graphic face*.
   + *Continuous Motion Past Gate to Staging Area:*
     - Roll through the end zone boundary line and directly into the stadium exit gate / tunnel chute.
-    - Per CBA Rule 8.05, maintain continuous motion through the tunnel—do not halt or de-ballast in the exit chute.
-    - Roll the backdrop along the perimeter path directly to the designated staging area.
+    - Roll the backdrop along the perimeter path directly to the designated staging area as directed by the Adult Backdrop Managers.
   + *Hand-Off to Adult Backdrop Managers:*
     - Park the backdrop in proper numerical alignment in the staging area.
-    - Step on the caster brake levers to lock wheels in place.
     - Hand custody of the backdrop back to the Adult Backdrop Managers.
-    - Rejoin the band block for post-show debrief, uniform check, or awards ceremony.
+    - Rejoin the band.
 ]
 
 #pagebreak()
