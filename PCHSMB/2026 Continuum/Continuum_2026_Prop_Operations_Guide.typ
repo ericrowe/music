@@ -81,15 +81,18 @@
   ]
 }
 
+// Unified alert formatting for critical safety mandates, penalties, and hard rules
+#let alert(body) = text(weight: "bold", fill: rgb("#c53030"))[#body]
+
 #let nogo-box(body) = callout(
-  title: [🛑 ABSOLUTE WIND NO-GO THRESHOLD (>20 MPH)],
+  title: [🛑 #text(fill: rgb("#c53030"))[ABSOLUTE WIND NO-GO THRESHOLD (>20 MPH)]],
   fill: rgb("#fff5f5"),
   stroke: rgb("#e53e3e"),
   body
 )
 
 #let rule-box(title: "CRITICAL CBA COMPETITION RULE", body) = callout(
-  title: [⚠️ #title],
+  title: [⚠️ #text(fill: rgb("#c05621"))[#title]],
   fill: rgb("#fffaf0"),
   stroke: rgb("#dd6b20"),
   body
@@ -167,9 +170,9 @@
 Because Pine Creek High School operates in the high-altitude, wind-prone environment of Colorado Springs (6,500 ft ASL) and competes in open stadium venues, wind safety controls must be understood by every Adult Volunteer before touching a prop. 
 
 #nogo-box[
-  *HARD RULE: If sustained winds exceed 20 mph OR gusts are forecasted/reported at 25–30 mph, PROPS DO NOT LEAVE THE TRUCK/TRAILER.*
+  #alert[HARD RULE: If sustained winds exceed 20 mph OR gusts are forecasted/reported at 25–30 mph, PROPS DO NOT LEAVE THE TRUCK/TRAILER.]
   
-  Last season confirmed that props in >20 mph winds create unacceptable safety risks for students and handlers. When this threshold is met, the Prop Lead makes an immediate *NO-GO* call. Props remain securely locked in the equipment trailer or behind stadium bleachers. *The band performs a clean visual show without props.* There is no middle ground, and no emergency lay-flat abort on the field is permitted—if high winds are even possible, props stay off the turf.
+  Last season confirmed that props in >20 mph winds create unacceptable safety risks for students and handlers. When this threshold is met, the Prop Lead makes an immediate #alert[NO-GO] call. Props remain securely locked in the equipment trailer or behind stadium bleachers. *The band performs a clean visual show without props.* There is no middle ground, and no emergency lay-flat abort on the field is permitted—if high winds are even possible, props stay off the turf.
 ]
 
 #v(2pt)
@@ -185,7 +188,7 @@ Because Pine Creek High School operates in the high-altitude, wind-prone environ
   [🟢 *Tier 1: Normal*], [8 – 12 mph], [2 bags], [4 bags (2/wing post)], [*GO* (Normal)],
   [🟡 *Tier 2: Advisory*], [12 – 18 mph], [3 bags (2 ground + 1 hanging)], [6 bags (3/wing post)], [*GO* (With Ballast)],
   [🟠 *Tier 3: High-Wind*], [18 – 22 mph], [4 bags (2 ground + 2 hanging)], [9 bags (6 wing + 3 rear rail)], [*CAUTION* (Max Limit)],
-  [🔴 *Tier 4: Abort*], [*> 20 mph sust.* \ or *> 25 mph gusts*], table.cell(colspan: 2)[*ABSOLUTE NO-GO.* Props remain in trailer / truck. Field props will not be fielded. Prop Lead notifies Directors.], [*NO-GO* (Hold in Truck)],
+  [🔴 #alert[Tier 4: Abort]], [#alert[> 20 mph sust.] \ or #alert[> 25 mph gusts]], table.cell(colspan: 2)[#alert[ABSOLUTE NO-GO.] Props remain in trailer / truck. Field props will not be fielded. Prop Lead notifies Directors.], [#alert[NO-GO] (Hold in Truck)],
 )
 
 #v(3pt)
@@ -234,7 +237,7 @@ Because Pine Creek High School operates in the high-altitude, wind-prone environ
 
 = 3. Critical CBA Rules for Adult Volunteers
 
-The Colorado Bandmasters Association (CBA) strictly enforces prop and adult volunteer regulations. *Penalties directly deduct points from the students' score.* Adhere strictly to the following:
+The Colorado Bandmasters Association (CBA) strictly enforces prop and adult volunteer regulations. #alert[Penalties directly deduct points from the students' score.] Adhere strictly to the following:
 
 #grid(
   columns: (1fr, 1fr),
@@ -243,19 +246,19 @@ The Colorado Bandmasters Association (CBA) strictly enforces prop and adult volu
     *Maximum 25 wristbands per band.* Every Adult Volunteer stepping past the gate must wear the official CBA wristband on their wrist (not in pocket or on badge). Prelims and Finals use different colors.
   ],
   rule-box(title: "Rule 5.02 — Rear Entrance Mandate")[
-    *Props must enter from the back sideline or rear end zone.* Never wheel props across the front boundary line (reserved strictly for pit/percussion equipment). Handlers transit perimeter tracks.
+    *Props must enter from the back sideline or rear end zone.* #alert[Never wheel props across the front boundary line] (reserved strictly for pit/percussion equipment). Handlers transit perimeter tracks.
   ],
   rule-box(title: "Rule 4.03 & 5.06 — 3:15 Setup Window")[
-    The introductory announcement begins 3 minutes 15 seconds after judge's entry signal. *ALL adults must be completely clear of the field before the announcement ends.* Target all Adult Volunteers off turf by *2:45*.
+    The introductory announcement begins 3 minutes 15 seconds after judge's entry signal. #alert[ALL adults must be completely clear of the field before the announcement ends.] Target all Adult Volunteers off turf by *2:45*.
   ],
   rule-box(title: "Rule 4.03 — In-Show Turf Prohibition")[
-    *Adult Volunteers are strictly forbidden from touching the field during the performance.* 0.2-point penalty per occurrence. Once you exit, remain behind the front sideline or rear perimeter track.
+    #alert[Adult Volunteers are strictly forbidden from touching the field during the performance] (0.2-point penalty per occurrence). Once you exit, remain behind the front sideline or rear perimeter track.
   ],
   rule-box(title: "Rule 8.05 — 2:00 Egress Clock")[
     Timing clock begins on final chord. All equipment and personnel must clear field boundaries within 2 minutes. Once past the gate/tunnel threshold, carts pause in the exit chute to load the duck blinds.
   ],
   rule-box(title: "Rule 8.05 — Double-Bagged Sandbags")[
-    All ballast sandbags must be heavy-duty and double-bagged with intact plastic inner liners. Leaking sand on synthetic turf results in severe facility fines and competition penalties.
+    All ballast sandbags must be heavy-duty and double-bagged with intact plastic inner liners. #alert[Leaking sand on synthetic turf results in severe facility fines and competition penalties.]
   ]
 )
 
@@ -385,11 +388,11 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
   + *Move to Staging Area:* Move props and carts to the designated staging area at the designated staging time.
   + *Pre-Show Inspection:* Meet at the Staging Area 45 minutes prior to show time. Conduct a visual inspection of the cart, screen racks, and latches. Confirm sandbag quantity in the hopper matches the Ballast Schedule above (e.g., 8–16 bags for Tier 1; 24 bags for Tier 2; 32 bags for Tier 3). Push cart to the ready area as directed by the Prop Lead. Meet your assigned Student Unloader who will join you following their warm-ups.
   + *Field Staging A:* When directed by the on-field judge, enter the gates and stage at the prescribed location.
-  + *Field Staging B:* When directed by the on-field judge, move to the defined yard line along the back sideline. *DO NOT CROSS THE SIDELINE MARKERS.* Doing so will immediately invoke an official penalty.
+  + *Field Staging B:* When directed by the on-field judge, move to the defined yard line along the back sideline. #alert[CRITICAL BOUNDARY RULE: DO NOT CROSS THE SIDELINE MARKERS.] Doing so will immediately invoke an official penalty.
   + *Field Ingress & Directional Delivery:* When the CBA judge signals entry permission, push the cart forward toward the front sideline with your Student Unloader. When you reach the front sideline, turn and walk along the front sideline, pausing 6–8 seconds at each 2-yard mark while the unloader deposits one folded screen and sandbags to the pre-set student receiver.
-  + *In-Show Standby at Sideline Boundary:* Once the 8th screen is delivered, immediately push the empty cart across the front boundary into the front staging area. *You must be completely off the turf before the 2:15 mark.* Park the cart ready for post-show egress. *Stay with your cart at the boundary for the entire performance.* Never step onto the turf during the show (Rule 4.03 penalty).
+  + *In-Show Standby at Sideline Boundary:* Once the 8th screen is delivered, immediately push the empty cart across the front boundary into the front staging area. *You must be completely off the turf before the 2:15 mark.* Park the cart ready for post-show egress. *Stay with your cart at the boundary for the entire performance.* #alert[Never step onto the turf during the show (Rule 4.03 penalty).]
   + *Post-Show Ballast Sweep:* Once the show is completed, re-enter the front sideline at the far screen and move along the line of ballast bags you previously deposited. Scoop ballast bags placed on the turf by students directly into the cart hopper as you advance without doubling back. A student will be assigned to assist you in getting this done timely.
-  + *Exit Chute Cart Loading:* We will be pausing at the exit chute with the carts to load the blinds. *DO NOT STOP FOR ANY LONGER THAN NECESSARY TO QUICKLY LOAD THE BLINDS.*
+  + *Exit Chute Cart Loading:* We will be pausing at the exit chute with the carts to load the blinds. #alert[DO NOT STOP FOR ANY LONGER THAN NECESSARY TO QUICKLY LOAD THE BLINDS.]
   + *Return to Staging Area or Truck:* Return the carts to the staging area (between Prelims and Finals), or directly to the trailer/truck if after Finals.
   + *Final Performance Teardown & Loading:* At the end of the final performance, tear down all equipment and assist with loading the truck and trailer.
 ]
@@ -491,7 +494,7 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
   + *Immediate Teardown on Final Show Chord:*
     - After the show as directed by your section leader:
       - *Safe Ballast Placement:* Lift all sandbags off the rear ground rail and unclip any hanging bags; place them gently onto the synthetic turf next to the rail.  
-        #text(weight: "bold", fill: rgb("#c53030"))[CRITICAL SAFETY MANDATE: NEVER THROW OR DROP SANDBAGS.] Dropping sandbags causes severe seam rupture and leaks sand, resulting in CBA score penalties. Place bags gently on the turf. Leave them in place for the Adult Cart Pusher to scoop during their sweep.
+        #alert[CRITICAL SAFETY MANDATE: NEVER THROW OR DROP SANDBAGS.] Dropping sandbags causes severe seam rupture and leaks sand, resulting in CBA score penalties. Place bags gently on the turf. Leave them in place for the Adult Cart Pusher to scoop during their sweep.
       - *Disengage Latches & Clips:* Disengage inter-screen side latches. Disengage snap clips (*I*) from Rail 3. Swing the cross arms up into alignment with the rear brace.
       - *Collapse Screen:* Swing the rear triangular brace flat against the front display frame.
   + *The 35-Second Egress Sprint:*
@@ -540,8 +543,8 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
       [Tier 1], [8 – 12], [4 bags (2 per wing post, 60 lb ballast)], [None],
       [Tier 2], [12 – 18], [6 bags (3 per wing post, 90 lb ballast)], [None],
       [Tier 3], [18 – 22], [6 bags (3 per wing post, 90 lb ballast)], [3 bags flat across rear 2x4 rail (45 lb)],
-      table.cell(colspan: 2)[#text(weight: "bold", fill: rgb("#c53030"))[Tier 4 (>20 mph)]],
-      table.cell(colspan: 2)[#text(weight: "bold", fill: rgb("#c53030"))[ABSOLUTE NO-GO — Keep Locked in Equipment Trailer]],
+      table.cell(colspan: 2)[#alert[Tier 4 (>20 mph)]],
+      table.cell(colspan: 2)[#alert[ABSOLUTE NO-GO — Keep Locked in Equipment Trailer]],
     )
   ]
 
@@ -552,9 +555,9 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
   + *Ballast Installation & Pre-Staging Inspection:* Confirm the day's wind tier with the Prop Lead. Seat double-bagged 15-lb sandbags securely over the two vertical iron pipe posts on each cart per the table above (4 bags for Tier 1; 6 bags for Tier 2; 6 wing + 3 rear rail bags for Tier 3). Inspect swivel casters and confirm caster foot brakes are in the unlocked (UP) position for transit.
   + *Transport to Staging Area:* Lead the transport of all 10 ballasted backdrops from the trailer lot to the designated staging area at the designated staging time. Park carts in numerical order (#1 through #10) and engage wheel brakes.
   + *Student Rendezvous & Supervision at Staging Area:* Meet the assigned Student Backdrop Pushers (2–4 students per backdrop) at the staging area 45 minutes prior to show time. Confirm each student team knows their backdrop number, entry queue sequence, and field position. Supervise and assist the students as they prepare for gate movement.
-  + *Adult Field Boundary Rule:* Adults do not push backdrops onto the field. Move with the students onto the field during setup to assist any that need help and check field placement, and then quickly move off the field to the adult volunteer waiting area in front of the front sideline. *Never step onto the turf during the show (Rule 4.03 penalty).*
+  + *Adult Field Boundary Rule:* Adults do not push backdrops onto the field. Move with the students onto the field during setup to assist any that need help and check field placement, and then quickly move off the field to the adult volunteer waiting area in front of the front sideline. #alert[Never step onto the turf during the show (Rule 4.03 penalty).]
   + *Post-Show Reception & Return to Trailer:* Meet the student pushers as they return with the backdrops to the staging area following their end zone egress. Take custody of the backdrops from the students so they can rejoin the band block. Push the backdrops back to the staging area (between Prelims and Finals) or to the equipment trailer (after Finals).
-  + *Post-Finals Disassembly Supervision:* Direct the safe deballasting (never drop or throw) and mechanical disassembly of frames for secure trailer packing.
+  + *Post-Finals Disassembly Supervision:* Direct the safe deballasting (#alert[never drop or throw sandbags]) and mechanical disassembly of frames for secure trailer packing.
   + *Trailer Loading:* Assist the transport team with the secure loading of the trailer for return to Pine Creek.
   + *Trailer Unloading:* Return to Pine Creek and assist with the unloading of the trailer and storage of the props.
 ]
@@ -585,10 +588,10 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
   + *Perimeter Transit to Back Sideline:*
     - When directed by the Adult Managers / Prop Lead, take custody of your backdrop and roll it along the designated perimeter track toward the rear stadium entrance gate.
     - Queue in strict numerical order (#1 at front, #10 at rear).
-    - Always push using the steel frame uprights. *NEVER push directly against the vinyl display face.*
+    - Always push using the steel frame uprights. #alert[NEVER push directly against the vinyl display face.]
   + *Back Sideline Staging:*
     - Move through the rear gate and stage along the back sideline directly in line with your final field coordinate.
-    - *CRITICAL BOUNDARY RULE: DO NOT CROSS THE BACK SIDELINE MARKERS.* Keep cart wheels completely behind the sideline until the on-field judge gives official entry permission. Doing so will immediately invoke a CBA penalty.
+    - #alert[CRITICAL BOUNDARY RULE: DO NOT CROSS THE BACK SIDELINE MARKERS.] Keep cart wheels completely behind the sideline until the on-field judge gives official entry permission. Doing so will immediately invoke an official CBA penalty.
   + *Field Ingress & Positioning:*
     - When the CBA judge signals entry permission, push your backdrop briskly straight forward onto the field toward your marked coordinate.
     - Steer smoothly; avoid sharp pivots that could scrub or tear synthetic turf infill.
@@ -626,8 +629,8 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
     - If any sandbags were placed as wheel chocks, move them to the iron posts for transport.
   + *Straight-Line Egress to Front Half of End Zone:*
     - Push the backdrop in a straight line toward the closest point located on the *front half of the end zone* (away from the backfield pit/battery flow per CBA field clearance routing).
-    - Maintain brisk, continuous forward momentum. *NEVER stop on the turf to adjust equipment, rest, or talk.*
-    - Push strictly by the steel uprights; *never push against the vinyl graphic face*.
+    - Maintain brisk, continuous forward momentum. #alert[NEVER stop on the turf to adjust equipment, rest, or talk.]
+    - Push strictly by the steel uprights; #alert[never push against the vinyl graphic face].
   + *Continuous Motion Past Gate to Staging Area:*
     - Roll through the end zone boundary line and directly into the stadium exit gate / tunnel chute.
     - Roll the backdrop along the perimeter path directly to the designated staging area as directed by the Adult Backdrop Managers.
@@ -686,7 +689,7 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
   + *Label Verification & Lineup Order:* Verify that every stage piece and staircase is clearly labeled for its field position (Platform \#1–\#4, Front "F" vs Back "B", Staircase \#1–\#4). *Lineup order is critical:* organize pieces in strict entry sequence with front pieces leading, back pieces following, and assigned staircases queued directly behind.
   + *Transport to Staging Area:* Lead the transport of all 8 stage pieces and 4 staircases (rolled on their sides on dedicated casters) from the trailer lot to the designated staging area at the designated staging time. Park pieces in lineup order and engage wheel brakes.
   + *Student Handler Rendezvous & Supervision:* Meet the 16 Student Stage Handlers and 8 Student Staircase Handlers at the staging area 45 minutes prior to show time. Confirm each student team knows their assigned label, lineup position, and field coordinate. Supervise and assist the students as they prepare for gate movement.
-  + *On-Field Setup & Boundary Rule:* Adults do not push props onto the field (students push). Move with the students onto the field during setup to assist any that need help, verify piece alignment, ensure the vinyl seam flap is velcroed flat, and confirm staircases are seated with minimal gap to the platform. *Quickly move off the field before the performance begins to the adult volunteer waiting area in front of the front sideline. Never step onto the turf during the show (Rule 4.03 penalty).*
+  + *On-Field Setup & Boundary Rule:* Adults do not push props onto the field (students push). Move with the students onto the field during setup to assist any that need help, verify piece alignment, ensure the vinyl seam flap is velcroed flat, and confirm staircases are seated with minimal gap to the platform. Quickly move off the field before the performance begins to the adult volunteer waiting area in front of the front sideline. #alert[Never step onto the turf during the show (Rule 4.03 penalty).]
   + *Post-Show Reception & Return to Trailer:* Meet the student handlers at the staging area following their end zone egress. Take custody of the stage pieces and staircases so students can rejoin the band block. Push props back to the staging area (between Prelims and Finals) or to the equipment trailer (after Finals).
   + *Post-Finals Disassembly Supervision:* Direct the careful removal of vinyl coverings and mechanical disassembly of stage pieces and staircases per their manuals for secure trailer packing.
   + *Trailer Loading & Unloading:* Assist the transport team with the secure loading of the trailer for return to Pine Creek, and return to Pine Creek to assist with unloading and prop storage.
@@ -718,7 +721,7 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
     - When directed by the Adult Stage Managers / Prop Lead, roll your piece along the perimeter track toward the rear stadium entrance gate.
     - *Queue in strict labeled lineup order:* Front pieces (\#F) must lead immediately ahead of their corresponding back pieces (\#B).
     - Stage along the back sideline directly in line with your final field coordinate.
-    - *CRITICAL BOUNDARY RULE: DO NOT CROSS THE BACK SIDELINE MARKERS.* Keep wheels completely behind the sideline until the on-field judge signals official entry permission.
+    - #alert[CRITICAL BOUNDARY RULE: DO NOT CROSS THE BACK SIDELINE MARKERS.] Keep wheels completely behind the sideline until the on-field judge signals official entry permission.
   + *Field Ingress & Front Piece Positioning:*
     - When the CBA entry signal is given, push your piece briskly straight forward onto the field toward your marked coordinate.
     - *Front Half (\#F) Team:* Roll directly onto your coordinate mark, align the front edge flush with the yard line and hash mark specified on your sheet, and *immediately step on all caster foot brake levers to lock wheels.*
@@ -766,7 +769,7 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
     - When directed by the Adult Stage Managers / Prop Lead, push your staircase along the perimeter track toward the rear stadium entrance gate.
     - *Queue in sequence immediately behind your assigned Stage Platform:* The two stage platform pieces (\#F and \#B) lead first, followed immediately by their assigned staircase (\#1 through \#4).
     - Stage along the back sideline directly in line with your final stage field coordinate.
-    - *CRITICAL BOUNDARY RULE: DO NOT CROSS THE BACK SIDELINE MARKERS.* Keep casters completely behind the sideline until the on-field judge signals official entry permission.
+    - #alert[CRITICAL BOUNDARY RULE: DO NOT CROSS THE BACK SIDELINE MARKERS.] Keep casters completely behind the sideline until the on-field judge signals official entry permission.
   + *Field Ingress & Standby Behind Stage:*
     - When the CBA entry signal is given, push your staircase briskly straight forward onto the field following directly behind your stage platform pieces.
     - Hold the staircase on its side 5 to 10 feet behind the stage mark while the Stage Handlers (Job C.2) align the front and back pieces, lock casters, and seal the center velcro seam.
@@ -774,7 +777,7 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
     - Once the stage platform pieces are fully locked and rigid, push your staircase up to its designated access side.
     - With both students coordinating firmly, carefully flip the staircase from its transport side onto its bottom base.
     - Using the built-in lifting handles, lift and slide the staircase snugly into its final position against the stage platform framing.
-    - *CRITICAL FIT CHECK:* Minimize any physical gap between the top stair tread and the stage platform decking. Ensure the staircase rests completely flat, level, and stable on the turf.
+    - #alert[CRITICAL FIT CHECK:] Minimize any physical gap between the top stair tread and the stage platform decking. Ensure the staircase rests completely flat, level, and stable on the turf.
   + *Transition to Opening Performance Position:*
     - Briskly transition to your opening drill position before the introductory announcement ends. You are now cleared for the show!
   + *Post-Show Rendezvous & Flip to Transport:*
@@ -812,7 +815,7 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
       - *Windy.com / Windy App:* Set display units to MPH. Displays real-time surface wind animations, local airport readings, and forecasted wind gusts at stadium coordinates.
       - *Weather Underground (Wunderground):* Search the venue address to view live 1-minute wind and gust readings from Personal Weather Stations (PWS) in the stadium's immediate neighborhood.
     - *Wind Tier Authorization:* Authorize the day's operational wind tier (Tier 0 through Tier 3) and direct ballast loading across carts and backdrops per the Ballast Schedules.
-    - *HARD RULE:* If sustained winds exceed 20 mph OR gusts reach 25–30 mph, issue an immediate *NO-GO* directive. Props remain locked in trailers. Notify Band Directors immediately.
+    - #alert[HARD RULE: If sustained winds exceed 20 mph OR gusts reach 25–30 mph, issue an immediate NO-GO directive.] Props remain locked in trailers. Notify Band Directors immediately.
   + *Judge Liaison & Gate Release:*
     - Coordinate directly with the CBA Timing & Penalty (T&P) judge at the stadium gate.
     - Confirm official clock start protocols and verify gate chute clearances.
@@ -820,7 +823,7 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
   + *The 2:45 Clearance Call & Field Safety:*
     - Monitor stopwatch from the moment props cross the gate boundary.
     - At the 2:30 mark, loudly call *"PROPS CLEAR!"* down the sideline and confirm all 6 Prop Crew Adult Volunteers (and nearby Pit crew adults) are moving behind boundary lines.
-    - Ensure 100% of adult personnel are completely off the turf and across the front/back sideline markers before the 3:15 announcement begins (*strictly avoid Rule 4.03 penalties*).
+    - Ensure 100% of adult personnel are completely off the turf and across the front/back sideline markers before the 3:15 announcement begins #alert[(strictly avoid Rule 4.03 penalties)].
   + *Exit Chute & Traffic Management:*
     - Position yourself at the stadium exit gate during post-show egress.
     - Ensure continuous rolling motion through the tunnel chute per CBA Rule 8.05; prevent student or cart bottlenecks.
@@ -837,7 +840,7 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
 
 All teardown and packdown procedures occur *exclusively in the equipment trailer parking lot* after clearing the stadium exit gate.  The transportation team is responsible for all loading activity, and will direct props personnel in the correct loading method and sequence.
 
-+ *Deballasting Safety:* Remove sandbags from backdrop retention posts and duck blind carts. Place bags gently into the designated area inside the equipment trailer. *Never drop or throw sandbags* (protects seams and plastic liners).
++ *Deballasting Safety:* Remove sandbags from backdrop retention posts and duck blind carts. Place bags gently into the designated area inside the equipment trailer. #alert[Never drop or throw sandbags] (protects seams and plastic liners).
 + *Screen Packing:* Stack collapsed sideline screens and backdrop screens onto the truck cross braces, and secure.
 + *All-Clear Check:* Inspect the staging lot for personal belongings, water bottles, and tools. Verify all adult volunteer wristbands across prop and pit crews are accounted for before departing.
 
