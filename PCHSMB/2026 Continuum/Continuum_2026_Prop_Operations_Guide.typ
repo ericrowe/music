@@ -172,7 +172,7 @@ Because Pine Creek High School operates in the high-altitude, wind-prone environ
 #nogo-box[
   #alert[HARD RULE: If sustained winds exceed 20 mph OR gusts are forecasted/reported at 25–30 mph, PROPS DO NOT LEAVE THE TRUCK/TRAILER.]
   
-  Last season confirmed that props in >20 mph winds create unacceptable safety risks for students and handlers. When this threshold is met, the Prop Lead makes an immediate #alert[NO-GO] call. Props remain securely locked in the equipment trailer or behind stadium bleachers. *The band performs a clean visual show without props.* There is no middle ground, and no emergency lay-flat abort on the field is permitted—if high winds are even possible, props stay off the turf.
+  Last season confirmed that props in >20 mph winds create unacceptable safety risks for students and handlers. When this threshold is met, the Prop Lead makes an immediate #alert[NO-GO] call. Props remain securely locked in the equipment trailer or behind stadium bleachers. *The band performs a clean visual show without props.* If high winds are even possible, props stay off the turf.
 ]
 
 #v(2pt)
@@ -190,11 +190,6 @@ Because Pine Creek High School operates in the high-altitude, wind-prone environ
   [🟠 *Tier 3: High-Wind*], [18 – 22 mph], [4 bags (2 ground + 2 hanging)], [9 bags (6 wing + 3 rear rail)], [*CAUTION* (Max Limit)],
   [🔴 #alert[Tier 4: Abort]], [#alert[> 20 mph sust.] \ or #alert[> 25 mph gusts]], table.cell(colspan: 2)[#alert[ABSOLUTE NO-GO.] Props remain in trailer / truck. Field props will not be fielded. Prop Lead notifies Directors.], [#alert[NO-GO] (Hold in Truck)],
 )
-
-#v(3pt)
-#callout(title: "Why There Is No Emergency Lay-Flat Plan in This Handout")[
-  Previous operational drafts included field procedures for laying props flat on the turf during sudden gusts. For Adult Volunteer safety and competition clarity, *that procedure has been retired.* If 25–30 mph gusts are even remotely possible, the props will never be staged or moved onto the field.
-]
 
 #pagebreak()
 
