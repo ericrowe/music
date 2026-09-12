@@ -141,7 +141,7 @@
   #text(size: 14pt, weight: "bold", fill: rgb("#2b6cb0"))[2026 Production: *Continuum* — Field Prop Operations Guide]
   #v(-2pt)
   #text(size: 9pt, style: "italic", fill: rgb("#718096"))[
-    Simplified Volunteer Handbook & Step-by-Step Competition Day Procedures
+    Volunteer Handbook with Step-by-Step Competition Day Procedures
   ]
 ]
 
