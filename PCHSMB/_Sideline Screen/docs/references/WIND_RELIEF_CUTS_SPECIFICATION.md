@@ -6,7 +6,6 @@
 **Parent Subproject README:** [`../../README.md`](../../README.md)  
 **Status:** Engineering Standard & Review Recommendation  
 **Date:** September 2026  
-**Skill Reference:** [`$calculate-prop-wind-loading`](../../../.agents/skills/calculate-prop-wind-loading/SKILL.md)  
 
 ---
 
@@ -14,276 +13,249 @@
 
 This specification establishes the official engineering standard for wind relief cuts in the custom-printed scrim vinyl banners of the PCHSMB Sideline Screen / Duck Blind fleet (16 screens total).
 
-| Parameter | Final Engineering Recommendation | Evaluation vs. Alternatives |
+| Parameter | Recommendation | Engineering Justification |
 |---|---|---|
-| **Shape Geometry** | **True Semicircular Flap** ($180^\circ$ circular arc) | **Strongly preferred over oval / elongated-U shapes.** Provides single-radius fabrication simplicity, uniform gravity-return stiffness (no tip curl/sag), zero notch risers at endpoints, and 100% tooling commonality across band prop fleets. |
-| **Flap Dimensions** | **$8.0\text{ in.}$ Chord Width $\times 4.0\text{ in.}$ Downward Drop** (Radius $R = 4.0\text{ in.}$) | Matches exact radius and tooling used on the PCHSMB Rolling Backdrop fleet. Compact 4.0" drop prevents thermal sagging while providing $25.13\text{ sq in.}$ vent area per flap. |
-| **Quantity & Layout** | **6 Flaps organized as a 2 Row × 3 Column Grid** | 6 flaps yield $1.047\text{ sq ft}$ total vent area (**$3.43\%$ of the $30.5\text{ sq ft}$ sail area**). Drops overall prop drag coefficient from $C_d = 1.20$ to $C_d = 1.02$ (15.0% reduction in lateral drag and overturning moment). |
-| **Vertical Placement** | **Upper Venting Zone (Upper 42%–71% of frame: $20.0\text{ in.}$ to $34.0\text{ in.}$ above turf)** | Relieves aerodynamic pressure where overturning leverage ($z \times F$) is highest. Row 1 hinge at $Y = 34.0\text{ in.}$; Row 2 hinge at $Y = 24.0\text{ in.}$. Avoids bottom 18 in. and top 10 in. structural framing. |
-| **Horizontal Spacing** | **6-Cut Grid:** $X = 24.0\text{ in.}, 48.0\text{ in.}, 72.0\text{ in.}$ | Symmetrical distribution across 96" width; minimum 16" frame clearance from outer end rails B. |
-| **Graphic Clearance** | **$\pm 6\text{ to }12\text{ in.}$ Floating Offset Rule** | Center points may float horizontally into solid backgrounds, shadows, or negative space. **Strictly prohibited** from cutting through performer faces, show typography, or band logos. |
-| **Tear-Arrest Mandate** | **Pre-Punched $\varnothing 3/8\text{ in.}$ ($10\text{ mm}$) Circular Holes** | Two clean circular punch holes at chord endpoints **MUST** be executed prior to razor slicing. Eliminates sharp stress risers ($K_t \ge 3.0 \to 1.0$), permanently arresting tear propagation. |
+| **Shape** | **True Semicircular Flap** (180° circular arc) | **Strongly preferred over oval / elongated-U.** Single-radius layout, uniform gravity return without tip curl/sag, zero notch risers, and 100% tooling shared with Rolling Backdrops. |
+| **Dimensions** | **8.0" chord × 4.0" drop** (Radius R = 4.0") | Matches Rolling Backdrop radius and punch tools. Compact 4" drop prevents thermal sagging while venting 25.1 sq in per flap. |
+| **Count & Grid** | **6 Flaps (2 Rows × 3 Cols)** | 6 flaps = 1.05 sq ft (3.43% of face). Drops prop drag coefficient from Cd = 1.20 to 1.02 (15% load reduction) and suppresses turf sliding. |
+| **Vertical Zone** | **Upper Venting Zone (20.0" to 34.0" above turf)** | Relieves pressure where overturning leverage is highest. Row 1 hinge at Y = 34.0"; Row 2 hinge at Y = 24.0". Clears top frame rail by 10.5" and maintains 10" buffer above backstage equipment. |
+| **Horizontal Spacing** | **X = 24.0", 48.0", 72.0"** | Symmetrical spacing across 96" width; minimum 16" frame clearance from outer end rails and greenhouse snap clamps. |
+| **Graphic Clearance** | **±6" to 12" Floating Offset Rule** | Center points float into dark backgrounds or negative space. Strictly prohibited across performer faces, show typography, or crests. |
+| **Tear Arrest** | **Pre-Punched 3/8" (10 mm) Holes** | Clean circular punch holes at chord endpoints before razor cutting. Reduces stress concentration (Kt 3.0 → 1.0), stopping tears. |
 
 ---
 
-## 2. Baseline Aerodynamic & Mechanical Properties
+## 2. Aerodynamic Physics & Overturning Mechanics
 
-The Sideline Screen / Duck Blind is a folding triangular conduit structure resting directly on synthetic turf:
+### 2.1 The 30.5 sq ft Sail & Critical Stability Modes
 
-* **Nominal Face Dimensions:** $4.0\text{ ft H} \times 8.0\text{ ft W}$ ($48\text{ in.} \times 96\text{ in.}$)
-* **Actual Vinyl Sail Area ($A$):** $30.5\text{ sq ft}$ ($3.875\text{ ft H} \times 7.875\text{ ft W}$)
-* **Center of Pressure Height ($h_{cp}$):** $1.94\text{ ft}$ ($23.25\text{ in.}$ above ground at face centroid)
-* **Triangular Base Stance ($L_{base}$):** $2.29\text{ ft}$ ($27.5\text{ in.}$ between front ground rail and rear rail C)
-* **Dry Prop Weight ($W_{dry}$):** $26.0\text{ lbs}$ (EMT conduit, brackets, ASA hardware, vinyl banner)
-* **Dry Center of Gravity ($x_{cg}$):** $0.354\text{ ft}$ ($4.25\text{ in.}$) behind front bottom rail
-* **Restoring Moments (Unballasted):**
-  * **Backward Tipping (Front Wind):** $M_{rest, bwd} = 26.0\text{ lbs} \times (2.29 - 0.354)\text{ ft} = \mathbf{50.4\text{ ft-lb}}$ (tips at 18.9 mph solid / 20.5 mph with slits)
-  * **Forward Tipping (Rear Wind):** Heavy front frame sits on pivot; $M_{rest, fwd} = \mathbf{9.2\text{ ft-lb}}$ (tips at 8.1 mph solid / 8.8 mph with slits)
-* **Restoring Moments (Tier 1 Ballast — 2x 15-lb bags on Rear Rail C):**
-  * Placed at maximum leverage ($d = 2.29\text{ ft}$): $+68.7\text{ ft-lb}$ forward restoring moment
-  * Total Forward Restoring Moment: $9.2 + 68.7 = \mathbf{77.9\text{ ft-lb}}$ (tips at 23.5 mph solid / 25.5 mph with slits)
-* **Turf Sliding Friction Coefficient ($\mu$):** $0.35$ (smooth galvanized steel on artificial turf with crumb rubber infill)
+Each sideline screen presents a nominal $4.0\text{ ft high} \times 8.0\text{ ft wide}$ continuous solid face ($30.5\text{ sq ft}$ actual vinyl sail area). The center of aerodynamic pressure ($z_{cp}$) sits at approximately $1.94\text{ ft}$ ($23.25\text{ in.}$) above the athletic turf.
+
+The triangular folding conduit frame exhibits two critical stability failure modes:
+
+1. **Lateral Sliding on Synthetic Turf (The Primary Operational Failure Mode):**
+   - On artificial turf lubricated by cryogenic crumb-rubber infill, the friction coefficient against smooth galvanized EMT conduit is only $\mu \approx 0.35$.
+   - Under standard Tier 1 ballast (two 15-lb sandbags on rear rail C, $56.0\text{ lbs}$ total weight), **sliding begins at only $16.4\text{ mph}$**, well before overturning occurs.
+   - Adding semicircular relief cuts drops drag by 15%, raising the sliding threshold to **$17.8\text{ mph}$** ($+1.4\text{ mph}$ margin gain).
+
+2. **Forward Tipping Over Front Rail Under Rear Wind (Asymmetric Overturning Mode):**
+   - Because the vertical display face and inner structural rails rest directly over the front ground rail, the unballasted frame has an effective front restoring arm of only $4.25\text{ in.}$ ($M_{rest, fwd} = 9.2\text{ ft-lb}$).
+   - Unballasted, the screen tips forward at only **$8.1\text{ mph}$** (solid vinyl at Colorado Springs elevation).
+   - Standard Tier 1 ballast (two 15-lb bags on rear rail C, $2.29\text{ ft}$ lever arm) adds $+68.7\text{ ft-lb}$, bringing forward restoring torque to **$77.9\text{ ft-lb}$** ($23.5\text{ mph}$ solid / **$25.5\text{ mph}$ with slits**).
+
+```
+          [REAR WIND] ===>                       |=======================|
+                                                 |                       |
+                                                 |   4' x 8' VINYL       |
+                                                 |   DISPLAY FACE        |
+                                                 |                       |
+  [REAR RAIL C - BALLAST]                        |   (z_cp = 1.94 ft)    |
+  (2x 15-lb Sandbags)                            |                       |
+          v                                      |                       |
+  ========O======================================+=======================|
+          ^                   \                  ^
+      Rear Rail C              \ Support Arm E   Front Rail A
+   (2.29 ft Lever Arm)          \               (Zero Frame Arm)
+                                 \
+                         Clip (I) on Rail 3
+```
+
+### 2.2 Aerodynamic Benefit of Engineered Semicircular Relief Flaps
+
+When wind strikes the banner, the semicircular flaps open outward along their uncut top horizontal hinge chords. This provides five critical mechanical benefits:
+
+1. **Steady-State Drag Reduction:** Drops the net drag coefficient from $C_d = 1.20$ to $C_d = 1.02$ ($\sim 15.0\%$ reduction in lateral drag force and overturning moment).
+2. **Turf Sliding Suppression:** Lowers lateral drag at 18 mph from $23.6\text{ lbs}$ to $20.0\text{ lbs}$, expanding the safe turf-anchoring envelope by $+1.4\text{ to }+1.8\text{ mph}$.
+3. **Suppression of Destructive Vortex-Shedding Flutter:** Continuous vinyl surfaces suffer from coherent Strouhal vortex shedding (~0.8–1.2 Hz). Under sustained wind, this causes violent cyclic billow waves and negative suction (>3.0 psf) that pry perimeter greenhouse snap clamps off the 1/2" EMT tubing. Relief flaps bleed boundary-layer air, destroying coherent vortex formation.
+4. **Tensile Pull Relief on 3D-Printed Hinged Arm Clips (I):** Under headwind, bottom support arms (E) act in tension, pulling directly against the snap-fit ASA clips on Rail 3 ($h = 10\text{ in.}$). Relief cuts reduce tensile pull by 15% (from 33.9 lbs to 28.8 lbs per clip at 20 mph), preventing clip jaw unseating.
+5. **Two-Student Carry Dynamic Stability:** In the direct two-person carry protocol across the field, crosswinds generate up to 16.4 lbs of side thrust against the carried frame. Flaps bleed dynamic gusts, reducing wrist torquing and stumble hazards during field transit.
+
+### 2.3 Aerodynamic Stability Comparison (Colorado Springs: 6,500 ft ASL)
+
+Calculated using `.agents/skills/calculate-prop-wind-loading/scripts/analyze_wind_load.py` ($q = 0.001989 \cdot V^2\text{ psf}$, $\rho = 0.0595\text{ lb/ft}^3$):
+
+| Wind Tier | Ballast Config | Total Wt | Solid Limit (Slide / Tip) | With Slits (Slide / Tip) | Stability Gain |
+|---|---|:---:|:---:|:---:|:---:|
+| **Tier 0: Calm** (0–8 mph) | Unballasted (Dry) | 26 lb | 11.2 mph (slide) / 8.1 mph (tip) | **12.1 mph** / **8.8 mph** | **+0.9 mph / +0.7 mph** |
+| **Tier 1: Normal** (8–12 mph) | 1× 15-lb bag | 41 lb | 14.0 mph (slide) / 17.5 mph (tip) | **15.2 mph** / **19.0 mph** | **+1.2 mph / +1.5 mph** |
+| **Tier 1: Recommended** (8–14 mph) | 2× 15-lb bags | 56 lb | 16.4 mph (slide) / 23.5 mph (tip) | **17.8 mph** / **25.5 mph** | **+1.4 mph / +2.0 mph** |
+| **Tier 2: Advisory** (12–18 mph) | 3× 15-lb bags | 71 lb | 18.5 mph (slide) / 28.5 mph (tip) | **20.0 mph** / **30.9 mph** | **+1.5 mph / +2.4 mph** |
+| **Tier 3: High-Wind** (18–22 mph) | 4× 15-lb bags | 86 lb | 20.3 mph (slide) / 32.8 mph (tip) | **22.1 mph** / **35.6 mph** | **+1.8 mph / +2.8 mph** |
+
+*At sea level venues (e.g., BOA Grand Nationals in Indianapolis), air is $\sim 23\%$ denser; semicircular slits ensure Tier 1 (2-bag) ballast maintains turf stability up to $16.1\text{ mph}$ sliding (vs. $14.8\text{ mph}$ solid).*
 
 ---
 
-## 3. Wind Loading Comparison: Solid Vinyl vs. Relieved Vinyl
+## 3. Shape Analysis: Semicircular vs. Oval / Elongated-U Geometry
 
-### 3.1 Aerodynamic Drag Formulation
-Dynamic velocity pressure ($q$) is governed by Bernoulli's equation scaled for Colorado Springs ($6,500\text{ ft}$ ASL, air density $\rho = 0.0595\text{ lb/ft}^3$):
+The initial draft specification referenced "inverted-U crescent flaps ($8\text{ in. wide} \times 5–6\text{ in. drop}$)". A thorough engineering review reveals that an **exact semicircular geometry is vastly superior to oval, parabolic, or elongated-U geometries** across every functional dimension.
 
-$$q = \frac{1}{2} \left(\frac{\rho}{g_c}\right) (1.4667 \cdot V_{\text{mph}})^2 = 0.001989 \cdot V_{\text{mph}}^2\text{ (psf)}$$
+```
+       SEMICIRCULAR GEOMETRY                     OVAL / ELONGATED-U GEOMETRY
+           (RECOMMENDED)                               (DISCOURAGED)
 
-* **Solid Vinyl Flat Plate:** Drag coefficient $C_d = 1.20$
-* **Engineered Crescent Slits:** Drag coefficient $C_d = 1.02$ (**15.0% drag reduction**)
-* **Lateral Wind Force:** $F_{\text{wind}} = q \cdot C_d \cdot A$
-* **Overturning Moment:** $M_{\text{wind}} = F_{\text{wind}} \cdot h_{cp}$ ($h_{cp} = 1.94\text{ ft}$)
+       Uncut Top Hinge Chord                       Uncut Top Hinge Chord
+       |<------ 8.0" ------>|                      |<------ 8.0" ------>|
+     (O)==================(O)                    (O)==================(O)
+      \         |          /                      |         |          |
+       \     R=4.0"       /                       |         |          |  Straight
+        \       |        /                        |         |          |  vertical legs
+         \      v       /                         \      Drop=6.0"     /
+          \____________/                           \        |         /
+            True Arc                                \_______v________/
+          (Uniform Drop)                               Elongated Tip
+                                                  (Prone to Curling & Sag)
+```
 
-### 3.2 Dynamic Force & Moment Table (6,500 ft ASL)
+### 3.1 Detailed Comparative Evaluation
 
-| Wind Speed ($V$) | Velocity Pressure ($q$) | Solid Drag ($F_w$) | Relieved Drag ($F_w$) | Solid Moment ($M_w$) | Relieved Moment ($M_w$) | Lateral Drag Reduction |
+| Criteria | Semicircle (8" W × 4" D, R=4") | Oval / Elongated-U (8" W × 5–6" D) | Verdict |
+|---|---|---|---|
+| **Geometry & Tooling** | **Single radius (R = 4").** Defined by center point and radius. Scribed with compass or 3D disk. | **Dual-axis or composite curve.** Requires straight cuts transitioning into a bottom arc. | **Semicircle:** Simple, zero layout confusion for volunteers. |
+| **Fleet Tooling Commonality** | **Identical to Rolling Backdrops.** 10 rolling backdrops use identical R = 4" semicircles. | **Incompatible.** Requires separate templates and volunteer instructions. | **Semicircle:** One standardized jig across the whole program. |
+| **Hang & Camouflage** | **Hangs 100% flat.** Aspect ratio D/W = 0.50. High beam stiffness prevents tip droop in heat. | **Prone to tip curl & sag.** Aspect ratio D/W = 0.63–0.75. Tongue sags in 130°F+ turf heat. | **Semicircle:** Flap remains invisible from spectator stands. |
+| **Tear Arrest & Tangency** | **180° smooth tangency.** Sweeps into pre-punched 3/8" holes with exact vertical tangency. | **Corner notch risk.** Straight legs to bottom curve often leave micro-notches at holes. | **Semicircle:** Eliminates stress risers (Kt → 1.0). |
+| **Flap Dynamics** | **Clean hinge action.** Symmetrical arc swings open and falls flush without catching. | **Edge catching.** Elongated tongue can twist laterally in gusts and snag on edges. | **Semicircle:** Reliable one-way check-valve action. |
+
+---
+
+## 4. Size Recommendation & Evaluation
+
+| Option | Dimensions (Radius) | Area / Flap | Vent Area (6 Flaps) | Recommendation |
+|---|---|:---:|:---:|---|
+| **Option 1 (Fleet Standard)** | **8.0" W × 4.0" drop** (R = 4.0") | 25.1 sq in (0.175 sq ft) | **1.05 sq ft (3.43%)** | **PRIMARY STANDARD.** Shared Rolling Backdrop tooling; optimal stiffness; zero sag; compact footprint. |
+| **Option 2 (Approved Minimal)** | **10.0" W × 5.0" drop** (R = 5.0") | 39.3 sq in (0.273 sq ft) | **1.64 sq ft (5.37%)** | **APPROVED ALTERNATIVE.** Higher vent area for 6 cuts; slightly larger cut profile. |
+| **Option 3 (Discouraged)** | **12.0" W × 6.0" drop** (R = 6.0") | 56.5 sq in (0.393 sq ft) | **2.36 sq ft (7.73%)** | **DISCOURAGED.** Large cuts disrupt artwork; heavier flap prone to chatter/sag in heat. |
+
+### Rationale for Standardizing on 8.0" × 4.0" ($R = 4.0"$)
+1. **Tooling Efficiency:** PCHSMB volunteers build 16 Sideline Screens and 10 Rolling Backdrops. Standardizing on an $8.0\text{ in.}$ chord and $R = 4.0\text{ in.}$ ensures that volunteers only need one size rotary punch ($\varnothing 3/8"$) and one 3D-printed cutting guide or compass setting across both prop fleets.
+2. **Structural Banner Integrity & Camouflage:** An $8.0\text{ in.}$ cut with a $4.0\text{ in.}$ drop preserves the structural tension of the vinyl banner across the conduit span and navigates easily around printed graphic elements.
+3. **Backstage Equipment Concealment:** The compact $4.0\text{ in.}$ drop keeps the lowest flap apex at $Y = 20.0\text{ in.}$, providing a full $10.0\text{ in.}$ vertical safety margin above staged color guard floor equipment ($Y \le 10.0\text{ in.}$).
+4. **Optimal Vent Percentage:** 6 flaps total **$1.047\text{ sq ft}$** ($3.43\%$ of the face), landing squarely within the proven 3.0% to 5.0% aerodynamic threshold for boundary layer pressure relief.
+
+---
+
+## 5. Positioning & Coordinate Layout Recommendation
+
+### 5.1 Vertical Zonation (Overturning Moment Mechanics & Concealment Buffer)
+
+Overturning moment is the product of lateral force and elevation ($M = F \cdot z$). Relieving aerodynamic drag higher on the frame delivers superior overturning stability:
+- **Upper Row (Row 1):** Centered at **$Y = 34.0\text{ in.}$** ($2.83\text{ ft}$ above turf). Hinge sits $8.0\text{ in.}$ below upper inner rail 2 and $10.5\text{ in.}$ below top perimeter rail 1.
+- **Lower Row (Row 2):** Centered at **$Y = 24.0\text{ in.}$** ($2.00\text{ ft}$ above turf). Bottom apex reaches down to $Y = 20.0\text{ in.}$, maintaining a $10.0\text{ in.}$ buffer above lower rail 3.
+- **Excluded Zones:**
+  - *Top Perimeter Tension Band ($Y > 36.0\text{ in.}$):* Avoided to preserve vinyl tension under top greenhouse snap clamps.
+  - *Bottom Tension & Latch Line ($Y < 18.0\text{ in.}$):* Avoided to prevent interference with Rail 3 ($Y = 10.0\text{ in.}$) where Hinged Arm Clips (I) latch during field deployment.
+  - *Backstage Equipment Zone ($Y \le 10.0\text{ in.}$):* Color guard rifles, sabres, and floor equipment lie below $Y = 10.0\text{ in.}$; positioning all cuts at $Y \ge 20.0\text{ in.}$ guarantees 100% equipment concealment from spectator sightlines.
+
+### 5.2 Perimeter & Frame Clearances
+- **Frame Clearance:** Outer end rails (B) are located at $X = 0\text{ in.}$ and $X = 92.5\text{ in.}$. Flaps maintain at least **$16.5\text{ in.}$ clearance** from outer upright rails ($20.0\text{ in.} \le X \le 76.0\text{ in.}$).
+- **Support Arm Clearance:** Folding support arms (E) attach between rail 3 and rear rail C behind the lower portion of the screen; all cuts are well above the arm swing paths.
+- **Snap Clamp Clearance:** Greenhouse snap clamps secure the banner along top rail 1 and bottom ground rail. All cuts maintain at least $10\text{ in.}$ clearance from perimeter clamp locations.
+
+---
+
+### 5.3 Exact Coordinate Layouts
+
+```
+   0"          24.0"                   48.0"                   72.0"         96.0"
+  +-------------+-----------------------+-----------------------+-------------+
+  | [Rail 1] Top Perimeter Frame Rail (Y = 44.5")                             | 48"
+  |   (Unvented Upper Tension Band: Y = 36" to 44.5")                         |
+  |                                                                           |
+  |          (O)==(O)                (O)==(O)                (O)==(O)         |
+  |           \___/                   \___/                   \___/           | 34" (Row 1)
+  |                                                                           |
+  |                                                                           |
+  |          (O)==(O)                (O)==(O)                (O)==(O)         |
+  |           \___/                   \___/                   \___/           | 24" (Row 2)
+  |                                                                           |
+  |   (Unvented Lower Band: Y = 0" to 18" -- Conceals Floor Equipment)        |
+  | [Rail 3] Lower Inner Frame Rail / Clip Latch Line (Y = 10.0")             |
+  +---------------------------------------------------------------------------+ 0" (Turf Line)
+```
+
+#### 6-Flap Fleet Standard (2 Rows × 3 Columns) — [RECOMMENDED]
+
+*Best aerodynamic distribution; 100% tooling unification with Rolling Backdrops.*
+
+| Cut | Row | Height (Y) | Center (X) | Punch Holes at X | Arc Bottom (Y) | Clear Span from Ground |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **8 mph** | $0.13\text{ psf}$ | $4.7\text{ lbs}$ | $4.0\text{ lbs}$ | $9.0\text{ ft-lb}$ | $7.7\text{ ft-lb}$ | **$-0.7\text{ lbs}$** |
-| **10 mph** | $0.20\text{ psf}$ | $7.3\text{ lbs}$ | $6.2\text{ lbs}$ | $14.1\text{ ft-lb}$ | $12.0\text{ ft-lb}$ | **$-1.1\text{ lbs}$** |
-| **12 mph** | $0.29\text{ psf}$ | $10.5\text{ lbs}$ | $8.9\text{ lbs}$ | $20.3\text{ ft-lb}$ | $17.3\text{ ft-lb}$ | **$-1.6\text{ lbs}$** |
-| **15 mph** | $0.45\text{ psf}$ | $16.4\text{ lbs}$ | $13.9\text{ lbs}$ | $31.8\text{ ft-lb}$ | $27.0\text{ ft-lb}$ | **$-2.5\text{ lbs}$** |
-| **18 mph** | $0.64\text{ psf}$ | $23.6\text{ lbs}$ | $20.0\text{ lbs}$ | $45.8\text{ ft-lb}$ | $38.9\text{ ft-lb}$ | **$-3.6\text{ lbs}$** |
-| **20 mph** | $0.80\text{ psf}$ | $29.1\text{ lbs}$ | $24.8\text{ lbs}$ | $56.5\text{ ft-lb}$ | $48.0\text{ ft-lb}$ | **$-4.3\text{ lbs}$** |
-| **22 mph** | $0.96\text{ psf}$ | $35.2\text{ lbs}$ | $29.9\text{ lbs}$ | $68.4\text{ ft-lb}$ | $58.1\text{ ft-lb}$ | **$-5.3\text{ lbs}$** |
-| **25 mph** | $1.24\text{ psf}$ | $45.5\text{ lbs}$ | $38.7\text{ lbs}$ | $88.3\text{ ft-lb}$ | $75.0\text{ ft-lb}$ | **$-6.8\text{ lbs}$** |
-| **30 mph** | $1.79\text{ psf}$ | $65.5\text{ lbs}$ | $55.7\text{ lbs}$ | $127.1\text{ ft-lb}$ | $108.0\text{ ft-lb}$ | **$-9.8\text{ lbs}$** |
+| **F-1** | Row 1 (Upper) | 34.0" (2.83 ft) | 24.0" (2.0 ft) | 20.0" and 28.0" | 30.0" (2.50 ft) | 30.0 in. |
+| **F-2** | Row 1 (Upper) | 34.0" (2.83 ft) | 48.0" (4.0 ft) | 44.0" and 52.0" | 30.0" (2.50 ft) | 30.0 in. |
+| **F-3** | Row 1 (Upper) | 34.0" (2.83 ft) | 72.0" (6.0 ft) | 68.0" and 76.0" | 30.0" (2.50 ft) | 30.0 in. |
+| **F-4** | Row 2 (Lower) | 24.0" (2.00 ft) | 24.0" (2.0 ft) | 20.0" and 28.0" | 20.0" (1.67 ft) | 20.0 in. |
+| **F-5** | Row 2 (Lower) | 24.0" (2.00 ft) | 48.0" (4.0 ft) | 44.0" and 52.0" | 20.0" (1.67 ft) | 20.0 in. |
+| **F-6** | Row 2 (Lower) | 24.0" (2.00 ft) | 72.0" (6.0 ft) | 68.0" and 76.0" | 20.0" (1.67 ft) | 20.0 in. |
+
+*(Note: Dimensions are measured from the bottom-left corner of the front frame face resting on athletic turf.)*
 
 ---
 
-## 4. Why Relief Cuts Are Necessary: Four Physical Factors
+### 5.4 Artwork Protection, Optical Camouflage & The "Floating Flap" Adjustment Rule
 
-### Factor 1: Lateral Sliding on Artificial Turf (The Primary Failure Mode)
-A common engineering misconception is that tipping is the first failure mode. On synthetic turf lubricated by cryogenic rubber infill, the static friction coefficient against smooth steel EMT conduit is only $\mu \approx 0.35$.
+The coordinates in Section 5.3 represent theoretical layout targets. In production, each year's marching band show features unique visual graphics (e.g., character portraits, architectural motifs, high-contrast title typography).
 
-The prop slides horizontally when $F_{\text{wind}} \ge \mu \cdot W_{\text{total}}$:
+To prevent visual disruption and ensure complete optical camouflage from the stands, fabrication teams **MUST** follow these rules:
 
-| Ballast Configuration | Total Weight | Max Friction Force ($F_{\text{slide}}$) | Solid Sliding Wind Speed | Relieved Sliding Wind Speed | Sliding Margin Gain |
-|---|:---:|:---:|:---:|:---:|:---:|
-| **Unballasted (Dry)** | $26\text{ lbs}$ | $9.1\text{ lbs}$ | **$11.2\text{ mph}$** | **$12.1\text{ mph}$** | $+0.9\text{ mph}$ |
-| **Tier 1 (1x 15-lb bag)** | $41\text{ lbs}$ | $14.3\text{ lbs}$ | **$14.0\text{ mph}$** | **$15.2\text{ mph}$** | $+1.2\text{ mph}$ |
-| **Tier 1 (2x 15-lb bags)** | $56\text{ lbs}$ | $19.6\text{ lbs}$ | **$16.4\text{ mph}$** | **$17.8\text{ mph}$** | **$+1.4\text{ mph}$** |
-| **Tier 2 (3x 15-lb bags)** | $71\text{ lbs}$ | $24.8\text{ lbs}$ | **$18.5\text{ mph}$** | **$20.0\text{ mph}$** | $+1.5\text{ mph}$ |
-| **Tier 3 (4x 15-lb bags)** | $86\text{ lbs}$ | $30.1\text{ lbs}$ | **$20.3\text{ mph}$** | **$22.1\text{ mph}$** | $+1.8\text{ mph}$ |
-
-> [!WARNING]
-> **Sliding Precedes Tipping:** With standard Tier 1 ballast (2 bags = 56 lbs), forward tipping occurs at **23.5 mph**, but **lateral sliding begins at just 16.4 mph**! In typical 15–18 mph Colorado afternoon breezes, a solid screen will skate laterally into performers or pit instruments. Adding relief cuts raises the sliding threshold to **17.8 mph**, keeping the screen anchored during routine gusts.
-
-### Factor 2: Tensile Pull on 3D-Printed Hinged Arm Clips (I)
-Under front wind (headwind pushing backward), the screen face pivots about rear rail C. The bottom support arms (E) act in **tension**, pulling directly outward against the 3D-printed Hinged Arm Clips (I) on Rail 3 ($h \approx 10\text{ in.} = 0.833\text{ ft}$).
-
-$$\text{Tensile Pull per Clip } F_{\text{clip}} \approx \frac{M_{\text{wind}}}{2 \cdot h_{\text{clip}}}$$
-
-* **At 18 mph:** Solid = $27.5\text{ lbs/clip}$; With Slits = **$23.4\text{ lbs/clip}$** ($-4.1\text{ lbs}$)
-* **At 20 mph:** Solid = $33.9\text{ lbs/clip}$; With Slits = **$28.8\text{ lbs/clip}$** ($-5.1\text{ lbs}$)
-* **At 25 mph:** Solid = $53.0\text{ lbs/clip}$; With Slits = **$45.0\text{ lbs/clip}$** ($-8.0\text{ lbs}$)
-
-Because Clips (I) are snap-fit ASA collars relying on elastic retention over 0.922" OD conduit without through-bolts, reducing tensile pull by 15% directly protects the snap jaws from unseating and collapsing the rear frame.
-
-### Factor 3: Suppressing Dynamic Flutter & Greenhouse Snap Clamp Peeling
-At wind speeds above 12 mph, solid vinyl sheets undergo periodic **Strouhal vortex shedding** ($f \approx 0.8–1.2\text{ Hz}$). This creates cyclic flapping waves and localized negative pressure spikes (suction $>3.0\text{ psf}$) along the perimeter framing:
-* Cyclic buffeting works greenhouse snap clamps loose from the EMT conduit.
-* Semicircular flaps act as pressure-relief check valves: when a pressure wave hits, the flaps swing open, venting boundary layer air and destroying coherent vortex structures.
-* The vinyl remains flat and quiet, preventing clamp disengagement.
-
-### Factor 4: Two-Student Carry Aerodynamics During Ingress & Egress
-In the Two-Student Carry strategy (where pairs of students carry fully assembled screens across the field):
-* In a 15-mph crosswind, a solid $30.5\text{ sq ft}$ sail generates **$16.4\text{ lbs}$ of continuous lateral thrust** plus peak gust spikes over **$20\text{ lbs}$**.
-* On a 26-lb frame carried between two students, this lateral force represents **63% of the prop's total weight**, causing severe buffeting, twisting in hands, and tripping hazards.
-* Relief slits bleed dynamic gusts, reducing lateral carry buffeting by 15% and preventing torque in student hands.
+1. **Viewing Distance & Visual Acuity (1 Arcminute Resolution):**
+   - Spectator stands sit 25–60 yards away; judges' press boxes sit 40–80+ yards away.
+   - At 30 yards (90 ft), human visual acuity resolves features down to $0.31\text{ in.}$ ($8.0\text{ mm}$).
+   - A razor cut has a kerf width $<0.01\text{ in.}$ ($0.25\text{ mm}$)—**over 30× smaller than the human visual threshold**. Because the flap is cut directly from the printed graphic with zero material removed along the arc, the cut line is completely undetectable from spectator stands.
+   - The $\varnothing 3/8\text{ in.}$ punch holes match the threshold at 30 yards and are imperceptible from the press box, blending seamlessly into printed textures.
+2. **Floating Allowance ($\pm 6\text{ to }12\text{ in.}$):** Any cut centerline may float horizontally by up to $\pm 12.0\text{ in.}$ (and vertically by $\pm 4.0\text{ in.}$) along its row to position the flap into solid background colors, dark textures, sky gradients, or negative graphic space.
+3. **Mandatory NO-CUT Zones:**
+   - **Performer Faces / Portraits:** Flaps must clear facial features by at least $6.0\text{ in.}$.
+   - **Show Title & Typography:** Cuts must never intersect lettering, musical notations, or movement titles.
+   - **School / Sponsor Crests:** Zero cuts permitted through Pine Creek emblems or competition branding.
+4. **Backstage Equipment Concealment:**
+   - Flaps maintain **96.6% solid, 100% opaque vinyl coverage** (vent area is only 3.43%), completely avoiding translucent mesh.
+   - All staged rifles, sabres, and floor equipment rest below $Y = 10.0\text{ in.}$, while the lowest flap apex sits at $Y = 20.0\text{ in.}$, guaranteeing complete visual shielding even during wind gusts.
+5. **Backlight & Daylight Pinprick Baffle (Optional Shop Detail):**
+   - In venues where the late-afternoon sun sits behind the back sideline (e.g., Falcon Stadium looking west toward the Rampart Range), direct sunlight can shine through the $\varnothing 3/8\text{ in.}$ punch holes.
+   - Apply a $1.5\text{ in.} \times 1.5\text{ in.}$ square of black heavy-duty tape (Gorilla tape) to the backside of the vinyl behind each punch hole.
+   - Slice a horizontal razor slit through the tape along the lower circumference. This blocks direct solar pinpricks while allowing boundary-layer air to exhaust freely when the flap opens.
 
 ---
 
-## 5. Relief Cut Sizing & Flap Count
-
-### 5.1 Flap Geometry: True Semicircular Flap (Radius $R = 4.0\text{ in.}$)
-* **Flap Width (Top Hinge Chord):** **$8.0\text{ inches}$** ($2R$)
-* **Flap Radius ($R$):** **$4.0\text{ inches}$**
-* **Flap Drop (Depth):** **$4.0\text{ inches}$**
-* **Shape:** **True Semicircle** (circular arc of constant radius $R = 4.0\text{ in.}$), with the straight $8.0\text{ in.}$ top segment remaining **UNCUT**.
-* **Area per Flap:** $A = \frac{1}{2} \pi R^2 = \frac{1}{2} \pi (4.0)^2 = 8 \pi \approx \mathbf{25.13\text{ sq in.}} = \mathbf{0.1745\text{ sq ft}}$
-
-### 5.2 Why Semicircular Flaps are Ideal for Hand Fabrication
-* **True Circular Geometry:** An oval or ellipse requires complex multi-point tracing or an egg-shaped stencil. A **true semicircle** has a constant radius ($R = 4.0\text{ in.}$) from the top chord midpoint.
-* **Foolproof Shop Fabrication:** Any parent volunteer can mark or cut the arc with precision using a standard beam compass, a mechanical pencil on a 4-inch radius string/ruler pivoted at the centerpoint, or a simple 3D-printed circular arc jig.
-* **Natural Gravity Closure & Camouflage:** Because the hinge is at the **top**, gravity pulls the flap down flush against the screen surface. Since the flap is cut directly from the printed graphic with zero daylight gap, it is 100% invisible from spectator stands and judges' press boxes (30–100+ yards away). Color guard equipment behind the screen remains 100% hidden.
-
-### 5.3 Optimal Flap Count: Exactly 6 Flaps
-* **Total Vent Area:** $6 \times 0.1745\text{ sq ft} = \mathbf{1.047\text{ sq ft}}$
-* **Vented Area Percentage:** $\frac{1.047}{30.5} = \mathbf{3.43\%}$
-* **Why 6 Flaps?**
-  * Aerodynamic wind-tunnel standards for outdoor vinyl banners establish that **3.0% to 5.0% vented area** delivers optimal drag reduction (~15%) and flutter suppression.
-  * Fewer cuts do not provide sufficient distributed boundary layer bleed across the 8-ft span.
-  * More cuts weaken the structural tension of the vinyl banner and create unnecessary fabrication labor.
-
----
-
-## 6. Dimensional Placement & Face Layout
-
-### 6.1 Placement Constraints
-1. **Vertical Clearance (Y-Axis):**
-   - Bottom Ground Rail: $Y = 0\text{ in.}$
-   - Lower Inner Rail 3 (Clip Latch Rail): $Y = 10.0\text{ in.}$
-   - Upper Inner Rail 2 (Ballast Hanger Rail): $Y = 42.0\text{ in.}$
-   - Top Perimeter Rail 1: $Y = 44.5\text{ in.}$
-   - **Target Venting Band:** $Y = 18.0\text{ in.}$ to $36.0\text{ in.}$ (completely clear of all steel conduit framing).
-2. **Horizontal Clearance (X-Axis):**
-   - Outer End Rails (B): $X = 0\text{ in.}$ and $X = 92.5\text{ in.}$
-   - Perimeter snap clamps and tape strips occupy the outer $4\text{ in.}$ and center $4\text{ in.}$.
-   - Flaps are centered at quarter points ($X = 24.0\text{ in.}$, $48.0\text{ in.}$, $72.0\text{ in.}$) keeping them at least $16\text{ in.}$ from ends.
-
-### 6.2 The $2 \times 3$ Grid Layout Specification
-The 6 flaps are arranged in **two horizontal rows of three semicircular flaps**:
+## 6. Fabrication Procedure & Quality Assurance Protocol
 
 ```
-+===================================================================================+
-| [Rail 1] Top Perimeter Frame Rail (Y = 44.5")                                    |
-|   (Unvented Upper Tension Band: Y = 36" to 44.5")                                 |
-|                                                                                   |
-|         X = 24.0"                   X = 48.0"                   X = 72.0"         |
-|      o-------------o             o-------------o             o-------------o      |
-|      \   Flap 1    /             \   Flap 2    /             \   Flap 3    /      |  <-- ROW 1 (Upper)
-|       \ R=4" Semi /               \ R=4" Semi /               \ R=4" Semi /       |      Hinge at Y = 34.0"
-|        '---------'                 '---------'                 '---------'        |      Apex at Y = 30.0"
-|                                                                                   |
-|                                                                                   |
-|      o-------------o             o-------------o             o-------------o      |
-|      \   Flap 4    /             \   Flap 5    /             \   Flap 6    /      |  <-- ROW 2 (Lower)
-|       \ R=4" Semi /               \ R=4" Semi /               \ R=4" Semi /       |      Hinge at Y = 24.0"
-|        '---------'                 '---------'                 '---------'        |      Apex at Y = 20.0"
-|                                                                                   |
-|-----------------------------------------------------------------------------------|
-| [Rail 3] Lower Inner Frame Rail / Clip Latch Line (Y = 10.0")                     |
-|   (Unvented Lower Tension Band: Y = 0" to 18")                                    |
-+===================================================================================+
-| [Turf Line] Front Bottom Perimeter Frame Rail (Y = 0")                            |
-+===================================================================================+
+                     STEP-BY-STEP FABRICATION SEQUENCE
+
+    1. Punch Left Hole               2. Punch Right Hole              3. Scribe & Slice Arc
+    (Ø 3/8" Rotary Punch)           (Ø 3/8" Rotary Punch)             (R = 4.0" Semicircular Arc)
+
+           (O)                             (O)             (O)              (O)=================(O)  <- UNCUT HINGE
+                                                            \                /
+                                                             \    R=4.0"    /
+                                                              \____________/
 ```
 
-### 6.3 Exact Coordinate Schedule
+### Required Tools
+- **Tear-Arrest Punch Tool:** $\varnothing 3/8\text{ in.}$ ($10\text{ mm}$) rotary leather punch or hollow gasket punch.
+- **Hardwood Backing Block:** Dense end-grain hardwood or high-density plastic block placed behind banner when punching.
+- **Marking Guide:** 3D-printed $R = 4.0\text{ in.}$ semicircular stencil, beam compass, or rigid arc template.
+- **Cutting Blade:** Heavy-duty utility knife with a brand-new sharp blade.
+- **Measuring Tape & Soft White/Yellow Marking Pencil.**
 
-All coordinates are measured from the **Bottom-Left Corner of the Front Face**:
-
-| Flap ID | Row | Center Pivot $(X_{pivot}, Y_{hinge})$ | Top Left Hole $(X_1, Y_1)$ | Top Right Hole $(X_2, Y_2)$ | Semicircle Apex $(X_{mid}, Y_{bot})$ | Clear Span from Ground |
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **Flap 1** | Row 1 (Upper) | $(24.0", 34.0")$ | $(20.0", 34.0")$ | $(28.0", 34.0")$ | $(24.0", 30.0")$ | $30.0\text{ in.}$ |
-| **Flap 2** | Row 1 (Upper) | $(48.0", 34.0")$ | $(44.0", 34.0")$ | $(52.0", 34.0")$ | $(48.0", 30.0")$ | $30.0\text{ in.}$ |
-| **Flap 3** | Row 1 (Upper) | $(72.0", 34.0")$ | $(68.0", 34.0")$ | $(76.0", 34.0")$ | $(72.0", 30.0")$ | $30.0\text{ in.}$ |
-| **Flap 4** | Row 2 (Lower) | $(24.0", 24.0")$ | $(20.0", 24.0")$ | $(28.0", 24.0")$ | $(24.0", 20.0")$ | $20.0\text{ in.}$ |
-| **Flap 5** | Row 2 (Lower) | $(48.0", 24.0")$ | $(44.0", 24.0")$ | $(52.0", 24.0")$ | $(48.0", 20.0")$ | $20.0\text{ in.}$ |
-| **Flap 6** | Row 2 (Lower) | $(72.0", 24.0")$ | $(68.0", 24.0")$ | $(76.0", 24.0")$ | $(72.0", 20.0")$ | $20.0\text{ in.}$ |
-
----
-
-## 7. Step-by-Step Fabrication Instructions
-
-### Required Tools & Materials
-* **Hollow Hole Punch:** $\varnothing 3/8\text{ in.}$ ($10\text{ mm}$) rotary leather punch, arch punch, or gasket punch.
-* **Cutting Mat / Backing Block:** A small block of scrap hardwood (maple/oak) or high-density plastic cutting board.
-* **Mallet / Dead-Blow Hammer:** For striking the hole punch cleanly.
-* **Utility Knife:** Heavy-duty utility knife with a fresh, razor-sharp blade.
-* **Semicircular Cutting Guide:** A rigid circular template of radius $R = 4.0\text{ in.}$ (or compass jig) with locator notches.
-* **Framing Square / Tape Measure:** For layout marks.
-
-### 4-Step Slit Cutting Procedure
-
-```mermaid
-flowchart TD
-    A["Step 1: Mark Coordinates<br>(Mark center pivot and 2 punch hole centers 8.0 in. apart)"] --> B["Step 2: Punch Tear-Arrest Holes<br>(MANDATORY: Ø 3/8 in. clean circular punch through vinyl)"]
-    B --> C["Step 3: Slice Semicircular Arc<br>(Razor cut connects holes along R=4.0 in. circular path)"]
-    C --> D["Step 4: Verify Gravity Closure<br>(Confirm flap hangs flush with zero binding)"]
-```
-
-1. **Step 1: Inspect Artwork & Mark Pivot Coordinates:**
-   * Perform this step *after* the vinyl is wrapped and clamped onto the frame, or while the vinyl is laid flat on clean moving blankets.
-   * **Inspect Front Artwork First:** Verify that the nominal coordinates ($X = 24", 48", 72"$; $Y = 34", 24"$) do not intersect performer faces, show typography, or school logos. If needed, float the horizontal centerpoint $\pm 6\text{ to }12\text{ in.}$ into solid colors or negative textures per Section 8.3.
-   * Mark the center pivot $(X_{pivot}, Y_{hinge})$. Then mark the two punch hole centers exactly $4.0\text{ in.}$ left and right along the horizontal hinge line.
-2. **Step 2: Punch the Tear-Arrest Holes (MANDATORY BEFORE ANY SLICING):**
-   * Slide the hardwood backing block directly behind the vinyl at the mark.
-   * Place the $\varnothing 3/8\text{ in.}$ punch vertically on the mark and strike firmly with the mallet to cut a crisp, 100% circular slug from the vinyl.
-   * Repeat for the opposite hinge hole ($8.0\text{ in.}$ apart horizontally).
-   * Verify that the edge of the hole is perfectly smooth with zero jagged notches.
-3. **Step 3: Slice the Semicircular Arc:**
-   * Place the semicircular guide against the vinyl, centered at the pivot point.
-   * Starting at the **bottom tangent of the left hole**, guide the utility knife in a smooth circular arc of constant radius $R = 4.0\text{ in.}$, sweeping down to the $4.0\text{ in.}$ depth apex, and continuing smoothly up to terminate at the **bottom tangent of the right hole**.
-   * **DO NOT cut the horizontal top line** between the two holes; this $8.0\text{ in.}$ segment is the live vinyl hinge.
-4. **Step 4: Verify Action, Alignment & Visual Camouflage:**
-   * Stand the screen upright. Verify that the flap hangs completely flat, coplanar, and flush under gravity with zero tip curling or binding.
-   * Push gently on the back of the flap; it should swing forward freely to $45^\circ$ with zero resistance, then drop shut flush when released.
-   * **Optional Backlight Baffle:** If props will face low-angle direct afternoon sun from behind, apply a $1.5\text{ in.} \times 1.5\text{ in.}$ patch of black Gorilla tape to the backside of each punch hole with a slit along the bottom tangent (Section 8.5).
+### Execution Steps
+1. **Clean Staging:** Spread moving blankets on a flat, clean shop floor. Lay the banner flat with zero grit or dirt underneath (or perform on fully clamped frame).
+2. **Mark Coordinates & Inspect Artwork:** Mark the top horizontal chord centerlines and endpoint punch marks ($8.0\text{ in.}$ apart) using the marking pencil. Verify compliance with the Floating Flap Rule (Section 5.4) to avoid faces, text, and crests.
+3. **MANDATORY PUNCH FIRST:** Place the hardwood block directly underneath the first punch location. Align the $\varnothing 3/8\text{ in.}$ punch exactly over the mark and strike firmly with a mallet to punch a clean, circular hole with zero fraying. Repeat for the second hole ($8.0\text{ in.}$ apart).
+   > [!CRITICAL]
+   > **NEVER** use a razor knife before punching the circular holes. Slicing first creates sharp microscopic corner tears ($K_t \ge 3.0$) that will rapidly propagate into a full rip during wind events.
+4. **Scribe the Circular Arc:** Place the $R = 4.0\text{ in.}$ template or compass tangent to the bottom edge of the two punched holes.
+5. **Execute the Semicircular Cut:** In a single, smooth motion, draw the razor along the curved circular template, starting at the tangent edge of Hole 1, sweeping down through the $4.0\text{ in.}$ apex, and terminating cleanly at the tangent edge of Hole 2.
+6. **LEAVE TOP CHORD UNCUT:** Under no circumstances should the top $8.0\text{ in.}$ line between the holes be cut. This uncut vinyl serves as the permanent gravity hinge.
+7. **Inspect Flap Action & Alignment:** Stand the screen upright. Verify that the flap hangs completely flat, coplanar, and flush under gravity with zero tip curling or binding. Push gently on the back to verify it swings open freely and drops shut flush. Apply optional backlight baffles (Section 5.4) if specified for low-sun venues.
 
 ---
 
-## 8. Visual Aesthetics, Optical Camouflage & Artwork Protection Rules
+## 7. Subproject Cross-References
 
-### 8.1 Viewing Distance & Human Eye Angular Acuity
-Marching band competitions are evaluated from significant distances:
-* **Front Spectator Stands:** $25\text{ to }60\text{ yards}$ ($75\text{ to }180\text{ ft}$).
-* **Judges' Press Box:** $40\text{ to }80+\text{ yards}$ ($120\text{ to }240+\text{ ft}$) elevated above the stands.
-
-Human visual acuity is approximately $1\text{ arcminute}$ ($1/60^\circ$):
-* At 30 yards ($90\text{ ft}$), the minimum resolvable feature size is **$0.31\text{ in.}$ ($8.0\text{ mm}$)**.
-* At 50 yards ($150\text{ ft}$), the minimum resolvable feature size is **$0.52\text{ in.}$ ($13.3\text{ mm}$)**.
-* **Razor Cut Kerf:** A standard utility knife cut has a kerf width of less than **$0.01\text{ in.}$ ($0.25\text{ mm}$)**. Because the flap is cut directly from the printed graphic with zero material removed along the arc, the slit is **over 30× smaller than the human visual threshold from the front row of the stands**. When hanging closed, the cut line is completely undetectable.
-* **Punch Hole Resolution:** The $\varnothing 3/8\text{ in.}$ ($9.5\text{ mm}$) circular tear-arrest holes sit right at the visual resolution threshold at 30 yards ($0.31\text{ in.}$) and well below resolution from the press box. Against printed textures, photographic elements, or darker colors, they blend seamlessly into the print.
-
-### 8.2 Thermal Beam-Stiffness & Anti-Sag Geometry
-* **The Oval / Deep-U Flap Failure Mode:** Deep flaps (e.g., $6\text{ to }8\text{ in.}$ drop) create a long, slender tongue. Under high summer heat on black crumb-rubber synthetic turf (where surface temperatures reach $130^\circ\text{F}\text{ to }150^\circ\text{F}$), scrim vinyl experiences plastic creep and thermal relaxation. Long tongues curl forward at the tip, creating dark crescent shadows and breaking graphic alignment even in zero wind.
-* **The Semicircular Advantage ($1:2$ Aspect Ratio):** The true semicircle has a wide $8.0\text{ in.}$ horizontal hinge supporting a compact $4.0\text{ in.}$ drop. This low aspect ratio gives the flap high beam-stiffness. Gravity pulls the flap completely flush and coplanar against the frame, eliminating tip curl and keeping the cut invisible.
-
-### 8.3 The Mandatory "Floating Flap" Artwork Protection Rule
-Volunteer fabrication crews must observe the **Floating Flap Rule**:
-* **$\pm 6\text{ to }12\text{ in.}$ Horizontal Float:** Flap coordinates are nominal. If an assigned center point intersects high-contrast artwork, the center point may float horizontally along the hinge row ($Y = 34.0\text{ in.}$ or $Y = 24.0\text{ in.}$) by $\pm 6\text{ to }12\text{ in.}$ to locate the cut in solid background colors, dark textures, sky gradients, or negative space.
-* **Strict Prohibitions:** Flaps are **strictly prohibited** from cutting through performer faces, show typography/title lettering, mascot artwork, or school crests/logos.
-
-### 8.4 Preservation of Duck Blind Equipment Concealment
-The duck blind's primary theatrical function is concealing color guard equipment (rifles, sabres, flags) and performers during sideline changes:
-* **Rejection of Perforated Mesh Banner:** Factory 70/30 or 80/20 mesh vinyl reduces color saturation by 20%–30% and is translucent under stadium floodlights, exposing equipment and kneeling performers. Solid 13 oz scrim vinyl preserves 100% color vibrancy and opacity.
-* **96.6% Solid Opacity:** The 6 semicircular flaps occupy only $1.047\text{ sq ft}$ ($3.43\%$ of the $30.5\text{ sq ft}$ face), maintaining **96.6% solid, 100% opaque vinyl coverage**.
-* **Vertical Height Buffer:** The lowest flap apex sits at $Y = 20.0\text{ in.}$ above the turf. All staged rifles, sabres, and floor equipment lie flat on the turf below $Y = 10.0\text{ in.}$, ensuring that backstage equipment remains 100% hidden from spectator view even if flaps flutter momentarily during wind gusts.
-
-### 8.5 Backlight & Daylight Pinprick Baffle (Optional Shop Detail)
-In venues where the late-afternoon sun sits behind the back sideline (e.g., Falcon Stadium looking west toward the Rampart Range), direct sunlight can shine through the $\varnothing 3/8\text{ in.}$ punch holes, creating small pinpricks of daylight.
-* **Flexible Light Baffle:** Volunteers can apply a $1.5\text{ in.} \times 1.5\text{ in.}$ square of **black heavy-duty tape (Gorilla tape) or scrap black banner vinyl** to the **backside** of the vinyl directly behind each $\varnothing 3/8\text{ in.}$ punch hole.
-* **Baffle Slit:** Cut a small razor slit through the tape patch along the lower circumference of the hole. This creates a light-tight optical baffle that blocks direct solar pass-through while allowing boundary-layer air to exhaust freely when the flap opens.
-
----
-
-## 9. Summary Comparison & Decision Matrix
-
-| Operational / Structural Metric | Solid Vinyl (No Cuts) | With 6 Engineered Relief Cuts | Engineering Benefit |
-|---|:---:|:---:|---|
-| **Drag Coefficient ($C_d$)** | $1.20$ | **$1.02$** | **15.0% lower lateral wind force** |
-| **Turf Sliding Speed (Tier 1 Ballast)** | $16.4\text{ mph}$ | **$17.8\text{ mph}$** | **$+1.4\text{ mph}$ stability window on turf** |
-| **Turf Sliding Speed (Tier 2 Ballast)** | $18.5\text{ mph}$ | **$20.0\text{ mph}$** | **$+1.5\text{ mph}$ stability window on turf** |
-| **Clip (I) Tensile Pull at 20 mph** | $33.9\text{ lbs/clip}$ | **$28.8\text{ lbs/clip}$** | **$-5.1\text{ lbs}$ (15% less stress on 3D snap-fit)** |
-| **Dynamic Flutter & Vortex Suction** | Severe (>3.0 psf) | **Suppressed** | **Prevents greenhouse snap clamps unseating** |
-| **Two-Student Carry Side Thrust (15 mph)** | $16.4\text{ lbs}$ | **$13.9\text{ lbs}$** | **Less buffeting/torquing during field transit** |
-| **Visual Concealment from Stands** | 100% Solid | **100% Camouflaged** | **Hangs flush by gravity; seams invisible** |
-| **Fabrication Labor** | Baseline | +8–10 min per screen | Simple volunteer task with punch & template |
-
-### Conclusion
-Installing **6 semicircular wind relief cuts** with **$\varnothing 3/8\text{ in.}$ punched tear-arrest holes** is an exceptionally high-return, low-effort engineering enhancement. It directly neutralizes the duck blind's primary operational vulnerability—**lateral sliding on athletic turf**—while safeguarding 3D-printed clips, stabilizing student transit, and preserving complete visual camouflage for competition.
+- **Master Subproject README:** [`PCHSMB/_Sideline Screen/README.md`](../../README.md)
+- **Technical Specification:** [`PCHSMB/_Sideline Screen/docs/references/TECHNICAL_SPEC.md`](TECHNICAL_SPEC.md) (Step 3.1)
+- **Field Logistics & Timing Analysis:** [`PCHSMB/_Sideline Screen/docs/references/FIELD_LOGISTICS_AND_TIMING_ANALYSIS.md`](FIELD_LOGISTICS_AND_TIMING_ANALYSIS.md)
+- **Rolling Backdrop Fleet Specification:** [`PCHSMB/_Backdrop/docs/references/WIND_RELIEF_CUTS_SPECIFICATION.md`](../../_Backdrop/docs/references/WIND_RELIEF_CUTS_SPECIFICATION.md)
+- **Wind Loading Skill CLI:** `.agents/skills/calculate-prop-wind-loading/scripts/analyze_wind_load.py`
+- **Aerodynamic Models & Math:** `.agents/skills/calculate-prop-wind-loading/references/aerodynamic-models.md`
