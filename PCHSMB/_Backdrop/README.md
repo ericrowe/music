@@ -23,7 +23,7 @@ The manual covers:
 - **Stage 2 (Decking, Ballast Posts & Casters):** 1/2" plywood left/right decks, 3/4" x 18" vertical iron pipe retention posts, plate casters, and ASA corner bumpers.
 - **Stage 3 (Upright Frame Assembly):** 10' x 8' steel tube rectangle and tension band cart mounts.
 - **Stage 4 (Diagonal Support Struts):** Guided pre-drilling with 1/8" cobalt drill bit and 3D printed Drill Alignment Jig, end caps, and base U-bolts.
-- **Stage 5 (Vinyl Banner Installation):** Double-sided carpet tape underlayment and 1-5/8" pipe snap clamps.
+- **Stage 5 (Vinyl Banner Installation & Wind Relief Cuts):** Double-sided carpet tape underlayment, 1-5/8" pipe snap clamps, and engineered true semicircular wind relief cuts (8.0" W × 4.0" drop, $R = 4.0"$) with $\varnothing 3/8"$ tear-arrest holes (see [`WIND_RELIEF_CUTS_SPECIFICATION.md`](docs/references/WIND_RELIEF_CUTS_SPECIFICATION.md)).
 - **Field Operations & Training Protocol:** Student/parent volunteer division of responsibility, field entrance/exit flow, 4–6 double-bagged 15-lb sandbags on wing posts, and 70-lb tube sand reserve.
 
 ---
@@ -63,6 +63,19 @@ All 3D-printed parts should be printed in **Black ASA** (or UV/heat-stable PETG)
 - **1x** [GRK #9 x 2-1/2" Star-Drive Wood Screws](https://www.homedepot.com/p/GRK-Fasteners-9-x-2-1-2-in-Star-Drive-Torx-Bugle-Head-R4-Multi-Purpose-Wood-Screw-300-Pack-100101/203533402)
 - **1x** [GRK #10 x 4" Star-Drive Structural Screws](https://www.homedepot.com/p/GRK-Fasteners-10-x-4-in-R4-Self-Countersinking-Flat-Head-Multi-Purpose-Screw-50-per-Pack-103141/203525231)
 - **1x** 1/8" HSS / Cobalt drill bit rated for steel
+- **1x** 3/8" (10 mm) Rotary Leather Punch or Gasket Punch (Mandatory for cutting tear-arrest relief holes on banner flaps)
+
+---
+
+## 💨 Engineered Semicircular Wind Relief Cuts
+
+All 10 rolling backdrop banners incorporate engineered **true semicircular wind relief cuts** to bleed dynamic wind shear, suppress destructive vortex flutter, and improve field stability:
+
+- **Geometry:** True semicircle of radius $R = 4.0\text{ in.}$ ($8.0\text{ in.}$ wide top chord × $4.0\text{ in.}$ downward drop arc).
+- **Rationale for Semicircular (vs. Oval):** Eliminates thermal tip sagging and curling, guarantees invisible appearance from stadium stands under calm air, uses a single radius for simple volunteer shop fabrication, provides clean $180^\circ$ tangency to tear-arrest holes, and unifies tooling across the entire PCHSMB prop fleet (sharing identical templates with the 16 Sideline Screens).
+- **Fleet Layout:** 8 flaps arranged in a 2 Row × 4 Column grid in the upper venting zone ($6.0\text{ ft}$ and $8.0\text{ ft}$ above bottom rail) where overturning leverage is highest.
+- **Tear Arrest:** Two clean $\varnothing 3/8\text{ in.}$ round holes MUST be punched at the top chord endpoints before making any razor cut, eliminating stress risers ($K_t \ge 3.0 \to 1.0$).
+- 👉 **[Read the Full Wind Relief Specification & Engineering Analysis](docs/references/WIND_RELIEF_CUTS_SPECIFICATION.md)**
 
 ---
 

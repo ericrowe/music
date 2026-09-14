@@ -6,6 +6,7 @@
 - Project slug: `backdrop-construction-and-assembly-guide`
 - Machine state: `project.json`
 - Controlling technical facts: `references/TECHNICAL_SPEC.md`
+- Wind relief specifications: `references/WIND_RELIEF_CUTS_SPECIFICATION.md`
 - Figure system: `references/FIGURE_STYLE.md`
 - Figure provenance and status: `references/FIGURE_REGISTER.csv`
 
@@ -45,6 +46,7 @@ This project is configured for multi-agent support:
 - Left deck spans from B to 2nd D; right deck spans from 5th D to B; center bay between 3rd and 4th D must remain open to cradle the HDX 14-gallon tote bin.
 - Galvanized steel tubing requires pre-drilling with 1/8" cobalt drill bits using the 3D-printed `Drill Alignment Jig` before driving metal screws into rail ends.
 - 3D printed components (Corner Bumper Braces, Drill Jig) must be printed in Black ASA or PETG for outdoor UV and heat durability.
+- Banner wind relief cuts strictly use true semicircular geometry ($8.0\text{ in.}$ top chord × $4.0\text{ in.}$ drop, $R = 4.0\text{ in.}$) with mandatory pre-punched $\varnothing 3/8\text{ in.}$ tear-arrest holes (never oval or elongated-U cuts).
 
 ## Version and Status Rules
 
