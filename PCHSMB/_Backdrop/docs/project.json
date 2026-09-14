@@ -26,20 +26,20 @@
   },
   "document": {
     "current": {
-      "build": "D3",
+      "build": "D4",
       "release": "v0",
       "process_state": "working_draft",
       "visible_status": "working_draft",
-      "file": "Backdrop_Assembly_Guide.docx",
-      "sha256": "b61eec7f754a4b12072a7848ea22b51dcb82244a2769f65547ed8d268f10db20",
-      "controlled_at": "2026-09-10T14:15:00+00:00"
+      "file": "Backdrop_Assembly_Guide.typ",
+      "sha256": "270456b4404764e7781b544e700fbef9c8c6b0db7ef753b1d6f3a259d105db22",
+      "controlled_at": "2026-09-13T21:30:00+00:00"
     },
     "candidate": null
   },
   "versioning": {
     "current_release": "v0",
     "next_release": "v1",
-    "next_build_number": 4
+    "next_build_number": 5
   },
   "releases": [],
   "history": [
@@ -74,6 +74,18 @@
       "base_build": "D2",
       "summary": "Add engineered wind relief slit specifications, tiered 15-lb handle sandbag ballast schedule, rear-rail leverage optimization, and high-wind emergency protocol",
       "sha256": "b61eec7f754a4b12072a7848ea22b51dcb82244a2769f65547ed8d268f10db20"
+    },
+    {
+      "id": "D4",
+      "kind": "development_build",
+      "release": "v0",
+      "status": "working_draft",
+      "date": "2026-09-13",
+      "started_at": "2026-09-13T21:00:00+00:00",
+      "base_build": "D3",
+      "summary": "Full rewrite to Typst format; integrate semicircular wind relief cuts (R=4.0\", 8\"x4\"), 8-cut primary grid, 3/8\" tear-arrest holes, and 24-page modular layout",
+      "sha256": "270456b4404764e7781b544e700fbef9c8c6b0db7ef753b1d6f3a259d105db22",
+      "file": "Backdrop_Assembly_Guide.typ"
     }
   ]
 }
