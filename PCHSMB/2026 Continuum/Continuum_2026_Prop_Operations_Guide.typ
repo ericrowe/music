@@ -193,7 +193,7 @@ Because Pine Creek High School operates in the high-altitude, wind-prone environ
 
 #v(1.5pt)
 #text(size: 6.8pt, style: "italic", fill: rgb("#4a5568"))[
-  *Semicircular Wind Relief Standard:* All 16 duck blinds and 10 rolling backdrops are equipped with standard semicircular wind relief cuts (R = 4.0 in., 8.0 in. chord by 4.0 in. drop, pre-punched 3/8 in. / 10 mm tear-arrest holes). Flaps reduce drag by 15% ($C_d = 1.20 -> 1.02$), suppress flutter, and raise the duck blind turf sliding threshold to 17.8 mph while maintaining 100% visual camouflage from spectator stands.
+  *Semicircular Wind Relief Standard:* All 16 duck blinds (6 flaps) and 10 rolling backdrops (8 flaps in upper 6–8 ft zone) are equipped with standard semicircular wind relief cuts (R = 4.0 in., 8.0 in. chord by 4.0 in. drop, pre-punched 3/8 in. / 10 mm tear-arrest holes). Flaps reduce drag by 15% ($C_d = 1.20 -> 1.02$), bleed dynamic gust impulses, suppress vortex flutter, and elevate forward stability (duck blind turf sliding to 17.8 mph; backdrop forward tipping to 16.9 mph at Tier 1 and 22.5 mph at Tier 3 via 3.46-ft rear-rail leverage) while maintaining 100% visual camouflage from spectator stands.
 ]
 
 #pagebreak()
@@ -534,26 +534,30 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
     #text(weight: "bold", size: 8pt, fill: rgb("#2b6cb0"))[ROLLING BACKDROP BALLAST SCHEDULE (PER BACKDROP):] \
     #v(1pt)
     #table(
-      columns: (0.85fr, 0.95fr, 1.8fr, 1.4fr),
+      columns: (0.75fr, 0.85fr, 1.4fr, 1.4fr, 0.85fr),
       align: center + horizon,
       stroke: 0.3pt + rgb("#cbd5e0"),
-      inset: (x: 4pt, y: 2pt),
+      inset: (x: 3pt, y: 1.8pt),
       fill: (col, row) => if row == 0 { rgb("#edf2f7") } else if row == 5 { rgb("#fff5f5") } else { none },
-      [*Tier*], [*Wind MPH*], [*15-lb Sandbags (Wing Iron Posts)*], [*Supplemental Rail Ballast*],
-      [Tier 0], [0 – 8], [0 bags (unballasted, 153 lb dry prop)], [None],
-      [Tier 1], [8 – 12], [4 bags (2 per wing post, 60 lb ballast)], [None],
-      [Tier 2], [12 – 18], [6 bags (3 per wing post, 90 lb ballast)], [None],
-      [Tier 3], [18 – 22], [6 bags (3 per wing post, 90 lb ballast)], [3 bags flat across rear 2x4 rail (45 lb)],
+      [*Tier*], [*Wind MPH*], [*15-lb Sandbags (Wing Iron Posts)*], [*Supplemental Rail Ballast*], [*Safe Gust*],
+      [Tier 0], [0 – 8], [0 bags (unballasted, 153 lb dry prop)], [None], [14.4 mph],
+      [Tier 1], [8 – 12], [4 bags (2 per wing post, 60 lb ballast)], [None], [16.9 mph],
+      [Tier 2], [12 – 18], [6 bags (3 per wing post, 90 lb ballast)], [None], [18.4 mph],
+      [Tier 3], [18 – 22], [6 bags (3 per wing post, 90 lb ballast)], [3 bags flat on rear 2x4 rail (45 lb)], [22.5 mph],
       table.cell(colspan: 2)[#alert[Tier 4 (>20 mph)]],
-      table.cell(colspan: 2)[#alert[ABSOLUTE NO-GO — Keep Locked in Equipment Trailer]],
+      table.cell(colspan: 3)[#alert[ABSOLUTE NO-GO — Keep Locked in Equipment Trailer]],
     )
+    #v(1pt)
+    #text(size: 6.6pt, style: "italic", fill: rgb("#4a5568"))[
+      *Rear-Rail Leverage & Relief Cuts:* All 10 backdrops feature 8 semicircular relief flaps (R = 4", 8" chord x 4" drop, upper 6–8 ft zone, $C_d = 1.02$). Placing 3 sandbags across the rear rail yields 3.46 ft lever arm to front casters (vs 1.71 ft on wing posts)—more than double (2.02x) leverage against forward tipping.
+    ]
   ]
 
   #v(2pt)
   #text(size: 8pt, weight: "bold", fill: rgb("#1a365d"))[Step-by-Step Manager Lifecycle:]
 
-  + *Arrival & Assembly Supervision:* Meet at the equipment trailer at the Adult Volunteer call time. Supervise and direct the mechanical assembly of the 10 rolling backdrop carts (installing steel upright posts, diagonal struts, retaining pins, and vinyl banners with snap clamps). Direct help from other prop and pit crew members who may not have done this assembly before. Verify all strut pins and safety cotters are fully engaged.
-  + *Ballast Installation & Pre-Staging Inspection:* Confirm the day's wind tier with the Prop Lead. Seat double-bagged 15-lb sandbags securely over the two vertical iron pipe posts on each cart per the table above (4 bags for Tier 1; 6 bags for Tier 2; 6 wing + 3 rear rail bags for Tier 3). Inspect swivel casters and confirm caster foot brakes are in the unlocked (UP) position for transit.
+  + *Arrival & Assembly Supervision:* Meet at the equipment trailer at call time. Supervise and direct the mechanical assembly of the 10 rolling backdrop carts (installing steel upright posts, diagonal struts, retaining pins, and vinyl banners with snap clamps). Confirm all 8 semicircular wind relief flaps hang flush and swing freely. Verify all strut pins and safety cotters are fully engaged.
+  + *Ballast Installation & Pre-Staging Inspection:* Confirm the day's wind tier with the Prop Lead. Seat double-bagged 15-lb sandbags securely over wing iron posts (4 bags Tier 1; 6 bags Tier 2; 6 wing + 3 rear rail bags for Tier 3 22.5 mph stability). Inspect swivel casters and confirm caster foot brakes are in unlocked (UP) position for transit.
   + *Transport to Staging Area:* Lead the transport of all 10 ballasted backdrops from the trailer lot to the designated staging area at the designated staging time. Park carts in numerical order (#1 through #10) and engage wheel brakes.
   + *Student Rendezvous & Supervision at Staging Area:* Meet the assigned Student Backdrop Pushers (2–4 students per backdrop) at the staging area 45 minutes prior to show time. Confirm each student team knows their backdrop number, entry queue sequence, and field position. Supervise and assist the students as they prepare for gate movement.
   + *Adult Field Boundary Rule:* Adults do not push backdrops onto the field. Move with the students onto the field during setup to assist any that need help and check field placement, and then quickly move off the field to the adult volunteer waiting area in front of the front sideline. #alert[Never step onto the turf during the show (Rule 4.03 penalty).]
@@ -584,6 +588,7 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
   + *Staging Area Takeover:*
     - Meet the Adult Backdrop Managers at the designated staging area 45 minutes prior to show time (following your section warm-ups).
     - Locate your assigned backdrop (#1 through #10).
+    - Inspect the 8 semicircular wind relief flaps in the upper banner to confirm they are flush and hanging cleanly by gravity.
     - Coordinate with your section leader regarding instrument placement while performing your prop duties (the backdrop carts do not have large instrument storage).
     - Note that the backdrops have one set of fixed wheels that do not rotate, and one set that do rotate for steering.  It is typically recommended for stability to push from the side with the rotating steering wheels, however you must plan ahead for turns.
   + *Perimeter Transit to Back Sideline:*
@@ -600,7 +605,7 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
   + *Orientation, Rotation & Securing:*
     - Rotate the backdrop display face to the exact angle and orientation instructed during rehearsal training.
     - Confirm all sandbags remain securely seated over the iron posts.
-    - If directed by the Adult Backdrop Managers, place additional sandbags across the rear frame and/or use sandbags to chock the wheels in place.
+    - If directed by Adult Backdrop Managers (Tier 3 high-wind), confirm the 3 supplemental sandbags remain placed across the rear framing rail.
   + *Transition to Opening Show Position:*
     - Briskly transition to your opening drill position before the introductory announcement ends. You are now cleared for the show!
 ]
