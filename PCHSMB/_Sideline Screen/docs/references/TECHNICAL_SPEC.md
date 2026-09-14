@@ -85,6 +85,14 @@
   - **Mechanical Retention:** 16x 1-in. greenhouse snap clamps installed over vinyl directly aligned with each tape strip location (5 per long rail, 3 per short rail). Note: While 3/4-in. trade size EMT is used, its actual OD is ~0.922 in. (nearly 1 in.); wrapped with vinyl and tape, 1-in. greenhouse snap clamps provide a snug, secure mechanical fit. Ensure zero interference with hinges and clips.
   - **Vinyl Removal Temperature Requirement:** NEVER attempt vinyl or tape removal unless ambient temperature is above 80°F (27°C). Peeling vinyl at lower temperatures causes material tearing and permanent graphic damage.
   - **Seasonal Teardown Timing & Solar Advantage:** It is usually much easier to leave the vinyl on the frames over the winter and wait until summer band camp of the following season before attempting removal. The warmer outside, the better—leaving the frames in direct sunlight for just a few minutes naturally warms the conduit and softens the adhesive, allowing the tape and vinyl to release cleanly and effortlessly with minimal pull resistance.
+  - **Standard Engineered Wind Relief Slits Specification:**
+    - **Fleet Mandate:** All 16 sideline screens incorporate 6 engineered true semicircular wind relief flaps cut directly into the scrim vinyl face.
+    - **Flap Geometry:** True semicircle of constant radius $R = 4.0\text{ in.}$ with an $8.0\text{ in.}$ wide horizontal top hinge chord and a $4.0\text{ in.}$ downward circular drop arc ($A = \frac{1}{2}\pi R^2 \approx 25.13\text{ sq in.}$ vent area per flap; $1.05\text{ sq ft}$ total vent area per screen = 3.43% of sail area). Semicircular geometry allows fast, highly repeatable hand fabrication using a compass, pivot pin jig, or 3D-printed circular guide.
+    - **Aerodynamic Performance:** Drops aerodynamic drag coefficient from $C_d = 1.20$ to $C_d = 1.02$ (15.0% drag and overturning moment reduction) and breaks coherent Strouhal vortex shedding (~0.8–1.2 Hz), preventing cyclic flutter and greenhouse snap clamp peel-off.
+    - **Layout Coordinates (2 x 3 Grid in Upper 42%–71% Zone):** Positioned at horizontal columns $X = 24.0\text{ in.}$, $48.0\text{ in.}$, and $72.0\text{ in.}$ across the 96-in. width, in two horizontal rows at $Y = 34.0\text{ in.}$ (Upper Row) and $Y = 24.0\text{ in.}$ (Lower Row) above turf. Completely clears internal frame conduit (Rail 3 at 10.0 in., Rail 2 at 42.0 in.).
+    - **MANDATORY Tear-Arrest Detail:** Before making any razor cut, punch two clean $\varnothing 3/8\text{ in.}$ ($10\text{ mm}$) circular holes at the top hinge endpoints using a rotary leather/gasket punch against a hardwood block. The semicircular razor cut sweeps along a true $R = 4.0\text{ in.}$ radius starting and terminating tangent to the circular holes. The top 8.0-in. horizontal chord remains UNCUT as a flexible gravity hinge. Circular holes eliminate stress concentration ($K_t \to 1.0$), permanently arresting tear propagation.
+    - **Visual Camouflage:** Flaps hang flush and closed by gravity in calm air and forward breezes, remaining 100% invisible from spectator stands and judges' press box.
+    - **Full Engineering Analysis:** See dedicated specification [Semicircular Wind Relief Cuts Engineering Specification](WIND_RELIEF_CUTS_SPECIFICATION.md).
 
 ---
 
@@ -96,44 +104,44 @@
   - **Center of Pressure Height:** $h_{cp} = 1.94\text{ ft}$ (at centroid of vertical face).
   - **Triangular Base Stance:** $L_{base} = 2.29\text{ ft}$ (27.5 in. between front bottom rail and rear rail C).
   - **Atmospheric Scaling (Colorado Springs):** Altitude 6,500 ft ASL, air density $\rho = 0.0595\text{ lb/cu ft}$ (~23% reduction vs sea level $\rho = 0.0765\text{ lb/cu ft}$).
-  - **Dry Frame Weight:** 26.0 lbs (without vinyl/ballast).
+  - **Aerodynamic Drag Coefficient:** $C_d = 1.02$ (Standard with 6 engineered wind relief slits; reduces lateral drag by 15.0% vs solid $C_d = 1.20$).
+  - **Dry Frame Weight:** 26.0 lbs (without ballast).
+- **Turf Sliding Friction vs. Tipping Physics:**
+  - **Artificial Turf Sliding Friction ($\mu \approx 0.35$):** Lateral sliding on artificial turf infill is the primary operational limit and occurs *before* tipping.
+  - With standard Tier 1 ballast (2x 15-lb bags = 56 lbs total weight), solid vinyl begins sliding at 16.4 mph; engineered wind relief slits increase sliding resistance to **17.8 mph** (+1.4 mph buffer).
 - **Critical Forward-Tipping Asymmetry:**
-  - **Backward Tipping (Front Wind):** Pivots about rear rail C. Front frame has full 2.29 ft lever arm ($M_{rest, bwd} = 50.4\text{ ft-lb}$). Tips at 18.9 mph unballasted.
-  - **Forward Tipping (Rear Wind - Critical Mode):** Pivots about front bottom rail. Heavy front frame sits directly on pivot with zero lever arm; rear frame provides only 9.2 ft-lb of restoring moment ($M_{rest, fwd} = 9.2\text{ ft-lb}$). Tips at just 8.1 mph unballasted!
+  - **Backward Tipping (Front Wind):** Pivots about rear rail C. Front frame has full 2.29 ft lever arm ($M_{rest, bwd} = 50.4\text{ ft-lb}$). Tips at 20.5 mph unballasted (with slits).
+  - **Forward Tipping (Rear Wind - Critical Mode):** Pivots about front bottom rail. Heavy front frame sits directly on pivot with zero lever arm; rear frame provides only 9.2 ft-lb of restoring moment ($M_{rest, fwd} = 9.2\text{ ft-lb}$). Tips at 8.8 mph unballasted (with slits).
 - **Ballast Leverage Optimization (Rear Rail C vs Rail 2 Suspension):**
-  - **Primary Ballast (Placed over Rear Ground Rail C):** Acts at the maximum possible restoring lever arm ($d = 2.29\text{ ft}$). Two 15-lb bags (30 lbs) add 68.7 ft-lb of restoring moment, boosting forward tipping resistance to 23.5 mph. Imposes ZERO mechanical stress on 3D-printed clips (I) as weight rests directly on turf.
+  - **Primary Ballast (Placed over Rear Ground Rail C):** Acts at the maximum possible restoring lever arm ($d = 2.29\text{ ft}$). Two 15-lb bags (30 lbs) add 68.7 ft-lb of restoring moment, boosting forward tipping resistance to 25.5 mph (with slits). Imposes ZERO mechanical stress on 3D-printed clips (I) as weight rests directly on turf.
   - **Supplemental Ballast (Suspended from Upper Inner Rail 2):** Has near-zero lever arm to front rail (0 ft-lb against forward tipping). However, provides full 2.29 ft lever arm against backward tipping (34.4 ft-lb per bag). Strictly used for Tier 2/3 bidirectional wind balancing.
-- **Standardized Tiered Ballasting Schedule:**
-  - **Tier 0 (Calm, 0–8 mph, gusts ≤10 mph):** 0 bags (dry wt 26 lbs). Safe to 8.1 mph fwd / 18.9 mph bwd. Upgrade to Tier 1 if wind >8 mph.
-  - **Tier 1 (Normal, 8–12 mph):** 1x to 2x 15-lb bags placed over rear ground rail C (total wt 41–56 lbs). Safe to 17.6–23.5 mph fwd / 18.9 mph bwd. Zero clip stress.
-  - **Tier 2 (Advisory, 12–18 mph):** 2x 15-lb bags over rear rail C + 1x 15-lb bag suspended from Rail 2 (total wt 71 lbs). Balanced stability: 23.7 mph fwd / 24.5 mph bwd.
-  - **Tier 3 (High-Wind, 18–22 mph):** 2x 15-lb bags over rear rail C + 2x 15-lb bags suspended from Rail 2 (total wt 86 lbs). Safe to 24.5–28.4 mph max gust. Turf contact pressure ~0.25 psi (zero turf compaction).
+- **Standardized Tiered Ballasting Schedule (Colorado Springs 6,500 ft ASL, with Slits):**
+  - **Tier 0 (Calm, 0–8 mph, gusts ≤10 mph):** 0 bags (dry wt 26 lbs). Safe to 8.8 mph fwd / 20.5 mph bwd tipping; turf sliding limit 12.1 mph. Upgrade to Tier 1 if wind >8 mph.
+  - **Tier 1 (Normal, 8–12 mph):** 1x to 2x 15-lb bags placed over rear ground rail C (total wt 41–56 lbs). Safe to 19.0–25.5 mph fwd / 20.5 mph bwd tipping; turf sliding limit 15.2–17.8 mph. Zero clip stress.
+  - **Tier 2 (Advisory, 12–18 mph):** 2x 15-lb bags over rear rail C + 1x 15-lb bag suspended from Rail 2 (total wt 71 lbs). Balanced stability: 25.5 mph fwd / 26.6 mph bwd; turf sliding limit 20.0 mph.
+  - **Tier 3 (High-Wind, 18–22 mph):** 2x 15-lb bags over rear rail C + 2x 15-lb bags suspended from Rail 2 (total wt 86 lbs). Safe to 26.6–31.5 mph max gust; turf sliding limit 22.1 mph. Turf contact pressure ~0.25 psi (zero turf compaction).
   - **Tier 4 (Safety Abort, >20 mph sustained or >25 mph peak gusts):** STRICT NO-GO. Disengage clips (I), collapse rear support frame, and lay screen flat on turf.
-- **Severe Wind Feasibility Analysis (30 mph Limits):** For detailed engineering calculations and failure mode evaluations regarding extreme wind regimes, see [30 mph Wind Loading & Ballasting Feasibility Analysis](WIND_LOADING_30MPH_ANALYSIS.md). Ballasting for 30 mph on the field is prohibited due to lateral sliding drift on turf (requires >161 lbs ballast), tensile detachment of 3D-printed snap clips (I) under 153 lbs pull load, and logistical breakdown of the 3-person crew deployment timeline under CBA Rule 5.06 (3:15 clock).
-- **Field Deployment Crew Architecture & Pre-Set Receiver Protocol (16 Screens Total, 8 Per Side):**
-  - **Fleet & Crew Sizing:** Total fleet consists of **16 screens** deployed across two 8-screen lines flanking the front ensemble. Transported on **2 dedicated carts** (8 screens per cart). Operated by **2 adult cart pushers** (1 per cart), **2 student unloaders** (1 per cart), and **16 pre-set student performers/receivers** (8 per side, 1 per screen).
-  - **Front Sideline Placement Zones:**
-    - **Side 1 (Left / Stage Right):** 8 screens spanning ~64 ft along the front sideline (approx. 20-yd to 41-yd line flanking left of pit).
-    - **Side 2 (Right / Stage Left):** 8 screens spanning ~64 ft along the front sideline (approx. 59-yd to 80-yd line flanking right of pit).
-  - **Continuous Deployment Choreography:**
-    - **Asymmetric Backfield Staging:** Carts pre-stage on the back sideline at the yard line closest to the entry gate on their side (typically Back 20 on gate side, Back 40 on far side) to eliminate traffic bunching.
-    - **Transit & Directional Rolling:** Carts transit along perimeter lanes and roll along the front sideline *away from the stadium exit chute* at ~6–8s per screen, finishing at the opposite side so carts are positioned for egress.
-    - **Pre-Set Student Receivers:** Student performers are already in position at their assigned yard marks. As the cart passes, unloader drops the folded screen flat on turf with ballast; receiver immediately unfolds the rear triangle, seats arm clips (I) into Rail 3, latches adjacent screens, and places ballast.
-    - **Parallel Setup & Cart Staging:** All 8 screens per side are latched and ballasted concurrently in ~15–18s. Carts exit the front sideline and park in front staging areas ready for immediate post-show egress.
-  - **Field Egress Protocol (Zero-Doubling-Back Ballast Sweep):**
-    - **Final Chord Collapse:** At show conclusion, 16 student performers immediately disengage clips, collapse screens flat, remove ballast bags, and place them carefully on the turf without dropping or throwing.
-    - **Hand-Carry Sprint:** Pairs of students hand-carry collapsed screens (13 lbs/student) directly off the field to the stadium exit gate without waiting for carts (~35–45s).
-    - **Zero-Doubling-Back Ballast Sweep:** Cart pushers enter from the far end (away from exit gate) and sweep along the front sideline toward the exit gate, rolling ballast into carts without backtracking.
-    - **Clock Stop & Off-Field Reload:** Carts cross the stadium exit boundary to stop the official CBA 2:00 egress clock; full secure reload of screens onto carts occurs off-clock in the parking/warmup zone.
-  - **Operational Field Timeline vs. CBA Rule 5.06 (3:15 Clock) & Rule 8.05 (2:00 Egress):**
-    - Perimeter Ingress & Continuous Delivery: ~1:15–1:35.
-    - Concurrent Pre-Set Receiver Latching & Ballasting: ~15–20s.
-    - Total Deployment Elapsed Time: **~2:14 (134s)**, banking a safety buffer of **+61 seconds** before the 3:15 announcement ends (zero adult field-presence penalties).
-    - Post-Show Egress: Hand-carry sprint clears screens in **~45s**; directional ballast sweep clears field in **~1:15–1:30**, banking **+30 to +45s** before the 2:00 egress penalty clock expires.
+- **Severe Wind Feasibility Analysis (30 mph Limits):** For detailed engineering calculations and failure mode evaluations regarding extreme wind regimes, see [30 mph Wind Loading & Ballasting Feasibility Analysis](WIND_LOADING_30MPH_ANALYSIS.md). Ballasting for 30 mph on the field is prohibited due to lateral sliding drift on turf (requires >161 lbs ballast), tensile detachment of 3D-printed snap clips (I) under 153 lbs pull load, and logistical breakdown of deployment timelines.
+- **Adopted Field Logistics Architecture: Two-Student Carry Deployment & Egress:**
+  - **Paradigm Shift:** Following stochastic Monte Carlo simulation ($N = 5,000$ trials) and aerodynamic drag analysis, PCHSMB has officially adopted the **Two-Student Carry (Walk-Across)** strategy for competition field deployment and post-show egress.
+  - **Fleet & Crew Allocation:**
+    - Total fleet: **16 screens** deployed across two 8-screen lines flanking the front ensemble.
+    - Crew: **32 student performers/handlers** (16 pairs, exactly 2 students per duck blind).
+    - Support: 2 rolling transport carts operated by adult volunteers, utilized for trailer-to-stadium transit, off-field storage, and ballast sandbag staging.
+  - **Pre-Show Deployment Walkthrough (Mean: 55.7s | P95: 58.3s | +139s Safety Buffer):**
+    - **Queue & Stage:** Prior to entry permission, student pairs carry their fully assembled duck blinds into the stadium through rear gates and queue up along the back sideline/end zone directly across the field from their assigned front sideline coordinate marks.
+    - **The Walk-Across:** At the CBA entry signal ($T = 0:00$), all 16 student pairs simultaneously walk straight across the field carrying their assembled screen (13 lbs per student).
+    - **Deposit & Align:** At the front sideline, pairs place the screen, fine-align the front face with adjacent screens into a continuous visual wall, and seat the staged ballast bags over the rear ground rail C.
+    - **Clearance:** Pairs complete setup and step into their opening show drill sets in **~55–58 seconds**, banking an enormous **+139 seconds** of safety buffer before the 3:15 clock expires.
+    - **Zero Adult Penalties:** Because students perform the entire on-field deployment, **zero adult volunteers step onto the turf**, completely eliminating the risk of CBA Rule 4.03 adult field-presence penalties (0.2 pts per occurrence).
+  - **Post-Show Field Egress Walkthrough (Mean: 55.0s | P95: 60.4s | +65s Safety Buffer):**
+    - **Final Chord Pick-Up:** On the final note of the show, assigned student pairs immediately lift ballast bags gently to the turf (never throwing or dropping sandbags), grasp the assembled 26-lb duck blind between them (13 lbs/student), and hoof it straight off the field toward the stadium exit gate/tunnel.
+    - **Field Clearance:** All 16 screens completely clear the field boundary within **~50–60 seconds**, well within the official 2:00 CBA egress window.
+    - **Ballast Sweep & Off-Clock Cart Reload:** Adult cart pushers sweep the front sideline collecting the resting ballast bags and exit through the gate. Complete reload of screens onto transport carts occurs off the competition clock in the stadium exit apron/tunnel.
 - **2026 CBA Marching Band Competition Rules Compliance:**
-  - **Rule 5.02 (Mandatory Rear Entrance for Props):** CRITICAL MANDATE — All props must enter from the back sideline or rear end zone gates (above goal posts). Never cross directly across front boundary (reserved for pit equipment). Handlers transit around perimeter to front sideline coordinates.
+  - **Rule 5.02 (Mandatory Rear Entrance for Props):** CRITICAL MANDATE — All props must enter from the back sideline or rear end zone gates (above goal posts). Never cross directly across front boundary (reserved for pit equipment).
   - **Rule 5.03 & 5.06 (Entry Permission & Timing):** Pre-stage in rear half of end zone up to goal line. Never enter field before T&P judge signals official permission. Total setup and adult clearance window is 3 minutes 15 seconds.
-  - **Rule 4.03 & 5.06 (Field Clearance Before Performance):** All adult volunteers assisting props must be COMPLETELY CLEAR of field before introductory announcement ends (3:15 after entry permission; 0.2 pt penalty per occurrence).
+  - **Rule 4.03 & 5.06 (Field Clearance Before Performance):** All non-performer adult volunteers must be COMPLETELY CLEAR of field before introductory announcement ends (3:15 after entry permission; 0.2 pt penalty per occurrence).
   - **Rule 4.03 (Re-Entry Prohibition):** Adults strictly prohibited from entering/re-entering field during performance (0.2 pt penalty per occurrence).
   - **Rule 4.02(c) (Medical Emergency Assistance Exception):** NO PENALTY. Any band member ill or injured may be assisted from the field by adult volunteers, parents, or staff without penalty.
   - **Rule 4.02(a) (High-Wind Prop Restraint Exception):** In high winds when props are in danger of falling over, adults may enter performance field solely to secure props (never move props as choreography).

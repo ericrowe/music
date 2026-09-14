@@ -167,8 +167,8 @@ If future design iterations ever mandate mechanical survival in 30 mph winds, th
 
 1. **Positive-Lock Through-Pinning for Clips (I):**
    Replace the friction snap-fit clips with through-bolted 3/4" EMT clevis brackets and push-button quick-release detent hitch pins capable of resisting $>200\text{ lbs}$ of shear/tensile load.
-2. **Engineered Wind Relief Slits:**
-   Incorporate 3 rows of horizontal crescent slits ($8"\text{ wide} \times 5"\text{ drop}$) with $\varnothing 3/8"$ round punch-hole endpoints. This drops the drag coefficient from $C_d = 1.20$ to $1.02$ (a ~15–18% reduction in lateral drag).
+2. **Engineered Wind Relief Slits [ADOPTED AS STANDARD FLEET SPECIFICATION]:**
+   Incorporate 6 engineered true semicircular slits ($8"\text{ wide} \times 4"\text{ drop}$, radius $R = 4"$) arranged in a $2 \times 3$ grid with $\varnothing 3/8"$ round punch-hole endpoints. Semicircular geometry allows fast and repeatable hand fabrication using a compass or circular guide. This drops the drag coefficient from $C_d = 1.20$ to $1.02$ (a 15.0% reduction in lateral drag and overturning moment) and eliminates vortex-shedding flutter, raising turf sliding resistance and lowering clip tensile forces across all operational tiers.
 3. **Turf High-Friction Cleats:**
    Install textured high-durometer EPDM rubber foot pads or silicone gripping sleeves along the underside of ground rails B and C to increase the friction coefficient $\mu$ from $0.35$ to $\ge 0.65$, reducing the weight needed to prevent sliding.
 4. **Perimeter Clamp Mechanical Screwing:**

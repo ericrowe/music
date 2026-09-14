@@ -6,6 +6,7 @@
 - Project slug: `sideline-screen-duck-blind-construction-and-field-operations-manual`
 - Machine state: `project.json`
 - Controlling technical facts: `references/TECHNICAL_SPEC.md`
+- Wind relief specifications: `references/WIND_RELIEF_CUTS_SPECIFICATION.md`
 - Figure system: `references/FIGURE_STYLE.md`
 - Figure provenance and status: `references/FIGURE_REGISTER.csv`
 
@@ -31,6 +32,12 @@
 - `Main frame`, `Rear support frame`, `Bottom support arms`
 - Tube letters: A (92.5"), B (44.5"), C (86.5"), D (37"), E (27.5")
 - Hardware: F (Corner bracket), G (T-bracket), H (Corner plug), I (Hinged arm clip), J (#8 x 1/2" screw)
+
+## Project Invariants
+
+- Banner wind relief cuts strictly use true semicircular geometry ($8.0\text{ in.}$ top chord × $4.0\text{ in.}$ drop, $R = 4.0\text{ in.}$) with mandatory pre-punched $\varnothing 3/8\text{ in.}$ tear-arrest holes (never oval or elongated-U cuts).
+- Field deployment and egress adopt the Two-Person Carry protocol (16 student pairs carry assembled screens straight across turf; 0 adult field-presence penalty risk).
+- All sandbags must be double-bagged with intact plastic inner liners per CBA Rule 8.05.
 
 ## Source Priority
 

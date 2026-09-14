@@ -4,72 +4,64 @@
 
 ## 1. Executive Summary & Recommended Strategy
 
-### 1.1 The Golden Logistics Protocol
+### 1.1 The Adopted Two-Student Carry Protocol
 ```
 +---------------------------------------------------------------------------------------------------+
-|                                    GOLDEN LOGISTICS PROTOCOL                                      |
+|                                 ADOPTED FIELD LOGISTICS PROTOCOL                                  |
 +---------------------------------------------------------------------------------------------------+
-|  FLEET:           Dedicated 2-Cart Fleet (Cart 1 = Side 1, Cart 2 = Side 2; 8 screens per cart)  |
-|  CREW:            2 Adults (Pushers) + 2 Student Unloaders + 16 Entry Setters + 16 Exit Performers|
-|  STAGING:         Asymmetric Backfield Staging based on Stadium Exit Gate Location:               |
-|                   - Cart on Exit Side stages at 20-yard line (closest marker to exit)             |
-|                   - Cart on Far Side stages at 40-yard line (closest marker to exit)              |
-|  DEPLOYMENT:      Pre-Set Student Receivers; Carts roll dropping blinds moving AWAY from exit     |
-|  BALLAST SWEEP:   Zero-Doubling-Back Sweep moving TOWARDS exit (Exit side: 42->22; Far side: 22->42)|
-|  EGRESS:          Direct Hand-Carry by Student Performers straight into Single Exit Chute/Tunnel  |
-|  RELOAD:          Off-Clock Cart Reloading in Stadium Tunnel Mouth / Apron (e.g. Falcon Stadium)  |
+|  PRIMARY STRATEGY: Two-Student Carry (Walk-Across Deployment & Egress Sprint)                      |
+|  CREW:             32 Student Performers (16 pairs, 1 pair per screen) + 2 Adult Ballast Pushers  |
+|  DEPLOYMENT:       Walk-Across from Back Sideline / End Zone directly to Front Sideline Marks     |
+|  DEPLOYMENT TIME:  Mean: 55.7 seconds (0:55) | P95: 58.3 seconds | Buffer: +139.3s vs 3:15 Clock   |
+|  EGRESS:           Two-Student Hand-Carry Sprint straight through Stadium Exit Gate / Tunnel      |
+|  EGRESS TIME:      Mean: 55.0 seconds (0:55) | P95: 60.4 seconds | Buffer: +65.0s vs 2:00 Clock    |
+|  CARTS & BALLAST:  2 Rolling Carts support off-field transport and sideline ballast sweep         |
+|  PENALTY RISK:     0.0% (Zero adult volunteers step on turf during deployment = 0 rule penalties) |
 +---------------------------------------------------------------------------------------------------+
 ```
 
-#### Crew Roster & Job Assignments (2 Adults + Up to 34 Student Performers Total)
-* **2 Adults (Parent Cart Pushers):** 1 adult per cart.
-  - **Exit-Side Pusher:** Stages on back sideline at the **20-yard line**. Rolls straight forward across the field, turns inward, and drops blinds from 22 $\to$ 42-yard line (away from exit), parking at the 42. On egress, immediately sweeps ballast outward from 42 $\to$ 22-yard line (straight toward exit) and rolls directly into the tunnel chute!
-  - **Far-Side Pusher:** Stages on back sideline at the **40-yard line**. Rolls straight forward across the field, turns outward, and drops blinds from 42 $\to$ 22-yard line (away from exit), parking at the 22. On egress, immediately sweeps ballast inward from 22 $\to$ 42-yard line (straight toward exit across midfield) and rolls into the tunnel chute!
-  - **Zero Doubling Back:** Neither pusher ever walks a single wasted foot backward with a loaded cart!
-* **2 Cart Unloaders (Students):** 1 student jogging alongside each cart. As the cart rolls along the sideline, pulls each 2"-thick folded blind from the rack and drops it flat on the turf at each yard mark. **Does NOT set them up.**
-* **16 Pre-Show Screen Setters (Students):** 1 student assigned per blind (8 per side), chosen specifically because their **opening drill set (Dot 1) is right next to that blind** on the front sideline. On entry, waits at the mark; as soon as the blind drops, lifts it, unfolds the triangular frame, and latches the internal brace clips (~6s).
-* **16 Post-Show Egress Performers (Students):** 1 student assigned per blind (8 per side), chosen specifically because their **final closing drill set finishes nearest that blind** on the front sideline. *(Note: Because drill staging moves across the field, these are typically a completely different set of 16 students than the pre-show setters, eliminating cross-field transit lag!)* At the final cutoff chord, each unclips, folds the 26-lb frame flat (~6s), removes the ballast sandbag and leaves it in place resting on the turf (careful not to drop or throw it), and hand-carries the frame directly down the sideline corridor into the exit chute / tunnel.
+#### Crew Roster & Job Assignments (32 Student Performers + 2 Adult Ballast Handlers)
+* **32 Student Handlers (16 Student Pairs):** 2 students assigned per screen (8 pairs on Side 1, 8 pairs on Side 2).
+  - **Deployment:** Prior to permission, student pairs carry the fully assembled 26-lb duck blind into the stadium and queue on the back sideline/end zone directly across from their assigned yard line. On the starting horn, pairs walk straight across the field (~55 yds at 1.1 yd/s), deposit the screen on its front mark, fine-align, and place the ballast bags over rear rail C. Complete in **~55–58 seconds**.
+  - **Egress:** At the final show cutoff chord, assigned pairs gently remove ballast to the turf, grasp the assembled screen between them (13 lbs/student), and sprint straight out through the stadium exit gate/tunnel. Complete field clearance in **~50–60 seconds**!
+* **2 Adults (Parent Ballast Pushers):** 1 adult per cart.
+  - Staged outside the front sideline boundary during performance.
+  - On show conclusion, roll empty carts along the front sideline to sweep resting ballast bags and exit through the tunnel.
+  - Cart reloading occurs off-clock in the stadium exit tunnel/apron.
 
 ---
 
 ### 1.2 Step-by-Step Field Walkthrough
 
-#### Pre-Show Deployment Walkthrough (Expected: 2 min 14 sec | Cap: 3 min 15 sec)
-1. **The Universal Backfield Staging Rule:** Before entering, the logistics coordinator identifies the stadium's exit tunnel. Both carts stage on the backfield marker on their side that is **closest to the exit**:
-   - **Exit-Side Cart:** Stages at the **20-yard line**.
-   - **Far-Side Cart:** Stages at the **40-yard line**.
-   *(Both have an unobstructed 55.0-yard straight lane to the front sideline).*
-2. **The Charge ($T = 0:00$):** At permission to enter, both adults push their carts straight forward across the field ($1.1\text{ yd/s}$ pace). Upon reaching the front sideline, both carts make a 90° turn and begin rolling **away from the exit**:
-   - Exit-side cart rolls inward (22 $\to$ 42-yard line).
-   - Far-side cart rolls outward (42 $\to$ 22-yard line).
-3. **The Drop:** As each cart rolls, the student unloader pulls one folded blind every 2.7 yards and drops it flat on the turf. The cart never stops!
-4. **The Parallel Setup:** The 16 opening setters (already standing at their opening drill sets near the marks) catch their blind, stand it up, and latch the internal brace clips in parallel (~6s each).
-5. **Clear Field, Parked for Egress & Early Signal ($T = 2:14$):**
-   - Both carts drop their final blind and step just outside the front boundary line into parking.
-   - **Crucial Positioning:** Because carts dropped moving away from the exit, they finish deployment **already positioned at the exact starting points for post-show ballast pickup** (Exit-side cart parked at 42; Far-side cart parked at 22)!
-   - The director signals the Timing & Penalties judge **60 seconds early**, cueing the official announcement and banking an extra minute for egress!
+#### Pre-Show Deployment Walkthrough (Expected: 55.7 sec | Cap: 3 min 15 sec)
+1. **Pre-Staging:** 16 student pairs carry assembled screens from the truck/warmup lot through the rear entrance gate (CBA Rule 5.02) and queue along the back sideline/end zone directly across from their assigned front sideline marks.
+2. **The Walk-Across ($T = 0:00$):** At official entry permission, all 16 student pairs walk in synchronized formation straight across the field toward the front sideline.
+3. **Placement & Ballast ($T = 0:45$ to $0:55$):** Pairs set the screen, adjust lateral alignment to form a continuous visual wall, and place ballast bags over the rear ground rail C.
+4. **Clear Field ($T \le 0:58$):** Student pairs transition directly to their opening performance drill coordinates. The field is 100% clear of adults and prop equipment in **under 1 minute**, banking **+139 seconds** before the 3:15 announcement ends!
 
-#### Post-Show Egress Walkthrough (Expected: 1 min 40 sec | Official Clock Stops at Tunnel)
-1. **Final Chord ($T = 0:00$):** The 16 designated egress performers (whose closing drill set finishes adjacent to each screen) simultaneously unclip internal braces and fold each 3-panel frame flat to its 2" nested profile (~6s).
-2. **Ballast Removal & Hand-Carry Sprint:** Students remove the ballast sandbags from the frame base and leave them in place resting on the turf—being careful **not to throw or drop them** (protecting bag seams and synthetic turf). Each student then picks up their 26-lb folded frame and jogs straight down the front sideline corridor directly into the stadium exit chute / tunnel ($35\text{--}50\text{s}$).
-3. **The Zero-Doubling-Back Ballast Sweep:** Both parent pushers step directly onto the sideline from their park spots and sweep ballast bags **straight toward the exit**:
+#### Post-Show Egress Walkthrough (Expected: 55.0 sec | Official Clock Stops at Tunnel)
+1. **Final Chord ($T = 0:00$):** Student pairs immediately lift ballast bags gently to the turf (never throwing or dropping sandbags to protect seams and synthetic turf).
+2. **The Two-Student Carry Sprint ($T = 0:05$ to $0:55$):** Student pairs grasp their assembled screen (13 lbs/student) and jog straight down the front sideline corridor directly into the stadium exit chute / tunnel. No folding required on field!
+3. **The Zero-Doubling-Back Ballast Sweep ($T = 0:15$ to $1:15$):** Both parent pushers step directly onto the sideline from their off-field park spots and sweep resting ballast bags into the carts:
    - **Exit-Side Cart:** Starts at 42-yd line and sweeps **outward (42 $\to$ 22)** toward the exit gate. The 8th bag is loaded at the 22-yard line, and the cart rolls straight off into the tunnel chute!
    - **Far-Side Cart:** Starts at 22-yd line and sweeps **inward (22 $\to$ 42)** toward midfield. The 8th bag is loaded at the 42-yard line, and the cart rolls straight across midfield directly into the tunnel chute!
-4. **★ THE CLOCK STOPS ★ ($T \approx 1:40$):** Under CBA Rule 5.06, the official 15-minute competition clock stops the exact second the last cart and student cross the field boundary into the tunnel mouth!
+4. **★ THE CLOCK STOPS ★ ($T \le 1:00$ to $1:15$):** Under CBA Rule 5.06, the official 15-minute competition clock stops the exact second the last cart and student cross the field boundary into the tunnel mouth!
 5. **Off-Clock Reload in the Tunnel:** Inside the tunnel mouth (e.g., at Falcon Stadium for State Championships), the crew pauses **completely off the clock** to slide the blinds into the cart racks and lash them down while the next band takes the field.
 
 ---
 
-### 1.3 Summary of Backing Simulation Data & 99.999% Confidence Rails
+### 1.3 Summary of Backing Simulation Data & Confidence Rails
 
-All statistics derived from $N = 50,000$ continuous Monte Carlo trials incorporating middle-aged parent pusher biomechanics, synthetic infill turf rolling resistance, Tier 1 wind ballast ($15\text{ lbs/screen}$), corner scrub penalties, and student transit dynamics under the recommended solution:
+All statistics derived from $N = 50,000$ continuous Monte Carlo trials (cart fleet) and $N = 5,000$ trials (Two-Student Carry) incorporating pusher biomechanics, student transit dynamics, infill turf rolling resistance, Tier 1 wind ballast, and single/dual exit stadium gates:
 
-| Operational Phase | Protocol & Logistics Details | Expected Time (Mean) | P95 Time (95% CI) | P99 Time (99% CI) | 99.999% Confidence Rail ($5\sigma$) | Safety Margin vs Rule Limit |
-|---|---|:---:|:---:|:---:|:---:|:---:|
-| **Pre-Show Deployment** | 2 Carts, Pre-Set Receivers, Asymmetric Back 20/40 Start | **133.9 s (2:14)** | 148.3 s (2:28) | 156.6 s (2:37) | **182.8 s (3:03)** | **+12.2 s vs 3:15 cap** ($100\%$ pass) |
-| **Official Announcement** | Standard CBA Script (Rule 5.09) | **35.0 s (0:35)** | 35.0 s (0:35) | 35.0 s (0:35) | **35.0 s (0:35)** | *Standardized Script* |
-| **Post-Show Field Clearance** | Direct Hand-Carry, Single Exit Chute / Tunnel (Directional Sweep) | **100.1 s (1:40)** | 114.2 s (1:54) | 121.7 s (2:02) | **148.7 s (2:29)** | **+25.8 s vs 2:00 mark** at P95 |
-| **Total Non-Show Overhead** | Deployment + 35s Announcement + Single-Gate Clearance | **268.9 s (4:29)** | 288.6 s (4:49) | 298.8 s (4:59) | **330.3 s (5:30)** | **+5 min 30 sec Slack** (vs 15:00 block) |
+| Operational Phase | Protocol & Logistics Details | Expected Time (Mean) | P95 Time (95% CI) | P99 Time (99% CI) | Safety Margin vs Rule Limit | Status / Notes |
+|---|---|:---:|:---:|:---:|:---:|:---|
+| **Adopted Deployment** | **Two-Student Carry (16 pairs walk assembled across turf)** | **55.7 s (0:56)** | **58.3 s (0:58)** | **59.7 s (1:00)** | **+139.3 s vs 3:15 cap** | ★ **Primary Adopted Standard** ($100\%$ pass, 0 adult boundary risk) |
+| *Alternative Deployment* | *2 Carts, Pre-Set Receivers, Back 20/40 Start* | *133.9 s (2:14)* | *148.3 s (2:28)* | *156.6 s (2:37)* | *+61.1 s vs 3:15 cap* | *Secondary Backup Option ($100\%$ pass)* |
+| **Official Announcement** | Standard CBA Script (Rule 5.09) | **35.0 s (0:35)** | 35.0 s (0:35) | 35.0 s (0:35) | *Fixed CBA Interval* | Director signals ready early |
+| **Adopted Egress** | **Two-Student Carry Sprint (Direct to Exit Gate/Tunnel)** | **55.0 s (0:55)** | **60.4 s (1:00)** | **64.2 s (1:04)** | **+65.0 s vs 2:00 mark** | ★ **Primary Adopted Standard** (Single exit gate) |
+| *Alternative Egress* | *Direct Hand-Carry Folded + Cart Ballast Sweep* | *100.1 s (1:40)* | *114.2 s (1:54)* | *121.7 s (2:02)* | *+19.9 s vs 2:00 mark* | *Secondary Backup Option* |
+| **Total Non-Show Overhead** | **Two-Student Carry (Deploy + Announce + Egress)** | **145.7 s (2:26)** | **153.7 s (2:34)** | **158.9 s (2:39)** | **> 12 min available** | **Enables maximum allowable show design** |
 
 ---
 
