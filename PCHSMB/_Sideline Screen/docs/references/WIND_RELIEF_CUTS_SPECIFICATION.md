@@ -217,9 +217,10 @@ flowchart TD
     C --> D["Step 4: Verify Gravity Closure<br>(Confirm flap hangs flush with zero binding)"]
 ```
 
-1. **Step 1: Mark Pivot & Punch Hole Centers (From Rear):**
-   * Perform this step *after* the vinyl is wrapped and clamped onto the frame, or while the vinyl is laid flat face-down on clean moving blankets.
-   * For each flap, mark the center pivot $(X_{pivot}, Y_{hinge})$. Then mark the two punch hole centers exactly $4.0\text{ in.}$ left and right along the horizontal hinge line.
+1. **Step 1: Inspect Artwork & Mark Pivot Coordinates:**
+   * Perform this step *after* the vinyl is wrapped and clamped onto the frame, or while the vinyl is laid flat on clean moving blankets.
+   * **Inspect Front Artwork First:** Verify that the nominal coordinates ($X = 24", 48", 72"$; $Y = 34", 24"$) do not intersect performer faces, show typography, or school logos. If needed, float the horizontal centerpoint $\pm 6\text{ to }12\text{ in.}$ into solid colors or negative textures per Section 8.3.
+   * Mark the center pivot $(X_{pivot}, Y_{hinge})$. Then mark the two punch hole centers exactly $4.0\text{ in.}$ left and right along the horizontal hinge line.
 2. **Step 2: Punch the Tear-Arrest Holes (MANDATORY BEFORE ANY SLICING):**
    * Slide the hardwood backing block directly behind the vinyl at the mark.
    * Place the $\varnothing 3/8\text{ in.}$ punch vertically on the mark and strike firmly with the mallet to cut a crisp, 100% circular slug from the vinyl.
@@ -229,13 +230,49 @@ flowchart TD
    * Place the semicircular guide against the vinyl, centered at the pivot point.
    * Starting at the **bottom tangent of the left hole**, guide the utility knife in a smooth circular arc of constant radius $R = 4.0\text{ in.}$, sweeping down to the $4.0\text{ in.}$ depth apex, and continuing smoothly up to terminate at the **bottom tangent of the right hole**.
    * **DO NOT cut the horizontal top line** between the two holes; this $8.0\text{ in.}$ segment is the live vinyl hinge.
-4. **Step 4: Verify Action & Clearance:**
-   * Stand the screen upright. Verify that the flap hangs completely flat and flush under gravity.
+4. **Step 4: Verify Action, Alignment & Visual Camouflage:**
+   * Stand the screen upright. Verify that the flap hangs completely flat, coplanar, and flush under gravity with zero tip curling or binding.
    * Push gently on the back of the flap; it should swing forward freely to $45^\circ$ with zero resistance, then drop shut flush when released.
+   * **Optional Backlight Baffle:** If props will face low-angle direct afternoon sun from behind, apply a $1.5\text{ in.} \times 1.5\text{ in.}$ patch of black Gorilla tape to the backside of each punch hole with a slit along the bottom tangent (Section 8.5).
 
 ---
 
-## 8. Summary Comparison & Decision Matrix
+## 8. Visual Aesthetics, Optical Camouflage & Artwork Protection Rules
+
+### 8.1 Viewing Distance & Human Eye Angular Acuity
+Marching band competitions are evaluated from significant distances:
+* **Front Spectator Stands:** $25\text{ to }60\text{ yards}$ ($75\text{ to }180\text{ ft}$).
+* **Judges' Press Box:** $40\text{ to }80+\text{ yards}$ ($120\text{ to }240+\text{ ft}$) elevated above the stands.
+
+Human visual acuity is approximately $1\text{ arcminute}$ ($1/60^\circ$):
+* At 30 yards ($90\text{ ft}$), the minimum resolvable feature size is **$0.31\text{ in.}$ ($8.0\text{ mm}$)**.
+* At 50 yards ($150\text{ ft}$), the minimum resolvable feature size is **$0.52\text{ in.}$ ($13.3\text{ mm}$)**.
+* **Razor Cut Kerf:** A standard utility knife cut has a kerf width of less than **$0.01\text{ in.}$ ($0.25\text{ mm}$)**. Because the flap is cut directly from the printed graphic with zero material removed along the arc, the slit is **over 30× smaller than the human visual threshold from the front row of the stands**. When hanging closed, the cut line is completely undetectable.
+* **Punch Hole Resolution:** The $\varnothing 3/8\text{ in.}$ ($9.5\text{ mm}$) circular tear-arrest holes sit right at the visual resolution threshold at 30 yards ($0.31\text{ in.}$) and well below resolution from the press box. Against printed textures, photographic elements, or darker colors, they blend seamlessly into the print.
+
+### 8.2 Thermal Beam-Stiffness & Anti-Sag Geometry
+* **The Oval / Deep-U Flap Failure Mode:** Deep flaps (e.g., $6\text{ to }8\text{ in.}$ drop) create a long, slender tongue. Under high summer heat on black crumb-rubber synthetic turf (where surface temperatures reach $130^\circ\text{F}\text{ to }150^\circ\text{F}$), scrim vinyl experiences plastic creep and thermal relaxation. Long tongues curl forward at the tip, creating dark crescent shadows and breaking graphic alignment even in zero wind.
+* **The Semicircular Advantage ($1:2$ Aspect Ratio):** The true semicircle has a wide $8.0\text{ in.}$ horizontal hinge supporting a compact $4.0\text{ in.}$ drop. This low aspect ratio gives the flap high beam-stiffness. Gravity pulls the flap completely flush and coplanar against the frame, eliminating tip curl and keeping the cut invisible.
+
+### 8.3 The Mandatory "Floating Flap" Artwork Protection Rule
+Volunteer fabrication crews must observe the **Floating Flap Rule**:
+* **$\pm 6\text{ to }12\text{ in.}$ Horizontal Float:** Flap coordinates are nominal. If an assigned center point intersects high-contrast artwork, the center point may float horizontally along the hinge row ($Y = 34.0\text{ in.}$ or $Y = 24.0\text{ in.}$) by $\pm 6\text{ to }12\text{ in.}$ to locate the cut in solid background colors, dark textures, sky gradients, or negative space.
+* **Strict Prohibitions:** Flaps are **strictly prohibited** from cutting through performer faces, show typography/title lettering, mascot artwork, or school crests/logos.
+
+### 8.4 Preservation of Duck Blind Equipment Concealment
+The duck blind's primary theatrical function is concealing color guard equipment (rifles, sabres, flags) and performers during sideline changes:
+* **Rejection of Perforated Mesh Banner:** Factory 70/30 or 80/20 mesh vinyl reduces color saturation by 20%–30% and is translucent under stadium floodlights, exposing equipment and kneeling performers. Solid 13 oz scrim vinyl preserves 100% color vibrancy and opacity.
+* **96.6% Solid Opacity:** The 6 semicircular flaps occupy only $1.047\text{ sq ft}$ ($3.43\%$ of the $30.5\text{ sq ft}$ face), maintaining **96.6% solid, 100% opaque vinyl coverage**.
+* **Vertical Height Buffer:** The lowest flap apex sits at $Y = 20.0\text{ in.}$ above the turf. All staged rifles, sabres, and floor equipment lie flat on the turf below $Y = 10.0\text{ in.}$, ensuring that backstage equipment remains 100% hidden from spectator view even if flaps flutter momentarily during wind gusts.
+
+### 8.5 Backlight & Daylight Pinprick Baffle (Optional Shop Detail)
+In venues where the late-afternoon sun sits behind the back sideline (e.g., Falcon Stadium looking west toward the Rampart Range), direct sunlight can shine through the $\varnothing 3/8\text{ in.}$ punch holes, creating small pinpricks of daylight.
+* **Flexible Light Baffle:** Volunteers can apply a $1.5\text{ in.} \times 1.5\text{ in.}$ square of **black heavy-duty tape (Gorilla tape) or scrap black banner vinyl** to the **backside** of the vinyl directly behind each $\varnothing 3/8\text{ in.}$ punch hole.
+* **Baffle Slit:** Cut a small razor slit through the tape patch along the lower circumference of the hole. This creates a light-tight optical baffle that blocks direct solar pass-through while allowing boundary-layer air to exhaust freely when the flap opens.
+
+---
+
+## 9. Summary Comparison & Decision Matrix
 
 | Operational / Structural Metric | Solid Vinyl (No Cuts) | With 6 Engineered Relief Cuts | Engineering Benefit |
 |---|:---:|:---:|---|

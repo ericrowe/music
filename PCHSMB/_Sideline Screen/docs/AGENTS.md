@@ -36,6 +36,7 @@
 ## Project Invariants
 
 - Banner wind relief cuts strictly use true semicircular geometry ($8.0\text{ in.}$ top chord × $4.0\text{ in.}$ drop, $R = 4.0\text{ in.}$) with mandatory pre-punched $\varnothing 3/8\text{ in.}$ tear-arrest holes (never oval or elongated-U cuts).
+- Floating Flap Rule: Wind relief cut centerlines may float horizontally $\pm 6\text{ to }12\text{ in.}$ into negative space, shadows, or solid textures; cuts are strictly prohibited across performer faces, show typography, or logos.
 - Field deployment and egress adopt the Two-Person Carry protocol (16 student pairs carry assembled screens straight across turf; 0 adult field-presence penalty risk).
 - All sandbags must be double-bagged with intact plastic inner liners per CBA Rule 8.05.
 
