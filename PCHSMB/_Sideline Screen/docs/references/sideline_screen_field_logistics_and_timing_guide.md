@@ -105,9 +105,13 @@ Under CBA Rule 5.06, total field time runs from permission to enter until the la
 
 ---
 
-## 3. Detailed Entry & Deployment Analysis
+## 3. Cart-Fleet Simulation Trade Study (Comparative Baseline — Superseded)
 
-#### Recommended: 2-Cart Dedicated Fleet (Parallel Half-Field Deployment)
+> [!NOTE]
+> **Trade Study Context & Superseded Status:**  
+> The simulation data in Sections 3 and 4 documents the band's preliminary trade study evaluating 1-cart vs. 2-cart transport fleets. While this study demonstrated that a 2-cart fleet was vastly superior to a single cart (2:14 vs. 3:55), both cart models have been **officially superseded by the Two-Student Carry protocol** (Section 1). The Two-Student Carry achieves **55.7s deployment** and **55.0s egress** with zero transport carts and zero adult boundary penalty risk. The cart analysis below is preserved strictly for comparative and historical reference.
+
+#### Prior Cart Baseline: 2-Cart Fleet (Parallel Half-Field Deployment)
 ```mermaid
 flowchart LR
     TC1["<b>2-Cart Fleet</b><br/>8 Screens / Cart<br/><b>458 lbs Gross</b>"]
@@ -135,8 +139,8 @@ flowchart LR
 
 ![Pre-Show Deployment Probability Distribution (1 Cart vs. 2 Carts)](simulation/plots/cdf_comparison.png)
 
-### 3.1 Starting Location Rankings & Asymmetric Alignment
-1. **Asymmetric `Back_20` & `Back_40` (Recommended Standard):** **133.9 s (2:14)** mean, $148.3\text{s}$ P95, **+61.1 s slack**.
+### 3.1 Starting Location Rankings & Asymmetric Alignment (Cart Baseline)
+1. **Asymmetric `Back_20` & `Back_40` (Prior Cart Baseline):** **133.9 s (2:14)** mean, $148.3\text{s}$ P95, **+61.1 s slack**.
    - The cart on the exit side stages at the **20-yard line** (55 yd straight to 22-yd line drop start).
    - The cart on the opposite side stages at the **40-yard line** (55 yd straight to 42-yd line drop start).
    - Both pushers travel identical straight-line entry distances (55.0 yd), drop away from the exit (18.7 yd), and park at the exact spot required for post-show collection.

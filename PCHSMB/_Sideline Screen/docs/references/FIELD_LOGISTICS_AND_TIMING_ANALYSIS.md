@@ -132,11 +132,15 @@ $$T_{\text{total}} = T_{\text{deploy}} + T_{\text{announce}} + T_{\text{show}} +
 
 ---
 
-## 3. Detailed Entry & Deployment Simulation Analysis ($N = 50,000$ Trials)
+## 3. Cart-Fleet Simulation Trade Study (Comparative Baseline — Superseded)
 
-### 3.1 Why 1 Cart Fails vs. Why 2 Carts Succeed
+> [!NOTE]
+> **Trade Study Context & Superseded Status:**  
+> The simulation data in Sections 3 and 4 documents the band's preliminary trade study evaluating 1-cart vs. 2-cart transport fleets. While this study demonstrated that a 2-cart fleet was vastly superior to a single cart (2:14 vs. 3:55), both cart models have been **officially superseded by the Two-Student Carry protocol** (Section 1). The Two-Student Carry achieves **55.7s deployment** and **55.0s egress** with zero transport carts and zero adult boundary penalty risk. The cart analysis below is preserved strictly for comparative and historical reference.
 
-#### Recommended: 2-Cart Dedicated Fleet (Parallel Half-Field Deployment)
+### 3.1 Why 1 Cart Fails vs. Why 2 Carts Succeeded (Cart Trade Study)
+
+#### Prior Cart Baseline: 2-Cart Fleet (Parallel Half-Field Deployment)
 ```mermaid
 flowchart LR
     TC1["<b>2-Cart Fleet</b><br/>8 Screens / Cart<br/><b>458 lbs Gross</b>"]
@@ -189,7 +193,7 @@ flowchart LR
 
 ### 3.3 Setup Strategy: Pre-Set Student Receivers vs. Mobile Pincer
 
-* **Pre-Set Student Receivers (RECOMMENDED):**
+* **Pre-Set Student Receivers (Best Cart Alternative):**
   * As the band enters, the 8 student performers for each side jog directly to their assigned yard marks on the front sideline.
   * As the cart rolls outward from the 42-yard line to the 22-yard line, two students on the cart simply slide each blind off the cart bed onto the turf ($3.4\text{s}$ per drop).
   * The waiting on-field student immediately stands the blind up, unfolds the triangular frame, and latches the internal brace clips in parallel.
@@ -200,9 +204,9 @@ flowchart LR
 
 ---
 
-## 4. Detailed Post-Show Egress Simulation Analysis ($N = 50,000$ Trials)
+## 4. Post-Show Egress Simulation Analysis ($N = 50,000$ Trials)
 
-### 4.1 The Winning Protocol: Direct Hand-Carry + Tunnel Staging
+### 4.1 Cart Egress Evaluation: Hand-Carry vs. On-Field Cart Loading
 
 ```mermaid
 sequenceDiagram
