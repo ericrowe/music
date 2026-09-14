@@ -13,15 +13,15 @@
 
 This specification establishes the official engineering standard for wind relief cuts in the custom-printed scrim vinyl banners of the PCHSMB Rolling Backdrop fleet (10 backdrops total).
 
-| Parameter | Final Engineering Recommendation | Evaluation vs. Alternatives |
+| Parameter | Recommendation | Engineering Justification |
 |---|---|---|
-| **Shape Geometry** | **True Semicircular Flap** ($180^\circ$ circular arc) | **Strongly preferred over oval / elongated-U shapes.** Provides single-radius fabrication simplicity, uniform gravity-return stiffness (no tip curl/sag), zero notch risers at endpoints, and 100% tooling commonality across band prop fleets. |
-| **Flap Dimensions** | **$8.0\text{ in.}$ Chord Width $\times 4.0\text{ in.}$ Downward Drop** (Radius $R = 4.0\text{ in.}$) | Matches exact radius and tooling used on the PCHSMB Sideline Screen / Duck Blind fleet. Compact 4.0" drop prevents thermal sagging while providing $25.13\text{ sq in.}$ vent area per flap. |
-| **Quantity & Layout** | **8 Flaps (Primary Fleet Standard)** organized as a **2 Row × 4 Column Grid**; or **6 Flaps (Approved Minimal Option)** as a **2 Row × 3 Column Grid** | 8 flaps yield $1.40\text{ sq ft}$ total vent area (1.75% of face); 6 flaps yield $1.05\text{ sq ft}$ (1.31% of face). Drops overall prop drag coefficient from $C_d = 1.20$ to $C_d = 1.02$ (15.0% reduction in lateral drag and overturning moment). |
-| **Vertical Placement** | **Upper Venting Zone (Upper 40%–65% of frame: $6.0\text{ ft}$ to $8.0\text{ ft}$ above bottom rail)** | Relieves aerodynamic pressure where overturning leverage ($z \times F$) is highest. Row 1 centered at $Y = 96\text{ in.}$ ($8.0\text{ ft}$); Row 2 centered at $Y = 72\text{ in.}$ ($6.0\text{ ft}$). Avoids bottom 4 ft and top 1 ft. |
-| **Horizontal Spacing** | **8-Cut Grid:** $X = 19.2\text{ in.}, 38.4\text{ in.}, 57.6\text{ in.}, 76.8\text{ in.}$<br>**6-Cut Grid:** $X = 24.0\text{ in.}, 48.0\text{ in.}, 72.0\text{ in.}$ | Symmetrical distribution across 96" width; minimum 12" frame clearance from side upright posts and greenhouse snap clamps. |
-| **Graphic Clearance** | **$\pm 6\text{ to }12\text{ in.}$ Floating Offset Rule** | Center points may float horizontally into solid backgrounds, shadows, or negative space. **Strictly prohibited** from cutting through performer faces, show typography, or band logos. |
-| **Tear-Arrest Mandate** | **Pre-Punched $\varnothing 3/8\text{ in.}$ ($10\text{ mm}$) Circular Holes** | Two clean circular punch holes at chord endpoints **MUST** be executed prior to razor slicing. Eliminates sharp stress risers ($K_t \ge 3.0 \to 1.0$), permanently arresting tear propagation. |
+| **Shape** | **True Semicircular Flap** (180° circular arc) | **Strongly preferred over oval / elongated-U.** Single-radius layout, uniform gravity return without tip curl/sag, zero notch risers, and 100% tooling shared with Sideline Screens. |
+| **Dimensions** | **8.0" chord × 4.0" drop** (Radius R = 4.0") | Matches Sideline Screen radius and punch tools. Compact 4" drop prevents thermal sagging while venting 25.1 sq in per flap. |
+| **Count & Grid** | **8 Flaps (2 Rows × 4 Cols)**<br>*(or 6 Flaps: 2 Rows × 3 Cols)* | 8 flaps = 1.40 sq ft (1.8% of face); 6 flaps = 1.05 sq ft (1.3%). Drops prop drag coefficient from Cd = 1.20 to 1.02 (15% load reduction). |
+| **Vertical Zone** | **Upper Venting Zone (6.0 to 8.0 ft above bottom rail)** | Relieves pressure where overturning leverage is highest. Row 1 centered at Y = 96" (8 ft); Row 2 at Y = 72" (6 ft). Avoids top 1 ft and bottom 5 ft. |
+| **Horizontal Spacing** | **8-Cut:** X = 19.2", 38.4", 57.6", 76.8"<br>**6-Cut:** X = 24", 48", 72" | Symmetrical spacing across 96" width; minimum 12" frame clearance from side upright posts and greenhouse clamps. |
+| **Graphic Clearance** | **±6" to 12" Floating Offset Rule** | Center points float into dark backgrounds or negative space. Strictly prohibited across performer faces, show typography, or crests. |
+| **Tear Arrest** | **Pre-Punched 3/8" (10 mm) Holes** | Clean circular punch holes at chord endpoints before razor cutting. Reduces stress concentration (Kt 3.0 → 1.0), stopping tears. |
 
 ---
 
@@ -65,12 +65,12 @@ When wind strikes the banner, the semicircular flaps open outward along their un
 
 Calculated using `.agents/skills/calculate-prop-wind-loading/scripts/analyze_wind_load.py`:
 
-| Operational Wind Tier | Prop Ballast Configuration | Max Safe Wind (Solid Vinyl: $C_d = 1.20$) | Max Safe Wind (With Semicircular Slits: $C_d = 1.02$) | Safety Margin Improvement |
+| Wind Tier | Ballast | Solid (Cd 1.20) | With Slits (Cd 1.02) | Gain |
 |---|---|:---:|:---:|:---:|
-| **Tier 0: Calm** ($0–8\text{ mph}$) | $0\text{ lbs}$ (dry wt $153\text{ lbs}$) | $13.3\text{ mph}$ (limit) | **$14.4\text{ mph}$** (limit) | **$+1.1\text{ mph}$** buffer |
-| **Tier 1: Normal** ($8–12\text{ mph}$) | $60\text{ lbs}$ (4× 15-lb wing bags) | $15.6\text{ mph}$ | **$16.9\text{ mph}$** | **$+1.3\text{ mph}$** buffer |
-| **Tier 2: Advisory** ($12–18\text{ mph}$) | $90\text{ lbs}$ (6× 15-lb wing bags) | $17.0\text{ mph}$ | **$18.4\text{ mph}$** | **$+1.4\text{ mph}$** buffer |
-| **Tier 3: High-Wind** ($18–22\text{ mph}$) | $135\text{ lbs}$ (6 wing + 3 rear rail) | $20.8\text{ mph}$ | **$22.5\text{ mph}$** | **$+1.7\text{ mph}$** buffer |
+| **Tier 0: Calm** (0–8 mph) | 0 lb (dry wt 153 lb) | 13.3 mph (limit) | **14.4 mph** (limit) | **+1.1 mph** |
+| **Tier 1: Normal** (8–12 mph) | 60 lb (4× 15-lb bags) | 15.6 mph | **16.9 mph** | **+1.3 mph** |
+| **Tier 2: Advisory** (12–18 mph) | 90 lb (6× 15-lb bags) | 17.0 mph | **18.4 mph** | **+1.4 mph** |
+| **Tier 3: High-Wind** (18–22 mph) | 135 lb (6 wing + 3 rear) | 20.8 mph | **22.5 mph** | **+1.7 mph** |
 
 *At sea level venues (e.g., BOA Grand Nationals in Indianapolis), air is $\sim 23\%$ denser; semicircular slits ensure Tier 3 ballast withstands $20.3\text{ mph}$ gusts without overturning.*
 
@@ -99,23 +99,23 @@ The initial draft specification referenced "inverted-U crescent flaps ($8\text{ 
 
 ### 3.1 Detailed Comparative Evaluation
 
-| Engineering Evaluation Criteria | True Semicircle ($8.0\text{ in. W} \times 4.0\text{ in. drop}$, $R = 4.0\text{ in.}$) | Oval / Elongated-U ($8.0\text{ in. W} \times 5.0–6.0\text{ in. drop}$) | Engineering Assessment |
+| Criteria | Semicircle (8" W × 4" D, R=4") | Oval / Elongated-U (8" W × 5–6" D) | Verdict |
 |---|---|---|---|
-| **Geometric Definition & Tooling** | **Single Constant Radius ($R$).** Defined solely by a center point and radius. Scribed with a standard pivot compass or 3D-printed disk. | **Dual-Axis Ellipse or Composite Curve.** Requires straight vertical cuts transitioning into a curved bottom arc. | **Semicircle Wins:** Simple, unambiguous, zero layout confusion for parent volunteers. |
-| **Fleet Tooling Unification** | **100% Identical to Sideline Screens.** The 16 sideline screens already use $R = 4.0\text{ in.}$ semicircles. | **Incompatible.** Requires separate templates, measuring standards, and training instructions. | **Semicircle Wins:** Allows one standardized 3D-printed cutting jig across the entire band booster program. |
-| **Gravitational Hang & Anti-Curling (Camouflage)** | **Excellent (Hangs 100% Flat).** Aspect ratio $D/W = 0.50$. Uniform perimeter curvature distributes tensile and bending stiffness evenly. Zero tip droop. | **Poor (Prone to Tip Curl & Gaping).** Aspect ratio $D/W = 0.63–0.75$. The elongated tongue sags under thermal softening (>85°F) and wind memory. | **Semicircle Wins:** Flap remains invisible from stadium press box and judges' stands when closed. |
-| **Endpoint Stress Concentration & Tear Arrest** | **$180^\circ$ Smooth Tangency.** The circular arc sweeps through $180^\circ$, intersecting the pre-punched $\varnothing 3/8\text{ in.}$ holes exactly vertical and tangent. | **Corner Notching Risk.** Straight vertical legs transitioning into bottom curves often leave slight angular notches or overcuts at punch holes. | **Semicircle Wins:** Eliminates stress concentration ($K_t \to 1.0$), ensuring scrim threads do not propagate tears. |
-| **Flap Dynamics & Reset Reliability** | **Clean Hinge Action.** Symmetrical arc swings open under pressure and falls flush without catching cut edges upon return. | **Edge Catching.** Elongated tongue can twist laterally under turbulent wind shear and snag outside the cut boundary. | **Semicircle Wins:** Reliable one-way check-valve action. |
+| **Geometry & Tooling** | **Single radius (R = 4").** Defined by center point and radius. Scribed with compass or 3D disk. | **Dual-axis or composite curve.** Requires straight cuts transitioning into a bottom arc. | **Semicircle:** Simple, zero layout confusion for volunteers. |
+| **Fleet Tooling** | **Identical to Sideline Screens.** 16 sideline screens already use R = 4" semicircles. | **Incompatible.** Requires separate templates and volunteer instructions. | **Semicircle:** One standardized jig across the whole program. |
+| **Hang & Camouflage** | **Hangs 100% flat.** Aspect ratio D/W = 0.50. Uniform perimeter prevents tip droop. | **Prone to tip curl & sag.** Aspect ratio D/W = 0.63–0.75. Tongue sags in heat (>85°F). | **Semicircle:** Flap remains invisible from stadium stands. |
+| **Tear Arrest & Tangency** | **180° smooth tangency.** Sweeps into pre-punched 3/8" holes with exact vertical tangency. | **Corner notch risk.** Straight legs to bottom curve often leave micro-notches at holes. | **Semicircle:** Eliminates stress risers (Kt → 1.0). |
+| **Flap Dynamics** | **Clean hinge action.** Symmetrical arc swings open and falls flush without catching. | **Edge catching.** Elongated tongue can twist laterally in gusts and snag on edges. | **Semicircle:** Reliable one-way check-valve action. |
 
 ---
 
 ## 4. Size Recommendation & Evaluation
 
-| Size Option | Dimensions & Radius | Vent Area per Flap | Total Area (6 Flaps) | Total Area (8 Flaps) | % of 80 sq ft Face | Operational Recommendation |
-|---|---|:---:|:---:|:---:|:---:|---|
-| **Option 1 (Recommended Fleet Standard)** | **$8.0\text{ in. W} \times 4.0\text{ in. drop}$** ($R = 4.0\text{ in.}$) | **$25.13\text{ sq in.}$** ($0.175\text{ sq ft}$) | $1.05\text{ sq ft}$ | **$1.40\text{ sq ft}$** | **$1.75\%$** (8 flaps)<br>$1.31\%$ (6 flaps) | **PRIMARY RECOMMENDATION.** Reuses identical Sideline Screen tooling; optimal stiffness; zero sag; compact visual signature. |
-| **Option 2 (Approved Minimal Variant)** | **$10.0\text{ in. W} \times 5.0\text{ in. drop}$** ($R = 5.0\text{ in.}$) | **$39.27\text{ sq in.}$** ($0.273\text{ sq ft}$) | **$1.64\text{ sq ft}$** | $2.18\text{ sq ft}$ | **$2.05\%$** (6 flaps)<br>$2.73\%$ (8 flaps) | **APPROVED ALTERNATIVE.** Excellent vent area for 6-cut layouts; slightly larger visual cut lines. |
-| **Option 3 (Not Recommended)** | **$12.0\text{ in. W} \times 6.0\text{ in. drop}$** ($R = 6.0\text{ in.}$) | **$56.55\text{ sq in.}$** ($0.393\text{ sq ft}$) | $2.36\text{ sq ft}$ | $3.14\text{ sq ft}$ | $2.95\%$ (6 flaps) | **DISCOURAGED.** Large 12" cuts visibly disrupt graphic artwork, and heavier flap mass can chatter or sag in heat. |
+| Option | Dimensions (Radius) | Area / Flap | Vent Area (6 / 8 Flaps) | Recommendation |
+|---|---|:---:|:---:|---|
+| **Option 1 (Fleet Standard)** | **8.0" W × 4.0" drop** (R = 4.0") | 25.1 sq in (0.175 sq ft) | **1.05 sq ft (1.3%)** / **1.40 sq ft (1.8%)** | **PRIMARY STANDARD.** Shared Sideline Screen tooling; optimal stiffness; zero sag; compact footprint. |
+| **Option 2 (Approved Minimal)** | **10.0" W × 5.0" drop** (R = 5.0") | 39.3 sq in (0.273 sq ft) | **1.64 sq ft (2.1%)** / **2.18 sq ft (2.7%)** | **APPROVED ALTERNATIVE.** Higher vent area for 6 cuts; slightly larger cut profile. |
+| **Option 3 (Discouraged)** | **12.0" W × 6.0" drop** (R = 6.0") | 56.5 sq in (0.393 sq ft) | **2.36 sq ft (3.0%)** / **3.14 sq ft (3.9%)** | **DISCOURAGED.** Large cuts disrupt artwork; heavier flap prone to chatter/sag in heat. |
 
 ### Rationale for Standardizing on 8.0" × 4.0" ($R = 4.0"$)
 1. **Tooling Efficiency:** PCHSMB volunteers build 16 Sideline Screens and 10 Rolling Backdrops. Standardizing on an $8.0\text{ in.}$ chord and $R = 4.0\text{ in.}$ ensures that volunteers only need one size rotary punch ($\varnothing 3/8"$) and one 3D-printed cutting guide or compass setting for all props.
@@ -169,18 +169,18 @@ Therefore, relief cuts are strictly zoned in the **upper 40% to 65% of the frame
 
 *Best aerodynamic distribution; 100% tooling unification with Sideline Screens.*
 
-| Cut ID | Row | Elevation Above Bottom Rail ($Y$) | Elevation Above Turf | Centerline Column ($X$) | Punch Hole 1 ($X_1, Y$) | Punch Hole 2 ($X_2, Y$) | Flap Drop Bottom Arc ($Y_{min}$) |
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **F-1** | Row 1 (Upper) | $96.0\text{ in.}$ ($8.0\text{ ft}$) | $105.0\text{ in.}$ | $19.2\text{ in.}$ ($1.6\text{ ft}$) | ($15.2\text{ in.}, 96.0\text{ in.}$) | ($23.2\text{ in.}, 96.0\text{ in.}$) | $92.0\text{ in.}$ |
-| **F-2** | Row 1 (Upper) | $96.0\text{ in.}$ ($8.0\text{ ft}$) | $105.0\text{ in.}$ | $38.4\text{ in.}$ ($3.2\text{ ft}$) | ($34.4\text{ in.}, 96.0\text{ in.}$) | ($42.4\text{ in.}, 96.0\text{ in.}$) | $92.0\text{ in.}$ |
-| **F-3** | Row 1 (Upper) | $96.0\text{ in.}$ ($8.0\text{ ft}$) | $105.0\text{ in.}$ | $57.6\text{ in.}$ ($4.8\text{ ft}$) | ($53.6\text{ in.}, 96.0\text{ in.}$) | ($61.6\text{ in.}, 96.0\text{ in.}$) | $92.0\text{ in.}$ |
-| **F-4** | Row 1 (Upper) | $96.0\text{ in.}$ ($8.0\text{ ft}$) | $105.0\text{ in.}$ | $76.8\text{ in.}$ ($6.4\text{ ft}$) | ($72.8\text{ in.}, 96.0\text{ in.}$) | ($80.8\text{ in.}, 96.0\text{ in.}$) | $92.0\text{ in.}$ |
-| **F-5** | Row 2 (Mid-Upper) | $72.0\text{ in.}$ ($6.0\text{ ft}$) | $81.0\text{ in.}$ | $19.2\text{ in.}$ ($1.6\text{ ft}$) | ($15.2\text{ in.}, 72.0\text{ in.}$) | ($23.2\text{ in.}, 72.0\text{ in.}$) | $68.0\text{ in.}$ |
-| **F-6** | Row 2 (Mid-Upper) | $72.0\text{ in.}$ ($6.0\text{ ft}$) | $81.0\text{ in.}$ | $38.4\text{ in.}$ ($3.2\text{ ft}$) | ($34.4\text{ in.}, 72.0\text{ in.}$) | ($42.4\text{ in.}, 72.0\text{ in.}$) | $68.0\text{ in.}$ |
-| **F-7** | Row 2 (Mid-Upper) | $72.0\text{ in.}$ ($6.0\text{ ft}$) | $81.0\text{ in.}$ | $57.6\text{ in.}$ ($4.8\text{ ft}$) | ($53.6\text{ in.}, 72.0\text{ in.}$) | ($61.6\text{ in.}, 72.0\text{ in.}$) | $68.0\text{ in.}$ |
-| **F-8** | Row 2 (Mid-Upper) | $72.0\text{ in.}$ ($6.0\text{ ft}$) | $81.0\text{ in.}$ | $76.8\text{ in.}$ ($6.4\text{ ft}$) | ($72.8\text{ in.}, 72.0\text{ in.}$) | ($80.8\text{ in.}, 72.0\text{ in.}$) | $68.0\text{ in.}$ |
+| Cut | Row | Height (Y) | Center (X) | Punch Holes at X | Arc Bottom (Y) |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| **F-1** | Row 1 (Upper) | 96" (8.0 ft) | 19.2" (1.6 ft) | 15.2" and 23.2" | 92" (7.7 ft) |
+| **F-2** | Row 1 (Upper) | 96" (8.0 ft) | 38.4" (3.2 ft) | 34.4" and 42.4" | 92" (7.7 ft) |
+| **F-3** | Row 1 (Upper) | 96" (8.0 ft) | 57.6" (4.8 ft) | 53.6" and 61.6" | 92" (7.7 ft) |
+| **F-4** | Row 1 (Upper) | 96" (8.0 ft) | 76.8" (6.4 ft) | 72.8" and 80.8" | 92" (7.7 ft) |
+| **F-5** | Row 2 (Mid-Upper) | 72" (6.0 ft) | 19.2" (1.6 ft) | 15.2" and 23.2" | 68" (5.7 ft) |
+| **F-6** | Row 2 (Mid-Upper) | 72" (6.0 ft) | 38.4" (3.2 ft) | 34.4" and 42.4" | 68" (5.7 ft) |
+| **F-7** | Row 2 (Mid-Upper) | 72" (6.0 ft) | 57.6" (4.8 ft) | 53.6" and 61.6" | 68" (5.7 ft) |
+| **F-8** | Row 2 (Mid-Upper) | 72" (6.0 ft) | 76.8" (6.4 ft) | 72.8" and 80.8" | 68" (5.7 ft) |
 
-*(Note: Horizontal column spacing may be rounded in shop practice to $X = 20.0\text{ in.}, 38.0\text{ in.}, 58.0\text{ in.}, 76.0\text{ in.}$.)*
+*(Note: Dimensions are measured above bottom rail. Turf elevation is Y + 9" deck height. Column spacing may be rounded in shop practice to X = 20", 38", 58", 76".)*
 
 ---
 
@@ -188,14 +188,14 @@ Therefore, relief cuts are strictly zoned in the **upper 40% to 65% of the frame
 
 *Approved minimal baseline; fewer cuts per banner.*
 
-| Cut ID | Row | Elevation Above Bottom Rail ($Y$) | Elevation Above Turf | Centerline Column ($X$) | Punch Hole 1 ($X_1, Y$) | Punch Hole 2 ($X_2, Y$) | Flap Drop Bottom Arc ($Y_{min}$) |
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| **F-1** | Row 1 (Upper) | $96.0\text{ in.}$ ($8.0\text{ ft}$) | $105.0\text{ in.}$ | $24.0\text{ in.}$ ($2.0\text{ ft}$) | ($20.0\text{ in.}, 96.0\text{ in.}$) | ($28.0\text{ in.}, 96.0\text{ in.}$) | $92.0\text{ in.}$ |
-| **F-2** | Row 1 (Upper) | $96.0\text{ in.}$ ($8.0\text{ ft}$) | $105.0\text{ in.}$ | $48.0\text{ in.}$ ($4.0\text{ ft}$) | ($44.0\text{ in.}, 96.0\text{ in.}$) | ($52.0\text{ in.}, 96.0\text{ in.}$) | $92.0\text{ in.}$ |
-| **F-3** | Row 1 (Upper) | $96.0\text{ in.}$ ($8.0\text{ ft}$) | $105.0\text{ in.}$ | $72.0\text{ in.}$ ($6.0\text{ ft}$) | ($68.0\text{ in.}, 96.0\text{ in.}$) | ($76.0\text{ in.}, 96.0\text{ in.}$) | $92.0\text{ in.}$ |
-| **F-4** | Row 2 (Mid-Upper) | $72.0\text{ in.}$ ($6.0\text{ ft}$) | $81.0\text{ in.}$ | $24.0\text{ in.}$ ($2.0\text{ ft}$) | ($20.0\text{ in.}, 72.0\text{ in.}$) | ($28.0\text{ in.}, 72.0\text{ in.}$) | $68.0\text{ in.}$ |
-| **F-5** | Row 2 (Mid-Upper) | $72.0\text{ in.}$ ($6.0\text{ ft}$) | $81.0\text{ in.}$ | $48.0\text{ in.}$ ($4.0\text{ ft}$) | ($44.0\text{ in.}, 72.0\text{ in.}$) | ($52.0\text{ in.}, 72.0\text{ in.}$) | $68.0\text{ in.}$ |
-| **F-6** | Row 2 (Mid-Upper) | $72.0\text{ in.}$ ($6.0\text{ ft}$) | $81.0\text{ in.}$ | $72.0\text{ in.}$ ($6.0\text{ ft}$) | ($68.0\text{ in.}, 72.0\text{ in.}$) | ($76.0\text{ in.}, 72.0\text{ in.}$) | $68.0\text{ in.}$ |
+| Cut | Row | Height (Y) | Center (X) | Punch Holes at X | Arc Bottom (Y) |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| **F-1** | Row 1 (Upper) | 96" (8.0 ft) | 24.0" (2.0 ft) | 20.0" and 28.0" | 92" (7.7 ft) |
+| **F-2** | Row 1 (Upper) | 96" (8.0 ft) | 48.0" (4.0 ft) | 44.0" and 52.0" | 92" (7.7 ft) |
+| **F-3** | Row 1 (Upper) | 96" (8.0 ft) | 72.0" (6.0 ft) | 68.0" and 76.0" | 92" (7.7 ft) |
+| **F-4** | Row 2 (Mid-Upper) | 72" (6.0 ft) | 24.0" (2.0 ft) | 20.0" and 28.0" | 68" (5.7 ft) |
+| **F-5** | Row 2 (Mid-Upper) | 72" (6.0 ft) | 48.0" (4.0 ft) | 44.0" and 52.0" | 68" (5.7 ft) |
+| **F-6** | Row 2 (Mid-Upper) | 72" (6.0 ft) | 72.0" (6.0 ft) | 68.0" and 76.0" | 68" (5.7 ft) |
 
 ---
 
