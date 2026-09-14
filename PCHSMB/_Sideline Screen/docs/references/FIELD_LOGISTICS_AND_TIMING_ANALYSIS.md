@@ -15,7 +15,7 @@
 |  DEPLOYMENT TIME:  Mean: 55.7 seconds (0:55) | P95: 58.3 seconds | Buffer: +139.3s vs 3:15 Clock   |
 |  EGRESS:           Two-Student Hand-Carry Sprint straight through Stadium Exit Gate / Tunnel      |
 |  EGRESS TIME:      Mean: 55.0 seconds (0:55) | P95: 60.4 seconds | Buffer: +65.0s vs 2:00 Clock    |
-|  CARTS & BALLAST:  2 Rolling Carts support off-field transport and sideline ballast sweep         |
+|  NO CARTS:         Zero transport carts built; direct student hand-carry to trailer lot           |
 |  PENALTY RISK:     0.0% (Zero adult volunteers step on turf during deployment = 0 rule penalties) |
 +---------------------------------------------------------------------------------------------------+
 ```
@@ -23,11 +23,11 @@
 #### Crew Roster & Job Assignments (32 Student Performers + 2 Adult Ballast Handlers)
 * **32 Student Handlers (16 Student Pairs):** 2 students assigned per screen (8 pairs on Side 1, 8 pairs on Side 2).
   - **Deployment:** Prior to permission, student pairs carry the fully assembled 26-lb duck blind into the stadium and queue on the back sideline/end zone directly across from their assigned yard line. On the starting horn, pairs walk straight across the field (~55 yds at 1.1 yd/s), deposit the screen on its front mark, fine-align, and place the ballast bags over rear rail C. Complete in **~55–58 seconds**.
-  - **Egress:** At the final show cutoff chord, assigned pairs gently remove ballast to the turf, grasp the assembled screen between them (13 lbs/student), and sprint straight out through the stadium exit gate/tunnel. Complete field clearance in **~50–60 seconds**!
-* **2 Adults (Parent Ballast Pushers):** 1 adult per cart.
+  - **Egress:** At the final show cutoff chord, assigned pairs gently remove ballast to the turf, grasp the assembled screen between them (13 lbs/student), and sprint straight out through the stadium exit gate/tunnel directly to the equipment trailer lot. Complete field clearance in **~50–60 seconds**!
+* **2 Adults (Parent Ballast Handlers):** 1 adult per side (Side 1 and Side 2).
   - Staged outside the front sideline boundary during performance.
-  - On show conclusion, roll empty carts along the front sideline to sweep resting ballast bags and exit through the tunnel.
-  - Cart reloading occurs off-clock in the stadium exit tunnel/apron.
+  - On show conclusion, sweep resting ballast sandbags off the front sideline.
+  - Zero cart loading on field or in exit tunnel.
 
 ---
 
@@ -40,11 +40,11 @@
 4. **Clear Field ($T \le 0:58$):** Student pairs transition directly to their opening performance drill coordinates. The field is 100% clear of adults and prop equipment in **under 1 minute**, banking **+139 seconds** before the 3:15 announcement ends!
 
 #### Post-Show Egress Walkthrough (Expected: 55.0 sec | Official Clock Stops at Tunnel)
-1. **Final Chord ($T = 0:00$):** Student pairs immediately lift ballast bags gently to the turf (never throwing or dropping sandbags to prevent seam rupture and turf damage).
+1. **Final Chord ($T = 0:00$):** Student pairs immediately lift ballast bags gently to the turf (never throwing or dropping sandbags to protect seams and synthetic turf).
 2. **The Two-Student Carry Sprint ($T = 0:05$ to $0:55$):** Student pairs grasp their screen (13 lbs/student) and jog straight down the front sideline corridor into the stadium exit chute / tunnel.
-3. **The Ballast Sweep ($T = 0:15$ to $1:15$):** Adult pushers enter the sideline and sweep resting sandbags into the carts.
+3. **The Ballast Sweep ($T = 0:15$ to $1:15$):** Adult handlers enter the front sideline from off-field and sweep resting sandbags off the field.
 4. **★ THE CLOCK STOPS ★ ($T \le 1:00$ to $1:15$):** All performers and props cross the exit gate threshold, stopping the official competition clock with over **+45 to +65 seconds of safety slack**!
-5. **Off-Clock Reload:** In the tunnel mouth, screens are slid into transport cart racks and lashed down off the clock.
+5. **Direct Transit to Trailer:** Screens and performers proceed directly through the exit chute to the trailer lot; no cart reloading required.
 
 ---
 

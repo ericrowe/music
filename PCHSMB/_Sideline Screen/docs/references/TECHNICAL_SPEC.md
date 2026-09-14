@@ -10,7 +10,7 @@
 - **Fleet Production Quantity:** **16 screens total** deployed on the performance field:
   - **Side 1 (Left):** 8 screens positioned along the front sideline flanking the front ensemble.
   - **Side 2 (Right):** 8 screens positioned along the front sideline flanking the front ensemble.
-  - **Transport Logistics:** 2 dedicated transport carts (Component 2), each carrying 8 folded screens. Because each screen is $\le 2.0\text{ in.}$ thick, 8 screens consume only **16.0 inches** of the 44.5-inch cart bed width, leaving 28.5 inches of deck space for ballast sandbag staging, guide rails, and auxiliary prop storage.
+  - **Transport Logistics:** Two-Person Direct Carry. Because screens are deployed fully assembled directly by student pairs (16 pairs, 2 students per screen), no rolling transport carts are fabricated or required on the field.
 
 ---
 
@@ -33,7 +33,7 @@
 | **-** | 16 | Greenhouse snap clamps | 1-in. pipe clamp clips (sized for 3/4-in. EMT with wrapped vinyl) | Amazon (B0BJJYKZ5L) |
 | **-** | 2-3 | Moving blankets | Clean protective floor pads for scratch-free vinyl staging | Shop stock |
 
-### Fleet Totals (Full Production Run: 16 Screens + 2 Transport Carts)
+### Fleet Totals (Full Production Run: 16 Screens Total)
 
 | Item / Material | Quantity Required | Notes / Specifications |
 |---|:---:|---|
@@ -47,7 +47,6 @@
 | **1-in. Greenhouse Snap Clamps** | **256 pcs** | 16 per screen × 16 screens (Amazon B0BJJYKZ5L) |
 | **1-in. Double-Sided Tape** | **3–4 rolls** | 256 strips of 4-in. tape (~85 linear feet) |
 | **Custom Vinyl Banners** | **16 banners** | 4 ft × 8 ft nominal custom printed graphic |
-| **Transport Carts** | **2 carts** | 1 cart per side (carries 8 folded screens + staged ballast) |
 
 ---
 
@@ -130,7 +129,7 @@
   - **Fleet & Crew Allocation:**
     - Total fleet: **16 screens** deployed across two 8-screen lines flanking the front ensemble.
     - Crew: **32 student performers/handlers** (16 pairs, exactly 2 students per duck blind).
-    - Support: 2 rolling transport carts operated by adult volunteers, utilized for trailer-to-stadium transit, off-field storage, and ballast sandbag staging.
+    - Support: Direct student transit. Student pairs carry assembled blinds from trailer/warmup lot directly into the stadium; no transport carts are built or required.
   - **Pre-Show Deployment Walkthrough (Mean: 55.7s | P95: 58.3s | +139s Safety Buffer):**
     - **Queue & Stage:** Prior to entry permission, student pairs carry their fully assembled duck blinds into the stadium through rear gates and queue up along the back sideline/end zone directly across the field from their assigned front sideline coordinate marks.
     - **The Walk-Across:** At the CBA entry signal ($T = 0:00$), all 16 student pairs simultaneously walk straight across the field carrying their assembled screen (13 lbs per student).
@@ -140,7 +139,7 @@
   - **Post-Show Field Egress Walkthrough (Mean: 55.0s | P95: 60.4s | +65s Safety Buffer):**
     - **Final Chord Pick-Up:** On the final note of the show, assigned student pairs immediately lift ballast bags gently to the turf (never throwing or dropping sandbags), grasp the assembled 26-lb duck blind between them (13 lbs/student), and hoof it straight off the field toward the stadium exit gate/tunnel.
     - **Field Clearance:** All 16 screens completely clear the field boundary within **~50–60 seconds**, well within the official 2:00 CBA egress window.
-    - **Ballast Sweep & Off-Clock Cart Reload:** Adult cart pushers sweep the front sideline collecting the resting ballast bags and exit through the gate. Complete reload of screens onto transport carts occurs off the competition clock in the stadium exit apron/tunnel.
+    - **Direct Exit to Trailer Lot:** Student pairs carry screens straight out through the exit chute directly to the equipment trailer. Adult volunteers sweep resting ballast sandbags off the front sideline. No carts or off-clock tunnel reloading required.
 - **2026 CBA Marching Band Competition Rules Compliance:**
   - **Rule 5.02 (Mandatory Rear Entrance for Props):** CRITICAL MANDATE — All props must enter from the back sideline or rear end zone gates (above goal posts). Never cross directly across front boundary (reserved for pit equipment).
   - **Rule 5.03 & 5.06 (Entry Permission & Timing):** Pre-stage in rear half of end zone up to goal line. Never enter field before T&P judge signals official permission. Total setup and adult clearance window is 3 minutes 15 seconds.
@@ -148,8 +147,8 @@
   - **Rule 4.03 (Re-Entry Prohibition):** Adults strictly prohibited from entering/re-entering field during performance (0.2 pt penalty per occurrence).
   - **Rule 4.02(c) (Medical Emergency Assistance Exception):** NO PENALTY. Any band member ill or injured may be assisted from the field by adult volunteers, parents, or staff without penalty.
   - **Rule 4.02(a) (High-Wind Prop Restraint Exception):** In high winds when props are in danger of falling over, adults may enter performance field solely to secure props (never move props as choreography).
-  - **Rule 8.05 (Continuous Egress & Double-Bagging):** Continuous movement off field to trailer lot required; never de-ballast or park carts at stadium exit chutes. All sandbags MUST be double-bagged with intact plastic inner liners.
-  - **Rule 8.07 & 8.08 (Wheels & Height):** Pneumatic-like turf-compatible wheels required on carts; 12-foot rigid height limit strictly observed (screen is 4 ft deployed).
+  - **Rule 8.05 (Continuous Egress & Double-Bagging):** Continuous movement off field to trailer lot required; never de-ballast or park at stadium exit chutes. All sandbags MUST be double-bagged with intact plastic inner liners.
+  - **Rule 8.07 & 8.08 (Wheels & Height):** 12-foot rigid height limit strictly observed (screen is 4 ft deployed).
   - **Rule 9.07 (Field Pass Wristbands):** Maximum 25 wristbands per band; separate colors for Prelims vs Finals.
 
 ---
@@ -170,11 +169,9 @@
 *Optional Rule 8.05 Ballast Pack: 2x 15-lb double-bagged sandbags + suspension hardware: +$18.00 per screen.*  
 *Optional Vinyl Mounting Pack: 16x 1" greenhouse clamps (Amazon B0BJJYKZ5L) + 1 roll 1" heavy-duty tape (Amazon B07BBL4JXJ): ~$20.00 per screen (custom vinyl banner quoted separately).*
 
-### B. Sideline Screen Transport Cart (Component 2 Estimate)
+### B. Fleet Production Total (16 Screens Total)
 
-| Item / Category | Description | Est. Cost |
+| Fleet Category | Description | Est. Cost |
 |---|---|:---:|
-| **Rolling Base Chassis** | Backdrop-spec 2x4 framing, 1/2" plywood deck, 4x heavy-duty casters w/ brakes, paint | $155.00 |
-| **Side Guide Rails** | Vertical framing / conduit dividers to hold screens upright | $35.00 |
-| **Front & Rear Retention Gates** | Hinged gate framing, strap/barrel hinges, and 3D-printed latches | $30.00 |
-| **TOTAL PER TRANSPORT CART** | | **~$220.00** |
+| **16x Sideline Screens** | Complete frames @ ~$105.00 (excl. vinyl/ballast) | ~$1,680.00 |
+| **TOTAL FLEET HARDWARE** | *(No transport carts built — saves $440.00)* | **~$1,680.00** |

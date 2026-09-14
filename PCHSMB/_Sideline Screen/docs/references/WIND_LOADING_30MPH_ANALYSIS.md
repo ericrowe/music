@@ -149,7 +149,7 @@ All calculations below assume Colorado Springs 6,500 ft ASL baseline, solid viny
 When wind conditions approach or exceed 20 mph sustained or 25 mph peak gusts:
 
 ### 5.1 Staging Area Protocol (Trailer Lot)
-* **Keep Props Folded Flat:** Keep all sideline screens folded flat on the bed of their rolling transport cart in the trailer staging area.
+* **Keep Props Folded Flat:** Keep all sideline screens folded flat in the equipment trailer or on moving blankets in the trailer staging area until ready to assemble for warm-up.
 * In the horizontal folded state, the aerodynamic sail area is negligible, eliminating all overturning and sliding hazards.
 
 ### 5.2 On-Field Emergency Abort Sequence

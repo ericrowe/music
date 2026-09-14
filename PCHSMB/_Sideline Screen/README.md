@@ -17,8 +17,8 @@ The authoritative, fully illustrated manual is maintained in the [`docs/`](docs/
 
 The manual covers:
 - **Intro & Overview:** System geometry, folding mechanics, and print units.
-- **Appendix A (Field Operations):** Two-Student Carry field deployment and egress, transport cart staging, unfolding/folding procedures, wind ballasting schedules, 2026 CBA competition rules compliance, and post-use storage.
-- **Appendix B (Construction Manual):** Illustrated parts inventory, conduit cut plan, 4-stage frame assembly, transport cart fabrication (backdrop base + side rails + front/back latching gates), vinyl installation with standard engineered wind relief slits (6 semicircular flaps with tear-arrest holes), and digital/purchase source lookup.
+- **Appendix A (Field Operations):** Two-Student Carry field deployment and egress, unfolding/folding procedures, wind ballasting schedules, 2026 CBA competition rules compliance, and post-use storage.
+- **Appendix B (Construction Manual):** Illustrated parts inventory, conduit cut plan, 4-stage frame assembly, vinyl installation with standard engineered wind relief slits (6 semicircular flaps with tear-arrest holes), and digital/purchase source lookup.
 - **Appendices C, C.1, & D:** On-prop field placard, 4" × 6" coordinate card template, and parent volunteer competition day guide.
 - **Engineering References:**
   - Technical specifications & ballasting model: [`docs/references/TECHNICAL_SPEC.md`](docs/references/TECHNICAL_SPEC.md)
@@ -28,14 +28,12 @@ The manual covers:
 
 ---
 
-## 🛒 Transport Cart System (Component 2 — 2 Carts Required)
+## 🚶 Two-Person Direct Carry Architecture (No Transport Carts Required)
 
-To transport the complete competition fleet of **16 folded sideline screens (8 per side)** efficiently between the equipment trailer and the stadium field, two dedicated rolling transport carts are built (Cart 1 for Side 1, Cart 2 for Side 2):
-- **Shared Chassis:** Uses the standardized 96 in. x 44.5 in. 2x4 lumber base framing, 1/2" plywood decking, and heavy-duty swivel casters from the [PCHSMB Backdrop System](../_Backdrop/).
-- **Internal Nesting & Cart Capacity (8 Screens per Cart):** Because the screen framing nests completely coplanar when folded, each folded screen is **no more than 2.0 inches thick** (the thickest part of the folded assembly is the 3D-printed hinged arm clip). Eight folded screens take only **16.0 inches** of the 44.5-in. cart deck width, leaving over 28 inches of deck space for ballast sandbag staging, guide rails, and auxiliary prop storage.
-- **Side Guide Rails:** Vertical guide rails installed along the left and right sides contain folded screens upright.
-- **Front & Rear Latching Gates:** Retaining gates secured with 3D-printed latches ([`Cart Gate Latch.FCStd`](Cart%20Gate%20Latch.FCStd)) keep screens contained during transit and open for rapid sideline unloading and loading.
-- **Sideline Stowage:** During field performance, the empty transport carts are rolled across the front sideline and parked outside the performance area.
+With the official adoption of the **Two-Student Carry** field strategy, dedicated rolling transport carts are **not built or required**:
+- **Direct Hand-Carry Deployment:** 16 student pairs (32 performers total) carry the fully assembled, 26-lb screens directly from the backfield queue across the turf to the front sideline (~13 lbs per student).
+- **Direct Egress Sprint:** At the conclusion of the performance, student pairs pick up their assembled screens and jog straight through the stadium exit gate/tunnel directly to the trailer staging lot without folding on the field.
+- **Cost & Logistics Savings:** Eliminating transport carts saves over **$440 in materials**, eliminates cart traffic jams at narrow stadium gates, and reduces adult field-presence penalty risk to zero.
 
 ---
 
@@ -48,7 +46,6 @@ All 3D-printed parts should be printed in **Black ASA** (or UV/weather-stable PE
 | **Corner Plug (H)** | [`Hardware/Corner Plug.FCStd`](Hardware/Corner%20Plug.FCStd) | [`Hardware/3MF/Corner Plug-Part.step.3mf`](Hardware/3MF/Corner%20Plug-Part.step.3mf) | [`Hardware/STEP/Corner Plug-Part.step`](Hardware/STEP/Corner%20Plug-Part.step) | 6 required; aligns outer corners |
 | **Hinged Arm Clip (I)** | [`Hardware/Hinged Arm Clip.FCStd`](Hardware/Hinged%20Arm%20Clip.FCStd) | [`Hardware/3MF/Hinged Arm Clip-Part001.3mf`](Hardware/3MF/Hinged%20Arm%20Clip-Part001.3mf) | [`Hardware/STEP/Hinged Arm Clip-Part001.step`](Hardware/STEP/Hinged%20Arm%20Clip-Part001.step) | 2 required; locks bottom support arms open |
 | **Weight Clip** | [`Hardware/Weight Clip.FCStd`](Hardware/Weight%20Clip.FCStd) | [`Hardware/3MF/Weight Clip-Part.3mf`](Hardware/3MF/Weight%20Clip-Part.3mf) | [`Hardware/STEP/Weight Clip-Part001.step`](Hardware/STEP/Weight%20Clip-Part001.step) | Ballast/weight retaining clip |
-| **Cart Gate Latch** | `Hardware/Cart Gate Latch.FCStd` *(In development)* | — | — | Gate latch mechanism for prop cart transport (provisional) |
 
 ---
 
@@ -80,21 +77,11 @@ All 3D-printed parts should be printed in **Black ASA** (or UV/weather-stable PE
 > **Optional Ballast Pack (Rule 8.05 Compliant):**
 > 2x 15-lb double-bagged sandbags suspended from weight clips: **+$18.00 per screen**.
 
-### 2. Sideline Screen Transport Cart (Component 2 Estimate)
-
-| Subsystem / Category | Key Items Included | Est. Cost |
-|---|---|:---:|
-| **Rolling Base Chassis** | Backdrop-spec 2x4 framing, 1/2" plywood deck, 4x heavy-duty casters w/ brakes, paint | $155.00 |
-| **Side Guide Rails** | Vertical framing / conduit dividers to hold screens upright | $35.00 |
-| **Front & Rear Retention Gates** | Hinged gate framing, strap/barrel hinges, and 3D-printed latches | $30.00 |
-| **TOTAL PER TRANSPORT CART** | | **~$220.00** |
-
-### 3. Total Fleet Fabrication Estimate (16 Screens + 2 Transport Carts)
+### 2. Total Fleet Fabrication Estimate (16 Screens Total)
 
 | Fleet Category | Breakdown | Est. Total Cost |
 |---|---|:---:|
 | **16x Sideline Screens** | 16 frames @ ~$105.00 (EMT, brackets, 3D parts, fasteners; excl. vinyl) | ~$1,680.00 |
-| **2x Transport Carts** | 2 dedicated carts @ ~$220.00 (8 screens per cart) | ~$440.00 |
-| **TOTAL HARDWARE ESTIMATE** | | **~$2,120.00** |
+| **TOTAL HARDWARE ESTIMATE** | *(No transport carts built — saves $440.00)* | **~$1,680.00** |
 
 > *Note: Custom printed vinyl banners (16x 4'x8' outdoor scrim vinyl) and double-bagged sandbags are quoted separately.*
