@@ -29,7 +29,7 @@
       #grid(
         columns: (1.5fr, 1.2fr, 1fr),
         align(left)[*FIELD VALIDATION — NOT RELEASED*],
-        align(center)[*Release v0 (D1)* | September 2026],
+        align(center)[*Release v0 (D2)* | September 2026],
         align(right)[Page #counter(page).display() of #counter(page).final().first()]
       )
     ]
@@ -184,10 +184,10 @@ Because Pine Creek High School operates in the high-altitude, wind-prone environ
   inset: (x: 3.5pt, y: 2.5pt),
   fill: (col, row) => if row == 0 { rgb("#edf2f7") } else if row == 5 { rgb("#fff5f5") } else { none },
   [*Wind Regime*], [*Wind Velocity*], [*Duck Blind Ballasting*], [*Backdrop Ballasting*], [*Decision Status*],
-  [⚪ *Tier 0: Calm*], [0 – 8 mph], [None (26 lb dry frame)], [None (153 lb dry prop)], [*GO* (Dry)],
+  [⚪ *Tier 0: Calm*], [0 – 8 mph], [1 bag on rear rail C], [None (153 lb dry prop)], [*GO* (With Ballast)],
   [🟢 *Tier 1: Normal*], [8 – 12 mph], [2 bags on rear rail C], [4 bags (2/wing post)], [*GO* (Normal)],
-  [🟡 *Tier 2: Advisory*], [12 – 18 mph], [3 bags (2 ground + 1 hanging)], [6 bags (3/wing post)], [*GO* (With Ballast)],
-  [🟠 *Tier 3: High-Wind*], [18 – 22 mph], [4 bags (2 ground + 2 hanging)], [9 bags (6 wing + 3 rear rail)], [*CAUTION* (Max Limit)],
+  [🟡 *Tier 2: Advisory*], [12 – 18 mph], [3 bags on rear rail C], [6 bags (3/wing post)], [*GO* (With Ballast)],
+  [🟠 *Tier 3: High-Wind*], [18 – 22 mph], [4 bags on rear rail C], [9 bags (6 wing + 3 rear rail)], [*CAUTION* (Max Limit)],
   [🔴 #alert[Tier 4: Abort]], [#alert[> 20 mph sust.] \ or #alert[> 25 mph gusts]], table.cell(colspan: 2)[#alert[ABSOLUTE NO-GO.] Props remain in trailer / truck. Field props will not be fielded. Prop Lead notifies Directors.], [#alert[NO-GO] (Hold in Truck)],
 )
 
@@ -215,8 +215,8 @@ Because Pine Creek High School operates in the high-altitude, wind-prone environ
   [*Logistical Milestone*], [*Scheduled Time*], [*Specific Location / Gate Instructions*],
   [Competition & Venue], [ \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ ], [ Stadium: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ ],
   [Prop Lead of the Day], [ Name: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ ], [ *Cell Phone:* ( \_\_\_\_\_ ) \_\_\_\_\_ - \_\_\_\_\_\_\_\_ ],
-  [Staging Area Location], [ Location / Area: ], [ \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ ],
-  [Prop Staging Time], [ \_\_\_\_\_ : \_\_\_\_\_ AM / PM ], [ Staged once; props return here between Prelims & Finals ],
+  [Staging Area Location], [ Location / Area: ], [ \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ (Outside Stadium — Common Prop Zone) ],
+  [Prop Staging Time], [ \_\_\_\_\_ : \_\_\_\_\_ AM / PM ], [ All props staged together; return here between Prelims & Finals ],
   [Equipment Truck Arrival], [ \_\_\_\_\_ : \_\_\_\_\_ AM / PM ], [ Parking Lot / Bay: \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ ],
   [Adult Volunteer Call Time], [ \_\_\_\_\_ : \_\_\_\_\_ AM / PM ], [ Check-in at Equipment Trailer ],
   [Truck Unload & Assembly], [ \_\_\_\_\_ : \_\_\_\_\_ AM / PM ], [ Equipment Trailer Lot / Staging Lot ],
@@ -255,7 +255,7 @@ The Colorado Bandmasters Association (CBA) strictly enforces prop and adult volu
     #alert[Adult Volunteers are strictly forbidden from touching the field during the performance] (0.2-point penalty per occurrence). Once you exit, remain behind the front sideline or rear perimeter track.
   ],
   rule-box(title: "Rule 8.05 — 2:00 Egress Clock")[
-    Timing clock begins on final chord. All equipment and personnel must clear field boundaries within 2 minutes. With Two-Person Carry, student pairs carry assembled screens straight off the field to the trailer lot (~50–55s clearance; zero cart loading on field).
+    Timing clock begins on final chord. All equipment and personnel must clear field boundaries within 2 minutes. With Two-Person Carry, student pairs carry assembled screens straight off the field to the staging area (~50–55s clearance; zero cart loading on field).
   ],
   rule-box(title: "Rule 8.05 — Double-Bagged Sandbags")[
     All ballast sandbags must be heavy-duty and double-bagged with intact plastic inner liners. #alert[Leaking sand on synthetic turf results in severe facility fines and competition penalties.]
@@ -279,9 +279,9 @@ The 2026 visual design for *Continuum* incorporates three prop families totaling
   fill: (col, row) => if row == 0 { rgb("#edf2f7") } else { none },
   inset: (x: 5pt, y: 4.5pt),
   [*Prop Category*], [*Quantity*], [*Transport Unit*], [*Field Placement*], [*Crew Allocation*],
-  [*Duck Blinds* \ (Sideline Screens)], [16 screens (8 per side)], [Direct Hand-Carry \ (Zero Carts Built)], [Front Sideline \ (Side 1: 20–41 yd; Side 2: 59–80 yd)], [32 Student Handlers (16 pairs: Two-Person Carry walk-across deployment & egress) \ + 2 Adult Volunteers (Sideline Ballast Handlers)],
+  [*Duck Blinds* \ (Sideline Screens)], [16 screens (8 per side)], [Transport on 4 Stages (4/stage) \ between truck & staging; \ 2 Wagons for ballast; \ Direct Carry on field], [Front Sideline \ (Side 1: 20–41 yd; Side 2: 59–80 yd)], [2 Adult Duck Blind Managers & Ballast Handlers (1/side), \ 2 Student Ballast Handlers (1/side), \ 32 Student Performers (16 carry pairs)],
   [*Rolling Backdrops*], [10 backdrops], [10 Rolling Carts \ (1 cart/prop)], [Backfield / Back Hash \ (Spanned across 30–70 yds)], [2 Adult Volunteers (Managers), 20–40 Student Pushers (2–4 per backdrop)],
-  [*Performance Stages & Stairs*], [4 stages (8 pieces) \ + 4 staircases], [8 Half-Platforms & \ 4 Mobile Staircases], [Midfield / Side Stages \ (Exact drill marks per show)], [2 Adult Volunteers (Stage Managers), 16 Student Stage Handlers, 8 Student Staircase Handlers],
+  [*Performance Stages & Stairs*], [4 stages (8 pieces) \ + 4 staircases], [8 Half-Platforms & \ 4 Mobile Staircases \ (carries 16 collapsed blinds \ [4/stage] truck-to-staging)], [Midfield / Side Stages \ (Exact drill marks per show)], [2 Adult Volunteers (Stage Managers), 16 Student Stage Handlers, 8 Student Staircase Handlers],
 )
 
 #v(6pt)
@@ -296,7 +296,7 @@ The 2026 visual design for *Continuum* incorporates three prop families totaling
 
 The field prop operation is organized into four primary divisions:
 
-1. *Job Group A: Duck Blind Operations (Pages 4–7):* Divided into four specialized single-page job blocks covering adult sideline ballast handlers (A.1), student two-person carry deployment (A.2), screen alignment, semicircular wind slits & ballasting (A.3), and student two-person egress sprint (A.4).
+1. *Job Group A: Duck Blind Operations (Pages 4–7):* Divided into four specialized single-page job blocks covering the Adult Duck Blind Manager & Ballast Handler (A.1, Page 4), the Student Ballast Handler (A.2, Page 5), the Student Two-Person Carry Deployment (A.3, Page 6), and the Student Two-Person Egress Sprint (A.4, Page 7).
 2. *Job Group B: Rolling Backdrop Operations (Pages 8–10):* Divided into three specialized single-page job blocks covering adult backdrop managers (B.1), on-field student pushers (B.2), and off-field student pushers (B.3).
 3. *Job Group C: Performance Stage Crew (Pages 11–13):* Divided into three specialized single-page job blocks covering Adult Stage Managers (C.1, Page 11), Student Stage Handlers (C.2, Page 12), and Student Staircase Handlers (C.3, Page 13).
 4. *Job Group D: Prop Lead & Field Safety Coordinator (Page 14):* Master oversight, weather telemetry monitoring, judge liaison, and timing control.
@@ -306,170 +306,149 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
 #pagebreak()
 
 // =========================================================================
-// PAGE 4: JOB A.1 — ADULT DUCK BLIND SIDELINE BALLAST HANDLERS
+// PAGE 4: JOB A.1 — ADULT DUCK BLIND MANAGER & BALLAST HANDLER
 // =========================================================================
 
 == Job Group A: Duck Blind Crew (16 Sideline Screens — Two-Person Direct Carry)
 
 #job-card(
-  role: "Job A.1: Adult Duck Blind Sideline Ballast Handlers",
+  role: "Job A.1: Adult Duck Blind Manager & Ballast Handler",
   personnel: "2 Adult Volunteers (1 per Side: Side 1 or Side 2)",
-  tag: "Ballast Pre-Staging, Sideline Standby & Post-Show Inward Ballast Sweep"
+  tag: "Truck-to-Staging Transport on Stages, Setup, Wagon Ballast Walk & Post-Show Recovery"
 )[
-  #text(size: 8.5pt, style: "italic", fill: rgb("#2b6cb0"))[
-    You are one of two Adult Volunteers supporting the 16 duck blinds. Student pairs carry the fully assembled blinds directly onto and off of the field (Two-Person Carry; zero transport carts on turf). Your role is ensuring the required ballast sandbags are staged at the front sideline, standing by outside the front boundary during performance, sweeping resting ballast off the sideline toward the exit gate on show conclusion, and returning sandbags to the trailer.
+  #text(size: 8pt, style: "italic", fill: rgb("#2b6cb0"))[
+    You are one of two Adult Duck Blind Managers & Ballast Handlers (Side 1 or Side 2, 8 screens each), paired with one Student Ballast Handler. Prior to show time: determine ballast tier, load your wagon, supervise stage-top transport of the 16 duck blinds (4/stage), and unfold screens in staging. Meet student carry pairs at staging to hand over blinds, then lead the wagon along the front sideline to deposit sandbags on turf. During egress: retrieve sandbags with your wagon, receive blinds at staging, collapse them, and reload 4 blinds onto each stage for transport to trucks.
   ]
-
-  #v(2pt)
-  #grid(
-    columns: (1.15fr, 1.4fr),
-    gutter: 6pt,
-    rect(
-      width: 100%,
-      fill: rgb("#ffffff"),
-      stroke: 0.8pt + rgb("#cbd5e0"),
-      radius: 3pt,
-      inset: (x: 6pt, y: 4pt)
-    )[
-      #text(weight: "bold", size: 8pt, fill: rgb("#2b6cb0"))[DAY-OF BALLAST ASSIGNMENT:] \
-      #v(3pt)
-      #grid(
-        columns: (1fr, 1.25fr),
-        gutter: 4pt,
-        [
-          *Side:* \
-          #v(2pt)
-          #box(stroke: 0.5pt + rgb("#a0aec0"), inset: (x: 2.5pt, y: 1pt), radius: 2pt)[#h(3pt)] Side 1 (Right)#footnote[Side 1 is on the right when standing on the backfield and facing the front stands.] \
-          #v(2pt)
-          #box(stroke: 0.5pt + rgb("#a0aec0"), inset: (x: 2.5pt, y: 1pt), radius: 2pt)[#h(3pt)] Side 2 (Left)
-        ],
-        [
-          *Staging Location:* \
-          #v(2pt)
-          Front Sideline Staging Zone \
-          (Outside Turf Boundary)
-        ]
-      )
-    ],
-    rect(
-      width: 100%,
-      fill: rgb("#ffffff"),
-      stroke: 0.8pt + rgb("#cbd5e0"),
-      radius: 3pt,
-      inset: (x: 3pt, y: 3pt)
-    )[
-      #text(weight: "bold", size: 8pt, fill: rgb("#2b6cb0"))[DUCK BLIND BALLAST SCHEDULE:] \
-      #v(1pt)
-      #table(
-        columns: (0.45fr, 0.85fr, 1.5fr, 0.95fr),
-        align: center + horizon,
-        stroke: 0.3pt + rgb("#cbd5e0"),
-        inset: (x: 2pt, y: 1.5pt),
-        fill: (col, row) => if row == 0 or row == 1 { rgb("#edf2f7") } else if row == 6 { rgb("#fff5f5") } else { none },
-        table.cell(colspan: 2)[#text(size: 7pt, weight: "bold")[Wind Regime]],
-        table.cell(rowspan: 2)[#text(size: 7pt, weight: "bold")[Per Blind (15-lb Bags)]],
-        table.cell(rowspan: 2)[#text(size: 7pt, weight: "bold")[Side Payload (8 Blinds)]],
-        [#text(size: 6.5pt, weight: "bold")[Tier]],
-        [#text(size: 6.5pt, weight: "bold")[MPH]],
-        [#text(size: 6.5pt)[0]], [#text(size: 6.5pt)[0–8]], [#text(size: 6.5pt)[0 bags (dry frame, 26 lb)]], [#text(size: 6.5pt)[0 bags]],
-        [#text(size: 6.5pt)[1]], [#text(size: 6.5pt)[8–12]], [#text(size: 6.5pt)[2 on ground rail C (30 lb)]], [#text(size: 6.5pt)[16 bags (240 lb)]],
-        [#text(size: 6.5pt)[2]], [#text(size: 6.5pt)[12–18]], [#text(size: 6.5pt)[2 ground + 1 hang (45 lb)]], [#text(size: 6.5pt)[24 bags (360 lb)]],
-        [#text(size: 6.5pt)[3]], [#text(size: 6.5pt)[18–22]], [#text(size: 6.5pt)[2 ground + 2 hang (60 lb)]], [#text(size: 6.5pt)[32 bags (480 lb)]],
-        [#text(size: 6.5pt, weight: "bold", fill: rgb("#c53030"))[4]],
-        [#text(size: 6.5pt, weight: "bold", fill: rgb("#c53030"))[>20]],
-        [#text(size: 6.5pt, weight: "bold", fill: rgb("#c53030"))[NO-GO (Hold in Trailer)]],
-        [#text(size: 6.5pt, weight: "bold", fill: rgb("#c53030"))[In Trailer]],
-      )
-    ]
-  )
 
   #v(1pt)
-  #text(size: 7pt, style: "italic", fill: rgb("#4a5568"))[
-    *Note:* All 16 duck blinds feature 6 standard semicircular wind relief slits (R = 4.0 in., 8 in. W by 4 in. drop, pre-punched 3/8 in. / 10 mm tear-arrest holes), reducing drag by 15% and raising turf sliding threshold to 17.8 mph.
+  #rect(
+    width: 100%,
+    fill: rgb("#ffffff"),
+    stroke: 0.8pt + rgb("#cbd5e0"),
+    radius: 3pt,
+    inset: (x: 5pt, y: 2.5pt)
+  )[
+    #text(weight: "bold", size: 7.5pt, fill: rgb("#2b6cb0"))[DUCK BLIND BALLAST SCHEDULE (PER SIDE / 1 WAGON):]
+    #v(1pt)
+    #table(
+      columns: (0.6fr, 1fr, 2.6fr, 1.8fr),
+      align: center + horizon,
+      stroke: 0.3pt + rgb("#cbd5e0"),
+      inset: (x: 3pt, y: 1.5pt),
+      fill: (col, row) => if row == 0 or row == 1 { rgb("#edf2f7") } else if row == 6 { rgb("#fff5f5") } else { none },
+      table.cell(colspan: 2)[#text(size: 7pt, weight: "bold")[Wind Regime]],
+      table.cell(rowspan: 2)[#text(size: 7pt, weight: "bold")[Sandbags Per Blind (On Ground Rail)]],
+      table.cell(rowspan: 2)[#text(size: 7pt, weight: "bold")[Side Payload (8 Blinds / 1 Wagon)]],
+      [#text(size: 6.5pt, weight: "bold")[Tier]],
+      [#text(size: 6.5pt, weight: "bold")[Wind Speed]],
+      [#text(size: 6.5pt)[0]], [#text(size: 6.5pt)[0–8 mph]], [#text(size: 6.5pt)[1 bag (15 lb)]], [#text(size: 6.5pt)[8 bags (120 lb)]],
+      [#text(size: 6.5pt)[1]], [#text(size: 6.5pt)[8–12 mph]], [#text(size: 6.5pt)[2 bags (30 lb)]], [#text(size: 6.5pt)[16 bags (240 lb)]],
+      [#text(size: 6.5pt)[2]], [#text(size: 6.5pt)[12–18 mph]], [#text(size: 6.5pt)[3 bags (45 lb)]], [#text(size: 6.5pt)[24 bags (360 lb)]],
+      [#text(size: 6.5pt)[3]], [#text(size: 6.5pt)[18–22 mph]], [#text(size: 6.5pt)[4 bags (60 lb)]], [#text(size: 6.5pt)[32 bags (480 lb)]],
+      [#text(size: 6.5pt, weight: "bold", fill: rgb("#c53030"))[4]],
+      [#text(size: 6.5pt, weight: "bold", fill: rgb("#c53030"))[>20 mph]],
+      [#text(size: 6.5pt, weight: "bold", fill: rgb("#c53030"))[NO-GO (Hold in Trailer)]],
+      [#text(size: 6.5pt, weight: "bold", fill: rgb("#c53030"))[In Trailer (Do Not Deploy)]],
+    )
   ]
 
-  #v(2pt)
-  #text(size: 8pt, weight: "bold", fill: rgb("#1a365d"))[Complete Event Lifecycle (Truck $->$ Staging $->$ Front Sideline $->$ Post-Show Sweep $->$ Trailer):]
+  #v(1pt)
+  #text(size: 6.8pt, style: "italic", fill: rgb("#4a5568"))[
+    *Note:* All 16 duck blinds feature 6 standard semicircular wind relief slits ($C_d = 1.02$), reducing drag by 15% and raising turf sliding threshold to 17.8 mph.
+  ]
 
-  + *Arrival, Unload & Inspection:* Meet at equipment trailer at call time. Unload duck blinds and sandbags. Verify frame rigidity and snap clips. Confirm all 6 semicircular wind relief flaps hang flush. Confirm sandbag counts match the Ballast Schedule.
-  + *Move Ballast to Front Sideline:* Transport staged ballast sandbags to the front sideline staging zone outside the turf boundary line.
-  + *Pre-Show Student Rendezvous:* Meet student carry pairs (32 performers, 16 pairs) in staging area 45 minutes prior to show. Confirm pairs know screen assignments.
-  + *Stadium Gate Ingress:* Students carry assembled screens through rear gate and queue along back sideline. Adult handlers remain outside the front boundary line.
-  + *In-Show Standby at Sideline Boundary:* Stand by outside the front boundary line. *Stay outside the boundary for the entire performance.* #alert[Never step onto the turf during the show (CBA Rule 4.03 penalty).]
-  + *Post-Show Inward Ballast Sweep:* On final chord, student pairs pick up assembled screens and sprint to the exit gate. Adult handlers step onto the sideline and sweep resting ballast sandbags inward toward the exit gate with zero doubling back.
-  + *Direct Exit to Trailer Lot (Zero Carts):* Handlers and student pairs proceed directly through the exit chute to the equipment trailer lot. No cart reloading on field or in tunnel.
-  + *Return to Staging Area or Truck:* Return sandbags to staging area (between Prelims and Finals) or trailer/truck if after Finals.
-  + *Final Performance Teardown & Loading:* Assist with loading trailer at end of competition.
+  #v(1pt)
+  #text(size: 7.5pt, weight: "bold", fill: rgb("#1a365d"))[Complete Event Lifecycle (Trucks $->$ Staging $->$ Sideline Walk $->$ Egress $->$ Trucks):]
+
+  + *Arrival & Stage-Top Transport to Staging:* Meet at equipment truck at call time. Confirm wind tier with Prop Lead. Assist with unloading the trucks.  Work with the other prop managers to build all props to be deployed that day.  Load 4 collapsed duck blinds flat on top of each of the 4 stages (16 screens total) to distribute load to staging.
+  + *Ballast Wagon Loading & Staging Setup:* At trucks, load wagon with double-bagged 15-lb sandbags handle-side up.
+  + *Staging Transfer:* At the designated time, transfer with the stages to the staging area.  Note that in some location such as Falcon Stadium, there may be two staging areas in use.
+  + *Staging Setup:* At the final staging area, unload blinds, unfold triangular frames, snap plastic clips.  Perform this before the students arrive.  Ensure you work with event personnel to keep egress areas clear for the band leaving the field.
+  + *Student Rendezvous:* Meet assigned Student Ballast Handler and 8 student carry pairs (16 performers/side) at staging. Student handler joins you at wagon; students take over assembled screens.
+  + *On-Field Wagon Ballast Walk:* Lead Student Ballast Handler pulling wagon along front sideline corridor. Walk past 8 screen marks; deposit sandbags on turf behind screens for student pairs to install.
+  + *Field Boundary Rule (Clear by 2:45):* Clear turf immediately after depositing ballast. Target all adults off turf by *2:45* (before 3:15 announcement ends). Stand by in front sideline adult waiting area. #alert[Never touch turf during show (Rule 4.03 penalty)].
+  + *Post-Show Egress Ballast Retrieval:* After final chord ($T = 0:00$), enter front sideline corridor with wagon and meet student handler. Reload sandbags left on turf by student pairs into wagon; egress through exit chute to staging area. #alert[WARNING (CBA Rule 5.05 & 5.03): Stay in front of goal post (front half of end zone); do not cross behind it. Do not leave field across front boundary until past the 30-yd line closest to exit chute!]
+  + *Staging Reception & Student Departure:* Meet student pairs and Student Ballast Handler at staging. Students depart together to rejoin band block.
+  + *Collapsing & Stage Reload:* Release snap clips, fold screens flat, and load 4 flat screens onto each stage platform for return transport to trucks.
+  + *Truck Loading:* At end of night, supervise loading of screens onto truck for return to Pine Creek.
 ]
 
 #pagebreak()
 
 // =========================================================================
-// PAGE 5: JOB A.2 — STUDENT TWO-PERSON DUCK BLIND CARRY TEAM
+// PAGE 5: JOB A.2 — STUDENT BALLAST HANDLER
 // =========================================================================
 
 == Job Group A: Duck Blind Crew (Continued)
 
 #job-card(
-  role: "Job A.2: Student Two-Person Duck Blind Carry Team",
-  personnel: "32 Student Performers (16 Pairs: 8 pairs on Side 1, 8 pairs on Side 2)",
-  tag: "Two-Person Carry & Rapid Walk-Across Deployment"
+  role: "Job A.2: Student Ballast Handler",
+  personnel: "2 Students (1 assigned to each Adult Manager: Side 1 or Side 2)",
+  tag: "On-Field Wagon Movement, Ballast Unloading & Post-Show Reloading Only"
 )[
   #text(size: 8.5pt, style: "italic", fill: rgb("#2b6cb0"))[
-    *Student Instructions:* You and your assigned partner carry one fully assembled 26-lb duck blind (13 lbs/student) into the stadium, queue on the backfield, and on the starting signal walk straight across the field to deposit, align, and ballast your screen on the front sideline.
+    *Student Instructions:* You are assigned directly to your side's Adult Duck Blind Manager (Side 1 or Side 2). Meet your adult manager at the outside staging area following warm ups, move with your adult manager on field to assist with on-field unloading (depositing ballast) and reloading (post-show retrieval) only, and depart at the same time as the student carry teams.
   ]
   #v(4pt)
 
-  + *Pre-Show Pair Staging:*
-    - Meet your assigned partner at the prop staging area 30 minutes prior to show time.
-    - Confirm your assigned screen number (1–8 on Side 1 or Side 2) and front sideline yard line mark.
-    - Work with your section leader to ensure your musical instrument is transported to your opening drill set.
-  + *Rear Gate Entry & Backfield Queue:*
-    - Together with your partner, lift your fully assembled duck blind (13 lbs per student).
-    - Enter through the rear stadium entrance gate (CBA Rule 5.02) and queue along the back sideline/end zone directly across the field from your assigned front sideline coordinate mark.
-    - Stand at attention awaiting the official CBA entry signal.
-  + *The Walk-Across ($T = 0:00$):*
-    - When the CBA Timing & Penalties judge signals permission to enter, all 16 student pairs simultaneously walk in synchronized formation straight across the field (~55 yards at 1.1 yd/s).
-  + *Screen Placement & Alignment:*
-    - Place the screen firmly on your assigned front sideline yard mark.
-    - Sight down the sideline and adjust lateral position so all 8 screens form a continuous front visual wall with zero gaps.
-  + *Ballast Installation & Opening Drill Set Transition:*
-    - Place the staged ballast sandbags over the rear ground rail C (2 bags for Tier 1).
-    - Transition briskly to your opening performance position. The entire deployment completes in *~55.7 seconds (P95: 58.3s)*, banking a massive *+139.3-second safety buffer* before the 3:15 announcement ends with *zero adult violation risk*!
+  + *Staging Area Rendezvous (Post Warm-up):*
+    - Meet your assigned Adult Duck Blind Manager at the common prop staging area outside the stadium after your warmups.
+    - The adult manager will have already transported the blinds and loaded your side's ballast wagon with the day's designated sandbags.
+    - Confirm with the adult manager how many ballast sandbags to use for that day based on weather conditions.
+    - Rendezvous at your side's wagon and prepare for stadium gate entry. Coordinate instrument staging with your section leader.
+  + *On-Field Wagon Movement & Unloading (Deployment):*
+    - Accompany your adult manager pulling/guiding the ballast wagon onto the field along the front sideline corridor.
+    - At each of the 8 screen coordinate marks on your side, assist your adult manager in neatly unloading and depositing the designated sandbags onto the turf approximately 1 yard inside the front sideline (to leave room for the screen to be placed first).
+    - Arriving student carry pairs (walking across from the back sideline) will pick up these sandbags and install them onto the screens.
+  + *Transition to Opening Drill Set:*
+    - Visually confirm all ballast bags have been placed and assist any student screen handlers that may need it.
+    - Move quickly to your first set position.
+  + *Post-Show On-Field Ballast Reloading:*
+    - After the show and per your section leader's direction, return to the location where you left the adult handler, who will return from the sideline and meet you at this location.
+    - The student carry pairs will have placed their sandbags on the turf and sprinted off.
+    - Rapidly lift and reload all resting sandbags off the turf back into the wagon with zero doubling back. 
+    - #alert[SAFETY: LIFT WITH LEGS, NOT BACK; NEVER DROP OR THROW BAGS.]
+  + *Egress & Departure with Student Teams:*
+    - Maintain continuous forward momentum pulling the reloaded wagon through the exit chute directly to the common outside staging area.
+    - At the outside staging area, hand the wagon over to your adult manager. (The adult manager handles screen collapsing and stage-top reloading).
+    - Return to the band.
 ]
 
 #pagebreak()
 
 // =========================================================================
-// PAGE 6: JOB A.3 — STUDENT SCREEN ALIGNMENT, WIND SLITS & RIGIDITY
+// PAGE 6: JOB A.3 — STUDENT TWO-PERSON CARRY DEPLOYMENT
 // =========================================================================
 
 == Job Group A: Duck Blind Crew (Continued)
 
 #job-card(
-  role: "Job A.3: Student Screen Alignment, Semicircular Wind Slits & Rigidity",
-  personnel: "32 Student Performers (16 Pairs: 8 on Side 1, 8 on Side 2)",
-  tag: "Screen Rigidity, Semicircular Wind Slits & Ballasting"
+  role: "Job A.3: Student Two-Person Carry Deployment",
+  personnel: "32 Student Performers (16 Pairs: 8 pairs on Side 1, 8 pairs on Side 2)",
+  tag: "Staging Takeover, Backfield Queue, Synchronized Walk-Across & Ballast Placement"
 )[
   #text(size: 8.5pt, style: "italic", fill: rgb("#2b6cb0"))[
-    *Student Instructions:* Ensure your duck blind is structurally rigid, properly aligned, correctly ballasted, and that all 6 standard semicircular wind relief slits are functional and hanging flush.
+    *Student Instructions:* You and your assigned partner carry one fully assembled 26-lb duck blind (13 lbs/student). You meet the Adult Duck Blind Manager at the staging area, take over your pre-assembled screen, queue on the backfield, walk across on the entry signal, deposit on your yard mark, and place the ballast sandbags deposited by the wagon crew onto your screen.
   ]
-  #v(3pt)
+  #v(4pt)
 
-  + *Triangular Frame Rigidity & Snap Clip Lockup:*
-    - Verify that the rear triangular support frame is swung open perpendicular to the front display face.
-    - Confirm both 3D-printed snap clips (*I*) are fully engaged into Rail 3 with a firm click.
-    - Tap the frame to confirm 100% mechanical rigidity before taking your opening drill set.
-  + *Standard Semicircular Wind Relief Slits Inspection:*
-    - Inspect the 6 engineered semicircular flaps (R = 4.0 in., 8.0 in. chord by 4.0 in. drop, pre-punched 3/8 in. / 10 mm tear-arrest holes) cut in a 2 by 3 grid.
-    - Confirm all flaps hang down flat and flush under gravity (1:2 aspect ratio prevents thermal tip curl in heat). With razor kerf under 0.01 in., slits are 30x below human visual resolution at 30 yards (0.31 in.) and completely camouflaged from spectator stands.
-    - Verify compliance with the Floating Flap Rule: cuts float into negative space and never cut through performer faces, show typography, or school crests.
-    - *Backstage Concealment:* Flaps provide 96.6% solid opacity; the lowest cut apex sits at Y = 20 in., maintaining a full 10 in. buffer above floor equipment (Y <= 10 in.).
-  + *Ballast Sandbag Installation & Leverage:*
-    - *Primary Ballast (Rear Ground Rail C):* Place double-bagged sandbags directly over the rear ground rail C. This provides maximum restoring leverage (2.29 ft) with zero stress on snap clips.
-    - *Secondary Ballast (Upper Rail 2):* If Tier 2 or 3 is ordered by the Prop Lead, hang designated sandbags from Rail 2 using the attached clips.
-  + *Visual Wall Continuity:*
-    - Ensure your screen edges align flush with adjacent screens to create an unbroken visual barrier along the front sideline.
+  + *Staging Area Takeover (T-45 min):*
+    - Meet the Adult Duck Blind Manager at the common prop staging area outside the stadium 45 minutes prior to show time (the shared staging area for all props, defined per venue location).
+    - Locate your assigned screen (Screens 1–8 on Side 1 or Side 2) and confirm your front sideline yard mark.
+    - Confirm your screen has been assembled by the adults: rear triangular frame swung out, both 3D snap clips locked rigid onto Rail 3 with a firm click.
+  + *Rear Gate Entry & Backfield Queue:*
+    - Lift the fully assembled 26-lb duck blind between you (13 lbs per student), carrying your instrument in your other hand.
+    - Transit the perimeter track through the rear stadium entrance gate (CBA Rule 5.02) and queue along the back sideline directly across from your assigned front sideline coordinate mark.
+  + *The Synchronized Walk-Across:*
+    - When the CBA Timing & Penalties judge signals permission to enter, all 16 student pairs walk straight across the field to the front sideline.
+  + *Sequential Center-Outward Placement & Alignment:*
+    - *Center-Outward Placement:* Screen placement begins at the center (midfield) position. The center pair places their screen firmly on their yard mark first, followed sequentially by the next pair, then the next, moving progressively outward. This center-outward sequence guarantees exact spacing and eliminates gaps or crowding.
+    - *Sighting & Final Alignment:* While waiting for the ballast wagon to reach your position, sight down the sideline to fine-tune lateral alignment so all 8 adjacent screen edges align perfectly flush into an unbroken front visual wall.
+  + *Ballast Installation from Wagon Deposit:*
+    - The Adult Manager and Student Ballast Handler have walked their wagon along the front sideline and deposited your required sandbags on the turf at your mark approximately 1 yard behind the front sideline.
+    - Pick up the sandbags and place them over the rear bar on the ground.
+  + *Transition to Opening Drill Set:*
+    - Confirm screen rigidity and transition briskly to your opening drill position.
 ]
 
 #pagebreak()
@@ -483,27 +462,27 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
 #job-card(
   role: "Job A.4: Student Two-Person Egress Sprint",
   personnel: "32 Student Performers (16 Pairs: 8 on Side 1, 8 on Side 2)",
-  tag: "Post-Show Two-Person Egress Sprint & Direct Trailer Exit"
+  tag: "Post-Show Ballast Release, Two-Person Egress Sprint & Staging Hand-Off"
 )[
   #text(size: 8.5pt, style: "italic", fill: rgb("#2b6cb0"))[
-    *Student Instructions:* The 2-minute CBA egress clock starts the instant the final note of the show sounds. Safely remove ballast, grab your assembled screen between partners, and hoof it out through the exit gate!
+    *Student Instructions:* Safely leave your ballast on the turf, grab your assembled screen between partners, move quickly out through the exit gate to the staging area, and hand control back to the Adult Duck Blind Manager.
   ]
   #v(4pt)
 
   + *Immediate Action on Final Show Chord ($T = 0:00$):*
-    - The instant the final chord sounds, both partners immediately converge on your assigned duck blind.
-    - *Safe Ballast Removal:* Lift all sandbags off the rear ground rail and unclip any hanging bags; place them gently onto the synthetic turf next to the rail.  
-      #alert[CRITICAL SAFETY MANDATE: NEVER THROW OR DROP SANDBAGS.] Dropping sandbags causes severe seam rupture and leaks sand, resulting in CBA score penalties. Place bags gently on the turf. Leave them in place for the Adult Sideline Ballast Handlers to sweep.
-  + *The Two-Person Carry Sprint ($T = 0:05$ to $0:55$):*
-    - Partner 1 grasps the left upright rail; Partner 2 grasps the right upright rail.
-    - Lift the fully assembled 26-lb duck blind between you (13 lbs per student).
-    - Maintain a steady, brisk pace jogging straight down the front sideline corridor and through the designated stadium exit gate / tunnel chute.
-    - *Field Clearance:* All 16 screens completely clear the field boundary within *~50–55 seconds* (Mean 55.0s, P95 60.4s Single-Exit; 35.5s Dual-Exit), banking over *+65 seconds of safety buffer* under the official 2:00 CBA clock!
-  + *Direct Transit to Trailer Lot (Zero Carts):*
-    - Maintain continuous forward momentum through the exit gate / tunnel mouth directly to the equipment trailer lot.
-    - Zero cart reloading required on field or in tunnel!
-    - At the trailer, disengage snap clips (*I*), collapse screens flat, and stack neatly inside the trailer.
-    - Rejoin the band for post-show debrief.
+    - Per your section leader's direct, at the completion of the show, break ranks and both partners converge on your assigned duck blind.
+  + *Leave Ballast on Turf (Do Not Carry):*
+    - *Safe Ballast Removal:* Lift all sandbags off the rear ground rail and place them gently onto the turf next to the rail.
+    - #alert[CRITICAL SAFETY MANDATE: NEVER THROW OR DROP SANDBAGS.] Dropping sandbags causes seam rupture and leaks sand, resulting in CBA score penalties. Place bags gently on the turf.
+    - *Leave the bags on the turf!* The Adult Duck Blind Manager and Student Ballast Handler will retrieve them with their wagon.
+  + *The Two-Person Carry Sprint:*
+    - Lift the fully assembled 26-lb duck blind between you, carrying your instrument in your other hand.
+    - Maintain a steady, brisk pace straight down the front sideline corridor and through the designated stadium exit gate / tunnel chute.
+  + *Direct Transit to Staging Area & Hand-Off:*
+    - Maintain continuous forward momentum through the exit gate / tunnel mouth along the perimeter path directly to the common prop staging area outside the stadium.
+    - Meet your Adult Duck Blind Manager at the staging area.
+    - Hand custody of the duck blind back to the Adult Manager (the adult manager will collapse the screen and load it onto a stage platform for transport).
+    - Rejoin the band.
 ]
 
 #pagebreak()
@@ -659,25 +638,25 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
   personnel: "2 Adult Volunteers (Overseeing Platforms & Staircases #1–#4)",
   tag: "Assembly, Vinyl Installation, Staging Lineup & Student Oversight"
 )[
-  #text(size: 8.5pt, style: "italic", fill: rgb("#2b6cb0"))[
-    You are one of two Adult Volunteers in charge of the 4 performance stage platforms (8 total mobile stage pieces) and 4 mobile staircases. You supervise and direct mechanical assembly, vinyl installation, labeled lineup order, staging/destaging logistics, and student oversight for both the 16 Stage Handlers and 8 Staircase Handlers.
+  #text(size: 8pt, style: "italic", fill: rgb("#2b6cb0"))[
+    You are one of two Adult Volunteers in charge of the 4 performance stage platforms (8 mobile pieces) and 4 mobile staircases. You supervise mechanical assembly, vinyl installation, lineup order, staging logistics, and student oversight for 16 Stage Handlers and 8 Staircase Handlers.
   ]
 
-  #v(2pt)
+  #v(1.5pt)
   #rect(
     width: 100%,
     fill: rgb("#ffffff"),
     stroke: 0.8pt + rgb("#cbd5e0"),
     radius: 3pt,
-    inset: (x: 5pt, y: 3pt)
+    inset: (x: 5pt, y: 2.5pt)
   )[
-    #text(weight: "bold", size: 8pt, fill: rgb("#2b6cb0"))[STAGE PLATFORM & STAIRCASE FLEET CONFIGURATION:] \
+    #text(weight: "bold", size: 7.5pt, fill: rgb("#2b6cb0"))[STAGE PLATFORM & STAIRCASE FLEET CONFIGURATION:] \
     #v(1pt)
     #table(
       columns: (0.9fr, 1.25fr, 1fr, 1.6fr),
       align: center + horizon,
       stroke: 0.3pt + rgb("#cbd5e0"),
-      inset: (x: 4pt, y: 2pt),
+      inset: (x: 4pt, y: 1.5pt),
       fill: (col, row) => if row == 0 { rgb("#edf2f7") } else { none },
       [*Platform*], [*Stage Pieces*], [*Assigned Stairs*], [*Lineup Order & Configuration*],
       [Platform \#1], [2 Pieces (Front + Back)], [Staircase \#1], [\#1F $->$ \#1B $->$ Stairs \#1 (vinyl pinned)],
@@ -687,18 +666,17 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
     )
   ]
 
-  #v(2pt)
-  #text(size: 8pt, weight: "bold", fill: rgb("#1a365d"))[Step-by-Step Manager Lifecycle:]
+  #v(1.5pt)
+  #text(size: 7.5pt, weight: "bold", fill: rgb("#1a365d"))[Step-by-Step Manager Lifecycle:]
 
-  + *Arrival & Frame Assembly Supervision:* Meet at the equipment trailer at the Adult Volunteer call time. Supervise and direct the mechanical assembly of the 8 mobile stage pieces and 4 staircases per their manuals. Direct help from prop and pit crew members who may not have done this assembly before. Verify all locking hardware, structural pins, and caster mounts are securely seated.
-  + *Vinyl Covering Installation:* Install the designated vinyl coverings and skirt graphics onto each assembled stage piece. Ensure that the bridging seam flap on each front piece is folded and pinned back securely for transport so it will not drag or catch on turf during movement.
-  + *Label Verification & Lineup Order:* Verify that every stage piece and staircase is clearly labeled for its field position (Platform \#1–\#4, Front "F" vs Back "B", Staircase \#1–\#4). *Lineup order is critical:* organize pieces in strict entry sequence with front pieces leading, back pieces following, and assigned staircases queued directly behind.
-  + *Transport to Staging Area:* Lead the transport of all 8 stage pieces and 4 staircases (rolled on their sides on dedicated casters) from the trailer lot to the designated staging area at the designated staging time. Park pieces in lineup order and engage wheel brakes.
-  + *Student Handler Rendezvous & Supervision:* Meet the 16 Student Stage Handlers and 8 Student Staircase Handlers at the staging area 45 minutes prior to show time. Confirm each student team knows their assigned label, lineup position, and field coordinate. Supervise and assist the students as they prepare for gate movement.
-  + *On-Field Setup & Boundary Rule:* Adults do not push props onto the field (students push). Move with the students onto the field during setup to assist any that need help, verify piece alignment, ensure the vinyl seam flap is velcroed flat, and confirm staircases are seated with minimal gap to the platform. Quickly move off the field before the performance begins to the adult volunteer waiting area in front of the front sideline. #alert[Never step onto the turf during the show (Rule 4.03 penalty).]
-  + *Post-Show Reception & Return to Trailer:* Meet the student handlers at the staging area following their end zone egress. Take custody of the stage pieces and staircases so students can rejoin the band block. Push props back to the staging area (between Prelims and Finals) or to the equipment trailer (after Finals).
-  + *Post-Finals Disassembly Supervision:* Direct the careful removal of vinyl coverings and mechanical disassembly of stage pieces and staircases per their manuals for secure trailer packing.
-  + *Trailer Loading & Unloading:* Assist the transport team with the secure loading of the trailer for return to Pine Creek, and return to Pine Creek to assist with unloading and prop storage.
+  + *Assembly Supervision:* Supervise mechanical assembly of the 8 stage pieces and 4 staircases. Verify structural pins and caster mounts are securely seated.
+  + *Vinyl Covering Installation:* Install vinyl coverings and skirt graphics. Ensure bridging seam flap on each front piece is pinned back securely for transport so it cannot drag or catch.
+  + *Label Verification & Lineup Order:* Verify each piece is labeled (Platform \#1–\#4, Front "F" vs Back "B", Stairs \#1–\#4). Queue pieces with front leading, back following, stairs behind.
+  + *Staging Transit & Duck Blind Coordination:* Lead transport of stage pieces to staging. *Coordinate with Adult Duck Blind Managers:* four (4) collapsed duck blinds are loaded flat on top of each stage platform (16 screens total) to distribute weight between trucks and staging.
+  + *Student Rendezvous (T-45 min):* Meet 16 Stage Handlers and 8 Staircase Handlers in staging. Confirm assignments and supervise gate movement preparation.
+  + *On-Field Setup & Boundary Rule:* Adults assist during setup (verify alignment, ensure seam velcro is sealed flat, stairs seated). Move off turf before show begins. #alert[Never step onto turf during show (Rule 4.03 penalty).]
+  + *Post-Show Reception & Duck Blind Reload:* Meet handlers at staging after end zone egress. *Duck Blind Reload:* Coordinate with Duck Blind Managers as they stack 4 collapsed duck blinds flat on each stage platform. Push to staging (between runs) or trailer (after Finals).
+  + *Post-Finals Teardown & Loading:* Direct vinyl removal, piece disassembly, and assist with secure trailer loading and unloading at Pine Creek.
 ]
 
 #pagebreak()
@@ -847,7 +825,7 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
 All teardown and packdown procedures occur *exclusively in the equipment trailer parking lot* after clearing the stadium exit gate.  The transportation team is responsible for all loading activity, and will direct props personnel in the correct loading method and sequence.
 
 + *Deballasting Safety:* Remove sandbags from backdrop retention posts and duck blind ground rails. Place bags gently into the designated area inside the equipment trailer. #alert[Never drop or throw sandbags] (protects seams and plastic liners).
-+ *Screen Packing:* Stack collapsed sideline screens and backdrop screens onto the truck cross braces, and secure.
++ *Duck Blind & Screen Packing:* Duck blinds are returned from the staging area on top of the stages (4 per stage), then unloaded and stacked onto truck cross braces and secured.
 + *All-Clear Check:* Inspect the staging lot for personal belongings, water bottles, and tools. Verify all adult volunteer wristbands across prop and pit crews are accounted for before departing.
 
 #v(10pt)
@@ -866,7 +844,7 @@ All teardown and packdown procedures occur *exclusively in the equipment trailer
       #text(size: 8pt, fill: rgb("#718096"))[2026 Competitive Field Show: Continuum • Colorado Bandmasters Association]
     ],
     align(right + horizon)[
-      #text(size: 8pt, weight: "bold", fill: rgb("#3182ce"))[Release v0 (D1) • September 2026]
+      #text(size: 8pt, weight: "bold", fill: rgb("#3182ce"))[Release v0 (D2) • September 2026]
     ]
   )
 ]
