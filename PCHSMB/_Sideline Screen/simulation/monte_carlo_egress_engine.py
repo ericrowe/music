@@ -238,6 +238,75 @@ def simulate_cart_and_crew(
         "final_weight": current_weight
     }
 
+def simulate_two_student_carry_egress(
+    stadium_layout: str,
+    ballast_mode: str,
+    rng: np.random.Generator
+) -> Dict[str, float]:
+    """
+    Simulates the Two-Student Carry post-show egress / field clearance:
+    - On show cutoff chord, the same 16 student pairs (32 students) grab their assigned duck blind.
+    - No folding on field, no cart loading on field.
+    - Student pairs lift the assembled screen and 'hoof it on out' to the designated stadium exit gate.
+    - Clock stops when the LAST student pair clears the exit gate threshold into the chute/tunnel.
+    - Off-field (outside gate), screens are restacked onto transport carts/trailers.
+    """
+    if ballast_mode == "tier1":
+        ballast_per_screen = BALLAST_BAG_WEIGHT_LBS * 1.0  # 15.0 lbs
+    elif ballast_mode == "tier2":
+        ballast_per_screen = BALLAST_BAG_WEIGHT_LBS * 2.0  # 30.0 lbs
+    else:
+        ballast_per_screen = 0.0
+        
+    gross_screen_wt = SCREEN_UNIT_WEIGHT_LBS + ballast_per_screen
+    wt_per_student = gross_screen_wt / 2.0
+    
+    # Jogging speed load factor
+    load_factor = 1.0 / (1.0 + 0.006 * wt_per_student)
+    
+    # Wind resistance factor while jogging with screen
+    wind_factor = rng.triangular(0.92, 0.96, 1.00)
+    
+    # All 16 screen distances to the stadium exit gate
+    dists_side1 = get_student_carry_distances(1, stadium_layout)  # Screens 1-8
+    dists_side2 = get_student_carry_distances(2, stadium_layout)  # Screens 9-16
+    all_dists = dists_side1 + dists_side2
+    
+    gate_times = []
+    for d in all_dists:
+        # Reaction time from cutoff chord to grabbing screen
+        t_react = rng.triangular(1.5, 2.5, 4.0)
+        # Lift screen together
+        t_lift = rng.triangular(1.8, 2.8, 4.2)
+        if ballast_mode != "none":
+            t_lift += rng.triangular(0.8, 1.5, 2.5)  # slightly heavier lift
+            
+        # Brisk walking / jogging pace carrying 2-person load: ~1.8 to 2.9 yd/s (approx 3.7 - 5.9 mph)
+        v_base = rng.triangular(1.8, 2.3, 2.9)
+        pair_load = load_factor * rng.uniform(0.96, 1.04)
+        v_jog = max(1.1, v_base * pair_load * wind_factor)
+        
+        # 5% chance of minor gate congestion or turf stumble
+        t_congestion = rng.uniform(1.5, 3.5) if rng.random() < 0.05 else 0.0
+        
+        t_transit = (d / v_jog) + t_congestion
+        total_time = t_react + t_lift + t_transit
+        gate_times.append(total_time)
+        
+    t_clearance = max(gate_times)
+    
+    # Off-field reload time (outside the gate on track/apron into carts/trucks, off the CBA clock)
+    t_outside_reload = rng.triangular(15.0, 22.0, 32.0)
+    t_operation_total = t_clearance + t_outside_reload
+    
+    return {
+        "t_clearance": t_clearance,
+        "t_operation_total": t_operation_total,
+        "t_outside_reload": t_outside_reload,
+        "t_last_student_gate": t_clearance,
+        "bottleneck": "student_carry_exit"
+    }
+
 def run_egress_monte_carlo(
     stadium_layout: str = "same_side",
     reload_mode: str = "outside_gate",
@@ -248,41 +317,54 @@ def run_egress_monte_carlo(
     seed: Optional[int] = 42
 ) -> EgressScenarioSummary:
     """
-    Runs N stochastic Monte Carlo trials for 2-cart post-show egress.
+    Runs N stochastic Monte Carlo trials for post-show egress.
     """
     rng = np.random.default_rng(seed)
-    
-    route1 = compute_cart_egress_route(1, stadium_layout=stadium_layout, far_sweep_dir=far_sweep_dir)
-    route2 = compute_cart_egress_route(2, stadium_layout=stadium_layout, far_sweep_dir=far_sweep_dir)
     
     clearance_times = np.empty(num_trials, dtype=float)
     operation_times = np.empty(num_trials, dtype=float)
     slacks = np.empty(num_trials, dtype=float)
     successes = 0
     
-    for i in range(num_trials):
-        f1 = sample_pusher_fitness(pusher_profile, rng)
-        f2 = sample_pusher_fitness(pusher_profile, rng)
+    if reload_mode == "two_student_carry":
+        for i in range(num_trials):
+            res = simulate_two_student_carry_egress(stadium_layout, ballast_mode, rng)
+            t_clearance = res["t_clearance"]
+            t_op = res["t_operation_total"]
+            
+            clearance_times[i] = t_clearance
+            operation_times[i] = t_op
+            slacks[i] = CBA_EGRESS_LIMIT_SECONDS - t_clearance
+            
+            if t_clearance <= CBA_EGRESS_LIMIT_SECONDS:
+                successes += 1
+    else:
+        route1 = compute_cart_egress_route(1, stadium_layout=stadium_layout, far_sweep_dir=far_sweep_dir)
+        route2 = compute_cart_egress_route(2, stadium_layout=stadium_layout, far_sweep_dir=far_sweep_dir)
         
-        res1 = simulate_cart_and_crew(1, route1, reload_mode, ballast_mode, f1, pusher_profile, rng)
-        res2 = simulate_cart_and_crew(2, route2, reload_mode, ballast_mode, f2, pusher_profile, rng)
-        
-        # Field clearance time: when BOTH carts and ALL students have crossed the gate boundary
-        t_clearance = max(
-            res1["t_cart_gate"],
-            res2["t_cart_gate"],
-            res1["t_students_gate"],
-            res2["t_students_gate"]
-        )
-        
-        t_op = max(res1["t_operation_total"], res2["t_operation_total"])
-        
-        clearance_times[i] = t_clearance
-        operation_times[i] = t_op
-        slacks[i] = CBA_EGRESS_LIMIT_SECONDS - t_clearance
-        
-        if t_clearance <= CBA_EGRESS_LIMIT_SECONDS:
-            successes += 1
+        for i in range(num_trials):
+            f1 = sample_pusher_fitness(pusher_profile, rng)
+            f2 = sample_pusher_fitness(pusher_profile, rng)
+            
+            res1 = simulate_cart_and_crew(1, route1, reload_mode, ballast_mode, f1, pusher_profile, rng)
+            res2 = simulate_cart_and_crew(2, route2, reload_mode, ballast_mode, f2, pusher_profile, rng)
+            
+            # Field clearance time: when BOTH carts and ALL students have crossed the gate boundary
+            t_clearance = max(
+                res1["t_cart_gate"],
+                res2["t_cart_gate"],
+                res1["t_students_gate"],
+                res2["t_students_gate"]
+            )
+            
+            t_op = max(res1["t_operation_total"], res2["t_operation_total"])
+            
+            clearance_times[i] = t_clearance
+            operation_times[i] = t_op
+            slacks[i] = CBA_EGRESS_LIMIT_SECONDS - t_clearance
+            
+            if t_clearance <= CBA_EGRESS_LIMIT_SECONDS:
+                successes += 1
             
     return EgressScenarioSummary(
         stadium_layout=stadium_layout,
@@ -308,6 +390,8 @@ def run_egress_monte_carlo(
 if __name__ == "__main__":
     print("=== TESTING UPDATED EGRESS MONTE CARLO ENGINE ===")
     test_cases = [
+        ("same_side", "two_student_carry", "inward", "tier1"),
+        ("dual_exit", "two_student_carry", "inward", "tier1"),
         ("same_side", "outside_gate", "inward", "tier1"),
         ("same_side", "inside_gate", "inward", "tier1"),
         ("same_side", "on_field_loading", "inward", "tier1"),

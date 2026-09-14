@@ -28,20 +28,28 @@ Under CBA Rule 5.06, total field time runs from permission to enter until the la
 
 ## 2. Executive Summary & Tactical Verdicts
 
-1. **Direct Hand-Carry to the Tunnel Guarantees Clock Stoppage in Under 1:40 (98.4% - 100%):**
+1. **Two-Student Carry (Grab & Hoof-It Out) Obliterates the 2:00 Egress Clock:**
+   - **Mean Field Clearance Time: 55.0 seconds (0:55)**; **95th Percentile: 60.4 seconds (1:00)** in Same-Side single-gate venues.
+   - In Dual-Exit venues, clearance finishes in an astonishing **35.5 seconds (0:36)**; **95th Percentile: 38.7 seconds**!
+   - **Success Rate: 100.0%** across all stadium gate configurations and ballast tiers.
+   - Leaves **+65.0 seconds of safety buffer** within the 2:00 benchmark, banking immense slack into the CBA 15:00 total field block.
+   - **Zero Adult Violation Risk:** Eliminates carts and adult pushers from the turf entirely, removing any possibility of CBA Rule 4.03 boundary violations.
+   - **Tradeoffs:** Requires 32 student performers, introduces aerodynamic sail drag while carrying through stadium breezes, and requires student handlers to be unencumbered by musical instruments during extraction.
+
+2. **Direct Hand-Carry to the Tunnel (Cart Reload Outside) is the Cart-Fleet Gold Standard:**
    - **Mean Field Clearance Time: 99.9 seconds (1:40)**; **95th Percentile: 113.8 seconds (1:54)** in Same-Side single-gate venues.
    - In Opposite-Side venues (Enter Side 1, Exit Side 2), mean clearance is **100.1 seconds (1:40)** with **98.4%** success.
    - In Dual-Exit venues, clearance finishes in **83.7 seconds (1:24)** with **100.0%** success.
    - **Mechanism:** Students fold and hand-carry the 26-lb frames straight through the exit gate into the tunnel. Carts collect ballast bags and cross into the tunnel. The official contest clock stops at ~99.9s. Reloading onto carts occurs safely inside the tunnel off the contest clock!
 
-2. **Reloading Just Inside the Gate is Viable Under Calm/Low Ballast Conditions:**
+3. **Reloading Just Inside the Gate is Viable Under Calm/Low Ballast Conditions:**
    - Under Tier 1 ballast, reloading inside the gate averages **121.4 seconds (2:01)**, succeeding in **46.7%** of trials under 120s (and 100% if deployment saved 15s).
    - If **unballasted**, reloading inside the gate averages **91.7 seconds (1:32)** with a **99.8% success rate**!
 
-3. **Traditional On-Field Cart Loading Fails 100% of the Time in Single-Exit Stadiums:**
+4. **Traditional On-Field Cart Loading Fails 100% of the Time in Single-Exit Stadiums:**
    - Stopping at each screen on the field to load screens and ballast results in an average field clearance time of **153.4 seconds (2:33)**, exceeding 2:00 by over 33 seconds on every trial.
 
-4. **Inward Sweep (Screen 8 -> 1) Saves 20 Yards of Cross-Field Pushing:**
+5. **Inward Sweep (Screen 8 -> 1) Saves 20 Yards of Cross-Field Pushing:**
    - Sweeping from the 22-yard line inward toward the 42-yard line (centerfield) cuts cross-field travel from 88 yards to 69.3 yards, saving ~10 seconds of fatigue and boosting compliance from 26.6% to 98.8%.
 
 ---
@@ -49,17 +57,22 @@ Under CBA Rule 5.06, total field time runs from permission to enter until the la
 
 | Stadium Layout | Reload Mode | Sweep Direction | Ballast State | Mean Clearance | Median | P95 Time | Success ($\le 2:00$) | Safety Slack |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| `same_side` | `two_student_carry` | `inward` | `tier1` | 55.1 s (0:55) | 54.9 s | 61.0 s | **100.0%** | +64.9 s |
 | `same_side` | `outside_gate` | `inward` | `tier1` | 99.9 s (1:39) | 99.2 s | 113.8 s | **98.8%** | +20.1 s |
 | `same_side` | `inside_gate` | `inward` | `tier1` | 121.4 s (2:01) | 120.7 s | 136.7 s | **46.7%** | -1.4 s |
 | `same_side` | `hybrid_split` | `inward` | `tier1` | 121.4 s (2:01) | 120.7 s | 134.6 s | **46.3%** | -1.4 s |
 | `same_side` | `on_field_loading` | `inward` | `tier1` | 153.4 s (2:33) | 152.5 s | 171.2 s | **0.0%** | -33.4 s |
+| `opposite_side` | `two_student_carry` | `inward` | `tier1` | 55.2 s (0:55) | 54.9 s | 61.2 s | **100.0%** | +64.8 s |
 | `opposite_side` | `outside_gate` | `inward` | `tier1` | 100.1 s (1:40) | 99.4 s | 114.7 s | **98.4%** | +19.9 s |
 | `opposite_side` | `inside_gate` | `inward` | `tier1` | 121.3 s (2:01) | 120.7 s | 136.8 s | **47.1%** | -1.3 s |
+| `dual_exit` | `two_student_carry` | `inward` | `tier1` | 35.5 s (0:35) | 35.4 s | 38.9 s | **100.0%** | +84.5 s |
 | `dual_exit` | `outside_gate` | `inward` | `tier1` | 83.7 s (1:23) | 83.3 s | 92.8 s | **100.0%** | +36.3 s |
 | `dual_exit` | `inside_gate` | `inward` | `tier1` | 105.0 s (1:44) | 104.4 s | 115.4 s | **98.5%** | +15.0 s |
+| `same_side` | `two_student_carry` | `inward` | `none` | 51.6 s (0:51) | 51.4 s | 57.3 s | **100.0%** | +68.4 s |
 | `same_side` | `outside_gate` | `inward` | `none` | 71.0 s (1:11) | 70.4 s | 83.5 s | **100.0%** | +49.0 s |
 | `same_side` | `inside_gate` | `inward` | `none` | 91.7 s (1:31) | 91.1 s | 104.5 s | **99.8%** | +28.3 s |
 | `same_side` | `on_field_loading` | `inward` | `none` | 116.6 s (1:56) | 115.8 s | 133.0 s | **67.8%** | +3.4 s |
+| `same_side` | `two_student_carry` | `inward` | `tier2` | 57.0 s (0:56) | 56.8 s | 63.2 s | **100.0%** | +63.0 s |
 | `same_side` | `outside_gate` | `inward` | `tier2` | 112.4 s (1:52) | 111.7 s | 128.7 s | **80.9%** | +7.6 s |
 | `same_side` | `inside_gate` | `inward` | `tier2` | 134.7 s (2:14) | 133.8 s | 152.5 s | **4.9%** | -14.7 s |
 | `same_side` | `on_field_loading` | `inward` | `tier2` | 167.7 s (2:47) | 166.7 s | 188.3 s | **0.0%** | -47.7 s |

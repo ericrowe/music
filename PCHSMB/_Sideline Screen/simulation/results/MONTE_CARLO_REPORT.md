@@ -5,16 +5,32 @@
 
 ---
 ## 1. Executive Summary & Core Verdicts
-1. **2 Carts with Pre-Set Student Receivers is the Undisputed Gold Standard:**   - **Mean Time: 133.7 seconds (2:14)**; **95th Percentile: 147.8 seconds (2:28)**.   - **Success Rate: 100.0%** under all starting locations.   - Leaves a massive **~47 to 62 seconds of safety buffer** before the 3:15 clock expires.
-2. **1 Cart Deployment is Operationally Infeasible under Standard Conditions:**   - With Tier 1 ballast carried on the cart ($786\text{ lbs}$ gross payload), a single cart pushing across both sides of the field takes **234.5 seconds (3:55)** with Pre-Set Receivers, resulting in a **0.2% success rate (99.8% failure/penalty rate)**.   - With Mobile Pincer setup, 1 Cart takes **321.9 seconds (5:22)**, with **0.0% success rate**.   - **When can 1 Cart barely work?** ONLY if the screens are **completely unballasted** ($546\text{ lbs}$ dry weight) AND deployed using **Pre-Set Student Receivers** starting from **Back 20** (Mean: $196.7\text{ s}$, P95: $218.4\text{ s}$, ~45% success rate). Even then, it fails more than half the time.
-3. **Optimal Starting Location: Back Sideline at 20-Yard Line (`Back_20`):**   - Ingress distance is only **55 yards** straight down the 20-yard line corridor to the outer screen boundary.   - Faster than starting behind the goal posts (which requires ~88 yards and navigating around the goal line/pylons).
-4. **The Power of Pre-Set Student Receivers:**   - Having on-field students already in position to stand up and latch each screen in parallel shaves **64.3 seconds** off the 2-cart deployment, converting a risky 38.9% success rate into an airtight 100.0% certainty.
+1. **Two-Student Carry (Walk-Across) is the Fastest Field Deployment Paradigm:**
+   - **Mean Time: 55.7 seconds (0:55)**; **95th Percentile: 58.3 seconds (0:58)**.
+   - **Success Rate: 100.0%** (100% compliant with CBA Rule 5.06).
+   - Leaves an astonishing **+139.3 seconds (~2 min 19s) of safety buffer** before the 3:15 clock expires.
+   - **Zero Adult Violation Risk:** Requires **0 adult volunteers on the turf**, eliminating any risk of CBA Rule 4.03 adult boundary penalties (0.2 pts/occurrence).
+   - **Operational Caveat:** Requires **32 student handlers** (25–30% of a 100-member band) and exposes handlers to aerodynamic wind loading across open turf.
+
+2. **2 Carts with Pre-Set Student Receivers is the Practical Gold Standard:**
+   - **Mean Time: 133.7 seconds (2:14)**; **95th Percentile: 147.8 seconds (2:28)**.
+   - **Success Rate: 100.0%** under all starting locations.
+   - Balances speed with low personnel footprint (only 2 adult pushers + 16 student receivers).
+
+3. **1 Cart Deployment is Operationally Infeasible under Standard Conditions:**
+   - With Tier 1 ballast carried on the cart ($786\text{ lbs}$ gross payload), a single cart pushing across both sides of the field takes **234.5 seconds (3:55)** with Pre-Set Receivers, resulting in a **0.2% success rate (99.8% failure/penalty rate)**.
+   - With Mobile Pincer setup, 1 Cart takes **321.9 seconds (5:22)**, with **0.0% success rate**.
+
+4. **Optimal Starting Location for Carts: Back Sideline at 20-Yard Line (`Back_20`):**
+   - Ingress distance is only **55 yards** straight down the 20-yard line corridor to the outer screen boundary.
+
 ---
-## 2. Master Comparison Table: 1 Cart vs 2 Carts across Starting Locations
-*(Baseline: Tier 1 Ballast, Average Fitness Parent Pusher)*
+## 2. Master Comparison Table: Deployment Strategies across Starting Locations
+*(Baseline: Tier 1 Ballast, Average Fitness Parent Pusher / Student Pairs)*
 
 | Fleet Config | Starting Location | Setup Strategy | Mean Time | Median | P95 Time | P99 Time | Success Rate ($T \le 3:15$) | Safety Slack |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Two-Student Carry (32 crew)** | `Back_Sideline` | Walk-Across (Assembled) | **55.7 s (0:55)** | 55.7 s | 58.3 s | 59.7 s | **100.0%** | **+139.3 s** |
 | **2 Carts (8/side)** | `EZ_Behind_Goal` | Pre-Set Receivers | 145.0 s (2:24) | 144.2 s | 160.3 s | 168.7 s | **100.0%** | +50.0 s |
 | **2 Carts (8/side)** | `EZ_Behind_Goal` | Mobile Pincer | 209.5 s (3:29) | 208.6 s | 225.8 s | 235.6 s | **4.0%** | -14.5 s |
 | **2 Carts (8/side)** | `EZ_Corner_Back` | Pre-Set Receivers | 171.9 s (2:51) | 170.7 s | 192.8 s | 203.8 s | **96.2%** | +23.1 s |
@@ -55,10 +71,14 @@
 | 1 Cart | Mobile Pincer | Average Dad (1.00x) | 321.5 s | 348.4 s | **0.0%** |
 | 1 Cart | Mobile Pincer | Athletic Dad (1.18x) | 299.9 s | 319.9 s | **0.0%** |
 
-### B. Ballast Payload Sensitivity (Start: `Back_20`, Average Fitness)
+### B. Ballast Payload Sensitivity (Start: `Back_20` / `Back_Sideline`)
 
-| Fleet Config | Strategy | Ballast Loading State | Start Cart Weight | Mean Time | P95 Time | Success Rate |
+| Fleet Config | Strategy | Ballast Loading State | Unit / Cart Payload | Mean Time | P95 Time | Success Rate |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Two-Student Carry** | Walk-Across | Unballasted (Dry Frames) | 26 lbs / blind (13 lbs/student) | 49.9 s | 52.3 s | **100.0%** |
+| **Two-Student Carry** | Walk-Across | Tier 1 (15 lbs ballast/blind) | 41 lbs / blind (20.5 lbs/student) | 55.7 s | 58.3 s | **100.0%** |
+| **Two-Student Carry** | Walk-Across | Tier 2 (30 lbs ballast/blind) | 56 lbs / blind (28 lbs/student) | 59.3 s | 62.1 s | **100.0%** |
+| **Two-Student Carry** | Walk-Across | Pre-Staged at Sideline | 26 lbs / blind (13 lbs/student) | 49.9 s | 52.3 s | **100.0%** |
 | 2 Carts | Pre-Set Receivers | Unballasted (Dry Frames) | 338 lbs | 120.1 s | 133.7 s | **100.0%** |
 | 2 Carts | Pre-Set Receivers | Tier 1 (15 lbs/screen on cart) | 458 lbs | 133.9 s | 148.5 s | **100.0%** |
 | 2 Carts | Pre-Set Receivers | Tier 2 (30 lbs/screen on cart) | 578 lbs | 146.6 s | 163.2 s | **100.0%** |
@@ -75,3 +95,17 @@
 | 1 Cart | Mobile Pincer | Tier 1 (15 lbs/screen on cart) | 786 lbs | 321.5 s | 348.4 s | **0.0%** |
 | 1 Cart | Mobile Pincer | Tier 2 (30 lbs/screen on cart) | 1,026 lbs | 356.4 s | 389.6 s | **0.0%** |
 | 1 Cart | Mobile Pincer | Pre-Staged at Sideline (0 lbs on cart) | 546 lbs | 290.6 s | 312.4 s | **0.0%** |
+
+---
+## 4. Operational Tradeoff & Feasibility Matrix
+
+| Operational Dimension | Two-Student Carry (Walk-Across) | 2 Carts (Pre-Set Receivers) | 1 Cart (Pre-Set Receivers) |
+|:---|:---|:---|:---|
+| **Deployment Speed (Mean)** | **55.8 seconds (0:56)** | **133.7 seconds (2:14)** | 234.5 seconds (3:55) |
+| **95th Percentile Time** | **58.5 seconds (0:59)** | **147.8 seconds (2:28)** | 265.7 seconds (4:26) |
+| **CBA 3:15 Success Rate** | **100.0% (+139s slack)** | **100.0% (+61s slack)** | 0.2% (99.8% penalty risk) |
+| **Turf Staffing Footprint** | **32 students** (16 pairs) | **2 adults + 16 students** | 1 adult + 16 students |
+| **Adult Boundary Penalty Risk** | **ZERO RISK** (0 adults on turf) | Low (2 adults cross front boundary) | Low (1 adult crosses front boundary) |
+| **Instrument Logistics** | **Severe constraint:** 32 students cannot hold instruments while carrying | Minimal: Receivers walk out unencumbered | Minimal: Receivers walk out unencumbered |
+| **Wind Loading & Sail Drag** | **High:** 8x4.5 ft vertical panel ($36\text{ sq ft}$) carried across open field in gusts | Negligible: Screens stacked edge-on on cart | Negligible: Screens stacked edge-on on cart |
+| **Fatigue / Biomechanics** | 20.5 lbs / student over 53 yd walk | 458 lb cart pushed over 55 yd | 786 lb cart pushed over 230 yd |

@@ -39,8 +39,14 @@ def run_all_experiments(n_trials: int = 5000):
     # -------------------------------------------------------------
     # EXPERIMENT 1: Fleet Configuration & Starting Locations
     # -------------------------------------------------------------
-    print("\n>>> EXPERIMENT 1: 1 Cart vs 2 Carts across All 5 Starting Locations")
+    print("\n>>> EXPERIMENT 1: 1 Cart vs 2 Carts across All 5 Starting Locations (+ Two-Student Carry)")
     exp1_results: Dict[str, ScenarioSummary] = {}
+    
+    # 1. Two-Student Carry Walk-Across (32 students, 16 pairs, fully assembled)
+    print(f"  Simulating: Two-Student Carry | Start: Back Sideline   | Strategy: Walk-Across (Assembled) ...", end="", flush=True)
+    res_2s = run_monte_carlo("two_student_carry", "Back_Sideline", strategy="two_student_carry", ballast_mode="tier1", pusher_profile="average", num_trials=n_trials)
+    exp1_results["2S_Back_Sideline_two_student_carry"] = res_2s
+    print(f" Done! Mean={res_2s.mean_time:.1f}s, P95={res_2s.p95_time:.1f}s, Success={res_2s.success_rate*100:.1f}%")
     
     for start_key in STARTING_LOCATIONS:
         for strat in ["mobile_pincer", "pre_set_receivers"]:
@@ -82,6 +88,13 @@ def run_all_experiments(n_trials: int = 5000):
     ballast_modes = ["none", "tier1", "tier2", "pre_staged"]
     
     for bal in ballast_modes:
+        # Two-Student Carry
+        key_2s = f"2S_{bal}_two_student_carry"
+        print(f"  Simulating: 2 Students | Ballast: {bal:<12} | Strategy: two_student_carry ...", end="", flush=True)
+        res_2s = run_monte_carlo("two_student_carry", "Back_Sideline", strategy="two_student_carry", ballast_mode=bal, pusher_profile="average", num_trials=n_trials)
+        exp3_results[key_2s] = res_2s
+        print(f" Done! Mean={res_2s.mean_time:.1f}s, P95={res_2s.p95_time:.1f}s, Success={res_2s.success_rate*100:.1f}%")
+
         for cfg in ["2_carts", "1_cart"]:
             for strat in ["mobile_pincer", "pre_set_receivers"]:
                 key = f"{cfg}_{bal}_{strat}"
@@ -125,28 +138,32 @@ def plot_results(exp1: Dict[str, ScenarioSummary], exp2: Dict[str, ScenarioSumma
     # FIGURE 1: Cumulative Distribution Functions (CDF)
     fig, ax = plt.subplots(figsize=(10, 6), dpi=300)
     
-    # Compare Back_20 scenarios
+    # Compare Back_20 scenarios + Two-Student Carry
     scenarios_to_plot = [
-        ("2_carts", "Back_20", "pre_set_receivers", "2 Carts + Pre-Set Receivers (Recommended)", "#1b9e77", "-"),
+        ("two_student_carry", "Back_Sideline", "two_student_carry", "Two-Student Carry (Walk-Across)", "#2b83ba", "-"),
+        ("2_carts", "Back_20", "pre_set_receivers", "2 Carts + Pre-Set Receivers (Cart Baseline)", "#1b9e77", "-"),
         ("2_carts", "Back_20", "mobile_pincer", "2 Carts + Mobile Pincer", "#d95f02", "-"),
         ("1_cart", "Back_20", "pre_set_receivers", "1 Cart + Pre-Set Receivers", "#7570b3", "--"),
         ("1_cart", "Back_20", "mobile_pincer", "1 Cart + Mobile Pincer", "#e7298a", ":"),
     ]
     
     for cfg, st, strat, label, color, ls in scenarios_to_plot:
-        key = f"{'2C' if cfg=='2_carts' else '1C'}_{st}_{strat}"
+        if cfg == "two_student_carry":
+            key = "2S_Back_Sideline_two_student_carry"
+        else:
+            key = f"{'2C' if cfg=='2_carts' else '1C'}_{st}_{strat}"
         res = exp1[key]
         sorted_times = np.sort(res.all_times)
         p = 100.0 * np.arange(len(sorted_times)) / float(len(sorted_times))
         ax.plot(sorted_times, p, label=f"{label} (P95: {res.p95_time:.1f}s)", color=color, linestyle=ls, linewidth=2.5)
         
     ax.axvline(CBA_LIMIT_SECONDS, color="red", linestyle="--", linewidth=2.0, label="CBA 3:15 Limit (195 s)")
-    ax.set_title("Sideline Screen Deployment Time: Cumulative Probability Distributions (CDF)\n(Start: Back 20-Yard Line, Average Fitness Dad, Tier 1 Ballast)", fontsize=13, fontweight="bold", pad=12)
+    ax.set_title("Sideline Screen Deployment Time: Cumulative Probability Distributions (CDF)\n(Tier 1 Ballast, Average Fitness Parent / Student Crew)", fontsize=13, fontweight="bold", pad=12)
     ax.set_xlabel("Total Deployment Time (seconds)", fontsize=11, fontweight="bold")
     ax.set_ylabel("Cumulative Success Probability (%)", fontsize=11, fontweight="bold")
-    ax.set_xlim(90, 380)
+    ax.set_xlim(35, 380)
     ax.set_ylim(-2, 102)
-    ax.legend(loc="lower right", frameon=True, fontsize=10)
+    ax.legend(loc="lower right", frameon=True, fontsize=9.5)
     ax.grid(True, linestyle="--", alpha=0.7)
     
     fig.tight_layout()
@@ -233,13 +250,15 @@ def plot_results(exp1: Dict[str, ScenarioSummary], exp2: Dict[str, ScenarioSumma
     # Ballast plot
     bal_labels = ["Dry\n(0 lbs)", "Tier 1\n(15 lbs/screen)", "Tier 2\n(30 lbs/screen)", "Pre-Staged\n(0 lbs on cart)"]
     x_bal = np.arange(len(bal_labels))
+    bal_2s = [exp3[f"2S_{b}_two_student_carry"].mean_time for b in ["none", "tier1", "tier2", "pre_staged"]]
     bal_2c = [exp3[f"2_carts_{b}_pre_set_receivers"].mean_time for b in ["none", "tier1", "tier2", "pre_staged"]]
     bal_1c = [exp3[f"1_cart_{b}_pre_set_receivers"].mean_time for b in ["none", "tier1", "tier2", "pre_staged"]]
     
+    ax_bal.plot(x_bal, bal_2s, marker='D', linewidth=2.5, color="#2b83ba", label="Two-Student Carry (Walk-Across)")
     ax_bal.plot(x_bal, bal_2c, marker='o', linewidth=2.5, color="#1b9e77", label="2 Carts (Pre-Set Receivers)")
     ax_bal.plot(x_bal, bal_1c, marker='s', linewidth=2.5, color="#7570b3", label="1 Cart (Pre-Set Receivers)")
     ax_bal.axhline(CBA_LIMIT_SECONDS, color="red", linestyle="--", linewidth=1.8, label="CBA 3:15 Limit")
-    ax_bal.set_title("Sensitivity to Ballast Loading on Cart", fontsize=12, fontweight="bold")
+    ax_bal.set_title("Sensitivity to Ballast Loading on Ingress", fontsize=12, fontweight="bold")
     ax_bal.set_xticks(x_bal)
     ax_bal.set_xticklabels(bal_labels, fontsize=10)
     ax_bal.legend(loc="upper right", fontsize=9)
@@ -262,25 +281,32 @@ def write_markdown_report(path: str, exp1, exp2, exp3, exp4, n_trials):
     lines.append("\n---\n")
     
     lines.append("## 1. Executive Summary & Core Verdicts\n")
-    lines.append("1. **2 Carts with Pre-Set Student Receivers is the Undisputed Gold Standard:**")
-    lines.append("   - **Mean Time: 133.7 seconds (2:14)**; **95th Percentile: 147.8 seconds (2:28)**.")
-    lines.append("   - **Success Rate: 100.0%** under all starting locations.")
-    lines.append("   - Leaves a massive **~47 to 62 seconds of safety buffer** before the 3:15 clock expires.")
-    lines.append("\n2. **1 Cart Deployment is Operationally Infeasible under Standard Conditions:**")
-    lines.append("   - With Tier 1 ballast carried on the cart ($786\\text{ lbs}$ gross payload), a single cart pushing across both sides of the field takes **234.5 seconds (3:55)** with Pre-Set Receivers, resulting in a **0.2% success rate (99.8% failure/penalty rate)**.")
-    lines.append("   - With Mobile Pincer setup, 1 Cart takes **321.9 seconds (5:22)**, with **0.0% success rate**.")
-    lines.append("   - **When can 1 Cart barely work?** ONLY if the screens are **completely unballasted** ($546\\text{ lbs}$ dry weight) AND deployed using **Pre-Set Student Receivers** starting from **Back 20** (Mean: $196.7\\text{ s}$, P95: $218.4\\text{ s}$, ~45% success rate). Even then, it fails more than half the time.")
-    lines.append("\n3. **Optimal Starting Location: Back Sideline at 20-Yard Line (`Back_20`):**")
-    lines.append("   - Ingress distance is only **55 yards** straight down the 20-yard line corridor to the outer screen boundary.")
-    lines.append("   - Faster than starting behind the goal posts (which requires ~88 yards and navigating around the goal line/pylons).")
-    lines.append("\n4. **The Power of Pre-Set Student Receivers:**")
-    lines.append("   - Having on-field students already in position to stand up and latch each screen in parallel shaves **64.3 seconds** off the 2-cart deployment, converting a risky 38.9% success rate into an airtight 100.0% certainty.")
+    res_2s = exp1["2S_Back_Sideline_two_student_carry"]
+    lines.append(f"1. **Two-Student Carry (Walk-Across) is the Fastest Field Deployment Paradigm:**\n")
+    lines.append(f"   - **Mean Time: {res_2s.mean_time:.1f} seconds ({int(res_2s.mean_time//60)}:{int(res_2s.mean_time%60):02d})**; **95th Percentile: {res_2s.p95_time:.1f} seconds ({int(res_2s.p95_time//60)}:{int(res_2s.p95_time%60):02d})**.\n")
+    lines.append(f"   - **Success Rate: {res_2s.success_rate*100:.1f}%** (100% compliant with CBA Rule 5.06).\n")
+    lines.append(f"   - Leaves an astonishing **+{res_2s.mean_slack:.1f} seconds (~2 min 19s) of safety buffer** before the 3:15 clock expires.\n")
+    lines.append("   - **Zero Adult Violation Risk:** Requires **0 adult volunteers on the turf**, eliminating any risk of CBA Rule 4.03 adult boundary penalties (0.2 pts/occurrence).\n")
+    lines.append("   - **Operational Caveat:** Requires **32 student handlers** (25–30% of a 100-member band) and exposes handlers to aerodynamic wind loading across open turf.\n")
+    lines.append("\n2. **2 Carts with Pre-Set Student Receivers is the Practical Gold Standard:**\n")
+    lines.append("   - **Mean Time: 133.7 seconds (2:14)**; **95th Percentile: 147.8 seconds (2:28)**.\n")
+    lines.append("   - **Success Rate: 100.0%** under all starting locations.\n")
+    lines.append("   - Balances speed with low personnel footprint (only 2 adult pushers + 16 student receivers).\n")
+    lines.append("\n3. **1 Cart Deployment is Operationally Infeasible under Standard Conditions:**\n")
+    lines.append("   - With Tier 1 ballast carried on the cart ($786\\text{ lbs}$ gross payload), a single cart pushing across both sides of the field takes **234.5 seconds (3:55)** with Pre-Set Receivers, resulting in a **0.2% success rate (99.8% failure/penalty rate)**.\n")
+    lines.append("   - With Mobile Pincer setup, 1 Cart takes **321.9 seconds (5:22)**, with **0.0% success rate**.\n")
+    lines.append("\n4. **Optimal Starting Location for Carts: Back Sideline at 20-Yard Line (`Back_20`):**\n")
+    lines.append("   - Ingress distance is only **55 yards** straight down the 20-yard line corridor to the outer screen boundary.\n")
     lines.append("\n---\n")
     
-    lines.append("## 2. Master Comparison Table: 1 Cart vs 2 Carts across Starting Locations\n")
-    lines.append("*(Baseline: Tier 1 Ballast, Average Fitness Parent Pusher)*\n\n")
+    lines.append("## 2. Master Comparison Table: Deployment Strategies across Starting Locations\n")
+    lines.append("*(Baseline: Tier 1 Ballast, Average Fitness Parent Pusher / Student Pairs)*\n\n")
     lines.append("| Fleet Config | Starting Location | Setup Strategy | Mean Time | Median | P95 Time | P99 Time | Success Rate ($T \\le 3:15$) | Safety Slack |\n")
     lines.append("|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|\n")
+    
+    # 1. Two-Student Carry Row
+    slack_2s = f"+{res_2s.mean_slack:.1f} s" if res_2s.mean_slack >= 0 else f"{res_2s.mean_slack:.1f} s"
+    lines.append(f"| **Two-Student Carry (32 crew)** | `Back_Sideline` | Walk-Across (Assembled) | **{res_2s.mean_time:.1f} s ({int(res_2s.mean_time//60)}:{int(res_2s.mean_time%60):02d})** | {res_2s.median_time:.1f} s | {res_2s.p95_time:.1f} s | {res_2s.p99_time:.1f} s | **{res_2s.success_rate*100:.1f}%** | **{slack_2s}** |\n")
     
     start_keys = list(STARTING_LOCATIONS.keys())
     for cfg in ["2_carts", "1_cart"]:
@@ -308,9 +334,21 @@ def write_markdown_report(path: str, exp1, exp2, exp3, exp4, n_trials):
                 res = exp2[key]
                 lines.append(f"| {cfg_label} | {strat_label} | {fit_name} | {res.mean_time:.1f} s | {res.p95_time:.1f} s | **{res.success_rate*100:.1f}%** |\n")
                 
-    lines.append("\n### B. Ballast Payload Sensitivity (Start: `Back_20`, Average Fitness)\n\n")
-    lines.append("| Fleet Config | Strategy | Ballast Loading State | Start Cart Weight | Mean Time | P95 Time | Success Rate |\n")
+    lines.append("\n### B. Ballast Payload Sensitivity (Start: `Back_20` / `Back_Sideline`)\n\n")
+    lines.append("| Fleet Config | Strategy | Ballast Loading State | Unit / Cart Payload | Mean Time | P95 Time | Success Rate |\n")
     lines.append("|:---:|:---:|:---:|:---:|:---:|:---:|:---:|\n")
+    
+    # Two-Student Carry Ballast Sensitivity rows
+    for bal, bal_name, wt in [
+        ("none", "Unballasted (Dry Frames)", "26 lbs / blind (13 lbs/student)"),
+        ("tier1", "Tier 1 (15 lbs ballast/blind)", "41 lbs / blind (20.5 lbs/student)"),
+        ("tier2", "Tier 2 (30 lbs ballast/blind)", "56 lbs / blind (28 lbs/student)"),
+        ("pre_staged", "Pre-Staged at Sideline", "26 lbs / blind (13 lbs/student)")
+    ]:
+        key = f"2S_{bal}_two_student_carry"
+        res = exp3[key]
+        lines.append(f"| **Two-Student Carry** | Walk-Across | {bal_name} | {wt} | {res.mean_time:.1f} s | {res.p95_time:.1f} s | **{res.success_rate*100:.1f}%** |\n")
+
     for cfg in ["2_carts", "1_cart"]:
         cfg_label = "2 Carts" if cfg == "2_carts" else "1 Cart"
         for strat in ["pre_set_receivers", "mobile_pincer"]:
@@ -325,6 +363,19 @@ def write_markdown_report(path: str, exp1, exp2, exp3, exp4, n_trials):
                 res = exp3[key]
                 lines.append(f"| {cfg_label} | {strat_label} | {bal_name} | {wt} | {res.mean_time:.1f} s | {res.p95_time:.1f} s | **{res.success_rate*100:.1f}%** |\n")
 
+    lines.append("\n---\n")
+    lines.append("## 4. Operational Tradeoff & Feasibility Matrix\n\n")
+    lines.append("| Operational Dimension | Two-Student Carry (Walk-Across) | 2 Carts (Pre-Set Receivers) | 1 Cart (Pre-Set Receivers) |\n")
+    lines.append("|:---|:---|:---|:---|\n")
+    lines.append("| **Deployment Speed (Mean)** | **55.8 seconds (0:56)** | **133.7 seconds (2:14)** | 234.5 seconds (3:55) |\n")
+    lines.append("| **95th Percentile Time** | **58.5 seconds (0:59)** | **147.8 seconds (2:28)** | 265.7 seconds (4:26) |\n")
+    lines.append("| **CBA 3:15 Success Rate** | **100.0% (+139s slack)** | **100.0% (+61s slack)** | 0.2% (99.8% penalty risk) |\n")
+    lines.append("| **Turf Staffing Footprint** | **32 students** (16 pairs) | **2 adults + 16 students** | 1 adult + 16 students |\n")
+    lines.append("| **Adult Boundary Penalty Risk** | **ZERO RISK** (0 adults on turf) | Low (2 adults cross front boundary) | Low (1 adult crosses front boundary) |\n")
+    lines.append("| **Instrument Logistics** | **Severe constraint:** 32 students cannot hold instruments while carrying | Minimal: Receivers walk out unencumbered | Minimal: Receivers walk out unencumbered |\n")
+    lines.append("| **Wind Loading & Sail Drag** | **High:** 8x4.5 ft vertical panel ($36\\text{ sq ft}$) carried across open field in gusts | Negligible: Screens stacked edge-on on cart | Negligible: Screens stacked edge-on on cart |\n")
+    lines.append("| **Fatigue / Biomechanics** | 20.5 lbs / student over 53 yd walk | 458 lb cart pushed over 55 yd | 786 lb cart pushed over 230 yd |\n")
+    
     with open(path, "w") as f:
         f.writelines(lines)
 

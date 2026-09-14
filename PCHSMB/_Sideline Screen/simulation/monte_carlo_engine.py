@@ -18,7 +18,7 @@ import numpy as np
 from typing import Dict, List, NamedTuple, Optional
 from field_model import (
     compute_route, STARTING_LOCATIONS, SCREENS_PER_SIDE, TOTAL_SCREENS,
-    SCREEN_WIDTH_YARDS, DeploymentRoute
+    SCREEN_WIDTH_YARDS, DeploymentRoute, FIELD_WIDTH_YARDS
 )
 from pusher_physics import (
     CART_TARE_WEIGHT_LBS, SCREEN_UNIT_WEIGHT_LBS, BALLAST_BAG_WEIGHT_LBS,
@@ -376,6 +376,90 @@ def simulate_full_fleet_single_cart(
         "bottleneck": bottleneck
     }
 
+def simulate_two_student_carry_fleet(
+    ballast_mode: str,
+    rng: np.random.Generator
+) -> Dict[str, float]:
+    """
+    Simulates the Two-Student Carry fleet deployment strategy:
+    - 16 fully assembled duck blinds queued along the back sideline directly opposite
+      their final front sideline drop locations.
+    - 2 students assigned per screen (32 students total).
+    - On clock start (0:00), all 16 pairs step off simultaneously and walk 53.33 yards straight
+      across the field (0 turns) to the front sideline.
+    - Each pair deposits and aligns their screen, secures ballast (if loaded), and steps back into drill position.
+    - Parallel execution: Fleet finishes when the LAST of the 16 pairs completes setup.
+    """
+    if ballast_mode == "tier1":
+        ballast_per_screen = BALLAST_BAG_WEIGHT_LBS * 1.0  # 15.0 lbs
+    elif ballast_mode == "tier2":
+        ballast_per_screen = BALLAST_BAG_WEIGHT_LBS * 2.0  # 30.0 lbs
+    else:
+        ballast_per_screen = 0.0  # 'none' or 'pre_staged'
+        
+    gross_screen_wt = SCREEN_UNIT_WEIGHT_LBS + ballast_per_screen
+    wt_per_student = gross_screen_wt / 2.0  # shared between 2 students
+    
+    # Weight speed degradation factor: ~0.5% reduction per lb carried per student
+    load_factor = 1.0 / (1.0 + 0.005 * wt_per_student)
+    
+    # Aerodynamic wind buffeting factor for vertical 8x4.5 ft sail carried across open field:
+    if ballast_mode in ["none", "pre_staged"]:
+        wind_drag = rng.triangular(0.96, 0.99, 1.02)
+    elif ballast_mode == "tier1":
+        wind_drag = rng.triangular(0.93, 0.96, 1.00)
+    else:  # tier2
+        wind_drag = rng.triangular(0.88, 0.92, 0.96)
+        
+    pair_times = []
+    t_transits = []
+    t_drops = []
+    t_setups = []
+    
+    for _ in range(TOTAL_SCREENS):  # 16 pairs
+        # Base student walking pace in step: ~1.35 to 1.75 yd/s (approx 2.8 - 3.6 mph)
+        v_base = rng.triangular(1.35, 1.55, 1.75)
+        pair_load = load_factor * rng.uniform(0.97, 1.03)
+        v_walk = max(0.9, v_base * pair_load * wind_drag)
+        
+        # Acceleration / step-off reaction
+        t_accel = rng.triangular(1.0, 1.5, 2.2)
+        # Transit distance across standard field (back sideline to front sideline)
+        d_transit = FIELD_WIDTH_YARDS  # 53.333 yd
+        t_walk = t_accel + (d_transit / v_walk)
+        
+        # Deposit and alignment at front sideline mark
+        t_dep = rng.triangular(2.5, 3.8, 5.5)
+        # 5% probability of minor alignment or footing hitch
+        if rng.random() < 0.05:
+            t_dep += rng.uniform(1.5, 3.5)
+            
+        # Ballast adjustment/check on base rail (if attached)
+        t_bal = rng.triangular(1.8, 3.0, 4.5) if ballast_mode in ["tier1", "tier2"] else 0.0
+        
+        # Step back / clearance into performance drill position
+        t_clear = rng.triangular(1.8, 2.8, 4.2)
+        
+        total_pair_time = t_walk + t_dep + t_bal + t_clear
+        pair_times.append(total_pair_time)
+        t_transits.append(t_walk)
+        t_drops.append(t_dep)
+        t_setups.append(t_bal + t_clear)
+        
+    total_time = max(pair_times)
+    
+    return {
+        "total_time": total_time,
+        "t_ingress": float(np.mean(t_transits)),
+        "t_drop": float(np.mean(t_drops)),
+        "t_setup": float(np.mean(t_setups)),
+        "t_pit_cross": 0.0,
+        "t_stow": 0.0,
+        "t_students_ready": total_time,
+        "start_weight": gross_screen_wt,
+        "bottleneck": "student_carry_arrival"
+    }
+
 def run_monte_carlo(
     config: str,
     start_key: str,
@@ -395,7 +479,16 @@ def run_monte_carlo(
     slacks = np.empty(num_trials, dtype=float)
     successes = 0
     
-    if config == "2_carts":
+    if config == "two_student_carry" or strategy == "two_student_carry":
+        for i in range(num_trials):
+            res = simulate_two_student_carry_fleet(ballast_mode, rng)
+            t_fleet = res["total_time"]
+            times[i] = t_fleet
+            slacks[i] = CBA_LIMIT_SECONDS - t_fleet
+            if t_fleet <= CBA_LIMIT_SECONDS:
+                successes += 1
+                
+    elif config == "2_carts":
         route1 = compute_route("2_carts", start_key, cart_id=1)
         route2 = compute_route("2_carts", start_key, cart_id=2)
         
@@ -449,6 +542,7 @@ if __name__ == "__main__":
     print("=== MONTE CARLO ENGINE TEST (1,000 trials each) ===")
     
     test_cases = [
+        ("two_student_carry", "Back_Sideline", "two_student_carry", "tier1", "average"),
         ("2_carts", "Back_20", "mobile_pincer", "tier1", "average"),
         ("2_carts", "Back_20", "pre_set_receivers", "tier1", "average"),
         ("1_cart", "Back_20", "mobile_pincer", "tier1", "average"),
