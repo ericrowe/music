@@ -1,11 +1,11 @@
 {
-  "design": "PCHSMB Circle Cutter - Semicircular Wind Relief Slit Tool with Raised Push Plate & Harmonized 608 Bearings",
-  "version": "1.6",
+  "design": "PCHSMB Circle Cutter - Semicircular Wind Relief Slit Tool with Cylindrical Domed Push Knob & 608 Bearings",
+  "version": "1.7",
   "units": "mm",
   "standard": "Pine Creek High School Marching Band Field Prop Tooling",
   "print_material_recommended": "PETG",
   "print_density_g_cm3": 1.27,
-  "estimated_total_print_mass_petg_g": 224.0,
+  "estimated_total_print_mass_petg_g": 219.7,
   "print_quantities": {
     "circle_cutter_base.stl": 1,
     "circle_cutter_arm.stl": 1,
@@ -71,12 +71,14 @@
     "cap_retention_barb_dia_mm": 43.0,
     "support_free_status": "100% support-free upright printing with arm on build plate"
   },
-  "push_plate_architecture": {
-    "type": "Monolithic Raised Ergonomic Push Saddle with Transverse Traction Ridges & Safety Stop",
-    "width_mm": 42.0,
-    "platform_height_local_z_mm": 24.0,
-    "safety_lip_height_local_z_mm": 26.5,
-    "traction_ridges_count": 4,
+  "push_knob_architecture": {
+    "type": "Monolithic Cylindrical Domed Push Knob with C1 Tangent Continuity",
+    "center_x_mm": 158.0,
+    "center_y_mm": 0.0,
+    "diameter_mm": 26.0,
+    "cylinder_shoulder_local_z_mm": 20.0,
+    "dome_apex_local_z_mm": 33.0,
+    "height_above_ceiling_mm": 19.0,
     "front_clearance_shelf_mm": 4.0,
     "support_free_status": "100% support-free upright printing with arm on build plate"
   },
@@ -109,7 +111,7 @@
     },
     "circle_cutter_arm.stl": {
       "file": "circle_cutter_arm.stl",
-      "triangles": 1998,
+      "triangles": 2882,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
       "degenerate_triangles": 0,
@@ -129,8 +131,8 @@
         50.0,
         108.0
       ],
-      "volume_cm3": 122.59,
-      "estimated_mass_petg_g": 85.6,
+      "volume_cm3": 116.34,
+      "estimated_mass_petg_g": 81.3,
       "passed": true
     },
     "circle_cutter_blade_cap.stl": {
@@ -292,7 +294,7 @@
   },
   "mesh_audit_summary": {
     "all_files_passed_topological_audit": true,
-    "total_triangles": 12498
+    "total_triangles": 13382
   },
-  "status": "production_release_v1_6_raised_push_plate"
+  "status": "production_release_v1_7_cylindrical_domed_push_knob"
 }

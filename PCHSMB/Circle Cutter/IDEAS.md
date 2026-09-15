@@ -6,11 +6,15 @@ This is the project inbox for future design enhancements and tooling iterations,
 
 ## Active Inbox
 
-*(No pending ideas currently in queue. The v1.6 design baseline with raised push plate is complete and verified.)*
+*(No pending ideas in inbox.)*
 
 ---
 
 ## Resolved / Closed Ideas
+
+### Idea 006: Rectangular Raised Push Plate with Traction Ribs — *Superseded by Idea 007*
+- **Decision:** Superseded by Idea 007 based on user direction: *"Nope. Lets try just making it a cylinder with a rounded top"*.
+- **Rationale:** A cylindrical post with a rounded top provides omnidirectional ergonomic comfort, lower print mass, and a cleaner aesthetic.
 
 ### Idea 002: Ergonomic Top Swivel Knob for Smooth One-Handed Operation — *Archived (Not Needed)*
 - **Decision:** Archived as unnecessary for this tool.
@@ -18,22 +22,22 @@ This is the project inbox for future design enhancements and tooling iterations,
 
 ### Idea 003: Tool-Free Captive Quick-Clamp End Cap for Blade Replacement — *Archived (Not Needed)*
 - **Decision:** Archived in favor of the standard M3 machine screw clamp.
-- **Rationale:** Standard M3 socket/button head screw clamping into a brass heat-set insert provides maximum clamping rigidity, positive blade retention against cutting friction, zero blade flutter, and zero protruding thumb-wheels that could snag. Hex keys are standard shop equipment.
+- **Rationale:** Standard M3 socket/button head screw clamping into a brass heat-set insert provides maximum clamping rigidity, positive blade retention against cutting friction, zero blade flutter, and zero snag points. Hex keys are standard shop equipment.
 
 ---
 
 ## Implemented Ideas
 
-### [Idea 006: Ergonomic Raised Push Plate on Distal Arm for Controlled Downward and Rotational Force](Plans/004-raised-push-plate.md) — *Implemented in v1.6*
-- **Outcome:** Integrated a monolithic raised push plate directly atop the distal dual head on Piece 2 (`circle_cutter_arm.stl`), providing an elevated, textured saddle with positive safety stops.
+### [Idea 007: Cylindrical Domed Push Post / Knob on Distal Arm](Plans/005-cylindrical-domed-push-knob.md) — *Implemented in v1.7*
+- **Outcome:** Replaced the v1.6 rectangular push plate with a monolithic cylindrical push knob featuring an exact hemispherical rounded dome top.
 - **Benefits:**
-  - **Elevated Ergonomic Leverage:** Rises $10.0\text{ mm}$ above head ceiling to $Z_{\text{local}} = 24.0\text{ mm}$ ($+12.0\text{ mm}$ above main arm beam), providing comfortable downward leverage for thumb or palm heel.
-  - **Generous Surface:** $35.0\text{ mm}$ long ($X \in [136.0, 171.0\text{ mm}]$) and $42.0\text{ mm}$ wide ($Y \in [-21.0, +21.0\text{ mm}]$), centered directly above cutting and rolling zones.
-  - **Forward Safety Stop:** Raised lip at $X \in [167.0, 171.0\text{ mm}]$ rising to $Z = 26.5\text{ mm}$ ($2.5\text{ mm}$ above platform) prevents any forward thumb slipping toward the blade or roller bearing.
-  - **Transverse Traction:** 4 transverse grip ridges ($1.2\text{ mm}$ proud at $Z = 25.2\text{ mm}$ with $45^\circ$ self-supporting flanks) give secure friction for sweeping along rotational cut arcs.
-  - **Rear Smooth Ramp:** $45^\circ$ lead-in ramp ($X \in [136.0, 146.0\text{ mm}]$) transitions smoothly from arm beam up to platform.
-  - **Zero Tool Collision:** Recessed $4.0\text{ mm}$ behind distal face ($X = 175.0\text{ mm}$), leaving completely open vertical space to insert #11 blades and open horizontal tool access for M5 and M3 screws.
-  - **100% Support-Free:** Upright printability preserved with zero supports, adding only ~10g PETG.
+  - Standardized on a $\varnothing 26.0\text{ mm}$ cylindrical post centered at $(X = 158.0\text{ mm}, Y = 0.0\text{ mm})$ between the 608 roller and blade clamp.
+  - Straight vertical cylinder walls from $Z = 14.0\text{ mm}$ to $Z = 20.0\text{ mm}$ ($6.0\text{ mm}$ proud of the head ceiling).
+  - Exact $R = 13.0\text{ mm}$ hemispherical dome with $C^1$ tangent continuity rising to $Z_{\text{apex}} = 33.0\text{ mm}$ ($+19.0\text{ mm}$ above head ceiling, $Z_{\text{world}} = 37.0\text{ mm}$).
+  - Omnidirectional ergonomic push surface eliminating localized thumb/palm pressure points during $180^\circ$ sweeps.
+  - Generous $4.0\text{ mm}$ front clearance shelf preserves 100% unobstructed vertical #11 blade insertion and horizontal M5/M3 hex key tool access.
+  - 100% support-free upright 3D printability (all dome layers inward sloping).
+  - All 8 STLs verified 100% watertight 2-manifold (0 boundary, 0 non-manifold edges).
 
 ### [Idea 005: 608 Roller Bearing Front Depth-Stop Conversion with Heavy-Duty M5 Axle Retention](Plans/003-608-front-roller-m5.md) — *Implemented in v1.5*
 - **Outcome:** Converted the distal roller depth stop on Piece 2 from miniature 625 to standard 608 ball bearing ($8\text{ mm ID} \times 22\text{ mm OD} \times 7\text{ mm W}$), harmonizing the BOM to a single bearing SKU across the entire tool while providing heavy-duty M5 hardware retention.
