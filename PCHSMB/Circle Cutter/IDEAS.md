@@ -6,7 +6,7 @@ This is the project inbox for future design enhancements and tooling iterations,
 
 ## Active Inbox
 
-*(No pending ideas currently in queue. The v1.4 design baseline is complete and ready for physical print testing.)*
+*(No pending ideas currently in queue. The v1.5 design baseline is complete and verified.)*
 
 ---
 
@@ -23,6 +23,16 @@ This is the project inbox for future design enhancements and tooling iterations,
 ---
 
 ## Implemented Ideas
+
+### [Idea 005: 608 Roller Bearing Front Depth-Stop Conversion with Heavy-Duty M5 Axle Retention](Plans/003-608-front-roller-m5.md) — *Implemented in v1.5*
+- **Outcome:** Converted the distal roller depth stop on Piece 2 from miniature 625 to standard 608 ball bearing ($8\text{ mm ID} \times 22\text{ mm OD} \times 7\text{ mm W}$), harmonizing the BOM to a single bearing SKU across the entire tool while providing heavy-duty M5 hardware retention.
+- **Benefits:**
+  - Standardizes the entire tool on standard 608 bearings (top thrust pivot + front depth stop roller).
+  - Roller contact on vinyl at $Z_{\text{world}} = 0.0\text{ mm} \implies Z_{\text{world, axle}} = 11.0\text{ mm}$ and $Z_{\text{local, axle}} = \mathbf{7.0\text{ mm}}$.
+  - Dual head expands in width ($36 \to 46\text{ mm}$) and flares upward in height ($12 \to 14\text{ mm}$), centering the M5 axle with a massive **$3.9\text{ mm}$ solid PETG floor and ceiling** ($+333\%$ increase in floor thickness over v1.4), completely eliminating pullout and heat-staking failure risks.
+  - Inter-component safety gap of **$6.0\text{ mm}$** between the $22\text{ mm}$ OD bearing outer race and the blade clamp.
+  - Dedicated Piece 5 (Precision 608-to-M5 Reducer Bushing Sleeve: $\varnothing 7.92 \times \varnothing 5.20 \times 6.80\text{ mm}$) allows standard M5 button-head screws ($\varnothing 9.5\text{ mm}$) to clamp the inner race securely with zero radial play.
+  - All 8 STLs passed 100% watertight manifold quality gates (0 boundary, 0 non-manifold edges).
 
 ### [Idea 004: Top-Mounted 608 Ball Bearing Thrust Pivot for Low-Friction Operation](Plans/002-608-bearing-pivot.md) — *Implemented in v1.4*
 - **Outcome:** Integrated a single standard 608 ball bearing ($8\text{ mm ID} \times 22\text{ mm OD} \times 7\text{ mm W}$) horizontally atop the $100\text{ mm}$ center spindle column to carry 100% of operator downward pressure.

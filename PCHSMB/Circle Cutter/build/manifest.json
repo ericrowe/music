@@ -1,16 +1,17 @@
 {
-  "design": "PCHSMB Circle Cutter - Semicircular Wind Relief Slit Tool with 608 Bearing Thrust Pivot",
-  "version": "1.4",
+  "design": "PCHSMB Circle Cutter - Semicircular Wind Relief Slit Tool with Harmonized 608 Bearings & M5 Hardware",
+  "version": "1.5",
   "units": "mm",
   "standard": "Pine Creek High School Marching Band Field Prop Tooling",
   "print_material_recommended": "PETG",
   "print_density_g_cm3": 1.27,
-  "estimated_total_print_mass_petg_g": 207.8,
+  "estimated_total_print_mass_petg_g": 213.9,
   "print_quantities": {
     "circle_cutter_base.stl": 1,
     "circle_cutter_arm.stl": 1,
     "circle_cutter_blade_cap.stl": 1,
     "circle_cutter_hub_cap.stl": 1,
+    "circle_cutter_reducer_sleeve.stl": 1,
     "circle_cutter_spindle_bore_coupon.stl": 0,
     "circle_cutter_bearing_coupon.stl": 0,
     "circle_cutter_snap_cap_coupon.stl": 0
@@ -24,22 +25,23 @@
     "arm_bottom_world_z_mm": 4.0,
     "arm_to_base_plate_air_gap_mm": 1.0,
     "arm_air_clearance_above_vinyl_mm": 4.0,
-    "bearing_axle_world_z_mm": 8.0,
-    "bearing_axle_local_z_mm": 4.0,
-    "self_leveling_bridge": "Base plate and 625 bearing both contact vinyl simultaneously, holding arm dead-level with 4.0mm air gap above vinyl",
+    "bearing_axle_world_z_mm": 11.0,
+    "bearing_axle_local_z_mm": 7.0,
+    "self_leveling_bridge": "Base plate and 608 bearing both contact vinyl simultaneously, holding arm dead-level with 4.0mm air gap above vinyl",
     "friction_elimination": "Arm floats 1.0mm above base plate shoulder, reducing plastic sliding contact area from 707mm2 to 0mm2"
   },
-  "bearing_specifications_625_roller": {
-    "bearing_type": "625 Ball Bearing (625ZZ / 625-2RS)",
+  "bearing_specifications_608_roller": {
+    "bearing_type": "608 Ball Bearing (608ZZ / 608-2RS)",
     "purpose": "Distal roller depth stop rolling directly on vinyl",
-    "outer_diameter_mm": 16.0,
-    "inner_bore_mm": 5.0,
-    "width_mm": 5.0,
-    "standoff_boss_od_mm": 8.0,
-    "standoff_boss_length_mm": 1.0,
-    "axle_fastener": "M5 button-head machine screw into M5 brass heat-set insert",
+    "outer_diameter_mm": 22.0,
+    "inner_bore_mm": 8.0,
+    "width_mm": 7.0,
+    "standoff_boss_od_mm": 11.5,
+    "standoff_boss_length_mm": 1.5,
+    "reducer_sleeve_spec": "7.92mm OD x 5.2mm ID x 6.8mm L",
+    "axle_fastener": "M5 button-head machine screw (16mm or 18mm) through reducer sleeve into M5 brass heat-set insert",
     "rotation_axis_alignment": "Radial (+X), parallel to arm length; rolls along tangential cut arc (+Y) alongside blade",
-    "head_architecture": "Side-by-Side Dual Head (Bearing Pad at Y=-9mm, Blade Pad at Y=+9mm)"
+    "head_architecture": "Side-by-Side Dual Head (Bearing Pad at Y=-11.5mm, Blade Pad at Y=+11.5mm, 46mm width)"
   },
   "bearing_specifications_608_thrust": {
     "bearing_type": "608 Ball Bearing (608ZZ / 608-2RS)",
@@ -109,17 +111,17 @@
         0.0
       ],
       "bounds_max": [
-        176.0,
+        176.5,
         25.0,
         108.0
       ],
       "dimensions": [
-        201.0,
+        201.5,
         50.0,
         108.0
       ],
-      "volume_cm3": 101.84,
-      "estimated_mass_petg_g": 71.1,
+      "volume_cm3": 108.09,
+      "estimated_mass_petg_g": 75.5,
       "passed": true
     },
     "circle_cutter_blade_cap.stl": {
@@ -174,6 +176,32 @@
       "estimated_mass_petg_g": 5.1,
       "passed": true
     },
+    "circle_cutter_reducer_sleeve.stl": {
+      "file": "circle_cutter_reducer_sleeve.stl",
+      "triangles": 512,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_triangles": 0,
+      "finite_coordinates": true,
+      "bounds_min": [
+        -3.96,
+        -3.96,
+        0.0
+      ],
+      "bounds_max": [
+        3.96,
+        3.96,
+        6.8
+      ],
+      "dimensions": [
+        7.92,
+        7.92,
+        6.8
+      ],
+      "volume_cm3": 0.35,
+      "estimated_mass_petg_g": 0.2,
+      "passed": true
+    },
     "circle_cutter_spindle_bore_coupon.stl": {
       "file": "circle_cutter_spindle_bore_coupon.stl",
       "triangles": 1056,
@@ -209,21 +237,21 @@
       "finite_coordinates": true,
       "bounds_min": [
         0.0,
-        -18.0,
+        -23.0,
         0.0
       ],
       "bounds_max": [
-        21.0,
+        21.5,
         0.0,
-        12.0
+        14.0
       ],
       "dimensions": [
-        21.0,
-        18.0,
-        12.0
+        21.5,
+        23.0,
+        14.0
       ],
-      "volume_cm3": 3.87,
-      "estimated_mass_petg_g": 2.7,
+      "volume_cm3": 6.06,
+      "estimated_mass_petg_g": 4.2,
       "passed": true
     },
     "circle_cutter_snap_cap_coupon.stl": {
@@ -255,7 +283,7 @@
   },
   "mesh_audit_summary": {
     "all_files_passed_topological_audit": true,
-    "total_triangles": 11782
+    "total_triangles": 12294
   },
-  "status": "production_release_v1_4_608_bearing_pivot"
+  "status": "production_release_v1_5_608_front_roller_m5"
 }

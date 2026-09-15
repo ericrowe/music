@@ -33,8 +33,8 @@ from typing import Dict, List, Sequence, Tuple
 # PARAMETRIC SPECIFICATIONS (MILLIMETERS)
 # =============================================================================
 
-VERSION = "1.4"
-DESIGN_NAME = "PCHSMB Circle Cutter - Semicircular Wind Relief Slit Tool with 608 Bearing Thrust Pivot"
+VERSION = "1.5"
+DESIGN_NAME = "PCHSMB Circle Cutter - Semicircular Wind Relief Slit Tool with Harmonized 608 Bearings & M5 Hardware"
 
 # -----------------------------------------------------------------------------
 # Vertical Stack-Up & Ground Reference (Vinyl Top Surface = Z 0.0 mm)
@@ -43,12 +43,12 @@ VINYL_Z = 0.0                                 # Vinyl surface reference plane
 CUT_DEPTH = 1.0                               # Controlled blade depth below bearing (1.0 mm)
 BLADE_TIP_WORLD_Z = VINYL_Z - CUT_DEPTH       # -1.0 mm world
 
-# 625 Ball Bearing Specifications (Outer Arm Rolling Depth Stop)
-BEARING_OD = 16.0                             # 16.0 mm outer diameter
-BEARING_ID = 5.0                              # 5.0 mm inner bore
-BEARING_WIDTH = 5.0                           # 5.0 mm thickness
-BEARING_RADIUS = BEARING_OD / 2.0             # 8.0 mm
-BEARING_AXLE_WORLD_Z = VINYL_Z + BEARING_RADIUS  # +8.0 mm world (bearing touches vinyl at Z 0.0)
+# 608 Ball Bearing Specifications (Harmonized: Front Depth-Stop Roller & Top Thrust Pivot)
+BEARING_OD = 22.0                             # 22.0 mm outer diameter (standard 608)
+BEARING_ID = 8.0                              # 8.0 mm inner bore
+BEARING_WIDTH = 7.0                           # 7.0 mm thickness
+BEARING_RADIUS = BEARING_OD / 2.0             # 11.0 mm
+BEARING_AXLE_WORLD_Z = VINYL_Z + BEARING_RADIUS  # +11.0 mm world (bearing touches vinyl at Z 0.0)
 
 # 608 Ball Bearing Specifications (Main Pivot Thrust Bearing atop Spindle)
 BEARING_608_OD = 22.0                         # 22.0 mm outer diameter
@@ -65,6 +65,12 @@ BEARING_608_POCKET_DEPTH = 3.0                # 3.0 mm deep cup wall capturing o
 BEARING_608_RELIEF_DIA = 18.0                 # 18.0 mm ID central relief cavity in Piece 4 (clears inner race & post)
 BEARING_608_RELIEF_DEPTH = 1.5                # 1.5 mm extra upward relief into Piece 4 flange
 
+# Piece 5: 608-to-M5 Precision Reducer Bushing Sleeve
+SLEEVE_608_OD = 7.92                          # 7.92 mm OD (smooth slip fit into 8.0mm bearing bore)
+SLEEVE_608_ID = 5.20                          # 5.20 mm ID (standard close clearance hole for M5 screw shank)
+SLEEVE_608_LEN = 6.80                         # 6.80 mm length (0.20 mm shorter than 7.0mm bearing width)
+SLEEVE_608_CHAMFER = 0.40                     # 0.40 mm 45° lead-in chamfer on both ends
+
 # Piece 1: Fixed Pivot Base Plate
 BASE_PLATE_DIA = 50.0                         # 50.0 mm outer diameter
 BASE_PLATE_RADIUS = BASE_PLATE_DIA / 2.0      # 25.0 mm
@@ -79,7 +85,7 @@ TOTAL_BASE_HEIGHT = BASE_PLATE_HEIGHT + SPINDLE_HEIGHT + BEARING_608_INNER_SHOUL
 
 # Arm Elevation & Air Clearance
 ARM_AIR_GAP = 1.0                             # 1.0 mm uniform air gap between base plate and rotating arm (ZERO friction)
-ARM_BOTTOM_WORLD_Z = BASE_PLATE_HEIGHT + ARM_AIR_GAP  # 4.0 mm world (matches 625 bearing roll plane)
+ARM_BOTTOM_WORLD_Z = BASE_PLATE_HEIGHT + ARM_AIR_GAP  # 4.0 mm world (matches roller bearing roll plane)
 
 # Piece 2: Rotating Arm Assembly (Local coordinates: Z=0 at hub bottom / base shoulder)
 # In world coordinates: Z_world = Z_local + BASE_PLATE_HEIGHT (Z_local + 4.0 mm)
@@ -101,18 +107,19 @@ ARM_BEVEL = 2.0                               # 2.0 mm 45° longitudinal chamfer
 ARM_ROOT_X = 22.0                             # Embeds securely inside solid hub wall
 DISTAL_X = HUB_OUTER_RADIUS + ARM_LENGTH      # 175.0 mm from pivot center
 
-# Dual Head Geometry (Side-by-Side Head with 625 Bearing and X-Acto Blade)
-DUAL_HEAD_START_X = 135.0                     # Transition flare start from 20mm to 36mm
-DUAL_HEAD_FULL_X = 155.0                      # Full 36mm dual head width start
-DUAL_HEAD_WIDTH = 36.0                        # 36.0 mm total width (Y in [-18, +18])
-BEARING_PAD_Y = -9.0                          # Center of 625 bearing pad in Y
-BLADE_PAD_Y = +9.0                            # Center of blade & M3 clamping cap in Y
+# Dual Head Geometry (Side-by-Side Head with 608 Bearing and X-Acto Blade)
+DUAL_HEAD_START_X = 135.0                     # Transition flare start from 20mm to 46mm
+DUAL_HEAD_FULL_X = 155.0                      # Full 46mm dual head width start
+DUAL_HEAD_WIDTH = 46.0                        # 46.0 mm total width (Y in [-23, +23])
+DUAL_HEAD_HEIGHT = 14.0                       # 14.0 mm head height (flares up from 12.0mm beam for symmetric M5 wall strength)
+BEARING_PAD_Y = -11.5                         # Center of 608 bearing pad in Y
+BLADE_PAD_Y = +11.5                           # Center of blade & M3 clamping cap in Y
 
-# 625 Bearing Mount on Arm
-BEARING_AXLE_LOCAL_Z = BEARING_AXLE_WORLD_Z - ARM_BOTTOM_WORLD_Z  # +4.0 mm local (8.0 - 4.0 = 4.0 mm)
+# 608 Bearing Mount on Arm
+BEARING_AXLE_LOCAL_Z = BEARING_AXLE_WORLD_Z - ARM_BOTTOM_WORLD_Z  # +7.0 mm local (11.0 - 4.0 = 7.0 mm)
 BEARING_MOUNT_X = DISTAL_X                    # 175.0 mm (front face of arm alongside blade)
-BEARING_STANDOFF_OD = 8.0                     # 8.0 mm OD (contacts ONLY 5x8mm inner race)
-BEARING_STANDOFF_LEN = 1.0                    # 1.0 mm standoff clearance
+BEARING_STANDOFF_OD = 11.5                    # 11.5 mm OD (contacts ONLY 8x11.5mm inner race, clears shields)
+BEARING_STANDOFF_LEN = 1.5                    # 1.5 mm standoff clearance
 M5_INSERT_DIA = 6.2                           # 6.2 mm hole for user-specified M5 brass heat-set insert
 M5_INSERT_DEPTH = 11.0                        # 11.0 mm bore depth (accommodates 6, 8, or 10 mm inserts)
 
@@ -435,6 +442,7 @@ def build_piece2_arm(r_hub_outer: float = HUB_OUTER_RADIUS, r_bore: float = HUB_
                      x1: float = DUAL_HEAD_START_X, x2: float = DUAL_HEAD_FULL_X,
                      x3: float = DISTAL_X, arm_w: float = ARM_WIDTH, arm_h: float = ARM_HEIGHT,
                      arm_bevel: float = ARM_BEVEL, dual_w: float = DUAL_HEAD_WIDTH,
+                     head_h: float = DUAL_HEAD_HEIGHT,
                      blade_y: float = BLADE_PAD_Y, bearing_y: float = BEARING_PAD_Y,
                      bearing_axle_z: float = BEARING_AXLE_LOCAL_Z,
                      standoff_od: float = BEARING_STANDOFF_OD, standoff_len: float = BEARING_STANDOFF_LEN,
@@ -523,7 +531,7 @@ def build_piece2_arm(r_hub_outer: float = HUB_OUTER_RADIUS, r_bore: float = HUB_
     h_dual = dual_w / 2.0
 
     loop_straight = make_beveled_rect_loop(-hw, hw, 0.0, arm_h, arm_bevel, k)
-    loop_dual = make_beveled_rect_loop(-h_dual, h_dual, 0.0, arm_h, arm_bevel, k)
+    loop_dual = make_beveled_rect_loop(-h_dual, h_dual, 0.0, head_h, arm_bevel, k)
 
     # Arm root cap at x0 (pointing -X)
     c_root = (x0, 0.0, arm_h / 2.0)
@@ -537,32 +545,35 @@ def build_piece2_arm(r_hub_outer: float = HUB_OUTER_RADIUS, r_bore: float = HUB_
         m.quad((x0, loop_straight[i][0], loop_straight[i][1]), (x0, loop_straight[j][0], loop_straight[j][1]),
                (x1, loop_straight[j][0], loop_straight[j][1]), (x1, loop_straight[i][0], loop_straight[i][1]))
 
-    # Section 2: x1 to x2 (flare from 20mm to 36mm wide)
+    # Section 2: x1 to x2 (flare from 20x12mm to 46x14mm)
     for i in range(n_loop):
         j = (i + 1) % n_loop
         m.quad((x1, loop_straight[i][0], loop_straight[i][1]), (x1, loop_straight[j][0], loop_straight[j][1]),
                (x2, loop_dual[j][0], loop_dual[j][1]), (x2, loop_dual[i][0], loop_dual[i][1]))
 
-    # Section 3: x2 to x3 (dual head beam, 36mm wide)
+    # Section 3: x2 to x3 (dual head beam, 46x14mm)
     for i in range(n_loop):
         j = (i + 1) % n_loop
         m.quad((x2, loop_dual[i][0], loop_dual[i][1]), (x2, loop_dual[j][0], loop_dual[j][1]),
                (x3, loop_dual[j][0], loop_dual[j][1]), (x3, loop_dual[i][0], loop_dual[i][1]))
 
     # Distal Face at X3 = 175.0 (Dual Head Front Face)
+    div_pts_down = [(0.0, 9.0), (0.0, 5.0)]
+    div_pts_up = [(0.0, 5.0), (0.0, 9.0)]
+
     # Blade boundary (19 pts in CCW order)
     bnd_blade = [loop_dual[idx] for idx in range(28, 32)] + \
                 [loop_dual[idx] for idx in range(0, 13)] + \
-                [(0.0, 8.0), (0.0, 4.0)]
+                div_pts_down
 
     # Bearing boundary (19 pts in CCW order)
     bnd_bearing = [loop_dual[idx] for idx in range(12, 29)] + \
-                  [(0.0, 4.0), (0.0, 8.0)]
+                  div_pts_up
 
     n_p = 19
 
-    # Blade Pad M3 hole: c = (blade_y, arm_h / 2.0), r = m3_dia / 2.0, depth = m3_depth
-    m3_c = (blade_y, arm_h / 2.0)
+    # Blade Pad M3 hole: c = (blade_y, head_h / 2.0), r = m3_dia / 2.0, depth = m3_depth
+    m3_c = (blade_y, head_h / 2.0)
     m3_r = m3_dia / 2.0
 
     # Polar-matched circle_m3: each circle vertex matches the polar angle of bnd_blade[i]
@@ -668,8 +679,8 @@ def build_piece2_arm(r_hub_outer: float = HUB_OUTER_RADIUS, r_bore: float = HUB_
             m.quad((bx0, corners[idx][0], corners[idx][1]), (bx0, corners[nxt][0], corners[nxt][1]),
                    (bx1, corners[nxt][0], corners[nxt][1]), (bx1, corners[idx][0], corners[idx][1]))
 
-    add_tab_box(x3, x3 + tab_h, 0.0, blade_y - slot_w / 2.0, 0.0, arm_h)
-    add_tab_box(x3, x3 + tab_h, blade_y + slot_w / 2.0, h_dual, 0.0, arm_h)
+    add_tab_box(x3, x3 + tab_h, 3.0, blade_y - slot_w / 2.0, 0.0, head_h)
+    add_tab_box(x3, x3 + tab_h, blade_y + slot_w / 2.0, h_dual, 0.0, head_h)
 
     return m
 
@@ -1002,6 +1013,81 @@ def build_piece4_hub_cap(r_flange: float = HUB_CAP_FLANGE_RADIUS,
     return m
 
 
+def build_piece5_reducer_sleeve(od: float = SLEEVE_608_OD, id_bore: float = SLEEVE_608_ID,
+                                length: float = SLEEVE_608_LEN, chamfer: float = SLEEVE_608_CHAMFER,
+                                n: int = 32) -> Mesh:
+    """Build Piece 5: Precision 608-to-M5 Reducer Bushing Sleeve."""
+    m = Mesh("circle_cutter_reducer_sleeve")
+    r_out = od / 2.0
+    r_in = id_bore / 2.0
+    r_out_ch = r_out - chamfer
+    r_in_ch = r_in + chamfer
+
+    z0 = 0.0
+    z_ch_bot = chamfer
+    z_ch_top = length - chamfer
+    z1 = length
+
+    pts_out_bot = [(r_out_ch * math.cos(2 * math.pi * i / n), r_out_ch * math.sin(2 * math.pi * i / n)) for i in range(n)]
+    pts_out_mid = [(r_out * math.cos(2 * math.pi * i / n), r_out * math.sin(2 * math.pi * i / n)) for i in range(n)]
+    pts_out_top = [(r_out_ch * math.cos(2 * math.pi * i / n), r_out_ch * math.sin(2 * math.pi * i / n)) for i in range(n)]
+
+    pts_in_bot = [(r_in_ch * math.cos(2 * math.pi * i / n), r_in_ch * math.sin(2 * math.pi * i / n)) for i in range(n)]
+    pts_in_mid = [(r_in * math.cos(2 * math.pi * i / n), r_in * math.sin(2 * math.pi * i / n)) for i in range(n)]
+    pts_in_top = [(r_in_ch * math.cos(2 * math.pi * i / n), r_in_ch * math.sin(2 * math.pi * i / n)) for i in range(n)]
+
+    # 1. Bottom annular face at z0
+    _ring_face(m, pts_out_bot, pts_in_bot, z0, up=False)
+
+    # 2. Bottom outer chamfer
+    for i in range(n):
+        j = (i + 1) % n
+        m.quad((pts_out_bot[i][0], pts_out_bot[i][1], z0),
+               (pts_out_bot[j][0], pts_out_bot[j][1], z0),
+               (pts_out_mid[j][0], pts_out_mid[j][1], z_ch_bot),
+               (pts_out_mid[i][0], pts_out_mid[i][1], z_ch_bot))
+
+    # 3. Outer cylinder wall
+    _loop_wall(m, pts_out_mid, z_ch_bot, z_ch_top)
+
+    # 4. Top outer chamfer
+    for i in range(n):
+        j = (i + 1) % n
+        m.quad((pts_out_mid[i][0], pts_out_mid[i][1], z_ch_top),
+               (pts_out_mid[j][0], pts_out_mid[j][1], z_ch_top),
+               (pts_out_top[j][0], pts_out_top[j][1], z1),
+               (pts_out_top[i][0], pts_out_top[i][1], z1))
+
+    # 5. Top annular face at z1
+    _ring_face(m, pts_out_top, pts_in_top, z1, up=True)
+
+    # 6. Top inner chamfer
+    for i in range(n):
+        j = (i + 1) % n
+        m.quad((pts_in_top[i][0], pts_in_top[i][1], z1),
+               (pts_in_mid[i][0], pts_in_mid[i][1], z_ch_top),
+               (pts_in_mid[j][0], pts_in_mid[j][1], z_ch_top),
+               (pts_in_top[j][0], pts_in_top[j][1], z1))
+
+    # 7. Inner bore cylinder wall
+    for i in range(n):
+        j = (i + 1) % n
+        m.quad((pts_in_mid[i][0], pts_in_mid[i][1], z_ch_top),
+               (pts_in_mid[i][0], pts_in_mid[i][1], z_ch_bot),
+               (pts_in_mid[j][0], pts_in_mid[j][1], z_ch_bot),
+               (pts_in_mid[j][0], pts_in_mid[j][1], z_ch_top))
+
+    # 8. Bottom inner chamfer
+    for i in range(n):
+        j = (i + 1) % n
+        m.quad((pts_in_mid[i][0], pts_in_mid[i][1], z_ch_bot),
+               (pts_in_bot[i][0], pts_in_bot[i][1], z0),
+               (pts_in_bot[j][0], pts_in_bot[j][1], z0),
+               (pts_in_mid[j][0], pts_in_mid[j][1], z_ch_bot))
+
+    return m
+
+
 def build_spindle_bore_coupon() -> Mesh:
     """Rapid 18-minute calibration coupon testing 40mm spindle vs 42mm bore slip fit AND 608 bearing post."""
     m = Mesh("circle_cutter_spindle_bore_coupon")
@@ -1066,7 +1152,7 @@ def build_spindle_bore_coupon() -> Mesh:
     return m
 
 
-def build_bearing_mount_coupon(x_len: float = 20.0, arm_h: float = ARM_HEIGHT,
+def build_bearing_mount_coupon(x_len: float = 20.0, head_h: float = DUAL_HEAD_HEIGHT,
                                arm_bevel: float = ARM_BEVEL, dual_w: float = DUAL_HEAD_WIDTH,
                                bearing_y: float = BEARING_PAD_Y,
                                bearing_axle_z: float = BEARING_AXLE_LOCAL_Z,
@@ -1075,18 +1161,19 @@ def build_bearing_mount_coupon(x_len: float = 20.0, arm_h: float = ARM_HEIGHT,
                                m5_dia: float = M5_INSERT_DIA,
                                m5_depth: float = M5_INSERT_DEPTH,
                                k: int = 8) -> Mesh:
-    """Rapid 10-minute calibration coupon testing 625 bearing fit, standoff boss, and M5 heat-set insert."""
+    """Rapid 10-minute calibration coupon testing 608 bearing fit, standoff boss, and M5 heat-set insert."""
     m = Mesh("circle_cutter_bearing_coupon")
     x_start = 0.0
     x_end = x_len
     h_dual = dual_w / 2.0
 
-    loop_dual = make_beveled_rect_loop(-h_dual, h_dual, 0.0, arm_h, arm_bevel, k)
-    bnd_bearing = [loop_dual[idx] for idx in range(12, 29)] + [(0.0, 4.0), (0.0, 8.0)]
+    loop_dual = make_beveled_rect_loop(-h_dual, h_dual, 0.0, head_h, arm_bevel, k)
+    div_pts_up = [(0.0, 5.0), (0.0, 9.0)]
+    bnd_bearing = [loop_dual[idx] for idx in range(12, 29)] + div_pts_up
     n_p = 19
 
     # Back cap (-X)
-    c_back = (x_start, bearing_y, arm_h / 2.0)
+    c_back = (x_start, bearing_y, head_h / 2.0)
     for i in range(n_p):
         j = (i + 1) % n_p
         m.add(c_back, (x_start, bnd_bearing[j][0], bnd_bearing[j][1]),
@@ -1384,7 +1471,7 @@ def render_multiview_sheet(stl_path: Path, out_path: Path, title: str = "", subt
     print(f"  [Rendered] {out_path.name}")
 
 
-def render_assembly_views(out_dir: Path, base: Mesh, arm: Mesh, blade_cap: Mesh, hub_cap: Mesh) -> None:
+def render_assembly_views(out_dir: Path, base: Mesh, arm: Mesh, blade_cap: Mesh, hub_cap: Mesh, sleeve: Mesh = None) -> None:
     """Render full assembly and exploded 3D scene views directly in pure Python."""
     try:
         import numpy as np
@@ -1399,6 +1486,15 @@ def render_assembly_views(out_dir: Path, base: Mesh, arm: Mesh, blade_cap: Mesh,
         tris = [[(p[0] + dx, p[1] + dy, p[2] + dz) for p in t] for t in m.triangles]
         return np.array(tris, dtype=np.float32)
 
+    def sleeve_to_verts(m: Mesh, offset=(176.5, -11.5, 11.0)) -> np.ndarray:
+        # Rotate sleeve from Z-axis to X-axis (axial alignment)
+        dx, dy, dz = offset
+        tris = []
+        for t in m.triangles:
+            r_tri = [(p[2] + dx, p[1] + dy, -p[0] + dz) for p in t]
+            tris.append(r_tri)
+        return np.array(tris, dtype=np.float32)
+
     def render_scene(components: List[Tuple[np.ndarray, Tuple[int, int, int]]], out_path: Path, title: str, subtitle: str) -> None:
         all_verts = np.concatenate([c[0] for c in components], axis=0)
         min_pt = np.min(all_verts, axis=(0, 1))
@@ -1407,7 +1503,7 @@ def render_assembly_views(out_dir: Path, base: Mesh, arm: Mesh, blade_cap: Mesh,
         max_dim = max(float(np.max(max_pt - min_pt)), 1.0)
 
         w, h = 1200, 900
-        scale = (w * 0.46) / max_dim
+        scale = (w * 0.44) / max_dim
 
         def look_at(eye: np.ndarray, target: np.ndarray, up: np.ndarray) -> np.ndarray:
             fwd = target - eye
@@ -1492,6 +1588,7 @@ def render_assembly_views(out_dir: Path, base: Mesh, arm: Mesh, blade_cap: Mesh,
     col_arm = (230, 120, 30)      # Dark Orange
     col_cap = (80, 90, 100)       # Slate Gray
     col_hub = (46, 139, 87)       # Sea Green
+    col_sleeve = (220, 50, 50)    # Crimson Red
 
     # Assembly Scene
     scene_assembly = [
@@ -1500,9 +1597,12 @@ def render_assembly_views(out_dir: Path, base: Mesh, arm: Mesh, blade_cap: Mesh,
         (mesh_to_verts(blade_cap, (176.3, 0.0, 4.0)), col_cap),
         (mesh_to_verts(hub_cap, (0.0, 0.0, 112.0)), col_hub),
     ]
+    if sleeve is not None:
+        scene_assembly.append((sleeve_to_verts(sleeve, (176.5, -11.5, 11.0)), col_sleeve))
+
     render_scene(scene_assembly, out_dir / "circle_cutter_assembly.png",
-                 "PCHSMB Circle Cutter — Full Assembly (v1.4 with 608 Bearing Pivot)",
-                 "Piece 1 (Base, Blue) | Piece 2 (Arm, Orange) | Piece 3 (Clamp, Gray) | Piece 4 (Hub Cap, Green)")
+                 "PCHSMB Circle Cutter — Full Assembly (v1.5 Harmonized 608 Bearings & M5 Axle)",
+                 "Piece 1 (Base, Blue) | Piece 2 (Arm, Orange) | Piece 3 (Clamp, Gray) | Piece 4 (Hub Cap, Green) | Piece 5 (Sleeve, Red)")
 
     # Exploded Scene
     scene_exploded = [
@@ -1511,9 +1611,12 @@ def render_assembly_views(out_dir: Path, base: Mesh, arm: Mesh, blade_cap: Mesh,
         (mesh_to_verts(blade_cap, (210.0, 0.0, 45.0)), col_cap),
         (mesh_to_verts(hub_cap, (0.0, 0.0, 195.0)), col_hub),
     ]
+    if sleeve is not None:
+        scene_exploded.append((sleeve_to_verts(sleeve, (210.0, -11.5, 45.0 + 11.0)), col_sleeve))
+
     render_scene(scene_exploded, out_dir / "circle_cutter_exploded.png",
-                 "PCHSMB Circle Cutter — Exploded Alignment View (v1.4)",
-                 "Vertical Stackup: Base (Z=0) -> Arm (+45mm) -> Hub Cap (+150mm) | Distal Clamp (+35mm X)")
+                 "PCHSMB Circle Cutter — Exploded Alignment View (v1.5)",
+                 "Vertical Stackup: Base (Z=0) -> Arm (+45mm) -> Hub Cap (+150mm) | Distal Clamp & Reducer Sleeve (+35mm X)")
 
 
 
@@ -1537,6 +1640,7 @@ def generate_manifest(out_dir: Path, meshes: List[Mesh]) -> dict:
             "circle_cutter_arm.stl": 1,
             "circle_cutter_blade_cap.stl": 1,
             "circle_cutter_hub_cap.stl": 1,
+            "circle_cutter_reducer_sleeve.stl": 1,
             "circle_cutter_spindle_bore_coupon.stl": 0,
             "circle_cutter_bearing_coupon.stl": 0,
             "circle_cutter_snap_cap_coupon.stl": 0,
@@ -1552,20 +1656,21 @@ def generate_manifest(out_dir: Path, meshes: List[Mesh]) -> dict:
             "arm_air_clearance_above_vinyl_mm": ARM_BOTTOM_WORLD_Z,
             "bearing_axle_world_z_mm": BEARING_AXLE_WORLD_Z,
             "bearing_axle_local_z_mm": BEARING_AXLE_LOCAL_Z,
-            "self_leveling_bridge": "Base plate and 625 bearing both contact vinyl simultaneously, holding arm dead-level with 4.0mm air gap above vinyl",
+            "self_leveling_bridge": "Base plate and 608 bearing both contact vinyl simultaneously, holding arm dead-level with 4.0mm air gap above vinyl",
             "friction_elimination": "Arm floats 1.0mm above base plate shoulder, reducing plastic sliding contact area from 707mm2 to 0mm2",
         },
-        "bearing_specifications_625_roller": {
-            "bearing_type": "625 Ball Bearing (625ZZ / 625-2RS)",
+        "bearing_specifications_608_roller": {
+            "bearing_type": "608 Ball Bearing (608ZZ / 608-2RS)",
             "purpose": "Distal roller depth stop rolling directly on vinyl",
             "outer_diameter_mm": BEARING_OD,
             "inner_bore_mm": BEARING_ID,
             "width_mm": BEARING_WIDTH,
             "standoff_boss_od_mm": BEARING_STANDOFF_OD,
             "standoff_boss_length_mm": BEARING_STANDOFF_LEN,
-            "axle_fastener": "M5 button-head machine screw into M5 brass heat-set insert",
+            "reducer_sleeve_spec": f"{SLEEVE_608_OD}mm OD x {SLEEVE_608_ID}mm ID x {SLEEVE_608_LEN}mm L",
+            "axle_fastener": "M5 button-head machine screw (16mm or 18mm) through reducer sleeve into M5 brass heat-set insert",
             "rotation_axis_alignment": "Radial (+X), parallel to arm length; rolls along tangential cut arc (+Y) alongside blade",
-            "head_architecture": "Side-by-Side Dual Head (Bearing Pad at Y=-9mm, Blade Pad at Y=+9mm)",
+            "head_architecture": "Side-by-Side Dual Head (Bearing Pad at Y=-11.5mm, Blade Pad at Y=+11.5mm, 46mm width)",
         },
         "bearing_specifications_608_thrust": {
             "bearing_type": "608 Ball Bearing (608ZZ / 608-2RS)",
@@ -1597,7 +1702,7 @@ def generate_manifest(out_dir: Path, meshes: List[Mesh]) -> dict:
             "all_files_passed_topological_audit": all(a["passed"] for a in audits.values()),
             "total_triangles": sum(a["triangles"] for a in audits.values()),
         },
-        "status": "production_release_v1_4_608_bearing_pivot",
+        "status": "production_release_v1_5_608_front_roller_m5",
     }
     (out_dir / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
     return manifest
@@ -1619,19 +1724,20 @@ def main() -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
 
     print("=" * 72)
-    print("  PCHSMB Circle Cutter - Pure-Python STL Generation Pipeline v1.4")
-    print("  Feature: Top-Mounted 608 Ball Bearing Thrust Pivot for Low-Friction Operation")
+    print("  PCHSMB Circle Cutter - Pure-Python STL Generation Pipeline v1.5")
+    print("  Feature: Harmonized 608 Roller & Thrust Bearings with Heavy-Duty M5 Axle")
     print(f"  Target: {out_dir.resolve()}")
     print("=" * 72)
 
-    # 1. Build 4 Production Components
-    print("\n[1/4] Generating Production 4-Piece Geometry (Pure Python)...")
+    # 1. Build Production Components
+    print("\n[1/4] Generating Production Geometry (Pure Python)...")
     base = build_piece1_base()
     arm = build_piece2_arm()
     blade_cap = build_piece3_blade_cap()
     hub_cap = build_piece4_hub_cap()
+    sleeve = build_piece5_reducer_sleeve()
 
-    meshes = [base, arm, blade_cap, hub_cap]
+    meshes = [base, arm, blade_cap, hub_cap, sleeve]
 
     # 2. Build Calibration Test Coupons
     if args.coupons:
@@ -1657,7 +1763,7 @@ def main() -> None:
 
     # Copy primary STLs to root
     root_dir = Path(__file__).resolve().parent
-    for m in [base, arm, blade_cap, hub_cap]:
+    for m in [base, arm, blade_cap, hub_cap, sleeve]:
         m.save_stl(root_dir / f"{m.name}.stl")
 
     # 4. Generate Manifest
@@ -1674,7 +1780,7 @@ def main() -> None:
             render_multiview_sheet(stl_p, png_p, title=f"PCHSMB Circle Cutter — {m.name}")
 
         print("  Generating 3D Assembly and Exploded Scene Renders (Pure Python)...")
-        render_assembly_views(out_dir, base, arm, blade_cap, hub_cap)
+        render_assembly_views(out_dir, base, arm, blade_cap, hub_cap, sleeve)
 
     print("\n" + "=" * 72)
     print("  Generation Complete! All STLs verified 100% watertight manifold.")
