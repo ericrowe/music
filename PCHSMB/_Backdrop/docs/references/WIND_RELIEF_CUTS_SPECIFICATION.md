@@ -248,7 +248,50 @@ To prevent visual disruption, fabrication teams **MUST** follow these rules:
 
 ---
 
-## 7. Subproject Cross-References
+## 8. Addendum: Wind De-Rating Analysis for Delayed / Unvented Vinyl Operation
+
+### 8.1 Problem Statement & Field Context
+If construction timelines or rehearsal schedules require fielding the 10 Rolling Backdrops before the 8 engineered semicircular wind relief flaps can be cut and punched in the upper $6.0–8.0\text{ ft}$ zone, the backdrops operate with **100% solid, unvented $80\text{ sq ft}$ vinyl sails**.
+
+This engineering addendum defines the exact aerodynamic de-rating factors, forward-tipping failure thresholds, and volunteer operational rules required to safely operate unvented rolling backdrops without risking prop tipping, caster rutting, or clamp blow-off.
+
+### 8.2 Aerodynamic Physics & Force Multiplier
+1. **Drag Coefficient ($C_d$):** Solid, unvented scrim vinyl exhibits a flat-plate drag coefficient of $C_d = 1.20$. Semicircular relief cuts reduce this to $C_d = 1.02$ ($\sim 15.0\%$ steady-state drag reduction).
+2. **Force & Overturning Moment Scaling:**
+   Lateral wind force $F_{wind} = q \cdot A \cdot C_d$ and overturning moment $M_{OT} = F_{wind} \cdot z_{cp}$ scale directly with $C_d$.
+   $$\frac{F_{\text{solid}}}{F_{\text{vented}}} = \frac{1.20}{1.02} = 1.176 \quad (+17.6\% \text{ higher lateral drag force and forward overturning torque})$$
+3. **Allowable Wind Velocity Scaling:**
+   Because velocity pressure scales quadratically ($q \propto V^2$), the allowable forward tipping velocity threshold scales as:
+   $$V_{\text{solid}} = V_{\text{vented}} \times \sqrt{\frac{1.02}{1.20}} = V_{\text{vented}} \times \sqrt{0.850} \approx 0.922 \cdot V_{\text{vented}} \quad (\sim 7.8\% \text{ reduction in allowable wind speed})$$
+
+### 8.3 Forward Tipping Stability: Solid vs. Vented (Colorado Springs: 6,500 ft ASL)
+Calculated using `.agents/skills/calculate-prop-wind-loading/scripts/analyze_wind_load.py` ($q = 0.001989 \cdot V^2\text{ psf}$, $\rho = 0.0595\text{ lb/ft}^3$, $A = 80.0\text{ sq ft}$, $z_{cp} = 5.79\text{ ft}$ above turf, deck height $9.0\text{ in.}$, critical pivot axis at front casters):
+
+| Ballast Tier | Ballast Configuration | Total Weight on Casters | Solid Tipping Limit ($C_d = 1.20$) | Vented Tipping Limit ($C_d = 1.02$) | Calculated De-Rating |
+|---|---|:---:|:---:|:---:|:---:|
+| **Tier 0: Calm** | 0 bags (Dry cart, 153 lb) | 153 lb | 13.3 mph | 14.4 mph | **$-1.1\text{ mph}$** |
+| **Tier 1: Normal** | 4× 15-lb bags on wing posts | 213 lb | 15.6 mph | 16.9 mph | **$-1.3\text{ mph}$** |
+| **Tier 2: Advisory** | 6× 15-lb bags on wing posts | 243 lb | 17.0 mph | 18.4 mph | **$-1.4\text{ mph}$** |
+| **Tier 3: High-Wind** | 6 wing + 3 rear rail A (135 lb) | 288 lb | 20.8 mph | 22.5 mph | **$-1.7\text{ mph}$** |
+
+*At sea level venues (e.g. BOA Grand Nationals in Indianapolis, $\rho = 0.0765\text{ lb/ft}^3$), air is 23% denser; solid vinyl on Tier 3 ballast tips forward at $18.8\text{ mph}$ (vs. $20.3\text{ mph}$ with slits).*
+
+### 8.4 Non-Linear Dynamic Risks of Operating Unvented Vinyl
+1. **Coherent Vortex-Shedding Flutter & Snap Clamp Pop-Off:**
+   A continuous $80\text{ sq ft}$ solid vinyl membrane generates coherent Strouhal vortex shedding (~0.5–1.2 Hz). Under sustained crosswinds, this creates rhythmic billow cycles with localized negative suction spikes ($>3.0\text{ psf}$) that pry the perimeter greenhouse snap clamps off the 1-5/8" steel tubing. Relief flaps bleed pressure across the upper zone, destroying coherent vortices.
+2. **Dynamic Gust Impulse Bleed:**
+   Sudden stadium downdrafts or thermal gusts exert peak instantaneous pressure spikes ($q = \frac{1}{2}\rho V^2$). Relief flaps rapidly vent peak impulses before the cart's inertia can transition into an overturning roll over the front wheels.
+
+### 8.5 Volunteer Operational Rule (Field Simplification)
+Volunteer parent crew and student handlers cannot calculate mathematical percentages or track fractional wind limits during field logistics. To guarantee absolute safety, the calculated de-ratings are **rounded up to a flat 2 mph reduction across all wind regimes**, Tier 4 abort is lowered, and companion duck blinds must carry 2 bags even in Tier 0:
+
+> [!IMPORTANT]
+> **Operational Guidance for Unvented Vinyl:**
+> *"Without wind relief cuts, the props may be used by derating all wind regimes by 2MPH, decreasing the Tier 4 Abort threshold to 12MPH sustained / 16MPH gusts, and increasing the duck blind tier 0 ballasting to 2 bags."*
+
+---
+
+## 9. Subproject Cross-References
 
 - **Master Subproject README:** [`PCHSMB/_Backdrop/README.md`](../../README.md)
 - **Technical Specification:** [`PCHSMB/_Backdrop/docs/references/TECHNICAL_SPEC.md`](TECHNICAL_SPEC.md) (Step 3.1)

@@ -688,7 +688,7 @@ Aerodynamic pressure ($q = 0.001989 times V_"mph"^2$ psf at Colorado Springs 6,5
   stroke: 0.4pt + rgb("#cbd5e0"),
   fill: (col, row) => if row == 0 { rgb("#edf2f7") } else if row == 5 { rgb("#fff5f5") } else { none },
   inset: (x: 3.5pt, y: 2.2pt),
-  [*Wind Tier*], [*Wind Velocity*], [*Ballast Configuration*], [*Solid Face (Slide / Tip)*], [*With Slits (Slide / Tip)*], [*Status*],
+  [*Wind Tier*#footnote[Without wind relief cuts, the props may be used by derating all wind regimes by 2 mph, decreasing the Tier 4 Abort threshold to 12 mph sustained / 16 mph gusts, and increasing the duck blind Tier 0 ballasting to 2 bags.]], [*Wind Velocity*], [*Ballast Configuration*], [*Solid Face (Slide / Tip)*], [*With Slits (Slide / Tip)*], [*Status*],
   [Tier 0: Calm], [0 – 8 mph], [0 bags (dry wt 26 lb)], [11.2 / 8.1 mph], [*12.1 / 8.8 mph*], [*GO* (Dry)],
   [Tier 1: Normal], [8 – 12 mph], [2 bags on rear rail C (56 lb)], [16.4 / 23.5 mph], [*17.8 / 25.5 mph*], [*GO* (Normal)],
   [Tier 2: Advisory], [12 – 18 mph], [3 bags (2 ground C + 1 hang, 71 lb)], [18.5 / 28.5 mph], [*20.0 / 30.9 mph*], [*GO* (Ballast)],

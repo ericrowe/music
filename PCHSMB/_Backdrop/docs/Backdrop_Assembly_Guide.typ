@@ -359,7 +359,7 @@ Ballasting requirements are scaled dynamically based on observed stadium wind ve
   stroke: 0.5pt + rgb("#cbd5e0"),
   fill: (x, y) => if y == 0 { rgb("#edf2f7") } else if y == 5 { rgb("#fff5f5") } else if calc.even(y) { rgb("#f7fafc") } else { white },
   inset: (x: 4pt, y: 2.6pt),
-  [*Tier / State*], [*Wind Velocity*], [*Wing Posts (3/4" Pipe)*], [*Rear Rail (2x4 A)*], [*Total Ballast*], [*Max Safe Gust & Protocol*],
+  [*Tier / State*#footnote[Without wind relief cuts, the props may be used by derating all wind regimes by 2 mph, decreasing the Tier 4 Abort threshold to 12 mph sustained / 16 mph gusts, and increasing the duck blind Tier 0 ballasting to 2 bags.]], [*Wind Velocity*], [*Wing Posts (3/4" Pipe)*], [*Rear Rail (2x4 A)*], [*Total Ballast*], [*Max Safe Gust & Protocol*],
   [Tier 0: Calm], [0–8 mph, gusts #sym.lt.eq 10], [0 bags (unballasted)], [None], [0 lbs (153 lb total)], [10.0 mph safe gust (14.4 mph tip limit). FoS #sym.gt.eq 2.07. Upgrade to Tier 1 if wind >8 mph.],
   [Tier 1: Normal], [Light breeze (8–12 mph)], [4x 15-lb bags (2 per wing post; 30 lb/side)], [None], [60 lbs (213 lb total)], [16.9 mph max gust. Standard operations; zero turf compaction.],
   [Tier 2: Advisory], [Moderate breeze (12–18 mph)], [6x 15-lb bags (3 per wing post; 45 lb/side)], [None], [90 lbs (243 lb total)], [18.4 mph max gust. Handlers deploy ground sandbag chocks if breezy.],

@@ -183,7 +183,7 @@ Because Pine Creek High School operates in the high-altitude, wind-prone environ
   stroke: 0.5pt + rgb("#cbd5e0"),
   inset: (x: 3.5pt, y: 2.5pt),
   fill: (col, row) => if row == 0 { rgb("#edf2f7") } else if row == 5 { rgb("#fff5f5") } else { none },
-  [*Wind Regime*], [*Wind Velocity*], [*Duck Blind Ballasting*], [*Backdrop Ballasting*], [*Decision Status*],
+  [*Wind Regime*#footnote[Without wind relief cuts, the props may be used by derating all wind regimes by 2 mph, decreasing the Tier 4 Abort threshold to 12 mph sustained / 16 mph gusts, and increasing the duck blind Tier 0 ballasting to 2 bags.]], [*Wind Velocity*], [*Duck Blind Ballasting*], [*Backdrop Ballasting*], [*Decision Status*],
   [⚪ *Tier 0: Calm*], [0 – 8 mph], [1 bag on rear rail C], [None (153 lb dry prop)], [*GO* (With Ballast)],
   [🟢 *Tier 1: Normal*], [8 – 12 mph], [2 bags on rear rail C], [4 bags (2/wing post)], [*GO* (Normal)],
   [🟡 *Tier 2: Advisory*], [12 – 18 mph], [3 bags on rear rail C], [6 bags (3/wing post)], [*GO* (With Ballast)],

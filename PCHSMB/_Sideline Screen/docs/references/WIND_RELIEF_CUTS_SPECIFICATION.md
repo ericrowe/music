@@ -251,7 +251,54 @@ To prevent visual disruption and ensure complete optical camouflage from the sta
 
 ---
 
-## 7. Subproject Cross-References
+## 8. Addendum: Wind De-Rating Analysis for Delayed / Unvented Vinyl Operation
+
+### 8.1 Problem Statement & Field Context
+If prop construction schedules require fielding the Sideline Screens / Duck Blinds during early season rehearsals before the 6 engineered semicircular wind relief flaps can be precision-cut and punched, the props operate with **100% solid, unvented vinyl faces**. 
+
+This engineering addendum establishes the exact aerodynamic de-rating factors, failure mode shifts, and volunteer operational rules required to safely operate unvented screens without risking prop damage, snap clamp ejection, or student injury.
+
+### 8.2 Aerodynamic Physics & Force Multiplier
+1. **Drag Coefficient ($C_d$):** Solid, unvented scrim vinyl exhibits a flat-plate drag coefficient of $C_d = 1.20$. Standard semicircular flaps reduce this to $C_d = 1.02$ ($\sim 15.0\%$ steady-state drag reduction).
+2. **Force & Overturning Moment Scaling:**
+   Lateral wind force $F_{wind} = q \cdot A \cdot C_d$ and overturning moment $M_{OT} = F_{wind} \cdot z_{cp}$ scale directly with $C_d$.
+   $$\frac{F_{\text{solid}}}{F_{\text{vented}}} = \frac{1.20}{1.02} = 1.176 \quad (+17.6\% \text{ higher lateral force and overturning torque at identical wind speed})$$
+3. **Allowable Wind Velocity Scaling:**
+   Because aerodynamic dynamic pressure scales quadratically with velocity ($q \propto V^2$), the allowable velocity threshold for any given restoring moment or friction limit scales as:
+   $$V_{\text{solid}} = V_{\text{vented}} \times \sqrt{\frac{1.02}{1.20}} = V_{\text{vented}} \times \sqrt{0.850} \approx 0.922 \cdot V_{\text{vented}} \quad (\sim 7.8\% \text{ reduction in allowable wind speed})$$
+
+### 8.3 Stability Thresholds: Solid vs. Vented (Colorado Springs: 6,500 ft ASL)
+Calculated using `.agents/skills/calculate-prop-wind-loading/scripts/analyze_wind_load.py` ($q = 0.001989 \cdot V^2\text{ psf}$, $\rho = 0.0595\text{ lb/ft}^3$, $A = 30.5\text{ sq ft}$, $z_{cp} = 1.94\text{ ft}$, turf $\mu = 0.35$):
+
+| Ballast Tier | Ballast Configuration | Total Weight | Solid Limit (Slide / Tip) | Vented Limit (Slide / Tip) | Calculated De-Rating |
+|---|---|:---:|:---:|:---:|:---:|
+| **Tier 0: Calm** | 0 bags (Dry frame, 26 lb) | 26 lb | 11.2 mph (slide) / 8.1 mph (tip) | 12.1 mph (slide) / 8.8 mph (tip) | $-0.9\text{ mph}$ (slide) / $-0.7\text{ mph}$ (tip) |
+| **Tier 1: Normal** | 1× 15-lb bag on rear rail C | 41 lb | 14.0 mph (slide) / 17.5 mph (tip) | 15.2 mph (slide) / 19.0 mph (tip) | $-1.2\text{ mph}$ (slide) / $-1.5\text{ mph}$ (tip) |
+| **Tier 1: Standard** | 2× 15-lb bags on rear rail C | 56 lb | 16.4 mph (slide) / 23.5 mph (tip) | 17.8 mph (slide) / 25.5 mph (tip) | $-1.4\text{ mph}$ (slide) / $-2.0\text{ mph}$ (tip) |
+| **Tier 2: Advisory** | 3× 15-lb bags (2 ground + 1 hang) | 71 lb | 18.5 mph (slide) / 28.5 mph (tip) | 20.0 mph (slide) / 30.9 mph (tip) | $-1.5\text{ mph}$ (slide) / $-2.4\text{ mph}$ (tip) |
+| **Tier 3: High-Wind** | 4× 15-lb bags (2 ground + 2 hang) | 86 lb | 20.3 mph (slide) / 32.8 mph (tip) | 22.1 mph (slide) / 35.6 mph (tip) | $-1.8\text{ mph}$ (slide) / $-2.8\text{ mph}$ (tip) |
+
+*At sea level venues (e.g. BOA Grand Nationals in Indianapolis, $\rho = 0.0765\text{ lb/ft}^3$), air density is 23% higher; solid vinyl on Tier 1 (2 bags) slips on turf at only $14.8\text{ mph}$ (vs. $16.1\text{ mph}$ with slits).*
+
+### 8.4 Non-Linear Dynamic Risks of Operating Unvented Vinyl
+Beyond steady-state thresholds, delaying wind relief cuts introduces three critical non-linear dynamic hazards:
+1. **Coherent Vortex-Shedding Flutter & Snap Clamp Ejection:**
+   Continuous solid vinyl acts as an unvented membrane subject to coherent Strouhal vortex shedding (~0.8–1.2 Hz). Under sustained crosswinds, this generates cyclic billowing waves and negative suction peaks ($>3.0\text{ psf}$) that violently twist the $1/2\text{ in.}$ EMT conduit and can pop perimeter greenhouse snap clamps off the frame. Flaps destroy coherent vortex structures and bleed suction.
+2. **Two-Student Direct Carry Crosswind Load:**
+   When student pairs carry assembled screens onto the field, an unvented face acts as a continuous sail. In a $15\text{ mph}$ crosswind, solid vinyl exerts **$16.4\text{ lbs}$ of lateral drag** directly against the handlers' hands and wrists, increasing stumble hazards during rapid field entry.
+3. **Tensile Load on 3D-Printed Rail 3 Clips (I):**
+   Under headwind, strut arms (E) pull directly against the 3D-printed ASA snap-fit clips on Rail 3. Unvented vinyl increases this peak pull force by $+17.6\%$ (from $28.8\text{ lbs}$ up to $33.9\text{ lbs}$ per clip at 20 mph), reducing safety margins against jaw unseating.
+
+### 8.5 Volunteer Operational Rule (Field Simplification)
+Volunteer parent crew and student handlers cannot be expected to calculate an 8% mathematical reduction or interpolate decimal miles-per-hour under competition pressure. To guarantee safety, the calculated de-ratings ($0.9–1.8\text{ mph}$) are **rounded up to a flat 2 mph reduction across all wind regimes**, Tier 0 dry staging is eliminated, and the abort ceiling is lowered:
+
+> [!IMPORTANT]
+> **Operational Guidance for Unvented Vinyl:**
+> *"Without wind relief cuts, the props may be used by derating all wind regimes by 2MPH, decreasing the Tier 4 Abort threshold to 12MPH sustained / 16MPH gusts, and increasing the duck blind tier 0 ballasting to 2 bags."*
+
+---
+
+## 9. Subproject Cross-References
 
 - **Master Subproject README:** [`PCHSMB/_Sideline Screen/README.md`](../../README.md)
 - **Technical Specification:** [`PCHSMB/_Sideline Screen/docs/references/TECHNICAL_SPEC.md`](TECHNICAL_SPEC.md) (Step 3.1)
