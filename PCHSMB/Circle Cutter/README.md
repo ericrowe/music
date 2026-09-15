@@ -48,9 +48,9 @@ The tool utilizes a concentric 4-piece modular rotating pivot architecture:
 |---|---|:---:|---|---|
 | **Roller Bearing** | 625 Miniature Ball Bearing (625ZZ / 625-2RS) | 1 | Rolls on vinyl; precision $1.0\text{ mm}$ depth stop | $5\text{ mm}$ ID $\times 16\text{ mm}$ OD $\times 5\text{ mm}$ W |
 | **Bearing Axle Screw** | M5 $\times 12\text{ mm}$ Button Head Cap Screw | 1 | Secures 625 bearing inner race to arm | Stainless steel or black oxide ISO 7380 |
-| **Bearing Insert** | M5 Brass Heat-Set Insert | 1 | Durable machine threads for bearing axle | $\varnothing 7.0–7.2\text{ mm}$ OD, length $7.5–9.5\text{ mm}$ |
+| **Bearing Insert** | M5 Brass Heat-Set Insert | 1 | Durable machine threads for bearing axle | $\varnothing 6.2\text{ mm}$ hole spec; length 6, 8, or 10 mm ($11.0\text{ mm}$ bore depth) |
 | **Cutting Blade** | Standard #11 X-Acto / Hobby Blade | 1 | Precision razor cutting of vinyl | Standard carbon steel with shank slot (e.g. X-Acto X211) |
-| **Blade Insert** | M3 Brass Heat-Set Insert | 1 | Durable machine threads for blade clamp | Ruthex / CNC Kitchen standard ($\varnothing 4.2–4.6\text{ mm}$, length $4.0–5.7\text{ mm}$) |
+| **Blade Insert** | M3 Brass Heat-Set Insert | 1 | Durable machine threads for blade clamp | $\varnothing 3.8\text{ mm}$ hole spec; length 6, 8, or 10 mm ($10.5\text{ mm}$ bore depth) |
 | **Clamping Screw** | M3 $\times 10\text{ mm}$ Socket / Button Head | 1 | Secures clamp cap and blade tang | Stainless steel or black oxide Class 10.9/12.9 |
 
 ---

@@ -94,15 +94,15 @@ BEARING_AXLE_LOCAL_Z = BEARING_AXLE_WORLD_Z - BASE_PLATE_HEIGHT  # +4.0 mm local
 BEARING_MOUNT_X = DISTAL_X                    # 175.0 mm (front face of arm alongside blade)
 BEARING_STANDOFF_OD = 8.0                     # 8.0 mm OD (contacts ONLY 5x8mm inner race)
 BEARING_STANDOFF_LEN = 1.0                    # 1.0 mm standoff clearance
-M5_INSERT_DIA = 7.0                           # 7.0 mm hole for standard M5 brass heat-set insert
-M5_INSERT_DEPTH = 8.0                         # 8.0 mm bore depth
+M5_INSERT_DIA = 6.2                           # 6.2 mm hole for user-specified M5 brass heat-set insert
+M5_INSERT_DEPTH = 11.0                        # 11.0 mm bore depth (accommodates 6, 8, or 10 mm inserts)
 
 # Blade Mount & Retention
 BLADE_X = DISTAL_X                            # 175.0 mm distal end
 BLADE_SLOT_WIDTH = 6.0                        # 6.0 mm slot for #11 blade tang (5.8-6.0 mm)
 BLADE_SLOT_DEPTH = 0.8                        # 0.8 mm raised retaining tabs flanking blade
-HEAT_SET_M3_DIA = 4.2                         # 4.2 mm hole for M3 brass insert (OD 4.6 mm)
-HEAT_SET_M3_DEPTH = 6.5                       # 6.5 mm bore depth
+HEAT_SET_M3_DIA = 3.8                         # 3.8 mm hole for user-specified M3 brass insert
+HEAT_SET_M3_DEPTH = 10.5                      # 10.5 mm bore depth (accommodates 6, 8, or 10 mm inserts)
 
 # Piece 3: Blade Clamping Cap
 CAP_WIDTH = 12.0                              # 12.0 mm width in Y

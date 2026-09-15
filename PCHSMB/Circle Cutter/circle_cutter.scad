@@ -101,15 +101,15 @@ module piece2_arm() {
         translate([0, 0, 107.0])
             cylinder(r1 = 21.0, r2 = 22.0, h = 1.5);
             
-        // M5 Heat-Set Insert Hole for 625 bearing axle (7.0mm dia x 8.0mm depth at Y = -9.0, Z = 4.0)
-        translate([167.0, -9.0, 4.0])
+        // M5 Heat-Set Insert Hole for 625 bearing axle (6.2mm dia x 11.0mm depth at Y = -9.0, Z = 4.0)
+        translate([165.0, -9.0, 4.0])
             rotate([0, 90, 0])
-                cylinder(r = 3.5, h = 10.0);
+                cylinder(r = 3.1, h = 12.0);
                 
-        // M3 Heat-Set Insert Hole for blade clamp (4.2mm dia x 6.5mm depth at Y = +9.0, Z = 6.0)
-        translate([169.3, 9.0, 6.0])
+        // M3 Heat-Set Insert Hole for blade clamp (3.8mm dia x 10.5mm depth at Y = +9.0, Z = 6.0)
+        translate([164.5, 9.0, 6.0])
             rotate([0, 90, 0])
-                cylinder(r = 2.1, h = 8.5);
+                cylinder(r = 1.9, h = 11.0);
     }
 }
 

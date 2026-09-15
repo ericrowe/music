@@ -67,11 +67,12 @@ Record caliper readings to two decimal places ($\pm 0.02\text{ mm}$) once test p
 | **Piece 2: 625 Bearing Axle Height (World)** | **8.00 mm** | _[Pending print]_ | $\pm 0.10\text{ mm}$ | Pending |
 | **Piece 2: 625 Standoff Boss OD** | 8.00 mm | _[Pending print]_ | $\pm 0.15\text{ mm}$ | Pending |
 | **Piece 2: 625 Standoff Boss Length** | 1.00 mm | _[Pending print]_ | $\pm 0.10\text{ mm}$ | Pending |
-| **Piece 2: M5 Insert Hole Diameter** | 7.00 mm | _[Pending print]_ | $\pm 0.10\text{ mm}$ | Pending |
-| **Piece 2: M5 Insert Hole Depth** | 8.00 mm | _[Pending print]_ | $+0.50 / -0.00\text{ mm}$ | Pending |
+| **Piece 2: M5 Insert Hole Diameter** | **6.20 mm** | _[Pending print]_ | $\pm 0.10\text{ mm}$ | Pending |
+| **Piece 2: M5 Insert Hole Depth** | **11.00 mm** | _[Pending print]_ | $+0.50 / -0.00\text{ mm}$ | Pending |
 | **Piece 2: Distal Blade Slot Width** | 6.00 mm | _[Pending print]_ | $+0.15 / -0.00\text{ mm}$ | Pending |
 | **Piece 2: Anti-Rotation Tab Height** | 0.80 mm | _[Pending print]_ | $\pm 0.10\text{ mm}$ | Pending |
-| **Piece 2: M3 Heat-Set Hole Diameter** | 4.20 mm | _[Pending print]_ | $\pm 0.10\text{ mm}$ | Pending |
+| **Piece 2: M3 Heat-Set Hole Diameter** | **3.80 mm** | _[Pending print]_ | $\pm 0.10\text{ mm}$ | Pending |
+| **Piece 2: M3 Heat-Set Hole Depth** | **10.50 mm** | _[Pending print]_ | $+0.50 / -0.00\text{ mm}$ | Pending |
 | **Piece 2: Internal Retention Groove ID** | 43.60 mm | _[Pending print]_ | $\pm 0.15\text{ mm}$ | Pending |
 | **Piece 3: Cap Width x Height** | 12.00 x 16.00 mm | _[Pending print]_ | $\pm 0.15\text{ mm}$ | Pending |
 | **Piece 3: Cap Thickness** | 3.50 mm | _[Pending print]_ | $\pm 0.10\text{ mm}$ | Pending |
@@ -101,12 +102,12 @@ Complete these physical checks before clearing the circle cutter for prop fabric
    - Verify flange seats flush against the top face of Piece 2 ($Z = 108\text{ mm}$).
    - Confirm that the cap underside stays $2.0\text{ mm}$ clear of the top of the stationary spindle, producing zero axial rubbing during rotation.
 3. **625 Bearing Installation (100% Front-Face Tool Access):**
-   - Press M5 brass heat-set insert into the $\varnothing 7.0\text{ mm}$ hole on the Bearing Pad ($Y = -9.0\text{ mm}$) until flush with the $\varnothing 8.0\text{ mm}$ standoff boss.
+   - Press M5 brass heat-set insert (6, 8, or 10mm length) into the $\varnothing 6.2\text{ mm}$ hole on the Bearing Pad ($Y = -9.0\text{ mm}$) until flush with the $\varnothing 8.0\text{ mm}$ standoff boss.
    - Slide 625 bearing onto an M5 button head screw.
    - Thread directly into the front-face M5 insert with an Allen key (unobstructed open axial clearance).
    - Verify that the inner race clamps firmly against the $8.0\text{ mm}$ standoff boss, and the outer ring spins completely freely with zero rubbing against the arm face.
 4. **M3 Heat-Set Insert & Blade Clamping:**
-   - Press M3 brass insert into the $\varnothing 4.2\text{ mm}$ hole on the Blade Pad ($Y = +9.0\text{ mm}$).
+   - Press M3 brass insert (6, 8, or 10mm length) into the $\varnothing 3.8\text{ mm}$ hole on the Blade Pad ($Y = +9.0\text{ mm}$).
    - Seat standard X-Acto #11 blade tang into the $6.0\text{ mm}$ slot between anti-rotation tabs.
    - Confirm the blade tip extends exactly **$1.0\text{ mm}$ below the bottom rolling surface of the 625 bearing**.
    - Secure Piece 3 cap with an M3 x 10mm screw. Verify zero rotational play.

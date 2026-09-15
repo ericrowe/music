@@ -5,7 +5,7 @@
   "standard": "Pine Creek High School Marching Band Field Prop Tooling",
   "print_material_recommended": "PETG",
   "print_density_g_cm3": 1.27,
-  "estimated_total_print_mass_petg_g": 208.6,
+  "estimated_total_print_mass_petg_g": 208.5,
   "print_quantities": {
     "circle_cutter_base.stl": 1,
     "circle_cutter_arm.stl": 1,
@@ -101,8 +101,8 @@
         50.0,
         108.0
       ],
-      "volume_cm3": 101.89,
-      "estimated_mass_petg_g": 71.2,
+      "volume_cm3": 101.84,
+      "estimated_mass_petg_g": 71.1,
       "passed": true
     },
     "circle_cutter_blade_cap.stl": {
@@ -205,7 +205,7 @@
         18.0,
         12.0
       ],
-      "volume_cm3": 3.89,
+      "volume_cm3": 3.87,
       "estimated_mass_petg_g": 2.7,
       "passed": true
     },
