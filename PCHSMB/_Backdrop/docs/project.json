@@ -26,20 +26,20 @@
   },
   "document": {
     "current": {
-      "build": "D4",
+      "build": "D5",
       "release": "v0",
       "process_state": "working_draft",
       "visible_status": "working_draft",
       "file": "Backdrop_Assembly_Guide.typ",
-      "sha256": "270456b4404764e7781b544e700fbef9c8c6b0db7ef753b1d6f3a259d105db22",
-      "controlled_at": "2026-09-13T21:30:00+00:00"
+      "sha256": "d72be5f6ce93165c257498ca56d6b514758ab86615e879d21b4e321225b23b85",
+      "controlled_at": "2026-09-15T23:30:00+00:00"
     },
     "candidate": null
   },
   "versioning": {
     "current_release": "v0",
     "next_release": "v1",
-    "next_build_number": 5
+    "next_build_number": 6
   },
   "releases": [],
   "history": [
@@ -85,6 +85,20 @@
       "base_build": "D3",
       "summary": "Full rewrite to Typst format; integrate semicircular wind relief cuts (R=4.0\", 8\"x4\"), 8-cut primary grid, 3/8\" tear-arrest holes, and 24-page modular layout",
       "sha256": "270456b4404764e7781b544e700fbef9c8c6b0db7ef753b1d6f3a259d105db22",
+      "file": "Backdrop_Assembly_Guide.typ"
+    },
+    {
+      "id": "D5",
+      "kind": "development_build",
+      "release": "v0",
+      "status": "working_draft",
+      "date": "2026-09-15",
+      "started_at": "2026-09-15T21:00:00+00:00",
+      "base_build": "D4",
+      "summary": "Harmonize document architecture, section numbering (1.1–1.7, 2.1–2.10), coordinate schedule tables, and PCHSMB Circle Cutter tooling with Sideline Screen manual",
+      "sha256": "d72be5f6ce93165c257498ca56d6b514758ab86615e879d21b4e321225b23b85",
+      "pdf_sha256": "a56de18154d71ef63e043cb36f54df5b52b0e0c57c37ce2dfb909e8f0538b62a",
+      "page_count": 28,
       "file": "Backdrop_Assembly_Guide.typ"
     }
   ]

@@ -39,7 +39,7 @@
       #grid(
         columns: (1.5fr, 1.2fr, 1fr),
         align(left)[*WORKING DRAFT — NOT FOR USE*],
-        align(center)[*Release v0 (D4)* | September 2026],
+        align(center)[*Release v0 (D5)* | September 2026],
         align(right)[*Page #pg-str*]
       )
     ]
@@ -135,7 +135,7 @@
   audience: [],
   contents: [],
   print-label: [],
-  revision: [Release v0 (unreleased) | Development build D4 | September 2026],
+  revision: [Release v0 (unreleased) | Development build D5 | September 2026],
   separation-note: [When separated from the master document, keep this cover as the first page.]
 ) = [
   #align(center)[
@@ -207,6 +207,7 @@
   [Release v0 (unreleased) — Build D2], [2026-09-10], [WORKING DRAFT — NOT FOR USE], [Add detailed vinyl installation procedure, specifications table, hardware relief slits, and snap clamp fastening],
   [Release v0 (unreleased) — Build D3], [2026-09-10], [WORKING DRAFT — NOT FOR USE], [Add engineered wind relief slit specifications, tiered 15-lb handle sandbag ballast schedule, rear-rail leverage optimization, and high-wind emergency protocol],
   [Release v0 (unreleased) — Build D4], [2026-09-13], [WORKING DRAFT — NOT FOR USE], [Update wind relief flap specification to true semicircular geometry (R = 4.0", 8" × 4"), 8-cut primary grid layout, 3/8" tear-arrest holes, and full Typst document conversion],
+  [Release v0 (unreleased) — Build D5], [2026-09-15], [WORKING DRAFT — NOT FOR USE], [Harmonize document architecture, section numbering (1.1–1.7, 2.1–2.10), coordinate schedule tables, and PCHSMB Circle Cutter tooling with Sideline Screen manual],
 )
 
 = Intro / Overview
@@ -263,7 +264,7 @@ Special thanks and credit to the Plainfield North Bands for creating the origina
   audience: [Field operators, parent prop crew, and student handlers],
   contents: [Transport & field entrance; student/volunteer training; wing ballast posts; double-bagging rules; student instrument stowage; 2026 CBA rules; trailer storage],
   print-label: [All pages labeled A-],
-  revision: [Release v0 (unreleased) | Development build D4 | September 2026],
+  revision: [Release v0 (unreleased) | Development build D5 | September 2026],
   separation-note: [When separated from the master document, keep this cover as the first page of Appendix A.]
 )
 
@@ -274,9 +275,9 @@ Special thanks and credit to the Plainfield North Bands for creating the origina
 // -----------------------------------------------------------------------------
 #set page(header: make-header("APPENDIX A | FIELD OPERATIONS MANUAL"))
 
-= Field Operations
+= Appendix A: Field Operations Manual
 
-== 1.1 Roles and Crew Organization
+== 1.1 Roles & Division of Responsibilities
 
 Field execution of the rolling backdrop props relies on a coordinated division of responsibility between parent volunteers and student performers:
 
@@ -290,7 +291,7 @@ Field execution of the rolling backdrop props relies on a coordinated division o
 4. *Two-Piece Strut Mating & Pinning:* Pivot the lower strut section up from the cart base (where it remained attached during transit), align it with the upper strut section attached to the frame upright, slide the sleeved two-piece joint together, and insert and lock the quick-release retaining pin through the aligned pin holes. Confirm both diagonal struts are rigid with zero slop.
 5. *Pre-Show Staging & Ballasting:* Roll assembled backdrops to the field entrance gate in numerical show drill order. Load the required tiered sandbag ballast onto the wing posts (and rear rail if high wind), stage extra double-bagged 15-lb ground sandbag chocks for on-field use, verify 360° caster rotation, and prepare for gate ingress.
 
-*Ballast Loading & Staging:* Assess stadium wind conditions and stage double-bagged 15-lb sandbags according to the quick-reference schedule below (see Section 1.4 for full engineering analysis and leverage details):
+*Ballast Loading & Staging:* Assess stadium wind conditions and stage double-bagged 15-lb sandbags according to the quick-reference schedule below (see Section 1.5 for full engineering analysis and leverage details):
 
 #v(2pt)
 #table(
@@ -316,7 +317,7 @@ Field execution of the rolling backdrop props relies on a coordinated division o
 - *Field Operators:* Students have sole responsibility for pushing and maneuvering the backdrop carts onto the field, executing show transitions, and pushing them off the field at the conclusion of the performance.
 - *Crew Pairing & Incline Safety:* No fewer than two student handlers are assigned to each backdrop cart under normal conditions, positioned on opposite outer end perimeter rails (B). During high-wind conditions or when navigating steep grades—such as the steep concrete tunnel entrance ramp at USAFA Falcon Stadium—additional student handlers (three to four students per cart) must be assigned to maintain positive braking, prevent runaway acceleration on downgrades, and provide adequate uphill momentum.
 - *Instrument Stowage & Future Cradle Revision:* The central opening cradles an HDX 14-gallon tough storage tote (Index [9]) for student handlers to temporarily place their musical instruments while pushing carts onto and off the field. Operational Note: The 14-gallon tote accommodates smaller instruments (flutes, clarinets, trumpets, alto saxophones), but is constrained when handlers play larger instruments (mellophones, trombones, baritones, tenor/bari saxes, or battery percussion). A future design revision is planned to engineer an expanded modular instrument cradle system.
-- *On-Field Positioning & Ground Chocking:* Carts are equipped with non-locking swivel casters to maximize rolling agility during rapid field entrances and exits. When props reach their drill coordinates in windy conditions, handlers or parent pit crew deploy supplemental double-bagged 15-lb sandbags on the ground directly against the wheels to serve as wheel chocks, preventing field drift during the performance.
+- *On-Field Positioning & Ground Chocking:* Carts are equipped with non-locking swivel casters to maximize rolling agility during rapid field entrances and exits. When props reach their drill coordinates in breezy conditions, handlers deploy supplemental double-bagged 15-lb sandbags on the ground directly against the wheels to serve as wheel chocks, preventing field drift during the performance.
 
 #align(center)[
   #figure(
@@ -325,26 +326,38 @@ Field execution of the rolling backdrop props relies on a coordinated division o
   )
 ]
 
-== 1.2 Field Entrance, Positioning, and Egress
+#pagebreak()
 
-Timed performance intervals require strict adherence to navigation protocols:
+== 1.2 Staging, Transport & Field Gate Entry
 
-1. *Stadium Gate to Field Transit:* Students take control of the staged carts at the field gate, placing their instruments safely inside the central tote bin. Push carts in two-person teams with the upright frame facing perpendicular to travel to maximize forward visibility.
-2. *Track, Curb & Steep Ramp Transitions:* Approach all running track crossings, track protector mats, and turf curb transitions square-on at a controlled walking pace. Both front casters MUST cross curbs simultaneously. Never approach curbs at an angle, which can bind casters or induce frame tipping. When navigating steep slopes, stadium tunnels (such as Falcon Stadium), or windy ramps, deploy supplemental handlers to maintain positive deceleration control and prevent runaway roll.
-3. *Drill Coordinate Placement & Ground Chocking:* Guide the cart to its exact field drill coordinate. Because carts utilize non-locking swivel casters, handlers position the cart square to the front sideline. When needed in breezy conditions, place extra double-bagged 15-lb sandbags on the ground firmly against the caster wheels as temporary wheel chocks to eliminate roll drift, retrieve instruments from the center tote, and take show positions.
-4. *Rapid Field Egress & Continuous Uphill Transit:* On the final performance cue, handlers place instruments into the tote, quickly lift any ground sandbag chocks onto the cart base or hand them to sideline parent crew, and push the carts in assigned exit order directly through the gate. Under CBA Rule 8.05, props must maintain continuous movement off the field and CANNOT be de-ballasted at the stadium exit chute or tunnel. Props remain fully ballasted (213–288 lbs) and are pushed all the way up the hill to the trailer staging lot. On steep inclines (such as USAFA Falcon Stadium), assign 3 to 4 student handlers per cart to maintain uphill momentum.
+Competitive field execution operates under strict time constraints governed by CBA Rule 5.01 and Rule 5.06 (15:00 master clock; 3:15 entry window; adults clear by 2:45). Smooth staging and gate entry require meticulous preparation:
 
-== 1.3 Student and Volunteer Training Protocol
+1. *Pre-Staging Lineup & Gate Queue (Rule 5.02 & 5.03):* All backdrop props must enter from the back sideline or rear end zone gates (above goal posts). Never transit props through the front sideline gate or front end zone corridor. Queue backdrops in exact numerical show order along the rear staging chute.
+2. *Adult Field Pass Wristbands (Rule 9.07):* All parent volunteers assisting with field movement must wear designated official Field Pass wristbands (strictly limited to 25 per band). Adults without wristbands must remain in the stadium concourse or spectator areas.
+3. *Timing & Penalties (T&P) Gate Permission:* Never cross the stadium gate threshold onto the track or turf until the T&P judge grants official permission to enter. Bands may pre-stage in the rear half of the end zone up to the goal line while the preceding band finishes egress (Rule 5.03).
+4. *Steep Ramp Transit & Incline Control:* When moving props from trailer parking down to field level (such as the steep concrete tunnel ramp at USAFA Falcon Stadium), deploy 3 to 4 handlers per cart. Two handlers push from the rear while one or two handlers control descent speed from the front corners, ensuring positive braking and eliminating runaway risk.
 
-All student handlers and parent volunteers must complete practical training before competition deployment:
+== 1.3 Field Deployment Protocol
 
-1. *Proper Hand Placement & Leverage Safety:* Handlers must ALWAYS keep hands low, grasping the outer wooden 2x4 perimeter rails (B) or inner reinforcement joists. NEVER push, pull, or apply body weight to the upper 1-5/8 in. steel pipe frame or diagonal struts. Pushing high creates massive overturning leverage that can tip the prop or bend steel mounting brackets.
-2. *Instrument Transition Drills:* Practice smooth, rapid instrument placement and retrieval from the central carrier tote during timed entry, staging, and exit drills.
-3. *Rehearsal Run-Throughs:* Conduct full-speed timed entry, positioning, ground sandbag chocking, and egress drills during dress rehearsals on both synthetic turf and natural grass surfaces.
-4. *Handshake & Communication Protocol:* The student on the outer sideline edge acts as the primary caller ('Clear left', 'Approaching curb', 'On coordinate', 'Chocks set', 'Chocks clear'). Handlers maintain continuous verbal communication during moves.
-5. *High Wind Emergency Response & Abort Protocol:* If sustained winds exceed 20 mph or sudden gusts exceed 25 mph, rolling backdrops MUST NOT enter the performance field (strict safety NO-GO threshold). If severe gusts strike while props are already on the field, student handlers position themselves on the upwind side of the cart, place ground sandbag chocks firmly against wheels, and brace the lower 2x4 framing. At no time should students attempt to hold backdrops from the upper steel pipe rails or climb the frame. Designated parent volunteers with Field Pass wristbands (Rule 9.07) will step onto the field to provide perimeter stabilization or assist handlers in immediately tipping the props flat onto the turf if ordered by band directors.
+Once entry permission is signaled, execute rapid field deployment:
 
-== 1.4 Ballasting System, Tiered Wind Schedule, and Double-Bagging Protocol
+1. *Gate-to-Field Transit:* Students take control of the staged carts at the field gate, placing instruments safely inside the central tote bin. Two-student teams push carts with the upright frame facing perpendicular to travel to maximize forward visibility.
+2. *Track, Curb & Turf Transitions:* Approach all running track crossings, rubber protector mats, and turf curb transitions square-on at a steady walking pace. Both front casters *must* cross curbs simultaneously. Never approach curbs at an angle, which can bind casters or induce frame racking.
+3. *Drill Coordinate Placement & Alignment:* Guide each cart directly to its marked field drill coordinate. Handlers square the cart face to the front sideline or angled show specification. Sight down the row of backdrops to verify flush, uniform visual presentation.
+4. *Ground Sandbag Chocking:* Because carts feature non-locking swivel casters for rapid transport maneuverability, handlers must deploy ground chocks when staging on field. In breezy conditions, place extra double-bagged 15-lb sandbags firmly on the turf directly against the caster wheels to eliminate roll drift during the performance.
+5. *Low Hand Placement & Push Leverage Rules:* Handlers must *always* keep hands low, grasping the outer wooden 2x4 perimeter rails (B) or inner reinforcement joists. *NEVER push, pull, or apply body weight to the upper 1-5/8 in. steel pipe frame or diagonal struts.* Pushing high creates massive overturning leverage that can tip the prop or bend steel mounting brackets.
+6. *Handler Communications:* Handlers maintain continuous verbal communication during entry ('Clear left', 'Approaching curb', 'On coordinate', 'Chocks set'). Retrieve instruments from the central tote bin and assume opening performance sets before the 3:15 entry clock expires.
+
+== 1.4 Post-Performance Retrieval & Continuous Exit
+
+1. *Final Performance Cue:* On the final show chord, handlers immediately stow instruments in the central carrier tote, lift ground sandbag chocks onto the cart base (or hand them to sideline parent crew), and take pushing positions on end rails (B).
+2. *Continuous Movement Mandate (CBA Rule 8.05):* Props must enter continuous motion immediately upon the conclusion of the performance and remain in continuous motion until entirely clear of the performance field and stadium concourse.
+3. *Stadium Exit Catch Crew:* Parent volunteers with Field Pass wristbands (Rule 9.07) meet student handlers at the stadium exit gate to receive carts, assist with deceleration, and join students in pushing carts.
+4. *Uphill Egress to Trailer (NO Chute De-Ballasting):* Props *cannot* be de-ballasted at the stadium exit chute or tunnel due to continuous egress regulations. Props remain fully ballasted (213–288 lbs) and are pushed all the way up the stadium ramp/hill to the equipment trailer staging lot. On steep inclines (USAFA Falcon Stadium), assign 3 to 4 handlers per cart to maintain continuous uphill momentum.
+
+#pagebreak()
+
+== 1.5 Ballasting System, Aerodynamic Stability & Tiered Wind Safety Protocols
 
 To maintain vertical stability against outdoor wind shear while strictly protecting stadium athletic turf from rutting and sand contamination, all backdrop props must adhere to this engineering ballasting standard and operational loading schedule.
 
@@ -368,8 +381,6 @@ Ballasting requirements are scaled dynamically based on observed stadium wind ve
 )
 ]
 
-#pagebreak()
-
 === B. High-Wind Rear-Rail Ballast Leverage Optimization
 
 Because the 10 ft x 8 ft vertical upright steel frame sits on the front perimeter rail (A) of the cart base, the structure possesses an inherent tipping asymmetry:
@@ -386,19 +397,34 @@ All 15-lb sandbags MUST utilize heavy-duty inner plastic liner insert bags (Inde
 
 In the event that 15-lb handle sandbags are depleted or extreme wind gusts threaten during stationary staging, crew may deploy 1 to 2 70-lb Sakrete traction tube sand bags (Index [15]) positioned flat across the rear lumber framing rail. MANDATORY: Every 70-lb tube sandbag MUST be completely wrapped and sealed inside a thick contractor-grade garbage bag to satisfy the secondary containment rule before entering the stadium.
 
+=== E. Weather Monitoring & High-Wind Abort Protocol
+
+The Prop Lead carries a digital handheld anemometer and monitors decoded airport METAR feeds (`KCOS`, `KFLY`, `KBJC`, `KAPA`) and Wunderground PWS stations. If sustained winds exceed 20 mph or sudden gusts exceed 25 mph, rolling backdrops *must not* enter the performance field (strict safety NO-GO threshold). If severe gusts strike while props are already on the field, student handlers position themselves on the upwind side of the cart, place ground sandbag chocks firmly against wheels, and brace the lower 2x4 framing. Designated parent volunteers with Field Pass wristbands (Rule 9.07) will step onto the field to provide perimeter stabilization or assist handlers in immediately tipping the props flat onto the turf if ordered by band directors.
+
 #warning-box(title: "CRITICAL TURF OPERATION & DOUBLE-BAGGING MANDATE")[
-  Under no circumstances may unbagged or single-layer sandbags be brought onto any competition turf (see Section 1.5, Rule 8.05). In addition, do not exceed 135–140 lbs total ballast under any operational conditions, as excessive weight causes casters to sink into artificial turf rubber infill, multiplying rolling friction and making carts sluggish for student handlers.
+  Under no circumstances may unbagged or single-layer sandbags be brought onto any competition turf (see Section 1.6, Rule 8.05). In addition, do not exceed 135–140 lbs total ballast under any operational conditions, as excessive weight causes casters to sink into artificial turf rubber infill, multiplying rolling friction and making carts sluggish for student handlers.
 ]
 
 #pagebreak()
 
-== 1.5 Applicable 2026 Marching Band Competition & Prop Rules
+== 1.6 Applicable 2026 CBA Competition Rules
 
 The following governing rules are extracted directly from the official 2026 Colorado Bandmasters Association (CBA) Marching Band Rulebook (Index [17]). All prop builders, parent crew, and student handlers must adhere to these standards:
 
 #note-box(title: "ANNUAL RULEBOOK NOTICE")[
   This section reflects the governing rules for the 2026 competitive season. Logistics staff and build leads must review this section annually against updated CBA and Bands of America (BOA) rulebooks to verify continuing compliance.
 ]
+
+=== Rule 4.02: Emergency Assistance & Safety Exceptions
+- *Medical Emergency (Rule 4.02(c)):* *NO PENALTY.* Any band member becoming ill or injured during performance may be assisted from the field by an adult volunteer, parent, staff member, EMT, or CBA official without penalty.
+- *High-Wind Prop Safety Restraint (Rule 4.02(a)):* If high winds threaten props falling over, adults may enter the field for the sole purpose of securing the prop. At no time during the performance may an adult move the prop as part of visual choreography.
+
+=== Rule 4.03 & 5.06: Field Clearance & Adult Turf Penalty
+- *Field Clearance Window:* All adult volunteers assisting with props *must be completely clear* of the performance field before the introductory announcement ends (commences 3:15 after entry permission). Any adult still on field when announcement ends incurs an immediate *0.2 point score penalty* for the band.
+- *Re-Entry Prohibition:* Adults are strictly prohibited from entering or re-entering the performance field during the show. Unauthorized entry incurs an immediate *0.2 point penalty per occurrence*.
+
+=== Rule 5.02: Rear Entrance Mandate
+- *Gate Ingress Routing:* All props and equipment must be brought onto the performance field from the band entrance gate (back sideline or rear end zone gates above goal posts). Never enter across the front boundary line (reserved strictly for pit equipment).
 
 === Rule 8.05: Props, Equipment, Surface Protection, and Double-Bagging
 - *Gate Ingress:* All props and equipment must be designed and of a quantity such that they can be brought onto the Performance Field from the band entrance gate.
@@ -422,7 +448,7 @@ The following governing rules are extracted directly from the official 2026 Colo
 
 #pagebreak()
 
-== 1.6 Post-Use Teardown and Trailer Storage
+== 1.7 Post-Use Teardown, Inspection & Trailer Packout
 
 1. *Continuous Egress & Uphill Transit to Trailer:* Props CANNOT be de-ballasted at the stadium exit chute or concourse. Rule 8.05 requires continuous movement off the field, and stadium chutes must remain clear for following bands. Student handlers and parent crew push fully ballasted carts (213–288 lbs total) all the way up the hill/ramp to the equipment trailer staging lot. On steep inclines (such as Falcon Stadium), 3 to 4 handlers must be assigned per cart to ensure adequate pushing force and prevent rollbacks.
 2. *"Two-Shot" Competitions (Prelims & Finals Inter-Show Staging):* Most marching band competitions feature an afternoon Preliminary contest followed by an evening Finals competition. Between shows, props remain staged in the trailer lot with all sandbag ballast left in place on the carts to minimize volunteer labor and avoid hardware wear. If wind gusts threaten during inter-show lot staging, crew lay the vinyl frames flat directly onto the carts by pulling the quick-release retaining pin from each two-piece diagonal support strut. This eliminates wind sail area while keeping props fully ballasted and ready for rapid re-erection before Finals.
@@ -472,7 +498,7 @@ The following governing rules are extracted directly from the official 2026 Colo
   audience: [Band prop construction leads, parent build volunteers, and fabrication teams],
   contents: [Shop safety; full BOM; 3D-printed fixtures; lumber and steel cut schedules; cost breakdown; 4-stage frame assembly; vinyl tensioning and snap clamping; quality checklist; indexed purchase sources],
   print-label: [All pages labeled B-],
-  revision: [Release v0 (unreleased) | Development build D4 | September 2026],
+  revision: [Release v0 (unreleased) | Development build D5 | September 2026],
   separation-note: [When separated from the master document, keep this cover as the first page of Appendix B.]
 )
 
@@ -483,14 +509,15 @@ The following governing rules are extracted directly from the official 2026 Colo
 // -----------------------------------------------------------------------------
 #set page(header: make-header("APPENDIX B | CONSTRUCTION MANUAL"))
 
-= Construction
+= Appendix B: Construction & Fabrication Manual
 
-== Safety and Work Area
+== 2.1 Safety, Work Area & Shop Protocol
 
 1. *Personal Protective Equipment (PPE):* Always wear ANSI Z87.1 safety glasses and hearing protection when cutting lumber, operating metal saws, or drilling galvanized steel tubing.
 2. *Workspace Setup:* Provide a clean, flat 12 ft x 12 ft assembly floor for squaring the 96″ x 44.5″ cart base and 10′ x 8′ steel upright frame.
+3. *Cut Edges & Fasteners:* Freshly cut steel pipe ends must be deburred with a half-round file before assembly. Clear metal shavings promptly from work areas to prevent scratching vinyl graphics.
 
-== Materials and Components
+== 2.2 Materials & Component Inventory (BOM)
 
 #block(breakable: false)[
 #set text(size: 8.2pt)
@@ -522,6 +549,7 @@ The following governing rules are extracted directly from the official 2026 Colo
   [Double-Sided Tape], [1-in. heavy-duty mounting tape (14x ~4-in. strips)], [1 roll], [Hardware supplier],
   [Moving Blankets], [Clean protective floor pads for scratch-free vinyl staging], [3–4], [Shop stock],
   [Relief Hole Punch Tool], [3/8-in. (10 mm) Rotary Leather Punch / Gasket Hole Punch], [1 pc], [Workshop stock],
+  [Field Prop Circle Cutter], [PCHSMB Circle Cutter arm w/ #11 blade (R = 4.0 in.)], [1 pc], [Index [18] / 3D Print],
   [Strut Retaining Pins], [1/4" or 5/16" Wire lock hitch pins for 2-piece strut joint], [2 pcs], [Hardware stock; in tote],
   [Protective Tennis Balls], [Standard tennis balls with cut hole (protective caps for upper strut ends)], [2 pcs], [Pit crew stock; protects vinyl],
 )
@@ -529,7 +557,7 @@ The following governing rules are extracted directly from the official 2026 Colo
 
 #pagebreak()
 
-== Tools and Equipment
+== 2.3 Tools, Equipment & 3D-Printed Jigs
 
 #v(-2pt)
 #grid(
@@ -540,16 +568,18 @@ The following governing rules are extracted directly from the official 2026 Colo
     - Metal chop saw or reciprocating saw
     - Impact driver with Torx T-25 bit
     - Cordless drill w/ 1/8" HSS/Cobalt bit
+    - PCHSMB Field Prop Circle Cutter (Index [18])
   ],
   [
     - 5/16" socket, 7/16" & U-bolt wrenches
     - Pipe wrench for 3/4" iron pipe/flanges
     - 25-ft tape measure, framing & speed square
+    - 3/8-in. (10 mm) rotary leather punch & mallet
     - Isopropyl alcohol and microfiber rags
   ]
 )
 
-== 3D-Printed Parts and Fixtures
+== 2.4 3D-Printed Parts Specifications
 
 Print all fixtures in Black ASA or PETG for outdoor UV and heat stability. Do not use PLA.
 
@@ -565,10 +595,11 @@ Print all fixtures in Black ASA or PETG for outdoor UV and heat stability. Do no
   [Corner Bumper Braces], [4], [Protects 2x4 outer corners from scuffing; Index [10] (`Hardware/Corner Brace.FCStd`)],
   [Drill Alignment Jig], [1], [Guides 1/8" pilot holes through 1-5/8" fence pipe; Index [11] (`Hardware/Drill Alignment Jig.3mf`)],
   [Strut Bracket Marker], [1], [Locates base U-bolt & upper tension band positions; Index [12] (`Hardware/Steel Support Strut Bracket Marker.FCStd`)],
+  [Field Prop Circle Cutter], [1], [R = 4.0 in. radius cutter arm w/ #11 blade; Index [18] (`Circle Cutter/circle_cutter_arm.stl`)],
 )
 ]
 
-== Raw Material Cutting Schedules
+== 2.5 Raw Material Cutting Schedules
 
 === A. Lumber Cut Schedule (2x4 SPF / Doug Fir Framing Lumber — 8 Sticks Total)
 - *Outer Rails (A):* 2 pcs @ 96.0 in. (cut from 2 sticks; square factory ends).
@@ -582,7 +613,7 @@ Print all fixtures in Black ASA or PETG for outdoor UV and heat stability. Do no
 - *Top & Bottom Cross Rails:* 2 pcs @ 8 ft 0 in. (cut from 1-5/8 in. top rail; trimmed square for 3-way corner brackets).
 - *Two-Piece Diagonal Support Struts:* 2 modular strut assemblies with sleeved joint and quick-release wire-lock pin.
 
-== Estimated Fabrication Cost Breakdown
+== 2.6 Estimated Fabrication Cost Breakdown
 
 The following table itemizes estimated material costs per backdrop prop based on standard retail pricing (excluding custom printed vinyl):
 
@@ -606,13 +637,13 @@ The following table itemizes estimated material costs per backdrop prop based on
 ]
 #v(1pt)
 
-*Optional Rule 8.05 Ballast Pack:* 4–9 Abccanopy 15-lb handle sandbags + inner double-bag liners + traction sand adds approximately *+\$37.00 to \$55.00* per cart (scaled to the Tiered Ballasting Schedule in Section 1.4).
+*Optional Rule 8.05 Ballast Pack:* 4–9 Abccanopy 15-lb handle sandbags + inner double-bag liners + traction sand adds approximately *+\$37.00 to \$55.00* per cart (scaled to the Tiered Ballasting Schedule in Section 1.5).
 
 #pagebreak()
 
-= Frame Assembly
+== 2.7 Step-by-Step Frame Assembly
 
-== Stage 1: Assemble the Rolling Cart Base
+=== Stage 1: Assemble the Rolling Cart Base
 
 The rolling cart base is fabricated from 2x4 SPF/Doug Fir lumber according to the component layout and fastener map shown in Figure 1:
 
@@ -634,7 +665,7 @@ The rolling cart base is fabricated from 2x4 SPF/Doug Fir lumber according to th
 
 #pagebreak()
 
-== Stage 2: Install Decking, Ballast Posts, Casters, and Instrument Tote
+=== Stage 2: Install Decking, Ballast Posts, Casters, and Instrument Tote
 
 1. *Plywood Decking:* Fasten two 1/2-in. plywood panels across the left wing (outer rail B to 2nd joist D) and right wing (5th joist D to outer rail B) with 1-1/4 in. screws. Confirm the center bay between the 3rd and 4th joists remains completely clear to receive the HDX 14-gallon tough tote.
 2. *Ballast Retention Post Flange Installation:* Locate the geometric center of each 1/2″ plywood wing panel. Position a 3/4-in. black iron floor flange (Index [16]) and mark four bolt holes. Drill 1/4″ clearance holes through the plywood. Secure each flange from the underside using 1/4-20 x 1-1/2 in. carriage bolts, flat washers, and nylon lock nuts. Thread a 3/4-in. x 18-in. black iron pipe into each flange and tighten firmly with a pipe wrench.
@@ -663,14 +694,14 @@ The rolling cart base is fabricated from 2x4 SPF/Doug Fir lumber according to th
 
 *Operational Caster Fastening Standard:* While early prototype builds utilized wing nuts as pictured in Figure 9, field operations standardized on standard hex nuts. Using standard hex nuts enables parent crew to rapidly remove and secure casters using an impact driver / cordless drill, significantly outperforming manual wing nut threading during teardowns.
 
-== Stage 3: Assemble the Upright Backdrop Frame
+=== Stage 3: Assemble the Upright Backdrop Frame
 
 1. *Upright Rectangle:* Join two 10-ft 16-gauge steel fence line posts and two 8-ft top rails using four 1-5/8 in. 3-way clamp corner elbow brackets (Index [2]). Bottom out all tube ends inside the clamp sockets and tighten clamp bolts evenly.
 2. *Base Attachment:* Stand the upright frame against the front rail (A) of the cart base. Anchor the bottom of each vertical post using 1-5/8 in. galvanized steel tension bands (Index [3]) through-bolted to the 2x4 lumber frame.
 
 #pagebreak()
 
-== Stage 4: Fabricate and Install Diagonal Support Struts
+=== Stage 4: Fabricate and Install Diagonal Support Struts
 
 Because 16-gauge galvanized steel is exceptionally hard, direct self-tapping screws will skate and dull. Follow this guided drilling protocol:
 
@@ -687,127 +718,9 @@ Because 16-gauge galvanized steel is exceptionally hard, direct self-tapping scr
 
 #pagebreak()
 
-= Vinyl Installation
+== 2.8 Mechanical Inspection & Quality Assurance Protocol
 
-#note-box(title: "WORKING DRAFT — VINYL INSTALLATION PROCEDURE")[
-  Procedure for vinyl installation using perimeter double-sided tape, hardware relief slits, engineered semicircular wind relief flaps, and mechanical greenhouse snap clamps. Recommended vinyl dimensions and tape strip quantities are provisional and subject to shop fit-up confirmation.
-]
-
-This section governs the preparation, alignment, dual-axis tensioning, relief slit cutting, and mechanical fastening of custom printed vinyl coverings to completed backdrop upright frames. Installing vinyl on the 10 ft x 8 ft steel frame requires a clean staging area, careful bleed centering, razor relief cuts for protruding frame hardware, double-sided tape adhesion, and mechanical clamping with greenhouse snap clamps to prevent loosening under high stadium wind loads.
-
-== Recommended Vinyl Dimensions & Ordering Specifications
-
-Custom printed backdrop banners must be ordered to exact dimensions to provide clean full-bleed framing around the outer perimeter of the steel pipe structure. The specifications below define the required production allowances:
-
-#v(2pt)
-#table(
-  columns: (2.2fr, 3.8fr),
-  stroke: 0.5pt + rgb("#cbd5e0"),
-  fill: (x, y) => if y == 0 { rgb("#edf2f7") } else if calc.even(y) { rgb("#f7fafc") } else { white },
-  inset: (x: 6pt, y: 3.5pt),
-  [*Specification / Parameter*], [*Engineering Requirement / Dimension*],
-  [Nominal Upright Frame Size], [8 ft Width × 10 ft Height (96.0 in. × 120.0 in. outer pipe perimeter)],
-  [Visible Graphic / Live Face], [[TBD] in. Width × [TBD] in. Height (Front visible image area)],
-  [Perimeter Bleed Wrap Allowance], [[TBD] in. per border (top, bottom, left, and right outer pipe wrap)],
-  [Overall Flat Cut Size], [[TBD] in. Width × [TBD] in. Height (Including bleed allowance)],
-  [Substrate Material], [13 oz or 18 oz heavy-duty outdoor matte scrim vinyl (UV and tear resistant)],
-  [Edge Perimeter Finish], [Square raw-cut perimeter; DO NOT order hemmed borders or brass grommets, as raw edges wrap smoothly under snap clamps.],
-)
-
-== Required Materials & Fastening Hardware
-
-- *Moving blankets:* Three to four clean, heavy-duty moving blankets or carpet runners spread across the shop floor to cushion the printed vinyl face against dust, grit, and concrete abrasion.
-- *Custom vinyl banner:* One custom printed outdoor banner per backdrop (nominal 8 ft x 10 ft), rolled with print side facing inward. Unroll and inspect for print flaws and correct orientation prior to assembly.
-- *Utility knife / razor:* Fresh, sharp razor knife for cutting precision relief slits around mounting brackets and tension bands.
-- *Double-sided tape:* 1-in. wide heavy-duty outdoor mounting tape (Appendix B Table 1). Cut into fourteen (14) strips of approximately 4-in. length ( 56 linear inches per frame). Application schedule: 4 strips on each vertical upright rail (8 total) and 3 strips on each cross rail (6 total).
-- *Greenhouse snap clamps:* Fourteen (14) 1-1/4 in. greenhouse clamp clips (Appendix B Index [8]). Snapped directly over the wrapped vinyl at every tape location (4 along each long vertical rail, 3 along each short cross rail). Note: While the frame uses 1-5/8 in. outer diameter fence post tubing, 1-1/4 in. greenhouse clamp clips provide the proper snug snap fit over the tubing, vinyl, and tape.
-- *Surface preparation (Optional):* Isopropyl alcohol (IPA) and clean microfiber cloth. Degreasing the steel pipe is completely optional—the heavy-duty tape combined with mechanical greenhouse snap clamps provides more than enough holding power. A weaker initial adhesive bond to the bare steel pipe is actually preferable, as it significantly simplifies tape removal and cleanup later.
-- *Personnel requirement:* Minimum two operators required; three to four recommended for synchronized dual-operator transverse tensioning and safe frame lifting.
-
-#pagebreak()
-
-== Step-by-Step Vinyl Installation Procedure
-
-=== Step 1: Staging and Surface Protection
-Clear an unobstructed shop workspace measuring at least 12 ft x 14 ft. Thoroughly sweep and vacuum the area to remove metal chips, drill burrs, or grit that could puncture or scratch the printed vinyl face. Lay clean moving blankets flat across the floor, overlapping edges to create a continuous, cushioned staging area larger than the overall banner flat cut size. Carefully unroll the custom vinyl banner and lay it completely face down directly onto the moving blankets. Smooth the banner flat by hand and inspect the back side to confirm it is clean and free of trapped debris.
-
-=== Step 2: Frame Placement and Bleed Alignment
-With two operators lifting opposite ends, carry the assembled 10 ft x 8 ft steel upright frame onto the staging area and place it face down centered over the back side of the vinyl banner. Measure the bleed wrap margin extending beyond the outer edge of the steel tubing along all four perimeter borders. Shift the frame incrementally until an equal reveal of bleed extends evenly on all four sides (top, bottom, left, and right outer rails). Verify frame squareness by measuring crossed diagonals prior to applying tape or making relief cuts.
-
-=== Step 3: Hardware Relief Slits
-Before adhering tape or wrapping vinyl, use a fresh, sharp utility razor knife to make small, neat relief slits in the vinyl bleed wrap allowance to accommodate protruding frame hardware:
-- *Long edges (Vertical Uprights):* Cut small slits directly aligned with the diagonal support strut attachment brackets (tension bands) on the left and right upright rails. These slits allow the strut brackets to protrude through the bleed wrap cleanly, preventing unsightly puckering, tenting, or bunching of the visible banner face.
-- *Bottom edge (Cart-Mounting Interface):* Cut two small relief slits along the bottom rail bleed wrap corresponding to the base tension bands and mounting brackets that secure the upright frame to the wood cart base.
-
-=== Step 3.1: Cutting Engineered Semicircular Wind Relief Flaps
-To prevent violent wind flutter, reduce peak dynamic overturning impulses during stadium gusts, and protect greenhouse snap clamps from popping off under high wind loads, cut engineered semicircular wind relief flaps into the custom vinyl banner while it remains face-down on the cushioned moving blankets:
-
-#warning-box(title: "MANDATORY TEAR-ARREST RELIEF HOLES — CRITICAL FABRICATION RULE")[
-  NEVER cut wind relief slits purely with a utility razor knife leaving sharp corners. Sharp razor corners create extreme stress concentration factors ($K_t >= 3.0$) that will rapidly propagate into catastrophic tears across the entire banner during the first stadium wind gust. Before making any razor cuts, use a 3/8-in. (10 mm) rotary leather punch or clean gasket punch against a hardwood backup block to punch two smooth, circular holes at the upper hinge chord endpoints of each planned flap.
-]
-
-- *True Semicircular Geometry (R = 4.0"):* Standardize strictly on true semicircular geometry (8.0″ horizontal chord × 4.0″ downward drop, constant radius $R = 4.0$ in.). Semicircular geometry is vastly superior to oval or elongated-U flaps: it eliminates thermal tip sagging/curling (keeping flaps invisible from spectator stands), requires only a single pivot radius for volunteer fabrication, provides smooth 180° tangency to punch holes, and shares 100% tooling commonality with the PCHSMB Sideline Screen fleet.
-- *Primary 8-Cut Grid (2 Rows × 4 Columns):* The primary standard deploys 8 semicircular flaps, providing 1.40 sq ft (201 sq in.) total vent area (1.75% of face). This reduces the net drag coefficient from $C_d = 1.20$ to $C_d = 1.02$ (15.0% reduction in lateral drag force and overturning moment), raising the Tier 3 high-wind stability threshold to 22.5 mph at Colorado Springs elevation (6,500 ft ASL).
-  - *Row 1 (Upper Tier):* Centered at $Y = 96.0$ in. (8.0 ft) above the bottom rail (2.0 ft below top rail). Columns located at $X = 19.2$ in., 38.4 in., 57.6 in., and 76.8 in. from the left outer frame edge.
-  - *Row 2 (Mid-Upper Tier):* Centered at $Y = 72.0$ in. (6.0 ft) above the bottom rail. Columns located at $X = 19.2$ in., 38.4 in., 57.6 in., and 76.8 in.
-
-#pagebreak()
-
-#block[
-#set par(leading: 0.58em)
-- *Approved Minimal Variant (6-Cut Grid — 2 Rows × 3 Columns):* Provides 1.05 sq ft (151 sq in.) total vent area. Rows centered at $Y = 96.0$ in. and $Y = 72.0$ in.; Columns located at $X = 24.0$ in., 48.0 in. (centerline), and 72.0 in.
-- *Upper Venting Zone Physics:* Because overturning moment increases directly with height above the turf ($M = F times y$), upper venting is 2.5× more effective than lower venting. Slits are concentrated in the upper 40%–60% of the banner, maintaining 12-in. frame clearance from perimeter steel tubing and snap clamps.
-- *Artwork Protection & Floating Flap Rule:* Inspect printed artwork before cutting. Adjust flap centerlines horizontally by $plus.minus 6$–12 inches into solid background fields, skies, or negative space. NEVER cut across student faces, school crests, or sharp lettering.
-- *Cutting Technique:* Place scrap wood beneath each punched hole. Using a fresh razor knife guided by a curved template, cut a smooth 180° circular arc from the bottom of the left hole down through the 4.0-inch apex and smoothly into the right hole. The top 8.0-inch horizontal chord remains uncut as the flexible hinge.
-
-=== Step 4: Perimeter Double-Sided Tape Application
-Cut fourteen (14) strips of 1-in. heavy-duty double-sided tape, each approximately 4 inches in length. Apply strips to the rear-facing surface of the perimeter steel pipe:
-- *Long rails (Vertical Uprights):* Apply 4 strips per upright (8 total). Crucially, position two strips immediately above and below each support strut bracket to anchor the bracket interface, and two spaced along the upright.
-- *Short end rails (Top & Bottom Cross Rails):* Apply 3 strips evenly spaced per rail (6 total; centered and ~6 in. from corners). Burnish firmly onto the steel pipe and peel release liners from all 14 strips.
-
-=== Step 5: Long-Side Tensioning and Initial Wrap
-Start along the left vertical upright. Ease the support strut bracket through its pre-cut relief slit, fold the vinyl bleed margin tightly around the pipe, and press firmly into the 4 tape strips. Move to the opposing right vertical upright. Pull vinyl firmly across the frame face to eliminate slack and wrinkles. Ease the second strut bracket through its slit, fold vinyl tightly around the pipe, and press into the 4 opposing tape strips. Sight down the face: confirm smooth, uniform longitudinal tension with no diagonal waves.
-
-=== Step 6: Short-Side Dual-Operator Tensioning and Wrap
-Station operators at opposite short ends (top and bottom cross rails). Working simultaneously, pull outward in opposing directions to establish balanced transverse tension without racking the frame. While maintaining tension, wrap the top vinyl edge over the top rail and press into the 3 tape strips. At the bottom rail, guide base mounting brackets through relief slits, wrap edge tightly, and press into the 3 bottom tape strips. Neatly fold excess corner tabs around 3-way elbow brackets.
-
-=== Step 7: Greenhouse Snap Clamp Installation
-Install 1-1/4 in. greenhouse snap clamps directly over wrapped vinyl at every tape location, pressing firmly until each snaps into full mechanical lock:
-- *Long rails (Vertical Uprights):* Install 4 snap clamps per upright (8 total). Crucially, place clamps immediately above and below each support strut bracket to lock the bracket against slip, flutter, or detachment.
-- *Short end rails (Cross Rails):* Install 3 snap clamps on top rail and 3 on bottom rail (6 total).
-- *Clamping verification:* Clamps compress vinyl tightly against tape and 1-5/8 in. pipe, locking edges against stadium gusts. Confirm no snap clamp interferes with cart-mounting base brackets or corner elbow clamp bolts.
-]
-
-#pagebreak()
-
-=== Step 8: Final Tension Inspection and Frame Re-Mounting
-With three to four operators, carefully lift the completed backdrop frame upright off the moving blankets. Inspect the front vinyl face in bright lighting: verify that the graphic is drum-tight, square, free of wrinkles or sagging, and cleanly fitted around all protruding bracket slits. Verify that all 14 greenhouse snap clamps are fully seated and firmly gripping the tubing over each tape strip. Re-secure the vertical upright posts into the cart base tension bands and re-connect the diagonal support struts. Confirm that the wrapped vinyl and snap clamps do not bind or impede strut attachment.
-
-#align(center)[
-  #figure(
-    image("assets/approved/figure_06_vinyl_installation.jpg", width: 78%),
-    caption: [*Figure 6.* Installation team applying carpet tape and securing vinyl banner with pipe snap clamps.]
-  )
-]
-
-= Vinyl Removal & End-of-Season Teardown Protocol
-
-#warning-box(title: "CRITICAL TEMPERATURE REQUIREMENT FOR VINYL REMOVAL")[
-  Do not attempt removal of the vinyl or adhesive tape unless the ambient temperature is above 80°F (27°C). Attempting to peel the vinyl at lower temperatures will cause the material to tear and permanently damage the custom banner face. In cooler weather, warm the shop or gently heat the taped perimeter with a heat gun on low before peeling.
-]
-
-When taking down backdrops or preparing frames for graphic replacement:
-- *Recommended timing (Defer to Band Camp):* It is usually much easier to leave the vinyl on the frames over the winter and wait until summer band camp of the following season before attempting removal. Cold late-fall temperatures following competition season make adhesive stiff and brittle, drastically increasing tear risk.
-- *Solar heating advantage:* The warmer it is outside, the better. Staging the backdrops outdoors in direct sunlight for just a few minutes prior to peeling warms the steel tubing and softens the tape adhesive, allowing the vinyl and tape to release cleanly and effortlessly with minimal pull resistance.
-- *Remove greenhouse snap clamps:* Carefully pry off all 14 greenhouse snap clamps from the perimeter tubing.
-- *Peel slowly at shallow angle:* Starting at one corner, slowly peel the vinyl wrap back at a shallow angle. Warm adhesive releases cleanly from the bare steel pipe without pulling the scrim or ink layer.
-- *Tape stripping & cleanup:* Peel remaining tape strips from the steel pipe. Because the pipe was not aggressively degreased during initial assembly, tape strips will pull off cleanly with minimal adhesive residue.
-
-#pagebreak()
-
-= Final Construction Inspection Checklist & QC Sign-Off
-
-Verify each checkpoint prior to certifying any backdrop prop for competition field use:
+Verify each checkpoint prior to certifying the mechanical frame and cart assembly for vinyl banner installation:
 
 #v(2pt)
 #table(
@@ -824,13 +737,12 @@ Verify each checkpoint prior to certifying any backdrop prop for competition fie
   [#chk], [Corner Bumpers], [4x ASA corner braces secured firmly with pan-head screws.], [[ ] Pass  [ ] Rework],
   [#chk], [Upright Steel Frame], [All four 3-way corner clamp elbow bolts torqued securely.], [[ ] Pass  [ ] Rework],
   [#chk], [Diagonal Struts], [End caps pre-drilled and screwed; 2-piece wire-lock pins locked.], [[ ] Pass  [ ] Rework],
-  [#chk], [Vinyl Attachment], [Banner drum-tight; 14 snap clamps fully seated over tape strips.], [[ ] Pass  [ ] Rework],
-  [#chk], [Wind Relief Cuts], [Semicircular flaps cut clean; 3/8" punch holes intact; zero tears.], [[ ] Pass  [ ] Rework],
+  [#chk], [Frame-to-Cart Mount], [Tension band clamp bolts fully torqued; upright square to base.], [[ ] Pass  [ ] Rework],
 )
 
 #v(6pt)
 #rect(width: 100%, fill: rgb("#f7fafc"), stroke: 1pt + rgb("#cbd5e0"), radius: 4pt, inset: 10pt)[
-  #text(weight: "bold", size: 9pt, fill: rgb("#1a365d"))[FABRICATION QUALITY ASSURANCE SIGN-OFF]
+  #text(weight: "bold", size: 9pt, fill: rgb("#1a365d"))[MECHANICAL FRAME QUALITY ASSURANCE SIGN-OFF]
   #v(4pt)
   #grid(
     columns: (1fr, 1fr),
@@ -848,7 +760,7 @@ Verify each checkpoint prior to certifying any backdrop prop for competition fie
     columns: (auto, 1fr),
     column-gutter: 10pt,
     [*Final Disposition:*],
-    [[ ] APPROVED FOR FIELD USE       [ ] REWORK REQUIRED (HOLD)],
+    [[ ] APPROVED FOR VINYL MOUNTING       [ ] REWORK REQUIRED (HOLD)],
   )
   #v(3pt)
   Remediation Notes: #blank(350pt)
@@ -856,9 +768,145 @@ Verify each checkpoint prior to certifying any backdrop prop for competition fie
 
 #pagebreak()
 
-= Appendix B Index
+== 2.9 Vinyl Banner Installation & Frame Mounting Protocol
 
-== Purchase Sources
+#note-box(title: "VINYL INSTALLATION & WIND FLAP PROTOCOL")[
+  Procedure for vinyl installation using perimeter double-sided tape, hardware relief slits, engineered semicircular wind relief flaps, and mechanical greenhouse snap clamps. Follow all steps over clean moving blankets.
+]
+
+This section governs the preparation, alignment, dual-axis tensioning, relief slit cutting, and mechanical fastening of custom printed vinyl coverings to completed backdrop upright frames. Installing vinyl on the 10 ft x 8 ft steel frame requires a clean staging area, careful bleed centering, razor relief cuts for protruding frame hardware, double-sided tape adhesion, and mechanical clamping with greenhouse snap clamps to prevent loosening under high stadium wind loads.
+
+=== 2.9.1 Banner Ordering, Bleed & Material Specifications
+
+Custom printed backdrop banners must be ordered to exact dimensions to provide clean full-bleed framing around the outer perimeter of the steel pipe structure. The specifications below define the required production allowances:
+
+#v(2pt)
+#table(
+  columns: (2.2fr, 3.8fr),
+  stroke: 0.5pt + rgb("#cbd5e0"),
+  fill: (x, y) => if y == 0 { rgb("#edf2f7") } else if calc.even(y) { rgb("#f7fafc") } else { white },
+  inset: (x: 6pt, y: 3.5pt),
+  [*Specification / Parameter*], [*Engineering Requirement / Dimension*],
+  [Nominal Upright Frame Size], [8 ft Width × 10 ft Height (96.0 in. × 120.0 in. outer pipe perimeter)],
+  [Visible Graphic / Live Face], [96.0 in. Width × 120.0 in. Height (Front visible image area)],
+  [Perimeter Bleed Wrap Allowance], [3.0 in. per border (top, bottom, left, and right outer pipe wrap)],
+  [Overall Flat Cut Size], [102.0 in. Width × 126.0 in. Height (Including bleed allowance)],
+  [Substrate Material], [13 oz or 18 oz heavy-duty outdoor matte scrim vinyl (UV and tear resistant)],
+  [Edge Perimeter Finish], [Square raw-cut perimeter; DO NOT order hemmed borders or brass grommets, as raw edges wrap smoothly under snap clamps.],
+)
+
+=== 2.9.2 Step-by-Step Vinyl Tensioning, Wrapping & Clamping Procedure
+
+1. *Clean Staging & Surface Protection:* Clear an unobstructed shop workspace measuring at least 12 ft x 14 ft. Thoroughly sweep and vacuum the area to remove metal chips, drill burrs, or grit that could puncture or scratch the printed vinyl face. Lay clean moving blankets flat across the floor. Carefully unroll the custom vinyl banner face down directly onto the blankets.
+2. *Frame Placement & Bleed Alignment:* With two operators lifting opposite ends, carry the assembled 10 ft x 8 ft steel upright frame onto the staging area and place it face down centered over the back side of the vinyl banner. Shift the frame incrementally until an equal reveal of bleed extends evenly on all four sides. Verify frame squareness by measuring crossed diagonals prior to applying tape or making relief cuts.
+3. *Hardware Relief Slits:* Use a fresh, sharp utility razor knife to make small, neat relief slits in the bleed wrap to clear protruding frame hardware:
+  - *Vertical Uprights:* Cut slits aligned with the diagonal support strut tension band brackets on left and right uprights.
+  - *Bottom Rail:* Cut two slits along the bottom rail bleed wrap corresponding to the base mounting tension bands.
+4. *Perimeter Double-Sided Tape Application:* Cut fourteen (14) strips of 1-in. heavy-duty double-sided tape (~4 in. length). Apply 4 strips per vertical upright (8 total; 2 flanking each strut bracket) and 3 strips per cross rail (6 total). Burnish firmly to pipe and peel release backing liners.
+5. *Long-Side Tensioning & Initial Wrap:* Start along left vertical upright. Ease strut bracket through relief slit, fold vinyl bleed tightly around pipe, and press into tape strips. Move to right upright: pull vinyl firmly across frame face to eliminate all wrinkles and slack, ease second bracket through its slit, fold tightly around pipe, and press into opposing tape strips. Verify uniform longitudinal tension.
+6. *Short-Side Dual-Operator Tensioning & Wrap:* Station operators at top and bottom cross rails. Working simultaneously, pull outward in opposing directions to establish balanced transverse tension without racking frame. Wrap top vinyl edge over top rail into tape; wrap bottom edge over bottom rail into tape. Neatly fold corner tabs around 3-way elbow brackets.
+7. *Greenhouse Snap Clamp Installation:* Install 1-1/4 in. greenhouse snap clamps directly over wrapped vinyl at every tape location (14 total: 4 on each upright, 3 on each cross rail). Confirm clamps seat firmly and do not interfere with base mounting brackets or elbow clamp bolts.
+8. *Final Tension Inspection & Frame Re-Mounting:* Carefully lift the completed backdrop frame upright. Inspect the front vinyl face: verify drum-tight, wrinkle-free graphic presentation. Re-secure upright posts into cart base tension bands and re-pin diagonal support struts.
+
+#v(4pt)
+#align(center)[
+  #figure(
+    image("assets/approved/figure_06_vinyl_installation.jpg", width: 75%),
+    caption: [*Figure 6.* Installation team applying carpet tape and securing vinyl banner with pipe snap clamps.]
+  )
+]
+
+#pagebreak()
+
+=== 2.9.3 Cutting Engineered Semicircular Wind Relief Flaps
+
+To prevent destructive vortex flutter, reduce peak dynamic overturning impulses during stadium wind gusts, and eliminate lateral sliding across crumb-rubber turf, cut engineered semicircular wind relief flaps into the custom vinyl banner:
+
+#callout(
+  title: "Aerodynamic & Mechanical Function of Semicircular Relief Flaps",
+  [
+    - *Steady-State Drag Reduction:* Drops drag coefficient from $C_d = 1.20 -> 1.02$ (15.0% reduction in lateral drag force and overturning moment).
+    - *Turf Sliding & Stability:* Raises synthetic turf sliding threshold and matches rear-rail overturning resistance to 22.5 mph at Colorado Springs elevation (6,500 ft ASL).
+    - *Vortex Flutter Suppression:* Destroys coherent Strouhal vortex shedding (~0.8–1.2 Hz), preventing negative billow suction (>3.0 psf) that pries greenhouse snap clamps off conduit.
+    - *Tear Resistance:* Pre-punched 3/8-in. (10 mm) circular holes eliminate sharp stress risers ($K_t -> 1.0$).
+  ]
+)
+
+==== Semicircular Geometry Standard ($R = 4.0$ in.)
+Each flap is a true semicircle ($180^degree$ circular arc) measuring *8.0 in. horizontal top chord × 4.0 in. downward drop* (Radius $R = 4.0$ in.). Vent area is 25.13 sq in. per flap. Semicircular geometry provides superior thermal beam stiffness over elongated ovals, preventing tip curling and sagging in $130^degree F+$ crumb-rubber heat while sharing 100% tooling commonality with the PCHSMB Sideline Screen fleet.
+
+==== 8-Flap Fleet Primary Standard Coordinate Schedule ($2 times 4$ Grid)
+The primary standard deploys 8 semicircular flaps, providing *1.40 sq ft (201 sq in.) total vent area* (1.75% of display face). Venting is concentrated in the upper zone ($Y = 72.0$ to $96.0$ in.) where overturning moment leverage is greatest ($M = F times y$), maintaining 12 in. frame clearance from perimeter tubing:
+
+#table(
+  columns: (0.9fr, 1.2fr, 1fr, 1.1fr, 1.8fr, 1.2fr),
+  align: (center + horizon, left + horizon, center + horizon, center + horizon, center + horizon, center + horizon),
+  stroke: 0.4pt + rgb("#cbd5e0"),
+  fill: (col, row) => if row == 0 { rgb("#edf2f7") } else { none },
+  inset: (x: 4pt, y: 2.2pt),
+  [*Flap ID*], [*Grid Row*], [*Height (Y)*], [*Center (X)*], [*Punched Endpoints (X)*], [*Apex Clearance*],
+  [Flap F-1], [Row 1 (Upper)], [96.0 in.], [19.2 in.], [15.2 in. and 23.2 in.], [92.0 in. to turf],
+  [Flap F-2], [Row 1 (Upper)], [96.0 in.], [38.4 in.], [34.4 in. and 42.4 in.], [92.0 in. to turf],
+  [Flap F-3], [Row 1 (Upper)], [96.0 in.], [57.6 in.], [53.6 in. and 61.6 in.], [92.0 in. to turf],
+  [Flap F-4], [Row 1 (Upper)], [96.0 in.], [76.8 in.], [72.8 in. and 80.8 in.], [92.0 in. to turf],
+  [Flap F-5], [Row 2 (Mid-Upper)], [72.0 in.], [19.2 in.], [15.2 in. and 23.2 in.], [68.0 in. to turf],
+  [Flap F-6], [Row 2 (Mid-Upper)], [72.0 in.], [38.4 in.], [34.4 in. and 42.4 in.], [68.0 in. to turf],
+  [Flap F-7], [Row 2 (Mid-Upper)], [72.0 in.], [57.6 in.], [53.6 in. and 61.6 in.], [68.0 in. to turf],
+  [Flap F-8], [Row 2 (Mid-Upper)], [72.0 in.], [76.8 in.], [72.8 in. and 80.8 in.], [68.0 in. to turf],
+)
+
+#v(2pt)
+
+==== Approved Minimal Variant Coordinate Schedule ($2 times 3$ Grid — 6 Flaps)
+For banners with prominent central artwork, the approved 6-flap minimal variant provides *1.05 sq ft (151 sq in.) total vent area* (1.31% of face):
+
+#table(
+  columns: (0.9fr, 1.2fr, 1fr, 1.1fr, 1.8fr, 1.2fr),
+  align: (center + horizon, left + horizon, center + horizon, center + horizon, center + horizon, center + horizon),
+  stroke: 0.4pt + rgb("#cbd5e0"),
+  fill: (col, row) => if row == 0 { rgb("#edf2f7") } else { none },
+  inset: (x: 4pt, y: 2.2pt),
+  [*Flap ID*], [*Grid Row*], [*Height (Y)*], [*Center (X)*], [*Punched Endpoints (X)*], [*Apex Clearance*],
+  [Flap M-1], [Row 1 (Upper)], [96.0 in.], [24.0 in.], [20.0 in. and 28.0 in.], [92.0 in. to turf],
+  [Flap M-2], [Row 1 (Upper)], [96.0 in.], [48.0 in.], [44.0 in. and 52.0 in.], [92.0 in. to turf],
+  [Flap M-3], [Row 1 (Upper)], [96.0 in.], [72.0 in.], [68.0 in. and 76.0 in.], [92.0 in. to turf],
+  [Flap M-4], [Row 2 (Mid-Upper)], [72.0 in.], [24.0 in.], [20.0 in. and 28.0 in.], [68.0 in. to turf],
+  [Flap M-5], [Row 2 (Mid-Upper)], [72.0 in.], [48.0 in.], [44.0 in. and 52.0 in.], [68.0 in. to turf],
+  [Flap M-6], [Row 2 (Mid-Upper)], [72.0 in.], [72.0 in.], [68.0 in. and 76.0 in.], [68.0 in. to turf],
+)
+
+==== Artwork Protection & The "Floating Flap" Adjustment Rule
+- *1-Arcminute Acuity Resolution:* Razor kerf (< 0.01 in.) is 30x smaller than human eye resolution at 30 yards (0.31 in.). Flaps hang 100% flush by gravity and are completely invisible from spectator stands.
+- *Floating Allowance:* Centerlines may float horizontally by $plus.minus 6$ to $12$ in. along their row to position flaps into solid backgrounds, dark textures, skies, or negative space.
+- *Mandatory NO-CUT Zones:* Flaps must clear student performer faces by $>= 6.0$ in. Never cut across show title typography, movement titles, or Pine Creek school / sponsor crests.
+
+==== Step-by-Step Punch-First Fabrication Procedure
+1. *Tooling Checklist:* Obtain a 3/8-in. (10 mm) rotary leather punch, dense end-grain hardwood backing block, PCHSMB Field Prop Circle Cutter with fresh #11 hobby scalpel blade (Index [18]), and soft marking pencil.
+2. *Marking & Graphic Inspection:* Measure and mark top horizontal chord centerlines and endpoint punch marks (8.0 in. apart). Verify compliance with Floating Flap artwork rules.
+3. *MANDATORY PUNCH FIRST:* Slide hardwood block behind vinyl directly beneath punch mark. Align 3/8-in. rotary punch over mark and strike firmly with mallet. Repeat for opposing hole (8.0 in. apart). Clean circular holes eliminate stress risers ($K_t -> 1.0$). #alert[CRITICAL MANDATE: NEVER SLICE WITH RAZOR BEFORE PUNCHING HOLES.]
+4. *Scribe & Slice Semicircular Arc:* Insert center pivot pin of PCHSMB Circle Cutter at midpoint between punched holes (or position R = 4.0 in. template). Perform a smooth, single-pass cut tangent to the bottom edge of both punched holes down through the 4.0-in. apex.
+5. *LEAVE TOP CHORD UNCUT:* #alert[The top 8.0-in. horizontal chord between holes must remain uncut.] This uncut vinyl serves as the permanent gravity hinge.
+6. *Flap Inspection:* Verify flap hangs 100% flush under gravity and swings open freely when pushed from behind.
+7. *Backlight Pinprick Baffle (Optional):* In west-facing venues (low afternoon sun), apply a 1.5 in. × 1.5 in. square of black Gorilla tape behind each punch hole with a horizontal slit along lower edge to eliminate solar pinpricks.
+
+#pagebreak()
+
+=== 2.9.4 Seasonal Vinyl Removal & Teardown Protocol
+
+#warning-box(title: "CRITICAL TEMPERATURE REQUIREMENT FOR VINYL REMOVAL")[
+  Do not attempt removal of the vinyl or adhesive tape unless the ambient temperature is above 80°F (27°C). Attempting to peel the vinyl at lower temperatures will cause the material to tear and permanently damage the custom banner face. In cooler weather, warm the shop or gently heat the taped perimeter with a heat gun on low before peeling.
+]
+
+When taking down backdrops or preparing frames for graphic replacement:
+- *Recommended timing (Defer to Band Camp):* It is usually much easier to leave the vinyl on the frames over the winter and wait until summer band camp of the following season before attempting removal. Cold late-fall temperatures following competition season make adhesive stiff and brittle, drastically increasing tear risk.
+- *Solar heating advantage:* The warmer it is outside, the better. Staging the backdrops outdoors in direct sunlight for just a few minutes prior to peeling warms the steel tubing and softens the tape adhesive, allowing the vinyl and tape to release cleanly and effortlessly with minimal pull resistance.
+- *Remove greenhouse snap clamps:* Carefully pry off all 14 greenhouse snap clamps from the perimeter tubing.
+- *Peel slowly at shallow angle:* Starting at one corner, slowly peel the vinyl wrap back at a shallow angle. Warm adhesive releases cleanly from the bare steel pipe without pulling the scrim or ink layer.
+- *Tape stripping & cleanup:* Peel remaining tape strips from the steel pipe. Because the pipe was not aggressively degreased during initial assembly, tape strips will pull off cleanly with minimal adhesive residue.
+
+== 2.10 Appendix B Index & Purchasing References
+
+=== Purchase Sources
 
 #block[
   #set text(size: 8.2pt)
@@ -889,9 +937,11 @@ Verify each checkpoint prior to certifying any backdrop prop for competition fie
   [15] *Sakrete 70-lb Traction Tube Sand* — Lowe's   #link("https://www.lowes.com/pd/Sakrete-0-07-cu-ft-70-lb-Traction-Sand/5015728687")
 
   [16] *3/4 in. Black Iron Floor Flange and 18 in. Threaded Pipe* — Home Depot   #link("https://www.homedepot.com/p/The-Plumber-s-Choice-3-4-in-Black-Malleable-Iron-Floor-Flange-5-Pack-FBNF034-5/308967916")
+
+  [18] *PCHSMB Field Prop Circle Cutter (3D Printed Tooling)* — Custom ASA print with #11 blade   #link("https://github.com/ericrowe/music/tree/main/PCHSMB/Circle%20Cutter")
 ]
 
-== Digital Part Files & Governing Rules
+=== Digital Part Files & Governing Rules
 
 #block[
   #set text(size: 8.2pt)
@@ -904,6 +954,8 @@ Verify each checkpoint prior to certifying any backdrop prop for competition fie
   [12] *3D Printed Support Strut Bracket Marker — FreeCAD Model*   #link("https://github.com/ericrowe/music/blob/main/PCHSMB/_Backdrop/Hardware/Steel%20Support%20Strut%20Bracket%20Marker.FCStd")
 
   [17] *2026 Colorado Bandmasters Association (CBA) Marching Band Rulebook (PDF)*   #link("https://ebf5c7e8-3869-4325-bd98-ce10f57d7545.filesusr.com/ugd/83f67e_cb5fe6efdbdb4ce98f619580f694bc94.pdf")
+
+  [18] *PCHSMB Field Prop Circle Cutter Generator & CAD Models*   #link("https://github.com/ericrowe/music/blob/main/PCHSMB/Circle%20Cutter/generate_circle_cutter.py")
 ]
 
 #pagebreak()

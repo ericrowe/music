@@ -26,20 +26,20 @@
   },
   "document": {
     "current": {
-      "build": "D29",
+      "build": "D31",
       "release": "v0",
       "process_state": "working_draft",
       "visible_status": "working_draft",
-      "file": "Sideline_Screen_Duck_Blind_Build_Instructions.docx",
-      "sha256": "e641646d1763275a58958703800e4883d1af3c3e7ef94bac77b4b96f0cae5b08",
-      "controlled_at": "2026-09-11T17:25:00+00:00"
+      "file": "Sideline_Screen_Duck_Blind_Build_Instructions.typ",
+      "sha256": "4ee94f66d817240517d3827cb2635090bccec626e0d1df3dd3caefc99f27b512",
+      "controlled_at": "2026-09-15T23:30:00+00:00"
     },
     "candidate": null
   },
   "versioning": {
     "current_release": "v0",
     "next_release": "v1",
-    "next_build_number": 30
+    "next_build_number": 32
   },
   "releases": [],
   "history": [
@@ -109,6 +109,32 @@
       "file": "Sideline_Screen_Duck_Blind_Build_Instructions.docx",
       "pdf_sha256": "a9a351e241f83f5af514d3cedf6cb34971147c12548abd55251319bc6bbc0f51",
       "page_count": 36
+    },
+    {
+      "id": "D30",
+      "kind": "development_build",
+      "release": "v0",
+      "status": "working_draft",
+      "date": "2026-09-13",
+      "started_at": "2026-09-13T20:00:00+00:00",
+      "base_build": "D29",
+      "summary": "Full Typst rewrite. Adopted Two-Student Direct Carry (16 pairs walk assembled; zero transport carts built, saving $440). Standardized 6 true semicircular wind relief flaps (R = 4.0 in., 8.0 in. chord by 4.0 in. drop, pre-punched 3/8 in. / 10 mm holes, 15% drag reduction). Updated complete wind stability tables.",
+      "sha256": "e2da15cfbdab5075678399587841525a74ef4b38d386407d5d2c20fc00f28eb4",
+      "file": "Sideline_Screen_Duck_Blind_Build_Instructions.typ"
+    },
+    {
+      "id": "D31",
+      "kind": "development_build",
+      "release": "v0",
+      "status": "working_draft",
+      "date": "2026-09-15",
+      "started_at": "2026-09-15T21:00:00+00:00",
+      "base_build": "D30",
+      "summary": "Harmonize document architecture, section numbering (1.1–1.7, 2.1–2.10), Appendix A/B ordering, coordinate schedule tables, and Circle Cutter tooling with Backdrop manual",
+      "sha256": "4ee94f66d817240517d3827cb2635090bccec626e0d1df3dd3caefc99f27b512",
+      "pdf_sha256": "4824635d5bc42900923eb058e1e59aa4c552402550b69a5f9058f91b4fc224da",
+      "page_count": 25,
+      "file": "Sideline_Screen_Duck_Blind_Build_Instructions.typ"
     }
   ]
 }
