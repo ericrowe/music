@@ -6,27 +6,28 @@ Parametric 3D-printable circle cutter engineered specifically for Pine Creek Hig
 
 ### 1. Overview & Mechanical Design
 
-The tool utilizes a concentric 4-piece modular rotating pivot architecture:
-1. **Fixed Pivot Base (Piece 1):** Centered directly over the marked wind relief location. Four exterior vertical crosshair notches allow precise visual alignment against perpendicular layout lines on the vinyl.
-2. **Rotating Arm Assembly (Piece 2):** Sleeves smoothly over the base spindle with a slip fit ($1.0\text{ mm}$ radial clearance). Features an open through-bore and internal annular retention groove ($Z = 103.5–105.5\text{ mm}$), enabling **100% support-free upright printing** with the $150\text{ mm}$ arm resting flat on the build plate. The distal end features a Side-by-Side Dual Head housing a 625 roller bearing and an X-Acto #11 blade mount.
+The tool utilizes a concentric 4-piece modular rotating pivot architecture with integrated ball-bearing thrust suspension:
+1. **Fixed Pivot Base (Piece 1):** Centered directly over the marked wind relief location. Four exterior vertical crosshair notches allow precise visual alignment against perpendicular layout lines on the vinyl. The top of the $100\text{ mm}$ center spindle features an integrated $\varnothing 11.5\text{ mm} \times 1.0\text{ mm}$ inner-race shoulder and $\varnothing 7.9\text{ mm} \times 6.0\text{ mm}$ center pilot post that securely captures the inner race of a standard 608 ball bearing.
+2. **Rotating Arm Assembly (Piece 2):** Sleeves smoothly over the base spindle with a slip fit ($1.0\text{ mm}$ radial clearance). Features an open through-bore and internal annular retention groove ($Z = 103.5–105.5\text{ mm}$), enabling **100% support-free upright printing** with the $150\text{ mm}$ arm resting flat on the build plate. The arm is suspended at world $Z = 4.0\text{ mm}$, maintaining a **$1.0\text{ mm}$ uniform air gap** above the base plate shoulder, reducing plastic sliding contact area from $707\text{ mm}^2$ to **$0\text{ mm}^2$**. The distal end features a Side-by-Side Dual Head housing a roller bearing depth stop and an X-Acto #11 blade mount.
 3. **Blade Clamping Cap (Piece 3):** Clamps over the standard X-Acto #11 blade tang, distributing M3 machine screw retention force evenly to prevent blade flutter, skewing, or rotation under cutting friction.
-4. **Snap-in Hub Top Cap (Piece 4):** A separate 4-finger flex collet cap that snaps firmly into the internal retention groove at the top of the hub sleeve. Seals the bore against dust and dirt, establishes a $2.0\text{ mm}$ anti-binding vertical clearance above the spindle, and provides the mounting platform for the future ergonomic swivel knob.
+4. **Snap-in Hub Top Cap (Piece 4):** A separate 4-finger flex collet cap that snaps firmly into the internal retention groove at the top of the hub sleeve. Features an integrated $\varnothing 22.2\text{ mm} \times 3.0\text{ mm}$ outer-race pocket and $\varnothing 18.0\text{ mm} \times 1.5\text{ mm}$ inner relief cavity that captures the top 608 ball bearing. Transmits 100% of downward cutting hand pressure through the rolling elements of the 608 bearing directly into the base spindle, eliminating arm-on-base sliding resistance.
 
 ```
-       [Piece 4: Snap-in Hub Top Cap]
+       [Piece 4: Snap-in Hub Top Cap (608 Outer Race Drive Pocket)]
               +====================+
-              |    4x Snap Legs    |
+              | [608 Ball Bearing] |  <-- Transmits 100% downward manual cutting thrust
+              |   (8x22x7mm Deep)  |
        [Piece 2: Rotating Hub & 150mm Arm]
               |   42mm Thru-Bore   |----------------------------[Side-by-Side Head]
               |                    |                                 |       |
               |   Internal Groove  |                            [Bearing] [Blade]
-     =========+====================+=========                        |       |
-              |    40mm Spindle    |                                 V       V
-              |                    |                           (Rolls) (Cuts 1mm)
-              |  [Piece 1: Base]   |
-         +----+--------------------+----+
-         |  50mm Base Plate (Crosshairs)|
-   ======+==============================+====== (Cutting Mat / Vinyl)
+              |    (Snap Barbs)    |                                 |       |
+              |                    |                                 V       V
+              +--------------------+                           (Rolls) (Cuts 1mm)
+              : 1.0mm Air Gap (0mm² Friction!)                       |       |
+       +------+--------------------+------+                          |       |
+       |  Piece 1: Base Plate (Crosshairs)|                          |       |
+ ======+==================================+==========================+=======+=== (Vinyl Plane)
 ```
 
 ---
@@ -101,7 +102,7 @@ The tool utilizes a concentric 4-piece modular rotating pivot architecture:
 Per the **PCHSMB Field Prop Fabrication Standard** (Section 8.3):
 1. **Punch Endpoint Relief Holes First:** Using a heavy-duty rotary punch or $\varnothing 3/8\text{ in.}$ ($10\text{ mm}$) hole punch, punch the two stress-relief boundary holes spaced exactly $8.0\text{ in.}$ apart on the layout baseline.
 2. **Position the Base:** Place Piece 1 on the vinyl. Align the 4 perimeter crosshair notches over the marked centerpoint ($4.0\text{ in.}$ equidistant between the two punched holes) and the orthogonal baseline.
-3. **Engage the Cutter Arm:** Slide Piece 2 over the spindle until the hub rests on the base shoulder.
+3. **Engage the Cutter Arm:** Slide Piece 2 over the spindle until the hub is fully seated on the top 608 ball bearing. Verify that the arm bottom is suspended with a uniform **$1.0\text{ mm}$ air gap above the base plate shoulder** (guaranteeing zero plastic sliding friction during rotation).
 4. **Execute the Arc Cut:**
    * Hold the base plate firmly down against the vinyl with your non-dominant hand.
    * Grasp the rotating arm, align the blade with the starting punch hole, and rotate smoothly through $180^\circ$ until the blade terminates cleanly in the opposing punch hole.
@@ -111,20 +112,22 @@ Per the **PCHSMB Field Prop Fabrication Standard** (Section 8.3):
 
 ## 7. Engineering Standards & Quality Gates
 
-Following the standards established in the `carriers` / `Parts-Database` project, all 3D print deliverables in this project satisfy:
+Following the standards codified in [`AGENTS.md`](AGENTS.md) and aligned with `carriers` / `Parts-Database`, all 3D print deliverables in this project satisfy:
 
-1. **Zero External CAD Dependencies:** All production STL meshes are generated deterministically in pure Python (using only the Python standard library: `struct`, `math`, `dataclasses`, `pathlib`).
+1. **Mandatory Tooling Invariant (Pure-Python CAD & LookAt Rendering Engine):** All production STL meshes and 4-view drawing sheets are generated deterministically in pure Python (using only standard library modules: `struct`, `math`, `dataclasses`, `pathlib`, with PIL/NumPy for rasterization). External CAD binaries (`openscad`, FreeCAD, Blender) are strictly prohibited.
 2. **Four Non-Negotiable Mesh Quality Gates:**
    - **0 Boundary Edges:** 100% closed, watertight 2-manifold solid (no holes, cracks, or open seams).
    - **0 Non-Manifold Edges:** No internal walls, t-junctions, or self-intersecting shells.
    - **0 Degenerate Triangles:** No zero-area triangles or collinear vertices.
    - **100% Finite Coordinates:** Real, finite coordinate values only (no `NaN` or `Inf`).
-3. **Machine-Readable Manifest:** [`build/manifest.json`](build/manifest.json) tracks exact dimensions, volumes, estimated PETG print masses, and topological audit results.
-4. **Physical Calibration Before Full Prints:** Rapid test coupons are generated alongside production parts:
-   - `build/circle_cutter_spindle_bore_coupon.stl`: Verifies the 40mm spindle vs 42mm bore slip fit.
-   - `build/circle_cutter_bearing_coupon.stl`: Verifies the 625 bearing M5 insert and standoff boss.
-5. **Caliper Verification Log:** [`PHYSICAL_TEST_NOTES.md`](PHYSICAL_TEST_NOTES.md) documents modeled targets vs physical caliper measurements and HITL observations.
-6. **Engineering Ideas Backlog:** [`IDEAS.md`](IDEAS.md) tracks future tooling improvements (snap-in hub cap, swivel knob, quick-clamp).
+3. **Mandatory 4-Stage Engineering Lifecycle:** Every iteration strictly follows **Stage 1 (Idea Intake in `IDEAS.md`) $\to$ Stage 2 (Implementation Plan in `Plans/`) $\to$ Stage 3 (Implementation & Verification in `generate_circle_cutter.py`) $\to$ Stage 4 (Structured Git Commit)**.
+4. **Machine-Readable Manifest:** [`build/manifest.json`](build/manifest.json) tracks exact dimensions, volumes, estimated PETG print masses, vertical stackups, and topological audit results.
+5. **Physical Calibration Before Full Prints:** Rapid pre-print test coupons are generated alongside production parts:
+   - `build/circle_cutter_spindle_bore_coupon.stl`: Verifies the 40mm spindle vs 42mm bore slip fit AND 608 inner-race shoulder / pilot post fit (~18 min).
+   - `build/circle_cutter_bearing_coupon.stl`: Verifies the roller bearing M5 heat-set insert hole and standoff boss (~10 min).
+   - `build/circle_cutter_snap_cap_coupon.stl`: Verifies the 15mm hub sleeve ring snap fit AND 608 outer-race thrust pocket and relief cavity (~18 min).
+6. **Caliper Verification Log:** [`PHYSICAL_TEST_NOTES.md`](PHYSICAL_TEST_NOTES.md) documents modeled targets vs physical caliper measurements and HITL observations.
+7. **Engineering Enhancement Backlog:** [`IDEAS.md`](IDEAS.md) tracks all candidate features, trade-off analyses, and promotion statuses.
 
 ---
 
@@ -199,10 +202,21 @@ PCHSMB/Circle Cutter/
 
 ---
 
-## 10. Roadmap Features (Phase 2)
+## 10. Design Milestones & Engineering Backlog
 
-Future enhancements planned for the Circle Cutter tooling:
-* **Ergonomic Spindle Knob / Handle:** Top-mounted swivel knob on the hub for one-handed operation.
-* **Vinyl Surface Roller Bearing:** A miniature sealed ball bearing (e.g. 608RS or 623ZZ) mounted to the underside of the arm near the blade to regulate depth and glide smoothly across textured banner vinyl.
-* **Captive Quick-Clamp End Cap:** Integrated thumb-wheel or cam-clamp retention for tool-free blade replacement.
+### Implemented Milestones
+* **v1.3 — Modular Snap-in Hub Top Cap ([Plan 001](Plans/001-snap-in-hub-top-cap.md)):** Converted the hub ceiling into a 4-finger snap-in cap (`circle_cutter_hub_cap.stl`), achieving 100% support-free upright printing with the arm flat on the bed.
+* **v1.3 — Side-by-Side Dual Head:** Integrated depth-stop roller bearing and #11 blade mount onto the distal face of Piece 2, locking cut depth to $1.0\text{ mm}$ below the roller plane.
+* **v1.4 — Top-Mounted 608 Ball Bearing Thrust Pivot ([Plan 002](Plans/002-608-bearing-pivot.md)):** Integrated standard 608 ball bearing atop center spindle and recalibrated base plate to $3.0\text{ mm}$, suspending the arm with a $1.0\text{ mm}$ air gap and eliminating $707\text{ mm}^2$ of plastic sliding contact.
+* **v1.4 — Pure-Python CAD & Headless LookAt 3D Renderer:** 100% pure Python STL and 4-view drawing pipeline (`generate_circle_cutter.py`), permanently retiring external CAD binaries.
+
+### Evaluated & Archived Concepts ([`IDEAS.md`](IDEAS.md))
+* **Idea 002: Ergonomic Top Swivel Knob:** Archived. A single 180° sweep by hand provides direct tactile control; an added swivel knob adds unnecessary height, mass, and mechanical play.
+* **Idea 003: Tool-Free Captive Quick-Clamp End Cap:** Archived in favor of the standard M3 machine screw clamp. Socket head machine screws into brass heat-set inserts provide maximum clamping rigidity, zero blade flutter, and zero snag points.
+
+### Active Enhancement Queue
+* **Idea 005 / [Plan 003](Plans/003-608-front-roller-m5.md): 608 Front Roller Bearing Conversion with M5 Axle Retention:**
+  - Harmonize tool bill of materials to a single bearing type (**608**) across both the center pivot and front roller.
+  - Widen the Dual Head to accommodate the larger $22\text{ mm}$ OD bearing while preserving $>4\text{ mm}$ clearance to the blade clamp.
+  - Retain heavy-duty M5 hardware with reinforced wall thickness to eliminate insert pullout risk under manual pressure.
 
