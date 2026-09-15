@@ -12,19 +12,29 @@ The **Rolling Backdrop System** is a modular, mobile field prop developed for th
 
 The authoritative, fully illustrated manual is maintained in the [`docs/`](docs/) directory:
 
-👉 **[View Complete Manual (PDF)](docs/Backdrop_Assembly_Guide.pdf)** *(Recommended for easy online/mobile viewing)*  
-📄 **[Download Editable Source (DOCX)](docs/Backdrop_Assembly_Guide.docx)**
+👉 **[View Complete Manual (PDF)](docs/Backdrop_Assembly_Guide.pdf)** *(Release v0 (D5) — 28 Pages)*  
+📄 **[Typst Master Source](docs/Backdrop_Assembly_Guide.typ)** | 📋 **[Project Manifest](docs/project.json)**
 
-The manual covers:
-- **System Overview & Technical Geometry:** Base cart dimensions (96" x 44.5"), 10' x 8' steel frame, diagonal bracing, and print units.
-- **2026 Competition Rules Compliance:** Extracted rules from the 2026 CBA Rulebook (Rule 8.05 surface protection/secondary sandbag containment, Rule 8.07 pneumatic-like wheels, Rule 8.08 12' height limit, Rule 8.09 staging/Falcon Stadium 2025/2026 clearance update, Rule 9.07 25 parent field wristbands).
-- **Bill of Materials & Fastener Schedule:** 2x4 lumber cut list, 3/4" ballast posts & flanges, 1-5/8" steel fence posts, GRK screws, clamp brackets, casters, and 3D printed parts.
-- **Stage 1 (Cart Base Fabrication):** 2x4 lumber layout, squaring, and fastener placement map.
-- **Stage 2 (Decking, Ballast Posts & Casters):** 1/2" plywood left/right decks, 3/4" x 18" vertical iron pipe retention posts, plate casters, and ASA corner bumpers.
-- **Stage 3 (Upright Frame Assembly):** 10' x 8' steel tube rectangle and tension band cart mounts.
-- **Stage 4 (Diagonal Support Struts):** Guided pre-drilling with 1/8" cobalt drill bit and 3D printed Drill Alignment Jig, end caps, and base U-bolts.
-- **Stage 5 (Vinyl Banner Installation & Wind Relief Cuts):** Double-sided carpet tape underlayment, 1-5/8" pipe snap clamps, and engineered true semicircular wind relief cuts (8.0" W × 4.0" drop, $R = 4.0"$) with $\varnothing 3/8"$ tear-arrest holes (see [`WIND_RELIEF_CUTS_SPECIFICATION.md`](docs/references/WIND_RELIEF_CUTS_SPECIFICATION.md)).
-- **Field Operations & Training Protocol:** Student/parent volunteer division of responsibility, field entrance/exit flow, 4–6 double-bagged 15-lb sandbags on wing posts, and 70-lb tube sand reserve.
+The manual uses a standardized cross-project appendix architecture harmonized with the [Sideline Screen Manual](../_Sideline%20Screen/docs/Sideline_Screen_Duck_Blind_Build_Instructions.pdf):
+- **Master Cover & Preamble (Pages 1–2):** Prop identity, structural architecture, visible version history (Build D5), and master manual organization.
+- **Appendix A: Field Operations Manual (Sections 1.1–1.7):**
+  - **1.1 Roles & Responsibilities:** Parent pit/logistics crew vs student prop handlers.
+  - **1.2 Staging, Transport & Field Gate Entry:** Backfield staging and CBA Rule 5.02 rear entrance mandate.
+  - **1.3 Field Deployment Protocol:** Synchronized placement and opening drill set transitions.
+  - **1.4 Post-Performance Retrieval & Continuous Exit:** 2-minute CBA egress routing through front-half end zone.
+  - **1.5 Ballasting System & Tiered Wind Safety:** Tier 0 (calm) through Tier 4 (>20 mph NO-GO abort), synthetic turf friction ($16.9\text{ mph}$ Tier 1, $22.5\text{ mph}$ Tier 3 via 3.46-ft rear-rail leverage optimization), and Rule 8.05 double-bagging.
+  - **1.6 2026 CBA Competition Rules:** Rules 4.02, 4.03/5.06, 5.02, 8.05, 8.07, 8.08, 8.09 (Falcon Stadium renovation clearance), and 9.07 (25 field wristbands).
+  - **1.7 Post-Use Teardown & Trailer Packout:** Deballasting, frame breakdown, and transport securing.
+- **Appendix B: Construction & Fabrication Manual (Sections 2.1–2.10):**
+  - **2.1–2.4:** Shop safety, materials BOM, tools/equipment, and 3D printed parts.
+  - **2.5 Raw Material Cutting Schedules:** 2x4 lumber framing schedule and 1-5/8" galvanized steel conduit cuts.
+  - **2.6 Estimated Fabrication Cost Breakdown:** Detailed per-prop itemized budget (~$390.00 base).
+  - **2.7 Step-by-Step Frame Assembly:** Stage 1 (Base Cart), Stage 2 (Decking, Casters & Posts), Stage 3 (Steel Upright Frame), and Stage 4 (Diagonal Struts).
+  - **2.8 Mechanical Inspection & QA Protocol:** Acceptance criteria table and formal sign-off sheet.
+  - **2.9 Vinyl Banner Installation:** Ordering bleed, tensioning/clamping procedure, Section 2.9.3 dedicated **Semicircular Wind Relief Flap Cutting** ($R = 4.0\text{ in.}$, $8.0\text{ in.} \times 4.0\text{ in.}$, 8-flap primary grid and 6-flap minimal variant, 3/8" punch holes, and [PCHSMB Field Prop Circle Cutter](../Circle%20Cutter/) tooling), and seasonal teardown.
+  - **2.10 Appendix B Index & Purchasing References:** Vendor links, CAD part repositories, and governing rule citations.
+- **Appendix C & C.1:** On-prop laminated field operations placard & 4" × 6" drill placement card template.
+- **Appendix D:** Parent volunteer competition day guide & checklist.
 
 ---
 
@@ -37,6 +47,7 @@ All 3D-printed parts should be printed in **Black ASA** (or UV/heat-stable PETG)
 | **Corner Bumper Braces** | [`Hardware/Corner Brace.FCStd`](Hardware/Corner%20Brace.FCStd) | 4 required per cart; protects wood and paint from transport scuffs |
 | **Drill Alignment Jig** | [`Hardware/Drill Alignment Jig.3mf`](Hardware/Drill%20Alignment%20Jig.3mf) | Clamps onto 1-5/8" fence pipe to guide 1/8" pilot holes for end caps |
 | **Strut Bracket Marker** | [`Hardware/Steel Support Strut Bracket Marker.FCStd`](Hardware/Steel%20Support%20Strut%20Bracket%20Marker.FCStd) | Templates mounting positions for base U-bolts and upper tension bands |
+| **PCHSMB Field Prop Circle Cutter** | [`PCHSMB/Circle Cutter/`](../Circle%20Cutter/) | Parametric 5-piece cutter with #11 blade and 608 bearings for $R=4.0"$ semicircular flaps |
 
 ---
 

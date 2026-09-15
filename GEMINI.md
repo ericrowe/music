@@ -14,4 +14,5 @@ This repository is configured with a unified multi-agent system. All authoritati
   - Visible lifecycle markings: `WORKING DRAFT — NOT FOR USE`, `MANUAL REVIEW REQUIRED — NOT RELEASED`, `RELEASE CANDIDATE — APPROVAL REQUIRED`, `RELEASED — APPROVED FOR USE`.
   - Full render and 100% all-page review required before review promotion or release.
 - **Multi-Project Support:** When working in a subproject directory (e.g., `PCHSMB/_Backdrop/`), Antigravity automatically discovers and loads the local `GEMINI.md` / `AGENTS.md` and `project.json` which override repository defaults.
+- **Documentation Concurrency & Continuum Trigger:** When modifying prop designs or build guides, update all registered subproject docs concurrently (AGENTS.md § 5). When Backdrop or Sideline Screen docs change, automatically review `PCHSMB/2026 Continuum/` docs and propose updates to the user.
 

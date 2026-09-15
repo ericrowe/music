@@ -136,3 +136,64 @@ Scripts are located in `.agents/skills/develop-versioned-documents/scripts/` (an
 ### 4.8 Delivery
 
 Deliver the stable-named DOCX. Report its internal build or public release, visible status, material changes, page count, and QA result.
+
+---
+
+## 5. Mandatory Documentation Synchronization & Cross-Project Dependencies
+
+Documentation is a first-class engineering artifact in this repository. Technical designs, CAD models, physical assemblies, and operations guides must never drift out of alignment.
+
+### 5.1 Documentation Concurrency Rule
+
+Whenever physical prop specifications, CAD models, materials, fastener schedules, cutting schedules, ballasting schedules, wind limits, competition rules, or volunteer field operations protocols are modified:
+1. All corresponding documentation within that subproject MUST be updated concurrently in the same working pass / git commit.
+2. Code, CAD, or configuration changes must never be committed without updating the associated build guides, markdown READMEs, and project manifests (`project.json`).
+3. Both the Typst source (`.typ`) and compiled deliverable (`.pdf`) must be compiled and verified with zero compilation warnings or errors.
+
+### 5.2 Authoritative Document Registries by Subproject
+
+Every agent modifying a subproject must maintain the following specific documents:
+
+#### A. `PCHSMB/_Backdrop` (Rolling Backdrop System)
+- `README.md`: Subproject overview, BOM, build stages, semicircular wind relief summary, and cost breakdown.
+- `docs/Backdrop_Assembly_Guide.typ`: Master Typst build source for the 28-page assembly manual and operations guide.
+- `docs/Backdrop_Assembly_Guide.pdf`: Compiled production PDF deliverable.
+- `docs/project.json`: Controlled document manifest tracking current build ID (`D#`), status, file hashes, and version history.
+- `docs/references/WIND_RELIEF_CUTS_SPECIFICATION.md`: Engineering specification for $R = 4.0\text{ in.}$ semicircular cuts and tear-arrest punch holes.
+- `docs/references/TECHNICAL_SPEC.md`: Aerodynamic wind loading calculations and ballasting analysis.
+
+#### B. `PCHSMB/_Sideline Screen` (Sideline Screen / Duck Blind)
+- `README.md`: Subproject overview, Two-Student Direct Carry protocol, BOM, 3D printed parts, conduit cutting plan, and cost breakdown.
+- `docs/Sideline_Screen_Duck_Blind_Build_Instructions.typ`: Master Typst build source for the 25-page fabrication manual and operations guide.
+- `docs/Sideline_Screen_Duck_Blind_Build_Instructions.pdf`: Compiled production PDF deliverable.
+- `docs/project.json`: Controlled document manifest tracking current build ID (`D#`), status, file hashes, and version history.
+- `docs/references/TECHNICAL_SPEC.md`: Engineering specifications and ballast moment models.
+- `docs/references/WIND_RELIEF_CUTS_SPECIFICATION.md`: Semicircular wind relief cuts engineering specification.
+- `docs/references/WIND_LOADING_30MPH_ANALYSIS.md`: High-wind failure modes and structural limit analysis.
+- `simulation/results/MONTE_CARLO_REPORT.md` & `simulation/results/EGRESS_MONTE_CARLO_REPORT.md`: Deployment and egress timing simulation results.
+
+#### C. `PCHSMB/Circle Cutter` (Parametric Wind Relief Cutter)
+- `README.md`: 5-piece modular architecture, CAD specifications, BOM, assembly steps, 4-view engineering drawings, and design milestones.
+- `generate_circle_cutter.py`: Sole authoritative pure-Python parametric CAD and rasterization pipeline.
+- `build/manifest.json`: Machine-readable build manifest tracking dimensions, volumes, estimated PETG print masses, and topological audit results.
+- `PHYSICAL_TEST_NOTES.md`: Caliper measurements and HITL physical test notes.
+- `IDEAS.md`: Engineering backlog and trade-off analyses.
+- `Plans/`: Numbered implementation plans (`001-` through `006-`).
+
+#### D. `PCHSMB/2026 Continuum` (Show-Level Field Prop Operations)
+- `README.md`: Show operations overview, 34-prop fleet summary, wind safety protocols, and job card directory.
+- `Continuum_2026_Prop_Operations_Guide.typ`: Master Typst source for the show-level volunteer handbook and standalone printable job cards.
+- `Continuum_2026_Prop_Operations_Guide.pdf`: Compiled 15-page volunteer handbook deliverable.
+
+#### E. General Fabrication Projects (`Trumpet`, `Flutes`, `Standcessories`, `Luggage Tags`)
+- Subproject `README.md`: Hardware requirements, printing guidelines (materials, infill, perimeters), and assembly instructions.
+- Master CAD sources (`.FCStd`), exported slicer files (`.3mf`), and production meshes (`.stl`).
+
+### 5.3 The Continuum Cross-Project Dependency Trigger
+
+The **Continuum** show operations guide (`PCHSMB/2026 Continuum/Continuum_2026_Prop_Operations_Guide.typ` / `.pdf`) is the master integration document coordinating all props on the competition field.
+
+> [!IMPORTANT]
+> **CONTINUUM REVIEW TRIGGER:**
+> Whenever the **Backdrop** documentation (`PCHSMB/_Backdrop/docs/`) or **Sideline Screen** documentation (`PCHSMB/_Sideline Screen/docs/`) is updated—including changes to ballasting schedules, wind limits, deployment procedures, timing benchmarks, crew allocations, transport methods, or wind relief flap specifications—the agent **MUST automatically review the Continuum project docs** (`PCHSMB/2026 Continuum/Continuum_2026_Prop_Operations_Guide.typ` / `.pdf`), identify any discrepancies, and **propose specific updates back to the user**.
+

@@ -12,14 +12,29 @@ The frame is constructed from 3/4-in. EMT conduit, off-the-shelf clamp brackets,
 
 The authoritative, fully illustrated manual is maintained in the [`docs/`](docs/) directory:
 
-👉 **[View Complete Manual (PDF)](docs/Sideline_Screen_Duck_Blind_Build_Instructions.pdf)** *(Recommended for easy online/mobile viewing)*  
-📄 **[Download Editable Source (DOCX)](docs/Sideline_Screen_Duck_Blind_Build_Instructions.docx)**
+👉 **[View Complete Manual (PDF)](docs/Sideline_Screen_Duck_Blind_Build_Instructions.pdf)** *(Release v0 (D31) — 25 Pages)*  
+📄 **[Typst Master Source](docs/Sideline_Screen_Duck_Blind_Build_Instructions.typ)** | 📋 **[Project Manifest](docs/project.json)**
 
-The manual covers:
-- **Intro & Overview:** System geometry, folding mechanics, and print units.
-- **Appendix A (Field Operations):** Two-Student Carry field deployment and egress, unfolding/folding procedures, wind ballasting schedules, 2026 CBA competition rules compliance, and post-use storage.
-- **Appendix B (Construction Manual):** Illustrated parts inventory, conduit cut plan, 4-stage frame assembly, vinyl installation with standard engineered wind relief slits (6 semicircular flaps with tear-arrest holes), and digital/purchase source lookup.
-- **Appendices C, C.1, & D:** On-prop field placard, 4" × 6" coordinate card template, and parent volunteer competition day guide.
+The manual uses a standardized cross-project appendix architecture harmonized with the [Backdrop Manual](../_Backdrop/docs/Backdrop_Assembly_Guide.pdf):
+- **Master Cover & Preamble (Pages 1–2):** Prop identity, folding mechanics, visible version history (Build D31), and master manual organization.
+- **Appendix A: Field Operations Manual (Sections 1.1–1.7):**
+  - **1.1 Roles & Responsibilities:** Parent logistics crew & duck blind managers vs student carry pairs.
+  - **1.2 Staging, Transport & Field Gate Entry:** Staging, transport on stage platforms, and Rule 5.02 rear gate entry.
+  - **1.3 Field Deployment Protocol:** Two-Student Direct Carry walkthrough (55.7s expected, +139s buffer against Rule 4.03/5.06 cap).
+  - **1.4 Post-Performance Retrieval & Continuous Exit:** Direct sprint egress walkthrough (55.0s expected, +65s buffer against Rule 8.05 benchmark).
+  - **1.5 Ballasting System & Tiered Wind Safety:** Complete aerodynamic stability envelope, Tier 0–4 schedules, sliding resistance ($17.8\text{ mph}$ Tier 1), and Rule 8.05 double-bagging.
+  - **1.6 2026 CBA Competition Rules:** Rules 4.02, 4.03/5.06, 5.02, 8.05, 8.07, 8.08, 8.09, and 9.07 (25 field wristbands).
+  - **1.7 Post-Use Teardown & Trailer Packout:** Unsnapping, collapsing flat ($< 2.0"$ nesting thickness), and trailer packout.
+- **Appendix B: Construction & Fabrication Manual (Sections 2.1–2.10):**
+  - **2.1–2.4:** Shop safety, materials BOM, tools/equipment, and 3D printed parts.
+  - **2.5 Raw Material Cutting Schedules:** 7-stick 3/4" EMT electrical conduit cutting schedule.
+  - **2.6 Estimated Fabrication Cost Breakdown:** Detailed itemized budget (~$105.00/screen; $1,680.00 fleet total, saving $440 by eliminating carts).
+  - **2.7 Step-by-Step Frame Assembly:** Stage 1 (Outer Rectangle), Stage 2 (Cross Rails), Stage 3 (Rear Support Frame), and Stage 4 (Support Arms & Snap Clips).
+  - **2.8 Mechanical Inspection & QA Protocol:** Acceptance criteria table and formal sign-off sheet.
+  - **2.9 Vinyl Banner Installation:** Ordering bleed, tensioning/clamping procedure, Section 2.9.3 dedicated **Semicircular Wind Relief Flap Cutting** ($R = 4.0\text{ in.}$, $8.0\text{ in.} \times 4.0\text{ in.}$, 6-flap fleet grid $2 \times 3$, 3/8" punch holes, and [PCHSMB Field Prop Circle Cutter](../Circle%20Cutter/) tooling), and seasonal removal.
+  - **2.10 Appendix B Index & Purchasing References:** Vendor links, CAD part repositories, and governing rule citations.
+- **Appendix C & C.1:** On-prop laminated field operations placard & 4" × 6" drill placement card template.
+- **Appendix D:** Parent volunteer competition day guide & checklist.
 - **Engineering References:**
   - Technical specifications & ballasting model: [`docs/references/TECHNICAL_SPEC.md`](docs/references/TECHNICAL_SPEC.md)
   - Semicircular wind relief cuts engineering specification: [`docs/references/WIND_RELIEF_CUTS_SPECIFICATION.md`](docs/references/WIND_RELIEF_CUTS_SPECIFICATION.md)
@@ -46,6 +61,7 @@ All 3D-printed parts should be printed in **Black ASA** (or UV/weather-stable PE
 | **Corner Plug (H)** | [`Hardware/Corner Plug.FCStd`](Hardware/Corner%20Plug.FCStd) | [`Hardware/3MF/Corner Plug-Part.step.3mf`](Hardware/3MF/Corner%20Plug-Part.step.3mf) | [`Hardware/STEP/Corner Plug-Part.step`](Hardware/STEP/Corner%20Plug-Part.step) | 6 required; aligns outer corners |
 | **Hinged Arm Clip (I)** | [`Hardware/Hinged Arm Clip.FCStd`](Hardware/Hinged%20Arm%20Clip.FCStd) | [`Hardware/3MF/Hinged Arm Clip-Part001.3mf`](Hardware/3MF/Hinged%20Arm%20Clip-Part001.3mf) | [`Hardware/STEP/Hinged Arm Clip-Part001.step`](Hardware/STEP/Hinged%20Arm%20Clip-Part001.step) | 2 required; locks bottom support arms open |
 | **Weight Clip** | [`Hardware/Weight Clip.FCStd`](Hardware/Weight%20Clip.FCStd) | [`Hardware/3MF/Weight Clip-Part.3mf`](Hardware/3MF/Weight%20Clip-Part.3mf) | [`Hardware/STEP/Weight Clip-Part001.step`](Hardware/STEP/Weight%20Clip-Part001.step) | Ballast/weight retaining clip |
+| **PCHSMB Field Prop Circle Cutter** | [`PCHSMB/Circle Cutter/`](../Circle%20Cutter/) | — | — | Parametric 5-piece cutter with #11 blade and 608 bearings for $R=4.0"$ semicircular flaps |
 
 ---
 
