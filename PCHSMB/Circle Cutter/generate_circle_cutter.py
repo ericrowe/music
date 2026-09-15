@@ -33,8 +33,8 @@ from typing import Dict, List, Sequence, Tuple
 # PARAMETRIC SPECIFICATIONS (MILLIMETERS)
 # =============================================================================
 
-VERSION = "1.5"
-DESIGN_NAME = "PCHSMB Circle Cutter - Semicircular Wind Relief Slit Tool with Harmonized 608 Bearings & M5 Hardware"
+VERSION = "1.6"
+DESIGN_NAME = "PCHSMB Circle Cutter - Semicircular Wind Relief Slit Tool with Raised Push Plate & Harmonized 608 Bearings"
 
 # -----------------------------------------------------------------------------
 # Vertical Stack-Up & Ground Reference (Vinyl Top Surface = Z 0.0 mm)
@@ -129,6 +129,16 @@ BLADE_SLOT_WIDTH = 6.0                        # 6.0 mm slot for #11 blade tang (
 BLADE_SLOT_DEPTH = 0.8                        # 0.8 mm raised retaining tabs flanking blade
 HEAT_SET_M3_DIA = 3.8                         # 3.8 mm hole for user-specified M3 brass insert
 HEAT_SET_M3_DEPTH = 10.5                      # 10.5 mm bore depth (accommodates 6, 8, or 10 mm inserts)
+
+# Piece 2: Ergonomic Raised Push Plate Geometry
+PUSH_PLATE_START_X = 136.0                     # Starts on head flare
+PUSH_PLATE_END_X = 171.0                       # 4.0 mm clearance shelf behind distal face (X=175.0)
+PUSH_PLATE_WIDTH = 42.0                        # 42.0 mm width (Y in [-21.0, +21.0])
+PUSH_PLATE_BASE_Z = 13.0                       # Embeds 1.0 mm into solid head ceiling (Z=14.0)
+PUSH_PLATE_PLATFORM_Z = 24.0                   # 24.0 mm local Z (+10.0 mm above head ceiling)
+PUSH_PLATE_RIDGE_Z = 25.2                      # 25.2 mm local Z (+1.2 mm traction ridges)
+PUSH_PLATE_SAFETY_LIP_Z = 26.5                 # 26.5 mm local Z (+2.5 mm front safety fence)
+PUSH_PLATE_SIDE_CHAMFER = 1.5                  # 1.5 mm 45° upper side edge chamfers
 
 # Piece 3: Blade Clamping Cap
 CAP_WIDTH = 12.0                              # 12.0 mm width in Y
@@ -436,6 +446,79 @@ def make_beveled_rect_loop(y_min: float, y_max: float, z_min: float, z_max: floa
     return pts
 
 
+def build_push_plate(w: float = PUSH_PLATE_WIDTH,
+                     z_base: float = PUSH_PLATE_BASE_Z,
+                     chamfer: float = PUSH_PLATE_SIDE_CHAMFER,
+                     x_start: float = PUSH_PLATE_START_X,
+                     x_end: float = PUSH_PLATE_END_X,
+                     z_plat: float = PUSH_PLATE_PLATFORM_Z,
+                     z_ridge: float = PUSH_PLATE_RIDGE_Z,
+                     z_lip: float = PUSH_PLATE_SAFETY_LIP_Z) -> Mesh:
+    """Build the ergonomic raised push plate with transverse traction ribs and front safety stop."""
+    m = Mesh("push_plate")
+    hw = w / 2.0
+
+    stations = [
+        (x_start, 14.0),           # Station 0: Rear lead-in foot (flush with head top at Z=14.0)
+        (x_start + 10.0, z_plat),  # Station 1: Rear lead-in ramp top (45 deg slope)
+        (149.0, z_plat),           # Station 2: Platform flat before Ridge 1
+        (150.5, z_ridge),          # Station 3: Ridge 1 crest (+1.2mm)
+        (152.0, z_plat),           # Station 4: Ridge 1 trough
+        (154.5, z_plat),           # Station 5: Platform flat before Ridge 2
+        (156.0, z_ridge),          # Station 6: Ridge 2 crest (+1.2mm)
+        (157.5, z_plat),           # Station 7: Ridge 2 trough
+        (160.0, z_plat),           # Station 8: Platform flat before Ridge 3
+        (161.5, z_ridge),          # Station 9: Ridge 3 crest (+1.2mm)
+        (163.0, z_plat),           # Station 10: Ridge 3 trough
+        (165.5, z_plat),           # Station 11: Platform flat before Ridge 4
+        (167.0, z_ridge),          # Station 12: Ridge 4 crest (+1.2mm)
+        (168.0, z_plat),           # Station 13: Ridge 4 trough / Foot of front safety ramp
+        (169.5, z_lip),            # Station 14: Front safety fence crest (+2.5mm above platform)
+        (170.5, z_lip),            # Station 15: Front safety fence flat summit
+        (x_end, z_lip - 1.0),      # Station 16: Front 45 deg nose chamfer, terminating at x_end
+    ]
+
+    loops = []
+    for x, z_top in stations:
+        loop = [
+            (-hw, z_base),
+            (hw, z_base),
+            (hw, z_top - chamfer),
+            (hw - chamfer, z_top),
+            (-hw + chamfer, z_top),
+            (-hw, z_top - chamfer),
+        ]
+        loops.append(loop)
+
+    # Quads between stations
+    for s in range(len(stations) - 1):
+        x1, x2 = stations[s][0], stations[s + 1][0]
+        L1, L2 = loops[s], loops[s + 1]
+        for i in range(6):
+            j = (i + 1) % 6
+            p1_i = (x1, L1[i][0], L1[i][1])
+            p1_j = (x1, L1[j][0], L1[j][1])
+            p2_j = (x2, L2[j][0], L2[j][1])
+            p2_i = (x2, L2[i][0], L2[i][1])
+            m.quad(p1_i, p1_j, p2_j, p2_i)
+
+    # Rear cap at station 0 (normal -X)
+    x0 = stations[0][0]
+    c_rear = (x0, 0.0, (z_base + stations[0][1]) / 2.0)
+    for i in range(6):
+        j = (i + 1) % 6
+        m.add(c_rear, (x0, loops[0][j][0], loops[0][j][1]), (x0, loops[0][i][0], loops[0][i][1]))
+
+    # Front cap at station -1 (normal +X)
+    x_last = stations[-1][0]
+    c_front = (x_last, 0.0, (z_base + stations[-1][1]) / 2.0)
+    for i in range(6):
+        j = (i + 1) % 6
+        m.add(c_front, (x_last, loops[-1][i][0], loops[-1][i][1]), (x_last, loops[-1][j][0], loops[-1][j][1]))
+
+    return m
+
+
 def build_piece2_arm(r_hub_outer: float = HUB_OUTER_RADIUS, r_bore: float = HUB_RECESS_RADIUS,
                      z_hub_total: float = HUB_TOTAL_HEIGHT,
                      hub_chamfer: float = HUB_TOP_CHAMFER, x0: float = ARM_ROOT_X,
@@ -681,6 +764,12 @@ def build_piece2_arm(r_hub_outer: float = HUB_OUTER_RADIUS, r_bore: float = HUB_
 
     add_tab_box(x3, x3 + tab_h, 3.0, blade_y - slot_w / 2.0, 0.0, head_h)
     add_tab_box(x3, x3 + tab_h, blade_y + slot_w / 2.0, h_dual, 0.0, head_h)
+
+    # -------------------------------------------------------------------------
+    # Sub-Assembly D: Monolithic Raised Push Plate on Dual Head
+    # -------------------------------------------------------------------------
+    push_plate = build_push_plate()
+    m.extend(push_plate)
 
     return m
 
@@ -1601,8 +1690,8 @@ def render_assembly_views(out_dir: Path, base: Mesh, arm: Mesh, blade_cap: Mesh,
         scene_assembly.append((sleeve_to_verts(sleeve, (176.5, -11.5, 11.0)), col_sleeve))
 
     render_scene(scene_assembly, out_dir / "circle_cutter_assembly.png",
-                 "PCHSMB Circle Cutter — Full Assembly (v1.5 Harmonized 608 Bearings & M5 Axle)",
-                 "Piece 1 (Base, Blue) | Piece 2 (Arm, Orange) | Piece 3 (Clamp, Gray) | Piece 4 (Hub Cap, Green) | Piece 5 (Sleeve, Red)")
+                 "PCHSMB Circle Cutter — Full Assembly (v1.6 Raised Push Plate & Harmonized 608 Bearings)",
+                 "Piece 1 (Base, Blue) | Piece 2 (Arm with Push Plate, Orange) | Piece 3 (Clamp, Gray) | Piece 4 (Hub Cap, Green) | Piece 5 (Sleeve, Red)")
 
     # Exploded Scene
     scene_exploded = [
@@ -1615,8 +1704,8 @@ def render_assembly_views(out_dir: Path, base: Mesh, arm: Mesh, blade_cap: Mesh,
         scene_exploded.append((sleeve_to_verts(sleeve, (210.0, -11.5, 45.0 + 11.0)), col_sleeve))
 
     render_scene(scene_exploded, out_dir / "circle_cutter_exploded.png",
-                 "PCHSMB Circle Cutter — Exploded Alignment View (v1.5)",
-                 "Vertical Stackup: Base (Z=0) -> Arm (+45mm) -> Hub Cap (+150mm) | Distal Clamp & Reducer Sleeve (+35mm X)")
+                 "PCHSMB Circle Cutter — Exploded Alignment View (v1.6)",
+                 "Vertical Stackup: Base (Z=0) -> Arm with Push Plate (+45mm) -> Hub Cap (+150mm) | Distal Clamp & Reducer Sleeve (+35mm X)")
 
 
 
@@ -1697,12 +1786,21 @@ def generate_manifest(out_dir: Path, meshes: List[Mesh]) -> dict:
             "cap_retention_barb_dia_mm": HUB_CAP_BARB_DIA,
             "support_free_status": "100% support-free upright printing with arm on build plate",
         },
+        "push_plate_architecture": {
+            "type": "Monolithic Raised Ergonomic Push Saddle with Transverse Traction Ridges & Safety Stop",
+            "width_mm": PUSH_PLATE_WIDTH,
+            "platform_height_local_z_mm": PUSH_PLATE_PLATFORM_Z,
+            "safety_lip_height_local_z_mm": PUSH_PLATE_SAFETY_LIP_Z,
+            "traction_ridges_count": 4,
+            "front_clearance_shelf_mm": DISTAL_X - PUSH_PLATE_END_X,
+            "support_free_status": "100% support-free upright printing with arm on build plate",
+        },
         "files": audits,
         "mesh_audit_summary": {
             "all_files_passed_topological_audit": all(a["passed"] for a in audits.values()),
             "total_triangles": sum(a["triangles"] for a in audits.values()),
         },
-        "status": "production_release_v1_5_608_front_roller_m5",
+        "status": "production_release_v1_6_raised_push_plate",
     }
     (out_dir / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
     return manifest
@@ -1724,8 +1822,8 @@ def main() -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
 
     print("=" * 72)
-    print("  PCHSMB Circle Cutter - Pure-Python STL Generation Pipeline v1.5")
-    print("  Feature: Harmonized 608 Roller & Thrust Bearings with Heavy-Duty M5 Axle")
+    print("  PCHSMB Circle Cutter - Pure-Python STL Generation Pipeline v1.6")
+    print("  Feature: Ergonomic Raised Push Plate on Distal Arm & Harmonized 608 Bearings")
     print(f"  Target: {out_dir.resolve()}")
     print("=" * 72)
 

@@ -6,7 +6,7 @@ This is the project inbox for future design enhancements and tooling iterations,
 
 ## Active Inbox
 
-*(No pending ideas currently in queue. The v1.5 design baseline is complete and verified.)*
+*(No pending ideas currently in queue. The v1.6 design baseline with raised push plate is complete and verified.)*
 
 ---
 
@@ -23,6 +23,17 @@ This is the project inbox for future design enhancements and tooling iterations,
 ---
 
 ## Implemented Ideas
+
+### [Idea 006: Ergonomic Raised Push Plate on Distal Arm for Controlled Downward and Rotational Force](Plans/004-raised-push-plate.md) — *Implemented in v1.6*
+- **Outcome:** Integrated a monolithic raised push plate directly atop the distal dual head on Piece 2 (`circle_cutter_arm.stl`), providing an elevated, textured saddle with positive safety stops.
+- **Benefits:**
+  - **Elevated Ergonomic Leverage:** Rises $10.0\text{ mm}$ above head ceiling to $Z_{\text{local}} = 24.0\text{ mm}$ ($+12.0\text{ mm}$ above main arm beam), providing comfortable downward leverage for thumb or palm heel.
+  - **Generous Surface:** $35.0\text{ mm}$ long ($X \in [136.0, 171.0\text{ mm}]$) and $42.0\text{ mm}$ wide ($Y \in [-21.0, +21.0\text{ mm}]$), centered directly above cutting and rolling zones.
+  - **Forward Safety Stop:** Raised lip at $X \in [167.0, 171.0\text{ mm}]$ rising to $Z = 26.5\text{ mm}$ ($2.5\text{ mm}$ above platform) prevents any forward thumb slipping toward the blade or roller bearing.
+  - **Transverse Traction:** 4 transverse grip ridges ($1.2\text{ mm}$ proud at $Z = 25.2\text{ mm}$ with $45^\circ$ self-supporting flanks) give secure friction for sweeping along rotational cut arcs.
+  - **Rear Smooth Ramp:** $45^\circ$ lead-in ramp ($X \in [136.0, 146.0\text{ mm}]$) transitions smoothly from arm beam up to platform.
+  - **Zero Tool Collision:** Recessed $4.0\text{ mm}$ behind distal face ($X = 175.0\text{ mm}$), leaving completely open vertical space to insert #11 blades and open horizontal tool access for M5 and M3 screws.
+  - **100% Support-Free:** Upright printability preserved with zero supports, adding only ~10g PETG.
 
 ### [Idea 005: 608 Roller Bearing Front Depth-Stop Conversion with Heavy-Duty M5 Axle Retention](Plans/003-608-front-roller-m5.md) — *Implemented in v1.5*
 - **Outcome:** Converted the distal roller depth stop on Piece 2 from miniature 625 to standard 608 ball bearing ($8\text{ mm ID} \times 22\text{ mm OD} \times 7\text{ mm W}$), harmonizing the BOM to a single bearing SKU across the entire tool while providing heavy-duty M5 hardware retention.

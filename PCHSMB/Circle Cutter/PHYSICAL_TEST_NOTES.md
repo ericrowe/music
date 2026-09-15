@@ -7,7 +7,7 @@ This document records physical caliper measurements, slicer parameters, print ou
 ## 1. Test Status & Configuration
 
 - **Date Initiated:** 2026-09-14
-- **Release Version:** v1.5 (Harmonized 608 Roller & Thrust Bearings with Heavy-Duty M5 Axle)
+- **Release Version:** v1.6 (Raised Push Plate on Distal Arm & Harmonized 608 Bearings)
 - **Target Subproject:** PCHSMB Duck Blinds & Rolling Backdrops (Wind Relief Slit Tooling)
 - **Target Geometry:** $R = 4.0\text{ in.} = 101.6\text{ mm}$ semicircular wind relief flaps in 13oz heavy vinyl scrim
 - **Recommended Material:** PETG (e.g. Bambu PETG Basic / Polymaker PolyLite PETG)
@@ -81,6 +81,11 @@ Record caliper readings to two decimal places ($\pm 0.02\text{ mm}$) once test p
 | **Piece 2: M3 Heat-Set Hole Diameter** | **3.80 mm** | _[Pending print]_ | $\pm 0.10\text{ mm}$ | Pending |
 | **Piece 2: M3 Heat-Set Hole Depth** | **10.50 mm** | _[Pending print]_ | $+0.50 / -0.00\text{ mm}$ | Pending |
 | **Piece 2: Internal Retention Groove ID** | 43.60 mm | _[Pending print]_ | $\pm 0.15\text{ mm}$ | Pending |
+| **Piece 2: Push Plate Width** | **42.00 mm** | _[Pending print]_ | $\pm 0.20\text{ mm}$ | Pending |
+| **Piece 2: Push Plate Platform Height (Local)** | **24.00 mm** | _[Pending print]_ | $\pm 0.20\text{ mm}$ | Pending |
+| **Piece 2: Push Plate Traction Ridge Height** | **25.20 mm** | _[Pending print]_ | $\pm 0.15\text{ mm}$ | Pending |
+| **Piece 2: Push Plate Front Safety Lip Height** | **26.50 mm** | _[Pending print]_ | $\pm 0.20\text{ mm}$ | Pending |
+| **Piece 2: Front Tool Clearance Shelf** | **4.00 mm** | _[Pending print]_ | $\pm 0.20\text{ mm}$ | Pending |
 | **Piece 3: Cap Width x Height** | 12.00 x 16.00 mm | _[Pending print]_ | $\pm 0.15\text{ mm}$ | Pending |
 | **Piece 3: Cap Thickness** | 3.50 mm | _[Pending print]_ | $\pm 0.10\text{ mm}$ | Pending |
 | **Piece 3: M3 Clearance Hole Dia** | 3.40 mm | _[Pending print]_ | $+0.20 / -0.05\text{ mm}$ | Pending |
@@ -130,6 +135,11 @@ Complete these physical checks before clearing the circle cutter for prop fabric
    - Place Piece 1 on scrap 13oz vinyl prop banner over a cutting mat. Align crosshairs with marked layout.
    - Rotate arm through $180^\circ$.
    - Confirm that the 608 roller bearing rolls smoothly across uncut vinyl $23\text{ mm}$ adjacent to the cut line, acting as a heavy-duty presser foot that holds the banner flat with zero bunching, tearing, or flap catching.
+6. **Ergonomic Push Plate & Safety Stop Inspection:**
+   - Rest dominant thumb or palm heel on the raised push plate at the distal end of Piece 2 ($Z_{\text{local}} = 24.0\text{ mm}$). Verify natural, comfortable hand posture and solid downward leverage.
+   - Push forward vigorously against the front safety fence ($Z_{\text{local}} = 26.5\text{ mm}$). Verify positive physical blockage prevents the thumb from slipping forward toward the blade tang or 608 roller bearing.
+   - Apply tangential sweeping force. Verify the 4 transverse traction ridges give secure grip without slippage.
+   - Verify that the $4.0\text{ mm}$ front clearance shelf preserves 100% open vertical access for blade insertion/removal and straight horizontal access for M5 and M3 hex keys.
 
 ---
 

@@ -1,11 +1,11 @@
 {
-  "design": "PCHSMB Circle Cutter - Semicircular Wind Relief Slit Tool with Harmonized 608 Bearings & M5 Hardware",
-  "version": "1.5",
+  "design": "PCHSMB Circle Cutter - Semicircular Wind Relief Slit Tool with Raised Push Plate & Harmonized 608 Bearings",
+  "version": "1.6",
   "units": "mm",
   "standard": "Pine Creek High School Marching Band Field Prop Tooling",
   "print_material_recommended": "PETG",
   "print_density_g_cm3": 1.27,
-  "estimated_total_print_mass_petg_g": 213.9,
+  "estimated_total_print_mass_petg_g": 224.0,
   "print_quantities": {
     "circle_cutter_base.stl": 1,
     "circle_cutter_arm.stl": 1,
@@ -71,6 +71,15 @@
     "cap_retention_barb_dia_mm": 43.0,
     "support_free_status": "100% support-free upright printing with arm on build plate"
   },
+  "push_plate_architecture": {
+    "type": "Monolithic Raised Ergonomic Push Saddle with Transverse Traction Ridges & Safety Stop",
+    "width_mm": 42.0,
+    "platform_height_local_z_mm": 24.0,
+    "safety_lip_height_local_z_mm": 26.5,
+    "traction_ridges_count": 4,
+    "front_clearance_shelf_mm": 4.0,
+    "support_free_status": "100% support-free upright printing with arm on build plate"
+  },
   "files": {
     "circle_cutter_base.stl": {
       "file": "circle_cutter_base.stl",
@@ -100,7 +109,7 @@
     },
     "circle_cutter_arm.stl": {
       "file": "circle_cutter_arm.stl",
-      "triangles": 1794,
+      "triangles": 1998,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
       "degenerate_triangles": 0,
@@ -120,8 +129,8 @@
         50.0,
         108.0
       ],
-      "volume_cm3": 108.09,
-      "estimated_mass_petg_g": 75.5,
+      "volume_cm3": 122.59,
+      "estimated_mass_petg_g": 85.6,
       "passed": true
     },
     "circle_cutter_blade_cap.stl": {
@@ -283,7 +292,7 @@
   },
   "mesh_audit_summary": {
     "all_files_passed_topological_audit": true,
-    "total_triangles": 12294
+    "total_triangles": 12498
   },
-  "status": "production_release_v1_5_608_front_roller_m5"
+  "status": "production_release_v1_6_raised_push_plate"
 }
