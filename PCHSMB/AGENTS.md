@@ -85,3 +85,7 @@ Master Document (.docx)
 ## 3. Subproject Conformity
 
 All current subprojects (`PCHSMB/_Backdrop`, `PCHSMB/_Sideline Screen`) and any future projects created in `PCHSMB/` must strictly adhere to this architectural and delivery standard.
+
+### Fabrication Tooling Subprojects
+- **`PCHSMB/Circle Cutter/`:** Governed by [`PCHSMB/Circle Cutter/AGENTS.md`](Circle%20Cutter/AGENTS.md). Enforces the 4-stage engineering lifecycle (**Idea $\to$ Plan $\to$ Implementation $\to$ Commit**) and the **100% Pure-Python CAD Engine** standard (`generate_circle_cutter.py`). External CAD binaries (`openscad`, FreeCAD) are strictly prohibited.
+

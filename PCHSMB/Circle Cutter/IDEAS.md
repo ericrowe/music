@@ -6,7 +6,7 @@ This is the project inbox for future design enhancements and tooling iterations,
 
 ## Active Inbox
 
-*(No pending ideas currently in queue. The v1.3 design baseline is complete and ready for physical print testing.)*
+*(No pending ideas currently in queue. The v1.4 design baseline is complete and ready for physical print testing.)*
 
 ---
 
@@ -22,9 +22,19 @@ This is the project inbox for future design enhancements and tooling iterations,
 
 ---
 
----
-
 ## Implemented Ideas
+
+### [Idea 004: Top-Mounted 608 Ball Bearing Thrust Pivot for Low-Friction Operation](Plans/002-608-bearing-pivot.md) — *Implemented in v1.4*
+- **Outcome:** Integrated a single standard 608 ball bearing ($8\text{ mm ID} \times 22\text{ mm OD} \times 7\text{ mm W}$) horizontally atop the $100\text{ mm}$ center spindle column to carry 100% of operator downward pressure.
+- **Benefits:**
+  - Base plate height set to $3.0\text{ mm}$, suspending the rotating arm with a **$1.0\text{ mm}$ uniform air gap** ($Z_{\text{world}} = 4.0\text{ mm}$) above the base plate.
+  - Reduces plastic-on-plastic sliding shoulder contact area from $707\text{ mm}^2$ to **$0\text{ mm}^2$**.
+  - Spindle top adds $\varnothing 11.5\text{ mm} \times 1.0\text{ mm}$ inner-race shoulder and $\varnothing 7.9\text{ mm} \times 6.0\text{ mm}$ pilot post.
+  - Piece 4 (Snap-in Hub Cap) integrates an $\varnothing 22.2\text{ mm} \times 3.0\text{ mm}$ outer-race pocket and $\varnothing 18.0\text{ mm} \times 1.5\text{ mm}$ relief cavity.
+  - 100% contact isolation: shields, balls, and post are completely relieved with $>1.5\text{ mm}$ air clearances.
+  - 625 roller bearing alignment ($Z_{\text{world, axle}} = 8.0\text{ mm}$) and $1.0\text{ mm}$ blade cut depth preserved exactly.
+  - All 7 STLs and rapid calibration coupons verified 100% watertight manifold (0 boundary, 0 non-manifold edges).
+  - 100% pure-Python CAD & 3D rendering pipeline (`generate_circle_cutter.py`).
 
 ### [Idea 001: Snap-in Hub Top Cap for Clean Support-Free Printing](Plans/001-snap-in-hub-top-cap.md) — *Implemented in v1.3*
 - **Outcome:** Converted the top ceiling of Piece 2 (Rotating Arm Hub) from an integrated blind ceiling into a separate, snap-in fourth component (`circle_cutter_hub_cap.stl`).

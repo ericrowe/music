@@ -33,8 +33,8 @@ from typing import Dict, List, Sequence, Tuple
 # PARAMETRIC SPECIFICATIONS (MILLIMETERS)
 # =============================================================================
 
-VERSION = "1.3"
-DESIGN_NAME = "PCHSMB Circle Cutter - Semicircular Wind Relief Slit Tool"
+VERSION = "1.4"
+DESIGN_NAME = "PCHSMB Circle Cutter - Semicircular Wind Relief Slit Tool with 608 Bearing Thrust Pivot"
 
 # -----------------------------------------------------------------------------
 # Vertical Stack-Up & Ground Reference (Vinyl Top Surface = Z 0.0 mm)
@@ -43,24 +43,43 @@ VINYL_Z = 0.0                                 # Vinyl surface reference plane
 CUT_DEPTH = 1.0                               # Controlled blade depth below bearing (1.0 mm)
 BLADE_TIP_WORLD_Z = VINYL_Z - CUT_DEPTH       # -1.0 mm world
 
-# 625 Ball Bearing Specifications
+# 625 Ball Bearing Specifications (Outer Arm Rolling Depth Stop)
 BEARING_OD = 16.0                             # 16.0 mm outer diameter
 BEARING_ID = 5.0                              # 5.0 mm inner bore
 BEARING_WIDTH = 5.0                           # 5.0 mm thickness
 BEARING_RADIUS = BEARING_OD / 2.0             # 8.0 mm
 BEARING_AXLE_WORLD_Z = VINYL_Z + BEARING_RADIUS  # +8.0 mm world (bearing touches vinyl at Z 0.0)
 
+# 608 Ball Bearing Specifications (Main Pivot Thrust Bearing atop Spindle)
+BEARING_608_OD = 22.0                         # 22.0 mm outer diameter
+BEARING_608_ID = 8.0                          # 8.0 mm inner bore
+BEARING_608_WIDTH = 7.0                       # 7.0 mm thickness
+BEARING_608_INNER_SHOULDER_DIA = 11.5         # 11.5 mm OD shoulder (contacts ONLY inner race, clears shields)
+BEARING_608_INNER_SHOULDER_HEIGHT = 1.0       # 1.0 mm height (creates 1.0 mm relief between spindle top & outer race)
+BEARING_608_POST_DIA = 7.90                   # 7.90 mm OD pilot post (slip-fit into 8.0mm bore)
+BEARING_608_POST_HEIGHT = 6.0                 # 6.0 mm height (1.0 mm below 7.0mm bearing top to prevent bottoming)
+BEARING_608_POST_CHAMFER = 0.8                # 0.8 mm 45° lead-in chamfer
+BEARING_608_POCKET_DIA = 22.2                 # 22.2 mm ID pocket in Piece 4 (0.1 mm radial slip fit)
+BEARING_608_POCKET_WALL_OD = 25.0             # 25.0 mm OD cup wall (1.4 mm wall thickness)
+BEARING_608_POCKET_DEPTH = 3.0                # 3.0 mm deep cup wall capturing outer race
+BEARING_608_RELIEF_DIA = 18.0                 # 18.0 mm ID central relief cavity in Piece 4 (clears inner race & post)
+BEARING_608_RELIEF_DEPTH = 1.5                # 1.5 mm extra upward relief into Piece 4 flange
+
 # Piece 1: Fixed Pivot Base Plate
 BASE_PLATE_DIA = 50.0                         # 50.0 mm outer diameter
 BASE_PLATE_RADIUS = BASE_PLATE_DIA / 2.0      # 25.0 mm
-BASE_PLATE_HEIGHT = 4.0                       # 4.0 mm thickness (matches arm level plane!)
+BASE_PLATE_HEIGHT = 3.0                       # 3.0 mm thickness (provides 1.0 mm air gap to arm bottom at Z=4.0!)
 CROSSHAIR_DEPTH = 1.0                         # 1.0 mm radial notch into rim
 CROSSHAIR_WIDTH = 1.8                         # 1.8 mm circumferential notch width
 SPINDLE_DIA = 40.0                            # 40.0 mm center spindle OD
 SPINDLE_RADIUS = SPINDLE_DIA / 2.0            # 20.0 mm
 SPINDLE_HEIGHT = 100.0                        # 100.0 mm height above shoulder
 SPINDLE_CHAMFER = 1.5                         # 1.5 mm 45° lead-in chamfer
-TOTAL_BASE_HEIGHT = BASE_PLATE_HEIGHT + SPINDLE_HEIGHT  # 104.0 mm
+TOTAL_BASE_HEIGHT = BASE_PLATE_HEIGHT + SPINDLE_HEIGHT + BEARING_608_INNER_SHOULDER_HEIGHT + BEARING_608_POST_HEIGHT  # 110.0 mm
+
+# Arm Elevation & Air Clearance
+ARM_AIR_GAP = 1.0                             # 1.0 mm uniform air gap between base plate and rotating arm (ZERO friction)
+ARM_BOTTOM_WORLD_Z = BASE_PLATE_HEIGHT + ARM_AIR_GAP  # 4.0 mm world (matches 625 bearing roll plane)
 
 # Piece 2: Rotating Arm Assembly (Local coordinates: Z=0 at hub bottom / base shoulder)
 # In world coordinates: Z_world = Z_local + BASE_PLATE_HEIGHT (Z_local + 4.0 mm)
@@ -90,7 +109,7 @@ BEARING_PAD_Y = -9.0                          # Center of 625 bearing pad in Y
 BLADE_PAD_Y = +9.0                            # Center of blade & M3 clamping cap in Y
 
 # 625 Bearing Mount on Arm
-BEARING_AXLE_LOCAL_Z = BEARING_AXLE_WORLD_Z - BASE_PLATE_HEIGHT  # +4.0 mm local
+BEARING_AXLE_LOCAL_Z = BEARING_AXLE_WORLD_Z - ARM_BOTTOM_WORLD_Z  # +4.0 mm local (8.0 - 4.0 = 4.0 mm)
 BEARING_MOUNT_X = DISTAL_X                    # 175.0 mm (front face of arm alongside blade)
 BEARING_STANDOFF_OD = 8.0                     # 8.0 mm OD (contacts ONLY 5x8mm inner race)
 BEARING_STANDOFF_LEN = 1.0                    # 1.0 mm standoff clearance
@@ -300,8 +319,14 @@ def _ring_face(m: Mesh, outer: Sequence[Vec2], inner: Sequence[Vec2], z: float, 
 def build_piece1_base(r_base: float = BASE_PLATE_RADIUS, h_base: float = BASE_PLATE_HEIGHT,
                       r_spindle: float = SPINDLE_RADIUS, h_spindle: float = SPINDLE_HEIGHT,
                       notch_depth: float = CROSSHAIR_DEPTH, notch_width: float = CROSSHAIR_WIDTH,
-                      chamfer: float = SPINDLE_CHAMFER, n_arc: int = 16) -> Mesh:
-    """Build Piece 1 (Fixed Pivot Base) with 4.0 mm base plate thickness and 4 crosshair notches."""
+                      chamfer: float = SPINDLE_CHAMFER,
+                      r_shoulder: float = BEARING_608_INNER_SHOULDER_DIA / 2.0,
+                      h_shoulder: float = BEARING_608_INNER_SHOULDER_HEIGHT,
+                      r_post: float = BEARING_608_POST_DIA / 2.0,
+                      h_post: float = BEARING_608_POST_HEIGHT,
+                      post_chamfer: float = BEARING_608_POST_CHAMFER,
+                      n_arc: int = 16) -> Mesh:
+    """Build Piece 1 (Fixed Pivot Base) with 3.0 mm base plate, 4 crosshair notches, and 608 bearing post."""
     m = Mesh("circle_cutter_base")
     r_notch = r_base - notch_depth
     half_w = notch_width / 2.0
@@ -333,13 +358,23 @@ def build_piece1_base(r_base: float = BASE_PLATE_RADIUS, h_base: float = BASE_PL
         spindle_pts.append((r_spindle * math.cos(ang), r_spindle * math.sin(ang)))
 
     r_top = r_spindle - chamfer
-    z_total = h_base + h_spindle
-    z_chamfer = z_total - chamfer
+    z_spindle_top = h_base + h_spindle
+    z_chamfer = z_spindle_top - chamfer
     top_pts = [(r_top * math.cos(math.atan2(p[1], p[0])), r_top * math.sin(math.atan2(p[1], p[0]))) for p in spindle_pts]
+
+    # Shoulder and Post loops (all aligned to identical polar angles as spindle_pts)
+    shoulder_pts = [(r_shoulder * math.cos(math.atan2(p[1], p[0])), r_shoulder * math.sin(math.atan2(p[1], p[0]))) for p in spindle_pts]
+    post_pts = [(r_post * math.cos(math.atan2(p[1], p[0])), r_post * math.sin(math.atan2(p[1], p[0]))) for p in spindle_pts]
+    r_post_top = r_post - post_chamfer
+    post_top_pts = [(r_post_top * math.cos(math.atan2(p[1], p[0])), r_post_top * math.sin(math.atan2(p[1], p[0]))) for p in spindle_pts]
+
+    z_shoulder_top = z_spindle_top + h_shoulder
+    z_post_chamfer = z_shoulder_top + h_post - post_chamfer
+    z_post_top = z_shoulder_top + h_post
 
     # 1. Base bottom cap at Z=0 (vinyl contact plane)
     _star_fan(m, outer_pts, 0.0, up=False)
-    # 2. Base plate wall from Z=0 to Z=h_base (4.0 mm)
+    # 2. Base plate wall from Z=0 to Z=h_base (3.0 mm)
     _loop_wall(m, outer_pts, 0.0, h_base)
     # 3. Shoulder at Z=h_base
     _ring_face(m, outer_pts, spindle_pts, h_base, up=True)
@@ -350,10 +385,25 @@ def build_piece1_base(r_base: float = BASE_PLATE_RADIUS, h_base: float = BASE_PL
         j = (i + 1) % n
         m.quad((spindle_pts[i][0], spindle_pts[i][1], z_chamfer),
                (spindle_pts[j][0], spindle_pts[j][1], z_chamfer),
-               (top_pts[j][0], top_pts[j][1], z_total),
-               (top_pts[i][0], top_pts[i][1], z_total))
-    # 6. Spindle top cap
-    _star_fan(m, top_pts, z_total, up=True)
+               (top_pts[j][0], top_pts[j][1], z_spindle_top),
+               (top_pts[i][0], top_pts[i][1], z_spindle_top))
+    # 6. Spindle top annular face at z_spindle_top (from top_pts to shoulder_pts, normal +Z)
+    _ring_face(m, top_pts, shoulder_pts, z_spindle_top, up=True)
+    # 7. Inner race shoulder vertical wall (from z_spindle_top to z_shoulder_top, normal outward)
+    _loop_wall(m, shoulder_pts, z_spindle_top, z_shoulder_top)
+    # 8. Inner race seating face at z_shoulder_top (from shoulder_pts to post_pts, normal +Z)
+    _ring_face(m, shoulder_pts, post_pts, z_shoulder_top, up=True)
+    # 9. Center post vertical wall (from z_shoulder_top to z_post_chamfer, normal outward)
+    _loop_wall(m, post_pts, z_shoulder_top, z_post_chamfer)
+    # 10. Post top lead-in chamfer
+    for i in range(n):
+        j = (i + 1) % n
+        m.quad((post_pts[i][0], post_pts[i][1], z_post_chamfer),
+               (post_pts[j][0], post_pts[j][1], z_post_chamfer),
+               (post_top_pts[j][0], post_top_pts[j][1], z_post_top),
+               (post_top_pts[i][0], post_top_pts[i][1], z_post_top))
+    # 11. Post top cap at z_post_top (normal +Z)
+    _star_fan(m, post_top_pts, z_post_top, up=True)
     return m
 
 
@@ -707,8 +757,14 @@ def build_piece4_hub_cap(r_flange: float = HUB_CAP_FLANGE_RADIUS,
                          z_top: float = HUB_CAP_TOTAL_HEIGHT,
                          w_slot: float = HUB_CAP_SLOT_WIDTH,
                          n_fingers: int = HUB_CAP_NUM_FINGERS,
+                         r_pocket: float = BEARING_608_POCKET_DIA / 2.0,
+                         r_cup_out: float = BEARING_608_POCKET_WALL_OD / 2.0,
+                         z_thrust: float = 4.0,
+                         z_cup_top: float = 7.0,
+                         r_relief: float = BEARING_608_RELIEF_DIA / 2.0,
+                         z_relief_bot: float = 1.5,
                          n_f: int = 16, n_s: int = 6) -> Mesh:
-    """Build Piece 4 (Snap-in Hub Top Cap) with 4 cantilever flex fingers and retention barb."""
+    """Build Piece 4 (Snap-in Hub Top Cap) with 4 flex fingers and integrated 608 bearing pocket."""
     m = Mesh("circle_cutter_hub_cap")
     r_bed = r_flange - ch_flange
 
@@ -782,14 +838,74 @@ def build_piece4_hub_cap(r_flange: float = HUB_CAP_FLANGE_RADIUS,
         p2_i = (r_flange * math.cos(ai), r_flange * math.sin(ai), h_flange)
         m.quad(p1_i, p1_j, p2_j, p2_i)
 
-    # 4. Central recess disc at Z=h_flange (r=r_skirt_in, normal +Z)
-    c_top_in = (0.0, 0.0, h_flange)
+    # 4. Integrated 608 Ball Bearing Pocket & Outer Race Thrust Seat:
+    # Point loops for concentric features across all n_tot angles:
+    skirt_in_pts = [(r_skirt_in * math.cos(a), r_skirt_in * math.sin(a)) for a in all_angles]
+    cup_out_pts = [(r_cup_out * math.cos(a), r_cup_out * math.sin(a)) for a in all_angles]
+    pocket_pts = [(r_pocket * math.cos(a), r_pocket * math.sin(a)) for a in all_angles]
+    relief_pts = [(r_relief * math.cos(a), r_relief * math.sin(a)) for a in all_angles]
+
+    # 4A. Flange floor between skirt and bearing cup (at Z = h_flange, normal +Z)
     for i in range(n_tot):
         j = (i + 1) % n_tot
-        ai, aj = all_angles[i], all_angles[j]
-        pi = (r_skirt_in * math.cos(ai), r_skirt_in * math.sin(ai), h_flange)
-        pj = (r_skirt_in * math.cos(aj), r_skirt_in * math.sin(aj), h_flange)
-        m.add(c_top_in, pi, pj)
+        p_out_i = (skirt_in_pts[i][0], skirt_in_pts[i][1], h_flange)
+        p_out_j = (skirt_in_pts[j][0], skirt_in_pts[j][1], h_flange)
+        p_in_j = (cup_out_pts[j][0], cup_out_pts[j][1], h_flange)
+        p_in_i = (cup_out_pts[i][0], cup_out_pts[i][1], h_flange)
+        m.quad(p_out_i, p_out_j, p_in_j, p_in_i)
+
+    # 4B. Bearing cup outer cylinder wall (from Z = h_flange to Z = z_cup_top, normal outward)
+    for i in range(n_tot):
+        j = (i + 1) % n_tot
+        p1_i = (cup_out_pts[i][0], cup_out_pts[i][1], h_flange)
+        p1_j = (cup_out_pts[j][0], cup_out_pts[j][1], h_flange)
+        p2_j = (cup_out_pts[j][0], cup_out_pts[j][1], z_cup_top)
+        p2_i = (cup_out_pts[i][0], cup_out_pts[i][1], z_cup_top)
+        m.quad(p1_i, p1_j, p2_j, p2_i)
+
+    # 4C. Bearing cup top annular rim (at Z = z_cup_top, from r_pocket to r_cup_out, normal +Z)
+    for i in range(n_tot):
+        j = (i + 1) % n_tot
+        p_out_i = (cup_out_pts[i][0], cup_out_pts[i][1], z_cup_top)
+        p_out_j = (cup_out_pts[j][0], cup_out_pts[j][1], z_cup_top)
+        p_in_j = (pocket_pts[j][0], pocket_pts[j][1], z_cup_top)
+        p_in_i = (pocket_pts[i][0], pocket_pts[i][1], z_cup_top)
+        m.quad(p_out_i, p_out_j, p_in_j, p_in_i)
+
+    # 4D. Bearing pocket inner cylinder wall (from Z = z_thrust to Z = z_cup_top, normal inward)
+    for i in range(n_tot):
+        j = (i + 1) % n_tot
+        p1_i = (pocket_pts[i][0], pocket_pts[i][1], z_thrust)
+        p2_i = (pocket_pts[i][0], pocket_pts[i][1], z_cup_top)
+        p2_j = (pocket_pts[j][0], pocket_pts[j][1], z_cup_top)
+        p1_j = (pocket_pts[j][0], pocket_pts[j][1], z_thrust)
+        m.quad(p1_i, p2_i, p2_j, p1_j)
+
+    # 4E. Outer race thrust shoulder face (at Z = z_thrust, from r_relief to r_pocket, normal +Z)
+    for i in range(n_tot):
+        j = (i + 1) % n_tot
+        p_out_i = (pocket_pts[i][0], pocket_pts[i][1], z_thrust)
+        p_out_j = (pocket_pts[j][0], pocket_pts[j][1], z_thrust)
+        p_in_j = (relief_pts[j][0], relief_pts[j][1], z_thrust)
+        p_in_i = (relief_pts[i][0], relief_pts[i][1], z_thrust)
+        m.quad(p_out_i, p_out_j, p_in_j, p_in_i)
+
+    # 4F. Inner relief cavity cylinder wall (from Z = z_relief_bot to Z = z_thrust, normal inward)
+    for i in range(n_tot):
+        j = (i + 1) % n_tot
+        p1_i = (relief_pts[i][0], relief_pts[i][1], z_relief_bot)
+        p2_i = (relief_pts[i][0], relief_pts[i][1], z_thrust)
+        p2_j = (relief_pts[j][0], relief_pts[j][1], z_thrust)
+        p1_j = (relief_pts[j][0], relief_pts[j][1], z_relief_bot)
+        m.quad(p1_i, p2_i, p2_j, p1_j)
+
+    # 4G. Inner relief cavity bottom disc (at Z = z_relief_bot, normal +Z)
+    c_relief_bot = (0.0, 0.0, z_relief_bot)
+    for i in range(n_tot):
+        j = (i + 1) % n_tot
+        p_i = (relief_pts[i][0], relief_pts[i][1], z_relief_bot)
+        p_j = (relief_pts[j][0], relief_pts[j][1], z_relief_bot)
+        m.add(c_relief_bot, p_i, p_j)
 
     # 5. Top flange annular faces (normal +Z):
     # Outer ring (from r_skirt_root to r_flange, all 360 degrees)
@@ -887,20 +1003,52 @@ def build_piece4_hub_cap(r_flange: float = HUB_CAP_FLANGE_RADIUS,
 
 
 def build_spindle_bore_coupon() -> Mesh:
-    """Rapid 18-minute calibration coupon testing 40mm spindle vs 42mm bore slip fit."""
+    """Rapid 18-minute calibration coupon testing 40mm spindle vs 42mm bore slip fit AND 608 bearing post."""
     m = Mesh("circle_cutter_spindle_bore_coupon")
     n = 48
     h = 20.0
-    # Left: 40mm spindle coupon
-    spindle = [(20.0 * math.cos(2 * math.pi * i / n) - 30.0, 20.0 * math.sin(2 * math.pi * i / n)) for i in range(n)]
-    c_bot_s = (-30.0, 0.0, 0.0)
-    c_top_s = (-30.0, 0.0, h)
+    r_shoulder = BEARING_608_INNER_SHOULDER_DIA / 2.0
+    h_shoulder = BEARING_608_INNER_SHOULDER_HEIGHT
+    r_post = BEARING_608_POST_DIA / 2.0
+    h_post = BEARING_608_POST_HEIGHT
+    post_chamfer = BEARING_608_POST_CHAMFER
+
+    # Left: 40mm spindle coupon with 608 bearing shoulder and post
+    c_x = -30.0
+    spindle = [(20.0 * math.cos(2 * math.pi * i / n) + c_x, 20.0 * math.sin(2 * math.pi * i / n)) for i in range(n)]
+    shoulder_pts = [(r_shoulder * math.cos(2 * math.pi * i / n) + c_x, r_shoulder * math.sin(2 * math.pi * i / n)) for i in range(n)]
+    post_pts = [(r_post * math.cos(2 * math.pi * i / n) + c_x, r_post * math.sin(2 * math.pi * i / n)) for i in range(n)]
+    r_post_top = r_post - post_chamfer
+    post_top_pts = [(r_post_top * math.cos(2 * math.pi * i / n) + c_x, r_post_top * math.sin(2 * math.pi * i / n)) for i in range(n)]
+
+    z_sh_top = h + h_shoulder
+    z_post_ch = z_sh_top + h_post - post_chamfer
+    z_post_top = z_sh_top + h_post
+
+    c_bot_s = (c_x, 0.0, 0.0)
     for i in range(n):
         j = (i + 1) % n
         m.add(c_bot_s, (spindle[j][0], spindle[j][1], 0.0), (spindle[i][0], spindle[i][1], 0.0))
-        m.add(c_top_s, (spindle[i][0], spindle[i][1], h), (spindle[j][0], spindle[j][1], h))
         m.quad((spindle[i][0], spindle[i][1], 0.0), (spindle[j][0], spindle[j][1], 0.0),
                (spindle[j][0], spindle[j][1], h), (spindle[i][0], spindle[i][1], h))
+        # Annular face at h (from spindle to shoulder, normal +Z)
+        m.quad((spindle[i][0], spindle[i][1], h), (spindle[j][0], spindle[j][1], h),
+               (shoulder_pts[j][0], shoulder_pts[j][1], h), (shoulder_pts[i][0], shoulder_pts[i][1], h))
+        # Shoulder cylinder wall
+        m.quad((shoulder_pts[i][0], shoulder_pts[i][1], h), (shoulder_pts[j][0], shoulder_pts[j][1], h),
+               (shoulder_pts[j][0], shoulder_pts[j][1], z_sh_top), (shoulder_pts[i][0], shoulder_pts[i][1], z_sh_top))
+        # Shoulder top face (from shoulder to post, normal +Z)
+        m.quad((shoulder_pts[i][0], shoulder_pts[i][1], z_sh_top), (shoulder_pts[j][0], shoulder_pts[j][1], z_sh_top),
+               (post_pts[j][0], post_pts[j][1], z_sh_top), (post_pts[i][0], post_pts[i][1], z_sh_top))
+        # Post cylinder wall
+        m.quad((post_pts[i][0], post_pts[i][1], z_sh_top), (post_pts[j][0], post_pts[j][1], z_sh_top),
+               (post_pts[j][0], post_pts[j][1], z_post_ch), (post_pts[i][0], post_pts[i][1], z_post_ch))
+        # Post chamfer
+        m.quad((post_pts[i][0], post_pts[i][1], z_post_ch), (post_pts[j][0], post_pts[j][1], z_post_ch),
+               (post_top_pts[j][0], post_top_pts[j][1], z_post_top), (post_top_pts[i][0], post_top_pts[i][1], z_post_top))
+        # Post top cap
+        m.add((c_x, 0.0, z_post_top), (post_top_pts[i][0], post_top_pts[i][1], z_post_top),
+              (post_top_pts[j][0], post_top_pts[j][1], z_post_top))
 
     # Right: 42mm bore sleeve coupon (50mm OD x 42mm ID x 20mm H)
     outer = [(25.0 * math.cos(2 * math.pi * i / n) + 30.0, 25.0 * math.sin(2 * math.pi * i / n)) for i in range(n)]
@@ -1236,6 +1384,139 @@ def render_multiview_sheet(stl_path: Path, out_path: Path, title: str = "", subt
     print(f"  [Rendered] {out_path.name}")
 
 
+def render_assembly_views(out_dir: Path, base: Mesh, arm: Mesh, blade_cap: Mesh, hub_cap: Mesh) -> None:
+    """Render full assembly and exploded 3D scene views directly in pure Python."""
+    try:
+        import numpy as np
+        from PIL import Image, ImageDraw
+    except ImportError:
+        return
+
+    root_dir = Path(__file__).resolve().parent
+
+    def mesh_to_verts(m: Mesh, offset=(0.0, 0.0, 0.0)) -> np.ndarray:
+        dx, dy, dz = offset
+        tris = [[(p[0] + dx, p[1] + dy, p[2] + dz) for p in t] for t in m.triangles]
+        return np.array(tris, dtype=np.float32)
+
+    def render_scene(components: List[Tuple[np.ndarray, Tuple[int, int, int]]], out_path: Path, title: str, subtitle: str) -> None:
+        all_verts = np.concatenate([c[0] for c in components], axis=0)
+        min_pt = np.min(all_verts, axis=(0, 1))
+        max_pt = np.max(all_verts, axis=(0, 1))
+        center = (min_pt + max_pt) / 2.0
+        max_dim = max(float(np.max(max_pt - min_pt)), 1.0)
+
+        w, h = 1200, 900
+        scale = (w * 0.46) / max_dim
+
+        def look_at(eye: np.ndarray, target: np.ndarray, up: np.ndarray) -> np.ndarray:
+            fwd = target - eye
+            fwd = fwd / np.linalg.norm(fwd)
+            rt = np.cross(fwd, up)
+            norm_rt = np.linalg.norm(rt)
+            rt = np.array([1.0, 0.0, 0.0]) if norm_rt < 1e-6 else rt / norm_rt
+            act_up = np.cross(rt, fwd)
+            mat = np.eye(4, dtype=np.float32)
+            mat[0, :3] = rt
+            mat[1, :3] = act_up
+            mat[2, :3] = -fwd
+            mat[:3, 3] = -mat[:3, :3] @ eye
+            return mat
+
+        view_mat = look_at(np.array([1.5, -1.4, 1.2]), np.array([0.0, 0.0, 0.0]), np.array([0.0, 0.0, 1.0]))
+
+        img = np.full((h, w, 3), 252, dtype=np.uint8)
+        zbuf = np.full((h, w), np.inf, dtype=np.float32)
+
+        key_l = np.array([-0.577, 0.577, 0.577], dtype=np.float32)
+        fill_l = np.array([0.707, 0.707, 0.0], dtype=np.float32)
+
+        for verts_raw, col_rgb in components:
+            v_centered = verts_raw - center
+            v_hom = np.pad(v_centered, ((0, 0), (0, 0), (0, 1)), constant_values=1.0)
+            v_trans = (v_hom @ view_mat.T)[:, :, :3]
+            sx = w / 2.0 + v_trans[:, :, 0] * scale
+            sy = h / 2.0 - v_trans[:, :, 1] * scale
+            dz = v_trans[:, :, 2]
+
+            v0, v1, v2 = v_centered[:, 0, :], v_centered[:, 1, :], v_centered[:, 2, :]
+            norms = np.cross(v1 - v0, v2 - v0)
+            n_len = np.linalg.norm(norms, axis=1, keepdims=True)
+            norms = np.divide(norms, n_len, out=np.zeros_like(norms), where=n_len > 1e-6)
+
+            cam_norms = norms @ view_mat[:3, :3].T
+            front = (cam_norms @ np.array([0, 0, 1], dtype=np.float32)) < 0.05
+
+            col = np.array(col_rgb, dtype=np.float32)
+            dot1 = np.maximum(0, -np.sum(norms * key_l, axis=1))
+            dot2 = np.maximum(0, -np.sum(norms * fill_l, axis=1))
+            intensity = np.clip(0.38 + 0.48 * dot1 + 0.14 * dot2, 0.20, 1.0)
+
+            indices = np.where(front)[0]
+            for idx in indices:
+                x0, x1, x2 = sx[idx]
+                y0, y1, y2 = sy[idx]
+                z0, z1, z2 = dz[idx]
+                min_x = max(0, int(np.floor(min(x0, x1, x2))))
+                max_x = min(w - 1, int(np.ceil(max(x0, x1, x2))))
+                min_y = max(0, int(np.floor(min(y0, y1, y2))))
+                max_y = min(h - 1, int(np.ceil(max(y0, y1, y2))))
+                if min_x > max_x or min_y > max_y:
+                    continue
+                denom = (y1 - y2) * (x0 - x2) + (x2 - x1) * (y0 - y2)
+                if abs(denom) < 1e-6:
+                    continue
+                px, py = np.meshgrid(np.arange(min_x, max_x + 1), np.arange(min_y, max_y + 1))
+                w0 = ((y1 - y2) * (px - x2) + (x2 - x1) * (py - y2)) / denom
+                w1 = ((y2 - y0) * (px - x2) + (x0 - x2) * (py - y2)) / denom
+                w2 = 1.0 - w0 - w1
+                mask = (w0 >= 0) & (w1 >= 0) & (w2 >= 0)
+                if not np.any(mask):
+                    continue
+                pz = w0 * z0 + w1 * z1 + w2 * z2
+                z_mask = mask & (pz < zbuf[min_y:max_y + 1, min_x:max_x + 1])
+                if np.any(z_mask):
+                    zbuf[min_y:max_y + 1, min_x:max_x + 1][z_mask] = pz[z_mask]
+                    tri_col = (col * intensity[idx]).astype(np.uint8)
+                    img[min_y:max_y + 1, min_x:max_x + 1][z_mask] = tri_col
+
+        canvas = Image.fromarray(img)
+        draw = ImageDraw.Draw(canvas)
+        draw.text((30, 25), title, fill=(20, 30, 45))
+        draw.text((30, 50), subtitle, fill=(90, 105, 120))
+        canvas.save(out_path)
+        canvas.save(root_dir / out_path.name)
+        print(f"  [Rendered Scene] {out_path.name}")
+
+    col_base = (70, 130, 180)     # Steel Blue
+    col_arm = (230, 120, 30)      # Dark Orange
+    col_cap = (80, 90, 100)       # Slate Gray
+    col_hub = (46, 139, 87)       # Sea Green
+
+    # Assembly Scene
+    scene_assembly = [
+        (mesh_to_verts(base, (0.0, 0.0, 0.0)), col_base),
+        (mesh_to_verts(arm, (0.0, 0.0, 4.0)), col_arm),
+        (mesh_to_verts(blade_cap, (176.3, 0.0, 4.0)), col_cap),
+        (mesh_to_verts(hub_cap, (0.0, 0.0, 112.0)), col_hub),
+    ]
+    render_scene(scene_assembly, out_dir / "circle_cutter_assembly.png",
+                 "PCHSMB Circle Cutter — Full Assembly (v1.4 with 608 Bearing Pivot)",
+                 "Piece 1 (Base, Blue) | Piece 2 (Arm, Orange) | Piece 3 (Clamp, Gray) | Piece 4 (Hub Cap, Green)")
+
+    # Exploded Scene
+    scene_exploded = [
+        (mesh_to_verts(base, (0.0, 0.0, 0.0)), col_base),
+        (mesh_to_verts(arm, (0.0, 0.0, 45.0)), col_arm),
+        (mesh_to_verts(blade_cap, (210.0, 0.0, 45.0)), col_cap),
+        (mesh_to_verts(hub_cap, (0.0, 0.0, 195.0)), col_hub),
+    ]
+    render_scene(scene_exploded, out_dir / "circle_cutter_exploded.png",
+                 "PCHSMB Circle Cutter — Exploded Alignment View (v1.4)",
+                 "Vertical Stackup: Base (Z=0) -> Arm (+45mm) -> Hub Cap (+150mm) | Distal Clamp (+35mm X)")
+
+
+
 # =============================================================================
 # MANIFEST BUILDER
 # =============================================================================
@@ -1266,14 +1547,17 @@ def generate_manifest(out_dir: Path, meshes: List[Mesh]) -> dict:
             "blade_tip_world_z_mm": BLADE_TIP_WORLD_Z,
             "controlled_cut_depth_mm": CUT_DEPTH,
             "base_plate_thickness_mm": BASE_PLATE_HEIGHT,
-            "arm_air_clearance_above_vinyl_mm": BASE_PLATE_HEIGHT,
+            "arm_bottom_world_z_mm": ARM_BOTTOM_WORLD_Z,
+            "arm_to_base_plate_air_gap_mm": ARM_AIR_GAP,
+            "arm_air_clearance_above_vinyl_mm": ARM_BOTTOM_WORLD_Z,
             "bearing_axle_world_z_mm": BEARING_AXLE_WORLD_Z,
             "bearing_axle_local_z_mm": BEARING_AXLE_LOCAL_Z,
-            "self_leveling_bridge": "Base plate and 625 bearing both contact vinyl simultaneously, holding arm dead-level",
-            "spindle_to_cap_ceiling_clearance_mm": 2.0,
+            "self_leveling_bridge": "Base plate and 625 bearing both contact vinyl simultaneously, holding arm dead-level with 4.0mm air gap above vinyl",
+            "friction_elimination": "Arm floats 1.0mm above base plate shoulder, reducing plastic sliding contact area from 707mm2 to 0mm2",
         },
-        "bearing_specifications": {
+        "bearing_specifications_625_roller": {
             "bearing_type": "625 Ball Bearing (625ZZ / 625-2RS)",
+            "purpose": "Distal roller depth stop rolling directly on vinyl",
             "outer_diameter_mm": BEARING_OD,
             "inner_bore_mm": BEARING_ID,
             "width_mm": BEARING_WIDTH,
@@ -1283,8 +1567,22 @@ def generate_manifest(out_dir: Path, meshes: List[Mesh]) -> dict:
             "rotation_axis_alignment": "Radial (+X), parallel to arm length; rolls along tangential cut arc (+Y) alongside blade",
             "head_architecture": "Side-by-Side Dual Head (Bearing Pad at Y=-9mm, Blade Pad at Y=+9mm)",
         },
+        "bearing_specifications_608_thrust": {
+            "bearing_type": "608 Ball Bearing (608ZZ / 608-2RS)",
+            "purpose": "Top-mounted axial thrust pivot carrying 100% of operator downward pressure",
+            "outer_diameter_mm": BEARING_608_OD,
+            "inner_bore_mm": BEARING_608_ID,
+            "width_mm": BEARING_608_WIDTH,
+            "inner_race_shoulder_dia_mm": BEARING_608_INNER_SHOULDER_DIA,
+            "inner_race_shoulder_height_mm": BEARING_608_INNER_SHOULDER_HEIGHT,
+            "spindle_post_dia_mm": BEARING_608_POST_DIA,
+            "spindle_post_height_mm": BEARING_608_POST_HEIGHT,
+            "hub_cap_pocket_dia_mm": BEARING_608_POCKET_DIA,
+            "hub_cap_relief_dia_mm": BEARING_608_RELIEF_DIA,
+            "contact_isolation": "Piece 1 seats inner race only; Piece 4 drives outer race only; shields and post relieved with >1.5mm air gap",
+        },
         "hub_architecture": {
-            "type": "Modular 4-Piece Open Through-Bore with Snap-in Cap",
+            "type": "Modular 4-Piece Open Through-Bore with Snap-in Cap & 608 Bearing Pocket",
             "hub_bore_dia_mm": HUB_RECESS_DIA,
             "internal_retention_groove_dia_mm": round(HUB_RECESS_DIA + 2 * HUB_GROOVE_DEPTH, 2),
             "internal_retention_groove_z_mm": [HUB_GROOVE_Z_START, HUB_GROOVE_Z_END],
@@ -1299,7 +1597,7 @@ def generate_manifest(out_dir: Path, meshes: List[Mesh]) -> dict:
             "all_files_passed_topological_audit": all(a["passed"] for a in audits.values()),
             "total_triangles": sum(a["triangles"] for a in audits.values()),
         },
-        "status": "production_release_v1_3_modular_snap_cap",
+        "status": "production_release_v1_4_608_bearing_pivot",
     }
     (out_dir / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
     return manifest
@@ -1321,8 +1619,8 @@ def main() -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
 
     print("=" * 72)
-    print("  PCHSMB Circle Cutter - Pure-Python STL Generation Pipeline v1.3")
-    print("  Feature: Modular 4-Piece Architecture with Support-Free Snap-in Hub Cap")
+    print("  PCHSMB Circle Cutter - Pure-Python STL Generation Pipeline v1.4")
+    print("  Feature: Top-Mounted 608 Ball Bearing Thrust Pivot for Low-Friction Operation")
     print(f"  Target: {out_dir.resolve()}")
     print("=" * 72)
 
@@ -1369,11 +1667,14 @@ def main() -> None:
 
     # 5. Headless Rendering
     if not args.no_render:
-        print("\n[4/4] Generating Headless 3D Multi-View Sheets (LookAt Engine)...")
+        print("\n[4/4] Generating Headless 3D Multi-View Sheets & Assembly Scenes (LookAt Engine)...")
         for m in meshes:
             stl_p = out_dir / f"{m.name}.stl"
             png_p = out_dir / f"{m.name}_multiview.png"
             render_multiview_sheet(stl_p, png_p, title=f"PCHSMB Circle Cutter — {m.name}")
+
+        print("  Generating 3D Assembly and Exploded Scene Renders (Pure Python)...")
+        render_assembly_views(out_dir, base, arm, blade_cap, hub_cap)
 
     print("\n" + "=" * 72)
     print("  Generation Complete! All STLs verified 100% watertight manifold.")

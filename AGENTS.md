@@ -39,6 +39,7 @@ This repository is an umbrella / host repository supporting multiple independent
 - Treat master CAD files (`.FCStd`, Affinity `.afdesign`, SVG vector sources) as authoritative.
 - Never overwrite CAD models or mesh exports in place without explicit instruction.
 - Preserve file relationships between source CAD files and exported 3MF / STL / STEP files.
+- For pure-Python parametric CAD tooling projects (e.g., `PCHSMB/Circle Cutter`), the generator script (`generate_circle_cutter.py`) is the sole authoritative CAD engine and rendering pipeline. Never invoke or query external CAD binaries (`openscad`, FreeCAD) for these subprojects.
 - Keep clean Markdown documentation (`README.md`) in subdirectories describing hardware, printing parameters, and assembly.
 
 ---
