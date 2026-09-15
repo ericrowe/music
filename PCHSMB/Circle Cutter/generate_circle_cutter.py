@@ -33,8 +33,8 @@ from typing import Dict, List, Sequence, Tuple
 # PARAMETRIC SPECIFICATIONS (MILLIMETERS)
 # =============================================================================
 
-VERSION = "1.7"
-DESIGN_NAME = "PCHSMB Circle Cutter - Semicircular Wind Relief Slit Tool with Cylindrical Domed Push Knob & 608 Bearings"
+VERSION = "1.8"
+DESIGN_NAME = "PCHSMB Circle Cutter - Semicircular Wind Relief Slit Tool with Canted Dual Head & 608 Bearings"
 
 # -----------------------------------------------------------------------------
 # Vertical Stack-Up & Ground Reference (Vinyl Top Surface = Z 0.0 mm)
@@ -114,6 +114,9 @@ DUAL_HEAD_WIDTH = 46.0                        # 46.0 mm total width (Y in [-23, 
 DUAL_HEAD_HEIGHT = 14.0                       # 14.0 mm head height (flares up from 12.0mm beam for symmetric M5 wall strength)
 BEARING_PAD_Y = -11.5                         # Center of 608 bearing pad in Y
 BLADE_PAD_Y = +11.5                           # Center of blade & M3 clamping cap in Y
+CANT_ANGLE_RAD = math.atan(BLADE_PAD_Y / DISTAL_X)  # 0.06562 rad (3.7607° cant angle)
+CANT_ANGLE_DEG = math.degrees(CANT_ANGLE_RAD)       # 3.7607°
+CHEVRON_VERTEX_X = DISTAL_X + (BLADE_PAD_Y**2 / DISTAL_X)  # 175.7557 mm at Y=0.0 center junction
 
 # 608 Bearing Mount on Arm
 BEARING_AXLE_LOCAL_Z = BEARING_AXLE_WORLD_Z - ARM_BOTTOM_WORLD_Z  # +7.0 mm local (11.0 - 4.0 = 7.0 mm)
@@ -615,136 +618,158 @@ def build_piece2_arm(r_hub_outer: float = HUB_OUTER_RADIUS, r_bore: float = HUB_
         m.quad((x1, loop_straight[i][0], loop_straight[i][1]), (x1, loop_straight[j][0], loop_straight[j][1]),
                (x2, loop_dual[j][0], loop_dual[j][1]), (x2, loop_dual[i][0], loop_dual[i][1]))
 
-    # Section 3: x2 to x3 (dual head beam, 46x14mm)
+    # Section 3: x2 to x_front (dual head beam with canted chevron distal face)
+    cant_angle = math.atan(blade_y / x3)
+    cos_c = math.cos(cant_angle)
+    sin_c = math.sin(cant_angle)
+    tan_c = math.tan(cant_angle)
+
+    def x_front(y: float) -> float:
+        if y >= 0.0:
+            return x3 - (y - blade_y) * tan_c
+        else:
+            return x3 + (y - bearing_y) * tan_c
+
     for i in range(n_loop):
         j = (i + 1) % n_loop
-        m.quad((x2, loop_dual[i][0], loop_dual[i][1]), (x2, loop_dual[j][0], loop_dual[j][1]),
-               (x3, loop_dual[j][0], loop_dual[j][1]), (x3, loop_dual[i][0], loop_dual[i][1]))
+        p2_i = (x2, loop_dual[i][0], loop_dual[i][1])
+        p2_j = (x2, loop_dual[j][0], loop_dual[j][1])
+        p3_j = (x_front(loop_dual[j][0]), loop_dual[j][0], loop_dual[j][1])
+        p3_i = (x_front(loop_dual[i][0]), loop_dual[i][0], loop_dual[i][1])
+        m.quad(p2_i, p2_j, p3_j, p3_i)
 
-    # Distal Face at X3 = 175.0 (Dual Head Front Face)
+    # Distal Canted Face (Chevron Face with Vertex at Y=0)
     div_pts_down = [(0.0, 9.0), (0.0, 5.0)]
     div_pts_up = [(0.0, 5.0), (0.0, 9.0)]
 
-    # Blade boundary (19 pts in CCW order)
-    bnd_blade = [loop_dual[idx] for idx in range(28, 32)] + \
-                [loop_dual[idx] for idx in range(0, 13)] + \
-                div_pts_down
+    bnd_blade_2d = [loop_dual[idx] for idx in range(28, 32)] + \
+                   [loop_dual[idx] for idx in range(0, 13)] + \
+                   div_pts_down
 
-    # Bearing boundary (19 pts in CCW order)
-    bnd_bearing = [loop_dual[idx] for idx in range(12, 29)] + \
-                  div_pts_up
+    bnd_bearing_2d = [loop_dual[idx] for idx in range(12, 29)] + \
+                     div_pts_up
+
+    bnd_blade_3d = [(x_front(p[0]), p[0], p[1]) for p in bnd_blade_2d]
+    bnd_bearing_3d = [(x_front(p[0]), p[0], p[1]) for p in bnd_bearing_2d]
 
     n_p = 19
 
-    # Blade Pad M3 hole: c = (blade_y, head_h / 2.0), r = m3_dia / 2.0, depth = m3_depth
-    m3_c = (blade_y, head_h / 2.0)
+    # Blade Pad M3 Hole:
+    # Pad normal nb = (cos_c, sin_c, 0.0), tangent tb = (-sin_c, cos_c, 0.0)
+    nb = (cos_c, sin_c, 0.0)
+    tb = (-sin_c, cos_c, 0.0)
+    m3_c_3d = (x_front(blade_y), blade_y, head_h / 2.0)
     m3_r = m3_dia / 2.0
 
-    # Polar-matched circle_m3: each circle vertex matches the polar angle of bnd_blade[i]
-    # around m3_c, preventing crossed quads/bowties on the distal face.
     circle_m3 = []
-    for p in bnd_blade:
-        ang = math.atan2(p[1] - m3_c[1], p[0] - m3_c[0])
-        circle_m3.append((m3_c[0] + m3_r * math.cos(ang),
-                          m3_c[1] + m3_r * math.sin(ang)))
+    for p in bnd_blade_2d:
+        ang = math.atan2(p[1] - (head_h / 2.0), p[0] - blade_y)
+        dy = m3_r * math.cos(ang)
+        dz = m3_r * math.sin(ang)
+        pt = (m3_c_3d[0] + dy * tb[0], m3_c_3d[1] + dy * tb[1], m3_c_3d[2] + dz)
+        circle_m3.append(pt)
 
-    # Distal face around M3 hole (+X normal)
+    # Distal face around M3 hole
     for i in range(n_p):
         j = (i + 1) % n_p
-        m.quad((x3, bnd_blade[i][0], bnd_blade[i][1]),
-               (x3, bnd_blade[j][0], bnd_blade[j][1]),
-               (x3, circle_m3[j][0], circle_m3[j][1]),
-               (x3, circle_m3[i][0], circle_m3[i][1]))
+        m.quad(bnd_blade_3d[i], bnd_blade_3d[j], circle_m3[j], circle_m3[i])
 
-    # M3 hole cylinder wall (inward-facing normal into hole void)
-    x3_m3_bot = x3 - m3_depth
+    # M3 hole cylinder wall (drills along -nb)
+    circle_m3_bot = []
+    for pt in circle_m3:
+        circle_m3_bot.append((pt[0] - m3_depth * nb[0], pt[1] - m3_depth * nb[1], pt[2]))
+
     for i in range(n_p):
         j = (i + 1) % n_p
-        m.quad((x3, circle_m3[i][0], circle_m3[i][1]),
-               (x3, circle_m3[j][0], circle_m3[j][1]),
-               (x3_m3_bot, circle_m3[j][0], circle_m3[j][1]),
-               (x3_m3_bot, circle_m3[i][0], circle_m3[i][1]))
+        m.quad(circle_m3[i], circle_m3[j], circle_m3_bot[j], circle_m3_bot[i])
 
-    # M3 hole bottom cap (+X normal into hole void)
-    c_m3_bot = (x3_m3_bot, m3_c[0], m3_c[1])
+    # M3 hole bottom cap
+    c_m3_bot = (m3_c_3d[0] - m3_depth * nb[0], m3_c_3d[1] - m3_depth * nb[1], m3_c_3d[2])
     for i in range(n_p):
         j = (i + 1) % n_p
-        m.add(c_m3_bot, (x3_m3_bot, circle_m3[i][0], circle_m3[i][1]),
-                        (x3_m3_bot, circle_m3[j][0], circle_m3[j][1]))
+        m.add(c_m3_bot, circle_m3_bot[i], circle_m3_bot[j])
 
-    # Bearing Pad:
-    boss_c = (bearing_y, bearing_axle_z)
+    # Bearing Pad Boss & M5 Hole:
+    # Pad normal nr = (cos_c, -sin_c, 0.0), tangent tr = (sin_c, cos_c, 0.0)
+    nr = (cos_c, -sin_c, 0.0)
+    tr = (sin_c, cos_c, 0.0)
+    boss_c_3d = (x_front(bearing_y), bearing_y, bearing_axle_z)
     r_boss = standoff_od / 2.0
     r_m5 = m5_dia / 2.0
-    x3_boss = x3 + standoff_len
-    x3_m5_bot = x3_boss - m5_depth
 
-    # Polar-matched boss and M5 circles: each vertex matches the polar angle of bnd_bearing[i]
     circle_boss_base = []
     circle_boss_top = []
     circle_m5 = []
-    for p in bnd_bearing:
-        ang = math.atan2(p[1] - boss_c[1], p[0] - boss_c[0])
-        circle_boss_base.append((boss_c[0] + r_boss * math.cos(ang),
-                                 boss_c[1] + r_boss * math.sin(ang)))
-        circle_boss_top.append((boss_c[0] + r_boss * math.cos(ang),
-                                boss_c[1] + r_boss * math.sin(ang)))
-        circle_m5.append((boss_c[0] + r_m5 * math.cos(ang),
-                          boss_c[1] + r_m5 * math.sin(ang)))
+    for p in bnd_bearing_2d:
+        ang = math.atan2(p[1] - bearing_axle_z, p[0] - bearing_y)
+        dy_b = r_boss * math.cos(ang)
+        dz_b = r_boss * math.sin(ang)
+        pt_base = (boss_c_3d[0] + dy_b * tr[0], boss_c_3d[1] + dy_b * tr[1], boss_c_3d[2] + dz_b)
+        circle_boss_base.append(pt_base)
+        pt_top = (pt_base[0] + standoff_len * nr[0], pt_base[1] + standoff_len * nr[1], pt_base[2])
+        circle_boss_top.append(pt_top)
+        dy_m5 = r_m5 * math.cos(ang)
+        dz_m5 = r_m5 * math.sin(ang)
+        pt_m5 = (boss_c_3d[0] + standoff_len * nr[0] + dy_m5 * tr[0],
+                 boss_c_3d[1] + standoff_len * nr[1] + dy_m5 * tr[1],
+                 boss_c_3d[2] + dz_m5)
+        circle_m5.append(pt_m5)
 
-    # Distal face around boss base (+X normal)
+    # Face around boss
     for i in range(n_p):
         j = (i + 1) % n_p
-        m.quad((x3, bnd_bearing[i][0], bnd_bearing[i][1]),
-               (x3, bnd_bearing[j][0], bnd_bearing[j][1]),
-               (x3, circle_boss_base[j][0], circle_boss_base[j][1]),
-               (x3, circle_boss_base[i][0], circle_boss_base[i][1]))
+        m.quad(bnd_bearing_3d[i], bnd_bearing_3d[j], circle_boss_base[j], circle_boss_base[i])
 
-    # Boss outer cylinder wall (outward normal away from boss axis)
+    # Boss cylinder wall
     for i in range(n_p):
         j = (i + 1) % n_p
-        m.quad((x3, circle_boss_base[i][0], circle_boss_base[i][1]),
-               (x3, circle_boss_base[j][0], circle_boss_base[j][1]),
-               (x3_boss, circle_boss_top[j][0], circle_boss_top[j][1]),
-               (x3_boss, circle_boss_top[i][0], circle_boss_top[i][1]))
+        m.quad(circle_boss_base[i], circle_boss_base[j], circle_boss_top[j], circle_boss_top[i])
 
-    # Boss annular top (+X normal)
+    # Boss annular top
     for i in range(n_p):
         j = (i + 1) % n_p
-        m.quad((x3_boss, circle_boss_top[i][0], circle_boss_top[i][1]),
-               (x3_boss, circle_boss_top[j][0], circle_boss_top[j][1]),
-               (x3_boss, circle_m5[j][0], circle_m5[j][1]),
-               (x3_boss, circle_m5[i][0], circle_m5[i][1]))
+        m.quad(circle_boss_top[i], circle_boss_top[j], circle_m5[j], circle_m5[i])
 
-    # M5 hole cylinder wall (inward-facing normal into hole void)
+    # M5 hole cylinder wall (drills along -nr from boss top)
+    circle_m5_bot = []
+    for pt in circle_m5:
+        circle_m5_bot.append((pt[0] - m5_depth * nr[0], pt[1] - m5_depth * nr[1], pt[2]))
+
     for i in range(n_p):
         j = (i + 1) % n_p
-        m.quad((x3_boss, circle_m5[i][0], circle_m5[i][1]),
-               (x3_boss, circle_m5[j][0], circle_m5[j][1]),
-               (x3_m5_bot, circle_m5[j][0], circle_m5[j][1]),
-               (x3_m5_bot, circle_m5[i][0], circle_m5[i][1]))
+        m.quad(circle_m5[i], circle_m5[j], circle_m5_bot[j], circle_m5_bot[i])
 
-    # M5 hole bottom cap (+X normal into hole void)
-    c_m5_bot = (x3_m5_bot, boss_c[0], boss_c[1])
+    # M5 hole bottom cap
+    c_m5_bot = (boss_c_3d[0] + (standoff_len - m5_depth) * nr[0],
+                boss_c_3d[1] + (standoff_len - m5_depth) * nr[1],
+                boss_c_3d[2])
     for i in range(n_p):
         j = (i + 1) % n_p
-        m.add(c_m5_bot, (x3_m5_bot, circle_m5[i][0], circle_m5[i][1]),
-                        (x3_m5_bot, circle_m5[j][0], circle_m5[j][1]))
+        m.add(c_m5_bot, circle_m5_bot[i], circle_m5_bot[j])
 
     # -------------------------------------------------------------------------
-    # Sub-Assembly C: Retaining Tabs flanking 6.0 mm Blade Slot on Blade Pad
+    # Sub-Assembly C: Canted Retaining Tabs flanking 6.0 mm Blade Slot
     # -------------------------------------------------------------------------
-    def add_tab_box(bx0: float, bx1: float, by0: float, by1: float, bz0: float, bz1: float) -> None:
-        corners = [(by0, bz0), (by1, bz0), (by1, bz1), (by0, bz1)]
-        m.quad((bx0, by0, bz0), (bx0, by0, bz1), (bx0, by1, bz1), (bx0, by1, bz0))
-        m.quad((bx1, by0, bz0), (bx1, by1, bz0), (bx1, by1, bz1), (bx1, by0, bz1))
-        for idx in range(4):
-            nxt = (idx + 1) % 4
-            m.quad((bx0, corners[idx][0], corners[idx][1]), (bx0, corners[nxt][0], corners[nxt][1]),
-                   (bx1, corners[nxt][0], corners[nxt][1]), (bx1, corners[idx][0], corners[idx][1]))
+    def add_canted_tab(by0: float, by1: float, bz0: float, bz1: float):
+        p00 = (x_front(by0), by0, bz0)
+        p10 = (x_front(by1), by1, bz0)
+        p11 = (x_front(by1), by1, bz1)
+        p01 = (x_front(by0), by0, bz1)
 
-    add_tab_box(x3, x3 + tab_h, 3.0, blade_y - slot_w / 2.0, 0.0, head_h)
-    add_tab_box(x3, x3 + tab_h, blade_y + slot_w / 2.0, h_dual, 0.0, head_h)
+        q00 = (p00[0] + tab_h * nb[0], p00[1] + tab_h * nb[1], bz0)
+        q10 = (p10[0] + tab_h * nb[0], p10[1] + tab_h * nb[1], bz0)
+        q11 = (p11[0] + tab_h * nb[0], p11[1] + tab_h * nb[1], bz1)
+        q01 = (p01[0] + tab_h * nb[0], p01[1] + tab_h * nb[1], bz1)
+
+        m.quad(p00, p01, p11, p10)
+        m.quad(q00, q10, q11, q01)
+        m.quad(p00, q00, q01, p01)
+        m.quad(p10, p11, q11, q10)
+        m.quad(p00, p10, q10, q00)
+        m.quad(p01, q01, q11, p11)
+
+    add_canted_tab(3.0, blade_y - slot_w / 2.0, 0.0, head_h)
+    add_canted_tab(blade_y + slot_w / 2.0, h_dual, 0.0, head_h)
 
     # -------------------------------------------------------------------------
     # Sub-Assembly D: Monolithic Cylindrical Domed Push Knob on Dual Head
@@ -1231,90 +1256,96 @@ def build_bearing_mount_coupon(x_len: float = 20.0, head_h: float = DUAL_HEAD_HE
                                m5_dia: float = M5_INSERT_DIA,
                                m5_depth: float = M5_INSERT_DEPTH,
                                k: int = 8) -> Mesh:
-    """Rapid 10-minute calibration coupon testing 608 bearing fit, standoff boss, and M5 heat-set insert."""
+    """Rapid 10-minute calibration coupon testing 608 bearing fit, canted standoff boss, and M5 heat-set insert."""
     m = Mesh("circle_cutter_bearing_coupon")
     x_start = 0.0
-    x_end = x_len
     h_dual = dual_w / 2.0
 
     loop_dual = make_beveled_rect_loop(-h_dual, h_dual, 0.0, head_h, arm_bevel, k)
     div_pts_up = [(0.0, 5.0), (0.0, 9.0)]
-    bnd_bearing = [loop_dual[idx] for idx in range(12, 29)] + div_pts_up
+    bnd_bearing_2d = [loop_dual[idx] for idx in range(12, 29)] + div_pts_up
     n_p = 19
+
+    cant_angle = math.atan(abs(bearing_y) / DISTAL_X)
+    cos_c = math.cos(cant_angle)
+    sin_c = math.sin(cant_angle)
+    tan_c = math.tan(cant_angle)
+
+    def x_front_coupon(y: float) -> float:
+        return x_len + (y - bearing_y) * tan_c
 
     # Back cap (-X)
     c_back = (x_start, bearing_y, head_h / 2.0)
     for i in range(n_p):
         j = (i + 1) % n_p
-        m.add(c_back, (x_start, bnd_bearing[j][0], bnd_bearing[j][1]),
-                      (x_start, bnd_bearing[i][0], bnd_bearing[i][1]))
+        m.add(c_back, (x_start, bnd_bearing_2d[j][0], bnd_bearing_2d[j][1]),
+                      (x_start, bnd_bearing_2d[i][0], bnd_bearing_2d[i][1]))
 
     # Outer longitudinal walls
+    bnd_bearing_3d = [(x_front_coupon(p[0]), p[0], p[1]) for p in bnd_bearing_2d]
     for i in range(n_p):
         j = (i + 1) % n_p
-        m.quad((x_start, bnd_bearing[i][0], bnd_bearing[i][1]),
-               (x_start, bnd_bearing[j][0], bnd_bearing[j][1]),
-               (x_end, bnd_bearing[j][0], bnd_bearing[j][1]),
-               (x_end, bnd_bearing[i][0], bnd_bearing[i][1]))
+        m.quad((x_start, bnd_bearing_2d[i][0], bnd_bearing_2d[i][1]),
+               (x_start, bnd_bearing_2d[j][0], bnd_bearing_2d[j][1]),
+               bnd_bearing_3d[j],
+               bnd_bearing_3d[i])
 
-    # Standoff boss and M5 hole
-    boss_c = (bearing_y, bearing_axle_z)
+    # Standoff boss and M5 hole along nr
+    nr = (cos_c, -sin_c, 0.0)
+    tr = (sin_c, cos_c, 0.0)
+    boss_c_3d = (x_front_coupon(bearing_y), bearing_y, bearing_axle_z)
     r_boss = standoff_od / 2.0
     r_m5 = m5_dia / 2.0
-    x_boss = x_end + standoff_len
-    x_m5_bot = x_boss - m5_depth
 
-    # Polar-matched boss and M5 circles
     circle_boss_base = []
     circle_boss_top = []
     circle_m5 = []
-    for p in bnd_bearing:
-        ang = math.atan2(p[1] - boss_c[1], p[0] - boss_c[0])
-        circle_boss_base.append((boss_c[0] + r_boss * math.cos(ang),
-                                 boss_c[1] + r_boss * math.sin(ang)))
-        circle_boss_top.append((boss_c[0] + r_boss * math.cos(ang),
-                                boss_c[1] + r_boss * math.sin(ang)))
-        circle_m5.append((boss_c[0] + r_m5 * math.cos(ang),
-                          boss_c[1] + r_m5 * math.sin(ang)))
+    for p in bnd_bearing_2d:
+        ang = math.atan2(p[1] - bearing_axle_z, p[0] - bearing_y)
+        dy_b = r_boss * math.cos(ang)
+        dz_b = r_boss * math.sin(ang)
+        pt_base = (boss_c_3d[0] + dy_b * tr[0], boss_c_3d[1] + dy_b * tr[1], boss_c_3d[2] + dz_b)
+        circle_boss_base.append(pt_base)
+        pt_top = (pt_base[0] + standoff_len * nr[0], pt_base[1] + standoff_len * nr[1], pt_base[2])
+        circle_boss_top.append(pt_top)
+        dy_m5 = r_m5 * math.cos(ang)
+        dz_m5 = r_m5 * math.sin(ang)
+        pt_m5 = (boss_c_3d[0] + standoff_len * nr[0] + dy_m5 * tr[0],
+                 boss_c_3d[1] + standoff_len * nr[1] + dy_m5 * tr[1],
+                 boss_c_3d[2] + dz_m5)
+        circle_m5.append(pt_m5)
 
-    # Face around boss (+X)
+    # Face around boss
     for i in range(n_p):
         j = (i + 1) % n_p
-        m.quad((x_end, bnd_bearing[i][0], bnd_bearing[i][1]),
-               (x_end, bnd_bearing[j][0], bnd_bearing[j][1]),
-               (x_end, circle_boss_base[j][0], circle_boss_base[j][1]),
-               (x_end, circle_boss_base[i][0], circle_boss_base[i][1]))
+        m.quad(bnd_bearing_3d[i], bnd_bearing_3d[j], circle_boss_base[j], circle_boss_base[i])
 
-    # Boss outer cylinder wall (outward)
+    # Boss cylinder wall
     for i in range(n_p):
         j = (i + 1) % n_p
-        m.quad((x_end, circle_boss_base[i][0], circle_boss_base[i][1]),
-               (x_end, circle_boss_base[j][0], circle_boss_base[j][1]),
-               (x_boss, circle_boss_top[j][0], circle_boss_top[j][1]),
-               (x_boss, circle_boss_top[i][0], circle_boss_top[i][1]))
+        m.quad(circle_boss_base[i], circle_boss_base[j], circle_boss_top[j], circle_boss_top[i])
 
-    # Boss annular top (+X)
+    # Boss annular top
     for i in range(n_p):
         j = (i + 1) % n_p
-        m.quad((x_boss, circle_boss_top[i][0], circle_boss_top[i][1]),
-               (x_boss, circle_boss_top[j][0], circle_boss_top[j][1]),
-               (x_boss, circle_m5[j][0], circle_m5[j][1]),
-               (x_boss, circle_m5[i][0], circle_m5[i][1]))
+        m.quad(circle_boss_top[i], circle_boss_top[j], circle_m5[j], circle_m5[i])
 
-    # M5 hole cylinder wall (inward into hole)
+    # M5 hole cylinder wall
+    circle_m5_bot = []
+    for pt in circle_m5:
+        circle_m5_bot.append((pt[0] - m5_depth * nr[0], pt[1] - m5_depth * nr[1], pt[2]))
+
     for i in range(n_p):
         j = (i + 1) % n_p
-        m.quad((x_boss, circle_m5[i][0], circle_m5[i][1]),
-               (x_boss, circle_m5[j][0], circle_m5[j][1]),
-               (x_m5_bot, circle_m5[j][0], circle_m5[j][1]),
-               (x_m5_bot, circle_m5[i][0], circle_m5[i][1]))
+        m.quad(circle_m5[i], circle_m5[j], circle_m5_bot[j], circle_m5_bot[i])
 
-    # M5 hole bottom cap (+X into hole)
-    c_m5_bot = (x_m5_bot, boss_c[0], boss_c[1])
+    # M5 hole bottom cap
+    c_m5_bot = (boss_c_3d[0] + (standoff_len - m5_depth) * nr[0],
+                boss_c_3d[1] + (standoff_len - m5_depth) * nr[1],
+                boss_c_3d[2])
     for i in range(n_p):
         j = (i + 1) % n_p
-        m.add(c_m5_bot, (x_m5_bot, circle_m5[i][0], circle_m5[i][1]),
-                        (x_m5_bot, circle_m5[j][0], circle_m5[j][1]))
+        m.add(c_m5_bot, circle_m5_bot[i], circle_m5_bot[j])
 
     return m
 
@@ -1556,12 +1587,29 @@ def render_assembly_views(out_dir: Path, base: Mesh, arm: Mesh, blade_cap: Mesh,
         tris = [[(p[0] + dx, p[1] + dy, p[2] + dz) for p in t] for t in m.triangles]
         return np.array(tris, dtype=np.float32)
 
-    def sleeve_to_verts(m: Mesh, offset=(176.5, -11.5, 11.0)) -> np.ndarray:
-        # Rotate sleeve from Z-axis to X-axis (axial alignment)
+    def blade_cap_to_verts(m: Mesh, offset=(175.5, 11.5, 11.0)) -> np.ndarray:
+        # Rotate cap by +cant_angle around Z to seat flush on canted blade pad
         dx, dy, dz = offset
+        cos_a = math.cos(CANT_ANGLE_RAD)
+        sin_a = math.sin(CANT_ANGLE_RAD)
         tris = []
         for t in m.triangles:
-            r_tri = [(p[2] + dx, p[1] + dy, -p[0] + dz) for p in t]
+            r_tri = [(p[0] * cos_a - p[1] * sin_a + dx,
+                      p[0] * sin_a + p[1] * cos_a + dy,
+                      p[2] + dz) for p in t]
+            tris.append(r_tri)
+        return np.array(tris, dtype=np.float32)
+
+    def sleeve_to_verts(m: Mesh, offset=(176.5, -11.5, 11.0)) -> np.ndarray:
+        # Rotate sleeve from Z-axis to radial axle (-cant_angle around Z)
+        dx, dy, dz = offset
+        cos_a = math.cos(-CANT_ANGLE_RAD)
+        sin_a = math.sin(-CANT_ANGLE_RAD)
+        tris = []
+        for t in m.triangles:
+            r_tri = [((p[2] * cos_a - p[1] * sin_a + dx),
+                      (p[2] * sin_a + p[1] * cos_a + dy),
+                      (-p[0] + dz)) for p in t]
             tris.append(r_tri)
         return np.array(tris, dtype=np.float32)
 
@@ -1664,29 +1712,29 @@ def render_assembly_views(out_dir: Path, base: Mesh, arm: Mesh, blade_cap: Mesh,
     scene_assembly = [
         (mesh_to_verts(base, (0.0, 0.0, 0.0)), col_base),
         (mesh_to_verts(arm, (0.0, 0.0, 4.0)), col_arm),
-        (mesh_to_verts(blade_cap, (176.3, 0.0, 4.0)), col_cap),
+        (blade_cap_to_verts(blade_cap, (175.5, 11.5, 11.0)), col_cap),
         (mesh_to_verts(hub_cap, (0.0, 0.0, 112.0)), col_hub),
     ]
     if sleeve is not None:
         scene_assembly.append((sleeve_to_verts(sleeve, (176.5, -11.5, 11.0)), col_sleeve))
 
     render_scene(scene_assembly, out_dir / "circle_cutter_assembly.png",
-                 "PCHSMB Circle Cutter — Full Assembly (v1.7 Cylindrical Domed Push Knob & 608 Bearings)",
-                 "Piece 1 (Base, Blue) | Piece 2 (Arm with Push Knob, Orange) | Piece 3 (Clamp, Gray) | Piece 4 (Hub Cap, Green) | Piece 5 (Sleeve, Red)")
+                 "PCHSMB Circle Cutter — Full Assembly (v1.8 Canted Dual Head & 608 Bearings)",
+                 "Piece 1 (Base, Blue) | Piece 2 (Arm with Canted Chevron Head, Orange) | Piece 3 (Clamp, Gray) | Piece 4 (Hub Cap, Green) | Piece 5 (Sleeve, Red)")
 
     # Exploded Scene
     scene_exploded = [
         (mesh_to_verts(base, (0.0, 0.0, 0.0)), col_base),
         (mesh_to_verts(arm, (0.0, 0.0, 45.0)), col_arm),
-        (mesh_to_verts(blade_cap, (210.0, 0.0, 45.0)), col_cap),
+        (blade_cap_to_verts(blade_cap, (210.0, 11.5, 45.0 + 7.0)), col_cap),
         (mesh_to_verts(hub_cap, (0.0, 0.0, 195.0)), col_hub),
     ]
     if sleeve is not None:
         scene_exploded.append((sleeve_to_verts(sleeve, (210.0, -11.5, 45.0 + 11.0)), col_sleeve))
 
     render_scene(scene_exploded, out_dir / "circle_cutter_exploded.png",
-                 "PCHSMB Circle Cutter — Exploded Alignment View (v1.7)",
-                 "Vertical Stackup: Base (Z=0) -> Arm with Push Knob (+45mm) -> Hub Cap (+150mm) | Distal Clamp & Reducer Sleeve (+35mm X)")
+                 "PCHSMB Circle Cutter — Exploded Alignment View (v1.8)",
+                 "Vertical Stackup: Base (Z=0) -> Arm with Canted Head (+45mm) -> Hub Cap (+150mm) | Distal Clamp & Reducer Sleeve (+35mm X)")
 
 
 
@@ -1739,8 +1787,8 @@ def generate_manifest(out_dir: Path, meshes: List[Mesh]) -> dict:
             "standoff_boss_length_mm": BEARING_STANDOFF_LEN,
             "reducer_sleeve_spec": f"{SLEEVE_608_OD}mm OD x {SLEEVE_608_ID}mm ID x {SLEEVE_608_LEN}mm L",
             "axle_fastener": "M5 button-head machine screw (16mm or 18mm) through reducer sleeve into M5 brass heat-set insert",
-            "rotation_axis_alignment": "Radial (+X), parallel to arm length; rolls along tangential cut arc (+Y) alongside blade",
-            "head_architecture": "Side-by-Side Dual Head (Bearing Pad at Y=-11.5mm, Blade Pad at Y=+11.5mm, 46mm width)",
+            "rotation_axis_alignment": "Radial axle canted at -3.7607° directly toward rotation pivot center (0, 0)",
+            "head_architecture": "Canted Symmetric Chevron Dual Head (Bearing Pad at -3.76°, Blade Pad at +3.76°, 46mm width)",
         },
         "bearing_specifications_608_thrust": {
             "bearing_type": "608 Ball Bearing (608ZZ / 608-2RS)",
@@ -1778,12 +1826,25 @@ def generate_manifest(out_dir: Path, meshes: List[Mesh]) -> dict:
             "front_clearance_shelf_mm": DISTAL_X - (PUSH_POST_X + PUSH_POST_RADIUS),
             "support_free_status": "100% support-free upright printing with arm on build plate",
         },
+        "canted_dual_head_architecture": {
+            "type": "Symmetric Chevron Dual Head with Independent Tangential Cants",
+            "cant_angle_deg": round(CANT_ANGLE_DEG, 4),
+            "cant_angle_rad": round(CANT_ANGLE_RAD, 6),
+            "blade_pad_cant_angle_deg": round(+CANT_ANGLE_DEG, 4),
+            "bearing_pad_cant_angle_deg": round(-CANT_ANGLE_DEG, 4),
+            "chevron_vertex_world_x_mm": round(CHEVRON_VERTEX_X, 4),
+            "chevron_vertex_world_y_mm": 0.0,
+            "chevron_outer_world_x_mm": round(DISTAL_X - ((DUAL_HEAD_WIDTH / 2.0 - BLADE_PAD_Y) * math.tan(CANT_ANGLE_RAD)), 4),
+            "blade_yaw_error_deg": 0.00,
+            "roller_axle_radial_error_deg": 0.00,
+            "support_free_status": "100% support-free upright printing with arm on build plate",
+        },
         "files": audits,
         "mesh_audit_summary": {
             "all_files_passed_topological_audit": all(a["passed"] for a in audits.values()),
             "total_triangles": sum(a["triangles"] for a in audits.values()),
         },
-        "status": "production_release_v1_7_cylindrical_domed_push_knob",
+        "status": "production_release_v1_8_canted_dual_head",
     }
     (out_dir / "manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
     return manifest
@@ -1805,8 +1866,8 @@ def main() -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
 
     print("=" * 72)
-    print("  PCHSMB Circle Cutter - Pure-Python STL Generation Pipeline v1.7")
-    print("  Feature: Cylindrical Domed Push Knob on Distal Arm & Harmonized 608 Bearings")
+    print("  PCHSMB Circle Cutter - Pure-Python STL Generation Pipeline v1.8")
+    print("  Feature: Canted Dual Head (Chevron Face) for Pure Tangential Cutting & Rolling")
     print(f"  Target: {out_dir.resolve()}")
     print("=" * 72)
 

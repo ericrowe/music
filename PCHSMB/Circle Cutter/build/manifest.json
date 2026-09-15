@@ -1,6 +1,6 @@
 {
-  "design": "PCHSMB Circle Cutter - Semicircular Wind Relief Slit Tool with Cylindrical Domed Push Knob & 608 Bearings",
-  "version": "1.7",
+  "design": "PCHSMB Circle Cutter - Semicircular Wind Relief Slit Tool with Canted Dual Head & 608 Bearings",
+  "version": "1.8",
   "units": "mm",
   "standard": "Pine Creek High School Marching Band Field Prop Tooling",
   "print_material_recommended": "PETG",
@@ -40,8 +40,8 @@
     "standoff_boss_length_mm": 1.5,
     "reducer_sleeve_spec": "7.92mm OD x 5.2mm ID x 6.8mm L",
     "axle_fastener": "M5 button-head machine screw (16mm or 18mm) through reducer sleeve into M5 brass heat-set insert",
-    "rotation_axis_alignment": "Radial (+X), parallel to arm length; rolls along tangential cut arc (+Y) alongside blade",
-    "head_architecture": "Side-by-Side Dual Head (Bearing Pad at Y=-11.5mm, Blade Pad at Y=+11.5mm, 46mm width)"
+    "rotation_axis_alignment": "Radial axle canted at -3.7607\u00b0 directly toward rotation pivot center (0, 0)",
+    "head_architecture": "Canted Symmetric Chevron Dual Head (Bearing Pad at -3.76\u00b0, Blade Pad at +3.76\u00b0, 46mm width)"
   },
   "bearing_specifications_608_thrust": {
     "bearing_type": "608 Ball Bearing (608ZZ / 608-2RS)",
@@ -80,6 +80,19 @@
     "dome_apex_local_z_mm": 33.0,
     "height_above_ceiling_mm": 19.0,
     "front_clearance_shelf_mm": 4.0,
+    "support_free_status": "100% support-free upright printing with arm on build plate"
+  },
+  "canted_dual_head_architecture": {
+    "type": "Symmetric Chevron Dual Head with Independent Tangential Cants",
+    "cant_angle_deg": 3.7597,
+    "cant_angle_rad": 0.06562,
+    "blade_pad_cant_angle_deg": 3.7597,
+    "bearing_pad_cant_angle_deg": -3.7597,
+    "chevron_vertex_world_x_mm": 175.7557,
+    "chevron_vertex_world_y_mm": 0.0,
+    "chevron_outer_world_x_mm": 174.2443,
+    "blade_yaw_error_deg": 0.0,
+    "roller_axle_radial_error_deg": 0.0,
     "support_free_status": "100% support-free upright printing with arm on build plate"
   },
   "files": {
@@ -122,16 +135,16 @@
         0.0
       ],
       "bounds_max": [
-        176.5,
+        176.87,
         25.0,
         108.0
       ],
       "dimensions": [
-        201.5,
+        201.87,
         50.0,
         108.0
       ],
-      "volume_cm3": 116.34,
+      "volume_cm3": 116.35,
       "estimated_mass_petg_g": 81.3,
       "passed": true
     },
@@ -252,16 +265,16 @@
         0.0
       ],
       "bounds_max": [
-        21.5,
+        21.87,
         0.0,
         14.0
       ],
       "dimensions": [
-        21.5,
+        21.87,
         23.0,
         14.0
       ],
-      "volume_cm3": 6.06,
+      "volume_cm3": 6.07,
       "estimated_mass_petg_g": 4.2,
       "passed": true
     },
@@ -296,5 +309,5 @@
     "all_files_passed_topological_audit": true,
     "total_triangles": 13382
   },
-  "status": "production_release_v1_7_cylindrical_domed_push_knob"
+  "status": "production_release_v1_8_canted_dual_head"
 }

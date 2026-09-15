@@ -28,6 +28,15 @@ This is the project inbox for future design enhancements and tooling iterations,
 
 ## Implemented Ideas
 
+### [Idea 008: Canted Dual Head (Chevron Face) for Pure Tangential Blade Tracking & Roller Alignment](Plans/006-canted-dual-head.md) — *Implemented in v1.8*
+- **Outcome:** Canted the blade pad (+3.76°) and bearing pad (-3.76°) on Piece 2 (`circle_cutter_arm.stl`), forming a symmetric chevron distal face meeting seamlessly at the centerline ($X = 175.76\text{ mm}, Y = 0.0\text{ mm}$).
+- **Benefits:**
+  - Blade cuts with exact **$0.00^\circ$ yaw angle**, eliminating lateral kerf dragging, deflection, and scrim fiber tearing.
+  - 608 roller bearing axle points identically radial toward the pivot center, eliminating lateral tire scrub.
+  - Mathematically continuous chevron face meeting seamlessly at $Y = 0.0\text{ mm}$.
+  - Standoff boss, M5 insert hole, M3 insert hole, and blade retaining tabs oriented perpendicular to their respective canted pad planes.
+  - All 8 STLs passed strict topological quality gates (0 boundary, 0 non-manifold edges).
+
 ### [Idea 007: Cylindrical Domed Push Post / Knob on Distal Arm](Plans/005-cylindrical-domed-push-knob.md) — *Implemented in v1.7*
 - **Outcome:** Replaced the v1.6 rectangular push plate with a monolithic cylindrical push knob featuring an exact hemispherical rounded dome top.
 - **Benefits:**

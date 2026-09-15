@@ -6,8 +6,8 @@ This document records physical caliper measurements, slicer parameters, print ou
 
 ## 1. Test Status & Configuration
 
-- **Date Initiated:** 2026-09-14
-- **Release Version:** v1.7 (Cylindrical Domed Push Knob & Harmonized 608 Bearings)
+- **Date Initiated:** 2026-09-14 (Updated 2026-09-15)
+- **Release Version:** v1.8 (Canted Chevron Dual Head & Harmonized 608 Bearings)
 - **Target Subproject:** PCHSMB Duck Blinds & Rolling Backdrops (Wind Relief Slit Tooling)
 - **Target Geometry:** $R = 4.0\text{ in.} = 101.6\text{ mm}$ semicircular wind relief flaps in 13oz heavy vinyl scrim
 - **Recommended Material:** PETG (e.g. Bambu PETG Basic / Polymaker PolyLite PETG)
@@ -18,7 +18,7 @@ This document records physical caliper measurements, slicer parameters, print ou
   - Top / Bottom Shells: 5
   - Infill: 25% Gyroid
   - Bed Temp: 70–80°C (Textured PEI plate recommended)
-  - Supports: **Zero supports required for ALL parts** (all overhangs $\le 45^\circ$, open through-bore on Piece 2, concentric domed knob)
+  - Supports: **Zero supports required for ALL parts** (all overhangs $\le 45^\circ$, open through-bore on Piece 2, concentric domed knob, vertical canted chevron faces)
 
 ---
 
@@ -27,10 +27,10 @@ This document records physical caliper measurements, slicer parameters, print ou
 | Part / Artifact | Quantity | Purpose | Estimated Print Time |
 |---|:---:|---|:---:|
 | `build/circle_cutter_spindle_bore_coupon.stl` | 1 | **Pre-print calibration coupon** for 40mm spindle + 608 post vs 42mm bore slip fit | ~18 min |
-| `build/circle_cutter_bearing_coupon.stl` | 1 | **Pre-print calibration coupon** for 608 bearing M5 front mount, 14mm head & standoff boss | ~10 min |
+| `build/circle_cutter_bearing_coupon.stl` | 1 | **Pre-print calibration coupon** for 608 bearing M5 mount with -3.76° canted face, 14mm head & standoff boss | ~10 min |
 | `build/circle_cutter_snap_cap_coupon.stl` | 1 | **Pre-print calibration coupon** for 15mm hub sleeve ring + snap cap with 608 pocket | ~18 min |
 | `build/circle_cutter_base.stl` | 1 | Production Piece 1 (Fixed Pivot Base, 3mm plate, 608 post) | ~3 hr 30 min |
-| `build/circle_cutter_arm.stl` | 1 | Production Piece 2 (Rotating Arm Assembly, open through-bore, 46x14mm dual head with domed push knob) | ~3 hr 00 min |
+| `build/circle_cutter_arm.stl` | 1 | Production Piece 2 (Rotating Arm Assembly, open through-bore, 46x14mm ±3.76° canted chevron dual head with domed push knob) | ~3 hr 00 min |
 | `build/circle_cutter_blade_cap.stl` | 1 | Production Piece 3 (Blade Clamping Cap) | ~8 min |
 | `build/circle_cutter_hub_cap.stl` | 1 | Production Piece 4 (Snap-in Hub Top Cap with 608 bearing pocket) | ~14 min |
 | `build/circle_cutter_reducer_sleeve.stl` | 1 | Production Piece 5 (608-to-M5 Precision Reducer Bushing Sleeve) | ~2 min |
@@ -68,6 +68,9 @@ Record caliper readings to two decimal places ($\pm 0.02\text{ mm}$) once test p
 | **Piece 2: Dual Head Height (Flared)** | **14.00 mm** | _[Pending print]_ | $\pm 0.15\text{ mm}$ | Pending |
 | **Piece 2: Bearing Pad Offset ($Y$)** | **-11.50 mm** | _[Pending print]_ | $\pm 0.15\text{ mm}$ | Pending |
 | **Piece 2: Blade Pad Offset ($Y$)** | **+11.50 mm** | _[Pending print]_ | $\pm 0.15\text{ mm}$ | Pending |
+| **Piece 2: Head Cant Angle** | **3.76°** | _[Pending print]_ | $\pm 0.10^\circ$ | Pending |
+| **Piece 2: Chevron Center Vertex ($X$)** | **175.76 mm** | _[Pending print]_ | $\pm 0.20\text{ mm}$ | Pending |
+| **Piece 2: Chevron Outer Corners ($X$)** | **174.24 mm** | _[Pending print]_ | $\pm 0.20\text{ mm}$ | Pending |
 | **Piece 2: 608 Bearing Axle Height (Local)** | **7.00 mm** | _[Pending print]_ | $\pm 0.10\text{ mm}$ | Pending |
 | **Piece 2: 608 Bearing Axle Height (World)** | **11.00 mm** | _[Pending print]_ | $\pm 0.10\text{ mm}$ | Pending |
 | **Piece 2: 608 Standoff Boss OD** | **11.50 mm** | _[Pending print]_ | $\pm 0.15\text{ mm}$ | Pending |
@@ -87,7 +90,7 @@ Record caliper readings to two decimal places ($\pm 0.02\text{ mm}$) once test p
 | **Piece 2: Push Knob Shoulder Height (Local)** | **20.00 mm** | _[Pending print]_ | $\pm 0.20\text{ mm}$ | Pending |
 | **Piece 2: Push Knob Apex Height (Local)** | **33.00 mm** | _[Pending print]_ | $\pm 0.25\text{ mm}$ | Pending |
 | **Piece 2: Push Knob Height Above Head Ceiling** | **19.00 mm** | _[Pending print]_ | $\pm 0.25\text{ mm}$ | Pending |
-| **Piece 2: Front Tool Clearance Shelf** | **4.00 mm** | _[Pending print]_ | $\pm 0.20\text{ mm}$ | Pending |
+| **Piece 2: Front Tool Clearance Shelf** | **4.00–4.76 mm** | _[Pending print]_ | $\pm 0.20\text{ mm}$ | Pending |
 | **Piece 3: Cap Width x Height** | 12.00 x 16.00 mm | _[Pending print]_ | $\pm 0.15\text{ mm}$ | Pending |
 | **Piece 3: Cap Thickness** | 3.50 mm | _[Pending print]_ | $\pm 0.10\text{ mm}$ | Pending |
 | **Piece 3: M3 Clearance Hole Dia** | 3.40 mm | _[Pending print]_ | $+0.20 / -0.05\text{ mm}$ | Pending |
@@ -122,25 +125,27 @@ Complete these physical checks before clearing the circle cutter for prop fabric
    - Press down firmly with thumb. The 4 flex fingers should deflect smoothly past the $\varnothing 42\text{ mm}$ entry and engage the internal $\varnothing 43.6\text{ mm}$ retention groove with a distinct tactile click.
    - Verify flange seats flush against the top face of Piece 2 ($Z = 108\text{ mm}$).
    - Confirm that the cap underside captures the top 608 bearing outer race while relieving the inner race and spindle post.
-3. **608 Roller Bearing Installation with M5 Hardware (100% Pullout Resistant):**
-   - Press M5 brass heat-set insert (8 or 10mm length) into the $\varnothing 6.2\text{ mm}$ hole on the Bearing Pad ($Y = -11.5\text{ mm}$) until flush with the $\varnothing 11.5\text{ mm}$ standoff boss.
+3. **608 Roller Bearing Installation & Pure Tangential Alignment (-3.76° Cant):**
+   - Press M5 brass heat-set insert (8 or 10mm length) along the angled normal vector into the $\varnothing 6.2\text{ mm}$ hole on the Bearing Pad ($Y = -11.5\text{ mm}$) until flush with the $\varnothing 11.5\text{ mm}$ standoff boss.
    - Verify the $3.9\text{ mm}$ floor and $3.9\text{ mm}$ ceiling show zero thermal distortion or bulging.
    - Slide Piece 5 (Reducer Sleeve: $\varnothing 7.92 \times \varnothing 5.20 \times 6.80\text{ mm}$) into the 608 roller bearing bore ($8.0\text{ mm}$ ID).
    - Pass an M5 $\times 16\text{ mm}$ or $18\text{ mm}$ button-head machine screw through the reducer sleeve and thread into the front-face M5 insert with an Allen key.
-   - Tighten firmly. Confirm the M5 button head ($\varnothing 9.5\text{ mm}$) clamps the bearing inner race rigidly against the $\varnothing 11.5\text{ mm}$ standoff boss, while the $22\text{ mm}$ outer race rotates freely with $>6.0\text{ mm}$ clearance to the blade clamp.
-4. **M3 Heat-Set Insert & Blade Clamping:**
-   - Press M3 brass insert (6, 8, or 10mm length) into the $\varnothing 3.8\text{ mm}$ hole on the Blade Pad ($Y = +11.5\text{ mm}$).
-   - Seat standard X-Acto #11 blade tang into the $6.0\text{ mm}$ slot between anti-rotation tabs.
+   - Tighten firmly. Confirm the M5 button head ($\varnothing 9.5\text{ mm}$) clamps the bearing inner race rigidly against the angled $\varnothing 11.5\text{ mm}$ standoff boss.
+   - Verify that the 608 roller bearing axle is oriented radially along $\vec{R}_{\text{bearing}} = (175.0, -11.5)\text{ mm}$, rotating pure tangent to its circular path with **$0.00^\circ$ yaw and zero lateral tire scrub**.
+4. **M3 Heat-Set Insert & Pure Tangential Blade Clamping (+3.76° Cant):**
+   - Press M3 brass insert (6, 8, or 10mm length) along the normal vector into the $\varnothing 3.8\text{ mm}$ hole on the Blade Pad ($Y = +11.5\text{ mm}$).
+   - Seat standard X-Acto #11 blade tang into the $6.0\text{ mm}$ slot between the canted anti-rotation tabs.
+   - Confirm that the blade flat is oriented perpendicular to $\vec{R}_{\text{blade}} = (175.0, +11.5)\text{ mm}$, guaranteeing **$0.00^\circ$ blade yaw** (pure tangential cutting with zero side-scuff or binding).
    - Confirm the blade tip extends exactly **$1.0\text{ mm}$ below the bottom rolling surface of the 608 bearing**.
    - Secure Piece 3 cap with an M3 x 10mm screw. Verify zero rotational play.
 5. **Field Vinyl Cut Evaluation (Presser Foot Action):**
    - Place Piece 1 on scrap 13oz vinyl prop banner over a cutting mat. Align crosshairs with marked layout.
    - Rotate arm through $180^\circ$.
-   - Confirm that the 608 roller bearing rolls smoothly across uncut vinyl $23\text{ mm}$ adjacent to the cut line, acting as a heavy-duty presser foot that holds the banner flat with zero bunching, tearing, or flap catching.
+   - Confirm that the 608 roller bearing rolls smoothly and purely tangent across uncut vinyl $23\text{ mm}$ adjacent to the cut line, acting as a heavy-duty presser foot that holds the banner flat with zero bunching, tearing, or flap catching.
 6. **Ergonomic Cylindrical Domed Push Knob Inspection:**
    - Rest thumb, palm heel, or index/middle fingers on the rounded domed top of the push knob at the distal end of Piece 2 ($Z_{\text{local}} = 33.0\text{ mm}$, $Z_{\text{world}} = 37.0\text{ mm}$). Verify natural, comfortable hand posture and solid downward leverage without localized pressure points.
    - Apply downward axial cutting force and tangential sweeping torque through a full $180^\circ$ circle cut arc. Verify that the $\varnothing 26.0\text{ mm}$ cylindrical post provides ample purchase and the rounded dome distributes operator pressure evenly across the palm or thumb pad.
-   - Verify that the $4.0\text{ mm}$ front clearance shelf preserves 100% open vertical access for blade insertion/removal and straight horizontal access for M5 and M3 hex keys.
+   - Verify that the $4.00–4.76\text{ mm}$ front clearance shelf preserves 100% open vertical access for blade insertion/removal and straight horizontal access for M5 and M3 hex keys.
 
 ---
 
