@@ -1,0 +1,244 @@
+{
+  "design": "PCHSMB Circle Cutter - Semicircular Wind Relief Slit Tool",
+  "version": "1.3",
+  "units": "mm",
+  "standard": "Pine Creek High School Marching Band Field Prop Tooling",
+  "print_material_recommended": "PETG",
+  "print_density_g_cm3": 1.27,
+  "estimated_total_print_mass_petg_g": 208.6,
+  "print_quantities": {
+    "circle_cutter_base.stl": 1,
+    "circle_cutter_arm.stl": 1,
+    "circle_cutter_blade_cap.stl": 1,
+    "circle_cutter_hub_cap.stl": 1,
+    "circle_cutter_spindle_bore_coupon.stl": 0,
+    "circle_cutter_bearing_coupon.stl": 0,
+    "circle_cutter_snap_cap_coupon.stl": 0
+  },
+  "vertical_stackup_and_clearances": {
+    "vinyl_surface_world_z_mm": 0.0,
+    "bearing_bottom_world_z_mm": 0.0,
+    "blade_tip_world_z_mm": -1.0,
+    "controlled_cut_depth_mm": 1.0,
+    "base_plate_thickness_mm": 4.0,
+    "arm_air_clearance_above_vinyl_mm": 4.0,
+    "bearing_axle_world_z_mm": 8.0,
+    "bearing_axle_local_z_mm": 4.0,
+    "self_leveling_bridge": "Base plate and 625 bearing both contact vinyl simultaneously, holding arm dead-level",
+    "spindle_to_cap_ceiling_clearance_mm": 2.0
+  },
+  "bearing_specifications": {
+    "bearing_type": "625 Ball Bearing (625ZZ / 625-2RS)",
+    "outer_diameter_mm": 16.0,
+    "inner_bore_mm": 5.0,
+    "width_mm": 5.0,
+    "standoff_boss_od_mm": 8.0,
+    "standoff_boss_length_mm": 1.0,
+    "axle_fastener": "M5 button-head machine screw into M5 brass heat-set insert",
+    "rotation_axis_alignment": "Radial (+X), parallel to arm length; rolls along tangential cut arc (+Y) alongside blade",
+    "head_architecture": "Side-by-Side Dual Head (Bearing Pad at Y=-9mm, Blade Pad at Y=+9mm)"
+  },
+  "hub_architecture": {
+    "type": "Modular 4-Piece Open Through-Bore with Snap-in Cap",
+    "hub_bore_dia_mm": 42.0,
+    "internal_retention_groove_dia_mm": 43.6,
+    "internal_retention_groove_z_mm": [
+      103.5,
+      105.5
+    ],
+    "cap_flange_dia_mm": 50.0,
+    "cap_flange_thickness_mm": 3.0,
+    "cap_flex_fingers": 4,
+    "cap_retention_barb_dia_mm": 43.0,
+    "support_free_status": "100% support-free upright printing with arm on build plate"
+  },
+  "files": {
+    "circle_cutter_base.stl": {
+      "file": "circle_cutter_base.stl",
+      "triangles": 800,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_triangles": 0,
+      "finite_coordinates": true,
+      "bounds_min": [
+        -25.0,
+        -25.0,
+        0.0
+      ],
+      "bounds_max": [
+        25.0,
+        25.0,
+        104.0
+      ],
+      "dimensions": [
+        50.0,
+        50.0,
+        104.0
+      ],
+      "volume_cm3": 133.16,
+      "estimated_mass_petg_g": 93.0,
+      "passed": true
+    },
+    "circle_cutter_arm.stl": {
+      "file": "circle_cutter_arm.stl",
+      "triangles": 1794,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_triangles": 0,
+      "finite_coordinates": true,
+      "bounds_min": [
+        -25.0,
+        -25.0,
+        0.0
+      ],
+      "bounds_max": [
+        176.0,
+        25.0,
+        108.0
+      ],
+      "dimensions": [
+        201.0,
+        50.0,
+        108.0
+      ],
+      "volume_cm3": 101.89,
+      "estimated_mass_petg_g": 71.2,
+      "passed": true
+    },
+    "circle_cutter_blade_cap.stl": {
+      "file": "circle_cutter_blade_cap.stl",
+      "triangles": 256,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_triangles": 0,
+      "finite_coordinates": true,
+      "bounds_min": [
+        0.0,
+        -6.0,
+        -8.0
+      ],
+      "bounds_max": [
+        3.5,
+        6.0,
+        8.0
+      ],
+      "dimensions": [
+        3.5,
+        12.0,
+        16.0
+      ],
+      "volume_cm3": 0.62,
+      "estimated_mass_petg_g": 0.4,
+      "passed": true
+    },
+    "circle_cutter_hub_cap.stl": {
+      "file": "circle_cutter_hub_cap.stl",
+      "triangles": 1824,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_triangles": 0,
+      "finite_coordinates": true,
+      "bounds_min": [
+        -25.0,
+        -25.0,
+        0.0
+      ],
+      "bounds_max": [
+        25.0,
+        25.0,
+        9.0
+      ],
+      "dimensions": [
+        50.0,
+        50.0,
+        9.0
+      ],
+      "volume_cm3": 7.11,
+      "estimated_mass_petg_g": 5.0,
+      "passed": true
+    },
+    "circle_cutter_spindle_bore_coupon.stl": {
+      "file": "circle_cutter_spindle_bore_coupon.stl",
+      "triangles": 576,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_triangles": 0,
+      "finite_coordinates": true,
+      "bounds_min": [
+        -50.0,
+        -25.0,
+        0.0
+      ],
+      "bounds_max": [
+        55.0,
+        25.0,
+        20.0
+      ],
+      "dimensions": [
+        105.0,
+        50.0,
+        20.0
+      ],
+      "volume_cm3": 36.59,
+      "estimated_mass_petg_g": 25.6,
+      "passed": true
+    },
+    "circle_cutter_bearing_coupon.stl": {
+      "file": "circle_cutter_bearing_coupon.stl",
+      "triangles": 228,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_triangles": 0,
+      "finite_coordinates": true,
+      "bounds_min": [
+        0.0,
+        -18.0,
+        0.0
+      ],
+      "bounds_max": [
+        21.0,
+        0.0,
+        12.0
+      ],
+      "dimensions": [
+        21.0,
+        18.0,
+        12.0
+      ],
+      "volume_cm3": 3.89,
+      "estimated_mass_petg_g": 2.7,
+      "passed": true
+    },
+    "circle_cutter_snap_cap_coupon.stl": {
+      "file": "circle_cutter_snap_cap_coupon.stl",
+      "triangles": 3104,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_triangles": 0,
+      "finite_coordinates": true,
+      "bounds_min": [
+        -57.0,
+        -25.0,
+        0.0
+      ],
+      "bounds_max": [
+        57.0,
+        25.0,
+        15.0
+      ],
+      "dimensions": [
+        114.0,
+        50.0,
+        15.0
+      ],
+      "volume_cm3": 15.31,
+      "estimated_mass_petg_g": 10.7,
+      "passed": true
+    }
+  },
+  "mesh_audit_summary": {
+    "all_files_passed_topological_audit": true,
+    "total_triangles": 8582
+  },
+  "status": "production_release_v1_3_modular_snap_cap"
+}
