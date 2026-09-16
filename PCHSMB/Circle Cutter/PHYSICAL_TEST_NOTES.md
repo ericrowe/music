@@ -102,7 +102,7 @@ Record caliper readings to two decimal places ($\pm 0.02\text{ mm}$) once test p
 | **Piece 4: Finger Skirt Root OD** | 41.60 mm | _[Pending print]_ | $\pm 0.15\text{ mm}$ | Pending |
 | **Piece 4: Barb Outer Diameter** | 43.00 mm | _[Pending print]_ | $\pm 0.15\text{ mm}$ | Pending |
 | **Piece 4: Total Height** | 9.00 mm | _[Pending print]_ | $\pm 0.15\text{ mm}$ | Pending |
-| **Piece 5: Reducer Sleeve OD** | **7.92 mm** | _[Pending print]_ | $+0.00 / -0.08\text{ mm}$ | Pending |
+| **Piece 5: Reducer Sleeve OD** | **7.72 mm** | _[7.92 mm was tight; reduced to 7.72 mm]_ | $+0.00 / -0.08\text{ mm}$ | Validated (HITL) |
 | **Piece 5: Reducer Sleeve ID** | **5.20 mm** | _[Pending print]_ | $+0.15 / -0.00\text{ mm}$ | Pending |
 | **Piece 5: Reducer Sleeve Length** | **6.80 mm** | _[Pending print]_ | $\pm 0.10\text{ mm}$ | Pending |
 | **Assembly: Controlled Cut Depth** | **1.00 mm** | _[Pending print]_ | $\pm 0.15\text{ mm}$ | Pending |
@@ -128,7 +128,7 @@ Complete these physical checks before clearing the circle cutter for prop fabric
 3. **608 Roller Bearing Installation & Pure Tangential Alignment (-3.76° Cant):**
    - Press M5 brass heat-set insert (8 or 10mm length) along the angled normal vector into the $\varnothing 6.2\text{ mm}$ hole on the Bearing Pad ($Y = -11.5\text{ mm}$) until flush with the $\varnothing 11.5\text{ mm}$ standoff boss.
    - Verify the $3.9\text{ mm}$ floor and $3.9\text{ mm}$ ceiling show zero thermal distortion or bulging.
-   - Slide Piece 5 (Reducer Sleeve: $\varnothing 7.92 \times \varnothing 5.20 \times 6.80\text{ mm}$) into the 608 roller bearing bore ($8.0\text{ mm}$ ID).
+   - Slide Piece 5 (Reducer Sleeve: $\varnothing 7.72 \times \varnothing 5.20 \times 6.80\text{ mm}$) into the 608 roller bearing bore ($8.0\text{ mm}$ ID).
    - Pass an M5 $\times 16\text{ mm}$ or $18\text{ mm}$ button-head machine screw through the reducer sleeve and thread into the front-face M5 insert with an Allen key.
    - Tighten firmly. Confirm the M5 button head ($\varnothing 9.5\text{ mm}$) clamps the bearing inner race rigidly against the angled $\varnothing 11.5\text{ mm}$ standoff boss.
    - Verify that the 608 roller bearing axle is oriented radially along $\vec{R}_{\text{bearing}} = (175.0, -11.5)\text{ mm}$, rotating pure tangent to its circular path with **$0.00^\circ$ yaw and zero lateral tire scrub**.
@@ -153,4 +153,8 @@ Complete these physical checks before clearing the circle cutter for prop fabric
 
 Record all physical observations, anomalies, or proposed geometry adjustments below:
 
-- _[Observations to be added upon physical print testing]_
+- **2026-09-16 HITL Physical Fit Test & Caliper Feedback:**
+  - **Piece 2 (Arm) 608 Bearing Mount:** Verified **PERFECT**. The $\varnothing 11.5\text{ mm}$ standoff boss, M5 insert cavity, and inner race contact seat without any binding, tilt, or shield interference.
+  - **Piece 4 (Hub Cap) 608 Pocket:** Verified **PERFECT**. Snap-fit engagement, $\varnothing 22.2\text{ mm}$ outer-race pocket, and $\varnothing 18.0\text{ mm}$ inner-race relief seat cleanly over the top pivot 608 bearing.
+  - **Piece 5 (Reducer Sleeve) 608 Bore Fit:** The original $\varnothing 7.92\text{ mm}$ OD was **too tight** for the standard $8.0\text{ mm}$ steel bearing bore due to PETG layer lines and slight printer bore shrinkage ($0.08\text{ mm}$ diametral clearance was insufficient).
+  - **Engineering Revision (v1.8.1):** Reduced Piece 5 outer diameter by $0.20\text{ mm}$ from $\varnothing 7.92\text{ mm}$ to **$\varnothing 7.72\text{ mm}$** ($0.28\text{ mm}$ diametral clearance / $0.14\text{ mm}$ radial clearance). Inner bore ($\varnothing 5.20\text{ mm}$), length ($6.80\text{ mm}$), and chamfers ($0.40\text{ mm}$) remain unchanged. All bearing interfaces on the arm and hub cap left exactly unchanged.

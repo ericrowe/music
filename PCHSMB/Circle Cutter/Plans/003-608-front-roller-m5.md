@@ -5,7 +5,7 @@
 **Target Release:** v1.5  
 **Components Affected:**
 - Piece 2 (`circle_cutter_arm.stl`) — Widened Dual Head ($46.0\text{ mm}$ W), $14.0\text{ mm}$ head height flare, $Z_{\text{local}} = 7.0\text{ mm}$ axle elevation, $\varnothing 11.5\text{ mm}$ inner-race standoff boss, $\varnothing 6.2\text{ mm} \times 11.0\text{ mm}$ M5 heat-set insert bore
-- Hardware Accessory (`circle_cutter_reducer_sleeve.stl`) — Precision 608-to-M5 bushing sleeve ($\varnothing 7.92\text{ mm OD} \times \varnothing 5.20\text{ mm ID} \times 6.80\text{ mm L}$)
+- Hardware Accessory (`circle_cutter_reducer_sleeve.stl`) — Precision 608-to-M5 bushing sleeve ($\varnothing 7.72\text{ mm OD} \times \varnothing 5.20\text{ mm ID} \times 6.80\text{ mm L}$; reduced $0.20\text{ mm}$ from $7.92\text{ mm}$ based on HITL physical fit test)
 - Pre-Print Calibration Coupon (`circle_cutter_bearing_coupon.stl`) — Updated for $46.0\text{ mm}$ head profile, $Z = 7.0\text{ mm}$ axle, $\varnothing 11.5\text{ mm}$ standoff boss, and $\varnothing 6.2\text{ mm}$ M5 insert
 - Documentation & Manifest (`README.md`, `PHYSICAL_TEST_NOTES.md`, `generate_circle_cutter.py`, `build/manifest.json`)
 
@@ -94,10 +94,10 @@ To couple an $8.0\text{ mm}$ bearing bore to an M5 screw while completely elimin
    - The M5 brass insert is heat-staked flush with the standoff face directly into the massive solid bulk of the arm.
 
 2. **Dedicated 608-to-M5 Reducer Sleeve (`circle_cutter_reducer_sleeve.stl`):**
-   - Outer Diameter: $\varnothing 7.92\text{ mm}$ (slip-fit into $8.00\text{ mm}$ bearing bore, radial clearance $0.04\text{ mm}$).
+   - Outer Diameter: $\varnothing 7.72\text{ mm}$ (slip-fit into $8.00\text{ mm}$ bearing bore, radial clearance $0.14\text{ mm}$, diametral clearance $0.28\text{ mm}$; reduced $0.20\text{ mm}$ from $7.92\text{ mm}$ per HITL fit test).
    - Inner Bore: $\varnothing 5.20\text{ mm}$ (close clearance for M5 screw shank per ISO 273).
    - Length: $6.80\text{ mm}$ ($0.20\text{ mm}$ shorter than $7.00\text{ mm}$ bearing width).
-   - Wall Thickness: $(7.92 - 5.20) / 2 = \mathbf{1.36\text{ mm}}$ (over 3 solid perimeter passes at $0.4\text{ mm}$ nozzle).
+   - Wall Thickness: $(7.72 - 5.20) / 2 = \mathbf{1.26\text{ mm}}$ (over 3 solid perimeter passes at $0.4\text{ mm}$ nozzle).
    - Lead-in Chamfers: $0.4\text{ mm} \times 45^\circ$ on both OD and ID ends.
    - Function: Slips inside the 608 bearing bore. The M5 screw passes through the sleeve. Tightening the M5 screw clamps the bearing inner race directly against the arm standoff boss without bottoming out on the sleeve.
 

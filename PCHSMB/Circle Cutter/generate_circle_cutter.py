@@ -66,7 +66,7 @@ BEARING_608_RELIEF_DIA = 18.0                 # 18.0 mm ID central relief cavity
 BEARING_608_RELIEF_DEPTH = 1.5                # 1.5 mm extra upward relief into Piece 4 flange
 
 # Piece 5: 608-to-M5 Precision Reducer Bushing Sleeve
-SLEEVE_608_OD = 7.92                          # 7.92 mm OD (smooth slip fit into 8.0mm bearing bore)
+SLEEVE_608_OD = 7.72                          # 7.72 mm OD (smooth slip fit into 8.0mm bearing bore; reduced 0.2mm from 7.92mm per HITL test)
 SLEEVE_608_ID = 5.20                          # 5.20 mm ID (standard close clearance hole for M5 screw shank)
 SLEEVE_608_LEN = 6.80                         # 6.80 mm length (0.20 mm shorter than 7.0mm bearing width)
 SLEEVE_608_CHAMFER = 0.40                     # 0.40 mm 45° lead-in chamfer on both ends

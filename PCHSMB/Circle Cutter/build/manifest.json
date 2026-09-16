@@ -38,7 +38,7 @@
     "width_mm": 7.0,
     "standoff_boss_od_mm": 11.5,
     "standoff_boss_length_mm": 1.5,
-    "reducer_sleeve_spec": "7.92mm OD x 5.2mm ID x 6.8mm L",
+    "reducer_sleeve_spec": "7.72mm OD x 5.2mm ID x 6.8mm L",
     "axle_fastener": "M5 button-head machine screw (16mm or 18mm) through reducer sleeve into M5 brass heat-set insert",
     "rotation_axis_alignment": "Radial axle canted at -3.7607\u00b0 directly toward rotation pivot center (0, 0)",
     "head_architecture": "Canted Symmetric Chevron Dual Head (Bearing Pad at -3.76\u00b0, Blade Pad at +3.76\u00b0, 46mm width)"
@@ -208,21 +208,21 @@
       "degenerate_triangles": 0,
       "finite_coordinates": true,
       "bounds_min": [
-        -3.96,
-        -3.96,
+        -3.86,
+        -3.86,
         0.0
       ],
       "bounds_max": [
-        3.96,
-        3.96,
+        3.86,
+        3.86,
         6.8
       ],
       "dimensions": [
-        7.92,
-        7.92,
+        7.72,
+        7.72,
         6.8
       ],
-      "volume_cm3": 0.35,
+      "volume_cm3": 0.33,
       "estimated_mass_petg_g": 0.2,
       "passed": true
     },
