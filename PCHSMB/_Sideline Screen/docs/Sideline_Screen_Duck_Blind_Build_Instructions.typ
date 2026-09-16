@@ -39,7 +39,7 @@
       #grid(
         columns: (1.5fr, 1.2fr, 1fr),
         align(left)[*WORKING DRAFT — NOT FOR USE*],
-        align(center)[*Release v0 (D32)* | September 2026],
+        align(center)[*Release v0 (D33)* | September 2026],
         align(right)[*Page #pg-str*]
       )
     ]
@@ -132,7 +132,7 @@
   audience: [],
   contents: [],
   print-label: [],
-  revision: [Release v0 (unreleased) | Development build D32 | September 2026],
+  revision: [Release v0 (unreleased) | Development build D33 | September 2026],
   separation-note: [When separated from the master document, keep this cover as the first page.]
 ) = [
   #align(center)[
@@ -234,7 +234,7 @@
   columns: (0.7fr, 0.9fr, 1.2fr, 3.2fr),
   align: (center + horizon, center + horizon, center + horizon, left + horizon),
   stroke: 0.4pt + rgb("#cbd5e0"),
-  fill: (col, row) => if row == 0 { rgb("#edf2f7") } else if row == 9 { rgb("#ebf8ff") } else { none },
+  fill: (col, row) => if row == 0 { rgb("#edf2f7") } else if row == 10 { rgb("#ebf8ff") } else { none },
   inset: (x: 3.5pt, y: 1.8pt),
   [*Version*], [*Date*], [*Document State*], [*Key Modifications & Engineering Decisions*],
   [D24], [2026-09-01], [Working draft], [Imported legacy v24 draft as controlled repository baseline.],
@@ -245,7 +245,8 @@
   [D29], [2026-09-11], [Working draft], [Updated field operations with preliminary cart study and asymmetric backfield staging.],
   [D30], [2026-09-13], [Working draft], [Full Typst rewrite. Adopted Two-Student Direct Carry (16 pairs walk assembled; zero transport carts built, saving \$440). Standardized 6 true semicircular wind relief flaps (R = 4.0 in., 8.0 in. chord by 4.0 in. drop, pre-punched 3/8 in. / 10 mm holes, 15% drag reduction). Updated complete wind stability tables.],
   [D31], [2026-09-15], [Working draft], [Harmonize document architecture, section numbering (1.1–1.7, 2.1–2.10), Appendix A/B ordering, coordinate schedule tables, and Circle Cutter tooling with Backdrop manual.],
-  [*D32*], [*2026-09-15*], [*Working draft*], [*Add equipment truck packout figure (Section 1.7). Harmonize Appendix A pagination (Pages A-1 through A-7) with Backdrop manual.*],
+  [D32], [2026-09-15], [Working draft], [Add equipment truck packout figure (Section 1.7). Harmonize Appendix A pagination (Pages A-1 through A-7) with Backdrop manual.],
+  [*D33*], [*2026-09-15*], [*Working draft*], [*Clarify wind relief NO-CUT zones to explicitly protect printed graphic details, depicted faces, and logos.*],
 )
 ]
 
@@ -282,7 +283,7 @@
   audience: [Field operators, adult duck blind managers, and student carry pairs],
   contents: [Time budget architecture; Two-Student Carry deployment & egress; tiered ballasting; 2026 CBA rules; trailer packout],
   print-label: [All pages labeled A-],
-  revision: [Release v0 (unreleased) | Development build D32 | September 2026],
+  revision: [Release v0 (unreleased) | Development build D33 | September 2026],
   separation-note: [When separated from the master document, keep this cover as the first page of Appendix A.]
 )
 
@@ -498,7 +499,7 @@ Aerodynamic pressure ($q = 0.001989 times V_"mph"^2$ psf at Colorado Springs 6,5
   audience: [Band prop construction leads, parent build volunteers, and fabrication teams],
   contents: [Shop safety; full BOM; 3D-printed parts; 7-stick conduit cut schedule; cost breakdown; 4-stage frame assembly; vinyl mounting; wind relief flap cutting; inspection checklist; indexed purchasing sources],
   print-label: [All pages labeled B-],
-  revision: [Release v0 (unreleased) | Development build D32 | September 2026],
+  revision: [Release v0 (unreleased) | Development build D33 | September 2026],
   separation-note: [When separated from the master document, keep this cover as the first page of Appendix B.]
 )
 
@@ -948,7 +949,7 @@ Venting is concentrated in the upper zone ($Y = 20.0$ to $34.0$ in.) where overt
 ==== Artwork Protection & The "Floating Flap" Adjustment Rule
 - *1-Arcminute Acuity Resolution:* Razor kerf (#sym.lt 0.01 in.) is 30x smaller than human eye resolution at 30 yards (0.31 in.). Flaps hang 100% flush by gravity and are completely invisible from spectator stands.
 - *Floating Allowance:* Centerlines may float horizontally by $plus.minus 6$ to $12$ in. (and vertically by $plus.minus 2$ to $4$ in.) along their row to position flaps into solid backgrounds, dark textures, or negative space.
-- *Mandatory NO-CUT Zones:* Flaps must clear student performer faces by $>= 6.0$ in. Never cut across show title typography, movement titles, or Pine Creek school / sponsor crests.
+- *Mandatory NO-CUT Zones:* Never cut across visually important graphic details printed on the vinyl, such as performer faces, show title typography, movement titles, or school / sponsor logos. Flaps must maintain at least 6.0 in. of clearance from any faces depicted in the artwork.
 
 ==== Step-by-Step Punch-First Fabrication Procedure
 1. *Tooling Checklist:* Obtain a 3/8-in. (10 mm) rotary leather punch, dense end-grain hardwood backing block, PCHSMB Field Prop Circle Cutter with fresh #11 hobby scalpel blade (Index [18]), and soft marking pencil.

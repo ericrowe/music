@@ -12,11 +12,11 @@ The **Rolling Backdrop System** is a modular, mobile field prop developed for th
 
 The authoritative, fully illustrated manual is maintained in the [`docs/`](docs/) directory:
 
-👉 **[View Complete Manual (PDF)](docs/Backdrop_Assembly_Guide.pdf)** *(Release v0 (D6) — 28 Pages)*  
+👉 **[View Complete Manual (PDF)](docs/Backdrop_Assembly_Guide.pdf)** *(Release v0 (D7) — 28 Pages)*  
 📄 **[Typst Master Source](docs/Backdrop_Assembly_Guide.typ)** | 📋 **[Project Manifest](docs/project.json)**
 
 The manual uses a standardized cross-project appendix architecture harmonized with the [Sideline Screen Manual](../_Sideline%20Screen/docs/Sideline_Screen_Duck_Blind_Build_Instructions.pdf):
-- **Master Cover & Preamble (Pages 1–2):** Prop identity, structural architecture, visible version history (Build D6), and master manual organization.
+- **Master Cover & Preamble (Pages 1–2):** Prop identity, structural architecture, visible version history (Build D7), and master manual organization.
 - **Appendix A: Field Operations Manual (Sections 1.1–1.7):**
   - **1.1 Roles & Responsibilities:** Parent pit/logistics crew vs student prop handlers.
   - **1.2 Staging, Transport & Field Gate Entry:** Backfield staging and CBA Rule 5.02 rear entrance mandate.

@@ -26,20 +26,20 @@
   },
   "document": {
     "current": {
-      "build": "D6",
+      "build": "D7",
       "release": "v0",
       "process_state": "working_draft",
       "visible_status": "working_draft",
       "file": "Backdrop_Assembly_Guide.typ",
-      "sha256": "77775def403e49a135a2d69a8a2b2c1262815ebbd67422d7428baff0c7a89d63",
-      "controlled_at": "2026-09-15T23:50:00+00:00"
+      "sha256": "3f2db69ddcabf6c669feec99a77dda424cc76e31a6c4cb0485dd43dc04132050",
+      "controlled_at": "2026-09-15T23:55:00+00:00"
     },
     "candidate": null
   },
   "versioning": {
     "current_release": "v0",
     "next_release": "v1",
-    "next_build_number": 7
+    "next_build_number": 8
   },
   "releases": [],
   "history": [
@@ -112,6 +112,20 @@
       "summary": "Update trailer transport figure (Figure 5) with overhead shoring beam frame storage photograph",
       "sha256": "77775def403e49a135a2d69a8a2b2c1262815ebbd67422d7428baff0c7a89d63",
       "pdf_sha256": "87cbd4fe8eee1cea5db16b2904886d32a85027422ac992991b02463cc65749f5",
+      "page_count": 28,
+      "file": "Backdrop_Assembly_Guide.typ"
+    },
+    {
+      "id": "D7",
+      "kind": "development_build",
+      "release": "v0",
+      "status": "working_draft",
+      "date": "2026-09-15",
+      "started_at": "2026-09-15T23:52:00+00:00",
+      "base_build": "D6",
+      "summary": "Clarify wind relief NO-CUT zones to explicitly protect printed graphic details, depicted faces, and logos",
+      "sha256": "3f2db69ddcabf6c669feec99a77dda424cc76e31a6c4cb0485dd43dc04132050",
+      "pdf_sha256": "ce1c3e5997e2865a31e2e7699e4c4ed625526e20f5365c7a8b2c06bcadc47aa6",
       "page_count": 28,
       "file": "Backdrop_Assembly_Guide.typ"
     }

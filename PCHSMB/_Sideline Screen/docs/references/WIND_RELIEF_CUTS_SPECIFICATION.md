@@ -204,9 +204,9 @@ To prevent visual disruption and ensure complete optical camouflage from the sta
    - The $\varnothing 3/8\text{ in.}$ punch holes match the threshold at 30 yards and are imperceptible from the press box, blending seamlessly into printed textures.
 2. **Floating Allowance ($\pm 6\text{ to }12\text{ in.}$):** Any cut centerline may float horizontally by up to $\pm 12.0\text{ in.}$ (and vertically by $\pm 4.0\text{ in.}$) along its row to position the flap into solid background colors, dark textures, sky gradients, or negative graphic space.
 3. **Mandatory NO-CUT Zones:**
-   - **Performer Faces / Portraits:** Flaps must clear facial features by at least $6.0\text{ in.}$.
+   - **Depicted Performer Faces / Portraits:** Flaps must maintain at least $6.0\text{ in.}$ clearance from any performer faces printed in the artwork.
    - **Show Title & Typography:** Cuts must never intersect lettering, musical notations, or movement titles.
-   - **School / Sponsor Crests:** Zero cuts permitted through Pine Creek emblems or competition branding.
+   - **School / Sponsor Logos & Crests:** Zero cuts permitted through Pine Creek emblems, logos, or competition branding.
 4. **Backstage Equipment Concealment:**
    - Flaps maintain **96.6% solid, 100% opaque vinyl coverage** (vent area is only 3.43%), completely avoiding translucent mesh.
    - All staged rifles, sabres, and floor equipment rest below $Y = 10.0\text{ in.}$, while the lowest flap apex sits at $Y = 20.0\text{ in.}$, guaranteeing complete visual shielding even during wind gusts.

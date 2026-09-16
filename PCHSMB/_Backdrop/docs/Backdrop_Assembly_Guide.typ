@@ -39,7 +39,7 @@
       #grid(
         columns: (1.5fr, 1.2fr, 1fr),
         align(left)[*WORKING DRAFT — NOT FOR USE*],
-        align(center)[*Release v0 (D6)* | September 2026],
+        align(center)[*Release v0 (D7)* | September 2026],
         align(right)[*Page #pg-str*]
       )
     ]
@@ -135,7 +135,7 @@
   audience: [],
   contents: [],
   print-label: [],
-  revision: [Release v0 (unreleased) | Development build D6 | September 2026],
+  revision: [Release v0 (unreleased) | Development build D7 | September 2026],
   separation-note: [When separated from the master document, keep this cover as the first page.]
 ) = [
   #align(center)[
@@ -209,6 +209,7 @@
   [Release v0 (unreleased) — Build D4], [2026-09-13], [WORKING DRAFT — NOT FOR USE], [Update wind relief flap specification to true semicircular geometry (R = 4.0", 8" × 4"), 8-cut primary grid layout, 3/8" tear-arrest holes, and full Typst document conversion],
   [Release v0 (unreleased) — Build D5], [2026-09-15], [WORKING DRAFT — NOT FOR USE], [Harmonize document architecture, section numbering (1.1–1.7, 2.1–2.10), coordinate schedule tables, and PCHSMB Circle Cutter tooling with Sideline Screen manual],
   [Release v0 (unreleased) — Build D6], [2026-09-15], [WORKING DRAFT — NOT FOR USE], [Update trailer transport figure (Figure 5) with overhead shoring beam frame storage photograph],
+  [Release v0 (unreleased) — Build D7], [2026-09-15], [WORKING DRAFT — NOT FOR USE], [Clarify wind relief NO-CUT zones to explicitly protect printed graphic details, depicted faces, and logos],
 )
 
 = Intro / Overview
@@ -265,7 +266,7 @@ Special thanks and credit to the Plainfield North Bands for creating the origina
   audience: [Field operators, parent prop crew, and student handlers],
   contents: [Transport & field entrance; student/volunteer training; wing ballast posts; double-bagging rules; student instrument stowage; 2026 CBA rules; trailer storage],
   print-label: [All pages labeled A-],
-  revision: [Release v0 (unreleased) | Development build D6 | September 2026],
+  revision: [Release v0 (unreleased) | Development build D7 | September 2026],
   separation-note: [When separated from the master document, keep this cover as the first page of Appendix A.]
 )
 
@@ -499,7 +500,7 @@ The following governing rules are extracted directly from the official 2026 Colo
   audience: [Band prop construction leads, parent build volunteers, and fabrication teams],
   contents: [Shop safety; full BOM; 3D-printed fixtures; lumber and steel cut schedules; cost breakdown; 4-stage frame assembly; vinyl tensioning and snap clamping; quality checklist; indexed purchase sources],
   print-label: [All pages labeled B-],
-  revision: [Release v0 (unreleased) | Development build D6 | September 2026],
+  revision: [Release v0 (unreleased) | Development build D7 | September 2026],
   separation-note: [When separated from the master document, keep this cover as the first page of Appendix B.]
 )
 
@@ -879,7 +880,7 @@ For banners with prominent central artwork, the approved 6-flap minimal variant 
 ==== Artwork Protection & The "Floating Flap" Adjustment Rule
 - *1-Arcminute Acuity Resolution:* Razor kerf (< 0.01 in.) is 30x smaller than human eye resolution at 30 yards (0.31 in.). Flaps hang 100% flush by gravity and are completely invisible from spectator stands.
 - *Floating Allowance:* Centerlines may float horizontally by $plus.minus 6$ to $12$ in. along their row to position flaps into solid backgrounds, dark textures, skies, or negative space.
-- *Mandatory NO-CUT Zones:* Flaps must clear student performer faces by $>= 6.0$ in. Never cut across show title typography, movement titles, or Pine Creek school / sponsor crests.
+- *Mandatory NO-CUT Zones:* Never cut across visually important graphic details printed on the vinyl, such as performer faces, show title typography, movement titles, or school / sponsor logos. Flaps must maintain at least 6.0 in. of clearance from any faces depicted in the artwork.
 
 ==== Step-by-Step Punch-First Fabrication Procedure
 1. *Tooling Checklist:* Obtain a 3/8-in. (10 mm) rotary leather punch, dense end-grain hardwood backing block, PCHSMB Field Prop Circle Cutter with fresh #11 hobby scalpel blade (Index [18]), and soft marking pencil.

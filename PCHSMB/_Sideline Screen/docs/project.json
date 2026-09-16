@@ -26,20 +26,20 @@
   },
   "document": {
     "current": {
-      "build": "D32",
+      "build": "D33",
       "release": "v0",
       "process_state": "working_draft",
       "visible_status": "working_draft",
       "file": "Sideline_Screen_Duck_Blind_Build_Instructions.typ",
-      "sha256": "ad003293028c657de05745d3814d7b992bf3d074ea85b41de3f5e8f33da18140",
-      "controlled_at": "2026-09-15T23:59:00+00:00"
+      "sha256": "d1bfc3d5c1024bd3bf7362f98ce3c142c30b0351fbe633e46504d25c8f7a474a",
+      "controlled_at": "2026-09-15T23:58:00+00:00"
     },
     "candidate": null
   },
   "versioning": {
     "current_release": "v0",
     "next_release": "v1",
-    "next_build_number": 33
+    "next_build_number": 34
   },
   "releases": [],
   "history": [
@@ -147,6 +147,20 @@
       "summary": "Add equipment truck packout figure (Section 1.7). Harmonize Appendix A pagination (Pages A-1 through A-7) with Backdrop manual",
       "sha256": "ad003293028c657de05745d3814d7b992bf3d074ea85b41de3f5e8f33da18140",
       "pdf_sha256": "3140f3ec8e6bb9ade0b530b0cf2c7da5027f28041c7554097ff82bedc500d359",
+      "page_count": 26,
+      "file": "Sideline_Screen_Duck_Blind_Build_Instructions.typ"
+    },
+    {
+      "id": "D33",
+      "kind": "development_build",
+      "release": "v0",
+      "status": "working_draft",
+      "date": "2026-09-15",
+      "started_at": "2026-09-15T23:55:00+00:00",
+      "base_build": "D32",
+      "summary": "Clarify wind relief NO-CUT zones to explicitly protect printed graphic details, depicted faces, and logos",
+      "sha256": "d1bfc3d5c1024bd3bf7362f98ce3c142c30b0351fbe633e46504d25c8f7a474a",
+      "pdf_sha256": "6bc5d32ceb7f3363c8f175d58c6de5830030a9b4e43aca682a362f422428b3ee",
       "page_count": 26,
       "file": "Sideline_Screen_Duck_Blind_Build_Instructions.typ"
     }

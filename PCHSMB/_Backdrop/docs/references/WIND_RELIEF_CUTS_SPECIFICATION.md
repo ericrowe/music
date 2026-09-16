@@ -207,9 +207,9 @@ To prevent visual disruption, fabrication teams **MUST** follow these rules:
 
 1. **Floating Allowance ($\pm 6\text{ to }12\text{ in.}$):** Any cut centerline may float horizontally by up to $\pm 12.0\text{ in.}$ (and vertically by $\pm 6.0\text{ in.}$) to align the flap into solid dark colors, skies, tree canopies, or textured graphic backgrounds.
 2. **Mandatory NO-CUT Zones:**
-   - **Performer Faces / Portraits:** Flaps must clear facial features by at least $6.0\text{ in.}$.
+   - **Depicted Performer Faces / Portraits:** Flaps must maintain at least $6.0\text{ in.}$ clearance from any performer faces printed in the artwork.
    - **Show Title & Typography:** Cuts must never intersect lettering, musical notations, or movement titles.
-   - **School / Sponsor Crests:** Zero cuts permitted through Pine Creek emblems or competition branding.
+   - **School / Sponsor Logos & Crests:** Zero cuts permitted through Pine Creek emblems, logos, or competition branding.
 3. **Double-Check Before Slicing:** Always flip the banner or inspect the printed face against a bright work light before executing punch holes.
 
 ---
