@@ -31,8 +31,8 @@
       "process_state": "working_draft",
       "visible_status": "working_draft",
       "file": "Backdrop_Assembly_Guide.typ",
-      "sha256": "1cfdf6e2f45646c176d8b9bfcefeb00d8db6d559a50138f5d415c71a9a9aeacc",
-      "controlled_at": "2026-09-16T02:26:00+00:00"
+      "sha256": "57e9d609f7006e21c7b3b82e0d82b6956d71cd8bdc1cec7617cd851ccdc00e4d",
+      "controlled_at": "2026-09-16T02:38:00+00:00"
     },
     "candidate": null
   },
@@ -138,8 +138,8 @@
       "started_at": "2026-09-16T02:10:00+00:00",
       "base_build": "D7",
       "summary": "Add character-perfect ASCII diagram illustrating wind relief cut locations (2x4 grid, 8 semicircular flaps) in Appendix B Section 2.9.3 with proportional portrait aspect ratio and fixed-width font rules",
-      "sha256": "1cfdf6e2f45646c176d8b9bfcefeb00d8db6d559a50138f5d415c71a9a9aeacc",
-      "pdf_sha256": "87298153943e20475c536acdb5ff439c9476a43137629653bf6a4d6688ab876d",
+      "sha256": "57e9d609f7006e21c7b3b82e0d82b6956d71cd8bdc1cec7617cd851ccdc00e4d",
+      "pdf_sha256": "3e9a714afecea2053e9f654e0f7ee48b42ecba3dc894fbbc763895a2521bc142",
       "page_count": 28,
       "file": "Backdrop_Assembly_Guide.typ"
     }

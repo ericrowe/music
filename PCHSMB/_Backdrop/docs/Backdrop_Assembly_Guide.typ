@@ -870,28 +870,28 @@ The primary standard deploys 8 semicircular flaps, providing *1.40 sq ft (201 sq
     breakable: false,
   )[
 ```text
-<--------------- 96.0" (8 ft) --------------->
-0"     19.2"    38.4"    57.6"    76.8"  96.0"
-+--------+--------+--------+--------+--------+ 120.0" (Top Rail)
-|                                            |
-|           [Top 24" Solid Vinyl]            |
-|                                            |
-|        X        X        X        X        |  96.0" (Row 1)
-|       F-1      F-2      F-3      F-4       |
-|                                            |
-|                                            |
-|        X        X        X        X        |  72.0" (Row 2)
-|       F-5      F-6      F-7      F-8       |
-| - - - - - - - - - - - - - - - - - - - - -  |  68.0" (Cut Apex)
-|                                            |
-|        [Solid Lower Graphic Zone]          |
-|      (100% Unvented Display Surface)       |
-|       (Protects Low Artwork & Base)        |
-|                                            |
-|                                            |
-+============================================+   0.0" (Cart Deck)
-^        ^        ^        ^        ^        ^
-Post    1/5      2/5      3/5      4/5     Post
+<------------ 96.0" (8 ft) ------------>
+0"   19.2"  38.4"    57.6"  76.8"  96.0"
++------+-------+-------+-------+-------+ 120.0" (Top Rail)
+|                                      |
+|        [Top 24" Solid Vinyl]         |
+|                                      |
+|      X       X       X       X       |  96.0" (Row 1)
+|     F-1     F-2     F-3     F-4      |
+|                                      |
+|                                      |
+|      X       X       X       X       |  72.0" (Row 2)
+|     F-5     F-6     F-7     F-8      |
+| - - - - - - - - - - - - - - - - - -  |  68.0" (Cut Apex)
+|                                      |
+|     [Solid Lower Graphic Zone]       |
+|     (Unvented Display Surface)       |
+|    (Protects Low Artwork & Base)     |
+|                                      |
+|                                      |
++======================================+   0.0" (Cart Deck)
+^      ^       ^       ^       ^       ^
+Post  1/5     2/5     3/5     4/5   Post
 ```
   ]
 ]
