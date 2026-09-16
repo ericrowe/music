@@ -26,20 +26,20 @@
   },
   "document": {
     "current": {
-      "build": "D31",
+      "build": "D32",
       "release": "v0",
       "process_state": "working_draft",
       "visible_status": "working_draft",
       "file": "Sideline_Screen_Duck_Blind_Build_Instructions.typ",
-      "sha256": "4ee94f66d817240517d3827cb2635090bccec626e0d1df3dd3caefc99f27b512",
-      "controlled_at": "2026-09-15T23:30:00+00:00"
+      "sha256": "ad003293028c657de05745d3814d7b992bf3d074ea85b41de3f5e8f33da18140",
+      "controlled_at": "2026-09-15T23:59:00+00:00"
     },
     "candidate": null
   },
   "versioning": {
     "current_release": "v0",
     "next_release": "v1",
-    "next_build_number": 32
+    "next_build_number": 33
   },
   "releases": [],
   "history": [
@@ -134,6 +134,20 @@
       "sha256": "4ee94f66d817240517d3827cb2635090bccec626e0d1df3dd3caefc99f27b512",
       "pdf_sha256": "4824635d5bc42900923eb058e1e59aa4c552402550b69a5f9058f91b4fc224da",
       "page_count": 25,
+      "file": "Sideline_Screen_Duck_Blind_Build_Instructions.typ"
+    },
+    {
+      "id": "D32",
+      "kind": "development_build",
+      "release": "v0",
+      "status": "working_draft",
+      "date": "2026-09-15",
+      "started_at": "2026-09-15T23:50:00+00:00",
+      "base_build": "D31",
+      "summary": "Add equipment truck packout figure (Section 1.7). Harmonize Appendix A pagination (Pages A-1 through A-7) with Backdrop manual",
+      "sha256": "ad003293028c657de05745d3814d7b992bf3d074ea85b41de3f5e8f33da18140",
+      "pdf_sha256": "3140f3ec8e6bb9ade0b530b0cf2c7da5027f28041c7554097ff82bedc500d359",
+      "page_count": 26,
       "file": "Sideline_Screen_Duck_Blind_Build_Instructions.typ"
     }
   ]

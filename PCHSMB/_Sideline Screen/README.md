@@ -2,7 +2,9 @@
 
 The **Sideline Screen / Duck Blind** is a modular, folding field prop developed for the Pine Creek High School Marching Band (PCHSMB). It provides the color guard with a nominal 4 ft x 8 ft concealed area for equipment staging, storage, and costume/equipment changes during field show performances.
 
-![Pine Creek High School Marching Band Sideline Screen / Duck Blind Frame](docs/assets/approved/duck_blind_unfolded.jpg)
+| Single Completed Screen with Mounted Vinyl | Complete Sideline Screen Fleet Deployed |
+| :---: | :---: |
+| ![Single Completed Sideline Screen](docs/assets/approved/duck_blind_single_completed.jpg) | ![Complete Sideline Screen Fleet Deployed](docs/assets/approved/duck_blind_fleet_lineup.jpg) |
 
 The frame is constructed from 3/4-in. EMT conduit, off-the-shelf clamp brackets, and 3D-printed hardware, faced with a custom-printed decorative vinyl banner. It folds completely flat for transport/storage in a band trailer and quickly unfolds into a stable, self-supporting triangular structure on the field.
 
@@ -12,11 +14,11 @@ The frame is constructed from 3/4-in. EMT conduit, off-the-shelf clamp brackets,
 
 The authoritative, fully illustrated manual is maintained in the [`docs/`](docs/) directory:
 
-👉 **[View Complete Manual (PDF)](docs/Sideline_Screen_Duck_Blind_Build_Instructions.pdf)** *(Release v0 (D31) — 25 Pages)*  
+👉 **[View Complete Manual (PDF)](docs/Sideline_Screen_Duck_Blind_Build_Instructions.pdf)** *(Release v0 (D32) — 26 Pages)*  
 📄 **[Typst Master Source](docs/Sideline_Screen_Duck_Blind_Build_Instructions.typ)** | 📋 **[Project Manifest](docs/project.json)**
 
 The manual uses a standardized cross-project appendix architecture harmonized with the [Backdrop Manual](../_Backdrop/docs/Backdrop_Assembly_Guide.pdf):
-- **Master Cover & Preamble (Pages 1–2):** Prop identity, folding mechanics, visible version history (Build D31), and master manual organization.
+- **Master Cover & Preamble (Pages 1–2):** Prop identity, folding mechanics, visible version history (Build D32), and master manual organization.
 - **Appendix A: Field Operations Manual (Sections 1.1–1.7):**
   - **1.1 Roles & Responsibilities:** Parent logistics crew & duck blind managers vs student carry pairs.
   - **1.2 Staging, Transport & Field Gate Entry:** Staging, transport on stage platforms, and Rule 5.02 rear gate entry.

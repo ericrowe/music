@@ -39,7 +39,7 @@
       #grid(
         columns: (1.5fr, 1.2fr, 1fr),
         align(left)[*WORKING DRAFT — NOT FOR USE*],
-        align(center)[*Release v0 (D31)* | September 2026],
+        align(center)[*Release v0 (D32)* | September 2026],
         align(right)[*Page #pg-str*]
       )
     ]
@@ -132,7 +132,7 @@
   audience: [],
   contents: [],
   print-label: [],
-  revision: [Release v0 (unreleased) | Development build D31 | September 2026],
+  revision: [Release v0 (unreleased) | Development build D32 | September 2026],
   separation-note: [When separated from the master document, keep this cover as the first page.]
 ) = [
   #align(center)[
@@ -234,7 +234,7 @@
   columns: (0.7fr, 0.9fr, 1.2fr, 3.2fr),
   align: (center + horizon, center + horizon, center + horizon, left + horizon),
   stroke: 0.4pt + rgb("#cbd5e0"),
-  fill: (col, row) => if row == 0 { rgb("#edf2f7") } else if row == 8 { rgb("#ebf8ff") } else { none },
+  fill: (col, row) => if row == 0 { rgb("#edf2f7") } else if row == 9 { rgb("#ebf8ff") } else { none },
   inset: (x: 3.5pt, y: 1.8pt),
   [*Version*], [*Date*], [*Document State*], [*Key Modifications & Engineering Decisions*],
   [D24], [2026-09-01], [Working draft], [Imported legacy v24 draft as controlled repository baseline.],
@@ -244,7 +244,8 @@
   [D28], [2026-09-10], [Working draft], [Added aerodynamic wind loading analysis, tiered ballasting schedule, and volunteer guide.],
   [D29], [2026-09-11], [Working draft], [Updated field operations with preliminary cart study and asymmetric backfield staging.],
   [D30], [2026-09-13], [Working draft], [Full Typst rewrite. Adopted Two-Student Direct Carry (16 pairs walk assembled; zero transport carts built, saving \$440). Standardized 6 true semicircular wind relief flaps (R = 4.0 in., 8.0 in. chord by 4.0 in. drop, pre-punched 3/8 in. / 10 mm holes, 15% drag reduction). Updated complete wind stability tables.],
-  [*D31*], [*2026-09-15*], [*Working draft*], [*Harmonize document architecture, section numbering (1.1–1.7, 2.1–2.10), Appendix A/B ordering, coordinate schedule tables, and Circle Cutter tooling with Backdrop manual.*],
+  [D31], [2026-09-15], [Working draft], [Harmonize document architecture, section numbering (1.1–1.7, 2.1–2.10), Appendix A/B ordering, coordinate schedule tables, and Circle Cutter tooling with Backdrop manual.],
+  [*D32*], [*2026-09-15*], [*Working draft*], [*Add equipment truck packout figure (Section 1.7). Harmonize Appendix A pagination (Pages A-1 through A-7) with Backdrop manual.*],
 )
 ]
 
@@ -281,14 +282,14 @@
   audience: [Field operators, adult duck blind managers, and student carry pairs],
   contents: [Time budget architecture; Two-Student Carry deployment & egress; tiered ballasting; 2026 CBA rules; trailer packout],
   print-label: [All pages labeled A-],
-  revision: [Release v0 (unreleased) | Development build D31 | September 2026],
+  revision: [Release v0 (unreleased) | Development build D32 | September 2026],
   separation-note: [When separated from the master document, keep this cover as the first page of Appendix A.]
 )
 
 #pagebreak()
 
 // =========================================================================
-// APPENDIX A: CONTENT PAGES (A-2 THROUGH A-6)
+// APPENDIX A: CONTENT PAGES (A-2 THROUGH A-7)
 // =========================================================================
 #set page(header: make-header("APPENDIX A | FIELD OPERATIONS MANUAL"))
 
@@ -458,13 +459,23 @@ Aerodynamic pressure ($q = 0.001989 times V_"mph"^2$ psf at Colorado Springs 6,5
 === Rule 9.07: Parent Field Access & Wristband Limits
 - *25 Field Pass Wristbands:* Access to the field is restricted to Directors/Staff with CBA passes and parents assisting with props/front ensemble with designated Field Pass wristbands (strictly limited to 25 per band).
 
-== 1.7 Post-Use Teardown, Inspection & Trailer Packout
+#pagebreak()
+
+== 1.7 Post-Use Teardown, Staging & Trailer Packout Protocol
 
 1. *Continuous Egress & Uphill Transit:* Student pairs jog screens through the exit gate directly to the common outside staging area. Props cannot stop or reload in the exit chute.
 2. *"Two-Shot" Competitions (Prelims & Finals Inter-Show Staging):* Between shows, screens remain staged in the trailer lot. If high wind gusts threaten, pull the snap clips (*I*) and collapse the rear frames flat (under 2.0 in. thick) to eliminate wind sail area while keeping screens ready for rapid re-erection.
 3. *Final Teardown De-Ballasting:* Remove sandbags at the truck/trailer only. Stack bags low over truck axles on rubber floor mats.
 4. *Collapsing Triangular Frame Flat:* Unclip both 3D-printed hinged arm clips (*I*) from Lower Inner Rail 3 and swing the rear triangular support frame upward and flat inside the perimeter framing.
-5. *Loading Stages & Truck Packout:* Stack four (4) collapsed screens flat onto each of the four (4) mobile stages. Strap securely with ratchet straps and roll stages into equipment trucks.
+5. *Loading Stages & Truck Packout:* Collapsed screens may be transported stacked flat on mobile staging platforms or stacked vertically against the interior sidewalls of equipment trucks/trailers. As shown in the figure below, nested flat screens are stacked vertically against the interior truck sidewall, secured with heavy-duty cargo ratchet straps wrapped around wall rub rails / E-track, and ballasted along the bottom runner with sandbags to prevent shifting during transit.
+
+#v(6pt)
+#align(center)[
+  #figure(
+    image("assets/approved/duck_blind_transport_packout.jpg", width: 70%),
+    caption: [Equipment truck packout configuration: nested flat screens secured vertically against truck sidewall with cargo ratchet strap and ballast sandbags lining base.]
+  )
+]
 
 #pagebreak()
 
@@ -487,7 +498,7 @@ Aerodynamic pressure ($q = 0.001989 times V_"mph"^2$ psf at Colorado Springs 6,5
   audience: [Band prop construction leads, parent build volunteers, and fabrication teams],
   contents: [Shop safety; full BOM; 3D-printed parts; 7-stick conduit cut schedule; cost breakdown; 4-stage frame assembly; vinyl mounting; wind relief flap cutting; inspection checklist; indexed purchasing sources],
   print-label: [All pages labeled B-],
-  revision: [Release v0 (unreleased) | Development build D31 | September 2026],
+  revision: [Release v0 (unreleased) | Development build D32 | September 2026],
   separation-note: [When separated from the master document, keep this cover as the first page of Appendix B.]
 )
 
