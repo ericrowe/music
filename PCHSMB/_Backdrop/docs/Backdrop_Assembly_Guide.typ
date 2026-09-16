@@ -39,7 +39,7 @@
       #grid(
         columns: (1.5fr, 1.2fr, 1fr),
         align(left)[*WORKING DRAFT — NOT FOR USE*],
-        align(center)[*Release v0 (D7)* | September 2026],
+        align(center)[*Release v0 (D8)* | September 2026],
         align(right)[*Page #pg-str*]
       )
     ]
@@ -55,6 +55,8 @@
 #set par(justify: true, leading: 0.65em)
 #show table.cell: set par(justify: false)
 #set figure(numbering: none)
+
+#show raw: set text(size: 6pt, font: ("Menlo", "DejaVu Sans Mono", "Courier New", "Courier"), spacing: 100%, tracking: 0pt)
 
 // Styled Heading Hierarchy
 #show heading.where(level: 1): it => {
@@ -135,7 +137,7 @@
   audience: [],
   contents: [],
   print-label: [],
-  revision: [Release v0 (unreleased) | Development build D7 | September 2026],
+  revision: [Release v0 (unreleased) | Development build D8 | September 2026],
   separation-note: [When separated from the master document, keep this cover as the first page.]
 ) = [
   #align(center)[
@@ -210,6 +212,7 @@
   [Release v0 (unreleased) — Build D5], [2026-09-15], [WORKING DRAFT — NOT FOR USE], [Harmonize document architecture, section numbering (1.1–1.7, 2.1–2.10), coordinate schedule tables, and PCHSMB Circle Cutter tooling with Sideline Screen manual],
   [Release v0 (unreleased) — Build D6], [2026-09-15], [WORKING DRAFT — NOT FOR USE], [Update trailer transport figure (Figure 5) with overhead shoring beam frame storage photograph],
   [Release v0 (unreleased) — Build D7], [2026-09-15], [WORKING DRAFT — NOT FOR USE], [Clarify wind relief NO-CUT zones to explicitly protect printed graphic details, depicted faces, and logos],
+  [Release v0 (unreleased) — Build D8], [2026-09-15], [WORKING DRAFT — NOT FOR USE], [Add ASCII diagram illustrating wind relief cut locations ($2 times 4$ grid, 8 semicircular flaps) in Appendix B Section 2.9.3],
 )
 
 = Intro / Overview
@@ -266,7 +269,7 @@ Special thanks and credit to the Plainfield North Bands for creating the origina
   audience: [Field operators, parent prop crew, and student handlers],
   contents: [Transport & field entrance; student/volunteer training; wing ballast posts; double-bagging rules; student instrument stowage; 2026 CBA rules; trailer storage],
   print-label: [All pages labeled A-],
-  revision: [Release v0 (unreleased) | Development build D7 | September 2026],
+  revision: [Release v0 (unreleased) | Development build D8 | September 2026],
   separation-note: [When separated from the master document, keep this cover as the first page of Appendix A.]
 )
 
@@ -500,7 +503,7 @@ The following governing rules are extracted directly from the official 2026 Colo
   audience: [Band prop construction leads, parent build volunteers, and fabrication teams],
   contents: [Shop safety; full BOM; 3D-printed fixtures; lumber and steel cut schedules; cost breakdown; 4-stage frame assembly; vinyl tensioning and snap clamping; quality checklist; indexed purchase sources],
   print-label: [All pages labeled B-],
-  revision: [Release v0 (unreleased) | Development build D7 | September 2026],
+  revision: [Release v0 (unreleased) | Development build D8 | September 2026],
   separation-note: [When separated from the master document, keep this cover as the first page of Appendix B.]
 )
 
@@ -856,6 +859,42 @@ The primary standard deploys 8 semicircular flaps, providing *1.40 sq ft (201 sq
   [Flap F-7], [Row 2 (Mid-Upper)], [72.0 in.], [57.6 in.], [53.6 in. and 61.6 in.], [68.0 in. to turf],
   [Flap F-8], [Row 2 (Mid-Upper)], [72.0 in.], [76.8 in.], [72.8 in. and 80.8 in.], [68.0 in. to turf],
 )
+
+#v(3pt)
+#align(center)[
+  #block(
+    fill: rgb("#f7fafc"),
+    stroke: 0.5pt + rgb("#cbd5e0"),
+    inset: (x: 8pt, y: 5pt),
+    radius: 4pt,
+    breakable: false,
+  )[
+```text
+<--------------- 96.0" (8 ft) --------------->
+0"     19.2"    38.4"    57.6"    76.8"  96.0"
++--------+--------+--------+--------+--------+ 120.0" (Top Rail)
+|                                            |
+|           [Top 24" Solid Vinyl]            |
+|                                            |
+|        X        X        X        X        |  96.0" (Row 1)
+|       F-1      F-2      F-3      F-4       |
+|                                            |
+|                                            |
+|        X        X        X        X        |  72.0" (Row 2)
+|       F-5      F-6      F-7      F-8       |
+| - - - - - - - - - - - - - - - - - - - - -  |  68.0" (Cut Apex)
+|                                            |
+|        [Solid Lower Graphic Zone]          |
+|      (100% Unvented Display Surface)       |
+|       (Protects Low Artwork & Base)        |
+|                                            |
+|                                            |
++============================================+   0.0" (Cart Deck)
+^        ^        ^        ^        ^        ^
+Post    1/5      2/5      3/5      4/5     Post
+```
+  ]
+]
 
 #v(2pt)
 

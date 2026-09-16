@@ -26,20 +26,20 @@
   },
   "document": {
     "current": {
-      "build": "D7",
+      "build": "D8",
       "release": "v0",
       "process_state": "working_draft",
       "visible_status": "working_draft",
       "file": "Backdrop_Assembly_Guide.typ",
-      "sha256": "3f2db69ddcabf6c669feec99a77dda424cc76e31a6c4cb0485dd43dc04132050",
-      "controlled_at": "2026-09-15T23:55:00+00:00"
+      "sha256": "1cfdf6e2f45646c176d8b9bfcefeb00d8db6d559a50138f5d415c71a9a9aeacc",
+      "controlled_at": "2026-09-16T02:26:00+00:00"
     },
     "candidate": null
   },
   "versioning": {
     "current_release": "v0",
     "next_release": "v1",
-    "next_build_number": 8
+    "next_build_number": 9
   },
   "releases": [],
   "history": [
@@ -126,6 +126,20 @@
       "summary": "Clarify wind relief NO-CUT zones to explicitly protect printed graphic details, depicted faces, and logos",
       "sha256": "3f2db69ddcabf6c669feec99a77dda424cc76e31a6c4cb0485dd43dc04132050",
       "pdf_sha256": "ce1c3e5997e2865a31e2e7699e4c4ed625526e20f5365c7a8b2c06bcadc47aa6",
+      "page_count": 28,
+      "file": "Backdrop_Assembly_Guide.typ"
+    },
+    {
+      "id": "D8",
+      "kind": "development_build",
+      "release": "v0",
+      "status": "working_draft",
+      "date": "2026-09-15",
+      "started_at": "2026-09-16T02:10:00+00:00",
+      "base_build": "D7",
+      "summary": "Add character-perfect ASCII diagram illustrating wind relief cut locations (2x4 grid, 8 semicircular flaps) in Appendix B Section 2.9.3 with proportional portrait aspect ratio and fixed-width font rules",
+      "sha256": "1cfdf6e2f45646c176d8b9bfcefeb00d8db6d559a50138f5d415c71a9a9aeacc",
+      "pdf_sha256": "87298153943e20475c536acdb5ff439c9476a43137629653bf6a4d6688ab876d",
       "page_count": 28,
       "file": "Backdrop_Assembly_Guide.typ"
     }

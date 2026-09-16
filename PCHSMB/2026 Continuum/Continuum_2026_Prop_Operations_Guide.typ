@@ -287,8 +287,8 @@ The 2026 visual design for *Continuum* incorporates three prop families totaling
 #v(4pt)
 #text(size: 7.2pt, fill: rgb("#4a5568"))[
   *Authoritative Subproject Technical Manuals & Construction Deliverables:* \
-  • *Duck Blinds / Sideline Screens:* See _Sideline Screen / Duck Blind Construction and Field Operations Manual_ (Release v0 (D33), 26 pages). Covers 3/4-in. EMT conduit framing, Two-Student Direct Carry, Section 2.9.3 engineered semicircular wind relief flaps (6 flaps, $R = 4.0$ in.), and on-prop placards. \
-  • *Rolling Backdrops:* See _Backdrop Construction and Assembly Guide_ (Release v0 (D7), 28 pages). Covers 2x4 rolling cart base, 1-5/8-in. steel frame, 3/4-in. iron wing ballast posts, Section 2.9.3 semicircular wind relief flaps (8 flaps, $R = 4.0$ in.), and rear-rail leverage optimization. \
+  • *Duck Blinds / Sideline Screens:* See _Sideline Screen / Duck Blind Construction and Field Operations Manual_ (Release v0 (D34), 27 pages). Covers 3/4-in. EMT conduit framing, Two-Student Direct Carry, Section 2.9.3 engineered semicircular wind relief flaps (6 flaps, $R = 4.0$ in.), and on-prop placards. \
+  • *Rolling Backdrops:* See _Backdrop Construction and Assembly Guide_ (Release v0 (D8), 28 pages). Covers 2x4 rolling cart base, 1-5/8-in. steel frame, 3/4-in. iron wing ballast posts, Section 2.9.3 semicircular wind relief flaps (8 flaps, $R = 4.0$ in.), and rear-rail leverage optimization. \
   • *Wind Relief Tooling:* Standardized _PCHSMB Field Prop Circle Cutter_ (`circle_cutter_arm.stl`, #11 hobby scalpel blade, dual 608 bearings, 3/8-in. rotary punch).
 ]
 

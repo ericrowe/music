@@ -39,7 +39,7 @@
       #grid(
         columns: (1.5fr, 1.2fr, 1fr),
         align(left)[*WORKING DRAFT — NOT FOR USE*],
-        align(center)[*Release v0 (D33)* | September 2026],
+        align(center)[*Release v0 (D34)* | September 2026],
         align(right)[*Page #pg-str*]
       )
     ]
@@ -57,6 +57,8 @@
   justify: true,
   leading: 0.52em,
 )
+
+#show raw: set text(size: 6pt, font: ("Menlo", "DejaVu Sans Mono", "Courier New", "Courier"), spacing: 100%, tracking: 0pt)
 
 // Reusable formatting helpers
 #let primary(body) = text(fill: rgb("#1a365d"), weight: "bold")[#body]
@@ -132,7 +134,7 @@
   audience: [],
   contents: [],
   print-label: [],
-  revision: [Release v0 (unreleased) | Development build D33 | September 2026],
+  revision: [Release v0 (unreleased) | Development build D34 | September 2026],
   separation-note: [When separated from the master document, keep this cover as the first page.]
 ) = [
   #align(center)[
@@ -234,7 +236,7 @@
   columns: (0.7fr, 0.9fr, 1.2fr, 3.2fr),
   align: (center + horizon, center + horizon, center + horizon, left + horizon),
   stroke: 0.4pt + rgb("#cbd5e0"),
-  fill: (col, row) => if row == 0 { rgb("#edf2f7") } else if row == 10 { rgb("#ebf8ff") } else { none },
+  fill: (col, row) => if row == 0 { rgb("#edf2f7") } else if row == 11 { rgb("#ebf8ff") } else { none },
   inset: (x: 3.5pt, y: 1.8pt),
   [*Version*], [*Date*], [*Document State*], [*Key Modifications & Engineering Decisions*],
   [D24], [2026-09-01], [Working draft], [Imported legacy v24 draft as controlled repository baseline.],
@@ -246,7 +248,8 @@
   [D30], [2026-09-13], [Working draft], [Full Typst rewrite. Adopted Two-Student Direct Carry (16 pairs walk assembled; zero transport carts built, saving \$440). Standardized 6 true semicircular wind relief flaps (R = 4.0 in., 8.0 in. chord by 4.0 in. drop, pre-punched 3/8 in. / 10 mm holes, 15% drag reduction). Updated complete wind stability tables.],
   [D31], [2026-09-15], [Working draft], [Harmonize document architecture, section numbering (1.1–1.7, 2.1–2.10), Appendix A/B ordering, coordinate schedule tables, and Circle Cutter tooling with Backdrop manual.],
   [D32], [2026-09-15], [Working draft], [Add equipment truck packout figure (Section 1.7). Harmonize Appendix A pagination (Pages A-1 through A-7) with Backdrop manual.],
-  [*D33*], [*2026-09-15*], [*Working draft*], [*Clarify wind relief NO-CUT zones to explicitly protect printed graphic details, depicted faces, and logos.*],
+  [D33], [2026-09-15], [Working draft], [Clarify wind relief NO-CUT zones to explicitly protect printed graphic details, depicted faces, and logos.],
+  [*D34*], [*2026-09-15*], [*Working draft*], [*Add ASCII diagram illustrating wind relief cut locations ($2 times 3$ grid, 6 semicircular flaps) in Appendix B Section 2.9.3.*],
 )
 ]
 
@@ -283,7 +286,7 @@
   audience: [Field operators, adult duck blind managers, and student carry pairs],
   contents: [Time budget architecture; Two-Student Carry deployment & egress; tiered ballasting; 2026 CBA rules; trailer packout],
   print-label: [All pages labeled A-],
-  revision: [Release v0 (unreleased) | Development build D33 | September 2026],
+  revision: [Release v0 (unreleased) | Development build D34 | September 2026],
   separation-note: [When separated from the master document, keep this cover as the first page of Appendix A.]
 )
 
@@ -499,7 +502,7 @@ Aerodynamic pressure ($q = 0.001989 times V_"mph"^2$ psf at Colorado Springs 6,5
   audience: [Band prop construction leads, parent build volunteers, and fabrication teams],
   contents: [Shop safety; full BOM; 3D-printed parts; 7-stick conduit cut schedule; cost breakdown; 4-stage frame assembly; vinyl mounting; wind relief flap cutting; inspection checklist; indexed purchasing sources],
   print-label: [All pages labeled B-],
-  revision: [Release v0 (unreleased) | Development build D33 | September 2026],
+  revision: [Release v0 (unreleased) | Development build D34 | September 2026],
   separation-note: [When separated from the master document, keep this cover as the first page of Appendix B.]
 )
 
@@ -945,6 +948,41 @@ Venting is concentrated in the upper zone ($Y = 20.0$ to $34.0$ in.) where overt
   [Flap F-5], [Row 2 (Lower)], [24.0 in.], [48.0 in.], [44.0 in. and 52.0 in.], [20.0 in. to turf],
   [Flap F-6], [Row 2 (Lower)], [24.0 in.], [72.0 in.], [68.0 in. and 76.0 in.], [20.0 in. to turf],
 )
+
+#v(3pt)
+#align(center)[
+  #block(
+    fill: rgb("#f7fafc"),
+    stroke: 0.5pt + rgb("#cbd5e0"),
+    inset: (x: 8pt, y: 6pt),
+    radius: 4pt,
+  )[
+```text
+<------------------------ 96.0" (8 ft) ------------------------->
+0"            24.0"           48.0"           72.0"         96.0"
++---------------+---------------+---------------+---------------+ 48.0" (Top Rail)
+|                                                               |
+| [Top 14" Solid Vinyl Zone]                                    |
+|                                                               |
+|               X               X               X               | 34.0" (Row 1 / Upper)
+|          (Flap F-1)      (Flap F-2)      (Flap F-3)           |
+|                                                               |
+|               X               X               X               | 24.0" (Row 2 / Lower)
+|          (Flap F-4)      (Flap F-5)      (Flap F-6)           |
+|                                                               |
+| - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - | 20.0" (Cut Apex)
+|                                                               |
+| [Equipment Concealment Zone — 100% Solid & Opaque Vinyl]      |
+| (Conceals floor rifles, sabres, flags, and turf props)        |
+|                                                               |
++===============================================================+  0.0" (Turf Level)
+^               ^               ^               ^               ^
+Left End    1/4 Width       Midpoint        3/4 Width       Right End
+```
+  ]
+]
+
+#pagebreak()
 
 ==== Artwork Protection & The "Floating Flap" Adjustment Rule
 - *1-Arcminute Acuity Resolution:* Razor kerf (#sym.lt 0.01 in.) is 30x smaller than human eye resolution at 30 yards (0.31 in.). Flaps hang 100% flush by gravity and are completely invisible from spectator stands.

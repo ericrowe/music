@@ -14,11 +14,11 @@ The frame is constructed from 3/4-in. EMT conduit, off-the-shelf clamp brackets,
 
 The authoritative, fully illustrated manual is maintained in the [`docs/`](docs/) directory:
 
-👉 **[View Complete Manual (PDF)](docs/Sideline_Screen_Duck_Blind_Build_Instructions.pdf)** *(Release v0 (D33) — 26 Pages)*  
+👉 **[View Complete Manual (PDF)](docs/Sideline_Screen_Duck_Blind_Build_Instructions.pdf)** *(Release v0 (D34) — 27 Pages)*  
 📄 **[Typst Master Source](docs/Sideline_Screen_Duck_Blind_Build_Instructions.typ)** | 📋 **[Project Manifest](docs/project.json)**
 
 The manual uses a standardized cross-project appendix architecture harmonized with the [Backdrop Manual](../_Backdrop/docs/Backdrop_Assembly_Guide.pdf):
-- **Master Cover & Preamble (Pages 1–2):** Prop identity, folding mechanics, visible version history (Build D33), and master manual organization.
+- **Master Cover & Preamble (Pages 1–2):** Prop identity, folding mechanics, visible version history (Build D34), and master manual organization.
 - **Appendix A: Field Operations Manual (Sections 1.1–1.7):**
   - **1.1 Roles & Responsibilities:** Parent logistics crew & duck blind managers vs student carry pairs.
   - **1.2 Staging, Transport & Field Gate Entry:** Staging, transport on stage platforms, and Rule 5.02 rear gate entry.
