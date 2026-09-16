@@ -1,11 +1,11 @@
 {
-  "design": "PCHSMB Circle Cutter - Semicircular Wind Relief Slit Tool with Canted Dual Head & 608 Bearings",
-  "version": "1.8",
+  "design": "PCHSMB Circle Cutter - Semicircular Wind Relief Slit Tool with 28mm Rotary Blade & Safety Guard Cowl",
+  "version": "1.9",
   "units": "mm",
   "standard": "Pine Creek High School Marching Band Field Prop Tooling",
   "print_material_recommended": "PETG",
   "print_density_g_cm3": 1.27,
-  "estimated_total_print_mass_petg_g": 219.7,
+  "estimated_total_print_mass_petg_g": 219.4,
   "print_quantities": {
     "circle_cutter_base.stl": 1,
     "circle_cutter_arm.stl": 1,
@@ -40,8 +40,28 @@
     "standoff_boss_length_mm": 1.5,
     "reducer_sleeve_spec": "7.72mm OD x 5.2mm ID x 6.8mm L",
     "axle_fastener": "M5 button-head machine screw (16mm or 18mm) through reducer sleeve into M5 brass heat-set insert",
-    "rotation_axis_alignment": "Radial axle canted at -3.7607\u00b0 directly toward rotation pivot center (0, 0)",
-    "head_architecture": "Canted Symmetric Chevron Dual Head (Bearing Pad at -3.76\u00b0, Blade Pad at +3.76\u00b0, 46mm width)"
+    "rotation_axis_alignment": "Radial axle canted at -6.4992\u00b0 directly toward rotation pivot center (0, 0)",
+    "head_architecture": "Canted Symmetric Chevron Dual Head (Bearing Pad at -6.4992\u00b0, Blade Pad at +6.4992\u00b0, 46mm width)"
+  },
+  "rotary_blade_specifications_28mm": {
+    "blade_model": "Fiskars 28mm Premium Rotary Cutter Blade (Model 1065938 / ASIN B0C8BSMMN1)",
+    "outer_diameter_mm": 28.0,
+    "center_bore_mm": 4.0,
+    "thickness_mm": 0.35,
+    "axle_fastener": "uxcell 304 Stainless Steel Shoulder Screw (4mm shoulder dia x 10mm shoulder len, M3 thread)",
+    "standoff_boss_od_mm": 9.0,
+    "standoff_boss_length_mm": 1.5,
+    "axial_running_float_mm": 0.45,
+    "blade_exposure_below_guard_mm": 2.0,
+    "controlled_cut_depth_mm": 1.0
+  },
+  "safety_guard_cowl_architecture": {
+    "type": "Wrap-Around Safety Shroud Cowl with Integral 4mm Shoulder Clamp",
+    "outer_radius_mm": 18.0,
+    "cavity_radius_mm": 15.5,
+    "ground_clearance_above_vinyl_mm": 1.0,
+    "finger_safety_status": "Full finger shield covering top and flanks of rotating razor blade",
+    "screw_head_recess": "7.8mm counterbore x 3.0mm depth"
   },
   "bearing_specifications_608_thrust": {
     "bearing_type": "608 Ball Bearing (608ZZ / 608-2RS)",
@@ -73,24 +93,25 @@
   },
   "push_knob_architecture": {
     "type": "Monolithic Cylindrical Domed Push Knob with C1 Tangent Continuity",
-    "center_x_mm": 158.0,
+    "center_x_mm": 80.0,
     "center_y_mm": 0.0,
-    "diameter_mm": 26.0,
+    "diameter_mm": 24.0,
     "cylinder_shoulder_local_z_mm": 20.0,
-    "dome_apex_local_z_mm": 33.0,
-    "height_above_ceiling_mm": 19.0,
-    "front_clearance_shelf_mm": 4.0,
+    "dome_apex_local_z_mm": 32.0,
+    "height_above_ceiling_mm": 18.0,
+    "front_clearance_shelf_mm": 8.947065336244421,
     "support_free_status": "100% support-free upright printing with arm on build plate"
   },
   "canted_dual_head_architecture": {
     "type": "Symmetric Chevron Dual Head with Independent Tangential Cants",
-    "cant_angle_deg": 3.7597,
-    "cant_angle_rad": 0.06562,
-    "blade_pad_cant_angle_deg": 3.7597,
-    "bearing_pad_cant_angle_deg": -3.7597,
-    "chevron_vertex_world_x_mm": 175.7557,
+    "cut_radius_mm": 101.6,
+    "cant_angle_deg": 6.4992,
+    "cant_angle_rad": 0.113432,
+    "blade_pad_cant_angle_deg": 6.4992,
+    "bearing_pad_cant_angle_deg": -6.4992,
+    "chevron_vertex_world_x_mm": 102.2572,
     "chevron_vertex_world_y_mm": 0.0,
-    "chevron_outer_world_x_mm": 174.2443,
+    "chevron_outer_world_x_mm": 99.637,
     "blade_yaw_error_deg": 0.0,
     "roller_axle_radial_error_deg": 0.0,
     "support_free_status": "100% support-free upright printing with arm on build plate"
@@ -124,7 +145,7 @@
     },
     "circle_cutter_arm.stl": {
       "file": "circle_cutter_arm.stl",
-      "triangles": 2882,
+      "triangles": 2934,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
       "degenerate_triangles": 0,
@@ -135,43 +156,43 @@
         0.0
       ],
       "bounds_max": [
-        176.87,
+        103.08,
         25.0,
         108.0
       ],
       "dimensions": [
-        201.87,
+        128.08,
         50.0,
         108.0
       ],
-      "volume_cm3": 116.35,
-      "estimated_mass_petg_g": 81.3,
+      "volume_cm3": 100.4,
+      "estimated_mass_petg_g": 70.1,
       "passed": true
     },
     "circle_cutter_blade_cap.stl": {
       "file": "circle_cutter_blade_cap.stl",
-      "triangles": 256,
+      "triangles": 934,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
       "degenerate_triangles": 0,
       "finite_coordinates": true,
       "bounds_min": [
         0.0,
-        -6.0,
-        -8.0
+        -18.0,
+        -12.0
       ],
       "bounds_max": [
-        3.5,
-        6.0,
-        8.0
+        13.7,
+        18.0,
+        18.0
       ],
       "dimensions": [
-        3.5,
-        12.0,
-        16.0
+        13.7,
+        36.0,
+        30.0
       ],
-      "volume_cm3": 0.62,
-      "estimated_mass_petg_g": 0.4,
+      "volume_cm3": 16.16,
+      "estimated_mass_petg_g": 11.3,
       "passed": true
     },
     "circle_cutter_hub_cap.stl": {
@@ -265,12 +286,12 @@
         0.0
       ],
       "bounds_max": [
-        21.87,
+        22.13,
         0.0,
         14.0
       ],
       "dimensions": [
-        21.87,
+        22.13,
         23.0,
         14.0
       ],
@@ -307,7 +328,7 @@
   },
   "mesh_audit_summary": {
     "all_files_passed_topological_audit": true,
-    "total_triangles": 13382
+    "total_triangles": 14112
   },
-  "status": "production_release_v1_8_canted_dual_head"
+  "status": "production_release_v1_9_rotary_cutter_and_safety_guard"
 }

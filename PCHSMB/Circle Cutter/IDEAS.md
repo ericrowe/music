@@ -6,7 +6,7 @@ This is the project inbox for future design enhancements and tooling iterations,
 
 ## Active Inbox
 
-*(No pending ideas in inbox.)*
+*(No pending ideas currently in inbox. Idea 009 implemented in v1.9.)*
 
 ---
 
@@ -27,6 +27,17 @@ This is the project inbox for future design enhancements and tooling iterations,
 ---
 
 ## Implemented Ideas
+
+### [Idea 009: 28mm Rotary Cutter & Safety Finger Guard Cowl Redesign](Plans/007-rotary-cutter-guard.md) — *Implemented in v1.9*
+- **Outcome:** Clean-sheet redesign of Piece 2 (Arm) and Piece 3 (Safety Guard Cowl) for 28mm rotary cutter blade rolling directly on ground 4.0mm shoulder bolt into M3 heat-set insert; calibrated radius to exact $R = 101.6\text{ mm}$ ($4.0\text{ in.}$) matching the $8.0\text{ in.}$ chord fleet specification.
+- **Benefits:**
+  - Transitioned from fragile X-Acto #11 hobby blade to industrial-grade 28mm circular rotary blade (Fiskars Model 1065938 / ASIN B0C8BSMMN1).
+  - Ground 304 stainless steel shoulder screw (uxcell $\varnothing 4.0\text{ mm} \times 10.0\text{ mm}$, M3 thread) acts as a precision metal journal axle.
+  - Piece 3 safety guard cowl shrouds the spinning razor wheel on top and flanks with $1.5\text{ mm}$ radial clearance and leaves $1.0\text{ mm}$ air gap above vinyl, preventing finger injury.
+  - Cowl hub axial thickness of $9.20\text{ mm}$ leaves $0.80\text{ mm}$ of exposed shoulder; against $0.35\text{ mm}$ blade thickness, this guarantees $0.45\text{ mm}$ axial running float for zero-binding rotation without wobble.
+  - Standardized cutting radius to exact $R = 101.6\text{ mm}$ ($4.0\text{ in.}$), resolving the radius vs. diameter ambiguity to cut true $8.0\text{ in.}$ chord flaps.
+  - Recalibrated cant angle to $\pm 6.4992^\circ$ ($\arcsin(11.5 / 101.6)$) for exact $0.00^\circ$ tangential slicing and pure radial roller orientation.
+  - All 8 STLs passed strict topological quality gates (0 boundary, 0 non-manifold edges).
 
 ### [Idea 008: Canted Dual Head (Chevron Face) for Pure Tangential Blade Tracking & Roller Alignment](Plans/006-canted-dual-head.md) — *Implemented in v1.8*
 - **Outcome:** Canted the blade pad (+3.76°) and bearing pad (-3.76°) on Piece 2 (`circle_cutter_arm.stl`), forming a symmetric chevron distal face meeting seamlessly at the centerline ($X = 175.76\text{ mm}, Y = 0.0\text{ mm}$).
