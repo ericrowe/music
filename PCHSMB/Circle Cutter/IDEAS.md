@@ -28,6 +28,15 @@ This is the project inbox for future design enhancements and tooling iterations,
 
 ## Implemented Ideas
 
+### [Idea 010: Tall Rigid Arm Beam & Calibrated 0.5mm Cut Depth for 28mm Rotary Blade](Plans/008-tall-arm-28mm-rotary.md) — *Implemented in v2.0*
+- **Outcome:** Increased the arm beam height from $12.0\text{ mm}$ to $20.0\text{ mm}$ ($+67\%$, $4.63\times$ higher vertical stiffness) and the dual head height from $14.0\text{ mm}$ to $28.0\text{ mm}$ (exact 1:1 match with 28mm rotary blade diameter), fully backing the Piece 3 safety guard cowl and standardizing on a calibrated $0.5\text{ mm}$ cut depth below the 608 roller bearing.
+- **Benefits:**
+  - Standardized blade axle at $Z_{\text{local}} = 9.5\text{ mm}$ ($Z_{\text{world}} = 13.5\text{ mm}$), yielding a controlled $0.5\text{ mm}$ cut depth that cleanly slices $0.38\text{ mm}$ 13 oz scrim vinyl with minimal $0.12\text{ mm}$ mat penetration, preventing blade drag.
+  - Head height of $28.0\text{ mm}$ provides a massive $14.0\text{ mm}$ solid PETG ceiling above the M3 heat-set insert and $\varnothing 9.0\text{ mm}$ standoff boss, completely eliminating the thin-wall vulnerability of the $14.0\text{ mm}$ head.
+  - Head ceiling perfectly matches the top apex of the Piece 3 safety guard cowl ($Z_{\text{local}} = 27.5\text{ mm}$), creating a flush, robust, professional assembly.
+  - Ergonomic push knob base moves up to $Z_{\text{local}} = 27.0\text{ mm}$, rising to $Z_{\text{apex}} = 46.0\text{ mm}$ ($Z_{\text{world}} = 50.0\text{ mm}$) for superior palm leverage.
+  - 100% support-free upright 3D printability preserved with flat bed contact at $Z = 0$.
+
 ### [Idea 009: 28mm Rotary Cutter & Safety Finger Guard Cowl Redesign](Plans/007-rotary-cutter-guard.md) — *Implemented in v1.9*
 - **Outcome:** Clean-sheet redesign of Piece 2 (Arm) and Piece 3 (Safety Guard Cowl) for 28mm rotary cutter blade rolling directly on ground 4.0mm shoulder bolt into M3 heat-set insert; calibrated radius to exact $R = 101.6\text{ mm}$ ($4.0\text{ in.}$) matching the $8.0\text{ in.}$ chord fleet specification.
 - **Benefits:**

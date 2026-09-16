@@ -1,11 +1,11 @@
 {
-  "design": "PCHSMB Circle Cutter - Semicircular Wind Relief Slit Tool with 28mm Rotary Blade & Safety Guard Cowl",
-  "version": "1.9",
+  "design": "PCHSMB Circle Cutter - Semicircular Wind Relief Slit Tool with Tall Rigid Arm & 28mm Rotary Blade",
+  "version": "2.0",
   "units": "mm",
   "standard": "Pine Creek High School Marching Band Field Prop Tooling",
   "print_material_recommended": "PETG",
   "print_density_g_cm3": 1.27,
-  "estimated_total_print_mass_petg_g": 219.4,
+  "estimated_total_print_mass_petg_g": 244.6,
   "print_quantities": {
     "circle_cutter_base.stl": 1,
     "circle_cutter_arm.stl": 1,
@@ -19,14 +19,18 @@
   "vertical_stackup_and_clearances": {
     "vinyl_surface_world_z_mm": 0.0,
     "bearing_bottom_world_z_mm": 0.0,
-    "blade_tip_world_z_mm": -1.0,
-    "controlled_cut_depth_mm": 1.0,
+    "blade_tip_world_z_mm": -0.5,
+    "controlled_cut_depth_mm": 0.5,
     "base_plate_thickness_mm": 3.0,
     "arm_bottom_world_z_mm": 4.0,
     "arm_to_base_plate_air_gap_mm": 1.0,
     "arm_air_clearance_above_vinyl_mm": 4.0,
     "bearing_axle_world_z_mm": 11.0,
     "bearing_axle_local_z_mm": 7.0,
+    "blade_axle_world_z_mm": 13.5,
+    "blade_axle_local_z_mm": 9.5,
+    "arm_height_mm": 20.0,
+    "dual_head_height_mm": 28.0,
     "self_leveling_bridge": "Base plate and 608 bearing both contact vinyl simultaneously, holding arm dead-level with 4.0mm air gap above vinyl",
     "friction_elimination": "Arm floats 1.0mm above base plate shoulder, reducing plastic sliding contact area from 707mm2 to 0mm2"
   },
@@ -52,8 +56,8 @@
     "standoff_boss_od_mm": 9.0,
     "standoff_boss_length_mm": 1.5,
     "axial_running_float_mm": 0.45,
-    "blade_exposure_below_guard_mm": 2.0,
-    "controlled_cut_depth_mm": 1.0
+    "blade_exposure_below_guard_mm": 1.5,
+    "controlled_cut_depth_mm": 0.5
   },
   "safety_guard_cowl_architecture": {
     "type": "Wrap-Around Safety Shroud Cowl with Integral 4mm Shoulder Clamp",
@@ -96,8 +100,8 @@
     "center_x_mm": 80.0,
     "center_y_mm": 0.0,
     "diameter_mm": 24.0,
-    "cylinder_shoulder_local_z_mm": 20.0,
-    "dome_apex_local_z_mm": 32.0,
+    "cylinder_shoulder_local_z_mm": 34.0,
+    "dome_apex_local_z_mm": 46.0,
     "height_above_ceiling_mm": 18.0,
     "front_clearance_shelf_mm": 8.947065336244421,
     "support_free_status": "100% support-free upright printing with arm on build plate"
@@ -165,8 +169,8 @@
         50.0,
         108.0
       ],
-      "volume_cm3": 100.4,
-      "estimated_mass_petg_g": 70.1,
+      "volume_cm3": 129.71,
+      "estimated_mass_petg_g": 90.6,
       "passed": true
     },
     "circle_cutter_blade_cap.stl": {
@@ -179,7 +183,7 @@
       "bounds_min": [
         0.0,
         -18.0,
-        -12.0
+        -12.5
       ],
       "bounds_max": [
         13.7,
@@ -189,10 +193,10 @@
       "dimensions": [
         13.7,
         36.0,
-        30.0
+        30.5
       ],
-      "volume_cm3": 16.16,
-      "estimated_mass_petg_g": 11.3,
+      "volume_cm3": 16.46,
+      "estimated_mass_petg_g": 11.5,
       "passed": true
     },
     "circle_cutter_hub_cap.stl": {
@@ -288,15 +292,15 @@
       "bounds_max": [
         22.13,
         0.0,
-        14.0
+        28.0
       ],
       "dimensions": [
         22.13,
         23.0,
-        14.0
+        28.0
       ],
-      "volume_cm3": 6.07,
-      "estimated_mass_petg_g": 4.2,
+      "volume_cm3": 12.48,
+      "estimated_mass_petg_g": 8.7,
       "passed": true
     },
     "circle_cutter_snap_cap_coupon.stl": {

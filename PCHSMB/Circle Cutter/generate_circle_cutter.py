@@ -33,15 +33,15 @@ from typing import Dict, List, Sequence, Tuple
 # PARAMETRIC SPECIFICATIONS (MILLIMETERS)
 # =============================================================================
 
-VERSION = "1.9"
-DESIGN_NAME = "PCHSMB Circle Cutter - Semicircular Wind Relief Slit Tool with 28mm Rotary Blade & Safety Guard Cowl"
+VERSION = "2.0"
+DESIGN_NAME = "PCHSMB Circle Cutter - Semicircular Wind Relief Slit Tool with Tall Rigid Arm & 28mm Rotary Blade"
 
 # -----------------------------------------------------------------------------
 # Vertical Stack-Up & Ground Reference (Vinyl Top Surface = Z 0.0 mm)
 # -----------------------------------------------------------------------------
 VINYL_Z = 0.0                                 # Vinyl surface reference plane
-CUT_DEPTH = 1.0                               # Controlled blade depth below bearing (1.0 mm)
-BLADE_TIP_WORLD_Z = VINYL_Z - CUT_DEPTH       # -1.0 mm world
+CUT_DEPTH = 0.5                               # Controlled blade depth below bearing (0.5 mm: slices 0.38mm vinyl with 0.12mm mat score)
+BLADE_TIP_WORLD_Z = VINYL_Z - CUT_DEPTH       # -0.5 mm world
 
 # 608 Ball Bearing Specifications (Harmonized: Front Depth-Stop Roller & Top Thrust Pivot)
 BEARING_OD = 22.0                             # 22.0 mm outer diameter (standard 608)
@@ -103,7 +103,7 @@ HUB_GROOVE_Z_END = 105.5                      # Internal retention groove flat r
 # Target Wind Relief Cut Geometry (PCHSMB Backdrop & Sideline Screen Fleet Standard)
 CUT_RADIUS = 101.6                            # 101.6 mm (4.0 inches exact: 8.0 in chord x 4.0 in drop semicircular flap)
 ARM_WIDTH = 20.0                              # 20.0 mm width in Y
-ARM_HEIGHT = 12.0                             # 12.0 mm height in Z (local Z in [0, 12])
+ARM_HEIGHT = 20.0                             # 20.0 mm height in Z (local Z in [0, 20]: 4.63x higher vertical stiffness)
 ARM_BEVEL = 2.0                               # 2.0 mm 45° longitudinal chamfer
 ARM_ROOT_X = 22.0                             # Embeds securely inside solid hub wall
 
@@ -112,10 +112,10 @@ BLADE_PAD_Y = +11.5                           # Center of 28mm rotary blade axle
 BEARING_PAD_Y = -11.5                         # Center of 608 roller bearing pad in Y
 DISTAL_X = math.sqrt(CUT_RADIUS**2 - BLADE_PAD_Y**2)  # 100.9472 mm from pivot center to distal axle planes
 ARM_LENGTH = DISTAL_X - HUB_OUTER_RADIUS      # 75.9472 mm extension from hub outer surface
-DUAL_HEAD_START_X = 55.0                      # Transition flare start from 20mm to 46mm
-DUAL_HEAD_FULL_X = 75.0                       # Full 46mm dual head width start
+DUAL_HEAD_START_X = 55.0                      # Transition flare start from 20x20mm to 46x28mm
+DUAL_HEAD_FULL_X = 75.0                       # Full 46x28mm dual head width start
 DUAL_HEAD_WIDTH = 46.0                        # 46.0 mm total width (Y in [-23, +23])
-DUAL_HEAD_HEIGHT = 14.0                       # 14.0 mm head height (symmetric M5 & M3 wall strength)
+DUAL_HEAD_HEIGHT = 28.0                       # 28.0 mm head height (exact 1:1 match to 28mm blade OD, fully backs Piece 3 cowl)
 CANT_ANGLE_RAD = math.asin(BLADE_PAD_Y / CUT_RADIUS)  # 0.113433 rad (6.4992° cant angle)
 CANT_ANGLE_DEG = math.degrees(CANT_ANGLE_RAD)       # 6.4992°
 CHEVRON_VERTEX_X = DISTAL_X + BLADE_PAD_Y * math.tan(CANT_ANGLE_RAD)  # 102.2573 mm at Y=0.0 center junction
@@ -133,8 +133,8 @@ ROTARY_BLADE_OD = 28.0                        # 28.0 mm outer diameter
 ROTARY_BLADE_RADIUS = ROTARY_BLADE_OD / 2.0   # 14.0 mm
 ROTARY_BLADE_BORE = 4.0                       # 4.0 mm precision circular center bore
 ROTARY_BLADE_THICKNESS = 0.35                 # 0.35 mm blade thickness
-BLADE_AXLE_WORLD_Z = VINYL_Z - CUT_DEPTH + ROTARY_BLADE_RADIUS  # -1.0 + 14.0 = +13.0 mm world
-BLADE_AXLE_LOCAL_Z = BLADE_AXLE_WORLD_Z - ARM_BOTTOM_WORLD_Z   # 13.0 - 4.0 = +9.0 mm local
+BLADE_AXLE_WORLD_Z = VINYL_Z - CUT_DEPTH + ROTARY_BLADE_RADIUS  # -0.5 + 14.0 = +13.5 mm world
+BLADE_AXLE_LOCAL_Z = BLADE_AXLE_WORLD_Z - ARM_BOTTOM_WORLD_Z   # 13.5 - 4.0 = +9.5 mm local
 
 # 28mm Blade Mount & Shoulder Screw Retention (uxcell 4mm x 10mm M3 Shoulder Bolt)
 SHOULDER_BOLT_DIA = 4.0                       # 4.0 mm precision ground shoulder shaft
@@ -150,15 +150,15 @@ HEAT_SET_M3_DEPTH = 10.5                      # 10.5 mm bore depth
 PUSH_POST_X = 80.0                            # Center in X (over dual head beam)
 PUSH_POST_Y = 0.0                              # Dead-center in Y between bearing (-11.5mm) and blade (+11.5mm)
 PUSH_POST_RADIUS = 12.0                        # 12.0 mm radius (24.0 mm OD cylinder)
-PUSH_POST_BASE_Z = 13.0                        # Embeds 1.0 mm into solid head ceiling (Z=14.0)
-PUSH_POST_SHOULDER_Z = 20.0                    # 20.0 mm local Z (6.0 mm vertical straight cylinder wall)
+PUSH_POST_BASE_Z = 27.0                        # Embeds 1.0 mm into solid head ceiling (Z=28.0)
+PUSH_POST_SHOULDER_Z = 34.0                    # 34.0 mm local Z (6.0 mm vertical straight cylinder wall)
 PUSH_POST_DOME_RADIUS = 12.0                   # 12.0 mm spherical dome radius (seamless C1 tangency)
-PUSH_POST_APEX_Z = PUSH_POST_SHOULDER_Z + PUSH_POST_DOME_RADIUS  # 32.0 mm local Z (+18.0 mm above head ceiling)
+PUSH_POST_APEX_Z = PUSH_POST_SHOULDER_Z + PUSH_POST_DOME_RADIUS  # 46.0 mm local Z (+18.0 mm above head ceiling)
 
 # Piece 3: Rotary Blade Safety Guard Cowl & Clamp
 GUARD_OUTER_RADIUS = 18.0                     # 18.0 mm outer shroud radius (covers blade top & flanks)
 GUARD_CAVITY_RADIUS = 15.5                    # 15.5 mm inner cavity radius (1.5mm air gap around 28mm blade)
-GUARD_BOTTOM_LOCAL_Z = -12.0                  # -12.0 mm local Z in cap frame (1.0mm air gap above vinyl)
+GUARD_BOTTOM_LOCAL_Z = -12.5                  # -12.5 mm local Z in cap frame (1.0mm air gap above vinyl: 13.5 - 12.5 = 1.0mm)
 GUARD_OUTER_X = 0.0                           # 0.0 mm outer face (against screw head seat)
 GUARD_FLOOR_X = 3.0                           # 3.0 mm cavity floor / screw counterbore seat
 GUARD_HUB_TIP_X = 12.2                        # 12.2 mm hub tip (protrudes 0.8mm shoulder: 0.45mm blade float)
@@ -657,8 +657,8 @@ def build_piece2_arm(r_hub_outer: float = HUB_OUTER_RADIUS, r_bore: float = HUB_
         m.quad(p2_i, p2_j, p3_j, p3_i)
 
     # Distal Canted Face (Chevron Face with Vertex at Y=0)
-    div_pts_down = [(0.0, 9.0), (0.0, 5.0)]
-    div_pts_up = [(0.0, 5.0), (0.0, 9.0)]
+    div_pts_down = [(0.0, 18.0), (0.0, 9.0)]
+    div_pts_up = [(0.0, 9.0), (0.0, 18.0)]
 
     bnd_blade_2d = [loop_dual[idx] for idx in range(28, 32)] + \
                    [loop_dual[idx] for idx in range(0, 13)] + \
@@ -1342,11 +1342,11 @@ def build_bearing_mount_coupon(x_len: float = 20.0, head_h: float = DUAL_HEAD_HE
     h_dual = dual_w / 2.0
 
     loop_dual = make_beveled_rect_loop(-h_dual, h_dual, 0.0, head_h, arm_bevel, k)
-    div_pts_up = [(0.0, 5.0), (0.0, 9.0)]
+    div_pts_up = [(0.0, 9.0), (0.0, 18.0)]
     bnd_bearing_2d = [loop_dual[idx] for idx in range(12, 29)] + div_pts_up
     n_p = 19
 
-    cant_angle = math.atan(abs(bearing_y) / DISTAL_X)
+    cant_angle = CANT_ANGLE_RAD
     cos_c = math.cos(cant_angle)
     sin_c = math.sin(cant_angle)
     tan_c = math.tan(cant_angle)
@@ -1667,7 +1667,7 @@ def render_assembly_views(out_dir: Path, base: Mesh, arm: Mesh, blade_cap: Mesh,
         tris = [[(p[0] + dx, p[1] + dy, p[2] + dz) for p in t] for t in m.triangles]
         return np.array(tris, dtype=np.float32)
 
-    def blade_cap_to_verts(m: Mesh, offset=(102.5, 11.5, 13.0)) -> np.ndarray:
+    def blade_cap_to_verts(m: Mesh, offset=(102.5, 11.5, 13.5)) -> np.ndarray:
         # Rotate cowl by +cant_angle around Z to seat flush on canted blade pad
         dx, dy, dz = offset
         cos_a = math.cos(CANT_ANGLE_RAD)
@@ -1793,28 +1793,28 @@ def render_assembly_views(out_dir: Path, base: Mesh, arm: Mesh, blade_cap: Mesh,
     scene_assembly = [
         (mesh_to_verts(base, (0.0, 0.0, 0.0)), col_base),
         (mesh_to_verts(arm, (0.0, 0.0, 4.0)), col_arm),
-        (blade_cap_to_verts(blade_cap, (102.5, 11.5, 13.0)), col_cap),
+        (blade_cap_to_verts(blade_cap, (102.5, 11.5, 13.5)), col_cap),
         (mesh_to_verts(hub_cap, (0.0, 0.0, 112.0)), col_hub),
     ]
     if sleeve is not None:
         scene_assembly.append((sleeve_to_verts(sleeve, (102.5, -11.5, 11.0)), col_sleeve))
 
     render_scene(scene_assembly, out_dir / "circle_cutter_assembly.png",
-                 "PCHSMB Circle Cutter — Full Assembly (v1.9 28mm Rotary Blade & Safety Cowl)",
-                 "Piece 1 (Base, Blue) | Piece 2 (Arm with 28mm Blade & 608 Roller, Orange) | Piece 3 (Safety Cowl, Gray) | Piece 4 (Hub Cap, Green) | Piece 5 (Sleeve, Red)")
+                 "PCHSMB Circle Cutter — Full Assembly (v2.0 Tall Rigid Arm & 28mm Rotary Blade)",
+                 "Piece 1 (Base, Blue) | Piece 2 (Tall Arm with 28mm Blade & 608 Roller, Orange) | Piece 3 (Safety Cowl, Gray) | Piece 4 (Hub Cap, Green) | Piece 5 (Sleeve, Red)")
 
     # Exploded Scene
     scene_exploded = [
         (mesh_to_verts(base, (0.0, 0.0, 0.0)), col_base),
         (mesh_to_verts(arm, (0.0, 0.0, 45.0)), col_arm),
-        (blade_cap_to_verts(blade_cap, (140.0, 15.0, 54.0)), col_cap),
+        (blade_cap_to_verts(blade_cap, (140.0, 15.0, 54.5)), col_cap),
         (mesh_to_verts(hub_cap, (0.0, 0.0, 195.0)), col_hub),
     ]
     if sleeve is not None:
         scene_exploded.append((sleeve_to_verts(sleeve, (140.0, -15.0, 52.0)), col_sleeve))
 
     render_scene(scene_exploded, out_dir / "circle_cutter_exploded.png",
-                 "PCHSMB Circle Cutter — Exploded Alignment View (v1.9)",
+                 "PCHSMB Circle Cutter — Exploded Alignment View (v2.0)",
                  "Vertical Stackup: Base (Z=0) -> Arm with Canted Head (+45mm) -> Hub Cap (+150mm) | Distal Safety Cowl & Reducer Sleeve (+38mm X)")
 
 
@@ -1855,6 +1855,10 @@ def generate_manifest(out_dir: Path, meshes: List[Mesh]) -> dict:
             "arm_air_clearance_above_vinyl_mm": ARM_BOTTOM_WORLD_Z,
             "bearing_axle_world_z_mm": BEARING_AXLE_WORLD_Z,
             "bearing_axle_local_z_mm": BEARING_AXLE_LOCAL_Z,
+            "blade_axle_world_z_mm": BLADE_AXLE_WORLD_Z,
+            "blade_axle_local_z_mm": BLADE_AXLE_LOCAL_Z,
+            "arm_height_mm": ARM_HEIGHT,
+            "dual_head_height_mm": DUAL_HEAD_HEIGHT,
             "self_leveling_bridge": "Base plate and 608 bearing both contact vinyl simultaneously, holding arm dead-level with 4.0mm air gap above vinyl",
             "friction_elimination": "Arm floats 1.0mm above base plate shoulder, reducing plastic sliding contact area from 707mm2 to 0mm2",
         },
@@ -1880,7 +1884,7 @@ def generate_manifest(out_dir: Path, meshes: List[Mesh]) -> dict:
             "standoff_boss_od_mm": BLADE_STANDOFF_OD,
             "standoff_boss_length_mm": BLADE_STANDOFF_LEN,
             "axial_running_float_mm": 0.45,
-            "blade_exposure_below_guard_mm": 2.0,
+            "blade_exposure_below_guard_mm": round(1.0 - BLADE_TIP_WORLD_Z, 2),
             "controlled_cut_depth_mm": CUT_DEPTH,
         },
         "safety_guard_cowl_architecture": {
@@ -1923,7 +1927,7 @@ def generate_manifest(out_dir: Path, meshes: List[Mesh]) -> dict:
             "diameter_mm": PUSH_POST_RADIUS * 2.0,
             "cylinder_shoulder_local_z_mm": PUSH_POST_SHOULDER_Z,
             "dome_apex_local_z_mm": PUSH_POST_APEX_Z,
-            "height_above_ceiling_mm": PUSH_POST_APEX_Z - 14.0,
+            "height_above_ceiling_mm": PUSH_POST_APEX_Z - DUAL_HEAD_HEIGHT,
             "front_clearance_shelf_mm": DISTAL_X - (PUSH_POST_X + PUSH_POST_RADIUS),
             "support_free_status": "100% support-free upright printing with arm on build plate",
         },
@@ -1968,8 +1972,8 @@ def main() -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
 
     print("=" * 72)
-    print("  PCHSMB Circle Cutter - Pure-Python STL Generation Pipeline v1.9")
-    print("  Feature: 28mm Rotary Blade, Integrated Finger Guard Cowl & 4.0in (R = 101.6mm) Radius")
+    print("  PCHSMB Circle Cutter - Pure-Python STL Generation Pipeline v2.0")
+    print("  Feature: Tall Rigid Arm Beam (20x28mm), 28mm Rotary Blade & Calibrated 0.5mm Cut Depth")
     print(f"  Target: {out_dir.resolve()}")
     print("=" * 72)
 
