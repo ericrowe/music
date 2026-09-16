@@ -29,7 +29,7 @@
       #grid(
         columns: (1.5fr, 1.2fr, 1fr),
         align(left)[*FIELD VALIDATION — NOT RELEASED*],
-        align(center)[*Release v0 (D2)* | September 2026],
+        align(center)[*Release v0 (D3)* | September 2026],
         align(right)[Page #counter(page).display() of #counter(page).final().first()]
       )
     ]
@@ -193,7 +193,7 @@ Because Pine Creek High School operates in the high-altitude, wind-prone environ
 
 #v(1.5pt)
 #text(size: 6.8pt, style: "italic", fill: rgb("#4a5568"))[
-  *Semicircular Wind Relief Standard:* All 16 duck blinds (6 flaps) and 10 rolling backdrops (8 flaps in upper 6–8 ft zone) are equipped with standard semicircular wind relief cuts (R = 4.0 in., 8.0 in. chord by 4.0 in. drop, pre-punched 3/8 in. / 10 mm tear-arrest holes). Flaps reduce drag by 15% ($C_d = 1.20 -> 1.02$), bleed dynamic gust impulses, suppress vortex flutter, and elevate forward stability (duck blind turf sliding to 17.8 mph; backdrop forward tipping to 16.9 mph at Tier 1 and 22.5 mph at Tier 3 via 3.46-ft rear-rail leverage) while maintaining 100% visual camouflage from spectator stands.
+  *Semicircular Wind Relief Standard:* All 16 duck blinds (6 flaps, $2 times 3$ grid) and 10 rolling backdrops (8 flaps, $2 times 4$ primary grid in upper 6–8 ft zone) are equipped with standard semicircular wind relief cuts ($R = 4.0$ in., 8.0 in. chord by 4.0 in. drop, pre-punched 3/8 in. / 10 mm tear-arrest holes). Fabricated with the standardized PCHSMB Field Prop Circle Cutter (`circle_cutter_arm.stl`, #11 blade, dual 608 ball bearings) and 3/8-in. rotary punch. Flaps reduce drag by 15% ($C_d = 1.20 -> 1.02$), bleed dynamic gust impulses, suppress vortex flutter, and elevate forward stability (duck blind turf sliding to 17.8 mph; backdrop forward tipping to 16.9 mph at Tier 1 and 22.5 mph at Tier 3 via 3.46-ft rear-rail leverage) while maintaining 100% visual camouflage from spectator stands. (Backdrops with prominent central artwork may utilize the approved 6-flap minimal variant).
 ]
 
 #pagebreak()
@@ -237,7 +237,7 @@ Because Pine Creek High School operates in the high-altitude, wind-prone environ
 
 = 3. Critical CBA Rules for Adult Volunteers
 
-The Colorado Bandmasters Association (CBA) strictly enforces prop and adult volunteer regulations. #alert[Penalties directly deduct points from the students' score.] Adhere strictly to the following:
+The Colorado Bandmasters Association (CBA) strictly enforces prop and adult volunteer regulations. #alert[Penalties directly deduct points from the students' score.] All props comply with Rule 8.08 (12-ft height ceiling; backdrops are 10 ft, blinds are 4 ft) and Rule 8.09 (Falcon Stadium 2025/2026 renovation gate clearances). Adhere strictly to the following:
 
 #grid(
   columns: (1fr, 1fr),
@@ -284,7 +284,15 @@ The 2026 visual design for *Continuum* incorporates three prop families totaling
   [*Performance Stages & Stairs*], [4 stages (8 pieces) \ + 4 staircases], [8 Half-Platforms & \ 4 Mobile Staircases \ (carries 16 collapsed blinds \ [4/stage] truck-to-staging)], [Midfield / Side Stages \ (Exact drill marks per show)], [2 Adult Volunteers (Stage Managers), 16 Student Stage Handlers, 8 Student Staircase Handlers],
 )
 
-#v(6pt)
+#v(4pt)
+#text(size: 7.2pt, fill: rgb("#4a5568"))[
+  *Authoritative Subproject Technical Manuals & Construction Deliverables:* \
+  • *Duck Blinds / Sideline Screens:* See _Sideline Screen / Duck Blind Construction and Field Operations Manual_ (Release v0 (D31), 25 pages). Covers 3/4-in. EMT conduit framing, Two-Student Direct Carry, Section 2.9.3 engineered semicircular wind relief flaps (6 flaps, $R = 4.0$ in.), and on-prop placards. \
+  • *Rolling Backdrops:* See _Backdrop Construction and Assembly Guide_ (Release v0 (D5), 28 pages). Covers 2x4 rolling cart base, 1-5/8-in. steel frame, 3/4-in. iron wing ballast posts, Section 2.9.3 semicircular wind relief flaps (8 flaps, $R = 4.0$ in.), and rear-rail leverage optimization. \
+  • *Wind Relief Tooling:* Standardized _PCHSMB Field Prop Circle Cutter_ (`circle_cutter_arm.stl`, #11 hobby scalpel blade, dual 608 bearings, 3/8-in. rotary punch).
+]
+
+#v(4pt)
 
 // -------------------------------------------------------------------------
 // SECTION 5: STEP-BY-STEP JOB DESCRIPTIONS
@@ -568,8 +576,7 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
     - Meet the Adult Backdrop Managers at the designated staging area 45 minutes prior to show time (following your section warm-ups).
     - Locate your assigned backdrop (#1 through #10).
     - Inspect the 8 semicircular wind relief flaps in the upper banner to confirm they are flush and hanging cleanly by gravity.
-    - Coordinate with your section leader regarding instrument placement while performing your prop duties (the backdrop carts do not have large instrument storage).
-    - Note that the backdrops have one set of fixed wheels that do not rotate, and one set that do rotate for steering.  It is typically recommended for stability to push from the side with the rotating steering wheels, however you must plan ahead for turns.
+    - Confirm all cart caster foot brakes are disengaged (foot lever UP) before moving. For directional stability, push from the rear steering side using the steel uprights, but plan ahead for turns.
   + *Perimeter Transit to Back Sideline:*
     - When directed by the Adult Managers / Prop Lead, take custody of your backdrop and roll it along the designated perimeter track toward the rear stadium entrance gate.
     - Queue in strict numerical order (#1 at front, #10 at rear).
@@ -844,7 +851,7 @@ All teardown and packdown procedures occur *exclusively in the equipment trailer
       #text(size: 8pt, fill: rgb("#718096"))[2026 Competitive Field Show: Continuum • Colorado Bandmasters Association]
     ],
     align(right + horizon)[
-      #text(size: 8pt, weight: "bold", fill: rgb("#3182ce"))[Release v0 (D2) • September 2026]
+      #text(size: 8pt, weight: "bold", fill: rgb("#3182ce"))[Release v0 (D3) • September 2026]
     ]
   )
 ]
