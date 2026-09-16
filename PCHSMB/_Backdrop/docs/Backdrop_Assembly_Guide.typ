@@ -39,7 +39,7 @@
       #grid(
         columns: (1.5fr, 1.2fr, 1fr),
         align(left)[*WORKING DRAFT — NOT FOR USE*],
-        align(center)[*Release v0 (D5)* | September 2026],
+        align(center)[*Release v0 (D6)* | September 2026],
         align(right)[*Page #pg-str*]
       )
     ]
@@ -135,7 +135,7 @@
   audience: [],
   contents: [],
   print-label: [],
-  revision: [Release v0 (unreleased) | Development build D5 | September 2026],
+  revision: [Release v0 (unreleased) | Development build D6 | September 2026],
   separation-note: [When separated from the master document, keep this cover as the first page.]
 ) = [
   #align(center)[
@@ -208,6 +208,7 @@
   [Release v0 (unreleased) — Build D3], [2026-09-10], [WORKING DRAFT — NOT FOR USE], [Add engineered wind relief slit specifications, tiered 15-lb handle sandbag ballast schedule, rear-rail leverage optimization, and high-wind emergency protocol],
   [Release v0 (unreleased) — Build D4], [2026-09-13], [WORKING DRAFT — NOT FOR USE], [Update wind relief flap specification to true semicircular geometry (R = 4.0", 8" × 4"), 8-cut primary grid layout, 3/8" tear-arrest holes, and full Typst document conversion],
   [Release v0 (unreleased) — Build D5], [2026-09-15], [WORKING DRAFT — NOT FOR USE], [Harmonize document architecture, section numbering (1.1–1.7, 2.1–2.10), coordinate schedule tables, and PCHSMB Circle Cutter tooling with Sideline Screen manual],
+  [Release v0 (unreleased) — Build D6], [2026-09-15], [WORKING DRAFT — NOT FOR USE], [Update trailer transport figure (Figure 5) with overhead shoring beam frame storage photograph],
 )
 
 = Intro / Overview
@@ -264,7 +265,7 @@ Special thanks and credit to the Plainfield North Bands for creating the origina
   audience: [Field operators, parent prop crew, and student handlers],
   contents: [Transport & field entrance; student/volunteer training; wing ballast posts; double-bagging rules; student instrument stowage; 2026 CBA rules; trailer storage],
   print-label: [All pages labeled A-],
-  revision: [Release v0 (unreleased) | Development build D5 | September 2026],
+  revision: [Release v0 (unreleased) | Development build D6 | September 2026],
   separation-note: [When separated from the master document, keep this cover as the first page of Appendix A.]
 )
 
@@ -472,7 +473,7 @@ The following governing rules are extracted directly from the official 2026 Colo
   align(center)[
     #figure(
       image("assets/approved/figure_05_stacked_frames.jpg", width: 92%),
-      caption: [*Figure 5.* Stacked steel backdrop frames in trailer storage rack.]
+      caption: [*Figure 5.* Stacked backdrop frames with mounted vinyls strapped on trailer overhead shoring beam.]
     )
   ]
 )
@@ -498,7 +499,7 @@ The following governing rules are extracted directly from the official 2026 Colo
   audience: [Band prop construction leads, parent build volunteers, and fabrication teams],
   contents: [Shop safety; full BOM; 3D-printed fixtures; lumber and steel cut schedules; cost breakdown; 4-stage frame assembly; vinyl tensioning and snap clamping; quality checklist; indexed purchase sources],
   print-label: [All pages labeled B-],
-  revision: [Release v0 (unreleased) | Development build D5 | September 2026],
+  revision: [Release v0 (unreleased) | Development build D6 | September 2026],
   separation-note: [When separated from the master document, keep this cover as the first page of Appendix B.]
 )
 

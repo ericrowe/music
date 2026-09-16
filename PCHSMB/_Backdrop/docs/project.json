@@ -26,20 +26,20 @@
   },
   "document": {
     "current": {
-      "build": "D5",
+      "build": "D6",
       "release": "v0",
       "process_state": "working_draft",
       "visible_status": "working_draft",
       "file": "Backdrop_Assembly_Guide.typ",
-      "sha256": "d72be5f6ce93165c257498ca56d6b514758ab86615e879d21b4e321225b23b85",
-      "controlled_at": "2026-09-15T23:30:00+00:00"
+      "sha256": "77775def403e49a135a2d69a8a2b2c1262815ebbd67422d7428baff0c7a89d63",
+      "controlled_at": "2026-09-15T23:50:00+00:00"
     },
     "candidate": null
   },
   "versioning": {
     "current_release": "v0",
     "next_release": "v1",
-    "next_build_number": 6
+    "next_build_number": 7
   },
   "releases": [],
   "history": [
@@ -98,6 +98,20 @@
       "summary": "Harmonize document architecture, section numbering (1.1–1.7, 2.1–2.10), coordinate schedule tables, and PCHSMB Circle Cutter tooling with Sideline Screen manual",
       "sha256": "d72be5f6ce93165c257498ca56d6b514758ab86615e879d21b4e321225b23b85",
       "pdf_sha256": "a56de18154d71ef63e043cb36f54df5b52b0e0c57c37ce2dfb909e8f0538b62a",
+      "page_count": 28,
+      "file": "Backdrop_Assembly_Guide.typ"
+    },
+    {
+      "id": "D6",
+      "kind": "development_build",
+      "release": "v0",
+      "status": "working_draft",
+      "date": "2026-09-15",
+      "started_at": "2026-09-15T23:35:00+00:00",
+      "base_build": "D5",
+      "summary": "Update trailer transport figure (Figure 5) with overhead shoring beam frame storage photograph",
+      "sha256": "77775def403e49a135a2d69a8a2b2c1262815ebbd67422d7428baff0c7a89d63",
+      "pdf_sha256": "87cbd4fe8eee1cea5db16b2904886d32a85027422ac992991b02463cc65749f5",
       "page_count": 28,
       "file": "Backdrop_Assembly_Guide.typ"
     }
