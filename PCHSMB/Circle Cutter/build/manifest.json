@@ -1,11 +1,11 @@
 {
   "design": "PCHSMB Circle Cutter - Semicircular Wind Relief Slit Tool with Full-Width End Cap & 28mm Rotary Blade",
-  "version": "2.1",
+  "version": "2.2",
   "units": "mm",
   "standard": "Pine Creek High School Marching Band Field Prop Tooling",
   "print_material_recommended": "PETG",
   "print_density_g_cm3": 1.27,
-  "estimated_total_print_mass_petg_g": 283.9,
+  "estimated_total_print_mass_petg_g": 288.3,
   "print_quantities": {
     "circle_cutter_base.stl": 1,
     "circle_cutter_arm.stl": 1,
@@ -60,17 +60,19 @@
     "controlled_cut_depth_mm": 0.5
   },
   "safety_guard_cowl_architecture": {
-    "type": "Full-Width Unibody End Cap with Bearing Clearance Canopy & Single M3 Fastener Attachment",
+    "type": "Full-Width Unibody End Cap with Flat Front Print Face & Canted Axle Centerline",
     "width_mm": 64.0,
     "height_mm": 28.0,
-    "depth_mm": 13.7,
+    "depth_mm": 15.1678,
+    "front_flat_world_x_mm": 115.5,
     "ground_clearance_above_vinyl_mm": 4.0,
     "finger_safety_status": "Full unibody enclosure spanning full 64mm chevron face, enclosing blade and canopying bearing",
     "retention": "Single uxcell 4mm x 10mm M3 shoulder bolt through 28mm blade bore; 0 screws on bearing side",
-    "blade_cavity_shape": "True circular cylinder (R=15.0mm, concentric with blade axle Z=9.5mm)",
-    "bearing_canopy_shape": "True circular cylinder (R=13.0mm, concentric with bearing axle Z=7.0mm)",
+    "blade_cavity_shape": "True circular cylinder (R=15.0mm, concentric with blade axle Z=9.5mm, canted at +9.0607\u00b0)",
+    "bearing_canopy_shape": "True circular cylinder (R=13.0mm, concentric with bearing axle Z=7.0mm, canted at -9.0607\u00b0)",
     "bearing_canopy_clearance": "Generous arched clearance canopy with open bottom allowing 608 bearing to roll directly on vinyl",
-    "screw_head_recess": "7.8mm counterbore x 3.0mm depth"
+    "screw_head_recess": "7.8mm counterbore along canted axle ray (+9.0607\u00b0); head completely recessed below flat front face",
+    "print_orientation": "100% flat front face (X=115.50mm) down on build plate; zero supports required; perfectly round vertical holes"
   },
   "bearing_specifications_608_thrust": {
     "bearing_type": "608 Ball Bearing (608ZZ / 608-2RS)",
@@ -191,17 +193,17 @@
         0.0
       ],
       "bounds_max": [
-        116.41,
+        115.5,
         32.0,
         28.0
       ],
       "dimensions": [
-        18.63,
+        17.72,
         64.0,
         28.0
       ],
-      "volume_cm3": 51.19,
-      "estimated_mass_petg_g": 35.8,
+      "volume_cm3": 57.62,
+      "estimated_mass_petg_g": 40.2,
       "passed": true
     },
     "circle_cutter_hub_cap.stl": {

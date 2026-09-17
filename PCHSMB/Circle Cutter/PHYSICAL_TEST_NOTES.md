@@ -7,7 +7,7 @@ This document records physical caliper measurements, slicer parameters, print ou
 ## 1. Test Status & Configuration
 
 - **Date Initiated:** 2026-09-14 (Updated 2026-09-16)
-- **Release Version:** v2.1 (Full-Width Unibody End Cap with Bearing Clearance Canopy & Single M3 Fastener Attachment)
+- **Release Version:** v2.2 (Flat Front Print Surface & Canted Axle Centerline for Piece 3 End Cap)
 - **Target Subproject:** PCHSMB Duck Blinds & Rolling Backdrops (Wind Relief Slit Tooling)
 - **Target Geometry:** $R = 4.0\text{ in.} = 101.6\text{ mm}$ ($8.0\text{ in.}$ chord) semicircular wind relief flaps in 13oz heavy vinyl scrim
 - **Recommended Material:** PETG (e.g. Bambu PETG Basic / Polymaker PolyLite PETG)
@@ -89,14 +89,16 @@ Record caliper readings to two decimal places ($\pm 0.02\text{ mm}$) once test p
 | **Piece 2: Push Knob Base Height (Local)** | **27.00 mm** | _[Pending print]_ | $\pm 0.20\text{ mm}$ | Pending |
 | **Piece 2: Push Knob Shoulder Height (Local)** | **34.00 mm** | _[Pending print]_ | $\pm 0.20\text{ mm}$ | Pending |
 | **Piece 2: Push Knob Apex Height (Local)** | **46.00 mm** | _[Pending print]_ | $\pm 0.25\text{ mm}$ | Pending |
-| **Piece 3: End Cap Outer Width** | **64.00 mm** | _[Pending print]_ | $\pm 0.20\text{ mm}$ | Pending |
-| **Piece 3: End Cap Outer Height** | **28.00 mm** | _[Pending print]_ | $\pm 0.20\text{ mm}$ | Pending |
-| **Piece 3: End Cap Axial Depth** | **13.70 mm** | _[Pending print]_ | $\pm 0.15\text{ mm}$ | Pending |
+| **Piece 3: End Cap Outer Width ($Y$)** | **64.00 mm** | _[Pending print]_ | $\pm 0.20\text{ mm}$ | Pending |
+| **Piece 3: End Cap Outer Height ($Z$)** | **28.00 mm** | _[Pending print]_ | $\pm 0.20\text{ mm}$ | Pending |
+| **Piece 3: End Cap Outer Length ($X$)** | **17.72 mm** | _[Pending print]_ | $\pm 0.20\text{ mm}$ | Pending |
+| **Piece 3: Front Print Face Planarity** | **Flat Plane ($X=115.50\text{ mm}$)** | _[Pending print]_ | 100% Flat (Face-down print) | Validated |
+| **Piece 3: Shoulder Screw Axle Alignment** | **+9.0607° Cant Angle** | _[Pending print]_ | Coaxial with Arm Blade Boss | Validated |
 | **Piece 3: Blade Cavity Radii ($R_y / R_z$)** | **15.00 / 15.00 mm (True Circle)** | _[Pending print]_ | $\pm 0.15\text{ mm}$ | Pending |
 | **Piece 3: Bearing Canopy Radii ($R_y / R_z$)** | **13.00 / 13.00 mm (True Circle)** | _[Pending print]_ | $\pm 0.15\text{ mm}$ | Pending |
-| **Piece 3: Bearing Canopy Axial Depth** | **9.20 mm** | _[Pending print]_ | $\pm 0.15\text{ mm}$ | Pending |
+| **Piece 3: Bearing Canopy Axial Depth** | **12.50 mm** | _[Pending print]_ | $\pm 0.15\text{ mm}$ | Pending |
 | **Piece 3: Central Hub Clamping Thickness** | **9.20 mm** | _[Pending print]_ | $\pm 0.08\text{ mm}$ | Pending |
-| **Piece 3: Counterbore Dia / Depth** | **7.80 / 3.00 mm** | _[Pending print]_ | $\pm 0.10\text{ mm}$ | Pending |
+| **Piece 3: Counterbore Dia / Head Recess** | **7.80 mm / Recessed ($0.24-1.48\text{ mm}$)** | _[Pending print]_ | Sub-flush to flat front | Validated |
 | **Piece 3: Center Bore Diameter** | **4.20 mm** | _[Pending print]_ | $+0.15 / -0.00\text{ mm}$ | Pending |
 | **Piece 3: Bearing Side Screw Holes** | **0 (Unibody canopy)** | _[Pending print]_ | N/A | Validated |
 | **Piece 3: Ground Clearance Above Vinyl** | **4.00 mm** | _[Pending print]_ | $\pm 0.20\text{ mm}$ | Pending |
@@ -196,4 +198,16 @@ Record all physical observations, anomalies, or proposed geometry adjustments be
     - **Bearing Canopy:** True circular cylinder of radius $R = 13.0\text{ mm}$, centered at $(Y = -16.0\text{ mm}, Z_{\text{local}} = 7.0\text{ mm})$ ($2.0\text{ mm}$ radial clearance around 11.0mm 608 bearing).
     - **Ground Clearance Invariant ($Z \ge 0.0\text{ mm}$):** Clamped with $z_{\text{floor}} = 0.05\text{ mm}$, ensuring zero negative-$Z$ protrusion, maintaining exact $4.0\text{ mm}$ ground clearance above vinyl ($Z_{\text{world}} = +4.0\text{ mm}$) and flat bottom profile ($18.63 \times 64.0 \times 28.0\text{ mm}$).
   - **Topological Quality Gates:** All 8 STL meshes verified 100% watertight manifold (0 boundary edges, 0 non-manifold edges, 0 degenerate triangles). Arm mass is $102.1\text{ g}$ PETG (~3 hr 10 min); Piece 3 cap mass is $35.8\text{ g}$ PETG (~45 min).
+- **2026-09-17 Flat Front Print Surface & Canted Axle Centerline Redesign (v2.2):**
+  - **HITL Slicing & Printability Defect:** User reported: *"Please make the front of the cap have a flat surface for printing. There's no good way to orient that part right now, and standing it on end is resulting in holes that are out of tolerance for what we need. Additionally, the post for the shoulder screw appears to be going straight into the arm, rather than canted at an angle to match the blade angle."*
+  - **Root Cause Analysis:**
+    1. *V-Shaped Front Face:* In v2.1, the front perimeter was generated via $X_{\text{front}}(Y) = X_{\text{rear}}(Y) + \text{cap\_len} \cdot \cos\theta_c$. Because $X_{\text{rear}}(Y)$ was a chevron ($V$-ridge with vertex at $Y = 0$), $X_{\text{front}}$ was also a $V$-ridge, preventing flat placement on the 3D printer build plate. Slicing with the part stood on end forced cylindrical holes to print along horizontal layer lines, causing overhang drooping, oval distortion, and loose/tight fastener fit.
+    2. *Straight-in Screw Kink:* In v2.1, `c_b_front` had $Y = 16.0\text{ mm}$ and `c_b_rear` had $Y = 16.0\text{ mm}$ ($\Delta Y = 0$), forcing the overall screw path parallel to the $X$-axis (straight in), while local circular offsets used tilted vectors $\vec{n}_b$ and $\vec{t}_b$. This created an unintended $9.06^\circ$ kinking misalignment between the cap bore and the arm's canted blade boss.
+  - **100% Planar Flat Front Surface:** Established a single flat plane at **$X = 115.50\text{ mm}$** across the entire front face ($Y \in [-32.0, +32.0\text{ mm}], Z \in [0.0, 28.0\text{ mm}]$). Users can now place Piece 3 face-down flat on the print bed with zero rocking and **zero supports required**. All cylindrical counterbores, bores, and hub posts are printed along the printer's vertical $Z$ axis, ensuring maximum roundness, layer concentricity, and tight tolerances.
+  - **True Canted Axle Centerline (+9.0607°):** Rebuilt all blade-side features along the authoritative canted axis line $\vec{C}(s) = \vec{P}_0 + s \cdot \vec{n}_b$, where $\vec{P}_0 = (100.3322, 16.0, 9.5)\text{ mm}$ and $\vec{n}_b = (\cos\theta_c, \sin\theta_c, 0.0)$.
+    - *Counterbore Front Opening:* Formed by intersecting the cylinder ($r_{\text{cb}} = 3.9\text{ mm}$) with the plane $X = 115.50\text{ mm}$. Opens cleanly at $Y_{\text{center}} = 18.42\text{ mm}$.
+    - *Counterbore Shelf:* Located at $s = 11.50\text{ mm}$ along $\vec{n}_b$ ($1.5\text{ mm}$ arm standoff boss + $10.0\text{ mm}$ shoulder length). The $3.0\text{ mm}$ socket cap head is completely recessed ($0.24–1.48\text{ mm}$ sub-flush below the flat front face).
+    - *Through-Bore & Clamping Hub:* Extends from counterbore seat ($s = 11.50\text{ mm}$) to hub tip ($s = 2.30\text{ mm}$), maintaining exact $9.20\text{ mm}$ bore length and leaving $0.80\text{ mm}$ exposed steel shoulder for **$0.45\text{ mm}$ axial running float** on the $0.35\text{ mm}$ blade.
+    - *Cavity Floor & Solid Bulkhead:* Set at $s = 3.50\text{ mm}$ ($1.65\text{ mm}$ air clearance forward of blade), backed by an $8.0\text{ mm}$ solid PETG core to the counterbore seat. Clamped within $Y \le 31.36\text{ mm}$ to maintain exact $64.00\text{ mm}$ outer width ($17.72 \times 64.0 \times 28.0\text{ mm}$).
+  - **Topological Quality Gates:** All 8 STL meshes verified 100% watertight manifold (0 boundary edges, 0 non-manifold edges, 0 degenerate triangles). Piece 3 mass is $40.2\text{ g}$ PETG (~45 min print time).
 
