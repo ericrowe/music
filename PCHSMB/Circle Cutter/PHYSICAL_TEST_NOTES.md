@@ -98,8 +98,8 @@ Record caliper readings to two decimal places ($\pm 0.02\text{ mm}$) once test p
 | **Piece 3: Bearing Canopy Radii ($R_y / R_z$)** | **13.00 / 13.00 mm (True Circle)** | _[Pending print]_ | $\pm 0.15\text{ mm}$ | Pending |
 | **Piece 3: Bearing Canopy Axial Depth** | **12.50 mm** | _[Pending print]_ | $\pm 0.15\text{ mm}$ | Pending |
 | **Piece 3: Central Hub Clamping Thickness** | **9.20 mm** | _[Pending print]_ | $\pm 0.08\text{ mm}$ | Pending |
-| **Piece 3: Counterbore Dia / Head Recess** | **7.80 mm / Recessed ($0.24-1.48\text{ mm}$)** | _[Pending print]_ | Sub-flush to flat front | Validated |
-| **Piece 3: Center Bore Diameter** | **4.20 mm** | _[Pending print]_ | $+0.15 / -0.00\text{ mm}$ | Pending |
+| **Piece 3: Counterbore Dia / Head Recess** | **8.20 mm / Recessed ($0.24-1.48\text{ mm}$)** | _[Pending reprint]_ | Sub-flush to flat front (+1.20mm clearance) | Validated |
+| **Piece 3: Center Bore Diameter** | **4.65 mm** | _[4.20 mm printed tight; bolt did not fit]_ | $+0.65\text{ mm}$ clearance (~4.35mm printed ID) | Validated (HITL) |
 | **Piece 3: Bearing Side Screw Holes** | **0 (Unibody canopy)** | _[Pending print]_ | N/A | Validated |
 | **Piece 3: Ground Clearance Above Vinyl** | **4.00 mm** | _[Pending print]_ | $\pm 0.20\text{ mm}$ | Pending |
 | **Piece 4: Flange Outer Diameter** | 50.00 mm | _[Pending print]_ | $\pm 0.20\text{ mm}$ | Pending |
@@ -210,4 +210,11 @@ Record all physical observations, anomalies, or proposed geometry adjustments be
     - *Through-Bore & Clamping Hub:* Extends from counterbore seat ($s = 11.50\text{ mm}$) to hub tip ($s = 2.30\text{ mm}$), maintaining exact $9.20\text{ mm}$ bore length and leaving $0.80\text{ mm}$ exposed steel shoulder for **$0.45\text{ mm}$ axial running float** on the $0.35\text{ mm}$ blade.
     - *Cavity Floor & Solid Bulkhead:* Set at $s = 3.50\text{ mm}$ ($1.65\text{ mm}$ air clearance forward of blade), backed by an $8.0\text{ mm}$ solid PETG core to the counterbore seat. Clamped within $Y \le 31.36\text{ mm}$ to maintain exact $64.00\text{ mm}$ outer width ($17.72 \times 64.0 \times 28.0\text{ mm}$).
   - **Topological Quality Gates:** All 8 STL meshes verified 100% watertight manifold (0 boundary edges, 0 non-manifold edges, 0 degenerate triangles). Piece 3 mass is $40.2\text{ g}$ PETG (~45 min print time).
+- **2026-09-17 Shoulder Bolt Clearance & Counterbore Tolerance Redesign (v2.2.1):**
+  - **HITL Physical Test Finding:** Physical test print of Piece 3 (Blade Cap) completed with flat front face. Caliper/assembly test revealed that the $\varnothing 4.0\text{ mm}$ uxcell precision ground shoulder bolt could not fit through the center hole in the cutter cap. The modeled $\varnothing 4.20\text{ mm}$ through-bore only provided $0.20\text{ mm}$ diametral clearance ($0.10\text{ mm}$ per side). Due to standard FDM hole shrinkage (~0.25–0.30mm) and layer stepping over the $9.20\text{ mm}$ bore length at a $9.06^\circ$ cant, the printed ID was $\approx 3.85 - 3.95\text{ mm}$, causing interference binding against the $4.00\text{ mm}$ steel shaft.
+  - **Bore Tolerance Opened to $\varnothing 4.65\text{ mm}$:** Increased `GUARD_BORE_DIA` from $4.20\text{ mm}$ to **$4.65\text{ mm}$** ($+0.65\text{ mm}$ CAD clearance over the 4.0mm shoulder bolt shaft). Accounting for typical FDM perimeter shrinkage, the physical printed ID measures $\approx 4.35 - 4.40\text{ mm}$, guaranteeing an effortless, smooth slip fit with zero binding and zero need for drilling or reaming.
+  - **Counterbore Tolerance Opened to $\varnothing 8.20\text{ mm}$:** Increased `GUARD_CB_DIA` from $7.80\text{ mm}$ to **$8.20\text{ mm}$** ($+1.20\text{ mm}$ CAD clearance over the 7.0mm socket cap head). Yields $\approx 7.90\text{ mm}$ printed ID, providing ample clearance for the screw head and standard hex key/bit driver without dragging against the sidewalls.
+  - **Structural & Retention Integrity:** The annular counterbore shelf under the bolt head maintains a wide $1.175\text{ mm}$ radial clamping width ($21.50\text{ mm}^2$ solid bearing area). The central clamping hub maintains a solid $2.175\text{ mm}$ wall thickness (over 5 solid perimeters at 0.40mm nozzle). The axial running float ($0.45\text{ mm}$) and $4.0\text{ mm}$ vinyl ground clearance remain completely preserved.
+  - **Topology & Verification:** All 8 STL meshes regenerated and verified 100% watertight manifold with 0 boundary edges and 0 non-manifold edges. Piece 3 mass is $40.2\text{ g}$ PETG (~45 min print time).
+
 

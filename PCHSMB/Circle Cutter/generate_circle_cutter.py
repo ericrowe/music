@@ -161,11 +161,11 @@ GUARD_WIDTH = DUAL_HEAD_WIDTH                 # 64.0 mm full width (Y in [-32, +
 GUARD_HEIGHT = DUAL_HEAD_HEIGHT               # 28.0 mm full height (Z in [0, 28]: 4.0mm air clearance above vinyl)
 GUARD_FRONT_FLAT_X = 115.50                   # 115.50 mm flat front print surface (allows 100% flat face-down bed adhesion)
 GUARD_DEPTH = round(GUARD_FRONT_FLAT_X - DISTAL_X, 4)  # 15.1678 mm depth at Y=+-16.0mm distal axle planes
-GUARD_CB_DIA = 7.8                            # 7.8 mm counterbore for 7.0mm shoulder bolt head
+GUARD_CB_DIA = 8.2                            # 8.2 mm counterbore for 7.0mm shoulder bolt head (+1.2mm print clearance)
 GUARD_CB_SEAT_S = BLADE_STANDOFF_LEN + SHOULDER_BOLT_LEN  # 11.50 mm along canted axle ray (1.5mm arm boss + 10.0mm bolt shoulder)
 GUARD_HUB_TIP_S = 2.30                        # 2.30 mm along canted axle ray (leaves 0.80mm exposed shoulder for 0.35mm blade -> 0.45mm float)
 GUARD_CAV_FLOOR_S = 3.50                      # 3.50 mm along canted axle ray (1.65mm blade clearance, 1.20mm hub boss, 8.0mm solid core)
-GUARD_BORE_DIA = 4.2                          # 4.2 mm through-bore for 4.0mm shoulder bolt
+GUARD_BORE_DIA = 4.65                         # 4.65 mm through-bore for 4.0mm shoulder bolt (+0.65mm print clearance; ~4.35mm printed ID)
 GUARD_HUB_OD = 9.0                            # 9.0 mm OD central clamping hub
 BLADE_CAV_RY = 15.0                           # 15.0 mm radius in Y (true circle, clears 14.0mm blade by 1.0mm)
 BLADE_CAV_RZ = 15.0                           # 15.0 mm radius in Z (true circle, centered at axle Z=9.5)
@@ -876,8 +876,8 @@ def build_piece3_blade_cap() -> Mesh:
     def c_b(s: float) -> Vec3:
         return (p0_b[0] + s * nb[0], p0_b[1] + s * nb[1], p0_b[2])
 
-    r_cb = GUARD_CB_DIA / 2.0         # 3.9 mm (7.8mm counterbore)
-    r_bore = GUARD_BORE_DIA / 2.0     # 2.1 mm (4.2mm through-bore)
+    r_cb = GUARD_CB_DIA / 2.0         # 4.10 mm (8.2mm counterbore)
+    r_bore = GUARD_BORE_DIA / 2.0     # 2.325 mm (4.65mm through-bore)
     r_hub = GUARD_HUB_OD / 2.0        # 4.5 mm (9.0mm OD hub post)
     blade_cav_r = BLADE_CAV_RY        # 15.0 mm (true circular cavity)
     z_floor = 0.05
@@ -931,11 +931,11 @@ def build_piece3_blade_cap() -> Mesh:
         pt_cb_s = (c_b_cb_seat[0] + vp_cb[0], c_b_cb_seat[1] + vp_cb[1], c_b_cb_seat[2] + vp_cb[2])
         blade_cb_seat.append(pt_cb_s)
 
-        # Through-bore seat (ID 4.2mm at s_cb_seat)
+        # Through-bore seat (ID 4.65mm at s_cb_seat)
         pt_b_s = (c_b_cb_seat[0] + vp_bore[0], c_b_cb_seat[1] + vp_bore[1], c_b_cb_seat[2] + vp_bore[2])
         blade_bore_seat.append(pt_b_s)
 
-        # Through-bore tip (ID 4.2mm at s_hub_tip)
+        # Through-bore tip (ID 4.65mm at s_hub_tip)
         pt_b_t = (c_b_hub_tip[0] + vp_bore[0], c_b_hub_tip[1] + vp_bore[1], c_b_hub_tip[2] + vp_bore[2])
         blade_bore_tip.append(pt_b_t)
 
@@ -1973,6 +1973,7 @@ def generate_manifest(out_dir: Path, meshes: List[Mesh]) -> dict:
             "blade_cavity_shape": "True circular cylinder (R=15.0mm, concentric with blade axle Z=9.5mm, canted at +9.0607°)",
             "bearing_canopy_shape": "True circular cylinder (R=13.0mm, concentric with bearing axle Z=7.0mm, canted at -9.0607°)",
             "bearing_canopy_clearance": "Generous arched clearance canopy with open bottom allowing 608 bearing to roll directly on vinyl",
+            "through_bore_dia_mm": GUARD_BORE_DIA,
             "screw_head_recess": f"{GUARD_CB_DIA}mm counterbore along canted axle ray (+9.0607°); head completely recessed below flat front face",
             "print_orientation": "100% flat front face (X=115.50mm) down on build plate; zero supports required; perfectly round vertical holes",
         },

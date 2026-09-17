@@ -71,7 +71,8 @@
     "blade_cavity_shape": "True circular cylinder (R=15.0mm, concentric with blade axle Z=9.5mm, canted at +9.0607\u00b0)",
     "bearing_canopy_shape": "True circular cylinder (R=13.0mm, concentric with bearing axle Z=7.0mm, canted at -9.0607\u00b0)",
     "bearing_canopy_clearance": "Generous arched clearance canopy with open bottom allowing 608 bearing to roll directly on vinyl",
-    "screw_head_recess": "7.8mm counterbore along canted axle ray (+9.0607\u00b0); head completely recessed below flat front face",
+    "through_bore_dia_mm": 4.65,
+    "screw_head_recess": "8.2mm counterbore along canted axle ray (+9.0607\u00b0); head completely recessed below flat front face",
     "print_orientation": "100% flat front face (X=115.50mm) down on build plate; zero supports required; perfectly round vertical holes"
   },
   "bearing_specifications_608_thrust": {
@@ -202,7 +203,7 @@
         64.0,
         28.0
       ],
-      "volume_cm3": 57.62,
+      "volume_cm3": 57.57,
       "estimated_mass_petg_g": 40.2,
       "passed": true
     },
