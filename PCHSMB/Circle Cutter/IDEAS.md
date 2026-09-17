@@ -28,6 +28,15 @@ This is the project inbox for future design enhancements and tooling iterations,
 
 ## Implemented Ideas
 
+### [Idea 011: Full-Width End Cap with Bearing Clearance & Single M3 Blade Screw Retention](Plans/009-full-width-end-cap.md) — *Implemented in v2.1*
+- **Outcome:** Unified Piece 3 into a full-width end cap spanning the $64.0\text{ mm}$ distal chevron head, widening pad spacing from $\pm 11.5\text{ mm}$ to $\pm 16.0\text{ mm}$ ($32.0\text{ mm}$ apart, providing $7.0\text{ mm}$ clearance between blade and bearing), retaining single M3 shoulder screw attachment through the blade axle while providing a full clearance canopy and open rolling window for the 608 roller bearing.
+- **Benefits:**
+  - Completely resolves the $6.0\text{ mm}$ cowl collision and $2.0\text{ mm}$ blade-to-bearing overlap from inherited v1.8 X-Acto dimensions.
+  - Spans the full $64.0\text{ mm}$ width of the flared arm head, eliminating asymmetric overhangs.
+  - Features anti-twist kinematic registration against the $18.12^\circ$ included chevron $V$-face and top registration lip.
+  - Bearing side provides an overhead canopy shield for operator safety while leaving the bottom completely open for unobstructed vinyl rolling at $Z = 0$.
+  - 100% support-free 3D printing maintained for all parts.
+
 ### [Idea 010: Tall Rigid Arm Beam & Calibrated 0.5mm Cut Depth for 28mm Rotary Blade](Plans/008-tall-arm-28mm-rotary.md) — *Implemented in v2.0*
 - **Outcome:** Increased the arm beam height from $12.0\text{ mm}$ to $20.0\text{ mm}$ ($+67\%$, $4.63\times$ higher vertical stiffness) and the dual head height from $14.0\text{ mm}$ to $28.0\text{ mm}$ (exact 1:1 match with 28mm rotary blade diameter), fully backing the Piece 3 safety guard cowl and standardizing on a calibrated $0.5\text{ mm}$ cut depth below the 608 roller bearing.
 - **Benefits:**

@@ -33,8 +33,8 @@ from typing import Dict, List, Sequence, Tuple
 # PARAMETRIC SPECIFICATIONS (MILLIMETERS)
 # =============================================================================
 
-VERSION = "2.0"
-DESIGN_NAME = "PCHSMB Circle Cutter - Semicircular Wind Relief Slit Tool with Tall Rigid Arm & 28mm Rotary Blade"
+VERSION = "2.1"
+DESIGN_NAME = "PCHSMB Circle Cutter - Semicircular Wind Relief Slit Tool with Full-Width End Cap & 28mm Rotary Blade"
 
 # -----------------------------------------------------------------------------
 # Vertical Stack-Up & Ground Reference (Vinyl Top Surface = Z 0.0 mm)
@@ -108,25 +108,26 @@ ARM_BEVEL = 2.0                               # 2.0 mm 45° longitudinal chamfer
 ARM_ROOT_X = 22.0                             # Embeds securely inside solid hub wall
 
 # Dual Head Geometry (Side-by-Side Head with 608 Bearing and 28mm Rotary Blade)
-BLADE_PAD_Y = +11.5                           # Center of 28mm rotary blade axle in Y
-BEARING_PAD_Y = -11.5                         # Center of 608 roller bearing pad in Y
-DISTAL_X = math.sqrt(CUT_RADIUS**2 - BLADE_PAD_Y**2)  # 100.9472 mm from pivot center to distal axle planes
-ARM_LENGTH = DISTAL_X - HUB_OUTER_RADIUS      # 75.9472 mm extension from hub outer surface
-DUAL_HEAD_START_X = 55.0                      # Transition flare start from 20x20mm to 46x28mm
-DUAL_HEAD_FULL_X = 75.0                       # Full 46x28mm dual head width start
-DUAL_HEAD_WIDTH = 46.0                        # 46.0 mm total width (Y in [-23, +23])
-DUAL_HEAD_HEIGHT = 28.0                       # 28.0 mm head height (exact 1:1 match to 28mm blade OD, fully backs Piece 3 cowl)
-CANT_ANGLE_RAD = math.asin(BLADE_PAD_Y / CUT_RADIUS)  # 0.113433 rad (6.4992° cant angle)
-CANT_ANGLE_DEG = math.degrees(CANT_ANGLE_RAD)       # 6.4992°
-CHEVRON_VERTEX_X = DISTAL_X + BLADE_PAD_Y * math.tan(CANT_ANGLE_RAD)  # 102.2573 mm at Y=0.0 center junction
+BLADE_PAD_Y = +16.0                           # Center of 28mm rotary blade axle in Y (widened for 7.0mm clearance to bearing)
+BEARING_PAD_Y = -16.0                         # Center of 608 roller bearing pad in Y
+DISTAL_X = math.sqrt(CUT_RADIUS**2 - BLADE_PAD_Y**2)  # 100.3322 mm from pivot center to distal axle planes
+ARM_LENGTH = DISTAL_X - HUB_OUTER_RADIUS      # 75.3322 mm extension from hub outer surface
+DUAL_HEAD_START_X = 55.0                      # Transition flare start from 20x20mm to 64x28mm
+DUAL_HEAD_FULL_X = 75.0                       # Full 64x28mm dual head width start
+DUAL_HEAD_WIDTH = 64.0                        # 64.0 mm total width (Y in [-32, +32]: full enclosure for blade and bearing canopy)
+DUAL_HEAD_HEIGHT = 28.0                       # 28.0 mm head height (exact 1:1 match to 28mm blade OD, fully backs Piece 3 cap)
+CANT_ANGLE_RAD = math.asin(BLADE_PAD_Y / CUT_RADIUS)  # 0.158140 rad (9.0607° cant angle)
+CANT_ANGLE_DEG = math.degrees(CANT_ANGLE_RAD)       # 9.0607°
+CHEVRON_VERTEX_X = DISTAL_X + BLADE_PAD_Y * math.tan(CANT_ANGLE_RAD)  # 102.8838 mm at Y=0.0 center junction
 
 # 608 Roller Bearing Mount on Arm
 BEARING_AXLE_LOCAL_Z = BEARING_AXLE_WORLD_Z - ARM_BOTTOM_WORLD_Z  # +7.0 mm local (11.0 - 4.0 = 7.0 mm)
-BEARING_MOUNT_X = DISTAL_X                    # 100.95 mm (front face of arm alongside blade)
+BEARING_MOUNT_X = DISTAL_X                    # 100.33 mm (front face of arm alongside blade)
 BEARING_STANDOFF_OD = 11.5                    # 11.5 mm OD (contacts ONLY 8x11.5mm inner race, clears shields)
 BEARING_STANDOFF_LEN = 1.5                    # 1.5 mm standoff clearance
 M5_INSERT_DIA = 6.2                           # 6.2 mm hole for user-specified M5 brass heat-set insert
 M5_INSERT_DEPTH = 11.0                        # 11.0 mm bore depth (accommodates 6, 8, or 10 mm inserts)
+BEARING_CAVITY_DEPTH = 12.5                   # 12.5 mm depth inside Piece 3 canopy (clears 11.25mm bearing stack by 1.25mm)
 
 # 28mm Rotary Blade Specifications (Fiskars 28mm Model 1065938 / ASIN B0C8BSMMN1)
 ROTARY_BLADE_OD = 28.0                        # 28.0 mm outer diameter
@@ -148,24 +149,28 @@ HEAT_SET_M3_DEPTH = 10.5                      # 10.5 mm bore depth
 
 # Piece 2: Ergonomic Cylindrical Domed Push Knob Geometry
 PUSH_POST_X = 80.0                            # Center in X (over dual head beam)
-PUSH_POST_Y = 0.0                              # Dead-center in Y between bearing (-11.5mm) and blade (+11.5mm)
+PUSH_POST_Y = 0.0                              # Dead-center in Y between bearing (-16.0mm) and blade (+16.0mm)
 PUSH_POST_RADIUS = 12.0                        # 12.0 mm radius (24.0 mm OD cylinder)
 PUSH_POST_BASE_Z = 27.0                        # Embeds 1.0 mm into solid head ceiling (Z=28.0)
 PUSH_POST_SHOULDER_Z = 34.0                    # 34.0 mm local Z (6.0 mm vertical straight cylinder wall)
 PUSH_POST_DOME_RADIUS = 12.0                   # 12.0 mm spherical dome radius (seamless C1 tangency)
 PUSH_POST_APEX_Z = PUSH_POST_SHOULDER_Z + PUSH_POST_DOME_RADIUS  # 46.0 mm local Z (+18.0 mm above head ceiling)
 
-# Piece 3: Rotary Blade Safety Guard Cowl & Clamp
-GUARD_OUTER_RADIUS = 18.0                     # 18.0 mm outer shroud radius (covers blade top & flanks)
-GUARD_CAVITY_RADIUS = 15.5                    # 15.5 mm inner cavity radius (1.5mm air gap around 28mm blade)
-GUARD_BOTTOM_LOCAL_Z = -12.5                  # -12.5 mm local Z in cap frame (1.0mm air gap above vinyl: 13.5 - 12.5 = 1.0mm)
-GUARD_OUTER_X = 0.0                           # 0.0 mm outer face (against screw head seat)
-GUARD_FLOOR_X = 3.0                           # 3.0 mm cavity floor / screw counterbore seat
-GUARD_HUB_TIP_X = 12.2                        # 12.2 mm hub tip (protrudes 0.8mm shoulder: 0.45mm blade float)
-GUARD_RIM_X = 13.7                            # 13.7 mm shroud rim meeting arm blade pad
-GUARD_HUB_OD = 9.0                            # 9.0 mm OD central hub
+# Piece 3: Full-Width End Cap with Bearing Clearance Canopy & Single M3 Fastener Attachment
+GUARD_WIDTH = DUAL_HEAD_WIDTH                 # 64.0 mm full width (Y in [-32, +32])
+GUARD_HEIGHT = DUAL_HEAD_HEIGHT               # 28.0 mm full height (Z in [0, 28]: 4.0mm air clearance above vinyl)
+GUARD_DEPTH = 13.7                            # 13.7 mm axial depth from arm chevron face
+GUARD_CB_DIA = 7.8                            # 7.8 mm counterbore for 7.0mm shoulder bolt head
+GUARD_CB_DEPTH = 3.0                          # 3.0 mm counterbore depth
 GUARD_BORE_DIA = 4.2                          # 4.2 mm through-bore for 4.0mm shoulder bolt
-GUARD_CB_DIA = 7.8                            # 7.8 mm counterbore for 7.0mm screw head
+GUARD_HUB_OD = 9.0                            # 9.0 mm OD central clamping hub
+GUARD_HUB_PROTRUSION = 1.5                    # 1.5 mm distance from rear face (meets arm standoff boss)
+BLADE_CAV_RY = 15.5                           # 15.5 mm radius in Y (clears 14.0mm blade by 1.5mm)
+BLADE_CAV_RZ = 12.5                           # 12.5 mm radius in Z (centered at Z=12.5 -> Z in [0, 25.0])
+BLADE_CAV_CZ = 12.5                           # 12.5 mm center in Z (clears blade top at Z=23.5 by 1.5mm)
+BEARING_CAV_RY = 13.0                         # 13.0 mm radius in Y (clears 11.0mm bearing by 2.0mm on both sides)
+BEARING_CAV_RZ = 10.0                         # 10.0 mm radius in Z (centered at Z=10.0 -> Z in [0, 20.0])
+BEARING_CAV_CZ = 10.0                         # 10.0 mm center in Z (clears bearing top at Z=18.0 by 2.0mm)
 
 # Piece 4: Snap-in Hub Top Cap (Idea 001 Modular Architecture)
 HUB_CAP_FLANGE_DIA = 50.0                         # 50.0 mm outer diameter (matches hub OD)
@@ -798,134 +803,200 @@ def build_piece2_arm(r_hub_outer: float = HUB_OUTER_RADIUS, r_bore: float = HUB_
     return m
 
 
-def build_piece3_blade_cap(r_out: float = GUARD_OUTER_RADIUS,
-                           r_in: float = GUARD_CAVITY_RADIUS,
-                           z_bot: float = GUARD_BOTTOM_LOCAL_Z,
-                           x_out: float = GUARD_OUTER_X,
-                           x_floor: float = GUARD_FLOOR_X,
-                           x_hub: float = GUARD_HUB_TIP_X,
-                           x_rim: float = GUARD_RIM_X,
-                           r_hub: float = BLADE_STANDOFF_OD / 2.0,
-                           r_bore: float = 2.1,
-                           r_cb: float = 3.9,
-                           N: int = 48) -> Mesh:
-    """Build Piece 3 (Rotary Blade Safety Guard Cowl & Clamp) with ray-sampled isomorphic loops."""
+def build_piece3_blade_cap() -> Mesh:
+    """Build Piece 3: Full-Width Unibody End Cap with Bearing Clearance Canopy & Single M3 Fastener Attachment."""
     m = Mesh("circle_cutter_blade_cap")
 
-    def get_u_point(r: float, zb: float, ang: float) -> Vec2:
-        """Intersect ray from (0,0) at angle ang with U-profile (semicircle top + vertical walls + bottom flat)."""
+    blade_y = BLADE_PAD_Y
+    bearing_y = BEARING_PAD_Y
+    blade_axle_z = BLADE_AXLE_LOCAL_Z
+    bearing_axle_z = BEARING_AXLE_LOCAL_Z
+
+    distal_x = DISTAL_X
+    cant_rad = CANT_ANGLE_RAD
+    tan_c = math.tan(cant_rad)
+    cos_c = math.cos(cant_rad)
+    sin_c = math.sin(cant_rad)
+
+    head_w = DUAL_HEAD_WIDTH
+    head_h = DUAL_HEAD_HEIGHT
+    bevel = ARM_BEVEL
+    cap_len = GUARD_DEPTH
+
+    nb = (cos_c, sin_c, 0.0)
+    tb = (-sin_c, cos_c, 0.0)
+    nr = (cos_c, -sin_c, 0.0)
+    tr = (sin_c, cos_c, 0.0)
+
+    def x_rear(y: float) -> float:
+        if y >= 0.0:
+            return distal_x - (y - blade_y) * tan_c
+        else:
+            return distal_x + (y - bearing_y) * tan_c
+
+    def x_front(y: float) -> float:
+        if y >= 0.0:
+            return x_rear(y) + cap_len * nb[0]
+        else:
+            return x_rear(y) + cap_len * nr[0]
+
+    # Outer profile loop (from z_min = 0.0 to z_max = 28.0)
+    loop_dual = make_beveled_rect_loop(-head_w / 2.0, head_w / 2.0, 0.0, head_h, bevel, 8)
+    div_pts_down = [(0.0, 18.0), (0.0, 9.0)]
+    div_pts_up = [(0.0, 9.0), (0.0, 18.0)]
+
+    bnd_blade_2d = [loop_dual[idx] for idx in range(28, 32)] + \
+                   [loop_dual[idx] for idx in range(0, 13)] + \
+                   div_pts_down
+
+    bnd_bearing_2d = [loop_dual[idx] for idx in range(12, 29)] + \
+                     div_pts_up
+
+    n_p = 19
+
+    # 1. Outer perimeter longitudinal walls
+    bnd_outer_rear = [(x_rear(p[0]), p[0], p[1]) for p in loop_dual]
+    bnd_outer_front = [(x_front(p[0]), p[0], p[1]) for p in loop_dual]
+    for i in range(len(loop_dual)):
+        j = (i + 1) % len(loop_dual)
+        m.quad(bnd_outer_rear[i], bnd_outer_rear[j], bnd_outer_front[j], bnd_outer_front[i])
+
+    blade_front_3d = [(x_front(p[0]), p[0], p[1]) for p in bnd_blade_2d]
+    blade_rear_3d = [(x_rear(p[0]), p[0], p[1]) for p in bnd_blade_2d]
+    bearing_front_3d = [(x_front(p[0]), p[0], p[1]) for p in bnd_bearing_2d]
+    bearing_rear_3d = [(x_rear(p[0]), p[0], p[1]) for p in bnd_bearing_2d]
+
+    # -------------------------------------------------------------------------
+    # BLADE SIDE (Y >= 0)
+    # -------------------------------------------------------------------------
+    c_b_rear = (x_rear(blade_y), blade_y, blade_axle_z)
+    c_b_front = (x_front(blade_y), blade_y, blade_axle_z)
+
+    r_cb = GUARD_CB_DIA / 2.0
+    r_bore = GUARD_BORE_DIA / 2.0
+    r_hub = GUARD_HUB_OD / 2.0
+    blade_cav_cz = BLADE_CAV_CZ
+    blade_cav_ry = BLADE_CAV_RY
+    blade_cav_rz = BLADE_CAV_RZ
+
+    cb_depth = GUARD_CB_DEPTH
+    hub_protrusion = GUARD_HUB_PROTRUSION
+
+    blade_cb_front = []
+    blade_cb_seat = []
+    blade_bore_seat = []
+    blade_bore_tip = []
+    blade_hub_tip = []
+    blade_hub_base = []
+    blade_cav_floor = []
+    blade_cav_rim = []
+
+    for p in bnd_blade_2d:
+        ang = math.atan2(p[1] - blade_axle_z, p[0] - blade_y)
         ca = math.cos(ang)
         sa = math.sin(ang)
-        if sa >= 0.0:
-            return (r * ca, r * sa)
-        y_hit = zb * ca / sa
-        if abs(y_hit) <= r:
-            return (y_hit, zb)
-        if ca > 0.0:
-            z_hit = r * sa / ca
-            return (r, z_hit)
-        else:
-            z_hit = -r * sa / ca
-            return (-r, z_hit)
 
-    # Generate 5 isomorphic loops of N points each (all CCW around origin)
-    angles = [2.0 * math.pi * i / float(N) for i in range(N)]
+        vp_cb = (r_cb * ca * tb[0], r_cb * ca * tb[1], r_cb * sa)
+        vp_bore = (r_bore * ca * tb[0], r_bore * ca * tb[1], r_bore * sa)
+        vp_hub = (r_hub * ca * tb[0], r_hub * ca * tb[1], r_hub * sa)
 
-    loop_out = [get_u_point(r_out, z_bot, a) for a in angles]
-    loop_in = [get_u_point(r_in, z_bot, a) for a in angles]
-    loop_cb = [(r_cb * math.cos(a), r_cb * math.sin(a)) for a in angles]
-    loop_bore = [(r_bore * math.cos(a), r_bore * math.sin(a)) for a in angles]
-    loop_hub = [(r_hub * math.cos(a), r_hub * math.sin(a)) for a in angles]
+        # Ellipse around (blade_y, blade_cav_cz):
+        ang_cav = math.atan2(p[1] - blade_cav_cz, p[0] - blade_y)
+        dy_cav = blade_cav_ry * math.cos(ang_cav)
+        dz_cav = (blade_cav_cz - blade_axle_z) + blade_cav_rz * math.sin(ang_cav)
+        vp_cav = (dy_cav * tb[0], dy_cav * tb[1], dz_cav)
 
-    # Surface 1: Outer Front Face at X = x_out (normal -X)
-    for i in range(N):
-        j = (i + 1) % N
-        p_out_i = (x_out, loop_out[i][0], loop_out[i][1])
-        p_out_j = (x_out, loop_out[j][0], loop_out[j][1])
-        p_cb_i = (x_out, loop_cb[i][0], loop_cb[i][1])
-        p_cb_j = (x_out, loop_cb[j][0], loop_cb[j][1])
-        m.quad(p_out_i, p_cb_i, p_cb_j, p_out_j)
+        pt_cb_f = (c_b_front[0] + vp_cb[0], c_b_front[1] + vp_cb[1], c_b_front[2] + vp_cb[2])
+        blade_cb_front.append(pt_cb_f)
 
-    # Surface 2: Screw Counterbore Wall (X = x_out to X = x_floor)
-    for i in range(N):
-        j = (i + 1) % N
-        p0_i = (x_out, loop_cb[i][0], loop_cb[i][1])
-        p0_j = (x_out, loop_cb[j][0], loop_cb[j][1])
-        p1_i = (x_floor, loop_cb[i][0], loop_cb[i][1])
-        p1_j = (x_floor, loop_cb[j][0], loop_cb[j][1])
-        m.quad(p0_i, p0_j, p1_j, p1_i)
+        pt_cb_s = (c_b_front[0] - cb_depth * nb[0] + vp_cb[0],
+                   c_b_front[1] - cb_depth * nb[1] + vp_cb[1],
+                   c_b_front[2] + vp_cb[2])
+        blade_cb_seat.append(pt_cb_s)
 
-    # Surface 3: Counterbore Seat at X = x_floor (cb to bore)
-    for i in range(N):
-        j = (i + 1) % N
-        p_cb_i = (x_floor, loop_cb[i][0], loop_cb[i][1])
-        p_cb_j = (x_floor, loop_cb[j][0], loop_cb[j][1])
-        p_b_i = (x_floor, loop_bore[i][0], loop_bore[i][1])
-        p_b_j = (x_floor, loop_bore[j][0], loop_bore[j][1])
-        m.quad(p_cb_i, p_b_i, p_b_j, p_cb_j)
+        pt_b_s = (c_b_front[0] - cb_depth * nb[0] + vp_bore[0],
+                  c_b_front[1] - cb_depth * nb[1] + vp_bore[1],
+                  c_b_front[2] + vp_bore[2])
+        blade_bore_seat.append(pt_b_s)
 
-    # Surface 4: Center Bore Wall (X = x_floor to X = x_hub)
-    for i in range(N):
-        j = (i + 1) % N
-        p0_i = (x_floor, loop_bore[i][0], loop_bore[i][1])
-        p0_j = (x_floor, loop_bore[j][0], loop_bore[j][1])
-        p1_i = (x_hub, loop_bore[i][0], loop_bore[i][1])
-        p1_j = (x_hub, loop_bore[j][0], loop_bore[j][1])
-        m.quad(p0_i, p0_j, p1_j, p1_i)
+        pt_b_t = (c_b_rear[0] + hub_protrusion * nb[0] + vp_bore[0],
+                  c_b_rear[1] + hub_protrusion * nb[1] + vp_bore[1],
+                  c_b_rear[2] + vp_bore[2])
+        blade_bore_tip.append(pt_b_t)
 
-    # Surface 5: Hub Tip Annular Face at X = x_hub (bore to hub, normal +X)
-    for i in range(N):
-        j = (i + 1) % N
-        p_b_i = (x_hub, loop_bore[i][0], loop_bore[i][1])
-        p_b_j = (x_hub, loop_bore[j][0], loop_bore[j][1])
-        p_h_i = (x_hub, loop_hub[i][0], loop_hub[i][1])
-        p_h_j = (x_hub, loop_hub[j][0], loop_hub[j][1])
-        m.quad(p_b_i, p_h_i, p_h_j, p_b_j)
+        pt_h_t = (c_b_rear[0] + hub_protrusion * nb[0] + vp_hub[0],
+                  c_b_rear[1] + hub_protrusion * nb[1] + vp_hub[1],
+                  c_b_rear[2] + vp_hub[2])
+        blade_hub_tip.append(pt_h_t)
 
-    # Surface 6: Hub Outer Cylinder Wall (X = x_hub down to X = x_floor)
-    for i in range(N):
-        j = (i + 1) % N
-        p0_i = (x_hub, loop_hub[i][0], loop_hub[i][1])
-        p0_j = (x_hub, loop_hub[j][0], loop_hub[j][1])
-        p1_i = (x_floor, loop_hub[i][0], loop_hub[i][1])
-        p1_j = (x_floor, loop_hub[j][0], loop_hub[j][1])
-        m.quad(p0_i, p1_i, p1_j, p0_j)
+        pt_h_b = (c_b_front[0] - cb_depth * nb[0] + vp_hub[0],
+                  c_b_front[1] - cb_depth * nb[1] + vp_hub[1],
+                  c_b_front[2] + vp_hub[2])
+        blade_hub_base.append(pt_h_b)
 
-    # Surface 7: Cavity Floor at X = x_floor (hub to loop_in, normal +X)
-    for i in range(N):
-        j = (i + 1) % N
-        p_h_i = (x_floor, loop_hub[i][0], loop_hub[i][1])
-        p_h_j = (x_floor, loop_hub[j][0], loop_hub[j][1])
-        p_in_i = (x_floor, loop_in[i][0], loop_in[i][1])
-        p_in_j = (x_floor, loop_in[j][0], loop_in[j][1])
-        m.quad(p_h_i, p_in_i, p_in_j, p_h_j)
+        pt_c_f = (c_b_front[0] - cb_depth * nb[0] + vp_cav[0],
+                  c_b_front[1] - cb_depth * nb[1] + vp_cav[1],
+                  c_b_front[2] + vp_cav[2])
+        blade_cav_floor.append(pt_c_f)
 
-    # Surface 8: Cavity Inner Wall (X = x_floor to X = x_rim)
-    for i in range(N):
-        j = (i + 1) % N
-        p0_i = (x_floor, loop_in[i][0], loop_in[i][1])
-        p0_j = (x_floor, loop_in[j][0], loop_in[j][1])
-        p1_i = (x_rim, loop_in[i][0], loop_in[i][1])
-        p1_j = (x_rim, loop_in[j][0], loop_in[j][1])
-        m.quad(p0_i, p0_j, p1_j, p1_i)
+        pt_c_r = (c_b_rear[0] + vp_cav[0], c_b_rear[1] + vp_cav[1], c_b_rear[2] + vp_cav[2])
+        blade_cav_rim.append(pt_c_r)
 
-    # Surface 9: Shroud Rim at X = x_rim (loop_in to loop_out, normal +X)
-    for i in range(N):
-        j = (i + 1) % N
-        p_in_i = (x_rim, loop_in[i][0], loop_in[i][1])
-        p_in_j = (x_rim, loop_in[j][0], loop_in[j][1])
-        p_out_i = (x_rim, loop_out[i][0], loop_out[i][1])
-        p_out_j = (x_rim, loop_out[j][0], loop_out[j][1])
-        m.quad(p_in_i, p_out_i, p_out_j, p_in_j)
+    for i in range(n_p):
+        j = (i + 1) % n_p
+        m.quad(blade_front_3d[i], blade_front_3d[j], blade_cb_front[j], blade_cb_front[i])
+        m.quad(blade_cb_front[i], blade_cb_front[j], blade_cb_seat[j], blade_cb_seat[i])
+        m.quad(blade_cb_seat[i], blade_cb_seat[j], blade_bore_seat[j], blade_bore_seat[i])
+        m.quad(blade_bore_seat[i], blade_bore_seat[j], blade_bore_tip[j], blade_bore_tip[i])
+        m.quad(blade_bore_tip[i], blade_bore_tip[j], blade_hub_tip[j], blade_hub_tip[i])
+        m.quad(blade_hub_tip[i], blade_hub_tip[j], blade_hub_base[j], blade_hub_base[i])
+        m.quad(blade_hub_base[i], blade_hub_base[j], blade_cav_floor[j], blade_cav_floor[i])
+        m.quad(blade_cav_floor[i], blade_cav_floor[j], blade_cav_rim[j], blade_cav_rim[i])
+        m.quad(blade_cav_rim[i], blade_cav_rim[j], blade_rear_3d[j], blade_rear_3d[i])
 
-    # Surface 10: Outer Perimeter Wall (X = x_rim down to X = x_out)
-    for i in range(N):
-        j = (i + 1) % N
-        p0_i = (x_rim, loop_out[i][0], loop_out[i][1])
-        p0_j = (x_rim, loop_out[j][0], loop_out[j][1])
-        p1_i = (x_out, loop_out[i][0], loop_out[i][1])
-        p1_j = (x_out, loop_out[j][0], loop_out[j][1])
-        m.quad(p0_i, p1_i, p1_j, p0_j)
+    # -------------------------------------------------------------------------
+    # BEARING SIDE (Y <= 0)
+    # -------------------------------------------------------------------------
+    c_r_rear = (x_rear(bearing_y), bearing_y, bearing_axle_z)
+    c_r_front = (x_front(bearing_y), bearing_y, bearing_axle_z)
+
+    # Front Face of Bearing Side: Solid face closed to front center
+    for i in range(n_p):
+        j = (i + 1) % n_p
+        m.add(c_r_front, bearing_front_3d[i], bearing_front_3d[j])
+
+    bear_cav_cz = BEARING_CAV_CZ
+    bear_cav_ry = BEARING_CAV_RY
+    bear_cav_rz = BEARING_CAV_RZ
+    bear_cav_depth = BEARING_CAVITY_DEPTH
+
+    bearing_cav_rim = []
+    bearing_cav_floor = []
+    for p in bnd_bearing_2d:
+        ang = math.atan2(p[1] - bear_cav_cz, p[0] - bearing_y)
+        dy_bear = bear_cav_ry * math.cos(ang)
+        dz_bear = (bear_cav_cz - bearing_axle_z) + bear_cav_rz * math.sin(ang)
+        vp_c = (dy_bear * tr[0], dy_bear * tr[1], dz_bear)
+
+        pt_rim = (c_r_rear[0] + vp_c[0], c_r_rear[1] + vp_c[1], c_r_rear[2] + vp_c[2])
+        bearing_cav_rim.append(pt_rim)
+
+        pt_floor = (c_r_rear[0] + bear_cav_depth * nr[0] + vp_c[0],
+                    c_r_rear[1] + bear_cav_depth * nr[1] + vp_c[1],
+                    c_r_rear[2] + vp_c[2])
+        bearing_cav_floor.append(pt_floor)
+
+    for i in range(n_p):
+        j = (i + 1) % n_p
+        m.quad(bearing_rear_3d[i], bearing_rear_3d[j], bearing_cav_rim[j], bearing_cav_rim[i])
+        m.quad(bearing_cav_rim[i], bearing_cav_rim[j], bearing_cav_floor[j], bearing_cav_floor[i])
+
+    c_r_floor = (c_r_rear[0] + bear_cav_depth * nr[0],
+                 c_r_rear[1] + bear_cav_depth * nr[1],
+                 bear_cav_cz)
+    for i in range(n_p):
+        j = (i + 1) % n_p
+        m.add(c_r_floor, bearing_cav_floor[j], bearing_cav_floor[i])
 
     return m
 
@@ -1667,21 +1738,7 @@ def render_assembly_views(out_dir: Path, base: Mesh, arm: Mesh, blade_cap: Mesh,
         tris = [[(p[0] + dx, p[1] + dy, p[2] + dz) for p in t] for t in m.triangles]
         return np.array(tris, dtype=np.float32)
 
-    def blade_cap_to_verts(m: Mesh, offset=(102.5, 11.5, 13.5)) -> np.ndarray:
-        # Rotate cowl by +cant_angle around Z to seat flush on canted blade pad
-        dx, dy, dz = offset
-        cos_a = math.cos(CANT_ANGLE_RAD)
-        sin_a = math.sin(CANT_ANGLE_RAD)
-        tris = []
-        x_rim = GUARD_RIM_X
-        for t in m.triangles:
-            r_tri = [((x_rim - p[0]) * cos_a - p[1] * sin_a + dx,
-                      (x_rim - p[0]) * sin_a + p[1] * cos_a + dy,
-                      p[2] + dz) for p in t]
-            tris.append(r_tri)
-        return np.array(tris, dtype=np.float32)
-
-    def sleeve_to_verts(m: Mesh, offset=(102.5, -11.5, 11.0)) -> np.ndarray:
+    def sleeve_to_verts(m: Mesh, offset=(100.3322, -16.0, 11.0)) -> np.ndarray:
         # Rotate sleeve from Z-axis to radial axle (-cant_angle around Z)
         dx, dy, dz = offset
         cos_a = math.cos(-CANT_ANGLE_RAD)
@@ -1793,29 +1850,29 @@ def render_assembly_views(out_dir: Path, base: Mesh, arm: Mesh, blade_cap: Mesh,
     scene_assembly = [
         (mesh_to_verts(base, (0.0, 0.0, 0.0)), col_base),
         (mesh_to_verts(arm, (0.0, 0.0, 4.0)), col_arm),
-        (blade_cap_to_verts(blade_cap, (102.5, 11.5, 13.5)), col_cap),
+        (mesh_to_verts(blade_cap, (0.0, 0.0, 4.0)), col_cap),
         (mesh_to_verts(hub_cap, (0.0, 0.0, 112.0)), col_hub),
     ]
     if sleeve is not None:
-        scene_assembly.append((sleeve_to_verts(sleeve, (102.5, -11.5, 11.0)), col_sleeve))
+        scene_assembly.append((sleeve_to_verts(sleeve, (DISTAL_X, BEARING_PAD_Y, BEARING_AXLE_WORLD_Z)), col_sleeve))
 
     render_scene(scene_assembly, out_dir / "circle_cutter_assembly.png",
-                 "PCHSMB Circle Cutter — Full Assembly (v2.0 Tall Rigid Arm & 28mm Rotary Blade)",
-                 "Piece 1 (Base, Blue) | Piece 2 (Tall Arm with 28mm Blade & 608 Roller, Orange) | Piece 3 (Safety Cowl, Gray) | Piece 4 (Hub Cap, Green) | Piece 5 (Sleeve, Red)")
+                 "PCHSMB Circle Cutter — Full Assembly (v2.1 Full-Width End Cap & 28mm Rotary Blade)",
+                 "Piece 1 (Base, Blue) | Piece 2 (Tall Arm with 28mm Blade & 608 Roller, Orange) | Piece 3 (Full-Width End Cap, Gray) | Piece 4 (Hub Cap, Green) | Piece 5 (Sleeve, Red)")
 
     # Exploded Scene
     scene_exploded = [
         (mesh_to_verts(base, (0.0, 0.0, 0.0)), col_base),
         (mesh_to_verts(arm, (0.0, 0.0, 45.0)), col_arm),
-        (blade_cap_to_verts(blade_cap, (140.0, 15.0, 54.5)), col_cap),
+        (mesh_to_verts(blade_cap, (35.0, 0.0, 45.0)), col_cap),
         (mesh_to_verts(hub_cap, (0.0, 0.0, 195.0)), col_hub),
     ]
     if sleeve is not None:
-        scene_exploded.append((sleeve_to_verts(sleeve, (140.0, -15.0, 52.0)), col_sleeve))
+        scene_exploded.append((sleeve_to_verts(sleeve, (DISTAL_X + 35.0, BEARING_PAD_Y, BEARING_AXLE_WORLD_Z + 41.0)), col_sleeve))
 
     render_scene(scene_exploded, out_dir / "circle_cutter_exploded.png",
-                 "PCHSMB Circle Cutter — Exploded Alignment View (v2.0)",
-                 "Vertical Stackup: Base (Z=0) -> Arm with Canted Head (+45mm) -> Hub Cap (+150mm) | Distal Safety Cowl & Reducer Sleeve (+38mm X)")
+                 "PCHSMB Circle Cutter — Exploded Alignment View (v2.1)",
+                 "Vertical Stackup: Base (Z=0) -> Arm with Chevron Dual Head (+45mm) -> Hub Cap (+150mm) | Distal Full-Width End Cap & Sleeve (+35mm X)")
 
 
 
@@ -1873,7 +1930,7 @@ def generate_manifest(out_dir: Path, meshes: List[Mesh]) -> dict:
             "reducer_sleeve_spec": f"{SLEEVE_608_OD}mm OD x {SLEEVE_608_ID}mm ID x {SLEEVE_608_LEN}mm L",
             "axle_fastener": "M5 button-head machine screw (16mm or 18mm) through reducer sleeve into M5 brass heat-set insert",
             "rotation_axis_alignment": f"Radial axle canted at -{round(CANT_ANGLE_DEG, 4)}° directly toward rotation pivot center (0, 0)",
-            "head_architecture": f"Canted Symmetric Chevron Dual Head (Bearing Pad at -{round(CANT_ANGLE_DEG, 4)}°, Blade Pad at +{round(CANT_ANGLE_DEG, 4)}°, 46mm width)",
+            "head_architecture": f"Canted Symmetric Chevron Dual Head (Bearing Pad at -{round(CANT_ANGLE_DEG, 4)}°, Blade Pad at +{round(CANT_ANGLE_DEG, 4)}°, {DUAL_HEAD_WIDTH}mm width)",
         },
         "rotary_blade_specifications_28mm": {
             "blade_model": "Fiskars 28mm Premium Rotary Cutter Blade (Model 1065938 / ASIN B0C8BSMMN1)",
@@ -1884,16 +1941,19 @@ def generate_manifest(out_dir: Path, meshes: List[Mesh]) -> dict:
             "standoff_boss_od_mm": BLADE_STANDOFF_OD,
             "standoff_boss_length_mm": BLADE_STANDOFF_LEN,
             "axial_running_float_mm": 0.45,
-            "blade_exposure_below_guard_mm": round(1.0 - BLADE_TIP_WORLD_Z, 2),
+            "blade_exposure_below_guard_mm": round(4.0 - BLADE_TIP_WORLD_Z, 2),
             "controlled_cut_depth_mm": CUT_DEPTH,
         },
         "safety_guard_cowl_architecture": {
-            "type": "Wrap-Around Safety Shroud Cowl with Integral 4mm Shoulder Clamp",
-            "outer_radius_mm": GUARD_OUTER_RADIUS,
-            "cavity_radius_mm": GUARD_CAVITY_RADIUS,
-            "ground_clearance_above_vinyl_mm": 1.0,
-            "finger_safety_status": "Full finger shield covering top and flanks of rotating razor blade",
-            "screw_head_recess": "7.8mm counterbore x 3.0mm depth",
+            "type": "Full-Width Unibody End Cap with Bearing Clearance Canopy & Single M3 Fastener Attachment",
+            "width_mm": GUARD_WIDTH,
+            "height_mm": GUARD_HEIGHT,
+            "depth_mm": GUARD_DEPTH,
+            "ground_clearance_above_vinyl_mm": 4.0,
+            "finger_safety_status": "Full unibody enclosure spanning full 64mm chevron face, enclosing blade and canopying bearing",
+            "retention": "Single uxcell 4mm x 10mm M3 shoulder bolt through 28mm blade bore; 0 screws on bearing side",
+            "bearing_canopy_clearance": "Generous arched clearance canopy with open bottom allowing 608 bearing to roll directly on vinyl",
+            "screw_head_recess": f"{GUARD_CB_DIA}mm counterbore x {GUARD_CB_DEPTH}mm depth",
         },
         "bearing_specifications_608_thrust": {
             "bearing_type": "608 Ball Bearing (608ZZ / 608-2RS)",
@@ -1972,8 +2032,8 @@ def main() -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
 
     print("=" * 72)
-    print("  PCHSMB Circle Cutter - Pure-Python STL Generation Pipeline v2.0")
-    print("  Feature: Tall Rigid Arm Beam (20x28mm), 28mm Rotary Blade & Calibrated 0.5mm Cut Depth")
+    print("  PCHSMB Circle Cutter - Pure-Python STL Generation Pipeline v2.1")
+    print("  Feature: Full-Width Unibody End Cap, 608 Bearing Canopy & Single M3 Blade Screw Clamping")
     print(f"  Target: {out_dir.resolve()}")
     print("=" * 72)
 

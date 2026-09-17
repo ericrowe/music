@@ -7,7 +7,7 @@ This document records physical caliper measurements, slicer parameters, print ou
 ## 1. Test Status & Configuration
 
 - **Date Initiated:** 2026-09-14 (Updated 2026-09-16)
-- **Release Version:** v2.0 (Tall Rigid Arm Beam, 28mm Head Backing & Calibrated 0.5mm Rotary Cut Depth)
+- **Release Version:** v2.1 (Full-Width Unibody End Cap with Bearing Clearance Canopy & Single M3 Fastener Attachment)
 - **Target Subproject:** PCHSMB Duck Blinds & Rolling Backdrops (Wind Relief Slit Tooling)
 - **Target Geometry:** $R = 4.0\text{ in.} = 101.6\text{ mm}$ ($8.0\text{ in.}$ chord) semicircular wind relief flaps in 13oz heavy vinyl scrim
 - **Recommended Material:** PETG (e.g. Bambu PETG Basic / Polymaker PolyLite PETG)
@@ -27,11 +27,11 @@ This document records physical caliper measurements, slicer parameters, print ou
 | Part / Artifact | Quantity | Purpose | Estimated Print Time |
 |---|:---:|---|:---:|
 | `build/circle_cutter_spindle_bore_coupon.stl` | 1 | **Pre-print calibration coupon** for 40mm spindle + 608 post vs 42mm bore slip fit | ~18 min |
-| `build/circle_cutter_bearing_coupon.stl` | 1 | **Pre-print calibration coupon** for 608 bearing M5 mount with -6.50° canted face, 20mm beam, 28mm head & standoff boss | ~14 min |
+| `build/circle_cutter_bearing_coupon.stl` | 1 | **Pre-print calibration coupon** for 608 bearing M5 mount with -9.06° canted face, 20mm beam, 28mm head & standoff boss | ~14 min |
 | `build/circle_cutter_snap_cap_coupon.stl` | 1 | **Pre-print calibration coupon** for 15mm hub sleeve ring + snap cap with 608 pocket | ~18 min |
 | `build/circle_cutter_base.stl` | 1 | Production Piece 1 (Fixed Pivot Base, 3mm plate, 608 post) | ~3 hr 30 min |
-| `build/circle_cutter_arm.stl` | 1 | Production Piece 2 (Rotating Arm Assembly, open through-bore, 46x28mm ±6.50° canted chevron dual head with tall 20mm beam, domed push knob, $R=101.6\text{ mm}$) | ~2 hr 50 min |
-| `build/circle_cutter_blade_cap.stl` | 1 | Production Piece 3 (Rotary Blade Safety Guard Cowl & Clamp) | ~15 min |
+| `build/circle_cutter_arm.stl` | 1 | Production Piece 2 (Rotating Arm Assembly, open through-bore, 64x28mm ±9.06° canted chevron dual head with tall 20mm beam, domed push knob, $R=101.6\text{ mm}$) | ~3 hr 10 min |
+| `build/circle_cutter_blade_cap.stl` | 1 | Production Piece 3 (Full-Width Unibody End Cap with Bearing Canopy & Single M3 Fastener Attachment) | ~45 min |
 | `build/circle_cutter_hub_cap.stl` | 1 | Production Piece 4 (Snap-in Hub Top Cap with 608 bearing pocket) | ~14 min |
 | `build/circle_cutter_reducer_sleeve.stl` | 1 | Production Piece 5 (608-to-M5 Precision Reducer Bushing Sleeve) | ~2 min |
 
@@ -62,15 +62,15 @@ Record caliper readings to two decimal places ($\pm 0.02\text{ mm}$) once test p
 | **Piece 2: Radial Slip Fit Clearance** | 1.00 mm | _[Pending print]_ | $0.80 - 1.20\text{ mm}$ | Pending |
 | **Piece 2: Hub Recess Bore Depth** | 108.00 mm | _[Pending print]_ | $\pm 0.30\text{ mm}$ | Pending |
 | **Piece 2: Standardized Cut Radius** | **101.60 mm** | _[Pending print]_ | $\pm 0.30\text{ mm}$ | Pending |
-| **Piece 2: Distal Axle Plane ($X$)** | **100.95 mm** | _[Pending print]_ | $\pm 0.25\text{ mm}$ | Pending |
+| **Piece 2: Distal Axle Plane ($X$)** | **100.33 mm** | _[Pending print]_ | $\pm 0.25\text{ mm}$ | Pending |
 | **Piece 2: Straight Arm Width** | 20.00 mm | _[Pending print]_ | $\pm 0.15\text{ mm}$ | Pending |
-| **Piece 2: Dual Head Width** | **46.00 mm** | _[Pending print]_ | $\pm 0.20\text{ mm}$ | Pending |
+| **Piece 2: Dual Head Width** | **64.00 mm** | _[Pending print]_ | $\pm 0.20\text{ mm}$ | Pending |
 | **Piece 2: Arm Height (Straight Beam)** | **20.00 mm** | _[Pending print]_ | $\pm 0.15\text{ mm}$ | Pending |
 | **Piece 2: Dual Head Height (Flared)** | **28.00 mm** | _[Pending print]_ | $\pm 0.15\text{ mm}$ | Pending |
-| **Piece 2: Bearing Pad Offset ($Y$)** | **-11.50 mm** | _[Pending print]_ | $\pm 0.15\text{ mm}$ | Pending |
-| **Piece 2: Blade Pad Offset ($Y$)** | **+11.50 mm** | _[Pending print]_ | $\pm 0.15\text{ mm}$ | Pending |
-| **Piece 2: Head Cant Angle** | **6.50°** | _[Pending print]_ | $\pm 0.10^\circ$ | Pending |
-| **Piece 2: Chevron Center Vertex ($X$)** | **102.26 mm** | _[Pending print]_ | $\pm 0.20\text{ mm}$ | Pending |
+| **Piece 2: Bearing Pad Offset ($Y$)** | **-16.00 mm** | _[Pending print]_ | $\pm 0.15\text{ mm}$ | Pending |
+| **Piece 2: Blade Pad Offset ($Y$)** | **+16.00 mm** | _[Pending print]_ | $\pm 0.15\text{ mm}$ | Pending |
+| **Piece 2: Head Cant Angle** | **9.06°** | _[Pending print]_ | $\pm 0.10^\circ$ | Pending |
+| **Piece 2: Chevron Center Vertex ($X$)** | **102.88 mm** | _[Pending print]_ | $\pm 0.20\text{ mm}$ | Pending |
 | **Piece 2: 608 Bearing Axle Height (Local)** | **7.00 mm** | _[Pending print]_ | $\pm 0.10\text{ mm}$ | Pending |
 | **Piece 2: 608 Bearing Axle Height (World)** | **11.00 mm** | _[Pending print]_ | $\pm 0.10\text{ mm}$ | Pending |
 | **Piece 2: 608 Standoff Boss OD** | **11.50 mm** | _[Pending print]_ | $\pm 0.15\text{ mm}$ | Pending |
@@ -89,14 +89,17 @@ Record caliper readings to two decimal places ($\pm 0.02\text{ mm}$) once test p
 | **Piece 2: Push Knob Base Height (Local)** | **27.00 mm** | _[Pending print]_ | $\pm 0.20\text{ mm}$ | Pending |
 | **Piece 2: Push Knob Shoulder Height (Local)** | **34.00 mm** | _[Pending print]_ | $\pm 0.20\text{ mm}$ | Pending |
 | **Piece 2: Push Knob Apex Height (Local)** | **46.00 mm** | _[Pending print]_ | $\pm 0.25\text{ mm}$ | Pending |
-| **Piece 3: Cowl Outer Radius** | **18.00 mm** | _[Pending print]_ | $\pm 0.15\text{ mm}$ | Pending |
-| **Piece 3: Cowl Outer Width** | **36.00 mm** | _[Pending print]_ | $\pm 0.20\text{ mm}$ | Pending |
-| **Piece 3: Cowl Outer Height** | **30.00 mm** | _[Pending print]_ | $\pm 0.20\text{ mm}$ | Pending |
-| **Piece 3: Cowl Axial Depth** | **13.70 mm** | _[Pending print]_ | $\pm 0.15\text{ mm}$ | Pending |
-| **Piece 3: Cowl Cavity Inner Radius** | **15.50 mm** | _[Pending print]_ | $\pm 0.15\text{ mm}$ | Pending |
+| **Piece 3: End Cap Outer Width** | **64.00 mm** | _[Pending print]_ | $\pm 0.20\text{ mm}$ | Pending |
+| **Piece 3: End Cap Outer Height** | **28.00 mm** | _[Pending print]_ | $\pm 0.20\text{ mm}$ | Pending |
+| **Piece 3: End Cap Axial Depth** | **13.70 mm** | _[Pending print]_ | $\pm 0.15\text{ mm}$ | Pending |
+| **Piece 3: Blade Cavity Radii ($R_y / R_z$)** | **15.50 / 12.50 mm** | _[Pending print]_ | $\pm 0.15\text{ mm}$ | Pending |
+| **Piece 3: Bearing Canopy Radii ($R_y / R_z$)** | **13.00 / 10.00 mm** | _[Pending print]_ | $\pm 0.15\text{ mm}$ | Pending |
+| **Piece 3: Bearing Canopy Axial Depth** | **12.50 mm** | _[Pending print]_ | $\pm 0.15\text{ mm}$ | Pending |
 | **Piece 3: Central Hub Clamping Thickness** | **9.20 mm** | _[Pending print]_ | $\pm 0.08\text{ mm}$ | Pending |
 | **Piece 3: Counterbore Dia / Depth** | **7.80 / 3.00 mm** | _[Pending print]_ | $\pm 0.10\text{ mm}$ | Pending |
 | **Piece 3: Center Bore Diameter** | **4.20 mm** | _[Pending print]_ | $+0.15 / -0.00\text{ mm}$ | Pending |
+| **Piece 3: Bearing Side Screw Holes** | **0 (Unibody canopy)** | _[Pending print]_ | N/A | Validated |
+| **Piece 3: Ground Clearance Above Vinyl** | **4.00 mm** | _[Pending print]_ | $\pm 0.20\text{ mm}$ | Pending |
 | **Piece 4: Flange Outer Diameter** | 50.00 mm | _[Pending print]_ | $\pm 0.20\text{ mm}$ | Pending |
 | **Piece 4: Flange Thickness** | 3.00 mm | _[Pending print]_ | $\pm 0.10\text{ mm}$ | Pending |
 | **Piece 4: 608 Bearing Pocket ID** | **22.20 mm** | _[Pending print]_ | $+0.15 / -0.00\text{ mm}$ | Pending |
@@ -129,25 +132,27 @@ Complete these physical checks before clearing the circle cutter for prop fabric
    - Press down firmly with thumb. The 4 flex fingers should deflect smoothly past the $\varnothing 42\text{ mm}$ entry and engage the internal $\varnothing 43.6\text{ mm}$ retention groove with a distinct tactile click.
    - Verify flange seats flush against the top face of Piece 2 ($Z = 108\text{ mm}$).
    - Confirm that the cap underside captures the top 608 bearing outer race while relieving the inner race and spindle post.
-3. **608 Roller Bearing Installation & Pure Tangential Alignment (-6.50° Cant):**
-   - Press M5 brass heat-set insert (8 or 10mm length) along the angled normal vector into the $\varnothing 6.2\text{ mm}$ hole on the Bearing Pad ($Y = -11.5\text{ mm}$) until flush with the $\varnothing 11.5\text{ mm}$ standoff boss.
+3. **608 Roller Bearing Installation & Pure Tangential Alignment (-9.06° Cant):**
+   - Press M5 brass heat-set insert (8 or 10mm length) along the angled normal vector into the $\varnothing 6.2\text{ mm}$ hole on the Bearing Pad ($Y = -16.0\text{ mm}$) until flush with the $\varnothing 11.5\text{ mm}$ standoff boss.
    - Verify the $3.9\text{ mm}$ floor and $16.5\text{ mm}$ ceiling show zero thermal distortion or bulging.
    - Slide Piece 5 (Reducer Sleeve: $\varnothing 7.72 \times \varnothing 5.20 \times 6.80\text{ mm}$) into the 608 roller bearing bore ($8.0\text{ mm}$ ID).
    - Pass an M5 $\times 16\text{ mm}$ or $18\text{ mm}$ button-head machine screw through the reducer sleeve and thread into the front-face M5 insert with an Allen key.
    - Tighten firmly. Confirm the M5 button head ($\varnothing 9.5\text{ mm}$) clamps the bearing inner race rigidly against the angled $\varnothing 11.5\text{ mm}$ standoff boss.
-   - Verify that the 608 roller bearing axle is oriented radially along $\vec{R}_{\text{bearing}} = (100.95, -11.5)\text{ mm}$, rotating pure tangent to its circular path with **$0.00^\circ$ yaw and zero lateral tire scrub**.
-4. **28mm Rotary Cutter Blade & Safety Guard Cowl Assembly (+6.50° Cant):**
-   - Press M3 brass insert (6, 8, or 10mm length) along the normal vector into the $\varnothing 3.8\text{ mm}$ hole on the Blade Boss ($Y = +11.5\text{ mm}, Z_{\text{local}} = 9.5\text{ mm}$) until flush with the $\varnothing 9.0\text{ mm}$ standoff boss face.
+   - Verify that the 608 roller bearing axle is oriented radially along $\vec{R}_{\text{bearing}} = (100.33, -16.0)\text{ mm}$, rotating pure tangent to its circular path with **$0.00^\circ$ yaw and zero lateral tire scrub**.
+4. **Full-Width Unibody End Cap & 28mm Blade Assembly (+9.06° Cant):**
+   - Press M3 brass insert (6, 8, or 10mm length) along the normal vector into the $\varnothing 3.8\text{ mm}$ hole on the Blade Boss ($Y = +16.0\text{ mm}, Z_{\text{local}} = 9.5\text{ mm}$) until flush with the $\varnothing 9.0\text{ mm}$ standoff boss face.
    - Confirm ample solid PETG surround ($14.0\text{ mm}$ solid plastic above M3 boss ceiling) providing maximum thread pull-out strength.
    - Slide Fiskars 28mm rotary blade (precision round $\varnothing 4.0\text{ mm}$ bore) onto uxcell 304 stainless steel shoulder screw ($\varnothing 4.0\text{ mm} \times 10.0\text{ mm}$ shoulder, M3 thread).
-   - Insert shoulder screw and blade into Piece 3 (Safety Guard Cowl), seating the $\varnothing 7.0\text{ mm}$ head in the counterbore.
-   - Thread into the M3 insert on Piece 2's blade pad until shoulder seats solidly against the insert.
-   - Confirm the blade spins freely with **$0.45\text{ mm}$ axial running clearance** (float), with zero wobble and zero binding against the cowl or arm.
-   - Confirm the blade cut depth extends exactly **$0.50\text{ mm}$ below the bottom rolling surface of the 608 bearing** and $1.50\text{ mm}$ below the cowl rim ($1.0\text{ mm}$ air gap above vinyl).
+   - Insert shoulder screw and blade through the central bore of Piece 3 (Full-Width Unibody End Cap) from the front counterbore.
+   - Slide Piece 3 over the distal chevron face of Piece 2. The overhead bearing canopy slides effortlessly over the installed 608 roller bearing with generous radial clearance, requiring **zero screws on the bearing side**.
+   - Thread the single M3 shoulder screw into the brass insert on Piece 2's blade pad until the shoulder seats solidly against the insert. Tighten firmly.
+   - Confirm the blade spins freely with **$0.45\text{ mm}$ axial running clearance** (float), with zero wobble and zero binding against the end cap or arm.
+   - Confirm the blade cut depth extends exactly **$0.50\text{ mm}$ below the bottom rolling surface of the 608 bearing** ($Z_{\text{world}} = -0.5\text{ mm}$) while the unibody end cap bottom maintains a **$4.0\text{ mm}$ air gap above the vinyl** ($Z_{\text{world}} = +4.0\text{ mm}$).
+   - Verify the $18.12^\circ$ included chevron $V$-face provides positive kinematic anti-rotation.
 5. **Field Vinyl Cut Evaluation (Presser Foot Action):**
    - Place Piece 1 on scrap 13oz vinyl prop banner over a cutting mat. Align crosshairs with marked layout.
    - Rotate arm through $180^\circ$.
-   - Confirm that the 608 roller bearing rolls smoothly and purely tangent across uncut vinyl $23\text{ mm}$ adjacent to the cut line, acting as a heavy-duty presser foot that holds the banner flat with zero bunching, tearing, or flap catching.
+   - Confirm that the 608 roller bearing rolls smoothly and purely tangent across uncut vinyl $32\text{ mm}$ adjacent to the cut line ($7.00\text{ mm}$ circumferential clearance to blade), acting as a heavy-duty presser foot that holds the banner flat with zero bunching, tearing, or flap catching.
    - Confirm the 28mm rotary blade executes a clean, continuous rolling shear cut with zero fiber pulling, snagging, or excessive mat gouging.
 6. **Ergonomic Cylindrical Domed Push Knob Inspection:**
    - Rest thumb, palm heel, or index/middle fingers on the rounded domed top of the push knob at the distal end of Piece 2 ($Z_{\text{local}} = 46.0\text{ mm}$, $Z_{\text{world}} = 50.0\text{ mm}$). Verify natural, comfortable hand posture and solid downward leverage without localized pressure points.
@@ -179,4 +184,13 @@ Record all physical observations, anomalies, or proposed geometry adjustments be
   - **Calibrated 0.5mm Cut Depth:** User selected $0.5\text{ mm}$ cut depth below the 608 roller bearing. Blade axle relocated from $Z_{\text{local}} = 9.0\text{ mm}$ to **$Z_{\text{local}} = 9.5\text{ mm}$** ($Z_{\text{world}} = 13.5\text{ mm}$). With blade radius $R = 14.0\text{ mm}$, the blade bottom reaches $Z_{\text{local}} = -4.5\text{ mm}$ ($Z_{\text{world}} = -0.5\text{ mm}$). Relative to the 608 roller bearing rolling surface at $Z_{\text{world}} = 0.0\text{ mm}$ ($Z_{\text{local}} = -4.0\text{ mm}$), the blade extends exactly **$0.50\text{ mm}$ into the vinyl scrim**, cleanly shearing the ~0.38mm vinyl sheet while preserving cutting mat life.
   - **Tall Push Knob Apex ($46.0\text{ mm}$):** The push knob base starts at $Z = 27.0\text{ mm}$, cylindrical shoulder reaches $Z = 34.0\text{ mm}$, and hemispherical dome apex reaches **$Z_{\text{local}} = 46.0\text{ mm}$** ($Z_{\text{world}} = 50.0\text{ mm}$), providing comfortable palm clearance above the tall arm.
   - **Topology & Printability Invariant:** Piece 2 bottom remains flat at $Z = 0.0\text{ mm}$ across the entire length, printing 100% support-free upright on the bed. All 8 STL meshes passed 4-gate topological audits with 0 boundary edges and 0 non-manifold edges. Piece 2 mass is $90.6\text{ g}$ PETG (~2 hr 50 min print time).
+- **2026-09-16 Full-Width Unibody End Cap, 608 Bearing Canopy & Widened Axle Geometry (v2.1):**
+  - **Collision & Clearance Anomaly Discovered:** In v1.9/v2.0, when the 28mm blade ($R = 14.0\text{ mm}$) and 608 roller bearing ($R = 11.0\text{ mm}$) were introduced, the axle spacing was retained from v1.8's hobby knife at $Y = \pm 11.5\text{ mm}$ ($23.0\text{ mm}$ center-to-center). Because $14.0 + 11.0 = 25.0\text{ mm} > 23.0\text{ mm}$, the bare blade and bearing overlapped by $2.0\text{ mm}$, and the Piece 3 cowl ($R = 18.0\text{ mm}$) collided with the bearing by $6.0\text{ mm}$.
+  - **Widened Axle Spacing ($Y = \pm 16.0\text{ mm}$):** Center-to-center distance widened to $32.0\text{ mm}$, creating a generous **$7.00\text{ mm}$ circumferential clearance** between the 28mm blade and 608 bearing.
+  - **Chevron Geometry Recalibration:** Distal axle plane shifted to $X = \sqrt{101.6^2 - 16.0^2} = \mathbf{100.3322\text{ mm}}$. Head cant angle updated to $\arcsin(16.0 / 101.6) = \mathbf{9.0607^\circ}$. Chevron center vertex at $X = 100.3322 + 16.0 \times \tan(9.0607^\circ) = \mathbf{102.8838\text{ mm}}$. Head width expanded from $46.0\text{ mm}$ to **$64.0\text{ mm}$** ($Y \in [-32.0, +32.0\text{ mm}]$).
+  - **Full-Width Unibody End Cap (Piece 3):** User requested: *"Does the blade cap provide clearance over the bearing? Maybe it would be better if the blade cap just went over the whole end of the arm? The screw for the end cap should only attach through the blade though, while providing clearance for the bearing."* Piece 3 redesigned as a single unibody cap ($64.0\text{ mm}\text{ W} \times 28.0\text{ mm}\text{ H} \times 13.7\text{ mm}\text{ D}$).
+  - **Single M3 Screw Retention:** Cap is clamped solely by the single uxcell $\varnothing 4.0\text{ mm} \times 10.0\text{ mm}$ M3 shoulder screw through the 28mm blade bore, maintaining **$0.45\text{ mm}$ axial running float** for the blade. The rear mating surface of Piece 3 matches the arm's $18.12^\circ$ included chevron $V$-face, delivering rock-solid kinematic anti-rotation without needing secondary fasteners.
+  - **Overhead Bearing Canopy:** The bearing side has **zero screw holes**. An arched canopy ($12.5\text{ mm}$ axial depth, $R_y = 13.0\text{ mm}, R_z = 10.0\text{ mm}$) covers the 608 roller bearing from above with an open bottom, allowing the bearing to roll freely on the vinyl at $Z_{\text{world}} = 0.0\text{ mm}$.
+  - **Vinyl Ground Invariant ($Z_{\text{world}} = +4.0\text{ mm}$):** Piece 3 bottom sits at $Z_{\text{local}} = 0.0\text{ mm}$, elevated $4.0\text{ mm}$ above the vinyl, guaranteeing that the plastic cap can never drag on the vinyl.
+  - **Topological Quality Gates:** All 8 STL meshes verified 100% watertight manifold (0 boundary edges, 0 non-manifold edges). Arm mass is $102.1\text{ g}$ PETG (~3 hr 10 min); Piece 3 cap mass is $37.3\text{ g}$ PETG (~45 min).
 

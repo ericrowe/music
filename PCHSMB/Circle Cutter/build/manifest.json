@@ -1,11 +1,11 @@
 {
-  "design": "PCHSMB Circle Cutter - Semicircular Wind Relief Slit Tool with Tall Rigid Arm & 28mm Rotary Blade",
-  "version": "2.0",
+  "design": "PCHSMB Circle Cutter - Semicircular Wind Relief Slit Tool with Full-Width End Cap & 28mm Rotary Blade",
+  "version": "2.1",
   "units": "mm",
   "standard": "Pine Creek High School Marching Band Field Prop Tooling",
   "print_material_recommended": "PETG",
   "print_density_g_cm3": 1.27,
-  "estimated_total_print_mass_petg_g": 244.6,
+  "estimated_total_print_mass_petg_g": 285.4,
   "print_quantities": {
     "circle_cutter_base.stl": 1,
     "circle_cutter_arm.stl": 1,
@@ -44,8 +44,8 @@
     "standoff_boss_length_mm": 1.5,
     "reducer_sleeve_spec": "7.72mm OD x 5.2mm ID x 6.8mm L",
     "axle_fastener": "M5 button-head machine screw (16mm or 18mm) through reducer sleeve into M5 brass heat-set insert",
-    "rotation_axis_alignment": "Radial axle canted at -6.4992\u00b0 directly toward rotation pivot center (0, 0)",
-    "head_architecture": "Canted Symmetric Chevron Dual Head (Bearing Pad at -6.4992\u00b0, Blade Pad at +6.4992\u00b0, 46mm width)"
+    "rotation_axis_alignment": "Radial axle canted at -9.0607\u00b0 directly toward rotation pivot center (0, 0)",
+    "head_architecture": "Canted Symmetric Chevron Dual Head (Bearing Pad at -9.0607\u00b0, Blade Pad at +9.0607\u00b0, 64.0mm width)"
   },
   "rotary_blade_specifications_28mm": {
     "blade_model": "Fiskars 28mm Premium Rotary Cutter Blade (Model 1065938 / ASIN B0C8BSMMN1)",
@@ -56,15 +56,18 @@
     "standoff_boss_od_mm": 9.0,
     "standoff_boss_length_mm": 1.5,
     "axial_running_float_mm": 0.45,
-    "blade_exposure_below_guard_mm": 1.5,
+    "blade_exposure_below_guard_mm": 4.5,
     "controlled_cut_depth_mm": 0.5
   },
   "safety_guard_cowl_architecture": {
-    "type": "Wrap-Around Safety Shroud Cowl with Integral 4mm Shoulder Clamp",
-    "outer_radius_mm": 18.0,
-    "cavity_radius_mm": 15.5,
-    "ground_clearance_above_vinyl_mm": 1.0,
-    "finger_safety_status": "Full finger shield covering top and flanks of rotating razor blade",
+    "type": "Full-Width Unibody End Cap with Bearing Clearance Canopy & Single M3 Fastener Attachment",
+    "width_mm": 64.0,
+    "height_mm": 28.0,
+    "depth_mm": 13.7,
+    "ground_clearance_above_vinyl_mm": 4.0,
+    "finger_safety_status": "Full unibody enclosure spanning full 64mm chevron face, enclosing blade and canopying bearing",
+    "retention": "Single uxcell 4mm x 10mm M3 shoulder bolt through 28mm blade bore; 0 screws on bearing side",
+    "bearing_canopy_clearance": "Generous arched clearance canopy with open bottom allowing 608 bearing to roll directly on vinyl",
     "screw_head_recess": "7.8mm counterbore x 3.0mm depth"
   },
   "bearing_specifications_608_thrust": {
@@ -103,19 +106,19 @@
     "cylinder_shoulder_local_z_mm": 34.0,
     "dome_apex_local_z_mm": 46.0,
     "height_above_ceiling_mm": 18.0,
-    "front_clearance_shelf_mm": 8.947065336244421,
+    "front_clearance_shelf_mm": 8.332248056145929,
     "support_free_status": "100% support-free upright printing with arm on build plate"
   },
   "canted_dual_head_architecture": {
     "type": "Symmetric Chevron Dual Head with Independent Tangential Cants",
     "cut_radius_mm": 101.6,
-    "cant_angle_deg": 6.4992,
-    "cant_angle_rad": 0.113432,
-    "blade_pad_cant_angle_deg": 6.4992,
-    "bearing_pad_cant_angle_deg": -6.4992,
-    "chevron_vertex_world_x_mm": 102.2572,
+    "cant_angle_deg": 9.0607,
+    "cant_angle_rad": 0.158139,
+    "blade_pad_cant_angle_deg": 9.0607,
+    "bearing_pad_cant_angle_deg": -9.0607,
+    "chevron_vertex_world_x_mm": 102.8838,
     "chevron_vertex_world_y_mm": 0.0,
-    "chevron_outer_world_x_mm": 99.637,
+    "chevron_outer_world_x_mm": 97.7807,
     "blade_yaw_error_deg": 0.0,
     "roller_axle_radial_error_deg": 0.0,
     "support_free_status": "100% support-free upright printing with arm on build plate"
@@ -156,47 +159,47 @@
       "finite_coordinates": true,
       "bounds_min": [
         -25.0,
-        -25.0,
+        -32.0,
         0.0
       ],
       "bounds_max": [
-        103.08,
-        25.0,
+        102.88,
+        32.0,
         108.0
       ],
       "dimensions": [
-        128.08,
-        50.0,
+        127.88,
+        64.0,
         108.0
       ],
-      "volume_cm3": 129.71,
-      "estimated_mass_petg_g": 90.6,
+      "volume_cm3": 146.15,
+      "estimated_mass_petg_g": 102.1,
       "passed": true
     },
     "circle_cutter_blade_cap.stl": {
       "file": "circle_cutter_blade_cap.stl",
-      "triangles": 934,
+      "triangles": 520,
       "boundary_edges": 0,
       "nonmanifold_edges": 0,
       "degenerate_triangles": 0,
       "finite_coordinates": true,
       "bounds_min": [
-        0.0,
-        -18.0,
-        -12.5
+        97.78,
+        -32.0,
+        0.0
       ],
       "bounds_max": [
-        13.7,
-        18.0,
-        18.0
+        116.41,
+        32.0,
+        28.0
       ],
       "dimensions": [
-        13.7,
-        36.0,
-        30.5
+        18.63,
+        64.0,
+        28.0
       ],
-      "volume_cm3": 16.46,
-      "estimated_mass_petg_g": 11.5,
+      "volume_cm3": 53.35,
+      "estimated_mass_petg_g": 37.3,
       "passed": true
     },
     "circle_cutter_hub_cap.stl": {
@@ -286,21 +289,21 @@
       "finite_coordinates": true,
       "bounds_min": [
         0.0,
-        -23.0,
+        -32.0,
         0.0
       ],
       "bounds_max": [
-        22.13,
+        22.55,
         0.0,
         28.0
       ],
       "dimensions": [
-        22.13,
-        23.0,
+        22.55,
+        32.0,
         28.0
       ],
-      "volume_cm3": 12.48,
-      "estimated_mass_petg_g": 8.7,
+      "volume_cm3": 17.49,
+      "estimated_mass_petg_g": 12.2,
       "passed": true
     },
     "circle_cutter_snap_cap_coupon.stl": {
@@ -332,7 +335,7 @@
   },
   "mesh_audit_summary": {
     "all_files_passed_topological_audit": true,
-    "total_triangles": 14112
+    "total_triangles": 13698
   },
   "status": "production_release_v1_9_rotary_cutter_and_safety_guard"
 }
