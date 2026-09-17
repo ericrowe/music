@@ -165,12 +165,12 @@ GUARD_CB_DEPTH = 3.0                          # 3.0 mm counterbore depth
 GUARD_BORE_DIA = 4.2                          # 4.2 mm through-bore for 4.0mm shoulder bolt
 GUARD_HUB_OD = 9.0                            # 9.0 mm OD central clamping hub
 GUARD_HUB_PROTRUSION = 1.5                    # 1.5 mm distance from rear face (meets arm standoff boss)
-BLADE_CAV_RY = 15.5                           # 15.5 mm radius in Y (clears 14.0mm blade by 1.5mm)
-BLADE_CAV_RZ = 12.5                           # 12.5 mm radius in Z (centered at Z=12.5 -> Z in [0, 25.0])
-BLADE_CAV_CZ = 12.5                           # 12.5 mm center in Z (clears blade top at Z=23.5 by 1.5mm)
-BEARING_CAV_RY = 13.0                         # 13.0 mm radius in Y (clears 11.0mm bearing by 2.0mm on both sides)
-BEARING_CAV_RZ = 10.0                         # 10.0 mm radius in Z (centered at Z=10.0 -> Z in [0, 20.0])
-BEARING_CAV_CZ = 10.0                         # 10.0 mm center in Z (clears bearing top at Z=18.0 by 2.0mm)
+BLADE_CAV_RY = 15.0                           # 15.0 mm radius in Y (true circle, clears 14.0mm blade by 1.0mm)
+BLADE_CAV_RZ = 15.0                           # 15.0 mm radius in Z (true circle, centered at axle Z=9.5)
+BLADE_CAV_CZ = BLADE_AXLE_LOCAL_Z             # 9.5 mm center in Z (strictly concentric with blade axle)
+BEARING_CAV_RY = 13.0                         # 13.0 mm radius in Y (true circle, clears 11.0mm bearing by 2.0mm)
+BEARING_CAV_RZ = 13.0                         # 13.0 mm radius in Z (true circle, centered at axle Z=7.0)
+BEARING_CAV_CZ = BEARING_AXLE_LOCAL_Z         # 7.0 mm center in Z (strictly concentric with bearing axle)
 
 # Piece 4: Snap-in Hub Top Cap (Idea 001 Modular Architecture)
 HUB_CAP_FLANGE_DIA = 50.0                         # 50.0 mm outer diameter (matches hub OD)
@@ -875,9 +875,8 @@ def build_piece3_blade_cap() -> Mesh:
     r_cb = GUARD_CB_DIA / 2.0
     r_bore = GUARD_BORE_DIA / 2.0
     r_hub = GUARD_HUB_OD / 2.0
-    blade_cav_cz = BLADE_CAV_CZ
-    blade_cav_ry = BLADE_CAV_RY
-    blade_cav_rz = BLADE_CAV_RZ
+    blade_cav_r = BLADE_CAV_RY
+    z_floor = 0.05
 
     cb_depth = GUARD_CB_DEPTH
     hub_protrusion = GUARD_HUB_PROTRUSION
@@ -900,10 +899,11 @@ def build_piece3_blade_cap() -> Mesh:
         vp_bore = (r_bore * ca * tb[0], r_bore * ca * tb[1], r_bore * sa)
         vp_hub = (r_hub * ca * tb[0], r_hub * ca * tb[1], r_hub * sa)
 
-        # Ellipse around (blade_y, blade_cav_cz):
-        ang_cav = math.atan2(p[1] - blade_cav_cz, p[0] - blade_y)
-        dy_cav = blade_cav_ry * math.cos(ang_cav)
-        dz_cav = (blade_cav_cz - blade_axle_z) + blade_cav_rz * math.sin(ang_cav)
+        # True circular cylinder strictly concentric with blade axle (Ry = Rz = 15.0mm, Cz = 9.5mm)
+        dy_cav = blade_cav_r * ca
+        dz_raw = blade_cav_r * sa
+        z_abs = max(z_floor, blade_axle_z + dz_raw)
+        dz_cav = z_abs - blade_axle_z
         vp_cav = (dy_cav * tb[0], dy_cav * tb[1], dz_cav)
 
         pt_cb_f = (c_b_front[0] + vp_cb[0], c_b_front[1] + vp_cb[1], c_b_front[2] + vp_cb[2])
@@ -965,17 +965,21 @@ def build_piece3_blade_cap() -> Mesh:
         j = (i + 1) % n_p
         m.add(c_r_front, bearing_front_3d[i], bearing_front_3d[j])
 
-    bear_cav_cz = BEARING_CAV_CZ
-    bear_cav_ry = BEARING_CAV_RY
-    bear_cav_rz = BEARING_CAV_RZ
+    bear_cav_r = BEARING_CAV_RY
     bear_cav_depth = BEARING_CAVITY_DEPTH
 
     bearing_cav_rim = []
     bearing_cav_floor = []
     for p in bnd_bearing_2d:
-        ang = math.atan2(p[1] - bear_cav_cz, p[0] - bearing_y)
-        dy_bear = bear_cav_ry * math.cos(ang)
-        dz_bear = (bear_cav_cz - bearing_axle_z) + bear_cav_rz * math.sin(ang)
+        ang = math.atan2(p[1] - bearing_axle_z, p[0] - bearing_y)
+        ca = math.cos(ang)
+        sa = math.sin(ang)
+
+        # True circular cylinder strictly concentric with bearing axle (Ry = Rz = 13.0mm, Cz = 7.0mm)
+        dy_bear = bear_cav_r * ca
+        dz_raw = bear_cav_r * sa
+        z_abs = max(z_floor, bearing_axle_z + dz_raw)
+        dz_bear = z_abs - bearing_axle_z
         vp_c = (dy_bear * tr[0], dy_bear * tr[1], dz_bear)
 
         pt_rim = (c_r_rear[0] + vp_c[0], c_r_rear[1] + vp_c[1], c_r_rear[2] + vp_c[2])
@@ -993,7 +997,7 @@ def build_piece3_blade_cap() -> Mesh:
 
     c_r_floor = (c_r_rear[0] + bear_cav_depth * nr[0],
                  c_r_rear[1] + bear_cav_depth * nr[1],
-                 bear_cav_cz)
+                 bearing_axle_z)
     for i in range(n_p):
         j = (i + 1) % n_p
         m.add(c_r_floor, bearing_cav_floor[j], bearing_cav_floor[i])
@@ -1952,6 +1956,8 @@ def generate_manifest(out_dir: Path, meshes: List[Mesh]) -> dict:
             "ground_clearance_above_vinyl_mm": 4.0,
             "finger_safety_status": "Full unibody enclosure spanning full 64mm chevron face, enclosing blade and canopying bearing",
             "retention": "Single uxcell 4mm x 10mm M3 shoulder bolt through 28mm blade bore; 0 screws on bearing side",
+            "blade_cavity_shape": "True circular cylinder (R=15.0mm, concentric with blade axle Z=9.5mm)",
+            "bearing_canopy_shape": "True circular cylinder (R=13.0mm, concentric with bearing axle Z=7.0mm)",
             "bearing_canopy_clearance": "Generous arched clearance canopy with open bottom allowing 608 bearing to roll directly on vinyl",
             "screw_head_recess": f"{GUARD_CB_DIA}mm counterbore x {GUARD_CB_DEPTH}mm depth",
         },

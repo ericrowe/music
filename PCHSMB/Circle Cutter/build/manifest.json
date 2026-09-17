@@ -5,7 +5,7 @@
   "standard": "Pine Creek High School Marching Band Field Prop Tooling",
   "print_material_recommended": "PETG",
   "print_density_g_cm3": 1.27,
-  "estimated_total_print_mass_petg_g": 285.4,
+  "estimated_total_print_mass_petg_g": 283.9,
   "print_quantities": {
     "circle_cutter_base.stl": 1,
     "circle_cutter_arm.stl": 1,
@@ -67,6 +67,8 @@
     "ground_clearance_above_vinyl_mm": 4.0,
     "finger_safety_status": "Full unibody enclosure spanning full 64mm chevron face, enclosing blade and canopying bearing",
     "retention": "Single uxcell 4mm x 10mm M3 shoulder bolt through 28mm blade bore; 0 screws on bearing side",
+    "blade_cavity_shape": "True circular cylinder (R=15.0mm, concentric with blade axle Z=9.5mm)",
+    "bearing_canopy_shape": "True circular cylinder (R=13.0mm, concentric with bearing axle Z=7.0mm)",
     "bearing_canopy_clearance": "Generous arched clearance canopy with open bottom allowing 608 bearing to roll directly on vinyl",
     "screw_head_recess": "7.8mm counterbore x 3.0mm depth"
   },
@@ -198,8 +200,8 @@
         64.0,
         28.0
       ],
-      "volume_cm3": 53.35,
-      "estimated_mass_petg_g": 37.3,
+      "volume_cm3": 51.19,
+      "estimated_mass_petg_g": 35.8,
       "passed": true
     },
     "circle_cutter_hub_cap.stl": {
