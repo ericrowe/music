@@ -16,6 +16,22 @@ The authoritative, single-source volunteer handbook is maintained in this direct
 
 ---
 
+## 🪧 Standalone 1-Page Wind Safety Posters (Printable / Clipboard)
+
+For quick clipboard reference, prop trailer staging, and adult volunteer briefings on competition day, two standalone, high-visibility 1-page posters are maintained:
+
+1. 🟢 **[Standard Wind Safety Poster (PDF)](Continuum_2026_Wind_Safety_Poster_Standard.pdf)** | [Typst Source](Continuum_2026_Wind_Safety_Poster_Standard.typ)
+   - **Operational Scope:** Standard protocol for props equipped with engineered semicircular wind relief cuts ($C_d = 1.02$).
+   - **Tiers & Ceilings:** Tier 0 (0–8 mph), Tier 1 (8–12 mph), Tier 2 (12–18 mph), Tier 3 (18–22 mph).
+   - **Abort Threshold:** $>20\text{ mph sustained}$ OR $>25\text{ mph peak gusts}$ $\to$ **ABSOLUTE NO-GO**.
+
+2. 🟠 **[Derated Wind Safety Poster (PDF)](Continuum_2026_Wind_Safety_Poster_Derated.pdf)** | [Typst Source](Continuum_2026_Wind_Safety_Poster_Derated.typ)
+   - **Operational Scope:** Temporary protocol for props operating with 100% solid unvented vinyl ($C_d = 1.20$) prior to flap fabrication.
+   - **Tiers & Ceilings:** Tier 0 (0–6 mph), Tier 1 (6–10 mph), Tier 2 (10–14 mph), Tier 3 (14–16 mph).
+   - **Special Rules:** Duck Blinds require **2 bags (30 lb) minimum** even in calm Tier 0; Abort ceiling set to **$>16\text{ mph sustained}$ OR $>20\text{ mph peak gusts}$** $\to$ **ABSOLUTE NO-GO**.
+
+---
+
 ## 🛑 Wind Safety & Absolute NO-GO Threshold
 
 Operating at Colorado Springs altitude (6,500 ft ASL) presents severe aeromechanical wind hazards in stadium bowls.
@@ -30,12 +46,12 @@ Operating at Colorado Springs altitude (6,500 ft ASL) presents severe aeromechan
 
 ---
 
-## 🎪 2026 Prop Fleet Summary (34 Field Elements)
+## 🎪 2026 Prop Fleet Summary (35 Field Elements)
 
 | Prop Family | Fleet Qty | Transport Method | Placement / Zone | Dedicated Manual |
 |---|---|---|---|---|
 | **Sideline Screens ("Duck Blinds")** | 16 screens (8 per side) | Transported flat on stages (4/stage) truck-to-staging; **Two-Student Direct Carry** on field; 2 ballast wagons | Front Sideline (Side 1: 20–41 yd; Side 2: 59–80 yd) | [`PCHSMB/_Sideline Screen/`](../_Sideline%20Screen/) |
-| **Rolling Backdrops** | 10 backdrops | 10 Dedicated Rolling Carts (1 cart/prop) | Backfield / Back Hash (30–70 yds) | [`PCHSMB/_Backdrop/`](../_Backdrop/) |
+| **Rolling Backdrops** | 11 backdrops | 11 Dedicated Rolling Carts (1 cart/prop) | Backfield / Back Hash (30–70 yds) | [`PCHSMB/_Backdrop/`](../_Backdrop/) |
 | **Performance Stages & Stairs** | 4 platforms (8 half-pieces) + 4 staircases | 8 Mobile Half-Platforms & 4 Mobile Staircases | Midfield & Side Stages | Subproject Docs |
 
 ---
@@ -55,8 +71,8 @@ The manual is divided into standalone printable job cards for competition day de
      - Job A.4: Student Two-Person Egress Sprint (32 Performers / 16 Pairs)
    - **Job Group B (Rolling Backdrops):**
      - Job B.1: Adult Rolling Backdrop Managers (2 Adults)
-     - Job B.2: Student Backdrop Pushers — On Field (20–40 Students)
-     - Job B.3: Student Backdrop Pushers — Off Field (20–40 Students)
+     - Job B.2: Student Backdrop Pushers — On Field (22–44 Students)
+     - Job B.3: Student Backdrop Pushers — Off Field (22–44 Students)
    - **Job Group C (Performance Stages):**
      - Job C.1: Adult Stage Managers (2 Adults)
      - Job C.2: Student Stage Handlers (16 Students)

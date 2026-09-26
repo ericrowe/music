@@ -38,6 +38,8 @@ The manual uses a standardized cross-project appendix architecture harmonized wi
 - **Appendix C & C.1:** On-prop laminated field operations placard & 4" × 6" drill placement card template.
 - **Appendix D:** Parent volunteer competition day guide & checklist.
 - **Engineering References:**
+  - Printable 1-Page Wind Vent Options Flyer: [`docs/Sideline_Screen_Wind_Vent_Options_Flyer.pdf`](docs/Sideline_Screen_Wind_Vent_Options_Flyer.pdf) | [PNG Preview](docs/Sideline_Screen_Wind_Vent_Options_Flyer.png)
+  - Paint Can Wind Relief Engineering Analysis: [`docs/references/PAINT_CAN_WIND_ANALYSIS.md`](docs/references/PAINT_CAN_WIND_ANALYSIS.md)
   - Technical specifications & ballasting model: [`docs/references/TECHNICAL_SPEC.md`](docs/references/TECHNICAL_SPEC.md)
   - Semicircular wind relief cuts engineering specification: [`docs/references/WIND_RELIEF_CUTS_SPECIFICATION.md`](docs/references/WIND_RELIEF_CUTS_SPECIFICATION.md)
   - Severe wind feasibility study (30 mph limits & failure modes): [`docs/references/WIND_LOADING_30MPH_ANALYSIS.md`](docs/references/WIND_LOADING_30MPH_ANALYSIS.md)
@@ -63,6 +65,7 @@ All 3D-printed parts should be printed in **Black ASA** (or UV/weather-stable PE
 | **Corner Plug (H)** | [`Hardware/Corner Plug.FCStd`](Hardware/Corner%20Plug.FCStd) | [`Hardware/3MF/Corner Plug-Part.step.3mf`](Hardware/3MF/Corner%20Plug-Part.step.3mf) | [`Hardware/STEP/Corner Plug-Part.step`](Hardware/STEP/Corner%20Plug-Part.step) | 6 required; aligns outer corners |
 | **Hinged Arm Clip (I)** | [`Hardware/Hinged Arm Clip.FCStd`](Hardware/Hinged%20Arm%20Clip.FCStd) | [`Hardware/3MF/Hinged Arm Clip-Part001.3mf`](Hardware/3MF/Hinged%20Arm%20Clip-Part001.3mf) | [`Hardware/STEP/Hinged Arm Clip-Part001.step`](Hardware/STEP/Hinged%20Arm%20Clip-Part001.step) | 2 required; locks bottom support arms open |
 | **Weight Clip** | [`Hardware/Weight Clip.FCStd`](Hardware/Weight%20Clip.FCStd) | [`Hardware/3MF/Weight Clip-Part.3mf`](Hardware/3MF/Weight%20Clip-Part.3mf) | [`Hardware/STEP/Weight Clip-Part001.step`](Hardware/STEP/Weight%20Clip-Part001.step) | Ballast/weight retaining clip |
+| **Universal Corner Protector (Piece 1 + 2)** | [`Hardware/Corner Skid Clip/corner_protector.scad`](Hardware/Corner%20Skid%20Clip/corner_protector.scad) | [`Hardware/Corner Skid Clip/corner_protector_pair.stl`](Hardware/Corner%20Skid%20Clip/corner_protector_pair.stl) | [`Hardware/Corner Protector Pair.stl`](Hardware/Corner%20Protector%20Pair.stl) | 2 sets required (universal common component, zero handedness); 2-pc clamp w/ 2x M5 bolts protecting corner vinyl |
 | **PCHSMB Field Prop Circle Cutter** | [`PCHSMB/Circle Cutter/`](../Circle%20Cutter/) | — | — | Parametric 5-piece cutter with #11 blade and 608 bearings for $R=4.0"$ semicircular flaps |
 
 ---
@@ -74,6 +77,8 @@ All 3D-printed parts should be printed in **Black ASA** (or UV/weather-stable PE
 - **8x** 3/4-in. EMT T-Brackets (G)
 - **6x** 3D-Printed Corner Plugs (H)
 - **2x** 3D-Printed Hinged Arm Clips (I)
+- **2x sets** 3D-Printed Universal Corner Protectors (Piece 1 Outside Skid + Piece 2 Inside Clamp, 4x M5 bolts)
+- **14x** Heavy-Duty 3/4-in. Greenhouse Snap Clamps (UV-stabilized ABS)
 - **36x** #8 x 1/2-in. External-Hex Flange Self-Drilling Screws (J)
 - **1x** 4 ft x 8 ft Heavyweight Vinyl Banner with hem and grommets
 
@@ -88,9 +93,10 @@ All 3D-printed parts should be printed in **Black ASA** (or UV/weather-stable PE
 | **Conduit Framing** | 7x 3/4" x 10-ft EMT conduit sticks | $40.50 |
 | **Corner Brackets (F)** | 6x 3/4" 3-way corner brackets | $27.00 |
 | **T-Brackets (G)** | 8x 3/4" T-brackets | $23.00 |
-| **Fasteners (J)** | 36x #8 x 1/2" self-drilling screws | $4.00 |
-| **3D-Printed Parts** | 6x Plugs H, 2x Clips I, 2x Weight Clips in Black ASA | $10.00 |
-| **TOTAL PER SCREEN** | | **~$105.00** |
+| **Fasteners (J + M5)** | 36x #8 screws + 4x M5 bolts & nuts | $5.00 |
+| **3D-Printed Parts** | 6x Plugs H, 2x Clips I, 2x Weight Clips, 2x Corner Protector Sets in Black ASA | $13.00 |
+| **Snap Clamps** | 14x 3/4" ABS snap clamps | $9.00 |
+| **TOTAL PER SCREEN** | | **~$117.50** |
 
 > **Optional Ballast Pack (Rule 8.05 Compliant):**
 > 2x 15-lb double-bagged sandbags suspended from weight clips: **+$18.00 per screen**.
@@ -99,7 +105,7 @@ All 3D-printed parts should be printed in **Black ASA** (or UV/weather-stable PE
 
 | Fleet Category | Breakdown | Est. Total Cost |
 |---|---|:---:|
-| **16x Sideline Screens** | 16 frames @ ~$105.00 (EMT, brackets, 3D parts, fasteners; excl. vinyl) | ~$1,680.00 |
-| **TOTAL HARDWARE ESTIMATE** | *(No transport carts built — saves $440.00)* | **~$1,680.00** |
+| **16x Sideline Screens** | 16 frames @ ~$115.50 (EMT, brackets, 3D parts, snap clamps, fasteners; excl. vinyl) | ~$1,848.00 |
+| **TOTAL HARDWARE ESTIMATE** | *(No transport carts built — saves $440.00)* | **~$1,848.00** |
 
 > *Note: Custom printed vinyl banners (16x 4'x8' outdoor scrim vinyl) and double-bagged sandbags are quoted separately.*

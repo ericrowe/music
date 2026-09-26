@@ -26,20 +26,20 @@
   },
   "document": {
     "current": {
-      "build": "D34",
+      "build": "D36",
       "release": "v0",
       "process_state": "working_draft",
       "visible_status": "working_draft",
       "file": "Sideline_Screen_Duck_Blind_Build_Instructions.typ",
-      "sha256": "fd4e995bc1e2ea3fbfcb26852ac589ffd35cc012e792fc8b04f925c5f162bed1",
-      "controlled_at": "2026-09-16T02:20:00+00:00"
+      "sha256": "19e9bd10e361236cafec7d72c236427a939b3f94f46bbf022e42ba2a30eadac6",
+      "controlled_at": "2026-09-18T14:15:00-06:00"
     },
     "candidate": null
   },
   "versioning": {
     "current_release": "v0",
     "next_release": "v1",
-    "next_build_number": 35
+    "next_build_number": 37
   },
   "releases": [],
   "history": [
@@ -175,6 +175,34 @@
       "summary": "Add character-perfect ASCII diagram illustrating wind relief cut locations (2x3 grid, 6 semicircular flaps) in Appendix B Section 2.9.3 with fixed-width font rules",
       "sha256": "fd4e995bc1e2ea3fbfcb26852ac589ffd35cc012e792fc8b04f925c5f162bed1",
       "pdf_sha256": "ab0bda840807d3c73e7b06123fd354f8e579567f650b9287a66b4c1c457eee32",
+      "page_count": 27,
+      "file": "Sideline_Screen_Duck_Blind_Build_Instructions.typ"
+    },
+    {
+      "id": "D35",
+      "kind": "development_build",
+      "release": "v0",
+      "status": "working_draft",
+      "date": "2026-09-17",
+      "started_at": "2026-09-17T18:40:00+00:00",
+      "base_build": "D34",
+      "summary": "Add 3D-printed Corner Skid Clips (Left & Right, ASA) to bottom ground Rail A to encapsulate corner vinyl folds, protect against turf abrasion, and update clamp schedule from 16 to 14 snap clamps",
+      "sha256": "92f8189c6727091d27e03899205b3137a8c3f92c4aa980bbd7404a30787199cd",
+      "pdf_sha256": "b7a0cc66adf701ce76c511b61a41ae867c82a81f14d0c8bd58a5618e198a3bca",
+      "page_count": 27,
+      "file": "Sideline_Screen_Duck_Blind_Build_Instructions.typ"
+    },
+    {
+      "id": "D36",
+      "kind": "development_build",
+      "release": "v0",
+      "status": "working_draft",
+      "date": "2026-09-18",
+      "started_at": "2026-09-18T13:30:00-06:00",
+      "base_build": "D35",
+      "summary": "Replace conduit snap skid clips with OpenSCAD two-piece universal corner protector (Piece 1 Outside Skid + Piece 2 Inside Clamp, 2x M5 bolts, zero handedness)",
+      "sha256": "19e9bd10e361236cafec7d72c236427a939b3f94f46bbf022e42ba2a30eadac6",
+      "pdf_sha256": "34b710d87a60563a563e88ef781556ae32cb9a5d31b1e3c07c8e757b4a1ba647",
       "page_count": 27,
       "file": "Sideline_Screen_Duck_Blind_Build_Instructions.typ"
     }

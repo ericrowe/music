@@ -29,7 +29,7 @@
       #grid(
         columns: (1.5fr, 1.2fr, 1fr),
         align(left)[*FIELD VALIDATION — NOT RELEASED*],
-        align(center)[*Release v0 (D3)* | September 2026],
+        align(center)[*Release v0 (D4)* | September 2026],
         align(right)[Page #counter(page).display() of #counter(page).final().first()]
       )
     ]
@@ -183,17 +183,17 @@ Because Pine Creek High School operates in the high-altitude, wind-prone environ
   stroke: 0.5pt + rgb("#cbd5e0"),
   inset: (x: 3.5pt, y: 2.5pt),
   fill: (col, row) => if row == 0 { rgb("#edf2f7") } else if row == 5 { rgb("#fff5f5") } else { none },
-  [*Wind Regime*#footnote[Without wind relief cuts, the props may be used by derating all wind regimes by 2 mph, decreasing the Tier 4 Abort threshold to 12 mph sustained / 16 mph gusts, and increasing the duck blind Tier 0 ballasting to 2 bags.]], [*Wind Velocity*], [*Duck Blind Ballasting*], [*Backdrop Ballasting*], [*Decision Status*],
-  [⚪ *Tier 0: Calm*], [0 – 8 mph], [1 bag on rear rail C], [None (153 lb dry prop)], [*GO* (With Ballast)],
+  [*Wind Regime*#footnote[Without wind relief cuts, the props may be used by derating wind regimes per aeromechanical limits, setting the Tier 4 Abort threshold to 16 mph sustained / 20 mph gusts (vs 20/25 mph standard), and increasing duck blind Tier 0 ballasting to 2 bags.]], [*Wind Velocity*], [*Duck Blind Ballasting*], [*Backdrop Ballasting*], [*Decision Status*],
+  [⚪ *Tier 0: Calm*], [0 – 8 mph], [1 bag on rear rail C], [None (153 lb dry prop)], [*GO* (Calm)],
   [🟢 *Tier 1: Normal*], [8 – 12 mph], [2 bags on rear rail C], [4 bags (2/wing post)], [*GO* (Normal)],
-  [🟡 *Tier 2: Advisory*], [12 – 18 mph], [3 bags on rear rail C], [6 bags (3/wing post)], [*GO* (With Ballast)],
-  [🟠 *Tier 3: High-Wind*], [18 – 22 mph], [4 bags on rear rail C], [9 bags (6 wing + 3 rear rail)], [*CAUTION* (Max Limit)],
-  [🔴 #alert[Tier 4: Abort]], [#alert[> 20 mph sust.] \ or #alert[> 25 mph gusts]], table.cell(colspan: 2)[#alert[ABSOLUTE NO-GO.] Props remain in trailer / truck. Field props will not be fielded. Prop Lead notifies Directors.], [#alert[NO-GO] (Hold in Truck)],
+  [🟡 *Tier 2: Advisory*], [12 – 18 mph], [3 bags on rear rail C], [6 bags (3/wing post)], [*GO* (Advisory)],
+  [🟠 *Tier 3: High-Wind*], [18 – 22 mph], [4 bags on rear rail C], [9 bags (6 wing + 3 rear rail)], [*CAUTION* (High-Wind)],
+  [🔴 #alert[Tier 4: Abort]], [#alert[> 20 mph sust.] \ or #alert[> 25 mph gusts]], table.cell(colspan: 2)[#alert[ABSOLUTE NO-GO.] Props remain in trailer / truck. Field props will not be fielded. Prop Lead notifies Directors.], [#alert[NO-GO] (Safety Abort)],
 )
 
 #v(1.5pt)
 #text(size: 6.8pt, style: "italic", fill: rgb("#4a5568"))[
-  *Semicircular Wind Relief Standard:* All 16 duck blinds (6 flaps, $2 times 3$ grid) and 10 rolling backdrops (8 flaps, $2 times 4$ primary grid in upper 6–8 ft zone) are equipped with standard semicircular wind relief cuts ($R = 4.0$ in., 8.0 in. chord by 4.0 in. drop, pre-punched 3/8 in. / 10 mm tear-arrest holes). Fabricated with the standardized PCHSMB Field Prop Circle Cutter (`circle_cutter_arm.stl`, #11 blade, dual 608 ball bearings) and 3/8-in. rotary punch. Flaps reduce drag by 15% ($C_d = 1.20 -> 1.02$), bleed dynamic gust impulses, suppress vortex flutter, and elevate forward stability (duck blind turf sliding to 17.8 mph; backdrop forward tipping to 16.9 mph at Tier 1 and 22.5 mph at Tier 3 via 3.46-ft rear-rail leverage) while maintaining 100% visual camouflage from spectator stands. (Backdrops with prominent central artwork may utilize the approved 6-flap minimal variant).
+  *Semicircular Wind Relief Standard:* All 16 duck blinds (6 flaps, $2 times 3$ grid) and 11 rolling backdrops (8 flaps, 3-2-3 staggered pattern straddling the 60″ mid rail) are equipped with standard semicircular wind relief cuts ($R = 4.0$ in., 8.0 in. chord by 4.0 in. drop, pre-punched 3/8 in. / 10 mm tear-arrest holes). Fabricated with the standardized PCHSMB Field Prop Circle Cutter (`circle_cutter_arm.stl`, #11 blade, dual 608 ball bearings) and 3/8-in. rotary punch. Flaps reduce drag by 15% ($C_d = 1.20 -> 1.02$), bleed dynamic gust impulses, suppress vortex flutter, and elevate forward stability (duck blind turf sliding to 17.8 mph; backdrop forward tipping to 16.9 mph at Tier 1 and 22.3 mph at Tier 3 via 3.46-ft rear-rail leverage) while maintaining 100% visual camouflage from spectator stands. (Backdrops with prominent central artwork may utilize the approved 6-flap minimal variant).
 ]
 
 #pagebreak()
@@ -270,7 +270,7 @@ The Colorado Bandmasters Association (CBA) strictly enforces prop and adult volu
 
 = 4. 2026 Continuum Prop Fleet Summary
 
-The 2026 visual design for *Continuum* incorporates three prop families totaling 34 field elements (16 Duck Blinds, 10 Rolling Backdrops, 4 Performance Stages, and 4 Mobile Staircases):
+The 2026 visual design for *Continuum* incorporates three prop families totaling 35 field elements (16 Duck Blinds, 11 Rolling Backdrops, 4 Performance Stages, and 4 Mobile Staircases):
 
 #table(
   columns: (1.6fr, 0.8fr, 1.4fr, 1.8fr, 2.4fr),
@@ -280,15 +280,15 @@ The 2026 visual design for *Continuum* incorporates three prop families totaling
   inset: (x: 5pt, y: 4.5pt),
   [*Prop Category*], [*Quantity*], [*Transport Unit*], [*Field Placement*], [*Crew Allocation*],
   [*Duck Blinds* \ (Sideline Screens)], [16 screens (8 per side)], [Transport on 4 Stages (4/stage) \ between truck & staging; \ 2 Wagons for ballast; \ Direct Carry on field], [Front Sideline \ (Side 1: 20–41 yd; Side 2: 59–80 yd)], [2 Adult Duck Blind Managers & Ballast Handlers (1/side), \ 2 Student Ballast Handlers (1/side), \ 32 Student Performers (16 carry pairs)],
-  [*Rolling Backdrops*], [10 backdrops], [10 Rolling Carts \ (1 cart/prop)], [Backfield / Back Hash \ (Spanned across 30–70 yds)], [2 Adult Volunteers (Managers), 20–40 Student Pushers (2–4 per backdrop)],
+  [*Rolling Backdrops*], [11 backdrops], [11 Rolling Carts \ (1 cart/prop)], [Backfield / Back Hash \ (Spanned across 30–70 yds)], [2 Adult Volunteers (Managers), 22–44 Student Pushers (2–4 per backdrop)],
   [*Performance Stages & Stairs*], [4 stages (8 pieces) \ + 4 staircases], [8 Half-Platforms & \ 4 Mobile Staircases \ (carries 16 collapsed blinds \ [4/stage] truck-to-staging)], [Midfield / Side Stages \ (Exact drill marks per show)], [2 Adult Volunteers (Stage Managers), 16 Student Stage Handlers, 8 Student Staircase Handlers],
 )
 
 #v(4pt)
 #text(size: 7.2pt, fill: rgb("#4a5568"))[
   *Authoritative Subproject Technical Manuals & Construction Deliverables:* \
-  • *Duck Blinds / Sideline Screens:* See _Sideline Screen / Duck Blind Construction and Field Operations Manual_ (Release v0 (D34), 27 pages). Covers 3/4-in. EMT conduit framing, Two-Student Direct Carry, Section 2.9.3 engineered semicircular wind relief flaps (6 flaps, $R = 4.0$ in.), and on-prop placards. \
-  • *Rolling Backdrops:* See _Backdrop Construction and Assembly Guide_ (Release v0 (D8), 28 pages). Covers 2x4 rolling cart base, 1-5/8-in. steel frame, 3/4-in. iron wing ballast posts, Section 2.9.3 semicircular wind relief flaps (8 flaps, $R = 4.0$ in.), and rear-rail leverage optimization. \
+  • *Duck Blinds / Sideline Screens:* See _Sideline Screen / Duck Blind Construction and Field Operations Manual_ (Release v0 (D36), 27 pages). Covers 3/4-in. EMT conduit framing, Two-Student Direct Carry, Section 2.9.3 engineered semicircular wind relief flaps (6 flaps, $R = 4.0$ in.), and on-prop placards. \
+  • *Rolling Backdrops:* See _Backdrop Construction and Assembly Guide_ (Release v0 (D9), 28 pages). Covers 2x4 rolling cart base, 1-5/8-in. steel frame, 3/4-in. iron wing ballast posts, Section 2.9.3 semicircular wind relief flaps (8 flaps, $R = 4.0$ in.), and rear-rail leverage optimization. \
   • *Wind Relief Tooling:* Standardized _PCHSMB Field Prop Circle Cutter_ (`circle_cutter_arm.stl`, #11 hobby scalpel blade, dual 608 bearings, 3/8-in. rotary punch).
 ]
 
@@ -475,13 +475,13 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
   #text(size: 8.5pt, style: "italic", fill: rgb("#2b6cb0"))[
     *Student Instructions:* Safely leave your ballast on the turf, grab your assembled screen between partners, move quickly out through the exit gate to the staging area, and hand control back to the Adult Duck Blind Manager.
   ]
-  #v(4pt)
+  #v(2pt)
 
   + *Immediate Action on Final Show Chord ($T = 0:00$):*
     - Per your section leader's direct, at the completion of the show, break ranks and both partners converge on your assigned duck blind.
   + *Leave Ballast on Turf (Do Not Carry):*
     - *Safe Ballast Removal:* Lift all sandbags off the rear ground rail and place them gently onto the turf next to the rail.
-    - #alert[CRITICAL SAFETY MANDATE: NEVER THROW OR DROP SANDBAGS.] Dropping sandbags causes seam rupture and leaks sand, resulting in CBA score penalties. Place bags gently on the turf.
+    - #alert[NEVER THROW OR DROP SANDBAGS:] Dropping bags causes seam rupture and leaks sand, resulting in CBA penalties. Place bags gently on turf.
     - *Leave the bags on the turf!* The Adult Duck Blind Manager and Student Ballast Handler will retrieve them with their wagon.
   + *The Two-Person Carry Sprint:*
     - Lift the fully assembled 26-lb duck blind between you, carrying your instrument in your other hand.
@@ -499,15 +499,15 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
 // PAGE 8: JOB B.1 — ADULT ROLLING BACKDROP MANAGERS
 // =========================================================================
 
-== Job Group B: Rolling Backdrop Crew (10 Backdrops on Dedicated Carts)
+== Job Group B: Rolling Backdrop Crew (11 Backdrops on Dedicated Carts)
 
 #job-card(
   role: "Job B.1: Adult Rolling Backdrop Managers",
-  personnel: "2 Adult Volunteers (Overseeing Backdrops #1 through #10)",
+  personnel: "2 Adult Volunteers (Overseeing Backdrops #1 through #11)",
   tag: "Assembly Supervision, Staging Logistics, Ballast & Student Oversight"
 )[
   #text(size: 8.5pt, style: "italic", fill: rgb("#2b6cb0"))[
-    You are one of two Adult Volunteers in charge of the 10 rolling backdrops. You supervise and direct the assembly and disassembly of these props with assistance from prop and pit crew members, ensure all 10 props are transported to and from staging with appropriate wind ballast installed, and meet, supervise, and assist the student pusher teams at the staging area.
+    You are one of two Adult Volunteers in charge of the 11 rolling backdrops. You supervise and direct the assembly and disassembly of these props with assistance from prop and pit crew members, ensure all 11 props are transported to and from staging with appropriate wind ballast installed, and meet, supervise, and assist the student pusher teams at the staging area.
   ]
 
   #v(2pt)
@@ -530,22 +530,22 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
       [Tier 0], [0 – 8], [0 bags (unballasted, 153 lb dry prop)], [None], [14.4 mph],
       [Tier 1], [8 – 12], [4 bags (2 per wing post, 60 lb ballast)], [None], [16.9 mph],
       [Tier 2], [12 – 18], [6 bags (3 per wing post, 90 lb ballast)], [None], [18.4 mph],
-      [Tier 3], [18 – 22], [6 bags (3 per wing post, 90 lb ballast)], [3 bags flat on rear 2x4 rail (45 lb)], [22.5 mph],
+      [Tier 3], [18 – 22], [6 bags (3 per wing post, 90 lb ballast)], [3 bags flat on rear 2x4 rail (45 lb)], [22.3 mph],
       table.cell(colspan: 2)[#alert[Tier 4 (>20 mph)]],
       table.cell(colspan: 3)[#alert[ABSOLUTE NO-GO — Keep Locked in Equipment Trailer]],
     )
     #v(1pt)
     #text(size: 6.6pt, style: "italic", fill: rgb("#4a5568"))[
-      *Rear-Rail Leverage & Relief Cuts:* All 10 backdrops feature 8 semicircular relief flaps (R = 4", 8" chord x 4" drop, upper 6–8 ft zone, $C_d = 1.02$). Placing 3 sandbags across the rear rail yields 3.46 ft lever arm to front casters (vs 1.71 ft on wing posts)—more than double (2.02x) leverage against forward tipping.
+      *Rear-Rail Leverage & Relief Cuts:* All 11 backdrops feature 8 semicircular relief flaps (R = 4", 8" chord x 4" drop, 3-2-3 staggered pattern straddling the 60″ mid rail, $C_d = 1.02$). Placing 3 sandbags across the rear rail yields 3.46 ft lever arm to front casters (vs 1.71 ft on wing posts)—more than double (2.02x) leverage against forward tipping.
     ]
   ]
 
   #v(2pt)
   #text(size: 8pt, weight: "bold", fill: rgb("#1a365d"))[Step-by-Step Manager Lifecycle:]
 
-  + *Arrival & Assembly Supervision:* Meet at the equipment trailer at call time. Supervise and direct the mechanical assembly of the 10 rolling backdrop carts (installing steel upright posts, diagonal struts, retaining pins, and vinyl banners with snap clamps). Confirm all 8 semicircular wind relief flaps hang flush and swing freely. Verify all strut pins and safety cotters are fully engaged.
-  + *Ballast Installation & Pre-Staging Inspection:* Confirm the day's wind tier with the Prop Lead. Seat double-bagged 15-lb sandbags securely over wing iron posts (4 bags Tier 1; 6 bags Tier 2; 6 wing + 3 rear rail bags for Tier 3 22.5 mph stability). Inspect swivel casters and confirm caster foot brakes are in unlocked (UP) position for transit.
-  + *Transport to Staging Area:* Lead the transport of all 10 ballasted backdrops from the trailer lot to the designated staging area at the designated staging time. Park carts in numerical order (#1 through #10) and engage wheel brakes.
+  + *Arrival & Assembly Supervision:* Meet at the equipment trailer at call time. Supervise and direct the mechanical assembly of the 11 rolling backdrop carts (installing steel upright posts, diagonal struts, retaining pins, and vinyl banners with snap clamps). Confirm all 8 semicircular wind relief flaps hang flush and swing freely. Verify all strut pins and safety cotters are fully engaged.
+  + *Ballast Installation & Pre-Staging Inspection:* Confirm the day's wind tier with the Prop Lead. Seat double-bagged 15-lb sandbags securely over wing iron posts (4 bags Tier 1; 6 bags Tier 2; 6 wing + 3 rear rail bags for Tier 3 22.3 mph stability). Inspect swivel casters for smooth rotation; backdrops have no wheel brakes.
+  + *Transport to Staging Area:* Lead transport of all 11 ballasted backdrops to the designated staging area at the designated staging time. Park carts in numerical order (#1 through #11).
   + *Student Rendezvous & Supervision at Staging Area:* Meet the assigned Student Backdrop Pushers (2–4 students per backdrop) at the staging area 45 minutes prior to show time. Confirm each student team knows their backdrop number, entry queue sequence, and field position. Supervise and assist the students as they prepare for gate movement.
   + *Adult Field Boundary Rule:* Adults do not push backdrops onto the field. Move with the students onto the field during setup to assist any that need help and check field placement, and then quickly move off the field to the adult volunteer waiting area in front of the front sideline. #alert[Never step onto the turf during the show (Rule 4.03 penalty).]
   + *Post-Show Reception & Return to Trailer:* Meet the student pushers as they return with the backdrops to the staging area following their end zone egress. Take custody of the backdrops from the students so they can rejoin the band block. Push the backdrops back to the staging area (between Prelims and Finals) or to the equipment trailer (after Finals).
@@ -564,22 +564,22 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
 
 #job-card(
   role: "Job B.2: Student Backdrop Pushers — On Field",
-  personnel: "20–40 Students (2–4 per Backdrop, #1 through #10)",
+  personnel: "22–44 Students (2–4 per Backdrop, #1 through #11)",
   tag: "Staging Takeover, Backfield Entry & Show Positioning"
 )[
   #text(size: 8.5pt, style: "italic", fill: rgb("#2b6cb0"))[
-    *Student Instructions:* You are part of the team of 2 to 4 students assigned to roll your backdrop (#1 through #10) from the staging area onto the field and position it as directed at your marked coordinate.
+    *Student Instructions:* You are part of the team of 2 to 4 students assigned to roll your backdrop (#1 through #11) from the staging area onto the field and position it as directed at your marked coordinate.
   ]
   #v(4pt)
 
   + *Staging Area Takeover:*
     - Meet the Adult Backdrop Managers at the designated staging area 45 minutes prior to show time (following your section warm-ups).
-    - Locate your assigned backdrop (#1 through #10).
+    - Locate your assigned backdrop (#1 through #11).
     - Inspect the 8 semicircular wind relief flaps in the upper banner to confirm they are flush and hanging cleanly by gravity.
-    - Confirm all cart caster foot brakes are disengaged (foot lever UP) before moving. For directional stability, push from the rear steering side using the steel uprights, but plan ahead for turns.
+    - Confirm the travel corridor is clear and casters roll freely before moving. For directional stability, push from the rear steering side using the steel uprights, but plan ahead for turns.
   + *Perimeter Transit to Back Sideline:*
     - When directed by the Adult Managers / Prop Lead, take custody of your backdrop and roll it along the designated perimeter track toward the rear stadium entrance gate.
-    - Queue in strict numerical order (#1 at front, #10 at rear).
+    - Queue in strict numerical order (#1 at front, #11 at rear).
     - Always push using the steel frame uprights. #alert[NEVER push directly against the vinyl display face.]
   + *Back Sideline Staging:*
     - Move through the rear gate and stage along the back sideline directly in line with your final field coordinate.
@@ -606,7 +606,7 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
 
 #job-card(
   role: "Job B.3: Student Backdrop Pushers — Off Field",
-  personnel: "20–40 Students (2–4 per Backdrop, #1 through #10)",
+  personnel: "22–44 Students (2–4 per Backdrop, #1 through #11)",
   tag: "Post-Show Egress Sprint & Staging Hand-Off"
 )[
   #text(size: 8.5pt, style: "italic", fill: rgb("#2b6cb0"))[
@@ -615,7 +615,7 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
   #v(4pt)
 
   + *Immediate Post-Show Rendezvous:*
-    - As directed by your section leader following the show, move immediately to your assigned backdrop (#1 through #10).
+    - As directed by your section leader following the show, move immediately to your assigned backdrop (#1 through #11).
   + *Prep for Moving:*
     - If any sandbags were placed across the back rail, move them to the iron posts for transport.
     - If any sandbags were placed as wheel chocks, move them to the iron posts for transport.
@@ -795,17 +795,17 @@ Follow all instructions in strict sequential order. Adhere to all safety warning
   tag: "Master Operations, Weather Monitoring, Gate Liaison & Timing Control"
 )[
   #text(size: 8.5pt, style: "italic", fill: rgb("#2b6cb0"))[
-    You are the overall director and safety coordinator for the 34 field props and the 6 dedicated Prop Crew Adult Volunteers (the majority of the band's 25 CBA adult credentials support the Pit / Front Ensemble). You maintain authoritative weather telemetry, coordinate directly with CBA timing and penalty officials at the stadium gate, execute the countdown clearance call, and manage exit flow.
+    You are the overall director and safety coordinator for the 35 field props and the 6 dedicated Prop Crew Adult Volunteers (the majority of the band's 25 CBA adult credentials support the Pit / Front Ensemble). You maintain authoritative weather telemetry, coordinate directly with CBA timing and penalty officials at the stadium gate, execute the countdown clearance call, and manage exit flow.
   ]
-  #v(3pt)
+  #v(1.5pt)
 
   + *Weather Monitoring & Plain-English Weather Sources:*
-    - *Handheld Anemometer:* Carry a calibrated handheld digital anemometer to measure live surface wind speed at field level in the trailer lot, staging area, and sideline at morning check-in and 30 minutes prior to gate step-off.
-    - *Decoded Airport Weather Feeds:* Official airport weather reports (METARs) use pilot shorthand (e.g., `18015G24KT`). *Do not try to decipher raw pilot code.* Use these recommended tools in plain-English / decoded mode:
-      - *AviationWeather.gov (Decoded Mode):* Enter the 4-letter station code for the nearest airport (`KCOS` for Colorado Springs Airport, `KFLY` for Meadow Lake / Falcon, `KBJC` for Rocky Mountain Metro / North Denver, `KAPA` for Centennial / South Denver, `KFNL` for Northern Colorado). Toggle *"Decoded"* to read sustained wind speed and gusts in plain MPH.
-      - *Windy.com / Windy App:* Set display units to MPH. Displays real-time surface wind animations, local airport readings, and forecasted wind gusts at stadium coordinates.
-      - *Weather Underground (Wunderground):* Search the venue address to view live 1-minute wind and gust readings from Personal Weather Stations (PWS) in the stadium's immediate neighborhood.
-    - *Wind Tier Authorization:* Authorize the day's operational wind tier (Tier 0 through Tier 3) and direct ballast loading across backdrops and duck blinds per the Ballast Schedules.
+    - *Handheld Anemometer & Field Access Limits:* Carry a calibrated handheld digital anemometer to measure surface wind speed at 6.0 ft AGL in the most representative open area accessible outside the stadium (staging area or trailer lot perimeter) at morning check-in and at *T-45 minutes* prior to gate entry. (Field access is restricted prior to performance).
+    - *Decoded Airport Weather Feeds:* Avoid raw pilot METAR shorthand; use plain-English tools:
+      - *AviationWeather.gov (Decoded):* Nearest station (`KCOS`, `KFLY`, `KBJC`, `KAPA`, `KFNL`).
+      - *Windy.com / App:* Real-time surface wind animations and localized forecast gusts in MPH.
+      - *Weather Underground:* Live 1-minute neighborhood PWS wind and gust telemetry near venue.
+    - *Wind Tier Call at T-45 min (Staging Lock-In):* Authorize the official operational wind tier (Tier 0–3) and direct ballast loading strictly at *T-45 min* during staging prep. Props are ballasted at staging—no field access or time to reload at T-15 min once queued at the gate. If conditions worsen at the gate, immediately call a Tier 4 NO-GO abort.
     - #alert[HARD RULE: If sustained winds exceed 20 mph OR gusts reach 25–30 mph, issue an immediate NO-GO directive.] Props remain locked in trailers. Notify Band Directors immediately.
   + *Judge Liaison & Gate Release:*
     - Coordinate directly with the CBA Timing & Penalty (T&P) judge at the stadium gate.
@@ -851,7 +851,7 @@ All teardown and packdown procedures occur *exclusively in the equipment trailer
       #text(size: 8pt, fill: rgb("#718096"))[2026 Competitive Field Show: Continuum • Colorado Bandmasters Association]
     ],
     align(right + horizon)[
-      #text(size: 8pt, weight: "bold", fill: rgb("#3182ce"))[Release v0 (D3) • September 2026]
+      #text(size: 8pt, weight: "bold", fill: rgb("#3182ce"))[Release v0 (D4) • September 2026]
     ]
   )
 ]

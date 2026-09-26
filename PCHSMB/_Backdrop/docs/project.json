@@ -26,20 +26,20 @@
   },
   "document": {
     "current": {
-      "build": "D8",
+      "build": "D9",
       "release": "v0",
       "process_state": "working_draft",
       "visible_status": "working_draft",
       "file": "Backdrop_Assembly_Guide.typ",
-      "sha256": "57e9d609f7006e21c7b3b82e0d82b6956d71cd8bdc1cec7617cd851ccdc00e4d",
-      "controlled_at": "2026-09-16T02:38:00+00:00"
+      "sha256": "194eac4ca6d9bd7c3efe4d390b9d5f0fdcab8bdbdaa8aa9ded225f728c39db2e",
+      "controlled_at": "2026-09-26T18:00:00+00:00"
     },
     "candidate": null
   },
   "versioning": {
     "current_release": "v0",
     "next_release": "v1",
-    "next_build_number": 9
+    "next_build_number": 10
   },
   "releases": [],
   "history": [
@@ -140,6 +140,20 @@
       "summary": "Add character-perfect ASCII diagram illustrating wind relief cut locations (2x4 grid, 8 semicircular flaps) in Appendix B Section 2.9.3 with proportional portrait aspect ratio and fixed-width font rules",
       "sha256": "57e9d609f7006e21c7b3b82e0d82b6956d71cd8bdc1cec7617cd851ccdc00e4d",
       "pdf_sha256": "3e9a714afecea2053e9f654e0f7ee48b42ecba3dc894fbbc763895a2521bc142",
+      "page_count": 28,
+      "file": "Backdrop_Assembly_Guide.typ"
+    },
+    {
+      "id": "D9",
+      "kind": "development_build",
+      "release": "v0",
+      "status": "working_draft",
+      "date": "2026-09-26",
+      "started_at": "2026-09-26T17:45:00+00:00",
+      "base_build": "D8",
+      "summary": "Incorporate 60\" mid cross rail with 1-5/8\" T-clamps, 6-4 all-steel pop riveting for positional stability, 3-2-3 staggered quincunx wind relief cuts straddling mid rail (22.3 mph Tier 3 limit), Option 2 paint can field alternative, and updated purchasing references",
+      "sha256": "194eac4ca6d9bd7c3efe4d390b9d5f0fdcab8bdbdaa8aa9ded225f728c39db2e",
+      "pdf_sha256": "452d13f35c3b9a1bb97318b9902a1c46fcfaed4f7cedad03cd76e9bb47beeaaa",
       "page_count": 28,
       "file": "Backdrop_Assembly_Guide.typ"
     }

@@ -1,0 +1,131 @@
+{
+  "subproject": "PCHSMB Duck Blind Corner Skid Clip",
+  "description": "Sacrificial snap-on corner wear shoe and bumper for 3/4in. EMT conduit Duck Blind frames",
+  "author": "Antigravity Agentic Assistant / PCHSMB Engineering",
+  "governing_specifications": {
+    "prop_system": "PCHSMB Sideline Screen / Duck Blind (4 ft x 8 ft)",
+    "frame_conduit": "3/4-in. EMT Electrical Metallic Tubing (OD 23.42 mm)",
+    "corner_bracket": "3-Way 3/4-in. EMT Clamp Bracket (Bracket F, Amazon B0D5BBKCKG)",
+    "vinyl_banner": "13 oz Heavy Scrim Vinyl (thickness ~0.38 mm)",
+    "existing_clips": "1-in. Greenhouse Pipe Snap Clamps (Amazon B0BJJYKZ5L)"
+  },
+  "geometric_architecture": {
+    "total_length_mm": 140.0,
+    "conduit_snap_section_length_mm": 45.0,
+    "internal_locating_taper_length_mm": 5.0,
+    "over_bracket_shroud_length_mm": 85.0,
+    "end_bumper_section_length_mm": 5.0,
+    "snap_inner_diameter_mm": 24.5,
+    "corner_inner_diameter_mm": 37.0,
+    "radial_clearance_over_bracket_mm": 4.99,
+    "wall_thickness_mm": 3.0,
+    "skid_ground_z_mm": -19.5,
+    "skid_protrusion_below_bracket_f_mm": 5.99,
+    "skid_protrusion_below_conduit_mm": 7.79,
+    "solid_sacrificial_wear_thickness_mm": 4.0,
+    "skid_flat_glide_width_mm": 18.0,
+    "ski_tip_ramp_length_mm": 12.0,
+    "ski_tip_ramp_height_mm": 3.5,
+    "anti_tear_mouth_bevel_depth_mm": 1.5,
+    "inner_bore_entry_chamfer_mm": 1.5,
+    "zone1_mouth_width_mm": 26.67,
+    "top_edge_architecture": "100% open upward trough, zero roof bridging, unobstructed vertical rail clearance"
+  },
+  "manufacturing": {
+    "process": "Fused Deposition Modeling (FDM / 3D Printing)",
+    "recommended_material": "Black ASA (UV, weather, and abrasion resistant)",
+    "alternative_material": "PETG (Outdoor weather resistant)",
+    "orientation": "Flat on sacrificial bottom skid runner (zero supports needed)",
+    "perimeters": 5,
+    "infill_ratio": 0.4,
+    "infill_pattern": "Gyroid or Cross-Hatch",
+    "layer_height_mm": 0.2
+  },
+  "fleet_requirements": {
+    "screens_in_fleet": 16,
+    "clips_per_screen": 2,
+    "total_fleet_clips": 32,
+    "left_hand_clips_needed": 16,
+    "right_hand_clips_needed": 16
+  },
+  "models": {
+    "corner_skid_clip_left": {
+      "triangles": 1496,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_triangles": 0,
+      "finite_coordinates": true,
+      "bounds_min": [
+        0.0,
+        -22.0,
+        -19.5
+      ],
+      "bounds_max": [
+        140.0,
+        22.0,
+        4.5
+      ],
+      "dimensions": [
+        140.0,
+        44.0,
+        24.0
+      ],
+      "volume_cm3": 27.85,
+      "estimated_mass_petg_g": 21.6,
+      "estimated_mass_asa_g": 18.2,
+      "passed": true
+    },
+    "corner_skid_clip_right": {
+      "triangles": 1496,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_triangles": 0,
+      "finite_coordinates": true,
+      "bounds_min": [
+        -140.0,
+        -22.0,
+        -19.5
+      ],
+      "bounds_max": [
+        -0.0,
+        22.0,
+        4.5
+      ],
+      "dimensions": [
+        140.0,
+        44.0,
+        24.0
+      ],
+      "volume_cm3": 27.85,
+      "estimated_mass_petg_g": 21.6,
+      "estimated_mass_asa_g": 18.2,
+      "passed": true
+    },
+    "corner_skid_clip_pair": {
+      "triangles": 2992,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "degenerate_triangles": 0,
+      "finite_coordinates": true,
+      "bounds_min": [
+        -140.0,
+        -52.0,
+        -19.5
+      ],
+      "bounds_max": [
+        140.0,
+        52.0,
+        4.5
+      ],
+      "dimensions": [
+        280.0,
+        104.0,
+        24.0
+      ],
+      "volume_cm3": 55.7,
+      "estimated_mass_petg_g": 43.1,
+      "estimated_mass_asa_g": 36.4,
+      "passed": true
+    }
+  }
+}

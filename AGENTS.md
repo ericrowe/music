@@ -8,8 +8,8 @@ This repository uses **`AGENTS.md`** as the single, authoritative source of trut
 
 | AI Assistant / Agent | Discovery Path | Skill / Workflow Invocation |
 |---|---|---|
-| **Google Gemini / Antigravity** | `AGENTS.md`, `GEMINI.md`, `.agents/skills/` | `$develop-versioned-documents`, `$calculate-prop-wind-loading` |
-| **OpenAI Codex** | `AGENTS.md`, `.codex/skills/` | `$develop-versioned-documents`, `$calculate-prop-wind-loading` |
+| **Google Gemini / Antigravity** | `AGENTS.md`, `GEMINI.md`, `.agents/skills/` | `$develop-versioned-documents`, `$calculate-prop-wind-loading`, `$cad-openscad`, `$cad-python` |
+| **OpenAI Codex** | `AGENTS.md`, `.codex/skills/` | `$develop-versioned-documents`, `$calculate-prop-wind-loading`, `$cad-openscad`, `$cad-python` |
 | **Anthropic Claude Code** | `CLAUDE.md` (delegates to `AGENTS.md`) | Python helpers in `.agents/skills/develop-versioned-documents/scripts/` |
 | **GitHub Copilot / Workspace** | `.github/copilot-instructions.md` | Python helpers or project workflows |
 | **Cursor IDE** | `.cursorrules`, `.cursor/rules/*.mdc` | Python helpers or scoped rule commands |

@@ -290,11 +290,11 @@ Beyond steady-state thresholds, delaying wind relief cuts introduces three criti
    Under headwind, strut arms (E) pull directly against the 3D-printed ASA snap-fit clips on Rail 3. Unvented vinyl increases this peak pull force by $+17.6\%$ (from $28.8\text{ lbs}$ up to $33.9\text{ lbs}$ per clip at 20 mph), reducing safety margins against jaw unseating.
 
 ### 8.5 Volunteer Operational Rule (Field Simplification)
-Volunteer parent crew and student handlers cannot be expected to calculate an 8% mathematical reduction or interpolate decimal miles-per-hour under competition pressure. To guarantee safety, the calculated de-ratings ($0.9–1.8\text{ mph}$) are **rounded up to a flat 2 mph reduction across all wind regimes**, Tier 0 dry staging is eliminated, and the abort ceiling is lowered:
+Volunteer parent crew and student handlers cannot be expected to calculate fractional wind limits during field logistics. To guarantee safety while preserving operational continuity without conflicting with Tier 3 high-wind limits, operational wind regimes are derated per safe aeromechanical thresholds, Tier 0 dry staging is eliminated, and the abort ceiling is set to 16 mph sustained / 20 mph gusts:
 
 > [!IMPORTANT]
 > **Operational Guidance for Unvented Vinyl:**
-> *"Without wind relief cuts, the props may be used by derating all wind regimes by 2MPH, decreasing the Tier 4 Abort threshold to 12MPH sustained / 16MPH gusts, and increasing the duck blind tier 0 ballasting to 2 bags."*
+> *"Without wind relief cuts, the props may be used by derating operational wind regimes to safe aeromechanical limits, setting the Tier 4 Abort threshold to 16MPH sustained / 20MPH gusts (vs. 20/25 MPH standard), and increasing duck blind Tier 0 ballasting to 2 bags."*
 
 ---
 

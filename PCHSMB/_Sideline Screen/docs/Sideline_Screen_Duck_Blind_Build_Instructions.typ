@@ -39,7 +39,7 @@
       #grid(
         columns: (1.5fr, 1.2fr, 1fr),
         align(left)[*WORKING DRAFT — NOT FOR USE*],
-        align(center)[*Release v0 (D34)* | September 2026],
+        align(center)[*Release v0 (D35)* | September 2026],
         align(right)[*Page #pg-str*]
       )
     ]
@@ -134,7 +134,7 @@
   audience: [],
   contents: [],
   print-label: [],
-  revision: [Release v0 (unreleased) | Development build D34 | September 2026],
+  revision: [Release v0 (unreleased) | Development build D35 | September 2026],
   separation-note: [When separated from the master document, keep this cover as the first page.]
 ) = [
   #align(center)[
@@ -236,7 +236,7 @@
   columns: (0.7fr, 0.9fr, 1.2fr, 3.2fr),
   align: (center + horizon, center + horizon, center + horizon, left + horizon),
   stroke: 0.4pt + rgb("#cbd5e0"),
-  fill: (col, row) => if row == 0 { rgb("#edf2f7") } else if row == 11 { rgb("#ebf8ff") } else { none },
+  fill: (col, row) => if row == 0 { rgb("#edf2f7") } else if row == 12 { rgb("#ebf8ff") } else { none },
   inset: (x: 3.5pt, y: 1.8pt),
   [*Version*], [*Date*], [*Document State*], [*Key Modifications & Engineering Decisions*],
   [D24], [2026-09-01], [Working draft], [Imported legacy v24 draft as controlled repository baseline.],
@@ -249,7 +249,9 @@
   [D31], [2026-09-15], [Working draft], [Harmonize document architecture, section numbering (1.1–1.7, 2.1–2.10), Appendix A/B ordering, coordinate schedule tables, and Circle Cutter tooling with Backdrop manual.],
   [D32], [2026-09-15], [Working draft], [Add equipment truck packout figure (Section 1.7). Harmonize Appendix A pagination (Pages A-1 through A-7) with Backdrop manual.],
   [D33], [2026-09-15], [Working draft], [Clarify wind relief NO-CUT zones to explicitly protect printed graphic details, depicted faces, and logos.],
-  [*D34*], [*2026-09-15*], [*Working draft*], [*Add ASCII diagram illustrating wind relief cut locations ($2 times 3$ grid, 6 semicircular flaps) in Appendix B Section 2.9.3.*],
+  [D34], [2026-09-15], [Working draft], [Add ASCII diagram illustrating wind relief cut locations ($2 times 3$ grid, 6 semicircular flaps) in Appendix B Section 2.9.3.],
+  [D35], [2026-09-17], [Working draft], [Add 3D-printed Corner Skid Clips (Left & Right, ASA) to bottom ground Rail A to encapsulate corner vinyl folds and eliminate ground-drag abrasion.],
+  [*D36*], [*2026-09-18*], [*Working draft*], [*Replace conduit snap skid clips with OpenSCAD two-piece universal corner protector (Piece 1 Outside Skid + Piece 2 Inside Clamp, 2x M5 bolts, zero handedness).*],
 )
 ]
 
@@ -286,7 +288,7 @@
   audience: [Field operators, adult duck blind managers, and student carry pairs],
   contents: [Time budget architecture; Two-Student Carry deployment & egress; tiered ballasting; 2026 CBA rules; trailer packout],
   print-label: [All pages labeled A-],
-  revision: [Release v0 (unreleased) | Development build D34 | September 2026],
+  revision: [Release v0 (unreleased) | Development build D35 | September 2026],
   separation-note: [When separated from the master document, keep this cover as the first page of Appendix A.]
 )
 
@@ -502,7 +504,7 @@ Aerodynamic pressure ($q = 0.001989 times V_"mph"^2$ psf at Colorado Springs 6,5
   audience: [Band prop construction leads, parent build volunteers, and fabrication teams],
   contents: [Shop safety; full BOM; 3D-printed parts; 7-stick conduit cut schedule; cost breakdown; 4-stage frame assembly; vinyl mounting; wind relief flap cutting; inspection checklist; indexed purchasing sources],
   print-label: [All pages labeled B-],
-  revision: [Release v0 (unreleased) | Development build D34 | September 2026],
+  revision: [Release v0 (unreleased) | Development build D35 | September 2026],
   separation-note: [When separated from the master document, keep this cover as the first page of Appendix B.]
 )
 
@@ -545,7 +547,8 @@ A single sideline screen requires the following mechanical hardware, commercial 
   [*J*], [36], [Self-drilling screws], [#8 x 1/2-in. hex washer flange head], [Home Depot (Teks 21308)],
   [*--*], [1], [Custom banner], [13 oz scrim vinyl, 48 in. × 96 in. nominal graphic], [Custom print (flush cut)],
   [*--*], [1 roll], [Double-sided tape], [1-in. heavy-duty mounting tape (16x 4-in. strips)], [Amazon (B07BBL4JXJ)],
-  [*--*], [16], [Greenhouse snap clamps], [1-in. pipe clamp clips (fits 0.922 in. OD EMT + vinyl)], [Amazon (B0BJJYKZ5L)],
+  [*--*], [14], [Greenhouse snap clamps], [1-in. pipe clamp clips (fits 0.922 in. OD EMT + vinyl)], [Amazon (B0BJJYKZ5L)],
+  [*--*], [2 sets], [Corner protectors], [3D printed black ASA, 2-pc clamp w/ 4x M5 bolts], [Index [13] / 3D Print],
   [*--*], [1 pc], [Field Prop Circle Cutter], [PCHSMB Circle Cutter arm w/ #11 blade (R = 4.0 in.)], [Index [18] / 3D Print],
 )
 
@@ -586,49 +589,70 @@ A single sideline screen requires the following mechanical hardware, commercial 
 
 == 2.4 3D-Printed Parts Specifications
 
-Three critical components are custom-manufactured using fused deposition modeling (FDM):
+Four critical components are custom-manufactured using fused deposition modeling (FDM):
 
 #grid(
-  columns: (1fr, 1fr, 1fr),
-  gutter: 7pt,
+  columns: (1fr, 1fr, 1fr, 1fr),
+  gutter: 5pt,
   rect(
     width: 100%,
     fill: rgb("#f7fafc"),
     stroke: 0.8pt + rgb("#cbd5e0"),
     radius: 3pt,
-    inset: (x: 6pt, y: 5pt),
+    inset: (x: 5pt, y: 5pt),
   )[
-    *Corner Plugs (Part H)* \
-    - *Quantity:* 6 pcs per screen (96 pcs fleet).
-    - *Material:* Black ASA (UV/weather-proof).
-    - *Function:* Press-fits into open unused third sockets of brackets *F* to seal tubes from moisture, wasp nesting, and sharp burr exposure.
-    - *Print Settings:* 4 perimeters, 25% gyroid infill, 0.20 mm layer height.
+    #text(size: 8pt)[
+      *Corner Plugs (Part H)* \
+      - *Qty:* 6 pcs / screen (96 fleet).
+      - *Mat:* Black ASA (UV-stable).
+      - *Function:* Press-fits into open unused sockets of brackets *F* to seal tubes from moisture and wasps.
+      - *Print:* 4 perim, 25% gyroid infill.
+    ]
   ],
   rect(
     width: 100%,
     fill: rgb("#f7fafc"),
     stroke: 0.8pt + rgb("#cbd5e0"),
     radius: 3pt,
-    inset: (x: 6pt, y: 5pt),
+    inset: (x: 5pt, y: 5pt),
   )[
-    *Hinged Arm Clips (Part I)* \
-    - *Quantity:* 2 pcs per screen (32 pcs fleet).
-    - *Material:* Black ASA (elastic snap retention).
-    - *Function:* Fastened to bottom arms *E*; snaps firmly onto lower inner rail *A* (Rail 3) to lock triangular frame rigid on turf.
-    - *Print Settings:* 6 perimeters, 40% infill, oriented on flat face for maximum hoop strength.
+    #text(size: 8pt)[
+      *Hinged Arm Clips (Part I)* \
+      - *Qty:* 2 pcs / screen (32 fleet).
+      - *Mat:* Black ASA (ductile/tough).
+      - *Function:* Snaps rear *D* arm to bottom *E* arm in deployed A-frame.
+      - *Print:* 6 perim, 50% gyroid infill.
+    ]
   ],
   rect(
     width: 100%,
     fill: rgb("#f7fafc"),
     stroke: 0.8pt + rgb("#cbd5e0"),
     radius: 3pt,
-    inset: (x: 6pt, y: 5pt),
+    inset: (x: 5pt, y: 5pt),
   )[
-    *Weight Clips (Optional)* \
-    - *Quantity:* 2–4 pcs per screen.
-    - *Material:* Black ASA.
-    - *Function:* Snaps over upper inner rail *A* (Rail 2) to suspend secondary ballast sandbags during Tier 2/3 wind conditions.
-    - *Print Settings:* 6 perimeters, 50% infill, high-tensile hook geometry.
+    #text(size: 8pt)[
+      *Corner Protectors (Piece 1 + 2)* \
+      - *Qty:* 2 sets (4 pcs; 64 fleet).
+      - *Mat:* Black ASA (wear-resistant).
+      - *Function:* Two-piece bracket clamping Bracket *F*; sacrificial 6mm skid runner protects corner vinyl.
+      - *Print:* 5 perim, 40% infill, zero supports.
+    ]
+  ],
+  rect(
+    width: 100%,
+    fill: rgb("#f7fafc"),
+    stroke: 0.8pt + rgb("#cbd5e0"),
+    radius: 3pt,
+    inset: (x: 5pt, y: 5pt),
+  )[
+    #text(size: 8pt)[
+      *Weight Clips (Optional)* \
+      - *Qty:* 2–4 pcs per screen.
+      - *Mat:* Black ASA (high tensile).
+      - *Function:* Snaps over upper inner rail *A* (Rail 2) to suspend secondary ballast sandbags in high winds.
+      - *Print:* 6 perim, 50% infill.
+    ]
   ],
 )
 
@@ -686,8 +710,8 @@ Eliminating the transport carts saves *\$440.00* across the program. Fleet const
       [6x 3-Way Corner Brackets (F)], [\$27.00],
       [8x 3/4-in. T-Brackets (G)], [\$23.00],
       [36x Self-Drilling Screws (J)], [\$4.00],
-      [3D ASA Hardware (6H, 2I)], [\$10.00],
-      [*TOTAL PER SCREEN*], [*~\$105.00*],
+      [3D ASA Parts (6H, 2I, 2 Skid)], [\$12.00],
+      [*TOTAL PER SCREEN*], [*~\$107.00*],
     )
   ],
   [
@@ -699,13 +723,13 @@ Eliminating the transport carts saves *\$440.00* across the program. Fleet const
       fill: (col, row) => if row == 0 { rgb("#edf2f7") } else if row == 3 { rgb("#ebf8ff") } else { none },
       inset: (x: 4pt, y: 2.5pt),
       [*Fleet Item*], [*Total Cost*],
-      [16x Sideline Screen Frames], [~\$1,680.00],
+      [16x Sideline Screen Frames], [~\$1,712.00],
       [Transport Carts (0 built)], [\$0.00 (Saved \$440)],
-      [*TOTAL FLEET HARDWARE*], [*~\$1,680.00*],
+      [*TOTAL FLEET HARDWARE*], [*~\$1,712.00*],
     )
     #v(2pt)
     #text(size: 7.5pt, style: "italic", fill: rgb("#718096"))[
-      Packs: Double-bagged sandbags + hardware: +\$18/screen. Vinyl mounting pack (tape + 16 snap clamps): +\$20/screen.
+      Packs: Double-bagged sandbags + hardware: +\$18/screen. Vinyl mounting pack (tape + 14 snap clamps + 2 corner protector sets): +\$20/screen.
     ]
   ]
 )
@@ -905,10 +929,10 @@ Before approving a completed frame for vinyl wrapping, verify the following:
   - Burnish tape strips firmly to steel conduit, then peel and discard release backing liners.
 3. *Long-Side Tensioning & Initial Wrap:* Start along top rail *A*. Fold vinyl bleed margin tightly around conduit and press firmly into the 5 tape strips. Station operators at opposing bottom rail *A*: pull vinyl firmly across frame face to eliminate all slack and wave patterns, wrap bleed over conduit, and press into opposing tape strips. Verify longitudinal face is drum-tight.
 4. *Short-Side Dual-Operator Tensioning:* Station operators at opposite short ends (*B* rails). Pull outward simultaneously in opposing directions to establish balanced transverse tension without racking frame out of square. Wrap ends around *B* conduit and press into tape. Neatly fold corner bleed tabs flat over 3-way corner brackets (*F*).
-5. *Greenhouse Snap Clamp Installation:* Snap sixteen (16) 1-in. greenhouse pipe snap clamps directly over wrapped vinyl, aligning each clamp precisely over a tape strip:
-  - 5 clamps across top outer rail *A*; 5 clamps across bottom ground rail *A*.
+5. *Two-Piece Corner Protector & Snap Clamp Installation:* First, install two (2) 3D-printed Universal Corner Protectors (Piece 1 + Piece 2) at the bottom corners. Both corners use the exact same common component (no Left/Right handedness). Slide Piece 1 (Outside Skid Shoe) over the corner bracket from the outside corner along the 45° diagonal; its generous 36.0 mm internal trough swallows all bunched vinyl folds without binding, and its front shield covers the banner graphics. Next, drop Piece 2 (Inside Clamp Block) into the inside crook of bracket *F* (sitting +35.5 mm above ground with zero ground contact). Insert one M5 × 40 mm bolt vertically through the recessed bottom counterbore of Piece 1 (Rail *A*), and a second M5 × 40 mm bolt horizontally through the outer side counterbore (Rail *B*). Thread both bolts into the captured hex nuts in Piece 2 and tighten firmly with a 4 mm hex key. The 6.0 mm solid sacrificial runners take all ground dragging friction. Next, snap fourteen (14) 1-in. greenhouse pipe snap clamps directly over wrapped vinyl:
+  - 5 clamps across top outer rail *A*; 3 clamps spaced evenly across bottom ground rail *A* between corner protectors.
   - 3 clamps across left end rail *B*; 3 clamps across right end rail *B*.
-  - Confirm clamps are fully seated. Ensure zero mechanical interference with rear folding hinges (*G*) or 3D snap clips (*I*).
+  - Confirm all clamps and corner protectors are fully seated. Ensure zero mechanical interference with rear folding hinges (*G*) or 3D snap clips (*I*).
 6. *Seasonal Removal (>80°F Rule):* #alert[Never attempt to peel vinyl in cold weather.] Cold adhesive becomes brittle, tearing vinyl scrim. Leave frames in direct summer sunlight (>80°F / 27°C) for 10 minutes prior to peeling; heated adhesive releases effortlessly from conduit without residue.
 
 #pagebreak()
@@ -1009,7 +1033,7 @@ Left End    1/4 Width       Midpoint        3/4 Width       Right End
 
 - *Recommended Timing:* Defer vinyl peeling to summer band camp. Cold fall temperatures make adhesive brittle, increasing tear risk.
 - *Solar Heating:* Staging frames in direct summer sunlight for 10 minutes softens adhesive for effortless residue-free release.
-- *Clamp Removal:* Carefully unclip all sixteen (16) greenhouse snap clamps from perimeter conduit.
+- *Clamp & Skid Removal:* Carefully unclip all fourteen (14) greenhouse snap clamps and remove both two-piece corner protectors by backing out the 4x M5 bolts.
 - *Peel at Shallow Angle:* Slowly peel vinyl back at a shallow angle. Warm adhesive releases cleanly from EMT conduit.
 
 == 2.10 Appendix B Index & Purchasing References
@@ -1050,6 +1074,8 @@ Left End    1/4 Width       Midpoint        3/4 Width       Right End
   [11] *3D Printed Hinged Arm Clip (Part I) — FreeCAD Model*   #link("https://github.com/ericrowe/music/blob/main/PCHSMB/_Sideline%20Screen/Hardware/Hinged%20Arm%20Clip.FCStd")
 
   [12] *3D Printed Weight Clip (Optional Ballast Hanger) — FreeCAD Model*   #link("https://github.com/ericrowe/music/tree/main/PCHSMB/_Sideline%20Screen/Hardware")
+
+  [13] *3D Printed Universal Corner Protectors — Parametric OpenSCAD & STLs*   #link("https://github.com/ericrowe/music/tree/main/PCHSMB/_Sideline%20Screen/Hardware/Corner%20Skid%20Clip")
 
   [17] *2026 Colorado Bandmasters Association (CBA) Marching Band Rulebook (PDF)*   #link("https://ebf5c7e8-3869-4325-bd98-ce10f57d7545.filesusr.com/ugd/83f67e_cb5fe6efdbdb4ce98f619580f694bc94.pdf")
 

@@ -11,15 +11,15 @@
 
 ## 1. Executive Summary & Core Recommendations
 
-This specification establishes the official engineering standard for wind relief cuts in the custom-printed scrim vinyl banners of the PCHSMB Rolling Backdrop fleet (10 backdrops total).
+This specification establishes the official engineering standard for wind relief cuts in the custom-printed scrim vinyl banners of the PCHSMB Rolling Backdrop fleet (11 backdrops total).
 
 | Parameter | Recommendation | Engineering Justification |
 |---|---|---|
 | **Shape** | **True Semicircular Flap** (180° circular arc) | **Strongly preferred over oval / elongated-U.** Single-radius layout, uniform gravity return without tip curl/sag, zero notch risers, and 100% tooling shared with Sideline Screens. |
-| **Dimensions** | **8.0" chord × 4.0" drop** (Radius R = 4.0") | Matches Sideline Screen radius and punch tools. Compact 4" drop prevents thermal sagging while venting 25.1 sq in per flap. |
-| **Count & Grid** | **8 Flaps (2 Rows × 4 Cols)**<br>*(or 6 Flaps: 2 Rows × 3 Cols)* | 8 flaps = 1.40 sq ft (1.8% of face); 6 flaps = 1.05 sq ft (1.3%). Drops prop drag coefficient from Cd = 1.20 to 1.02 (15% load reduction). |
-| **Vertical Zone** | **Upper Venting Zone (6.0 to 8.0 ft above bottom rail)** | Relieves pressure where overturning leverage is highest. Row 1 centered at Y = 96" (8 ft); Row 2 at Y = 72" (6 ft). Avoids top 1 ft and bottom 5 ft. |
-| **Horizontal Spacing** | **8-Cut:** X = 19.2", 38.4", 57.6", 76.8"<br>**6-Cut:** X = 24", 48", 72" | Symmetrical spacing across 96" width; minimum 12" frame clearance from side upright posts and greenhouse clamps. |
+| **Dimensions** | **Option 1: 8.0" chord × 4.0" drop** (R = 4.0")<br>**Option 2: 6.25" chord × 3.125" drop** (R = 3.125") | Option 1 matches Circle Cutter tooling ($25.1\text{ sq in.}$). Option 2 matches standard 1-gal paint can field template ($15.3\text{ sq in.}$). |
+| **Count & Grid** | **Option 1: 8 Flaps (3-2-3 Staggered Quincunx)**<br>**Option 2: 11 Flaps (4-3-4 Paint Can Alternative)**<br>*(or 6 Flaps: 2 Rows × 3 Cols Minimal Variant)* | Option 1: 1.40 sq ft vent area ($C_d = 1.02$, 22.3 mph Tier 3 limit). Option 2: 1.17 sq ft vent area ($C_d = 1.04$, 22.0 mph Tier 3 limit). Both preserve a 24" solid buffer over the 60" mid rail. |
+| **Vertical Zone** | **Three-Row Straddle (Y = 96", 74", 46" above bottom rail)** | Straddles the 60.0 in. mid cross rail: Row 1 at Y = 96", Row 2 at Y = 74" (apex at 70"), Row 3 at Y = 46" (apex at 42"). Provides 24" continuous solid vinyl buffer across the 60" mid rail to prevent wind-slap. |
+| **Horizontal Spacing** | **Option 1 (3-2-3):** R1: 24", 48", 72"; R2: 36", 60"; R3: 24", 48", 72"<br>**Option 2 (4-3-4):** R1: 19.2", 38.4", 57.6", 76.8"; R2: 28.8", 48", 67.2"; R3: 19.2", 38.4", 57.6", 76.8" | Staggered quincunx distribution; minimum 12" frame clearance from side upright posts and greenhouse clamps. |
 | **Graphic Clearance** | **±6" to 12" Floating Offset Rule** | Center points float into dark backgrounds or negative space. Strictly prohibited across performer faces, show typography, or crests. |
 | **Tear Arrest** | **Pre-Punched 3/8" (10 mm) Holes** | Clean circular punch holes at chord endpoints before razor cutting. Reduces stress concentration (Kt 3.0 → 1.0), stopping tears. |
 
@@ -70,9 +70,9 @@ Calculated using `.agents/skills/calculate-prop-wind-loading/scripts/analyze_win
 | **Tier 0: Calm** (0–8 mph) | 0 lb (dry wt 153 lb) | 13.3 mph (limit) | **14.4 mph** (limit) | **+1.1 mph** |
 | **Tier 1: Normal** (8–12 mph) | 60 lb (4× 15-lb bags) | 15.6 mph | **16.9 mph** | **+1.3 mph** |
 | **Tier 2: Advisory** (12–18 mph) | 90 lb (6× 15-lb bags) | 17.0 mph | **18.4 mph** | **+1.4 mph** |
-| **Tier 3: High-Wind** (18–22 mph) | 135 lb (6 wing + 3 rear) | 20.8 mph | **22.5 mph** | **+1.7 mph** |
+| **Tier 3: High-Wind** (18–22 mph) | 135 lb (6 wing + 3 rear) | 20.8 mph | **22.3 mph** | **+1.5 mph** |
 
-*At sea level venues (e.g., BOA Grand Nationals in Indianapolis), air is $\sim 23\%$ denser; semicircular slits ensure Tier 3 ballast withstands $20.3\text{ mph}$ gusts without overturning.*
+*At sea level venues (e.g., BOA Grand Nationals in Indianapolis), air is $\sim 23\%$ denser; semicircular slits ensure Tier 3 ballast withstands $20.1\text{ mph}$ gusts without overturning.*
 
 ---
 
@@ -130,12 +130,14 @@ The initial draft specification referenced "inverted-U crescent flaps ($8\text{ 
 
 Overturning moment is the product of lateral force and elevation ($M = F \cdot z$). Relieving $1.0\text{ lb}$ of aerodynamic drag at $9.0\text{ ft}$ elevation eliminates **$9.75\text{ ft-lb}$** of overturning torque, whereas relieving that same force at $3.0\text{ ft}$ eliminates only **$3.75\text{ ft-lb}$** (a **$2.6\times$ leverage differential**).
 
-Therefore, relief cuts are strictly zoned in the **upper 40% to 65% of the frame**:
+To accommodate the **60.0 in. mid cross rail** installed behind the vinyl banner for structural stiffness, relief cuts are organized into a **three-row straddle** that maintains a generous continuous solid buffer directly over the pipe:
 - **Upper Row (Row 1):** Centered at **$Y = 96.0\text{ in.}$ ($8.0\text{ ft}$ above bottom rail)** ($105.0\text{ in.}$ above turf).
-- **Lower Row (Row 2):** Centered at **$Y = 72.0\text{ in.}$ ($6.0\text{ ft}$ above bottom rail)** ($81.0\text{ in.}$ above turf).
-- **Excluded Zones:**
-  - *Top 12 inches ($Y > 108\text{ in.}$):* Avoided to prevent perimeter tear peel under top snap clamps and perimeter tension tape.
-  - *Bottom 5 feet ($Y < 60\text{ in.}$):* Avoided because wind venting near the bottom provides minimal overturning moment relief while falling directly across performer sightlines.
+- **Mid-Upper Row (Row 2):** Centered at **$Y = 74.0\text{ in.}$ ($6.17\text{ ft}$ above bottom rail)** ($83.0\text{ in.}$ above turf; flap apex at $Y = 70.0\text{ in.}$, providing a **$10.0\text{ in.}$ solid buffer above the 60" rail**).
+- **Lower-Mid Row (Row 3):** Centered at **$Y = 46.0\text{ in.}$ ($3.83\text{ ft}$ above bottom rail)** ($55.0\text{ in.}$ above turf; top hinge chord at $Y = 46.0\text{ in.}$, providing a **$14.0\text{ in.}$ solid buffer below the 60" rail**).
+- **Excluded / Buffer Zones:**
+  - *Mid-Rail Buffer ($Y = 46\text{ in.} \text{ to } 70\text{ in.}$):* Continuous 24.0-inch solid vinyl zone centered across the 60.0-in. mid rail. Completely eliminates wind-battering contact against the pipe.
+  - *Top 24 inches ($Y > 96\text{ in.}$):* Retains continuous tension band under top snap clamps and perimeter tension tape.
+  - *Bottom 42 inches ($Y < 42\text{ in.}$):* Preserves solid ground graphics and protects performer sightlines.
 
 ### 5.2 Perimeter & Frame Clearances
 - **Frame Clearance:** Backdrop uprights are 1-5/8" OD steel fence posts. Maintain at least **$12.0\text{ in.}$ horizontal clearance** from outer vertical uprights ($12.0\text{ in.} \le X \le 84.0\text{ in.}$).
@@ -146,56 +148,76 @@ Therefore, relief cuts are strictly zoned in the **upper 40% to 65% of the frame
 
 ### 5.3 Exact Coordinate Layouts
 
-```
-   0"          19.2"           38.4"           57.6"           76.8"         96.0"
-  +-------------+---------------+---------------+---------------+-------------+
-  |                                                                           | 120" (Top Rail)
-  |                                                                           |
-  |             (O)==(O)        (O)==(O)        (O)==(O)        (O)==(O)      |
-  |              \___/           \___/           \___/           \___/        | 96" (Row 1)
-  |                                                                           |
-  |                                                                           |
-  |             (O)==(O)        (O)==(O)        (O)==(O)        (O)==(O)      |
-  |              \___/           \___/           \___/           \___/        | 72" (Row 2)
-  |                                                                           |
-  |                                                                           |
-  |                     [ UNVENTED LOWER GRAPHIC ZONE ]                       |
-  |                                                                           |
-  |                                                                           |
-  +---------------------------------------------------------------------------+ 0" (Bottom Rail)
+```text
+<------------ 96.0" (8 ft) ------------>
+0"     24.0"    36.0"    48.0"    60.0"    72.0"   96.0"
++--------+--------+--------+--------+--------+-------+ 120.0" (Top Rail)
+|                                                    |
+|               [Top 24" Solid Vinyl]                |
+|                                                    |
+|        X                 X                 X       |  96.0" (Row 1: 3 Flaps)
+|       F-1               F-2               F-3      |
+|                                                    |
+|                 X                 X                |  74.0" (Row 2: 2 Flaps)
+|                F-4               F-5               |
+| - - - - - - - - - - - - - - - - - - - - - - - - -  |  70.0" (Row 2 Apex)
+|           [10" Solid Buffer Above Rail]            |
+|====================================================|  60.0" (Mid Rail - Riveted)
+|           [14" Solid Buffer Below Rail]            |
+| - - - - - - - - - - - - - - - - - - - - - - - - -  |  46.0" (Row 3 Hinge)
+|        X                 X                 X       |  46.0" (Row 3: 3 Flaps)
+|       F-6               F-7               F-8      |
+| - - - - - - - - - - - - - - - - - - - - - - - - -  |  42.0" (Row 3 Apex)
+|             [Solid Lower Graphic Zone]             |
+|            (Protects Low Artwork & Base)           |
++====================================================+   0.0" (Cart Deck)
+^        ^        ^        ^        ^        ^       ^
+Post    1/4      3/8      1/2      5/8      3/4    Post
 ```
 
-#### Layout A: 8-Flap Fleet Standard (2 Rows × 4 Columns) — [RECOMMENDED]
+#### Option 1: 8-Flap Fleet Standard (3-2-3 Staggered Quincunx Grid) — [RECOMMENDED]
 
-*Best aerodynamic distribution; 100% tooling unification with Sideline Screens.*
+*Primary fleet standard; $R = 4.0\text{ in.}$, $1.40\text{ sq ft}$ vent area, $C_d = 1.02$, $22.3\text{ mph}$ Tier 3 limit.*
 
 | Cut | Row | Height (Y) | Center (X) | Punch Holes at X | Arc Bottom (Y) |
 |:---:|:---:|:---:|:---:|:---:|:---:|
-| **F-1** | Row 1 (Upper) | 96" (8.0 ft) | 19.2" (1.6 ft) | 15.2" and 23.2" | 92" (7.7 ft) |
-| **F-2** | Row 1 (Upper) | 96" (8.0 ft) | 38.4" (3.2 ft) | 34.4" and 42.4" | 92" (7.7 ft) |
-| **F-3** | Row 1 (Upper) | 96" (8.0 ft) | 57.6" (4.8 ft) | 53.6" and 61.6" | 92" (7.7 ft) |
-| **F-4** | Row 1 (Upper) | 96" (8.0 ft) | 76.8" (6.4 ft) | 72.8" and 80.8" | 92" (7.7 ft) |
-| **F-5** | Row 2 (Mid-Upper) | 72" (6.0 ft) | 19.2" (1.6 ft) | 15.2" and 23.2" | 68" (5.7 ft) |
-| **F-6** | Row 2 (Mid-Upper) | 72" (6.0 ft) | 38.4" (3.2 ft) | 34.4" and 42.4" | 68" (5.7 ft) |
-| **F-7** | Row 2 (Mid-Upper) | 72" (6.0 ft) | 57.6" (4.8 ft) | 53.6" and 61.6" | 68" (5.7 ft) |
-| **F-8** | Row 2 (Mid-Upper) | 72" (6.0 ft) | 76.8" (6.4 ft) | 72.8" and 80.8" | 68" (5.7 ft) |
+| **F-1** | Row 1 (Upper) | 96.0" (8.0 ft) | 24.0" (2.0 ft) | 20.0" and 28.0" | 92.0" (7.67 ft) |
+| **F-2** | Row 1 (Upper) | 96.0" (8.0 ft) | 48.0" (4.0 ft) | 44.0" and 52.0" | 92.0" (7.67 ft) |
+| **F-3** | Row 1 (Upper) | 96.0" (8.0 ft) | 72.0" (6.0 ft) | 68.0" and 76.0" | 92.0" (7.67 ft) |
+| **F-4** | Row 2 (Mid-Upper) | 74.0" (6.17 ft) | 36.0" (3.0 ft) | 32.0" and 40.0" | 70.0" (5.83 ft) |
+| **F-5** | Row 2 (Mid-Upper) | 74.0" (6.17 ft) | 60.0" (5.0 ft) | 56.0" and 64.0" | 70.0" (5.83 ft) |
+| **F-6** | Row 3 (Lower-Mid) | 46.0" (3.83 ft) | 24.0" (2.0 ft) | 20.0" and 28.0" | 42.0" (3.50 ft) |
+| **F-7** | Row 3 (Lower-Mid) | 46.0" (3.83 ft) | 48.0" (4.0 ft) | 44.0" and 52.0" | 42.0" (3.50 ft) |
+| **F-8** | Row 3 (Lower-Mid) | 46.0" (3.83 ft) | 72.0" (6.0 ft) | 68.0" and 76.0" | 42.0" (3.50 ft) |
 
-*(Note: Dimensions are measured above bottom rail. Turf elevation is Y + 9" deck height. Column spacing may be rounded in shop practice to X = 20", 38", 58", 76".)*
+*(Note: Dimensions are measured above bottom rail. Turf elevation is Y + 9" deck height.)*
 
 ---
 
-#### Layout B: 6-Flap Approved Minimal Variant (2 Rows × 3 Columns)
+#### Option 2: 11-Flap Paint Can Field Alternative (4-3-4 Staggered Grid)
 
-*Approved minimal baseline; fewer cuts per banner.*
+*Alternative cut with 1-gallon paint can ($\varnothing 6.25\text{ in.}$, $R = 3.125\text{ in.}$); $1.17\text{ sq ft}$ vent area, $C_d = 1.04$, $22.0\text{ mph}$ Tier 3 limit.*
+
+| Row | Count | Height (Y) | Centerline X Coordinates | Punch Holes at X | Apex (Y) |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Row 1** | 4 | 96.0" (8.0 ft) | 19.2", 38.4", 57.6", 76.8" | $\pm 3.125"$ from center | 92.88" |
+| **Row 2** | 3 | 74.0" (6.17 ft) | 28.8", 48.0", 67.2" | $\pm 3.125"$ from center | 70.88" |
+| **Row 3** | 4 | 46.0" (3.83 ft) | 19.2", 38.4", 57.6", 76.8" | $\pm 3.125"$ from center | 42.88" |
+
+---
+
+#### Option 3: 6-Flap Approved Minimal Variant (2 Rows × 3 Columns)
+
+*Approved minimal baseline for banners with prominent central artwork; $1.05\text{ sq ft}$ vent area.*
 
 | Cut | Row | Height (Y) | Center (X) | Punch Holes at X | Arc Bottom (Y) |
 |:---:|:---:|:---:|:---:|:---:|:---:|
-| **F-1** | Row 1 (Upper) | 96" (8.0 ft) | 24.0" (2.0 ft) | 20.0" and 28.0" | 92" (7.7 ft) |
-| **F-2** | Row 1 (Upper) | 96" (8.0 ft) | 48.0" (4.0 ft) | 44.0" and 52.0" | 92" (7.7 ft) |
-| **F-3** | Row 1 (Upper) | 96" (8.0 ft) | 72.0" (6.0 ft) | 68.0" and 76.0" | 92" (7.7 ft) |
-| **F-4** | Row 2 (Mid-Upper) | 72" (6.0 ft) | 24.0" (2.0 ft) | 20.0" and 28.0" | 68" (5.7 ft) |
-| **F-5** | Row 2 (Mid-Upper) | 72" (6.0 ft) | 48.0" (4.0 ft) | 44.0" and 52.0" | 68" (5.7 ft) |
-| **F-6** | Row 2 (Mid-Upper) | 72" (6.0 ft) | 72.0" (6.0 ft) | 68.0" and 76.0" | 68" (5.7 ft) |
+| **M-1** | Row 1 (Upper) | 96.0" (8.0 ft) | 24.0" (2.0 ft) | 20.0" and 28.0" | 92.0" (7.67 ft) |
+| **M-2** | Row 1 (Upper) | 96.0" (8.0 ft) | 48.0" (4.0 ft) | 44.0" and 52.0" | 92.0" (7.67 ft) |
+| **M-3** | Row 1 (Upper) | 96.0" (8.0 ft) | 72.0" (6.0 ft) | 68.0" and 76.0" | 92.0" (7.67 ft) |
+| **M-4** | Row 2 (Mid-Upper) | 72.0" (6.0 ft) | 24.0" (2.0 ft) | 20.0" and 28.0" | 68.0" (5.67 ft) |
+| **M-5** | Row 2 (Mid-Upper) | 72.0" (6.0 ft) | 48.0" (4.0 ft) | 44.0" and 52.0" | 68.0" (5.67 ft) |
+| **M-6** | Row 2 (Mid-Upper) | 72.0" (6.0 ft) | 72.0" (6.0 ft) | 68.0" and 76.0" | 68.0" (5.67 ft) |
 
 ---
 
@@ -283,11 +305,11 @@ Calculated using `.agents/skills/calculate-prop-wind-loading/scripts/analyze_win
    Sudden stadium downdrafts or thermal gusts exert peak instantaneous pressure spikes ($q = \frac{1}{2}\rho V^2$). Relief flaps rapidly vent peak impulses before the cart's inertia can transition into an overturning roll over the front wheels.
 
 ### 8.5 Volunteer Operational Rule (Field Simplification)
-Volunteer parent crew and student handlers cannot calculate mathematical percentages or track fractional wind limits during field logistics. To guarantee absolute safety, the calculated de-ratings are **rounded up to a flat 2 mph reduction across all wind regimes**, Tier 4 abort is lowered, and companion duck blinds must carry 2 bags even in Tier 0:
+Volunteer parent crew and student handlers cannot calculate mathematical percentages or track fractional wind limits during field logistics. To guarantee absolute safety while preserving operational continuity without conflicting with Tier 3 high-wind limits, operational wind regimes are derated per safe aeromechanical thresholds, Tier 0 dry staging is eliminated, and the abort ceiling is set to 16 mph sustained / 20 mph gusts:
 
 > [!IMPORTANT]
 > **Operational Guidance for Unvented Vinyl:**
-> *"Without wind relief cuts, the props may be used by derating all wind regimes by 2MPH, decreasing the Tier 4 Abort threshold to 12MPH sustained / 16MPH gusts, and increasing the duck blind tier 0 ballasting to 2 bags."*
+> *"Without wind relief cuts, the props may be used by derating operational wind regimes to safe aeromechanical limits, setting the Tier 4 Abort threshold to 16MPH sustained / 20MPH gusts (vs. 20/25 MPH standard), and increasing duck blind tier 0 ballasting to 2 bags."*
 
 ---
 

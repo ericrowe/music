@@ -39,7 +39,7 @@
       #grid(
         columns: (1.5fr, 1.2fr, 1fr),
         align(left)[*WORKING DRAFT — NOT FOR USE*],
-        align(center)[*Release v0 (D8)* | September 2026],
+        align(center)[*Release v0 (D9)* | September 2026],
         align(right)[*Page #pg-str*]
       )
     ]
@@ -137,7 +137,7 @@
   audience: [],
   contents: [],
   print-label: [],
-  revision: [Release v0 (unreleased) | Development build D8 | September 2026],
+  revision: [Release v0 (unreleased) | Development build D9 | September 2026],
   separation-note: [When separated from the master document, keep this cover as the first page.]
 ) = [
   #align(center)[
@@ -203,7 +203,7 @@
   columns: (1.5fr, 0.9fr, 1.3fr, 2.5fr),
   stroke: 0.5pt + rgb("#cbd5e0"),
   fill: (x, y) => if y == 0 { rgb("#edf2f7") } else if calc.even(y) { rgb("#f7fafc") } else { white },
-  inset: (x: 5pt, y: 3.5pt),
+  inset: (x: 5pt, y: 2.8pt),
   [*Version*], [*Date*], [*Status*], [*One-line description*],
   [Release v0 (unreleased) — Build D1], [2026-09-01], [WORKING DRAFT — NOT FOR USE], [Standardized master manual with 2026 CBA competition rules, 3/4" wing ballast posts, handle sandbag specifications, and instrument tote guidelines],
   [Release v0 (unreleased) — Build D2], [2026-09-10], [WORKING DRAFT — NOT FOR USE], [Add detailed vinyl installation procedure, specifications table, hardware relief slits, and snap clamp fastening],
@@ -213,6 +213,7 @@
   [Release v0 (unreleased) — Build D6], [2026-09-15], [WORKING DRAFT — NOT FOR USE], [Update trailer transport figure (Figure 5) with overhead shoring beam frame storage photograph],
   [Release v0 (unreleased) — Build D7], [2026-09-15], [WORKING DRAFT — NOT FOR USE], [Clarify wind relief NO-CUT zones to explicitly protect printed graphic details, depicted faces, and logos],
   [Release v0 (unreleased) — Build D8], [2026-09-15], [WORKING DRAFT — NOT FOR USE], [Add ASCII diagram illustrating wind relief cut locations ($2 times 4$ grid, 8 semicircular flaps) in Appendix B Section 2.9.3],
+  [Release v0 (unreleased) — Build D9], [2026-09-26], [WORKING DRAFT — NOT FOR USE], [Add 60" mid cross rail with T-brackets, 6-4 all-steel pop riveting (#11 drill bits), 3-2-3 straddled wind relief cuts, and update Tier 3 wind limit to 22.3 mph],
 )
 
 = Intro / Overview
@@ -221,7 +222,7 @@ This master manual is organized as three independently printable appendices unde
 
 #align(center)[
   #figure(
-    image("assets/approved/figure_02_field_deployment.jpg", width: 62%),
+    image("assets/approved/figure_02_field_deployment.jpg", width: 56%),
     caption: [*Figure 2.* Backdrop units deployed in performance formation on athletic field.]
   )
 ]
@@ -269,7 +270,7 @@ Special thanks and credit to the Plainfield North Bands for creating the origina
   audience: [Field operators, parent prop crew, and student handlers],
   contents: [Transport & field entrance; student/volunteer training; wing ballast posts; double-bagging rules; student instrument stowage; 2026 CBA rules; trailer storage],
   print-label: [All pages labeled A-],
-  revision: [Release v0 (unreleased) | Development build D8 | September 2026],
+  revision: [Release v0 (unreleased) | Development build D9 | September 2026],
   separation-note: [When separated from the master document, keep this cover as the first page of Appendix A.]
 )
 
@@ -381,7 +382,7 @@ Ballasting requirements are scaled dynamically based on observed stadium wind ve
   [Tier 0: Calm], [0–8 mph, gusts #sym.lt.eq 10], [0 bags (unballasted)], [None], [0 lbs (153 lb total)], [10.0 mph safe gust (14.4 mph tip limit). FoS #sym.gt.eq 2.07. Upgrade to Tier 1 if wind >8 mph.],
   [Tier 1: Normal], [Light breeze (8–12 mph)], [4x 15-lb bags (2 per wing post; 30 lb/side)], [None], [60 lbs (213 lb total)], [16.9 mph max gust. Standard operations; zero turf compaction.],
   [Tier 2: Advisory], [Moderate breeze (12–18 mph)], [6x 15-lb bags (3 per wing post; 45 lb/side)], [None], [90 lbs (243 lb total)], [18.4 mph max gust. Handlers deploy ground sandbag chocks if breezy.],
-  [Tier 3: High-Wind], [High wind (18–22 mph)], [6x 15-lb bags (3 per wing post; 45 lb/side)], [3x 15-lb bags laid flat along rear rail A], [135 lbs (288 lb total)], [22.5 mph max gust. Symmetrical stability; max safe turf limit.],
+  [Tier 3: High-Wind], [High wind (18–22 mph)], [6x 15-lb bags (3 per wing post; 45 lb/side)], [3x 15-lb bags laid flat along rear rail A], [135 lbs (288 lb total)], [22.3 mph max gust. Symmetrical stability; max safe turf limit.],
   [*Tier 4: Safety Abort*], [Severe gale (>20 sust. / >25 gusts)], [—], [—], [—], [*UNSAFE. Field withdrawal / NO-GO.* Props kept off field or laid flat.],
 )
 ]
@@ -391,7 +392,7 @@ Ballasting requirements are scaled dynamically based on observed stadium wind ve
 Because the 10 ft x 8 ft vertical upright steel frame sits on the front perimeter rail (A) of the cart base, the structure possesses an inherent tipping asymmetry:
 
 1. *Critical Failure Mode (Forward Tipping):* When wind blows from the rear toward the front, the cart pivots about the front caster wheels. Because the 48-lb steel frame and vinyl banner sit directly above the front caster line, their deadweight provides zero restoring leverage. As a result, an unballasted prop tips forward at just 12.4 mph (11.2 mph at sea level).
-2. *The Rear-Rail Mechanical Advantage:* The 3/4-in. wing pipe posts sit at mid-depth (22.25 in. from front), providing a restoring lever arm of 1.71 ft to the front casters. By contrast, placing supplemental sandbags along the rear 2x4 framing rail (A) behind the instrument tote increases the lever arm to 3.46 ft (41.5 in.)—more than double the mechanical leverage! Three 15-lb bags placed across the rear rail produce the overturning resistance of six bags stacked on the center posts, equalizing forward and backward tipping thresholds to 22.5 mph.
+2. *The Rear-Rail Mechanical Advantage:* The 3/4-in. wing pipe posts sit at mid-depth (22.25 in. from front), providing a restoring lever arm of 1.71 ft to the front casters. By contrast, placing supplemental sandbags along the rear 2x4 framing rail (A) behind the instrument tote increases the lever arm to 3.46 ft (41.5 in.)—more than double the mechanical leverage! Three 15-lb bags placed across the rear rail produce the overturning resistance of six bags stacked on the center posts, equalizing forward and backward tipping thresholds to 22.3 mph.
 3. *Turf Compaction Ceiling:* Total supplemental ballast must never exceed 140 lbs (293 lbs total prop deadweight). Concentrating more than ~75 lbs per caster wheel causes casters to sink into artificial turf rubber infill, multiplying rolling drag and risking permanent turf depressions or track damage.
 
 === C. Mandatory Double-Bagging Protocol (CBA Rule 8.05)
@@ -503,7 +504,7 @@ The following governing rules are extracted directly from the official 2026 Colo
   audience: [Band prop construction leads, parent build volunteers, and fabrication teams],
   contents: [Shop safety; full BOM; 3D-printed fixtures; lumber and steel cut schedules; cost breakdown; 4-stage frame assembly; vinyl tensioning and snap clamping; quality checklist; indexed purchase sources],
   print-label: [All pages labeled B-],
-  revision: [Release v0 (unreleased) | Development build D8 | September 2026],
+  revision: [Release v0 (unreleased) | Development build D9 | September 2026],
   separation-note: [When separated from the master document, keep this cover as the first page of Appendix B.]
 )
 
@@ -525,12 +526,12 @@ The following governing rules are extracted directly from the official 2026 Colo
 == 2.2 Materials & Component Inventory (BOM)
 
 #block(breakable: false)[
-#set text(size: 8.2pt)
+#set text(size: 7.8pt)
 #table(
   columns: (1.5fr, 2.5fr, 1.0fr, 1.4fr),
   stroke: 0.5pt + rgb("#cbd5e0"),
   fill: (x, y) => if y == 0 { rgb("#edf2f7") } else if calc.even(y) { rgb("#f7fafc") } else { white },
-  inset: (x: 4pt, y: 2.1pt),
+  inset: (x: 4pt, y: 1.7pt),
   [*Component*], [*Specification*], [*Qty / Prop*], [*Source*],
   [2x4 SPF / Doug Fir], [2x4x8 ft framing lumber (96″ rails, 44.5″ joists)], [8 pcs], [Lumber yard],
   [1/2″ Plywood Decking], [1/2 in. CDX / Sanded Plywood (Left & Right wings)], [1 sheet], [Lumber yard],
@@ -542,8 +543,11 @@ The following governing rules are extracted directly from the official 2026 Colo
   [GRK #10 x 4″ Screws], [Self-countersinking flat head screws (Blue markers)], [12 pcs], [Index [6] / Home Depot],
   [Swivel Casters], [Heavy-duty turf-compatible non-locking swivel plate casters], [4], [Index [4] / Amazon],
   [Fence Line Posts], [1-5/8″ Dia. x 10 ft 16-Ga. Galvanized Steel Posts (Black)], [2], [Index [1] / Home Depot],
-  [Fence Top Rails], [1-5/8″ Dia. x 8 ft Top Rails (Frame & Struts)], [4], [Home Depot],
+  [Fence Top Rails], [1-5/8″ Dia. x 8 ft Top Rails (Frame: Top, Mid, Bottom; & Struts)], [5], [Home Depot],
   [3-Way Corner Clamps], [1-5/8″ 3-Way Clamp Corner Elbow Brackets], [4], [Index [2] / Amazon],
+  [1-5/8″ T-Clamp Brackets], [1-5/8″ Galvanized Steel T-Clamp Brackets (Mid Rail)], [2 pcs], [Index [19] / Fence supplier],
+  [6-4 Pop Rivets (All-Steel)], [3/16″ Dia. x 1/4″ Grip All-Steel Blind Rivets (Position Lock)], [4 pcs], [Index [20] / Amazon],
+  [#11 HSS Drill Bit], [#11 (0.1910″ Dia.) High-Speed Steel Clearance Drill Bit], [1 pc], [Index [21] / Amazon],
   [Fence Tension Bands], [1-5/8″ Galvanized Steel Tension Bands], [4], [Index [3] / Home Depot],
   [Steel End Caps & U-Bolts], [1-5/8″ Steel Rail End Caps & Heavy-Duty U-Bolts], [4 caps, 2 U-bolts], [Index [7] / Amazon],
   [15-lb Handle Sandbags], [Abccanopy 15-lb Heavy-Duty Sandbags w/ Handle], [4–9 pcs (4–6 wing, 3 rear)], [Index [13] / Amazon],
@@ -572,7 +576,8 @@ The following governing rules are extracted directly from the official 2026 Colo
     - Miter or circular saw w/ framing blade
     - Metal chop saw or reciprocating saw
     - Impact driver with Torx T-25 bit
-    - Cordless drill w/ 1/8" HSS/Cobalt bit
+    - Cordless drill w/ 1/8" bit & #11 bit (Index [21])
+    - Blind pop rivet gun (manual or pneumatic)
     - PCHSMB Field Prop Circle Cutter (Index [18])
   ],
   [
@@ -615,7 +620,7 @@ Print all fixtures in Black ASA or PETG for outdoor UV and heat stability. Do no
 
 === B. Galvanized Steel Tubing Cut Schedule (1-5/8" Fence Line Posts & Top Rails)
 - *Vertical Upright Posts:* 2 pcs @ 10 ft 0 in. (standard uncut 16-gauge fence line posts).
-- *Top & Bottom Cross Rails:* 2 pcs @ 8 ft 0 in. (cut from 1-5/8 in. top rail; trimmed square for 3-way corner brackets).
+- *Top, Mid & Bottom Cross Rails:* 3 pcs @ 8 ft 0 in. (cut from 1-5/8 in. top rail; trimmed square for 3-way corner brackets and T-clamps).
 - *Two-Piece Diagonal Support Struts:* 2 modular strut assemblies with sleeved joint and quick-release wire-lock pin.
 
 == 2.6 Estimated Fabrication Cost Breakdown
@@ -634,10 +639,10 @@ The following table itemizes estimated material costs per backdrop prop based on
   [Cart Base Framing], [8x 2x4 SPF lumber, 1/2 sheet 1/2" plywood, GRK screws, paint], [\$98.00],
   [Casters & Bumpers], [4x Heavy-duty non-locking swivel casters, 4x ASA corner bumpers], [\$51.00],
   [Ballast Posts & Tote], [2x 3/4" flanges & 18" pipes, carriage bolts, 1x HDX 14-gal tote], [\$46.00],
-  [Upright Steel Frame], [2x 10-ft 16-ga fence posts, 2x 8-ft top rails, 4x 3-way brackets, bands], [\$121.00],
+  [Upright Steel Frame], [2x 10-ft 16-ga fence posts, 3x 8-ft top rails, 4x 3-way brackets, 2x T-brackets], [\$144.50],
   [Diagonal Struts & Mounts], [1x 10-ft top rail (2 struts), 4x end caps, tension bands, 2x U-bolts], [\$49.50],
-  [Vinyl Attachment Hardware], [1-1/4" greenhouse snap clamps pack (14 pcs), 1" heavy-duty tape, pilot hardware], [\$25.00],
-  [*TOTAL PER PROP (EXCL. VINYL)*], [*Hardware & lumber complete chassis*], [*\~\$390.00*],
+  [Vinyl & Riveting Hardware], [14x snap clamps, tape, 6-4 all-steel pop rivets, #11 HSS drill bit], [\$27.00],
+  [*TOTAL PER PROP (EXCL. VINYL)*], [*Hardware & lumber complete chassis*], [*\~\$416.00*],
 )
 ]
 #v(1pt)
@@ -685,13 +690,13 @@ The rolling cart base is fabricated from 2x4 SPF/Doug Fir lumber according to th
   gutter: 10pt,
   align(center)[
     #figure(
-      image("assets/approved/figure_07_cart_painting.jpg", width: 92%),
+      image("assets/approved/figure_07_cart_painting.jpg", width: 78%),
       caption: [*Figure 7.* Cart base frames painted black with plywood decking wings installed.]
     )
   ],
   align(center)[
     #figure(
-      image("assets/approved/figure_09_caster_wheel.jpg", width: 92%),
+      image("assets/approved/figure_09_caster_wheel.jpg", width: 78%),
       caption: [*Figure 9.* Swivel caster wheel assembly mounted beneath corner framing.]
     )
   ]
@@ -701,8 +706,10 @@ The rolling cart base is fabricated from 2x4 SPF/Doug Fir lumber according to th
 
 === Stage 3: Assemble the Upright Backdrop Frame
 
-1. *Upright Rectangle:* Join two 10-ft 16-gauge steel fence line posts and two 8-ft top rails using four 1-5/8 in. 3-way clamp corner elbow brackets (Index [2]). Bottom out all tube ends inside the clamp sockets and tighten clamp bolts evenly.
-2. *Base Attachment:* Stand the upright frame against the front rail (A) of the cart base. Anchor the bottom of each vertical post using 1-5/8 in. galvanized steel tension bands (Index [3]) through-bolted to the 2x4 lumber frame.
+1. *Upright Perimeter Rectangle:* Join two 10-ft 16-gauge steel fence line posts and top and bottom 8-ft cross rails using four 1-5/8 in. 3-way clamp corner elbow brackets (Index [2]). Bottom out all tube ends inside the clamp sockets and torque clamp bolts evenly.
+2. *60″ Mid Cross Rail Installation:* Measure and mark $Y = 60.0$ in. above the bottom of each vertical post (centerline of mid rail). Slide two 1-5/8 in. steel T-clamp brackets (Index [19]) onto the uprights, align centers at the 60.0 in. mark, insert the 8-ft mid cross rail into the horizontal sleeves, and torque clamp bolts.
+3. *Positional Stability Riveting (#11 Bit & 6-4 All-Steel Pop Rivets):* To guarantee positional stability against wind buffeting and road transit vibration, the mid rail is permanently riveted to the T-brackets and uprights. Using a cordless drill with a #11 HSS drill bit (0.1910″ dia., Index [21]), drill two clearance pilot holes per bracket—one through the bracket sleeve into the upright post, and one into the mid cross rail (4 rivets total per prop). Using a blind pop rivet gun, set 6-4 all-steel pop rivets (3/16″ dia., 1/4″ grip range, Index [20]) into each hole. (All-steel body and mandrel are mandatory for high shear strength).
+4. *Base Attachment:* Stand the upright frame against front rail (A) of the cart base. Anchor the bottom of each vertical post using 1-5/8 in. galvanized steel tension bands (Index [3]) through-bolted to the 2x4 lumber frame.
 
 #pagebreak()
 
@@ -732,7 +739,7 @@ Verify each checkpoint prior to certifying the mechanical frame and cart assembl
   columns: (0.4fr, 1.8fr, 3.2fr, 1.2fr),
   stroke: 0.5pt + rgb("#cbd5e0"),
   fill: (x, y) => if y == 0 { rgb("#edf2f7") } else if calc.even(y) { rgb("#f7fafc") } else { white },
-  inset: (x: 4pt, y: 3.5pt),
+  inset: (x: 4pt, y: 2.7pt),
   [*#chk*], [*Subsystem / Item*], [*Acceptance Criteria & Standard*], [*QC Status*],
   [#chk], [Cart Base Squareness], [Opposite diagonal measurements within 1/8 in. Frame sits flat.], [[ ] Pass  [ ] Rework],
   [#chk], [Fasteners & Framing], [All GRK red and blue screws fully countersunk; zero split lumber.], [[ ] Pass  [ ] Rework],
@@ -741,6 +748,7 @@ Verify each checkpoint prior to certifying the mechanical frame and cart assembl
   [#chk], [Swivel Casters], [Smooth 360° rotation; hex nuts torqued; rolls freely without wobble.], [[ ] Pass  [ ] Rework],
   [#chk], [Corner Bumpers], [4x ASA corner braces secured firmly with pan-head screws.], [[ ] Pass  [ ] Rework],
   [#chk], [Upright Steel Frame], [All four 3-way corner clamp elbow bolts torqued securely.], [[ ] Pass  [ ] Rework],
+  [#chk], [60″ Mid Rail & Rivets], [T-brackets centered at Y=60.0″; 4x 6-4 pop rivets tight; zero rotation.], [[ ] Pass  [ ] Rework],
   [#chk], [Diagonal Struts], [End caps pre-drilled and screwed; 2-piece wire-lock pins locked.], [[ ] Pass  [ ] Rework],
   [#chk], [Frame-to-Cart Mount], [Tension band clamp bolts fully torqued; upright square to base.], [[ ] Pass  [ ] Rework],
 )
@@ -831,67 +839,69 @@ To prevent destructive vortex flutter, reduce peak dynamic overturning impulses 
   title: "Aerodynamic & Mechanical Function of Semicircular Relief Flaps",
   [
     - *Steady-State Drag Reduction:* Drops drag coefficient from $C_d = 1.20 -> 1.02$ (15.0% reduction in lateral drag force and overturning moment).
-    - *Turf Sliding & Stability:* Raises synthetic turf sliding threshold and matches rear-rail overturning resistance to 22.5 mph at Colorado Springs elevation (6,500 ft ASL).
+    - *Turf Sliding & Stability:* Raises synthetic turf sliding threshold and matches rear-rail overturning resistance to 22.3 mph at Colorado Springs elevation (6,500 ft ASL).
     - *Vortex Flutter Suppression:* Destroys coherent Strouhal vortex shedding (~0.8–1.2 Hz), preventing negative billow suction (>3.0 psf) that pries greenhouse snap clamps off conduit.
     - *Tear Resistance:* Pre-punched 3/8-in. (10 mm) circular holes eliminate sharp stress risers ($K_t -> 1.0$).
   ]
 )
 
 ==== Semicircular Geometry Standard ($R = 4.0$ in.)
-Each flap is a true semicircle ($180^degree$ circular arc) measuring *8.0 in. horizontal top chord × 4.0 in. downward drop* (Radius $R = 4.0$ in.). Vent area is 25.13 sq in. per flap. Semicircular geometry provides superior thermal beam stiffness over elongated ovals, preventing tip curling and sagging in $130^degree F+$ crumb-rubber heat while sharing 100% tooling commonality with the PCHSMB Sideline Screen fleet.
+Each flap is a true semicircle ($180^degree$ circular arc) measuring *8.0 in. horizontal top chord × 4.0 in. downward drop* (Radius $R = 4.0$ in., vent area 25.13 sq in. per flap). Semicircular geometry provides superior thermal beam stiffness over elongated ovals, preventing tip curling and sagging in $130^degree F+$ crumb-rubber heat while sharing 100% tooling commonality with the PCHSMB Sideline Screen fleet.
 
-==== 8-Flap Fleet Primary Standard Coordinate Schedule ($2 times 4$ Grid)
-The primary standard deploys 8 semicircular flaps, providing *1.40 sq ft (201 sq in.) total vent area* (1.75% of display face). Venting is concentrated in the upper zone ($Y = 72.0$ to $96.0$ in.) where overturning moment leverage is greatest ($M = F times y$), maintaining 12 in. frame clearance from perimeter tubing:
+==== Option 1: 8-Flap Fleet Primary Standard (3-2-3 Staggered Quincunx Grid)
+The primary standard deploys 8 semicircular flaps in a 3-2-3 staggered pattern straddling the 60″ mid rail, providing *1.40 sq ft (201 sq in.) total vent area* (1.75% of face) and *22.3 mph* Tier 3 stability ($C_d = 1.02$):
 
 #table(
   columns: (0.9fr, 1.2fr, 1fr, 1.1fr, 1.8fr, 1.2fr),
   align: (center + horizon, left + horizon, center + horizon, center + horizon, center + horizon, center + horizon),
   stroke: 0.4pt + rgb("#cbd5e0"),
   fill: (col, row) => if row == 0 { rgb("#edf2f7") } else { none },
-  inset: (x: 4pt, y: 2.2pt),
+  inset: (x: 4pt, y: 1.5pt),
   [*Flap ID*], [*Grid Row*], [*Height (Y)*], [*Center (X)*], [*Punched Endpoints (X)*], [*Apex Clearance*],
-  [Flap F-1], [Row 1 (Upper)], [96.0 in.], [19.2 in.], [15.2 in. and 23.2 in.], [92.0 in. to turf],
-  [Flap F-2], [Row 1 (Upper)], [96.0 in.], [38.4 in.], [34.4 in. and 42.4 in.], [92.0 in. to turf],
-  [Flap F-3], [Row 1 (Upper)], [96.0 in.], [57.6 in.], [53.6 in. and 61.6 in.], [92.0 in. to turf],
-  [Flap F-4], [Row 1 (Upper)], [96.0 in.], [76.8 in.], [72.8 in. and 80.8 in.], [92.0 in. to turf],
-  [Flap F-5], [Row 2 (Mid-Upper)], [72.0 in.], [19.2 in.], [15.2 in. and 23.2 in.], [68.0 in. to turf],
-  [Flap F-6], [Row 2 (Mid-Upper)], [72.0 in.], [38.4 in.], [34.4 in. and 42.4 in.], [68.0 in. to turf],
-  [Flap F-7], [Row 2 (Mid-Upper)], [72.0 in.], [57.6 in.], [53.6 in. and 61.6 in.], [68.0 in. to turf],
-  [Flap F-8], [Row 2 (Mid-Upper)], [72.0 in.], [76.8 in.], [72.8 in. and 80.8 in.], [68.0 in. to turf],
+  [Flap F-1], [Row 1 (Upper)], [96.0 in.], [24.0 in.], [20.0 in. and 28.0 in.], [92.0 in. to turf],
+  [Flap F-2], [Row 1 (Upper)], [96.0 in.], [48.0 in.], [44.0 in. and 52.0 in.], [92.0 in. to turf],
+  [Flap F-3], [Row 1 (Upper)], [96.0 in.], [72.0 in.], [68.0 in. and 76.0 in.], [92.0 in. to turf],
+  [Flap F-4], [Row 2 (Mid-Upper)], [74.0 in.], [36.0 in.], [32.0 in. and 40.0 in.], [70.0 in. to turf],
+  [Flap F-5], [Row 2 (Mid-Upper)], [74.0 in.], [60.0 in.], [56.0 in. and 64.0 in.], [70.0 in. to turf],
+  [Flap F-6], [Row 3 (Lower-Mid)], [46.0 in.], [24.0 in.], [20.0 in. and 28.0 in.], [42.0 in. to turf],
+  [Flap F-7], [Row 3 (Lower-Mid)], [46.0 in.], [48.0 in.], [44.0 in. and 52.0 in.], [42.0 in. to turf],
+  [Flap F-8], [Row 3 (Lower-Mid)], [46.0 in.], [72.0 in.], [68.0 in. and 76.0 in.], [42.0 in. to turf],
 )
 
-#v(3pt)
+#v(2pt)
 #align(center)[
   #block(
     fill: rgb("#f7fafc"),
     stroke: 0.5pt + rgb("#cbd5e0"),
-    inset: (x: 8pt, y: 5pt),
+    inset: (x: 6pt, y: 3pt),
     radius: 4pt,
     breakable: false,
   )[
 ```text
 <------------ 96.0" (8 ft) ------------>
-0"   19.2"  38.4"    57.6"  76.8"  96.0"
-+------+-------+-------+-------+-------+ 120.0" (Top Rail)
-|                                      |
-|        [Top 24" Solid Vinyl]         |
-|                                      |
-|      X       X       X       X       |  96.0" (Row 1)
-|     F-1     F-2     F-3     F-4      |
-|                                      |
-|                                      |
-|      X       X       X       X       |  72.0" (Row 2)
-|     F-5     F-6     F-7     F-8      |
-| - - - - - - - - - - - - - - - - - -  |  68.0" (Cut Apex)
-|                                      |
-|     [Solid Lower Graphic Zone]       |
-|     (Unvented Display Surface)       |
-|    (Protects Low Artwork & Base)     |
-|                                      |
-|                                      |
-+======================================+   0.0" (Cart Deck)
-^      ^       ^       ^       ^       ^
-Post  1/5     2/5     3/5     4/5   Post
+0"     24.0"    36.0"    48.0"    60.0"    72.0"   96.0"
++--------+--------+--------+--------+--------+-------+ 120.0" (Top Rail)
+|                                                    |
+|               [Top 24" Solid Vinyl]                |
+|                                                    |
+|        X                 X                 X       |  96.0" (Row 1: 3 Flaps)
+|       F-1               F-2               F-3      |
+|                                                    |
+|                 X                 X                |  74.0" (Row 2: 2 Flaps)
+|                F-4               F-5               |
+| - - - - - - - - - - - - - - - - - - - - - - - - -  |  70.0" (Row 2 Apex)
+|           [10" Solid Buffer Above Rail]            |
+|====================================================|  60.0" (Mid Rail - Riveted)
+|           [14" Solid Buffer Below Rail]            |
+| - - - - - - - - - - - - - - - - - - - - - - - - -  |  46.0" (Row 3 Hinge)
+|        X                 X                 X       |  46.0" (Row 3: 3 Flaps)
+|       F-6               F-7               F-8      |
+| - - - - - - - - - - - - - - - - - - - - - - - - -  |  42.0" (Row 3 Apex)
+|             [Solid Lower Graphic Zone]             |
+|            (Protects Low Artwork & Base)           |
++====================================================+   0.0" (Cart Deck)
+^        ^        ^        ^        ^        ^       ^
+Post    1/4      3/8      1/2      5/8      3/4    Post
 ```
   ]
 ]
@@ -947,57 +957,68 @@ When taking down backdrops or preparing frames for graphic replacement:
 
 == 2.10 Appendix B Index & Purchasing References
 
-=== Purchase Sources
+#grid(
+  columns: (1.12fr, 0.88fr),
+  gutter: 10pt,
+  [
+    === Purchase Sources
+    #block[
+      #set text(size: 7.0pt)
+      #set par(leading: 0.42em)
 
-#block[
-  #set text(size: 8.2pt)
-  #set par(leading: 0.52em)
+      [1] *1-5/8" x 10' Steel Posts* — Home Depot \ #link("https://www.homedepot.com/p/Everbilt-1-5-8-in-Dia-x-8-ft-16-Gauge-Galvanized-Steel-Chain-Link-Fence-Line-Post-328923DPTSEB/312373067")
 
-  [1] *1-5/8 in. Dia. x 10 ft Steel Fence Line Posts* — Home Depot   #link("https://www.homedepot.com/p/Everbilt-1-5-8-in-Dia-x-8-ft-16-Gauge-Galvanized-Steel-Chain-Link-Fence-Line-Post-328923DPTSEB/312373067")
+      [2] *1-5/8" 3-Way Corner Elbows* — Amazon \ #link("https://www.amazon.com/dp/B0CD7QT6L6")
 
-  [2] *1-5/8 in. 3-Way Clamp Corner Elbow Brackets* — Amazon   #link("https://www.amazon.com/dp/B0CD7QT6L6")
+      [3] *1-5/8" Tension Bands* — Home Depot \ #link("https://www.homedepot.com/p/Everbilt-1-5-8-in-Galvanized-Steel-Chain-Link-Fence-Tension-Band-328521EB/312373099")
 
-  [3] *1-5/8 in. Galvanized Steel Tension Bands* — Home Depot   #link("https://www.homedepot.com/p/Everbilt-1-5-8-in-Galvanized-Steel-Chain-Link-Fence-Tension-Band-328521EB/312373099")
+      [4] *Swivel Plate Casters* — Amazon \ #link("https://www.amazon.com/dp/B0CPXFJCJL")
 
-  [4] *Heavy-Duty Swivel Plate Casters* — Amazon   #link("https://www.amazon.com/dp/B0CPXFJCJL")
+      [5] *GRK #9 x 2-1/2" R4 Screws* — Home Depot \ #link("https://www.homedepot.com/p/GRK-Fasteners-9-x-2-1-2-in-Star-Drive-Torx-Bugle-Head-R4-Multi-Purpose-Wood-Screw-300-Pack-100101/203533402")
 
-  [5] *GRK #9 x 2-1/2 in. Star Drive R4 Multi-Purpose Screws* — Home Depot   #link("https://www.homedepot.com/p/GRK-Fasteners-9-x-2-1-2-in-Star-Drive-Torx-Bugle-Head-R4-Multi-Purpose-Wood-Screw-300-Pack-100101/203533402")
+      [6] *GRK #10 x 4" R4 Screws* — Home Depot \ #link("https://www.homedepot.com/p/GRK-Fasteners-10-x-4-in-R4-Self-Countersinking-Flat-Head-Multi-Purpose-Screw-50-per-Pack-103141/203525231")
 
-  [6] *GRK #10 x 4 in. R4 Self-Countersinking Flat-Head Screws* — Home Depot   #link("https://www.homedepot.com/p/GRK-Fasteners-10-x-4-in-R4-Self-Countersinking-Flat-Head-Multi-Purpose-Screw-50-per-Pack-103141/203525231")
+      [7] *Steel U-Bolts* — Amazon \ #link("https://www.amazon.com/dp/B09L41JFMS")
 
-  [7] *Heavy-Duty Steel U-Bolts* — Amazon   #link("https://www.amazon.com/dp/B09L41JFMS")
+      [8] *Greenhouse Snap Clamps* — Amazon \ #link("https://www.amazon.com/dp/B0CDZP8YVF")
 
-  [8] *Greenhouse Snap Clamps (1-1/4 in.)* — Amazon   #link("https://www.amazon.com/dp/B0CDZP8YVF")
+      [9] *HDX 14-Gal. Tote* — Home Depot \ #link("https://www.homedepot.com/p/HDX-14-Gal-Tough-Storage-Tote-in-Black-with-Yellow-Lid-999-14G-HDX/328027053")
 
-  [9] *HDX 14-Gallon Tough Storage Tote (Black/Yellow)* — Home Depot   #link("https://www.homedepot.com/p/HDX-14-Gal-Tough-Storage-Tote-in-Black-with-Yellow-Lid-999-14G-HDX/328027053")
+      [13] *15-lb Sandbags* — Amazon \ #link("https://www.amazon.com/dp/B0DFVVZDVK")
 
-  [13] *Abccanopy 15-lb Heavy-Duty Sandbags with Handle (4-Pack)* — Amazon   #link("https://www.amazon.com/dp/B0DFVVZDVK")
+      [14] *Sandbag Liners* — Amazon \ #link("https://www.amazon.com/dp/B0BG3F5XVS")
 
-  [14] *Heavy-Duty Plastic Sandbag Liner Bags (Double-Bag Compliance)* — Amazon   #link("https://www.amazon.com/dp/B0BG3F5XVS")
+      [15] *70-lb Tube Sand* — Lowe's \ #link("https://www.lowes.com/pd/Sakrete-0-07-cu-ft-70-lb-Traction-Sand/5015728687")
 
-  [15] *Sakrete 70-lb Traction Tube Sand* — Lowe's   #link("https://www.lowes.com/pd/Sakrete-0-07-cu-ft-70-lb-Traction-Sand/5015728687")
+      [16] *3/4" Floor Flange & 18" Pipe* — Home Depot \ #link("https://www.homedepot.com/p/The-Plumber-s-Choice-3-4-in-Black-Malleable-Iron-Floor-Flange-5-Pack-FBNF034-5/308967916")
 
-  [16] *3/4 in. Black Iron Floor Flange and 18 in. Threaded Pipe* — Home Depot   #link("https://www.homedepot.com/p/The-Plumber-s-Choice-3-4-in-Black-Malleable-Iron-Floor-Flange-5-Pack-FBNF034-5/308967916")
+      [18] *Circle Cutter* — 3D Print \ #link("https://github.com/ericrowe/music/tree/main/PCHSMB/Circle%20Cutter")
 
-  [18] *PCHSMB Field Prop Circle Cutter (3D Printed Tooling)* — Custom ASA print with #11 blade   #link("https://github.com/ericrowe/music/tree/main/PCHSMB/Circle%20Cutter")
-]
+      [19] *1-5/8" T-Clamps* — Amazon \ #link("https://www.amazon.com/dp/B0CD7QT6L6")
 
-=== Digital Part Files & Governing Rules
+      [20] *6-4 Pop Rivets (All-Steel)* — Amazon \ #link("https://www.amazon.com/dp/B07FCRN2N4")
 
-#block[
-  #set text(size: 8.2pt)
-  #set par(leading: 0.52em)
+      [21] *#11 HSS Drill Bits* — Amazon \ #link("https://www.amazon.com/dp/B00FXH81Y2")
+    ]
+  ],
+  [
+    === Digital Part Files & Rules
+    #block[
+      #set text(size: 7.0pt)
+      #set par(leading: 0.42em)
 
-  [10] *3D Printed Corner Bumper Brace — FreeCAD Model*   #link("https://github.com/ericrowe/music/blob/main/PCHSMB/_Backdrop/Hardware/Corner%20Brace.FCStd")
+      [10] *Corner Bumper — FreeCAD* \ #link("https://github.com/ericrowe/music/blob/main/PCHSMB/_Backdrop/Hardware/Corner%20Brace.FCStd")
 
-  [11] *3D Printed 1-5/8" Pipe Drill Alignment Jig — Slicer 3MF*   #link("https://github.com/ericrowe/music/blob/main/PCHSMB/_Backdrop/Hardware/Drill%20Alignment%20Jig.3mf")
+      [11] *Pipe Drill Jig — Slicer 3MF* \ #link("https://github.com/ericrowe/music/blob/main/PCHSMB/_Backdrop/Hardware/Drill%20Alignment%20Jig.3mf")
 
-  [12] *3D Printed Support Strut Bracket Marker — FreeCAD Model*   #link("https://github.com/ericrowe/music/blob/main/PCHSMB/_Backdrop/Hardware/Steel%20Support%20Strut%20Bracket%20Marker.FCStd")
+      [12] *Strut Marker — FreeCAD* \ #link("https://github.com/ericrowe/music/blob/main/PCHSMB/_Backdrop/Hardware/Steel%20Support%20Strut%20Bracket%20Marker.FCStd")
 
-  [17] *2026 Colorado Bandmasters Association (CBA) Marching Band Rulebook (PDF)*   #link("https://ebf5c7e8-3869-4325-bd98-ce10f57d7545.filesusr.com/ugd/83f67e_cb5fe6efdbdb4ce98f619580f694bc94.pdf")
+      [17] *2026 CBA Rulebook (PDF)* \ #link("https://ebf5c7e8-3869-4325-bd98-ce10f57d7545.filesusr.com/ugd/83f67e_cb5fe6efdbdb4ce98f619580f694bc94.pdf")
 
-  [18] *PCHSMB Field Prop Circle Cutter Generator & CAD Models*   #link("https://github.com/ericrowe/music/blob/main/PCHSMB/Circle%20Cutter/generate_circle_cutter.py")
-]
+      [18] *Circle Cutter Generator* \ #link("https://github.com/ericrowe/music/blob/main/PCHSMB/Circle%20Cutter/generate_circle_cutter.py")
+    ]
+  ]
+)
 
 #pagebreak()
 
@@ -1059,7 +1080,7 @@ When taking down backdrops or preparing frames for graphic replacement:
   [Tier 0: Calm], [0–8 mph (gusts #sym.lt.eq 10)], [0 bags (unballasted)], [153 lbs], [Safe to 8 mph (10 gust max). Upgrade to Tier 1 if >8 mph.],
   [Tier 1: Normal], [8–12 mph], [4x (2 per wing post; 60 lb)], [213 lbs], [Standard staging. 16.9 mph max gust. Zero turf compaction.],
   [Tier 2: Advisory], [12–18 mph], [6x (3 per wing post; 90 lb)], [243 lbs], [Attentive staging. 18.4 mph max gust. Deploy wheel chocks.],
-  [Tier 3: High-Wind], [18–22 mph], [6 on wings + 3 on rear rail (135 lb)], [288 lbs], [22.5 mph max gust. Rear rail doubles leverage. Max turf load.],
+  [Tier 3: High-Wind], [18–22 mph], [6 on wings + 3 on rear rail (135 lb)], [288 lbs], [22.3 mph max gust. Rear rail doubles leverage. Max turf load.],
   [*Tier 4: ABORT*], [*>20 sust. / >25 gust*], [—], [—], [*STRICT SAFETY NO-GO. Withdraw props or lay flat.*],
 )
 

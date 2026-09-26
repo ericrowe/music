@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 215" width="100%" height="100%">
+<defs>
+  <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+    <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#4a5568" />
+  </marker>
+  <marker id="arrow-blue" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+    <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2b6cb0" />
+  </marker>
+  <marker id="arrow-orange" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+    <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#c05621" />
+  </marker>
+</defs>
+<rect width="100%" height="100%" fill="#ffffff" />
+<rect x="15" y="8" width="435" height="198" rx="6" fill="#f8fafc" stroke="#cbd5e0" stroke-width="1.2" />
+<rect x="25" y="16" width="415" height="24" rx="4" fill="#ebf8ff" stroke="#bee3f8" stroke-width="1" />
+<text x="232" y="32" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#1a365d">OPTION 1: 8.0″ FLEET STANDARD SEMICIRCULAR FLAP</text>
+<rect x="35" y="48" width="395" height="148" rx="4" fill="#edf2f7" stroke="#e2e8f0" stroke-width="1" />
+<path d="M 145 78 A 70 70 0 0 0 285 78 Z" fill="#bee3f8" fill-opacity="0.55" stroke="#2b6cb0" stroke-width="2.2" />
+<line x1="145" y1="78" x2="285" y2="78" stroke="#e53e3e" stroke-width="2.5" stroke-dasharray="5,3" />
+<circle cx="145" cy="78" r="5.0" fill="#ffffff" stroke="#e53e3e" stroke-width="2" />
+<circle cx="285" cy="78" r="5.0" fill="#ffffff" stroke="#e53e3e" stroke-width="2" />
+<circle cx="145" cy="78" r="1.5" fill="#e53e3e" />
+<circle cx="285" cy="78" r="1.5" fill="#e53e3e" />
+<line x1="145" y1="61" x2="285" y2="61" stroke="#2b6cb0" stroke-width="1.2" marker-start="url(#arrow-blue)" marker-end="url(#arrow-blue)" />
+<line x1="145" y1="75" x2="145" y2="56" stroke="#a0aec0" stroke-width="0.8" stroke-dasharray="2,2" />
+<line x1="285" y1="75" x2="285" y2="56" stroke="#a0aec0" stroke-width="0.8" stroke-dasharray="2,2" />
+<rect x="171" y="54" width="88" height="14" rx="3" fill="#ffffff" stroke="#bee3f8" stroke-width="0.6" />
+<text x="215" y="65" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="10" font-weight="bold" fill="#2b6cb0">8.00″ Width</text>
+<line x1="301" y1="78" x2="301" y2="148" stroke="#2b6cb0" stroke-width="1.2" marker-start="url(#arrow-blue)" marker-end="url(#arrow-blue)" />
+<line x1="288" y1="78" x2="307" y2="78" stroke="#a0aec0" stroke-width="0.8" stroke-dasharray="2,2" />
+<line x1="218" y1="148" x2="307" y2="148" stroke="#a0aec0" stroke-width="0.8" stroke-dasharray="2,2" />
+<rect x="307" y="106.0" width="62" height="15" rx="3" fill="#ffffff" stroke="#bee3f8" stroke-width="0.6" />
+<text x="338" y="117.0" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="9.5" font-weight="bold" fill="#2b6cb0">4.0″ Drop</text>
+<rect x="130" y="86" width="170" height="15" rx="2" fill="#fff5f5" stroke="#feb2b2" stroke-width="0.8" />
+<text x="215" y="97" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" font-weight="bold" fill="#c53030">TOP CHORD UNCUT (HINGE)</text>
+<line x1="140" y1="78" x2="127" y2="68" stroke="#718096" stroke-width="0.8" />
+<text x="125" y="66" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#4a5568">Ø 3/8″ Punch</text>
+<rect x="45" y="156" width="165" height="34" rx="3" fill="#ffffff" stroke="#cbd5e0" stroke-width="0.75" />
+<text x="52" y="169" font-family="Helvetica, Arial, sans-serif" font-size="8.8" font-weight="bold" fill="#1a365d">Area: 25.13 sq in. (100%)</text>
+<text x="52" y="182" font-family="Helvetica, Arial, sans-serif" font-size="7.8" fill="#4a5568">0.175 sq ft / flap (Optimal Bleed)</text>
+<rect x="220" y="156" width="200" height="34" rx="3" fill="#ffffff" stroke="#bee3f8" stroke-width="0.75" />
+<text x="227" y="169" font-family="Helvetica, Arial, sans-serif" font-size="8.8" font-weight="bold" fill="#2b6cb0">Tool: PCHSMB Circle Cutter</text>
+<text x="227" y="182" font-family="Helvetica, Arial, sans-serif" font-size="7.8" fill="#4a5568">Shared 100% with Backdrop Fleet</text>
+<rect x="470" y="8" width="435" height="198" rx="6" fill="#f8fafc" stroke="#cbd5e0" stroke-width="1.2" />
+<rect x="480" y="16" width="415" height="24" rx="4" fill="#fffaf0" stroke="#fbd38d" stroke-width="1" />
+<text x="687" y="32" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11.5" font-weight="bold" fill="#c05621">OPTION 2: 6.25″ (PAINT CAN) SEMICIRCULAR FLAP</text>
+<rect x="490" y="48" width="395" height="148" rx="4" fill="#edf2f7" stroke="#e2e8f0" stroke-width="1" />
+<path d="M 615.3 84 A 54.7 54.7 0 0 0 724.7 84 Z" fill="#fbd38d" fill-opacity="0.55" stroke="#c05621" stroke-width="2.2" />
+<line x1="615.3" y1="84" x2="724.7" y2="84" stroke="#e53e3e" stroke-width="2.5" stroke-dasharray="5,3" />
+<circle cx="615.3" cy="84" r="5.0" fill="#ffffff" stroke="#e53e3e" stroke-width="2" />
+<circle cx="724.7" cy="84" r="5.0" fill="#ffffff" stroke="#e53e3e" stroke-width="2" />
+<circle cx="615.3" cy="84" r="1.5" fill="#e53e3e" />
+<circle cx="724.7" cy="84" r="1.5" fill="#e53e3e" />
+<line x1="615.3" y1="67" x2="724.7" y2="67" stroke="#c05621" stroke-width="1.2" marker-start="url(#arrow-orange)" marker-end="url(#arrow-orange)" />
+<line x1="615.3" y1="81" x2="615.3" y2="62" stroke="#a0aec0" stroke-width="0.8" stroke-dasharray="2,2" />
+<line x1="724.7" y1="81" x2="724.7" y2="62" stroke="#a0aec0" stroke-width="0.8" stroke-dasharray="2,2" />
+<rect x="626" y="60" width="88" height="14" rx="3" fill="#ffffff" stroke="#fbd38d" stroke-width="0.6" />
+<text x="670" y="71" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="10" font-weight="bold" fill="#c05621">6.25″ Width</text>
+<line x1="740.7" y1="84" x2="740.7" y2="138.7" stroke="#c05621" stroke-width="1.2" marker-start="url(#arrow-orange)" marker-end="url(#arrow-orange)" />
+<line x1="727.7" y1="84" x2="746.7" y2="84" stroke="#a0aec0" stroke-width="0.8" stroke-dasharray="2,2" />
+<line x1="673" y1="138.7" x2="746.7" y2="138.7" stroke="#a0aec0" stroke-width="0.8" stroke-dasharray="2,2" />
+<rect x="746.7" y="104.35" width="68" height="15" rx="3" fill="#ffffff" stroke="#fbd38d" stroke-width="0.6" />
+<text x="780.7" y="115.35" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="9.5" font-weight="bold" fill="#c05621">3.125″ Drop</text>
+<rect x="585" y="92" width="170" height="15" rx="2" fill="#fff5f5" stroke="#feb2b2" stroke-width="0.8" />
+<text x="670" y="103" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="8" font-weight="bold" fill="#c53030">TOP CHORD UNCUT (HINGE)</text>
+<line x1="610.3" y1="84" x2="597.3" y2="74" stroke="#718096" stroke-width="0.8" />
+<text x="595.3" y="72" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="8" fill="#4a5568">Ø 3/8″ Punch</text>
+<rect x="500" y="156" width="165" height="34" rx="3" fill="#ffffff" stroke="#fbd38d" stroke-width="0.75" />
+<text x="507" y="169" font-family="Helvetica, Arial, sans-serif" font-size="8.8" font-weight="bold" fill="#c05621">Area: 15.34 sq in. (-39%)</text>
+<text x="507" y="182" font-family="Helvetica, Arial, sans-serif" font-size="7.8" fill="#4a5568">0.106 sq ft / flap (39% Smaller)</text>
+<rect x="675" y="156" width="200" height="34" rx="3" fill="#ffffff" stroke="#fbd38d" stroke-width="0.75" />
+<text x="682" y="169" font-family="Helvetica, Arial, sans-serif" font-size="8.8" font-weight="bold" fill="#c05621">Tool: 1-Gal Paint Can Rim</text>
+<text x="682" y="182" font-family="Helvetica, Arial, sans-serif" font-size="7.8" fill="#4a5568">Hand-traced with utility knife</text>
+</svg>
