@@ -1,0 +1,61 @@
+{
+  "schema_version": 2,
+  "project": {
+    "title": "Performance Stage & Staircase System Manual",
+    "slug": "stage-platform-construction-and-operations-guide",
+    "document_stem": "Stage_Platform_Build_Instructions",
+    "document_filename": "Stage_Platform_Build_Instructions.docx",
+    "created_at": "2026-09-26T20:30:00+00:00",
+    "status": "active"
+  },
+  "policy": {
+    "document_format": "typst_and_docx",
+    "stable_document_filename": true,
+    "development_build_prefix": "D",
+    "release_prefix": "v",
+    "visible_status_labels": {
+      "working_draft": "WORKING DRAFT — NOT FOR USE",
+      "manual_review_required": "MANUAL REVIEW REQUIRED — NOT RELEASED",
+      "release_candidate": "RELEASE CANDIDATE — APPROVAL REQUIRED",
+      "released": "RELEASED — APPROVED FOR USE"
+    },
+    "full_page_review_required": true,
+    "changed_figure_zoom_percent": 200,
+    "allow_external_hyperlinks": true,
+    "allow_external_content": false
+  },
+  "document": {
+    "current": {
+      "build": "D1",
+      "release": "v0",
+      "process_state": "working_draft",
+      "visible_status": "working_draft",
+      "file": "Stage_Platform_Build_Instructions.typ",
+      "pdf_file": "Stage_Platform_Build_Instructions.pdf",
+      "sha256": "c551315ed0b91aa93e950c14a6983722952e176c5989393648acef10947cab40",
+      "pdf_sha256": "0c96b3d7faee04a84b903b294747c43e0cf8a2ab1e81e5f090981cd13cd149f2",
+      "page_count": 11,
+      "controlled_at": "2026-09-26T20:45:00+00:00"
+    },
+    "candidate": null
+  },
+  "versioning": {
+    "current_release": "v0",
+    "next_release": "v1",
+    "next_build_number": 2
+  },
+  "releases": [],
+  "history": [
+    {
+      "id": "D1",
+      "kind": "development_build",
+      "release": "v0",
+      "status": "working_draft",
+      "date": "2026-09-26",
+      "sha256": "c551315ed0b91aa93e950c14a6983722952e176c5989393648acef10947cab40",
+      "pdf_sha256": "0c96b3d7faee04a84b903b294747c43e0cf8a2ab1e81e5f090981cd13cd149f2",
+      "page_count": 11,
+      "summary": "Initial 11-page master manual: off-the-shelf scaffolding architecture (3'x5' verticals, folding X-braces, 7'x19.5\" deck plates, stem casters), three 14'x10' uniform stages, one 2-tier stage (3.5' & 2.5' heights), 6.0\" x 82.0\" aluminum gap fill bridge fabrication, draw latch clamping, seasonal vinyl wrap prep, and CBA operations."
+    }
+  ]
+}

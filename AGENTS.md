@@ -185,7 +185,12 @@ Every agent modifying a subproject must maintain the following specific document
 - `Continuum_2026_Prop_Operations_Guide.typ`: Master Typst source for the show-level volunteer handbook and standalone printable job cards.
 - `Continuum_2026_Prop_Operations_Guide.pdf`: Compiled 15-page volunteer handbook deliverable.
 
-#### E. General Fabrication Projects (`Trumpet`, `Flutes`, `Standcessories`, `Luggage Tags`)
+#### E. `PCHSMB/_Stages` (Performance Stage Platforms & Staircases)
+- `README.md`: Subproject overview, 4-stage fleet summary, 8 half-units, 4 staircases, and inter-section gap analysis.
+- `docs/references/STAGE_GAP_BRIDGE_ANALYSIS.md`: Engineering analysis and recommendations for the 6.0″ inter-section gap bridge.
+- `docs/AGENTS.md` & `docs/GEMINI.md`: Subproject instructions and document standards.
+
+#### F. General Fabrication Projects (`Trumpet`, `Flutes`, `Standcessories`, `Luggage Tags`)
 - Subproject `README.md`: Hardware requirements, printing guidelines (materials, infill, perimeters), and assembly instructions.
 - Master CAD sources (`.FCStd`), exported slicer files (`.3mf`), and production meshes (`.stl`).
 
