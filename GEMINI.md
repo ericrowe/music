@@ -7,6 +7,8 @@ This repository is configured with a unified multi-agent system. All authoritati
 - **Primary Instruction File:** [AGENTS.md](AGENTS.md)
 - **Controlled Documents Skill:** `$develop-versioned-documents` located in `.agents/skills/develop-versioned-documents/`
 - **Wind Loading & Stability Skill:** `$calculate-prop-wind-loading` located in `.agents/skills/calculate-prop-wind-loading/`
+- **Photometrics & Field Scaling Skill:** `$simulate-prop-photometrics` located in `.agents/skills/simulate-prop-photometrics/`
+- **Requirements Engineering Skill:** `$requirements-engineering` located in `.agents/skills/requirements-engineering/`
 - **CAD & Mesh Skills:** `$cad-openscad` and `$cad-python` located in `.agents/skills/`
 - **Helper Scripts:** `.agents/skills/develop-versioned-documents/scripts/` (and `.codex/skills/develop-versioned-documents/scripts/`)
 - **Key Invariants:**

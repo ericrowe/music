@@ -1,0 +1,58 @@
+{
+  "schema_version": 2,
+  "project": {
+    "title": "Universal Field Prop Lighting Control System",
+    "slug": "pchs-lighting-controller-system",
+    "document_stem": "Lighting_Controller_Pilot_Build_BOM",
+    "document_filename": "Lighting_Controller_Pilot_Build_BOM.pdf",
+    "created_at": "2026-10-05T18:00:00+00:00",
+    "status": "active"
+  },
+  "policy": {
+    "document_format": "typst_and_pdf",
+    "stable_document_filename": true,
+    "development_build_prefix": "D",
+    "release_prefix": "v",
+    "visible_status_labels": {
+      "working_draft": "WORKING DRAFT — NOT FOR USE",
+      "manual_review_required": "MANUAL REVIEW REQUIRED — NOT RELEASED",
+      "release_candidate": "RELEASE CANDIDATE — APPROVAL REQUIRED",
+      "released": "RELEASED — APPROVED FOR USE"
+    },
+    "full_page_review_required": true,
+    "allow_external_hyperlinks": true,
+    "allow_external_content": false
+  },
+  "document": {
+    "current": {
+      "build": "D1",
+      "release": "v0",
+      "process_state": "working_draft",
+      "visible_status": "working_draft",
+      "file": "Lighting_Controller_Pilot_Build_BOM.typ",
+      "pdf_file": "Lighting_Controller_Pilot_Build_BOM.pdf",
+      "sha256": "ea590758685e6d224e5b2e45751e699f77e6c6acee83eb0097ca21aaff059061",
+      "page_count": 3,
+      "controlled_at": "2026-10-05T18:00:00+00:00"
+    },
+    "candidate": null
+  },
+  "versioning": {
+    "current_release": "v0",
+    "next_release": "v1",
+    "next_build_number": 2
+  },
+  "releases": [],
+  "history": [
+    {
+      "id": "D1",
+      "kind": "development_build",
+      "release": "v0",
+      "status": "working_draft",
+      "date": "2026-10-05",
+      "sha256": "ea590758685e6d224e5b2e45751e699f77e6c6acee83eb0097ca21aaff059061",
+      "page_count": 3,
+      "summary": "Initial baseline release of universal field prop lighting platform: Synapse Master Console, Peripheral Prop Receiver & Driver Node, pilot kit BOM (1 Synapse + 3 Peripherals), 30-prop fleet purchasing schedule, and zero-code seasonal show reprogramming software architecture."
+    }
+  ]
+}

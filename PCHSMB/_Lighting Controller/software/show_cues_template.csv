@@ -1,0 +1,17 @@
+Cue_Number,Cue_Name,Trigger_Source,Trigger_Time_Sec,Target_Group,Effect_Type,Primary_Color,Secondary_Color,Duration_Sec,Fade_Time_Sec,Brightness_Pct,Description
+1,Opener_Hit,BUTTON_1,0.0,ALL,DYNAMIC_PULSE,#FF8800,#00D4FF,4.0,0.5,100,Opening brass fanfare hit with amber pulse to cyan
+2,Drill_Orbit,BUTTON_2,0.0,BACKDROPS,COLOR_WAVE,#FFB300,#0044FF,12.0,2.0,80,Backfield backdrops wave through gold and sapphire
+3,Sideline_Chase,BUTTON_3,0.0,SCREENS,CHASE_HORIZ,#00E5FF,#FFFFFF,6.0,0.5,90,Fast horizontal cyan and white chase across duck blinds
+4,Ballad_Bloom,BUTTON_4,0.0,ALL,FADE_IN,#FFCC44,#FF8800,24.0,4.0,75,Slow warm amber bloom across all props for woodwind feature
+5,Soloist_Feature,BUTTON_5,0.0,SOLOIST,STATIC,#FFFFFF,#FFD700,18.0,1.5,100,Crisp warm-white illumination on soloist stage deck
+6,Star_Constell,BUTTON_6,0.0,STAGE,SPARKLE,#00F0FF,#FFFFFF,15.0,1.0,85,Scintillating star twinkle on center field star tarp
+7,Perc_Feature,BUTTON_7,0.0,ALL,STROBE,#FF4400,#00FFFF,8.0,0.2,100,Fast syncopated stroboscopic accents on drumline hits
+8,Tutti_Impact,BUTTON_8,0.0,ALL,DYNAMIC_PULSE,#FFD700,#FFFFFF,5.0,0.4,100,Full band chord impact at 50-yard line
+9,Climactic_Rise,BUTTON_9,0.0,ALL,PULSE_UP,#FF6600,#00BFFF,10.0,1.0,95,Vertical rocket chases rising up backdrops
+10,Subtle_Under,BUTTON_10,0.0,SCREENS,STATIC,#002244,#000000,30.0,3.0,40,Low-profile deep navy sideline horizon during dialogue
+11,Solar_Ray_Burst,BUTTON_11,0.0,BACKDROPS,DYNAMIC_PULSE,#FFF275,#FF8C00,8.0,0.8,100,Sunburst radiation surging along ground runners
+12,Movement_Break,BUTTON_12,0.0,ALL,FADE_OUT,#000000,#000000,5.0,5.0,0,Smooth 5-second fade to black at end of Movement 2
+13,Finale_Intro,BUTTON_13,0.0,STAGES,FADE_IN,#00C8FF,#FFFFFF,12.0,2.0,80,Blue auroral build into final push
+14,Finale_PrePush,BUTTON_14,0.0,ALL,COLOR_WAVE,#FF9900,#00D4FF,16.0,1.5,90,Continuous chromatic surge building to climax
+15,Grand_Finale,BUTTON_15,0.0,ALL,DYNAMIC_PULSE,#FFFFFF,#FFB300,10.0,0.3,100,Maximum intensity gold and diamond-white flash
+16,Show_Blackout,BUTTON_16,0.0,ALL,BLACKOUT,#000000,#000000,0.0,0.5,0,Complete visual blackout for final show cutoff

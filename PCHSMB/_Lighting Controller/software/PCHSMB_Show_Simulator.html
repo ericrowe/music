@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PCHSMB Universal Field Lighting Simulator & Cue Validator</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --accent: #38bdf8;
+      --accent-gold: #f59e0b;
+      --turf-green: #1e392a;
+      --yard-line: rgba(255, 255, 255, 0.4);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --border: #334155;
+      --success: #10b981;
+      --error: #ef4444;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background: var(--bg); color: var(--text); padding: 1.5rem; }
+    header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem; }
+    h1 { font-size: 1.4rem; color: var(--accent); }
+    .badge { background: #0369a1; padding: 0.25rem 0.6rem; border-radius: 9999px; font-size: 0.75rem; text-transform: uppercase; font-weight: bold; }
+    .layout { display: grid; grid-template-columns: 340px 1fr; gap: 1.5rem; }
+    .panel { background: var(--card-bg); border-radius: 8px; border: 1px solid var(--border); padding: 1rem; }
+    .panel h2 { font-size: 1rem; margin-bottom: 0.75rem; color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 0.4rem; }
+    
+    /* Console Controls */
+    .button-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; margin-bottom: 1rem; }
+    .cue-btn {
+      background: #334155; color: white; border: 2px solid #475569; border-radius: 6px;
+      padding: 0.75rem 0.25rem; font-size: 0.85rem; font-weight: bold; cursor: pointer;
+      display: flex; flex-direction: column; align-items: center; transition: all 0.15s ease;
+    }
+    .cue-btn:hover { background: #475569; border-color: var(--accent); }
+    .cue-btn.active { background: var(--accent-gold); border-color: #fbbf24; color: #000; box-shadow: 0 0 12px var(--accent-gold); }
+    .cue-btn small { font-size: 0.65rem; opacity: 0.8; margin-top: 2px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; max-width: 65px; }
+    
+    .blackout-btn {
+      width: 100%; background: #dc2626; color: white; border: none; border-radius: 6px;
+      padding: 0.6rem; font-weight: bold; font-size: 0.9rem; cursor: pointer; margin-bottom: 1rem;
+      text-transform: uppercase; letter-spacing: 0.05em; transition: background 0.15s;
+    }
+    .blackout-btn:hover { background: #b91c1c; }
+    
+    /* File Upload & Drop */
+    .dropzone {
+      border: 2px dashed #475569; border-radius: 6px; padding: 1.25rem; text-align: center;
+      cursor: pointer; background: #0f172a; margin-bottom: 1rem; font-size: 0.8rem; color: var(--text-muted);
+    }
+    .dropzone:hover { border-color: var(--accent); color: var(--text); }
+    
+    /* Status Logs */
+    .log-box {
+      background: #090d16; border-radius: 6px; padding: 0.6rem; font-family: monospace;
+      font-size: 0.75rem; height: 160px; overflow-y: auto; color: #a5b4fc; border: 1px solid #1e293b;
+    }
+    .log-box .err { color: var(--error); }
+    .log-box .ok { color: var(--success); }
+
+    /* Field Simulation Canvas */
+    .field-container { position: relative; border-radius: 8px; overflow: hidden; border: 2px solid #334155; }
+    canvas { display: block; width: 100%; height: 540px; background: var(--turf-green); }
+    .field-overlay {
+      position: absolute; top: 12px; right: 12px; background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(4px); padding: 0.5rem 0.8rem; border-radius: 6px; border: 1px solid var(--border);
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>PCHSMB Universal Field Lighting Simulator & Cue Validator</h1>
+      <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 2px;">Non-Technical Zero-Code Show Reprogramming Suite (REQ-SW-01 & REQ-SW-08)</p>
+    </div>
+    <div>
+      <span class="badge" id="statusBadge">Status: Ready</span>
+    </div>
+  </header>
+
+  <div class="layout">
+    <!-- Left Column: Controls & Cue List -->
+    <div class="panel">
+      <h2>Synapse Master Console</h2>
+      <button class="blackout-btn" id="btnBlackout">🚨 Emergency Blackout (E-Stop)</button>
+
+      <div class="button-grid" id="buttonGrid">
+        <!-- 16 buttons generated dynamically -->
+      </div>
+
+      <h2>Load Show Cues</h2>
+      <div class="dropzone" id="dropzone">
+        📁 Drag & Drop <b>show_cues.csv</b> here<br>or click to browse
+        <input type="file" id="fileInput" accept=".csv" style="display:none">
+      </div>
+
+      <h2>Validation & Event Log</h2>
+      <div class="log-box" id="logBox">
+        [SYS] System Initialized.<br>
+        [SYS] Ready to parse CSV show profiles.<br>
+      </div>
+    </div>
+
+    <!-- Right Column: Interactive Field Visualization -->
+    <div class="panel" style="padding: 0.75rem;">
+      <div class="field-container">
+        <canvas id="fieldCanvas" width="1000" height="540"></canvas>
+        <div class="field-overlay" id="cueInfo">
+          <b>Active Cue:</b> <span id="lblCueName">None (Standby)</span><br>
+          <b>Effect:</b> <span id="lblEffect">IDLE</span> | <b>Color:</b> <span id="lblColor">--</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // System State
+    let cues = [];
+    let activeCue = null;
+    let effectStartTime = 0;
+    let blackoutActive = false;
+
+    // Default Embedded Template Show Cues
+    const defaultCSV = `Cue_Number,Cue_Name,Trigger_Source,Trigger_Time_Sec,Target_Group,Effect_Type,Primary_Color,Secondary_Color,Duration_Sec,Fade_Time_Sec,Brightness_Pct,Description
+1,Opener_Hit,BUTTON_1,0.0,ALL,DYNAMIC_PULSE,#FF8800,#00D4FF,4.0,0.5,100,Opening brass fanfare hit with amber pulse to cyan
+2,Drill_Orbit,BUTTON_2,0.0,BACKDROPS,COLOR_WAVE,#FFB300,#0044FF,12.0,2.0,80,Backfield backdrops wave through gold and sapphire
+3,Sideline_Chase,BUTTON_3,0.0,SCREENS,CHASE_HORIZ,#00E5FF,#FFFFFF,6.0,0.5,90,Fast horizontal cyan and white chase across duck blinds
+4,Ballad_Bloom,BUTTON_4,0.0,ALL,FADE_IN,#FFCC44,#FF8800,24.0,4.0,75,Slow warm amber bloom across all props for woodwind feature
+5,Soloist_Feature,BUTTON_5,0.0,SOLOIST,STATIC,#FFFFFF,#FFD700,18.0,1.5,100,Crisp warm-white illumination on soloist stage deck
+6,Star_Constell,BUTTON_6,0.0,STAGE,SPARKLE,#00F0FF,#FFFFFF,15.0,1.0,85,Scintillating star twinkle on center field star tarp
+7,Perc_Feature,BUTTON_7,0.0,ALL,STROBE,#FF4400,#00FFFF,8.0,0.2,100,Fast syncopated stroboscopic accents on drumline hits
+8,Tutti_Impact,BUTTON_8,0.0,ALL,DYNAMIC_PULSE,#FFD700,#FFFFFF,5.0,0.4,100,Full band chord impact at 50-yard line
+9,Climactic_Rise,BUTTON_9,0.0,ALL,PULSE_UP,#FF6600,#00BFFF,10.0,1.0,95,Vertical rocket chases rising up backdrops
+10,Subtle_Under,BUTTON_10,0.0,SCREENS,STATIC,#002244,#000000,30.0,3.0,40,Low-profile deep navy sideline horizon during dialogue
+11,Solar_Ray_Burst,BUTTON_11,0.0,BACKDROPS,DYNAMIC_PULSE,#FFF275,#FF8C00,8.0,0.8,100,Sunburst radiation surging along ground runners
+12,Movement_Break,BUTTON_12,0.0,ALL,FADE_OUT,#000000,#000000,5.0,5.0,0,Smooth 5-second fade to black at end of Movement 2
+13,Finale_Intro,BUTTON_13,0.0,STAGES,FADE_IN,#00C8FF,#FFFFFF,12.0,2.0,80,Blue auroral build into final push
+14,Finale_PrePush,BUTTON_14,0.0,ALL,COLOR_WAVE,#FF9900,#00D4FF,16.0,1.5,90,Continuous chromatic surge building to climax
+15,Grand_Finale,BUTTON_15,0.0,ALL,DYNAMIC_PULSE,#FFFFFF,#FFB300,10.0,0.3,100,Maximum intensity gold and diamond-white flash
+16,Show_Blackout,BUTTON_16,0.0,ALL,BLACKOUT,#000000,#000000,0.0,0.5,0,Complete visual blackout for final show cutoff`;
+
+    // Elements
+    const canvas = document.getElementById('fieldCanvas');
+    const ctx = canvas.getContext('2d');
+    const logBox = document.getElementById('logBox');
+    const buttonGrid = document.getElementById('buttonGrid');
+    const dropzone = document.getElementById('dropzone');
+    const fileInput = document.getElementById('fileInput');
+
+    function log(msg, type = 'info') {
+      const line = document.createElement('div');
+      if (type === 'err') line.className = 'err';
+      if (type === 'ok') line.className = 'ok';
+      line.innerHTML = `[${new Date().toLocaleTimeString()}] ${msg}`;
+      logBox.appendChild(line);
+      logBox.scrollTop = logBox.scrollHeight;
+    }
+
+    // Parse CSV with Schema Validation
+    function parseCSV(text) {
+      const lines = text.trim().split('\n');
+      if (lines.length < 2) {
+        log("ERROR: CSV file is empty or missing data rows.", "err");
+        return false;
+      }
+      const headers = lines[0].split(',').map(h => h.trim());
+      const required = ['Cue_Number', 'Cue_Name', 'Trigger_Source', 'Target_Group', 'Effect_Type', 'Primary_Color'];
+      for (let r of required) {
+        if (!headers.includes(r)) {
+          log(`VALIDATION ERROR: Missing required column '${r}'.`, "err");
+          return false;
+        }
+      }
+
+      const parsed = [];
+      for (let i = 1; i < lines.length; i++) {
+        if (!lines[i].trim()) continue;
+        const vals = lines[i].split(',').map(v => v.trim());
+        const row = {};
+        headers.forEach((h, idx) => row[h] = vals[idx] || '');
+
+        // Validation
+        const cueNum = parseInt(row['Cue_Number']);
+        if (isNaN(cueNum) || cueNum < 1 || cueNum > 64) {
+          log(`Row ${i+1}: Invalid Cue_Number '${row['Cue_Number']}' (Must be 1-64).`, "err");
+          return false;
+        }
+        const b = parseInt(row['Brightness_Pct'] || '100');
+        if (isNaN(b) || b < 0 || b > 100) {
+          log(`Row ${i+1}: Invalid Brightness_Pct '${row['Brightness_Pct']}' (Must be 0-100).`, "err");
+          return false;
+        }
+        parsed.push(row);
+      }
+      cues = parsed;
+      log(`SUCCESS: Loaded and validated ${cues.length} cues.`, "ok");
+      renderButtons();
+      return true;
+    }
+
+    function renderButtons() {
+      buttonGrid.innerHTML = '';
+      for (let i = 1; i <= 16; i++) {
+        const cue = cues.find(c => parseInt(c.Cue_Number) === i);
+        const btn = document.createElement('button');
+        btn.className = 'cue-btn';
+        btn.id = `cueBtn_${i}`;
+        btn.innerHTML = `<span>${i}</span><small>${cue ? cue.Cue_Name : 'Empty'}</small>`;
+        btn.onclick = () => triggerCue(cue, i);
+        buttonGrid.appendChild(btn);
+      }
+    }
+
+    function triggerCue(cue, index) {
+      if (!cue) return;
+      blackoutActive = false;
+      activeCue = cue;
+      effectStartTime = performance.now();
+
+      document.querySelectorAll('.cue-btn').forEach(b => b.classList.remove('active'));
+      const activeBtn = document.getElementById(`cueBtn_${index}`);
+      if (activeBtn) activeBtn.classList.add('active');
+
+      document.getElementById('lblCueName').innerText = `Cue ${cue.Cue_Number}: ${cue.Cue_Name}`;
+      document.getElementById('lblEffect').innerText = cue.Effect_Type;
+      document.getElementById('lblColor').innerText = cue.Primary_Color;
+      log(`Triggered Cue ${cue.Cue_Number}: ${cue.Cue_Name} (${cue.Effect_Type})`, "ok");
+    }
+
+    document.getElementById('btnBlackout').onclick = () => {
+      blackoutActive = true;
+      activeCue = null;
+      document.querySelectorAll('.cue-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById('lblCueName').innerText = "BLACKOUT";
+      document.getElementById('lblEffect').innerText = "BLACKOUT";
+      document.getElementById('lblColor').innerText = "#000000";
+      log("🚨 EMERGENCY BLACKOUT TRIGGERED across all props", "err");
+    };
+
+    // Drag and Drop Handling
+    dropzone.onclick = () => fileInput.click();
+    fileInput.onchange = (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (evt) => parseCSV(evt.target.result);
+        reader.readAsText(file);
+      }
+    };
+    dropzone.ondragover = (e) => { e.preventDefault(); dropzone.style.borderColor = 'var(--accent)'; };
+    dropzone.ondragleave = () => { dropzone.style.borderColor = '#475569'; };
+    dropzone.ondrop = (e) => {
+      e.preventDefault();
+      dropzone.style.borderColor = '#475569';
+      const file = e.dataTransfer.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (evt) => parseCSV(evt.target.result);
+        reader.readAsText(file);
+      }
+    };
+
+    // 2D Field Rendering Engine
+    function drawField() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Turf background
+      ctx.fillStyle = '#143621';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Yard lines (every 5 yards, from 10 to 50 to 10)
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.25)';
+      ctx.lineWidth = 1;
+      const leftMargin = 60;
+      const rightMargin = 940;
+      const yardWidth = (rightMargin - leftMargin) / 20;
+
+      ctx.font = '11px monospace';
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
+      ctx.textAlign = 'center';
+
+      for (let i = 0; i <= 20; i++) {
+        const x = leftMargin + i * yardWidth;
+        ctx.beginPath();
+        ctx.moveTo(x, 40);
+        ctx.lineTo(x, 480);
+        ctx.stroke();
+
+        // Numerals
+        let yardNum = i <= 10 ? (i + 1) * 5 : (21 - i) * 5;
+        if (yardNum <= 50) {
+          ctx.fillText(yardNum, x, 498);
+          ctx.fillText(yardNum, x, 32);
+        }
+      }
+
+      // Hash marks
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.35)';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.moveTo(leftMargin, 190); ctx.lineTo(rightMargin, 190); // Back hash
+      ctx.moveTo(leftMargin, 330); ctx.lineTo(rightMargin, 330); // Front hash
+      ctx.stroke();
+
+      // Front sideline (Y=0) at canvas Y = 460
+      ctx.lineWidth = 3;
+      ctx.strokeStyle = '#ffffff';
+      ctx.beginPath();
+      ctx.moveTo(leftMargin, 460); ctx.lineTo(rightMargin, 460);
+      ctx.stroke();
+
+      // Determine active color and animation phase
+      let color = '#222';
+      let secColor = '#111';
+      let now = performance.now();
+      let elapsed = (now - effectStartTime) / 1000;
+
+      if (!blackoutActive && activeCue) {
+        color = activeCue.Primary_Color;
+        secColor = activeCue.Secondary_Color || '#ffffff';
+      }
+
+      // 1. Draw 11 Backfield Backdrops (Arc along back hash Y=100-140)
+      const numBackdrops = 11;
+      for (let b = 0; b < numBackdrops; b++) {
+        const angle = (b / (numBackdrops - 1) - 0.5) * 0.9;
+        const bx = 500 + Math.sin(angle) * 380;
+        const by = 80 + (1 - Math.cos(angle)) * 60;
+
+        let propLit = (!blackoutActive && activeCue && (activeCue.Target_Group === 'ALL' || activeCue.Target_Group === 'BACKDROPS'));
+        let propColor = propLit ? color : '#334155';
+
+        // Animated chases
+        if (propLit && activeCue.Effect_Type === 'COLOR_WAVE') {
+          let wave = Math.sin(elapsed * 3 + b * 0.6);
+          propColor = wave > 0 ? color : secColor;
+        }
+
+        ctx.fillStyle = propColor;
+        ctx.shadowBlur = propLit ? 10 : 0;
+        ctx.shadowColor = propColor;
+        ctx.fillRect(bx - 12, by - 6, 24, 12);
+        ctx.shadowBlur = 0;
+      }
+
+      // 2. Draw 16 Sideline Screens (Duck Blinds along Y = 460)
+      const numScreens = 16;
+      for (let s = 0; s < numScreens; s++) {
+        let sx = (s < 8) ? leftMargin + 40 + s * 34 : 640 + (s - 8) * 34;
+        let sy = 458;
+
+        let screenLit = (!blackoutActive && activeCue && (activeCue.Target_Group === 'ALL' || activeCue.Target_Group === 'SCREENS'));
+        let sColor = screenLit ? color : '#334155';
+
+        if (screenLit && activeCue.Effect_Type === 'CHASE_HORIZ') {
+          let chaseIdx = Math.floor((elapsed * 8) % 16);
+          sColor = (s === chaseIdx) ? secColor : color;
+        }
+
+        ctx.fillStyle = sColor;
+        ctx.shadowBlur = screenLit ? 8 : 0;
+        ctx.shadowColor = sColor;
+        ctx.fillRect(sx - 10, sy - 4, 20, 8);
+        ctx.shadowBlur = 0;
+      }
+
+      // 3. Draw Center Stage & Soloist Platform (Midfield 50-yd line, Y=400)
+      let stageLit = (!blackoutActive && activeCue && (activeCue.Target_Group === 'ALL' || activeCue.Target_Group === 'STAGES' || activeCue.Target_Group === 'SOLOIST'));
+      let stColor = stageLit ? (activeCue.Target_Group === 'SOLOIST' ? '#ffffff' : color) : '#334155';
+      ctx.fillStyle = stColor;
+      ctx.shadowBlur = stageLit ? 15 : 0;
+      ctx.shadowColor = stColor;
+      ctx.fillRect(470, 390, 60, 24);
+      ctx.shadowBlur = 0;
+
+      // 4. Draw Centerfield Star Tarp (Midfield, Y=250)
+      let starLit = (!blackoutActive && activeCue && (activeCue.Target_Group === 'ALL' || activeCue.Target_Group === 'STAGE'));
+      let starColor = starLit ? color : '#1e293b';
+      ctx.fillStyle = starColor;
+      ctx.beginPath();
+      ctx.arc(500, 250, 16, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Front Ensemble Pit (Label only)
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+      ctx.font = '10px sans-serif';
+      ctx.fillText("[ FRONT ENSEMBLE PIT ]", 500, 480);
+
+      requestAnimationFrame(drawField);
+    }
+
+    // Initialize
+    parseCSV(defaultCSV);
+    drawField();
+  </script>
+</body>
+</html>

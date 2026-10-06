@@ -84,8 +84,33 @@ Master Document (.docx)
 
 ## 3. Subproject Conformity
 
-All current subprojects (`PCHSMB/_Backdrop`, `PCHSMB/_Sideline Screen`) and any future projects created in `PCHSMB/` must strictly adhere to this architectural and delivery standard.
+All current subprojects (`PCHSMB/_Backdrop`, `PCHSMB/_Sideline Screen`, `PCHSMB/_Stages`, `PCHSMB/_Lighting Controller`) and any future projects created in `PCHSMB/` must strictly adhere to this architectural and delivery standard.
+
+### Electronics & Platform Subprojects
+- **`PCHSMB/_Lighting Controller/`:** Governed by [`PCHSMB/_Lighting Controller/docs/AGENTS.md`](_Lighting%20Controller/docs/AGENTS.md) and [`REQUIREMENTS.md`](_Lighting%20Controller/docs/REQUIREMENTS.md). Enforces the **Zero-Software & Zero-AI Seasonal Show Reprogramming Mandate** (`REQ-SW-01`), 902–928 MHz Sub-GHz wireless broadcast, 4-channel parallel DMA pixel driving, and COTS power tool battery architectures.
 
 ### Fabrication Tooling Subprojects
 - **`PCHSMB/Circle Cutter/`:** Governed by [`PCHSMB/Circle Cutter/AGENTS.md`](Circle%20Cutter/AGENTS.md). Enforces the 4-stage engineering lifecycle (**Idea $\to$ Plan $\to$ Implementation $\to$ Commit**) and the **100% Pure-Python CAD Engine** standard (`generate_circle_cutter.py`). External CAD binaries (`openscad`, FreeCAD) are strictly prohibited.
+
+---
+
+## 4. Simulation-First Hardware Feasibility & Photometric Realism Standard
+
+All props, field equipment, lighting designs, and concept imagery developed for PCHS Marching Band must satisfy strict physical fabrication and environmental optics standards. Renders and visual analyses must depict **actual physical hardware buildable by volunteers in the PCHS shop**, never video-game CGI concepts.
+
+### 4.1 Shop Fabrication & Hardware Feasibility Invariants
+1. **Material Realism:** All frames, brackets, and structural elements must use standard commercial stock (6061/5052 aluminum tubing/sheet, schedule 40 PVC/EMT conduit, 3D printed PETG/ASA parts, laser-cut acrylic, rotomolded polyethylene).
+2. **Power & Electrical Feasibility:** Props must operate from standard commercial power tool battery packs (e.g., Milwaukee M18 or DeWalt 20V) with latched mechanical battery docks, standard step-down buck converters, fused DC distribution, and sub-GHz (915 MHz) wireless control.
+3. **Ergonomics & Rigging:** Handheld or field-carried props must include physical handles, balanced grip centers of gravity, and optional quick-release 1.25″ EMT conduit receiver sockets for stage platform mounting.
+4. **CBA Rules Compliance:** All designs must comply with Colorado Bandmasters Association (CBA) Rules 8.05–9.07 (non-marking turf contact, no pyrotechnics, zero field damage, rapid < 2 minute ingress/egress).
+
+### 4.2 Environmental Optics & Stadium Photometric Standards
+1. **Clean Air Transparency:** Under clear Colorado high-altitude skies (6,500 ft ASL), atmospheric Rayleigh scattering optical depth is negligible ($\mu_s \times L \approx 10^{-6}$). Volumetric light shafts, visible laser cones, and glowing fog in mid-air are unphysical and strictly forbidden.
+2. **Daylight Visibility ($90,000\text{ lux}$ sun):** Ambient sunlight produces $\approx 3,438\text{ cd/m}^2$ turf luminance. Prop light spill on synthetic grass is below the Weber JND perception threshold ($1,800\text{ lux}$). Daylight imagery must show natural green turf with **zero ground wash**. Props must rely on physical silhouette, mechanical motion, or bold contrast.
+3. **Night Stadium Illumination ($1,000\text{ lux}$ sports lights):** Sports lighting yields $\approx 38.2\text{ cd/m}^2$ background turf luminance. Inverse-square falloff strictly restricts visible ground wash to a **$3\text{–}4\text{ foot}$ radius** ($< 8\text{–}10\text{ pixels}$ from press box viewpoint). Oversized 20-to-30-yard glowing clouds or radioactive green wash on turf are physical hallucinations and prohibited.
+4. **Photogrammetric Press Box Scale:** When viewing midfield from Falcon Stadium Press Box ($72.5\text{ m}$ slant range, $14.6^\circ$ elevation):
+   - $5\text{ yards} = 15\text{ ft} \approx 33\text{–}46\text{ px}$ depending on render frame width.
+   - High school student ($5\text{ ft}$) is $\approx 11\text{–}15\text{ px}$ tall ($\approx 14\text{–}20\text{ px}$ with shako and plume).
+   - Props ($12\text{″}$ to $36\text{″}$) are strictly $\mathbf{3\text{ to }7\text{ pixels}}$ in size. Any image showing midfield props as giant glowing objects spanning multiple yards is rejected.
+
 

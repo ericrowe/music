@@ -8,8 +8,8 @@ This repository uses **`AGENTS.md`** as the single, authoritative source of trut
 
 | AI Assistant / Agent | Discovery Path | Skill / Workflow Invocation |
 |---|---|---|
-| **Google Gemini / Antigravity** | `AGENTS.md`, `GEMINI.md`, `.agents/skills/` | `$develop-versioned-documents`, `$calculate-prop-wind-loading`, `$cad-openscad`, `$cad-python` |
-| **OpenAI Codex** | `AGENTS.md`, `.codex/skills/` | `$develop-versioned-documents`, `$calculate-prop-wind-loading`, `$cad-openscad`, `$cad-python` |
+| **Google Gemini / Antigravity** | `AGENTS.md`, `GEMINI.md`, `.agents/skills/` | `$develop-versioned-documents`, `$calculate-prop-wind-loading`, `$simulate-prop-photometrics`, `$requirements-engineering`, `$cad-openscad`, `$cad-python` |
+| **OpenAI Codex** | `AGENTS.md`, `.codex/skills/` | `$develop-versioned-documents`, `$calculate-prop-wind-loading`, `$simulate-prop-photometrics`, `$requirements-engineering`, `$cad-openscad`, `$cad-python` |
 | **Anthropic Claude Code** | `CLAUDE.md` (delegates to `AGENTS.md`) | Python helpers in `.agents/skills/develop-versioned-documents/scripts/` |
 | **GitHub Copilot / Workspace** | `.github/copilot-instructions.md` | Python helpers or project workflows |
 | **Cursor IDE** | `.cursorrules`, `.cursor/rules/*.mdc` | Python helpers or scoped rule commands |
@@ -190,7 +190,19 @@ Every agent modifying a subproject must maintain the following specific document
 - `docs/references/STAGE_GAP_BRIDGE_ANALYSIS.md`: Engineering analysis and recommendations for the 6.0″ inter-section gap bridge.
 - `docs/AGENTS.md` & `docs/GEMINI.md`: Subproject instructions and document standards.
 
-#### F. General Fabrication Projects (`Trumpet`, `Flutes`, `Standcessories`, `Luggage Tags`)
+#### F. `PCHSMB/_Lighting Controller` (Universal Field Prop Lighting Platform)
+- `README.md`: Subproject overview, system signal flow, hardware specifications, directory navigation, and procurement schedules.
+- `docs/REQUIREMENTS.md`: Systems Requirements Specification covering system-level, Synapse master console, peripheral prop nodes, firmware, and software.
+- `docs/CARRIER_BOARD_SCHEMATICS.md`: Master electrical schematics, pinouts, and netlists.
+- `docs/Lighting_Controller_Pilot_Build_BOM.typ` / `.pdf`: Consolidated 1 Synapse + 3 Prop Nodes pilot procurement specification.
+- `docs/Carrier_Board_BOM_Purchasing_Guide.typ` / `.pdf`: Full fleet 30-prop carrier board verified purchasing schedule.
+- `docs/project.json`: Controlled document manifest tracking build ID (`D#`), status, and file hashes.
+- `hardware/`: KiCad projects (`pcb_synapse_controller/`, `pcb_prop_node/`) and generation scripts.
+- `firmware/README.md`: ESP32-S3 dual-core real-time tasking, 915 MHz broadcast protocol, and 4-channel parallel DMA driver.
+- `software/README.md` & `software/show_cues_template.csv`: Zero-software seasonal show authoring workflow and CSV schema.
+- `software/PCHSMB_Show_Simulator.html`: Standalone zero-install HTML5 field visualizer and cue validator.
+
+#### G. General Fabrication Projects (`Trumpet`, `Flutes`, `Standcessories`, `Luggage Tags`)
 - Subproject `README.md`: Hardware requirements, printing guidelines (materials, infill, perimeters), and assembly instructions.
 - Master CAD sources (`.FCStd`), exported slicer files (`.3mf`), and production meshes (`.stl`).
 
@@ -201,4 +213,29 @@ The **Continuum** show operations guide (`PCHSMB/2026 Continuum/Continuum_2026_P
 > [!IMPORTANT]
 > **CONTINUUM REVIEW TRIGGER:**
 > Whenever the **Backdrop** documentation (`PCHSMB/_Backdrop/docs/`) or **Sideline Screen** documentation (`PCHSMB/_Sideline Screen/docs/`) is updated—including changes to ballasting schedules, wind limits, deployment procedures, timing benchmarks, crew allocations, transport methods, or wind relief flap specifications—the agent **MUST automatically review the Continuum project docs** (`PCHSMB/2026 Continuum/Continuum_2026_Prop_Operations_Guide.typ` / `.pdf`), identify any discrepancies, and **propose specific updates back to the user**.
+
+---
+
+## 6. Simulation-First Engineering & Physics-Grounded Hardware Visualization Standard
+
+Every visual representation, rendering, and optical analysis across all repository subprojects must represent **actual, buildable physical hardware** constructed from real materials (structural aluminum, CNC acrylic, rotomolded polyethylene, commercial power tool batteries) rather than artistic fantasy or video-game CGI concepts.
+
+### 6.1 Strict Prohibition of Video-Game & CGI Hallucinations
+
+AI image generators and diffusion models default to video-game tropes when unconstrained. All agents must enforce strict physical bounds:
+1. **No Volumetric Beams in Clear Air:** In clean atmospheric air ($\mu_s \times L \approx 10^{-6}$), optical depth is negligible. Without theatrical fog machines or dense smoke, light beams, laser shafts, and glowing air cones are **100% invisible**. Light only becomes visible where it physically strikes a surface (turf, bleachers, performer uniform, lens face).
+2. **No Sci-Fi Energy Halos or Floating Rings:** Never depict floating "Tron rings," hovering plasma, energy shields, or free-floating luminous graphics. Every luminous element must have a clear physical mounting substrate, electrical wire path, and mechanical housing.
+3. **No Unphysical Ground Wash:**
+   - *Daylight ($90,000\text{ lux}$ sun):* Prop spill is below the human Weber JND perception threshold ($1,800\text{ lux}$). Ground turf must remain natural green synthetic turf with **zero colored wash**.
+   - *Night ($1,000\text{ lux}$ sports lighting):* Diffuse inverse-square falloff ($E = \frac{I \cos\theta}{r^2}$) confines noticeable ground illumination to a **$3\text{–}4\text{ foot}$ radius** ($< 8\text{–}10\text{ pixels}$ at stadium press box distance). Unbounded 20-to-30-yard glowing colored clouds or neon puddles across field yard lines are physically impossible and strictly prohibited.
+4. **Rigorous Photogrammetric Scale:** All stadium-distance views must strictly adhere to field grid fiducials ($5\text{ yards} = 15\text{ ft}$). Performers and props must match true physical angular size from the press box (e.g., a $5\text{ ft}$ performer is $\approx 11\text{–}15\text{ px}$ tall; a $24\text{″}$ prop is $\approx 4\text{–}5\text{ px}$). Never enlarge props or performers into giant figures.
+
+### 6.2 The Mandatory 5-Phase Simulation Pipeline
+
+Before generating or presenting any visual render:
+1. **Phase 1 (Mathematical Simulation):** Compute exact photometric flux, candela, surface luminance (nits), inverse-square lux at distance, and Weber contrast ratios against ambient lighting ($90,000\text{ lux}$ sun vs $1,000\text{ lux}$ night).
+2. **Phase 2 (Photogrammetric Calibration):** Calculate exact pixel scale per yard from camera position, establishing maximum pixel dimensions for props and performers.
+3. **Phase 3 (Physics-Constrained Prompting):** Explicitly forbid volumetric air shafts, glowing grass puddles, and oversized figures; prescribe exact physical materials, fasteners, handles, and battery docks.
+4. **Phase 4 (Deterministic Verification & Compositing):** Verify scale and alignment against baseline plates; reject any output exhibiting CGI energy blooms or unphysical scale.
+5. **Phase 5 (Engineering & Buildability Audit):** Confirm the depicted design can be fabricated by shop volunteers using specified bill of materials and standard shop tools.
 
