@@ -89,9 +89,9 @@
   [
     #text(size: 8pt)[
       *Application:* Sideline front ensemble master controller console (Concept 10). Clamped to pit keyboard rail.\
-      *Dimensions:* 150.0 x 90.0 mm (5.91 x 3.54 in), 2-layer FR4, 1 oz copper, 4x M3 mounting holes.\
+      *Dimensions:* 210.0 x 90.0 mm (8.27 x 3.54 in), 2-layer FR4, 1 oz copper, 4x M3 mounting holes.\
       *Host Platform:* Heltec WiFi LoRa 32 V3 (ESP32-S3 + Semtech SX1262 @ 915 MHz, 0.96″ OLED).\
-      *Features:* 16-cue discrete 16mm IP67 metal button interface via I2C (`MCP23017`), dual 10-pin screw terminals, rotary encoder, 3.5mm line-in.\
+      *Features:* 16-cue discrete 16mm IP67 metal button interface via I2C (`MCP23017`), four 8-pin pluggable headers (32 dedicated terminals w/ ground returns), rotary encoder, 3.5mm line-in.\
       *KiCad Project:* `hardware/pcb_synapse_controller/pcb_synapse_controller.kicad_pro` | *DRC: 0 Errors*
     ]
   ],
@@ -116,10 +116,11 @@
   [U1], [1], [16-Bit I2C I/O Expander (16 Show Buttons)], [Microchip], [SOIC-28W], [MCP23017-E/SO], [#link("https://www.digikey.com/en/products/detail/microchip-technology/MCP23017-E-SO/894271")[DigiKey MCP23017-E/SO-ND]],
   [BTN1–16], [16], [16mm IP67 Momentary Pre-Wired Buttons (Cues 1-16)], [DMWD / Amazon], [16mm Panel], [16mm Pre-Wired Momentary], [#link("https://www.amazon.com/dp/B0D3KXQ5KK")[Amazon 16mm Pre-Wired (B0D3KXQ5KK)]],
   [BTN17], [1], [16mm IP67 Red Momentary Button (Blackout Mute)], [DMWD / Amazon], [16mm Panel], [16mm Pre-Wired Red], [#link("https://www.amazon.com/dp/B0D3KXQ5KK")[Amazon 16mm Red Button]],
-  [J5, J6], [2], [10-Pin 5.08mm Screw Terminal (Buttons 1-8 / 9-16)], [Phoenix Contact], [TH 5.08mm], [MKDS 1,5/10-5,08], [#link("https://www.digikey.com/en/products/detail/phoenix-contact/1715802/260635")[DigiKey 277-1271-ND]],
-  [J2], [1], [2-Pin 5.08mm Screw Terminal (5V DC In)], [Phoenix Contact], [TH 5.08mm], [MKDS 1,5/ 2-5,08], [#link("https://www.digikey.com/en/products/detail/phoenix-contact/1715721/260631")[DigiKey 277-1263-ND]],
-  [J7], [1], [2-Pin 5.08mm Screw Terminal (Blackout Switch)], [Phoenix Contact], [TH 5.08mm], [MKDS 1,5/ 2-5,08], [#link("https://www.digikey.com/en/products/detail/phoenix-contact/1715721/260631")[DigiKey 277-1263-ND]],
-  [ENC1], [1], [Rotary Encoder with Momentary Switch], [Bourns], [TH Vertical], [PEC11R-4215F-S0024], [#link("https://www.digikey.com/en/products/detail/bourns-inc/PEC11R-4215F-S0024/4499665")[DigiKey PEC11R-4215F-ND]],
+  [J5,6,8,9], [4], [8-Pin 5.08mm Pluggable Header (Buttons 1-4..13-16)], [Phoenix / COTS], [TH 5.08mm], [MSTBA 2,5/8-G-5,08 / 2EDG], [#link("https://www.amazon.com/dp/B09D1JSMCL")[Amazon 8-Pin 10-Pk (B09D1JSMCL)] / #link("https://www.digikey.com/en/products/detail/phoenix-contact/1757307/260635")[DigiKey 1757307]],
+  [J2], [1], [2-Pin 5.08mm Pluggable Header (5V DC In)], [Phoenix / COTS], [TH 5.08mm], [MSTBA 2,5/2-G-5,08 / 2EDG], [#link("https://www.amazon.com/dp/B093DV5TJ1")[Amazon 2-Pin 10-Pk (B093DV5TJ1)] / #link("https://www.digikey.com/en/products/detail/phoenix-contact/1757242/260631")[DigiKey 1757242]],
+  [J10], [1], [5-Pin 5.08mm Pluggable Header (Rotary Encoder)], [Phoenix / COTS], [TH 5.08mm], [MSTBA 2,5/5-G-5,08 / 2EDG], [#link("https://www.digikey.com/en/products/detail/phoenix-contact/1757271/260632")[DigiKey 1757271 / 1757048]],
+  [ENC1], [1], [Panel-Mount Rotary Encoder with Momentary Switch], [Bourns], [Panel M7], [PEC11R-4215F-S0024], [#link("https://www.digikey.com/en/products/detail/bourns-inc/PEC11R-4215F-S0024/4499665")[DigiKey PEC11R-4215F-ND]],
+  [KNOB1], [1], [6mm D-Shaft Skirted Knob + M7 Sealing O-Ring], [Taiss / Amazon], [Panel HW], [6mm D-Shaft Skirted], [#link("https://www.amazon.com/dp/B07M6T35M2")[Amazon 6mm Skirted Knob]],
   [J1], [1], [3.5mm Stereo Audio Jack (Line / Click In)], [Same Sky], [TH RA], [SJ1-3523N], [#link("https://www.digikey.com/en/products/detail/same-sky-formerly-cui-devices/SJ1-3523N/738689")[DigiKey CP1-3523N-ND]],
   [C1], [1], [100nF (0.1uF) 50V X7R Ceramic Bypass Cap], [Yageo], [SMD 0805], [CC0805KRX7R9BB104], [#link("https://www.digikey.com/en/products/detail/yageo/CC0805KRX7R9BB104/302898")[DigiKey 311-1140-1-ND]],
   [H1–H4], [4], [M3 x 6mm Brass Standoffs + M3 Screws], [Keystone], [Hardware], [24391], [#link("https://www.digikey.com/en/products/detail/keystone-electronics/24391/1532150")[DigiKey 24391K-ND]],
@@ -140,7 +141,7 @@
   [
     #text(size: 8pt)[
       *Application:* Mounted on all 30 field props (11 Backdrops, 16 Duck Blinds, 1 Lotus, 1 Star Tarp, 11 Solar Rays).\
-      *Dimensions:* 85.0 x 75.0 mm (3.35 x 2.95 in), 2-layer FR4, *2 oz heavy copper* (handles continuous 8A–20A LED current).\
+      *Dimensions:* 95.0 x 90.0 mm (3.74 x 3.54 in), 2-layer FR4, *2 oz heavy copper*, 100% pluggable connectors.\
       *Battery Compatibility:* Standard commercial 18V-21V tool batteries (DeWalt 20V Max / Milwaukee M18).\
       *Protections:* 10A blade fuse, 24V 1500W TVS surge diode, and IRF4905 P-FET reverse polarity clamp (sub-0.02 ohm).\
       *KiCad Project:* `hardware/pcb_prop_node/pcb_prop_node.kicad_pro` | *DRC: 0 Errors*
@@ -164,7 +165,7 @@
   
   [MOD1], [1], [Heltec WiFi LoRa 32 V3 (ESP32-S3 + SX1262 w/ Antenna + Pigtail)], [Heltec Auto], [Module], [HTIT-WB32LA_V3], [#link("https://www.amazon.com/dp/B0DRSJV1ZL")[Amazon (USD 24.99)] / #link("https://heltec.org/project/wifi-lora-32-v3/")[Heltec Direct]],
   [J2, J3], [2], [18-Pin 2.54mm Female Socket Header Strip], [Sullins Conn], [TH 1x18], [PPTC181LFBN-RC], [#link("https://www.digikey.com/en/products/detail/sullins-connector-solutions/PPTC181LFBN-RC/810156")[DigiKey S7016-ND]],
-  [J1], [1], [2-Pin 5.08mm Terminal (18V-21V Battery In)], [Phoenix Contact], [TH 5.08mm], [MKDS 1,5/ 2-5,08], [#link("https://www.digikey.com/en/products/detail/phoenix-contact/1715721/260631")[DigiKey 277-1263-ND]],
+  [J1], [1], [2-Pin 5.08mm Pluggable Header (18V-21V Battery In)], [Phoenix / COTS], [TH 5.08mm], [MSTBA 2,5/2-G-5,08 / 2EDG], [#link("https://www.amazon.com/dp/B093DV5TJ1")[Amazon 2-Pin 10-Pk (B093DV5TJ1)] / #link("https://www.digikey.com/en/products/detail/phoenix-contact/1757242/260631")[DigiKey 1757242]],
   [F1], [1], [10A Mini Automotive Blade Fuse PCB Clips], [Keystone], [TH Clip], [3568], [#link("https://www.digikey.com/en/products/detail/keystone-electronics/3568/2137306")[DigiKey 36-3568-ND]],
   [FUSE], [1], [10A Mini Blade Automotive Fuse (Fast-Acting)], [Littelfuse], [Mini Blade], [0297010.WXNV], [#link("https://www.digikey.com/en/products/detail/littelfuse-inc/0297010-WXNV/146591")[DigiKey F1784-ND]],
   [D1], [1], [24V 1500W TVS Surge Protection Diode], [Littelfuse], [SMC], [SMCJ24A], [#link("https://www.digikey.com/en/products/detail/littelfuse-inc/SMCJ24A/762394")[DigiKey SMCJ24ALFCT-ND]],
@@ -176,9 +177,9 @@
   [C3], [1], [1000uF 10V Low-ESR Radial Electrolytic Cap], [Panasonic], [Rad 10x12.5mm], [EEU-FR1A102], [#link("https://www.digikey.com/en/products/detail/panasonic-industry/EEU-FR1A102/9921022")[DigiKey P124221-ND]],
   [U1], [1], [Quad Level Shifter (3.3V to 5.0V Buffer)], [TI], [SOIC-14], [SN74AHCT125DR], [#link("https://www.digikey.com/en/products/detail/texas-instruments/SN74AHCT125DR/376412")[DigiKey 296-4652-1-ND]],
   [R1, R4–6], [4], [47 Ohm 1/8W 1% Resistor (Quad LED Damping)], [Yageo], [SMD 0805], [RC0805FR-0747RL], [#link("https://www.digikey.com/en/products/detail/yageo/RC0805FR-0747RL/564344")[DigiKey 311-47.0RCRCT-ND]],
-  [SW1], [1], [4-Position Slide DIP Switch (Hardware Prop ID)], [CTS Corp], [TH DIP-8], [208-4], [#link("https://www.digikey.com/en/products/detail/cts-electrocomponents/208-4/20783")[DigiKey CT2084-ND]],
-  [J4], [1], [2-Pin 5.08mm Terminal (Performer Trigger)], [Phoenix Contact], [TH 5.08mm], [MKDS 1,5/ 2-5,08], [#link("https://www.digikey.com/en/products/detail/phoenix-contact/1715721/260631")[DigiKey 277-1263-ND]],
-  [J5, J7], [2], [6-Pin 5.08mm Terminal (Quad LED Out CH1–4)], [Phoenix Contact], [TH 5.08mm], [MKDS 1,5/ 6-5,08], [#link("https://www.digikey.com/en/products/detail/phoenix-contact/1710726/5198285")[DigiKey 277-1267-ND]],
+  [SW1], [1], [8-Position Slide DIP Switch (8-Bit Hardware Prop ID)], [CTS Corp], [TH DIP-16], [208-8], [#link("https://www.digikey.com/en/products/detail/cts-electrocomponents/208-8/20787")[DigiKey CT2088-ND]],
+  [J4], [1], [2-Pin 5.08mm Pluggable Header (Performer Trigger)], [Phoenix / COTS], [TH 5.08mm], [MSTBA 2,5/2-G-5,08 / 2EDG], [#link("https://www.amazon.com/dp/B093DV5TJ1")[Amazon 2-Pin 10-Pk (B093DV5TJ1)] / #link("https://www.digikey.com/en/products/detail/phoenix-contact/1757242/260631")[DigiKey 1757242]],
+  [J5, J7], [2], [6-Pin 5.08mm Pluggable Headers (Quad LED Out CH1–4)], [Phoenix Contact], [TH 5.08mm], [MSTBA 2,5/6-G-5,08 / MSTB 2,5/6-ST], [#link("https://www.digikey.com/en/products/detail/phoenix-contact/1757284/260633")[DigiKey 1757284 (Header)] / #link("https://www.digikey.com/en/products/detail/phoenix-contact/1757051/260601")[1757051 (Plug)]],
   [J6], [1], [4-Pin 2.54mm Header (I2C Diagnostic Port)], [Sullins Conn], [TH 1x4], [PRPC004SAAN-RC], [#link("https://www.digikey.com/en/products/detail/sullins-connector-solutions/PRPC004SAAN-RC/2775250")[DigiKey S1011EC-04-ND]],
   [H1–H4], [4], [M3 x 6mm Brass Standoffs + M3 Screws], [Keystone], [Hardware], [24391], [#link("https://www.digikey.com/en/products/detail/keystone-electronics/24391/1532150")[DigiKey 24391K-ND]],
 )
@@ -204,7 +205,9 @@
   [Controller Housing], [Custom 3D-Printed Tabletop Console Case (PETG / ASA)], [PCHSMB Shop], [Custom 3D Print], [Shop 3D Print (CAD In-House)],
   [Battery Adapter], [DeWalt 20V Max Battery Adapter with 12 AWG Leads & Fuse], [Commercial / DIY], [DeWalt 20V Dock], [#link("https://www.amazon.com/dp/B0F483GPXL")[Amazon DeWalt 20V Dock (B0F483GPXL)]],
   [5V 20A Buck Regulator], [12V/24V to 5V 20A (100W) Waterproof Finned Buck Converter], [HOMELYLIFE], [B089M5R3NJ], [#link("https://www.amazon.com/dp/B089M5R3NJ")[Amazon 5V 20A Buck (B089M5R3NJ)]],
-  [LED Strip Connectors], [3-Pin IP68 Waterproof Pigtails (10-Pair, 20 AWG)], [BTF-LIGHTING], [3-Pin Waterproof Pigtails], [#link("https://www.amazon.com/dp/B01LCV8LGA")[Amazon BTF 3-Pin (USD 14.99)]],
+  [Pluggable 8-Pin Set], [8-Pin 5.08mm Right-Angle Terminal Blocks (10 Pairs)], [LuoQiuFa / Amazon], [B09D1JSMCL (8P RA Set)], [#link("https://www.amazon.com/dp/B09D1JSMCL")[Amazon 8-Pin Pack (USD 9.99)]],
+  [Pluggable 2-Pin Set], [2-Pin 5.08mm Right-Angle Terminal Blocks (10 Pairs)], [LuoQiuFa / Amazon], [B093DV5TJ1 (2P RA Set)], [#link("https://www.amazon.com/dp/B093DV5TJ1")[Amazon 2-Pin Pack (USD 6.99)]],
+  [Pluggable 6-Pin Set], [6-Pin 5.08mm Pluggable Headers + Plugs (Mating Pairs)], [Phoenix Contact], [MSTBA 2,5/6-G-5,08 & MSTB 2,5/6-ST], [#link("https://www.digikey.com/en/products/detail/phoenix-contact/1757284/260633")[DigiKey 1757284] / #link("https://www.digikey.com/en/products/detail/phoenix-contact/1757051/260601")[1757051]],
   [Conformal Coating (Opt)], [MG Chemicals 422C Silicone Conformal Coating (Weather/Dew)], [MG Chemicals], [422C-340G (12 oz Aerosol)], [#link("https://www.digikey.com/en/products/detail/mg-chemicals/422C-340G/14553808")[DigiKey 473-422C-340G-ND (Opt)]],
 )
 

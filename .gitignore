@@ -42,6 +42,8 @@ __pycache__/
 *.swo
 .idea/
 .vscode/*.log
+.history/
+**/.history/
 
 # Custom personal / one-off luggage tag prints
 Luggage Tags/3MF/Base Tag - Alex CTMS.3mf

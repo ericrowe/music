@@ -12,12 +12,12 @@
 
 To eliminate delicate hand-wiring harnesses, loose breadboard jumpers, and field maintenance failures, the Beacon electronics architecture standardizes on **two custom 2-layer PCB carrier boards**:
 
-1. **Board 1: Synapse Pit Master Controller Carrier Board (`PCB-SYNAPSE-V1`)**
+1. **Board 1: Synapse Pit Master Controller Carrier Board (`PCB-SYNAPSE-V1` Rev v1.3)**
    - **Application:** Sideline front ensemble master console (Concept 10).
-   - **Features:** Socket for Heltec V3, 16 discrete 16mm IP67 panel-mount metal pushbuttons with pre-wired pigtail sockets connected via heavy-duty Phoenix Contact 5.08mm screw terminals (`J5`, `J6`), MCP23017 I2C expander, rotary menu encoder, dedicated emergency blackout terminal (`J7`), 3.5mm SMPTE/click line-in, and 5V DC power input (`J2`).
-2. **Board 2: Peripheral Prop Receiver & LED Driver Carrier Board (`PCB-PROP-NODE-V1`)**
+   - **Features:** Socket for Heltec V3, 16 discrete 16mm IP67 panel-mount metal pushbuttons with pre-wired pigtail sockets connected via four 8-pin pluggable terminal headers (`J5`, `J6`, `J8`, `J9` - Phoenix Contact MSTBA / 2EDG-5.08), providing 32 dedicated terminals (interleaved `[Signal | Ground]` pairs per button) sinking directly into the PCB copper ground plane pour, MCP23017 I2C expander, rotary menu encoder, dedicated emergency blackout pluggable terminal (`J7`), 3.5mm SMPTE/click line-in, and 5V DC pluggable power input (`J2`).
+2. **Board 2: Peripheral Prop Receiver & LED Driver Carrier Board (`PCB-PROP-NODE-V1` Rev v1.3)**
    - **Application:** Deployed across all 30 field props (11 Backdrops, 16 Duck Blinds, 1 Lotus, 1 Star Tarp, 11 Solar Rays).
-   - **Features:** Socket for Heltec V3, $18\text{V}\text{–}21\text{V}$ tool battery input with reverse polarity P-FET protection, automotive blade fuse, 5V/6A–8A step-down buck regulation, 74AHCT125 high-speed logic level shifting ($3.3\text{V} \to 5.0\text{V}$), 16-position BCD rotary prop address dial, performer trigger terminal, and high-current LED output.
+   - **Features:** Socket for Heltec V3, $18\text{V}\text{–}21\text{V}$ tool battery input via 2-pin pluggable header (`J1`) with reverse polarity P-FET protection, automotive blade fuse, 5V/6A–8A step-down buck regulation, 74AHCT125 high-speed logic level shifting ($3.3\text{V} \to 5.0\text{V}$), 8-position slide DIP switch bank (`SW1`) for 256 unique hardware device serial IDs ($0\text{–}255$ / `0x00`–`0xFF`), 2-pin pluggable performer trigger terminal (`J4`), and dual 6-pin pluggable quad LED outputs (`J5`, `J7`). 100% pluggable wiring enables instant tool-free field disconnection and rapid packout.
 
 ```
 ===================================================================================================
@@ -63,10 +63,8 @@ To eliminate delicate hand-wiring harnesses, loose breadboard jumpers, and field
                           ▼
                        +5V_SYS (System 5.0V Bus)
                           │
-             ┌────────────┴────────────┐
-             │                         │
-             ▼                         ▼
-      [Heltec V3 5V/VIN]       [J5/J6 Pin 9: +5V Button Halo Power]
+                          ▼
+                  [Heltec V3 5V/VIN]
              │
              ▼ (Internal 3.3V LDO on Heltec)
            +3V3_SYS
@@ -81,19 +79,19 @@ To eliminate delicate hand-wiring harnesses, loose breadboard jumpers, and field
 
 
 ===================================================================================================
-1. MCP23017-E/SP 16-BIT I2C KEYPAD INTERFACE & DISCRETE 16MM TERMINAL BLOCKS (J5 & J6)
+1. MCP23017-E/SP 16-BIT I2C KEYPAD INTERFACE & 32-TERMINAL PLUGGABLE BUTTON BLOCKS (J5, J6, J8, J9)
 ===================================================================================================
 
                       MCP23017-E/SP (DIP-28 / SOIC-28)
                       ┌───────────────U───────────────┐
- J5 Pin 1 (BTN_01) ───┤ 1  GPB0               GPA7 28 ├─── J6 Pin 8 (BTN_16)
- J5 Pin 2 (BTN_02) ───┤ 2  GPB1               GPA6 27 ├─── J6 Pin 7 (BTN_15)
- J5 Pin 3 (BTN_03) ───┤ 3  GPB2               GPA5 26 ├─── J6 Pin 6 (BTN_14)
- J5 Pin 4 (BTN_04) ───┤ 4  GPB3               GPA4 25 ├─── J6 Pin 5 (BTN_13)
- J5 Pin 5 (BTN_05) ───┤ 5  GPB4               GPA3 24 ├─── J6 Pin 4 (BTN_12)
- J5 Pin 6 (BTN_06) ───┤ 6  GPB5               GPA2 23 ├─── J6 Pin 3 (BTN_11)
- J5 Pin 7 (BTN_07) ───┤ 7  GPB6               GPA1 22 ├─── J6 Pin 2 (BTN_10)
- J5 Pin 8 (BTN_08) ───┤ 8  GPB7               GPA0 21 ├─── J6 Pin 1 (BTN_09)
+ J5 Pin 1 (BTN_01) ───┤ 1  GPB0               GPA7 28 ├─── J9 Pin 7 (BTN_16)
+ J5 Pin 3 (BTN_02) ───┤ 2  GPB1               GPA6 27 ├─── J9 Pin 5 (BTN_15)
+ J5 Pin 5 (BTN_03) ───┤ 3  GPB2               GPA5 26 ├─── J9 Pin 3 (BTN_14)
+ J5 Pin 7 (BTN_04) ───┤ 4  GPB3               GPA4 25 ├─── J9 Pin 1 (BTN_13)
+ J6 Pin 1 (BTN_05) ───┤ 5  GPB4               GPA3 24 ├─── J8 Pin 7 (BTN_12)
+ J6 Pin 3 (BTN_06) ───┤ 6  GPB5               GPA2 23 ├─── J8 Pin 5 (BTN_11)
+ J6 Pin 5 (BTN_07) ───┤ 7  GPB6               GPA1 22 ├─── J8 Pin 3 (BTN_10)
+ J6 Pin 7 (BTN_08) ───┤ 8  GPB7               GPA0 21 ├─── J8 Pin 1 (BTN_09)
  +3V3_SYS ────────────┤ 9  VDD                INTA 20 ├───┬───► ESP32 GPIO 4 (IRQ)
  GND ─────────────────┤ 10 VSS                INTB 19 ├───┘
  (No Connect) ────────┤ 11 NC                  RESET 18 ├─────── +3V3_SYS
@@ -102,39 +100,60 @@ To eliminate delicate hand-wiring harnesses, loose breadboard jumpers, and field
  (No Connect) ────────┤ 14 NC                    A0 15 ├─────── GND
                       └───────────────────────────────┘
 
-* Terminal Block J5 (Bank 1: Buttons 1–8): Phoenix Contact MKDS 1,5/10-5,08
-  - Pins 1–8: BTN_01 through BTN_08 (Normally Open switch returns)
-  - Pin 9: +5V (Optional Button Halo LED Anode power bus)
-  - Pin 10: GND (Common switch contact return & LED cathode)
-* Terminal Block J6 (Bank 2: Buttons 9–16): Phoenix Contact MKDS 1,5/10-5,08
-  - Pins 1–8: BTN_09 through BTN_16 (Normally Open switch returns)
-  - Pin 9: +5V (Optional Button Halo LED Anode power bus)
-  - Pin 10: GND (Common switch contact return & LED cathode)
-* Pre-Wired Pigtail Socket Harness Architecture:
-  - Standard 16mm momentary IP67 metal pushbuttons (such as APIELE, Ulincos, Nilight, or Daier) accept pre-wired female socket pigtail harnesses.
-  - Sockets snap directly onto the button terminals, requiring zero hand-soldering.
-  - Daisy-Chain Common GND: One continuous black lead connects the Common (C) pins of Buttons 1–8 to J5 Pin 10, and Buttons 9–16 to J6 Pin 10.
-  - Individual Signal Leads: 16 individual color-coded Normally Open (NO) leads route directly into J5 Pins 1–8 and J6 Pins 1–8.
-  - Daisy-Chain +5V Halo: If 5V illuminated halo buttons are used, one continuous red lead connects the LED (+) terminals of Buttons 1–8 to J5 Pin 9, and Buttons 9–16 to J6 Pin 9.
+* Pluggable Button Terminal Headers (Phoenix Contact MSTBA 2,5/8-G-5,08 / generic 2EDG-5.08):
+  Four 8-pin shrouded horizontal PCB headers mating with detachable screw-clamp female plugs.
+  All odd pins (1, 3, 5, 7) carry individual active-low button signals to the MCP23017.
+  All even pins (2, 4, 6, 8) are dedicated GND returns connected directly into the continuous PCB copper ground plane pour.
+
+  - Header J5 (Buttons 1–4):
+    * Pin 1: BTN_01 (Signal)  |  Pin 2: GND (Dedicated Button 1 Return)
+    * Pin 3: BTN_02 (Signal)  |  Pin 4: GND (Dedicated Button 2 Return)
+    * Pin 5: BTN_03 (Signal)  |  Pin 6: GND (Dedicated Button 3 Return)
+    * Pin 7: BTN_04 (Signal)  |  Pin 8: GND (Dedicated Button 4 Return)
+  - Header J6 (Buttons 5–8):
+    * Pin 1: BTN_05 (Signal)  |  Pin 2: GND (Dedicated Button 5 Return)
+    * Pin 3: BTN_06 (Signal)  |  Pin 4: GND (Dedicated Button 6 Return)
+    * Pin 5: BTN_07 (Signal)  |  Pin 6: GND (Dedicated Button 7 Return)
+    * Pin 7: BTN_08 (Signal)  |  Pin 8: GND (Dedicated Button 8 Return)
+  - Header J8 (Buttons 9–12):
+    * Pin 1: BTN_09 (Signal)  |  Pin 2: GND (Dedicated Button 9 Return)
+    * Pin 3: BTN_10 (Signal)  |  Pin 4: GND (Dedicated Button 10 Return)
+    * Pin 5: BTN_11 (Signal)  |  Pin 6: GND (Dedicated Button 11 Return)
+    * Pin 7: BTN_12 (Signal)  |  Pin 8: GND (Dedicated Button 12 Return)
+  - Header J9 (Buttons 13–16):
+    * Pin 1: BTN_13 (Signal)  |  Pin 2: GND (Dedicated Button 13 Return)
+    * Pin 3: BTN_14 (Signal)  |  Pin 4: GND (Dedicated Button 14 Return)
+    * Pin 5: BTN_15 (Signal)  |  Pin 6: GND (Dedicated Button 15 Return)
+    * Pin 7: BTN_16 (Signal)  |  Pin 8: GND (Dedicated Button 16 Return)
+
+* Two-Screw Direct Button Wiring & Fast Swap Architecture:
+  - Every 16mm button connects via its own dedicated 2-wire pair directly to adjacent [Signal | GND] screw terminals on the plug.
+  - Zero daisy-chain ground harnesses: Eliminates complex common-ground wiring bundles and ground loops.
+  - 60-Second Button Replacement: If a button switch is mechanically damaged during rehearsal, an operator simply loosens the TWO corresponding screws on the plug, removes the old leads, inserts the replacement button leads, and re-tightens. No wire cutting, splicing, or harness modification required.
+  - Instant Field Disconnection: During trailer packout, the four 8-pin plugs (and power/E-stop plugs) pull cleanly off the carrier board in seconds without touching any terminal screws.
 * Interrupt Operation: INTA and INTB are configured in mirror mode (IOCON.MIRROR = 1). When any
   button is pressed, the line pulls LOW, immediately waking the ESP32 via external hardware interrupt.
 
 
 ===================================================================================================
-2. EMERGENCY BLACKOUT E-STOP TERMINAL (J7), ROTARY ENCODER & SMPTE/CLICK INPUT
+2. EMERGENCY BLACKOUT E-STOP TERMINAL (J7), ROTARY ENCODER TERMINAL (J10) & SMPTE/CLICK INPUT
 ===================================================================================================
 
-  EMERGENCY BLACKOUT BUTTON (Terminal Block J7: Phoenix Contact MKDS 1,5/2-5,08):
+  EMERGENCY BLACKOUT BUTTON (Pluggable Header J7: Phoenix Contact MSTBA 2,5/2-G-5,08):
     Pin 1 (BLACKOUT) ──► ESP32 GPIO 2 (Dedicated hardware interrupt)
     Pin 2 (GND)      ──► GND
     Pullup           ──► 10k resistor to +3V3_SYS; 100nF ceramic debounce cap to GND.
     * External switch: 16mm Red Mushroom / Momentary or Latching panel-mount switch.
 
-  ROTARY ENCODER (Bourns PEC11R):
-    Pin A ──────[1k]───► ESP32 GPIO 5 (Pullup 10k to 3.3V, Cap 10nF to GND)
-    Pin B ──────[1k]───► ESP32 GPIO 6 (Pullup 10k to 3.3V, Cap 10nF to GND)
-    Push SW ────[1k]───► ESP32 GPIO 7 (Pullup 10k to 3.3V, Cap 100nF to GND)
-    Common ───────────── GND
+  ROTARY ENCODER TERMINAL (Pluggable Header J10: Phoenix Contact MSTBA 2,5/5-G-5,08):
+    Pin 1 (GND)      ──► GND (Common return for encoder wiper and push switch)
+    Pin 2 (ENC_A)    ──[1k]──► ESP32 GPIO 5 (Pullup 10k to 3.3V, Cap 10nF to GND)
+    Pin 3 (ENC_B)    ──[1k]──► ESP32 GPIO 6 (Pullup 10k to 3.3V, Cap 10nF to GND)
+    Pin 4 (ENC_SW)   ──[1k]──► ESP32 GPIO 7 (Pullup 10k to 3.3V, Cap 100nF to GND)
+    Pin 5 (+3V3_SYS) ──► +3V3_SYS (Auxiliary DC power bus for active/optical/illuminated encoders)
+    * External encoder: Bourns PEC11R-4215F-S0024 mounted directly to enclosure lid via M7x0.75
+      threaded metal bushing with M7 nut, washer, silicone O-ring, and 6mm D-shaft skirted knob
+      (drip edge overhang for outdoor drizzle shedding). Pre-wired pigtail plugs into J10.
 
   SMPTE / AUDIO CLICK TRACK LINE-IN (3.5mm TRS Jack):
     Tip / Ring ──[10µF/25V]──┬──[1k]──► ESP32 GPIO 3 (ADC1_CH2)
@@ -176,7 +195,7 @@ To eliminate delicate hand-wiring harnesses, loose breadboard jumpers, and field
 ===================================================================================================
 
   M18/20V BATTERY INPUT (18.0V - 21.0V DC)
-  [J1: Screw Terminal]
+  [J1: 2-Pin 5.08mm Pluggable Header / Phoenix Contact MSTBA 2,5/2-G-5,08]
     Pin 1 (BATT+) ──[FUSE 1: 10A ATO]──┬─────────────────────────────┐
                                        │                             │
                                   [TVS: SMCJ24A]              [SOURCE: IRF4905]
@@ -237,20 +256,25 @@ To eliminate delicate hand-wiring harnesses, loose breadboard jumpers, and field
 
 
 ===================================================================================================
-4. HARDWARE ROTARY/DIP PROP ADDRESS DIAL & FIELD PERIPHERALS
+4. 8-BIT HARDWARE DIP SWITCH BANK & FIELD PERIPHERALS
 ===================================================================================================
 
-  4-POSITION SPST DIP SWITCH (CTS 209-4MS / Bourns 7914 BCD):
-    Switch Pins 1-4 (Common) ── GND
-    Switch Pin 8 (Bit 0, 1s) ──► ESP32 GPIO 2 (Internal pull-up enabled)
-    Switch Pin 7 (Bit 1, 2s) ──► ESP32 GPIO 3 (Internal pull-up enabled)
-    Switch Pin 6 (Bit 2, 4s) ──► ESP32 GPIO 4 (Internal pull-up enabled)
-    Switch Pin 5 (Bit 3, 8s) ──► ESP32 GPIO 5 (Internal pull-up enabled)
-  * Operation: Sets hardware prop ID from 0 to 15 (0x0 to 0xF) mechanically in the field.
-    Prop #1 = 0001, Prop #11 = 1011, etc. Zero computer/Wi-Fi needed to swap or reassign props!
+  8-POSITION SPST SLIDE DIP SWITCH (CTS 208-8 / DIP-16):
+    Switch Pins 9-16 (Common) ── GND
+    Switch Pin 1 (Bit 0, 1s)   ──► ESP32 GPIO 2  (Internal pull-up enabled)
+    Switch Pin 2 (Bit 1, 2s)   ──► ESP32 GPIO 3  (Internal pull-up enabled)
+    Switch Pin 3 (Bit 2, 4s)   ──► ESP32 GPIO 4  (Internal pull-up enabled)
+    Switch Pin 4 (Bit 3, 8s)   ──► ESP32 GPIO 5  (Internal pull-up enabled)
+    Switch Pin 5 (Bit 4, 16s)  ──► ESP32 GPIO 7  (Internal pull-up enabled)
+    Switch Pin 6 (Bit 5, 32s)  ──► ESP32 GPIO 8  (Internal pull-up enabled)
+    Switch Pin 7 (Bit 6, 64s)  ──► ESP32 GPIO 9  (Internal pull-up enabled)
+    Switch Pin 8 (Bit 7, 128s) ──► ESP32 GPIO 10 (Internal pull-up enabled)
+  * Operation: Sets unique physical device serial number from 0 to 255 (0x00 to 0xFF).
+    Decoupled from show profile; all fleet props run identical firmware binaries.
+    Spare units are assigned profiles via off-field Wi-Fi OTA or on-field 915 MHz quick-remap.
 
   PERFORMER TACTILE TRIGGER (External Handle Button Jack):
-    [J4: 2-Pin 5.08mm Terminal Block / Phoenix Contact MKDS 1,5/2-5,08]
+    [J4: 2-Pin 5.08mm Pluggable Header / Phoenix Contact MSTBA 2,5/2-G-5,08]
       Pin 1 ──► ESP32 GPIO 6 (Active-low trigger with software debounce & internal pullup)
       Pin 2 ──► GND
 
@@ -262,7 +286,7 @@ To eliminate delicate hand-wiring harnesses, loose breadboard jumpers, and field
       Pin 4: GND
 
   HIGH-CURRENT QUAD LED STRIP OUTPUT TERMINALS:
-    [J5: 6-Pin 5.08mm Terminal Block (Channels 1 & 2) / Phoenix Contact MKDS 1,5/6-5,08]
+    [J5: 6-Pin 5.08mm Pluggable Header (Channels 1 & 2) / Phoenix Contact MSTBA 2,5/6-G-5,08]
       Pin 1: +5V_POWER (High-current bus for CH1)
       Pin 2: LED_CH1_DATA (5.0V clean damped pulse stream via R1 47Ω)
       Pin 3: GND (Return for CH1)
@@ -270,7 +294,7 @@ To eliminate delicate hand-wiring harnesses, loose breadboard jumpers, and field
       Pin 5: LED_CH2_DATA (5.0V clean damped pulse stream via R4 47Ω)
       Pin 6: GND (Return for CH2)
 
-    [J7: 6-Pin 5.08mm Terminal Block (Channels 3 & 4) / Phoenix Contact MKDS 1,5/6-5,08]
+    [J7: 6-Pin 5.08mm Pluggable Header (Channels 3 & 4) / Phoenix Contact MSTBA 2,5/6-G-5,08]
       Pin 1: +5V_POWER (High-current bus for CH3)
       Pin 2: LED_CH3_DATA (5.0V clean damped pulse stream via R5 47Ω)
       Pin 3: GND (Return for CH3)
@@ -278,9 +302,10 @@ To eliminate delicate hand-wiring harnesses, loose breadboard jumpers, and field
       Pin 5: LED_CH4_DATA (5.0V clean damped pulse stream via R6 47Ω)
       Pin 6: GND (Return for CH4)
 
-    * Modular Terminal Interlocking Note: The 5.08mm pitch footprints for J5 and J7 accept either
-      single 6-pin blocks (MKDS 1,5/6-5,08) or four standard 3-pin blocks (MKDS 1,5/3-5,08) snapped together,
-      providing 100% plug-and-play procurement flexibility.
+    * Pluggable Mating Architecture: J5 and J7 utilize shrouded horizontal male PCB headers
+      (Phoenix Contact MSTBA 2,5/6-G-5,08 / generic 2EDG-5.08-6P) mating with detachable female screw-terminal
+      plugs (MSTB 2,5/6-ST-5,08). This permits instant disconnection of all LED channel wiring during field
+      packout without loosening terminal screws.
 ```
 
 ### 3.2 Board 2 Pin Assignment Matrix (Heltec WiFi LoRa 32 V3)
@@ -291,10 +316,14 @@ To eliminate delicate hand-wiring harnesses, loose breadboard jumpers, and field
 | **GPIO 47** | `LED_CH2_DATA_RAW`| 74AHCT125 Pin 5 (2A) | Channel 2 LED DMA stream (3.3V) |
 | **GPIO 42** | `LED_CH3_DATA_RAW`| 74AHCT125 Pin 9 (3A) | Channel 3 LED DMA stream (3.3V) |
 | **GPIO 41** | `LED_CH4_DATA_RAW`| 74AHCT125 Pin 12 (4A) | Channel 4 LED DMA stream (3.3V) |
-| **GPIO 2** | `ADDR_BIT0` | SW1 DIP Switch Pin 8 (1s bit) | Active-low binary address bit |
-| **GPIO 3** | `ADDR_BIT1` | SW1 DIP Switch Pin 7 (2s bit) | Active-low binary address bit |
-| **GPIO 4** | `ADDR_BIT2` | SW1 DIP Switch Pin 6 (4s bit) | Active-low binary address bit |
-| **GPIO 5** | `ADDR_BIT3` | SW1 DIP Switch Pin 5 (8s bit) | Active-low binary address bit |
+| **GPIO 2** | `ADDR_BIT0` | SW1 DIP Switch Pin 1 (1s bit) | Active-low binary address bit |
+| **GPIO 3** | `ADDR_BIT1` | SW1 DIP Switch Pin 2 (2s bit) | Active-low binary address bit |
+| **GPIO 4** | `ADDR_BIT2` | SW1 DIP Switch Pin 3 (4s bit) | Active-low binary address bit |
+| **GPIO 5** | `ADDR_BIT3` | SW1 DIP Switch Pin 4 (8s bit) | Active-low binary address bit |
+| **GPIO 7** | `ADDR_BIT4` | SW1 DIP Switch Pin 5 (16s bit) | Active-low binary address bit |
+| **GPIO 8** | `ADDR_BIT5` | SW1 DIP Switch Pin 6 (32s bit) | Active-low binary address bit |
+| **GPIO 9** | `ADDR_BIT6` | SW1 DIP Switch Pin 7 (64s bit) | Active-low binary address bit |
+| **GPIO 10** | `ADDR_BIT7` | SW1 DIP Switch Pin 8 (128s bit) | Active-low binary address bit |
 | **GPIO 6** | `PERF_GO` | J4 Performer Button Terminal Pin 1 | External tactile trigger downbeat sync |
 | **GPIO 1** | `VBAT_SENSE` | Internal Heltec ADC voltage divider | Monitors M18 battery pack depletion |
 | **GPIO 17** | `I2C_SDA` | J6 Diagnostic Port Pin 2 | $4.7\text{ k}\Omega$ pullup on Heltec |
@@ -340,10 +369,11 @@ Props requiring fewer channels (such as the Sideline Screen Duck Blind with a si
 | 3 | 2 | J3, J4 | 18-Pin 2.54mm Female Socket Header Strip | Sullins PPTC181LFBN-RC | Through-hole 1x18 |
 | 4 | 16 | SW1–SW16 | 16mm IP67 Momentary Metal Pushbutton + Sockets | Ulincos / APIELE 16mm Momentary + Pigtails | Panel mount (16mm hole) |
 | 5 | 1 | SW17 | 16mm IP67 Red Mushroom Momentary Switch | APIELE 16mm Mushroom E-Stop | Panel mount (16mm hole) |
-| 6 | 2 | J5, J6 | 10-Pin 5.08mm Terminal Block (Buttons 1–8, 9–16) | Phoenix Contact MKDS 1,5/10-5,08 (1715802) | Screw Terminal (5.08mm) |
-| 7 | 1 | J7 | 2-Pin 5.08mm Terminal Block (Blackout E-Stop) | Phoenix Contact MKDS 1,5/2-5,08 (1715721) | Screw Terminal (5.08mm) |
-| 8 | 1 | J2 | 2-Pin 5.08mm Terminal Block (5V DC Power In) | Phoenix Contact MKDS 1,5/2-5,08 (1715721) | Screw Terminal (5.08mm) |
-| 9 | 1 | ENC1 | Incremental Rotary Encoder with Switch | Bourns PEC11R-4215F-S0024 | Through-hole |
+| 6 | 4 | J5, J6, J8, J9 | 8-Pin 5.08mm Pluggable Header (Buttons 1–4, 5–8, 9–12, 13–16) | Phoenix Contact MSTBA 2,5/8-G-5,08 (1757307) / 2EDG-5.08-8P | Shrouded Header + Plug |
+| 7 | 1 | J7 | 2-Pin 5.08mm Pluggable Header (Blackout E-Stop) | Phoenix Contact MSTBA 2,5/2-G-5,08 (1757242) / 2EDG-5.08-2P | Shrouded Header + Plug |
+| 8 | 1 | J2 | 2-Pin 5.08mm Pluggable Header (5V DC Power In) | Phoenix Contact MSTBA 2,5/2-G-5,08 (1757242) / 2EDG-5.08-2P | Shrouded Header + Plug |
+| 9 | 1 | J10 | 5-Pin 5.08mm Pluggable Header (Rotary Encoder) | Phoenix Contact MSTBA 2,5/5-G-5,08 (1757271) / 2EDG-5.08-5P | Shrouded Header + Plug |
+| 9a | 1 | ENC1 | Panel-Mount Rotary Encoder with Push Switch | Bourns PEC11R-4215F-S0024 + M7 Nut/Washer + Skirted Knob | Panel mount (M7 threaded bushing) |
 | 10 | 1 | J1 | $3.5\text{ mm}$ Stereo Audio Line-in Jack | CUI Devices SJ1-3523N | Through-hole PCB |
 | 11 | 2 | D1, D2 | 3A 40V Schottky Barrier Diodes | Diodes Inc. SS34 | SMA / DO-214AC |
 | 12 | 6 | C1–C6 | Decoupling / Filter Capacitors $100\text{ nF}$ 50V X7R | Murata GRM188R71H104KA93D | SMD 0805 |
@@ -358,7 +388,7 @@ Props requiring fewer channels (such as the Sideline Screen Duck Blind with a si
 |:---:|:---:|:---|:---|:---|:---|
 | 1 | 1 | MOD1 | ESP32-S3 + SX1262 LoRa 915MHz | Heltec WiFi LoRa 32 V3 | $2 \times 18$ Pin Socket |
 | 2 | 2 | J2, J3 | 18-Pin 2.54mm Female Socket Header Strip | Sullins PPTC181LFBN-RC | Through-hole 1x18 |
-| 3 | 1 | J1 | 2-Pin 5.08mm Terminal (18V-21V Battery In) | Phoenix Contact MKDS 1,5/ 2-5,08 | Screw Terminal |
+| 3 | 1 | J1 | 2-Pin 5.08mm Pluggable Header (18V-21V Battery In) | Phoenix Contact MSTBA 2,5/2-G-5,08 / 2EDG-5.08-2P | Shrouded Header + Plug |
 | 4 | 1 | F1 | 10A Mini Automotive Blade Fuse PCB Clips | Keystone 3568 | Through-hole Clip |
 | 5 | 1 | FUSE | 10A Mini Blade Automotive Fuse (Fast-Acting) | Littelfuse 0297010.WXNV | Mini Blade |
 | 6 | 1 | D1 | 24V 1500W TVS Surge Protection Diode | Littelfuse SMCJ24A | SMC / DO-214AB |
@@ -370,11 +400,20 @@ Props requiring fewer channels (such as the Sideline Screen Duck Blind with a si
 | 12 | 1 | C3 | $1000\ \mu\text{F}$ 10V Low-ESR Electrolytic Cap | Panasonic EEU-FR1A102 | Radial 10x12.5mm |
 | 13 | 1 | U1 | Quad Level Shifter (3.3V to 5.0V Buffer) | TI SN74AHCT125D | SOIC-14 |
 | 14 | 4 | R1, R4–R6 | 47 Ohm 1/8W 1% Resistors (Quad LED Damping) | Yageo RC0805FR-0747RL | SMD 0805 |
-| 15 | 1 | SW1 | 4-Position Slide DIP Switch (Hardware Prop ID) | CTS 209-4MS | Through-hole DIP-8 |
-| 16 | 1 | J4 | 2-Pin 5.08mm Terminal (Performer Trigger) | Phoenix Contact MKDS 1,5/ 2-5,08 | Screw Terminal |
-| 17 | 2 | J5, J7 | 6-Pin 5.08mm Terminals (Quad LED Out CH1–4) | Phoenix Contact MKDS 1,5/ 6-5,08 | Screw Terminal (or 4x 3-Pin) |
+| 15 | 1 | SW1 | 8-Position Slide DIP Switch (8-Bit Hardware Serial ID) | CTS 208-8 | Through-hole DIP-16 |
+| 16 | 1 | J4 | 2-Pin 5.08mm Pluggable Header (Performer Trigger) | Phoenix Contact MSTBA 2,5/2-G-5,08 / 2EDG-5.08-2P | Shrouded Header + Plug |
+| 17 | 2 | J5, J7 | 6-Pin 5.08mm Pluggable Headers (Quad LED Out CH1–4) | Phoenix Contact MSTBA 2,5/6-G-5,08 / 2EDG-5.08-6P | Shrouded Header + Plug |
 | 18 | 1 | J6 | 4-Pin 2.54mm Header (I2C Diagnostic Port) | Sullins PRPC004SAAN-RC | Through-hole 1x4 |
 | 19 | 4 | H1–H4 | M3 x 6mm Brass Standoffs + M3 Screws | Keystone 24395 | Hardware |
+
+---
+
+### 4.3 Pluggable Connector Sourcing Strategy (DigiKey Order Preservation)
+
+- **DigiKey Order Integrity:** The initial component order with DigiKey has already been placed and contains fixed screw terminals (`MKDS 1,5/...`). To eliminate re-order delays or modification risks, these DigiKey line items are preserved intact and retained as general shop bench stock.
+- **Amazon Prime Pluggable Kit Sourcing:** All mating pluggable headers and screw-clamp female plugs are sourced via Amazon Prime (1–2 day delivery):
+  * **Option A (Consolidated Assortment Kit):** Tanstic / Mardatt / YIXISI 5.08mm 2/3/4/6/8-Pin Pluggable Terminal Block Kit (84-piece kit, ~$16.99). One single kit supplies all 8-pin, 6-pin, and 2-pin male shrouded PCB headers and matching female plugs required for 1 Synapse Controller and 3 Prop Nodes.
+  * **Option B (Direct Industry Standard):** Phoenix Contact COMBICON `MSTBA 2,5` Series horizontal headers (`MSTBA 2,5/8-G-5,08`, `MSTBA 2,5/6-G-5,08`, `MSTBA 2,5/2-G-5,08`) paired with `MSTB 2,5/...-ST-5,08` female plugs.
 
 ---
 
@@ -382,7 +421,10 @@ Props requiring fewer channels (such as the Sideline Screen Duck Blind with a si
 
 To ensure high reliability under outdoor high school marching band conditions (temperature swings from $35^\circ\text{F}$ evening finals to $95^\circ\text{F}$ daytime prelims, high vibration from rolling over stadium turf, and dust):
 
-1. **Layer Stack & Copper Weight:**
+1. **Board Dimensions & Mechanical Form Factor:**
+   - **Board 1 (Synapse Master Controller):** $210.0\text{ mm} \times 90.0\text{ mm}$ (8.27″ × 3.54″). Expanded width accommodates four 8-pin pluggable headers along the bottom edge with $5.44\text{ mm}$ finger gaps between plugs, allowing effortless mating and un-mating. Corner M3 mounting holes at $x = 4.5\text{ mm}, 205.5\text{ mm}$; $y = 4.5\text{ mm}, 85.5\text{ mm}$.
+   - **Board 2 (Prop Node Driver):** $95.0\text{ mm} \times 90.0\text{ mm}$ (3.74″ × 3.54″). Form factor accommodates dual 6-pin pluggable headers (`J5`, `J7`) on the right edge and dual 2-pin pluggable headers (`J1`, `J4`) on the bottom edge with ample clearance for shrouded mounting ears and corner M3 standoffs ($x = 4.5\text{ mm}, 90.5\text{ mm}$; $y = 4.5\text{ mm}, 85.5\text{ mm}$).
+2. **Layer Stack & Copper Weight:**
    - Standard **2-Layer Board** ($1.6\text{ mm}$ thickness, FR4, TG150).
    - Specify **$2\text{ oz}$ Copper ($70\ \mu\text{m}$)** on Board 2 to handle continuous $6\text{A}\text{–}8\text{A}$ current loops to the LED strips without overheating traces.
 2. **High-Current Polygon Pours:**
@@ -428,18 +470,18 @@ CRGB leds_ch4[NUM_LEDS_PER_CH];
 
 SX1262 radio = new Module(PIN_LORA_NSS, PIN_LORA_DIO1, PIN_LORA_NRST, PIN_LORA_BUSY);
 
-// 4-Position DIP Switch Address Pins (Board 2: SW1)
-const int ADDR_PINS[4] = {2, 3, 4, 5};
+// 8-Position DIP Switch Hardware Serial ID Pins (Board 2: SW1)
+const int ADDR_PINS[8] = {2, 3, 4, 5, 7, 8, 9, 10};
 
 uint8_t readHardwarePropID() {
   uint8_t id = 0;
-  for (int i = 0; i < 4; i++) {
+  for (int i = 0; i < 8; i++) {
     pinMode(ADDR_PINS[i], INPUT_PULLUP);
     if (digitalRead(ADDR_PINS[i]) == LOW) {
       id |= (1 << i);
     }
   }
-  return id; // Returns 0x0 to 0xF (Props 0 to 15)
+  return id; // Returns 0x00 to 0xFF (Hardware Serial 0 to 255)
 }
 
 void setup() {

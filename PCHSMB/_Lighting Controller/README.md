@@ -33,20 +33,22 @@ Band Directors & Students edit show_cues.csv in Microsoft Excel / Google Sheets
 │ • 902–928 MHz Sub-GHz ISM Broadcast Master (Semtech SX1262 Transceiver, RP-SMA Antenna)         │
 └────────────────────────────────────────────────┬────────────────────────────────────────────────┘
                                                  │
-                                                 │ 902–928 MHz Wireless Broadcast Link
-                                                 │ Master Timecode + Cue Packets
-                                                 │ Latency ≤ 25.0 ms | Jitter ≤ 5.0 ms | Range ≥ 150 m
+                                                 │ 902–928 MHz Wireless Broadcast Link (Clock Sync & Cue Downbeats)
+                                                 │ Master Millisecond Timecode Heartbeat + Event Triggers
+                                                 │ Phase-Lock Jitter ≤ 2.0 ms | Slant Range ≥ 150 m | Zero Central Streaming
                                                  │
                                                  ▼
 ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
-│ PERIPHERAL PROP RECEIVER & LED DRIVER (PCB-PROP-NODE-V1) [FLEET: 1 TO 64 PROPS]               │
+│ PERIPHERAL PROP RECEIVER & LED DRIVER (PCB-PROP-NODE-V1) [FLEET: 1 TO 256 PROPS]               │
 │ • Deployed Inside Field Props (Backdrops, Sideline Screens, Soloist Platforms, Star Tarps)     │
 │ • Standard Commercial Tool Battery Input (Milwaukee M18 / DeWalt 20V, 15V–21V DC)              │
 │ • High-Efficiency 5.0V / 8.0A Continuous Synchronous Buck Regulator                            │
 │ • Hardware Reverse-Polarity P-FET + Hardware 15.0V Undervoltage Lockout (UVLO)                  │
-│ • 16-Position BCD Hardware Rotary Address Dial (Manual Prop ID 0–15)                            │
+│ • 8-Bit Hardware DIP Switch Bank (Unique Device Hardware Serial ID 0–255 / 0x00–0xFF)           │
+│ • Distributed Timeline Engine: Autonomous Flash Cues on 40 MHz Quartz Oscillator Time           │
+│ • Loss-of-Signal Immunity: Uninterrupted local cue execution (crystal drift < 15ms over 12 min) │
+│ • Spare Remap: Wi-Fi OTA off-field or < 100ms emergency 915 MHz profile push from Synapse     │
 │ • Quad-Channel 5.0V CMOS Level Shifter (74AHCT125) with 33Ω Transmission Line Resistors        │
-│ • Autonomous Lost-Link Fail-Safe (Holds scene or soft fades; zero erratic strobe)              │
 └────────────────────────────────────────────────┬────────────────────────────────────────────────┘
                                                  │
                                                  ▼ 4x High-Speed Damped Parallel Data Lines (5V)
@@ -112,7 +114,15 @@ _Lighting Controller/
   - Hardware P-channel power MOSFET reverse-polarity protection ($V_{\text{drop}} \le 40\,\text{mV}$, survives $-24\,\text{V}$ DC indefinitely).
   - Hardware Undervoltage Lockout (UVLO) disconnecting load at $V_{\text{bat}} \le 14.8\,\text{V}$ to prevent permanent lithium cell damage.
 * **Parallel Multi-Zone Driving:** Quad $5.0\,\text{V}$ CMOS level-shifted push-pull channels (`74AHCT125`) with $33\,\Omega$ series transmission line resistors, driving up to $5.0\,\text{m}$ of external cable without edge ringing.
-* **Hardware Address Dial:** 4-position slide DIP switch / rotary dial allowing parent volunteers to configure prop IDs ($0\text{–}15$) in 5 seconds.
+* **8-Bit Hardware DIP Switch Bank (`SW1`):** 8-position slide DIP switch providing 256 unique hardware device serial numbers (`0`–`255` / `0x00`–`0xFF`). Decouples physical hardware serial from software show configuration.
+
+### C. Distributed Autonomous Timeline & Quartz Phase-Locking Architecture
+* **Autonomous Local Show Engines:** Each prop node functions as an independent animation engine executing its scheduled cue timeline from onboard SPI flash memory. Every unit runs identical precompiled firmware, but executes its unique assigned timeline profile (e.g., Unit 4 triggers Cue 3 at $18.43\,\text{s}$ with a 2-second cyan bloom, while Unit 12 triggers Cue 3 at $20.15\,\text{s}$ with a radial chase).
+* **915 MHz Millisecond Clock-Sync Heartbeat:** The Sub-GHz broadcast link does **not** stream raw pixel frames and is **not** a single point of failure. It periodically transmits an unacknowledged elapsed millisecond timecode packet (`uint32_t master_ms`).
+* **Loss-of-Signal Immunity:** Local prop timing is clocked by the Heltec V3's onboard $40\,\text{MHz}$ quartz crystal oscillator. If RF communication is momentarily shadowed by stadium structures or drops out entirely, **animations do not freeze or halt**. The node continues executing its timeline on quartz crystal time with $< 15\,\text{ms}$ total drift over a 12-minute field show. When the 915 MHz signal is re-established, a Phase-Locked Loop (PLL) slews the local millisecond clock seamlessly back into sub-frame synchronization.
+* **Spare Unit Replacement & Re-mapping Workflow:** If a field prop (e.g., Unit 4) suffers mechanical or electrical damage on the sideline and spare Unit 18 is deployed:
+  1. *Off-Field / Rehearsal Re-mapping:* Connect to Unit 18 via Wi-Fi OTA portal (or local staging router) and select "Assign Profile: Prop 4". The complete 272-byte timeline profile is flashed to Unit 18 in $< 2.0\,\text{s}$.
+  2. *On-Field Emergency Re-mapping:* From the Synapse pit master console OLED rotary menu, select `SPARE REMAP: HW18 -> PROP 4`. Synapse broadcasts a high-priority 915 MHz configuration packet re-mapping Unit 18's DIP serial to Prop 4's timeline profile in $< 100\,\text{ms}$ without requiring laptops, Wi-Fi networks, or physical disassembly.
 
 ---
 

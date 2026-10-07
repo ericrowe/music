@@ -91,9 +91,9 @@
           #text(weight: "bold", size: 7.8pt, fill: rgb("#1a365d"))[BOARD 1: SYNAPSE PIT CONTROLLER]\
           #text(size: 7.0pt, fill: rgb("#4a5568"))[
             *Qty Needed:* 1 Board\
-            *Dimensions:* 150 x 90 mm\
+            *Dimensions:* 210 x 90 mm\
             *Host:* Heltec V3 ESP32-S3 LoRa\
-            *Features:* Discrete 16mm IP67 metal buttons via MCP23017, dual 10-pin terminals, rotary encoder, 3.5mm line-in.
+            *Features:* Discrete 16mm IP67 metal buttons via MCP23017, four 8-pin pluggable headers (32 dedicated terminals w/ ground returns), rotary encoder, 3.5mm line-in.
           ]
         ],
         [
@@ -111,9 +111,9 @@
           #text(weight: "bold", size: 7.8pt, fill: rgb("#1a365d"))[BOARD 2: PROP RECEIVER & DRIVER]\
           #text(size: 7.0pt, fill: rgb("#4a5568"))[
             *Qty Needed:* 3 Boards\
-            *Dimensions:* 85 x 75 mm (2 oz Cu)\
+            *Dimensions:* 95 x 90 mm (2 oz Cu)\
             *Host:* Heltec V3 ESP32-S3 LoRa\
-            *Features:* 18V tool battery in, 5V/8A buck, IRF4905 P-FET, 4x parallel LED DMA.
+            *Features:* 18V tool battery in, 5V/8A buck, IRF4905 P-FET, 4x parallel LED DMA, 100% pluggable connectors.
           ]
         ],
         [
@@ -171,7 +171,7 @@
 #table(
   columns: (1.5fr, 1.1fr, 0.9fr, 0.4fr, 0.4fr, 0.5fr, 1.4fr, 1.8fr),
   stroke: 0.35pt + rgb("#cbd5e0"),
-  inset: (x: 3.5pt, y: 3.0pt),
+  inset: (x: 3.5pt, y: 2.2pt),
   fill: (col, row) => if row == 0 { rgb("#edf2f7") } else if calc.even(row) { rgb("#f7fafc") } else { none },
   align: (col, row) => if col in (2, 3, 4, 5) { center } else { left },
   
@@ -180,13 +180,14 @@
   // 4. Operator Controls & Indicators
   [16mm IP67 Momentary Pre-Wired Buttons (Cues 1-16)], [DMWD / Amazon], [16mm Panel], [16], [0], [*16*], [Amazon (Multi-Pack)], [#link("https://www.amazon.com/dp/B0D3KXQ5KK")[Amazon 16mm Pre-Wired (B0D3KXQ5KK)]],
   [16mm IP67 Red Momentary Button (Blackout Mute)], [DMWD / Amazon], [16mm Panel], [1], [0], [*1*], [Amazon (Single / Pack)], [#link("https://www.amazon.com/dp/B0D3KXQ5KK")[Amazon 16mm Red Button]],
-  [Rotary Encoder with Push Switch (Menu / Cues)], [Bourns PEC11R-4215F-S0024], [TH Vert], [1], [0], [*1*], [DigiKey PEC11R-4215F-ND], [#link("https://www.digikey.com/en/products/detail/bourns-inc/PEC11R-4215F-S0024/4499665")[DigiKey PEC11R-4215F-ND]],
-  [4-Position Slide DIP Switch (Prop Node ID)], [CTS 208-4], [TH DIP-8], [0], [1], [*3*], [DigiKey CT2084-ND], [#link("https://www.digikey.com/en/products/detail/cts-electrocomponents/208-4/20783")[DigiKey CT2084-ND]],
+  [Rotary Encoder with Push Switch (Menu / Cues)], [Bourns PEC11R-4215F-S0024], [Panel M7], [1], [0], [*1*], [DigiKey (Ordered) / Panel Mount], [#link("https://www.digikey.com/en/products/detail/bourns-inc/PEC11R-4215F-S0024/4499665")[DigiKey PEC11R-4215F-ND]],
+  [8-Position Slide DIP Switch (Prop Node Serial ID)], [CTS 208-8], [TH DIP-16], [0], [1], [*3*], [DigiKey CT2088-ND], [#link("https://www.digikey.com/en/products/detail/cts-electrocomponents/208-8/20787")[DigiKey CT2088-ND]],
   
-  // 5. Connectors & Terminals
-  [10-Pin 5.08mm Screw Terminal (Buttons 1-8 / 9-16)], [Phoenix Contact 1715802 / MKDS 1,5/10], [TH 5.08mm], [2], [0], [*2*], [DigiKey 277-1271-ND], [#link("https://www.digikey.com/en/products/detail/phoenix-contact/1715802/260635")[DigiKey 277-1271-ND]],
-  [2-Pin 5.08mm Screw Terminal (Power/Trig/Blackout)], [Phoenix Contact 1715721 / MKDS 1,5/2], [TH 5.08mm], [2], [2], [*8*], [DigiKey 277-1263-ND], [#link("https://www.digikey.com/en/products/detail/phoenix-contact/1715721/260631")[DigiKey 277-1263-ND]],
-  [6-Pin 5.08mm Screw Terminal (Quad LED Outputs)], [Phoenix Contact 1710726 / MKDS 1,5/6], [TH 5.08mm], [0], [2], [*6*], [DigiKey 277-1267-ND], [#link("https://www.digikey.com/en/products/detail/phoenix-contact/1710726/5198285")[DigiKey 277-1267-ND]],
+  // 5. Connectors & Terminals (100% Pluggable Architecture)
+  [8-Pin 5.08mm Pluggable Header (Buttons 1-4..13-16)], [Phoenix MSTBA / 2EDG-5.08], [TH 5.08mm], [4], [0], [*4*], [Amazon Prime (10-Pk)], [#link("https://www.amazon.com/dp/B09D1JSMCL")[Amazon 8-Pin 10-Pk (B09D1JSMCL)]],
+  [5-Pin 5.08mm Pluggable Header (Rotary Encoder J10)], [Phoenix MSTBA / 2EDG-5.08], [TH 5.08mm], [1], [0], [*1*], [DigiKey Phoenix / Amazon], [#link("https://www.digikey.com/en/products/detail/phoenix-contact/1757271/260632")[DigiKey 1757271 / 1757048]],
+  [2-Pin 5.08mm Pluggable Header (Power/Trig/Blackout)], [Phoenix MSTBA / 2EDG-5.08], [TH 5.08mm], [2], [2], [*8*], [Amazon Prime (10-Pk)], [#link("https://www.amazon.com/dp/B093DV5TJ1")[Amazon 2-Pin 10-Pk (B093DV5TJ1)]],
+  [6-Pin 5.08mm Pluggable Header (Quad LED Outputs)], [Phoenix MSTBA / 2EDG-5.08], [TH 5.08mm], [0], [2], [*6*], [DigiKey Phoenix], [#link("https://www.digikey.com/en/products/detail/phoenix-contact/1757284/260633")[DigiKey 1757284 / 1757051]],
   [3.5mm Stereo Audio Jack (Line / Click In)], [Same Sky SJ1-3523N], [TH RA], [1], [0], [*1*], [DigiKey CP1-3523N-ND], [#link("https://www.digikey.com/en/products/detail/same-sky-formerly-cui-devices/SJ1-3523N/738689")[DigiKey CP1-3523N-ND]],
   [4-Pin 2.54mm Breakout Pin Header Strip], [Sullins PRPC004SAAN-RC], [TH 1x4], [0], [1], [*3*], [DigiKey S1011EC-04-ND], [#link("https://www.digikey.com/en/products/detail/sullins-connector-solutions/PRPC004SAAN-RC/2775250")[DigiKey S1011EC-04-ND]],
   
@@ -199,28 +200,29 @@
   // 7. Mechanical Hardware & Enclosures
   [M3 x 6mm Brass Standoffs + M3 Screws], [Keystone 24391], [Hardware], [4], [4], [*16*], [DigiKey 24391K-ND], [#link("https://www.digikey.com/en/products/detail/keystone-electronics/24391/1532150")[DigiKey 24391K-ND]],
   [Custom Weatherproof Enclosures (Synapse & Nodes)], [PCHSMB 3D Print (PETG/ASA)], [Custom 3D], [1], [1], [*4*], [In-House Shop 3D Print], [Shop 3D Print (PETG / ASA)],
+  [6mm D-Shaft Skirted Knob + M7 Sealing O-Ring], [Taiss / Amazon], [Panel HW], [1], [0], [*1*], [Amazon / Shop Stock], [#link("https://www.amazon.com/dp/B07M6T35M2")[Amazon 6mm Skirted Knob]],
   [DeWalt 20V Max Battery Adapter Dock], [Generic / DIY Dock Bracket with 12 AWG], [Bracket], [0], [1], [*3 (2x 2pk)*], [Amazon (USD 13.99/2pk)], [#link("https://www.amazon.com/dp/B0F483GPXL")[Amazon DeWalt 20V Adapter (B0F483GPXL)]],
   [3-Pin IP68 Waterproof LED Pigtails], [BTF-LIGHTING 20AWG], [Waterproof], [0], [4], [*12 (10-pair)*], [Amazon (USD 14.99)], [#link("https://www.amazon.com/dp/B01LCV8LGA")[Amazon BTF-LIGHTING 3-Pin Pigtails]],
   [MG Chemicals 422C Silicone Coating (Optional)], [MG Chemicals 422C-340G], [12oz Spray], [—], [—], [*Opt (1 Can)*], [DigiKey 473-422C-340G-ND], [#link("https://www.digikey.com/en/products/detail/mg-chemicals/422C-340G/14553808")[DigiKey 473-422C-340G-ND (Opt)]],
   
   // 8. Custom Printed Circuit Boards
-  [PCB-SYNAPSE-V1 Custom Carrier Board], [PCHSMB KiCad 10 Master], [150x95mm], [1], [0], [*5 (Min MOQ)*], [JLCPCB / PCBWay], [Upload `pcb_synapse_controller.kicad_pcb`],
-  [PCB-PROP-NODE-V1 Carrier Board (2oz Cu)],[PCHSMB KiCad 10 Master], [85x75mm], [0], [1], [*5 (Min MOQ)*], [JLCPCB / PCBWay], [Upload `pcb_prop_node.kicad_pcb` (2 oz Cu)],
+  [PCB-SYNAPSE-V1 Custom Carrier Board], [PCHSMB KiCad 10 Master], [210x90mm], [1], [0], [*5 (Min MOQ)*], [JLCPCB / PCBWay], [Upload `pcb_synapse_controller.kicad_pcb`],
+  [PCB-PROP-NODE-V1 Carrier Board (2oz Cu)],[PCHSMB KiCad 10 Master], [95x90mm], [0], [1], [*5 (Min MOQ)*], [JLCPCB / PCBWay], [Upload `pcb_prop_node.kicad_pcb` (2 oz Cu)],
 )
 
-#v(8pt)
+#v(4pt)
 
 #rect(
   width: 100%,
   fill: rgb("#f7fafc"),
   stroke: 0.5pt + rgb("#cbd5e0"),
   radius: 2pt,
-  inset: 6pt
+  inset: 5pt
 )[
   #text(weight: "bold", size: 8pt, fill: rgb("#1a365d"))[HARDWARE CROSS-REFERENCE & PACKAGING INSIGHTS:] \
   #text(size: 7.4pt)[
     • *Passive Ordering Increments:* Surface-mount 0805 passives (capacitors and resistors) are packaged in cut-tape strips of 10 or 25 pieces at DigiKey. The total order column lists the exact circuit quantity needed followed by the recommended order pack size in parentheses.\
-    • *Terminal Block Flexibility:* The dual 6-pin terminal blocks on Board 2 (`J5` and `J7`) feature standard 5.08mm lead spacing, allowing either two 6-pin blocks (`MKDS 1,5/6-5,08`) or four 3-pin blocks (`MKDS 1,5/3-5,08`) snapped together side-by-side.\
+    • *Pluggable Terminal Sourcing (DigiKey Order Preserved):* The initial DigiKey order was placed with fixed screw terminals (`MKDS 1,5/...`), which are retained as general shop bench spares. Synapse button, power, and blackout connections are fully covered by two active Amazon Prime 10-packs: LuoQiuFa 8-pin (`B09D1JSMCL`, \$9.99) and 2-pin (`B093DV5TJ1`, \$6.99) providing 10 pairs each with generous bench spares. Prop Node 6-pin LED outputs use genuine Phoenix Contact `MSTBA 2,5/6-G-5,08` (`1757284`) and `MSTB 2,5/6-ST-5,08` (`1757051`) from DigiKey.\
     • *PCB Minimum Orders:* JLCPCB and PCBWay have a 5-board minimum manufacturing order. Building 1 Synapse and 3 Prop Nodes leaves 4 spare Synapse boards and 2 spare Prop Node boards for future fleet growth.
   ]
 ]
@@ -253,10 +255,10 @@
         • #link("https://www.digikey.com/en/products/detail/diodes-incorporated/B340A-13-F/725015")[Diodes Inc 3A Schottky (`B340A-13-F`)]: *2 pcs* \
         • #link("https://www.digikey.com/en/products/detail/panasonic-industry/EEU-FR1A102/9921022")[Panasonic 1000uF 10V Low-ESR Cap (`EEU-FR1A102`)]: *3 pcs* \
         • #link("https://www.digikey.com/en/products/detail/bourns-inc/PEC11R-4215F-S0024/4499665")[Bourns Rotary Encoder (`PEC11R-4215F`)]: *1 pc* \
-        • #link("https://www.digikey.com/en/products/detail/cts-electrocomponents/208-4/20783")[CTS 4-Pos Slide DIP Switch (`208-4`)]: *3 pcs* \
-        • #link("https://www.digikey.com/en/products/detail/phoenix-contact/1715802/260635")[Phoenix 10-Pin Terminal (`MKDS 1,5/10-5,08`)]: *2 pcs* \
-        • #link("https://www.digikey.com/en/products/detail/phoenix-contact/1715721/260631")[Phoenix 2-Pin Terminal (`MKDS 1,5/2-5,08`)]: *8 pcs* \
-        • #link("https://www.digikey.com/en/products/detail/phoenix-contact/1710726/5198285")[Phoenix 6-Pin Terminal (`MKDS 1,5/6-5,08`)]: *6 pcs* \
+        • #link("https://www.digikey.com/en/products/detail/cts-electrocomponents/208-8/20787")[CTS 8-Pos Slide DIP Switch (`208-8`)]: *3 pcs* \
+        • #link("https://www.digikey.com/en/products/detail/phoenix-contact/1715802/260635")[Phoenix 10-Pin Terminal (`MKDS 1,5/10`)]: *2 pcs (Placed order - shop spare)* \
+        • #link("https://www.digikey.com/en/products/detail/phoenix-contact/1715721/260631")[Phoenix 2-Pin Terminal (`MKDS 1,5/2`)]: *8 pcs (Placed order - shop spare)* \
+        • #link("https://www.digikey.com/en/products/detail/phoenix-contact/1710726/5198285")[Phoenix 6-Pin Terminal (`MKDS 1,5/6`)]: *6 pcs (Placed order - shop spare)* \
         • #link("https://www.digikey.com/en/products/detail/same-sky-formerly-cui-devices/SJ1-3523N/738689")[Same Sky 3.5mm Audio Jack (`SJ1-3523N`)]: *1 pc* \
         • #link("https://www.digikey.com/en/products/detail/sullins-connector-solutions/PRPC004SAAN-RC/2775250")[Sullins 4-Pin Header (`PRPC004SAAN-RC`)]: *3 pcs* \
         • #link("https://www.digikey.com/en/products/detail/keystone-electronics/24391/1532150")[Keystone M3 x 6mm Standoffs (`24391`)]: *16 sets* \
@@ -270,7 +272,9 @@
         • #link("https://www.amazon.com/dp/B089M5R3NJ")[HOMELYLIFE 5V 20A 100W Waterproof Buck Regulators]: *3 units* (\$41.97) \
         • #link("https://www.amazon.com/dp/B0F483GPXL")[DeWalt 20V Max Battery Dock Adapters]: *2x 2-pks* (\$27.98) \
         • #link("https://www.amazon.com/dp/B0D3KXQ5KK")[DMWD 16mm Pre-Wired Momentary Metal Buttons]: *Cues 1-16 + Red Mute* (\$22.00) \
-        • #link("https://www.amazon.com/dp/B01LCV8LGA")[BTF-LIGHTING 3-Pin Waterproof Pigtails]: *10-pair pk* (\$14.99)
+        • #link("https://www.amazon.com/dp/B01LCV8LGA")[BTF-LIGHTING 3-Pin Waterproof Pigtails]: *10-pair pk* (\$14.99) \
+        • #link("https://www.amazon.com/dp/B09D1JSMCL")[LuoQiuFa 8-Pin 5.08mm Right-Angle Terminal Blocks (10-Pk)]: *1 pk* (\$9.99) \
+        • #link("https://www.amazon.com/dp/B093DV5TJ1")[LuoQiuFa 2-Pin 5.08mm Right-Angle Terminal Blocks (10-Pk)]: *1 pk* (\$6.99)
       ]
       #v(3pt)
       #text(weight: "bold", size: 8.2pt, fill: rgb("#1a365d"))[Fabrication & Enclosures (Orders 3 & 4):] \
@@ -292,11 +296,11 @@
       
       [*Procurement Source*], [*Items*], [*Estimated Cost*],
       [DigiKey Electronics Cart], [16 lines], [USD 72.85],
-      [Amazon Direct & COTS Cart], [5 lines], [USD 206.90],
+      [Amazon Direct & COTS Cart], [6 lines], [USD 223.89],
       [JLCPCB Prototype Fab (10 PCBs)], [2 designs], [USD 22.00],
       [Shop 3D-Printed Enclosures (PETG/ASA)], [4 cases], [USD 12.00],
       [Estimated Freight & Taxes], [Consolidated], [USD 18.50],
-      [*TOTAL PILOT KIT PROCUREMENT*], [*4 Boards*], [*USD 332.25*],
+      [*TOTAL PILOT KIT PROCUREMENT*], [*4 Boards*], [*USD 349.24*],
     )
     
     #v(6pt)

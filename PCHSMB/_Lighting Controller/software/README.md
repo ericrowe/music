@@ -37,7 +37,7 @@ Open [`show_cues_template.csv`](show_cues_template.csv) in Excel, Google Sheets,
 | `Cue_Number` | Order index (1–16) | `1`, `2` ... `16` |
 | `Cue_Name` | Short human label (for OLED display) | `Opener_Hit`, `Ballad_Bloom` |
 | `Trigger_Source` | Trigger input type | `BUTTON_1` through `BUTTON_16`, `AUTO_TIME`, `AUDIO_CLICK` |
-| `Target_Group` | Which props execute this cue | `ALL`, `BACKDROPS`, `SCREENS`, `STAGES`, `SOLOIST`, `PROP_01`..`PROP_64` |
+| `Target_Group` | Which props execute this cue | `ALL`, `BACKDROPS`, `SCREENS`, `STAGES`, `SOLOIST`, `PROP_01`..`PROP_256` |
 | `Effect_Type` | Dynamic procedural lighting algorithm | `STATIC`, `FADE_IN`, `FADE_OUT`, `DYNAMIC_PULSE`, `CHASE_HORIZ`, `PULSE_UP`, `STROBE`, `SPARKLE`, `COLOR_WAVE`, `BLACKOUT` |
 | `Primary_Color` | Main hue (hex or standard name) | `#FF8800`, `AMBER`, `GOLD`, `CYAN`, `WHITE`, `NAVY` |
 | `Secondary_Color` | Accent or chase contrast hue | `#00D4FF`, `GOLD`, `WHITE` |
@@ -101,3 +101,15 @@ The Synapse console stores up to **4 distinct show profiles** in permanent memor
 - **Profile 2:** Halftime Show (Simplified student triggers)
 - **Profile 3:** Stand Tunes (Crowd energizer pulses)
 - **Profile 4:** Field Rehearsal / Bench Test
+
+---
+
+## 5. Distributed Timeline Compilation & Spare Node Provisioning
+
+When a show definition spreadsheet (`show_cues.csv`) is uploaded, the parser compiles the master show timeline into **individual prop timeline profiles** (`prop01.bin`, `prop02.bin`, ... `prop256.bin`), where each profile is only $\approx 260\,\text{bytes}$:
+1. **Autonomous Local Playback:** Instead of streaming 60 frames per second over the air, each prop receives its cue timeline and executes cues on its own $40\,\text{MHz}$ quartz crystal clock.
+2. **Phase-Locked Clock Sync:** Synapse broadcasts an unacknowledged elapsed millisecond timecode packet every $500\,\text{ms}$ (`0x02`), keeping all nodes phase-locked to $< 2\,\text{ms}$ jitter.
+3. **Spare Node Substitution:** If physical prop Unit 4 is damaged, spare Unit 18 can be reassigned to Prop 4's timeline:
+   - **Off-Field / Rehearsal:** Upload `prop04.bin` to Unit 18 via the local Wi-Fi web portal in $< 2\,\text{seconds}$.
+   - **On-Field Emergency:** From the Synapse console menu (`SPARE REMAP: HW18 -> PROP 4`), a single Sub-GHz command packet transmits the profile reassignment directly over 915 MHz in $< 100\,\text{ms}$ without laptops or Wi-Fi.
+

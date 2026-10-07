@@ -2,7 +2,7 @@
 	(version "E")
 	(design
 		(source "/Volumes/T9/Sync/Working/Shop/Projects/__Music/PCHSMB/_Lighting Controller/hardware/pcb_synapse_controller/pcb_synapse_controller.kicad_sch")
-		(date "2026-10-05T15:32:09")
+		(date "2026-10-07T11:22:56")
 		(tool "Eeschema 10.0.6")
 		(sheet
 			(number "1")
@@ -11,8 +11,8 @@
 			(title_block
 				(title "PCHSMB Synapse Pit Master Controller Carrier Board")
 				(company "Pine Creek High School Marching Band")
-				(rev "v1.1")
-				(date "2026-10-05")
+				(rev "v1.3")
+				(date "2026-10-06")
 				(source "pcb_synapse_controller.kicad_sch")
 				(comment
 					(number "1")
@@ -20,7 +20,7 @@
 				)
 				(comment
 					(number "2")
-					(value "Heltec LoRa V3 Host, MCP23017 I2C Expander, Dual 10-Pin Screw Terminals for 16mm IP67 Buttons")
+					(value "Heltec LoRa V3 Host, MCP23017 Expander, 4x 8-Pin Pluggable MSTBA Terminals (Dedicated Signal+GND per Button)")
 				)
 				(comment
 					(number "3")
@@ -93,7 +93,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "5803b869-b272-4c42-b0d2-f9fd852b53b3")
+			(tstamps "b819d20a-14f6-4f1a-bcf6-3589c96402ef")
 			(units
 				(unit
 					(name "A")
@@ -103,69 +103,6 @@
 						)
 						(pin
 							(num "2")
-						)
-					)
-				)
-			)
-		)
-		(comp
-			(ref "ENC1")
-			(value "PEC11R")
-			(footprint "Rotary_Encoder:RotaryEncoder_Alps_EC11E-Switch_Vertical_H20mm_CircularMountingHoles")
-			(fields
-				(field
-					(name "Footprint") "Rotary_Encoder:RotaryEncoder_Alps_EC11E-Switch_Vertical_H20mm_CircularMountingHoles")
-				(field
-					(name "Datasheet")
-				)
-				(field
-					(name "Description")
-				)
-			)
-			(libsource
-				(lib "Device")
-				(part "RotaryEncoder_Switch")
-				(description "Rotary encoder, dual channel, incremental quadrate outputs, with switch")
-			)
-			(property
-				(name "Sheetname")
-				(value "pcb_synapse_controller")
-			)
-			(property
-				(name "Sheetfile")
-				(value "pcb_synapse_controller.kicad_sch")
-			)
-			(property
-				(name "ki_keywords")
-				(value "rotary switch encoder switch push button")
-			)
-			(property
-				(name "ki_fp_filters")
-				(value "RotaryEncoder*Switch*")
-			)
-			(sheetpath
-				(names "/")
-				(tstamps "/")
-			)
-			(tstamps "2c554a7c-4fad-4362-a6ef-de2d0ba07169")
-			(units
-				(unit
-					(name "A")
-					(pins
-						(pin
-							(num "A")
-						)
-						(pin
-							(num "C")
-						)
-						(pin
-							(num "B")
-						)
-						(pin
-							(num "S1")
-						)
-						(pin
-							(num "S2")
 						)
 					)
 				)
@@ -210,7 +147,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "f2dbc2e3-a36f-4785-9bbc-a7250ad03a3d")
+			(tstamps "70f33018-40dc-4982-a063-662832fb7f05")
 			(units
 				(unit
 					(name "A")
@@ -231,10 +168,10 @@
 		(comp
 			(ref "J2")
 			(value "5V_DC_IN")
-			(footprint "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal")
+			(footprint "Connector_Phoenix_MSTB:PhoenixContact_MSTBA_2,5_2-G-5,08_1x02_P5.08mm_Horizontal")
 			(fields
 				(field
-					(name "Footprint") "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal")
+					(name "Footprint") "Connector_Phoenix_MSTB:PhoenixContact_MSTBA_2,5_2-G-5,08_1x02_P5.08mm_Horizontal")
 				(field
 					(name "Datasheet")
 				)
@@ -267,7 +204,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "d564f0f8-b936-47aa-a169-0ab9ef9beb3b")
+			(tstamps "c8b1dadf-e95c-4fd5-bf7a-4edf65a61a79")
 			(units
 				(unit
 					(name "A")
@@ -321,7 +258,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "857a3a2d-6e38-4915-8a52-3b228dc34514")
+			(tstamps "433671f8-d892-4c1c-a0a8-e2117c336b27")
 			(units
 				(unit
 					(name "A")
@@ -423,7 +360,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "c9b83c7e-80f3-4413-8187-fa2cf24fdc19")
+			(tstamps "883ac8fc-b64d-44ad-9336-872d14031ed6")
 			(units
 				(unit
 					(name "A")
@@ -488,11 +425,11 @@
 		)
 		(comp
 			(ref "J5")
-			(value "Buttons_1_to_8")
-			(footprint "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-10-5.08_1x10_P5.08mm_Horizontal")
+			(value "Buttons_1_to_4")
+			(footprint "Connector_Phoenix_MSTB:PhoenixContact_MSTBA_2,5_8-G-5,08_1x08_P5.08mm_Horizontal")
 			(fields
 				(field
-					(name "Footprint") "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-10-5.08_1x10_P5.08mm_Horizontal")
+					(name "Footprint") "Connector_Phoenix_MSTB:PhoenixContact_MSTBA_2,5_8-G-5,08_1x08_P5.08mm_Horizontal")
 				(field
 					(name "Datasheet")
 				)
@@ -502,8 +439,8 @@
 			)
 			(libsource
 				(lib "Connector_Generic")
-				(part "Conn_01x10")
-				(description "Generic connector, single row, 01x10, script generated (kicad-library-utils/schlib/autogen/connector/)")
+				(part "Conn_01x08")
+				(description "Generic connector, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)")
 			)
 			(property
 				(name "Sheetname")
@@ -525,7 +462,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "497efe45-9b55-4c4d-b4c7-ac803da2f866")
+			(tstamps "28cea82b-29f9-4858-8288-d5386a8e2d24")
 			(units
 				(unit
 					(name "A")
@@ -553,12 +490,6 @@
 						)
 						(pin
 							(num "8")
-						)
-						(pin
-							(num "9")
-						)
-						(pin
-							(num "10")
 						)
 					)
 				)
@@ -566,11 +497,11 @@
 		)
 		(comp
 			(ref "J6")
-			(value "Buttons_9_to_16")
-			(footprint "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-10-5.08_1x10_P5.08mm_Horizontal")
+			(value "Buttons_5_to_8")
+			(footprint "Connector_Phoenix_MSTB:PhoenixContact_MSTBA_2,5_8-G-5,08_1x08_P5.08mm_Horizontal")
 			(fields
 				(field
-					(name "Footprint") "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-10-5.08_1x10_P5.08mm_Horizontal")
+					(name "Footprint") "Connector_Phoenix_MSTB:PhoenixContact_MSTBA_2,5_8-G-5,08_1x08_P5.08mm_Horizontal")
 				(field
 					(name "Datasheet")
 				)
@@ -580,8 +511,8 @@
 			)
 			(libsource
 				(lib "Connector_Generic")
-				(part "Conn_01x10")
-				(description "Generic connector, single row, 01x10, script generated (kicad-library-utils/schlib/autogen/connector/)")
+				(part "Conn_01x08")
+				(description "Generic connector, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)")
 			)
 			(property
 				(name "Sheetname")
@@ -603,7 +534,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "bbd905db-1eab-44ba-a567-9c104c578096")
+			(tstamps "c7d26c12-9212-4403-896d-7f13a2b92481")
 			(units
 				(unit
 					(name "A")
@@ -631,12 +562,6 @@
 						)
 						(pin
 							(num "8")
-						)
-						(pin
-							(num "9")
-						)
-						(pin
-							(num "10")
 						)
 					)
 				)
@@ -645,10 +570,10 @@
 		(comp
 			(ref "J7")
 			(value "Blackout_E_Stop")
-			(footprint "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal")
+			(footprint "Connector_Phoenix_MSTB:PhoenixContact_MSTBA_2,5_2-G-5,08_1x02_P5.08mm_Horizontal")
 			(fields
 				(field
-					(name "Footprint") "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal")
+					(name "Footprint") "Connector_Phoenix_MSTB:PhoenixContact_MSTBA_2,5_2-G-5,08_1x02_P5.08mm_Horizontal")
 				(field
 					(name "Datasheet")
 				)
@@ -681,7 +606,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "4f6573cb-ff67-492d-9f54-9dd1294b8794")
+			(tstamps "b05471c5-51d2-4500-99fc-1975d8af5a46")
 			(units
 				(unit
 					(name "A")
@@ -691,6 +616,213 @@
 						)
 						(pin
 							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J8")
+			(value "Buttons_9_to_12")
+			(footprint "Connector_Phoenix_MSTB:PhoenixContact_MSTBA_2,5_8-G-5,08_1x08_P5.08mm_Horizontal")
+			(fields
+				(field
+					(name "Footprint") "Connector_Phoenix_MSTB:PhoenixContact_MSTBA_2,5_8-G-5,08_1x08_P5.08mm_Horizontal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Connector_Generic")
+				(part "Conn_01x08")
+				(description "Generic connector, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			)
+			(property
+				(name "Sheetname")
+				(value "pcb_synapse_controller")
+			)
+			(property
+				(name "Sheetfile")
+				(value "pcb_synapse_controller.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "connector")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "Connector*:*_1x??_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "1c3cfb79-9338-4bd2-b124-01cae088ab17")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "8")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J9")
+			(value "Buttons_13_to_16")
+			(footprint "Connector_Phoenix_MSTB:PhoenixContact_MSTBA_2,5_8-G-5,08_1x08_P5.08mm_Horizontal")
+			(fields
+				(field
+					(name "Footprint") "Connector_Phoenix_MSTB:PhoenixContact_MSTBA_2,5_8-G-5,08_1x08_P5.08mm_Horizontal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Connector_Generic")
+				(part "Conn_01x08")
+				(description "Generic connector, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			)
+			(property
+				(name "Sheetname")
+				(value "pcb_synapse_controller")
+			)
+			(property
+				(name "Sheetfile")
+				(value "pcb_synapse_controller.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "connector")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "Connector*:*_1x??_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "d7882cdf-d4a5-48ac-a197-9d104b2ab377")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
+						)
+						(pin
+							(num "6")
+						)
+						(pin
+							(num "7")
+						)
+						(pin
+							(num "8")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "J10")
+			(value "Rotary_Encoder")
+			(footprint "Connector_Phoenix_MSTB:PhoenixContact_MSTBA_2,5_5-G-5,08_1x05_P5.08mm_Horizontal")
+			(fields
+				(field
+					(name "Footprint") "Connector_Phoenix_MSTB:PhoenixContact_MSTBA_2,5_5-G-5,08_1x05_P5.08mm_Horizontal")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(libsource
+				(lib "Connector_Generic")
+				(part "Conn_01x05")
+				(description "Generic connector, single row, 01x05, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			)
+			(property
+				(name "Sheetname")
+				(value "pcb_synapse_controller")
+			)
+			(property
+				(name "Sheetfile")
+				(value "pcb_synapse_controller.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "connector")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "Connector*:*_1x??_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "50d898a2-1a03-4e1d-83c7-b5cf8894312f")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+						(pin
+							(num "3")
+						)
+						(pin
+							(num "4")
+						)
+						(pin
+							(num "5")
 						)
 					)
 				)
@@ -735,7 +867,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "dacabfef-d103-4a4c-82dc-1076abf4acdb")
+			(tstamps "ddb6ea70-9bdc-46ac-8f85-c7a3b2e32c05")
 			(units
 				(unit
 					(name "A")
@@ -907,8 +1039,8 @@
 		)
 		(libpart
 			(lib "Connector_Generic")
-			(part "Conn_01x10")
-			(description "Generic connector, single row, 01x10, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			(part "Conn_01x05")
+			(description "Generic connector, single row, 01x05, script generated (kicad-library-utils/schlib/autogen/connector/)")
 			(footprints
 				(fp "Connector*:*_1x??_*")
 			)
@@ -916,7 +1048,7 @@
 				(field
 					(name "Reference") "J")
 				(field
-					(name "Value") "Conn_01x10")
+					(name "Value") "Conn_01x05")
 				(field
 					(name "Footprint")
 				)
@@ -924,7 +1056,56 @@
 					(name "Datasheet")
 				)
 				(field
-					(name "Description") "Generic connector, single row, 01x10, script generated (kicad-library-utils/schlib/autogen/connector/)")
+					(name "Description") "Generic connector, single row, 01x05, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "Pin_1")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "Pin_2")
+					(type "passive")
+				)
+				(pin
+					(num "3")
+					(name "Pin_3")
+					(type "passive")
+				)
+				(pin
+					(num "4")
+					(name "Pin_4")
+					(type "passive")
+				)
+				(pin
+					(num "5")
+					(name "Pin_5")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Connector_Generic")
+			(part "Conn_01x08")
+			(description "Generic connector, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			(footprints
+				(fp "Connector*:*_1x??_*")
+			)
+			(fields
+				(field
+					(name "Reference") "J")
+				(field
+					(name "Value") "Conn_01x08")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Generic connector, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)")
 			)
 			(pins
 				(pin
@@ -965,16 +1146,6 @@
 				(pin
 					(num "8")
 					(name "Pin_8")
-					(type "passive")
-				)
-				(pin
-					(num "9")
-					(name "Pin_9")
-					(type "passive")
-				)
-				(pin
-					(num "10")
-					(name "Pin_10")
 					(type "passive")
 				)
 			)
@@ -1123,55 +1294,6 @@
 				(pin
 					(num "2")
 					(name "")
-					(type "passive")
-				)
-			)
-		)
-		(libpart
-			(lib "Device")
-			(part "RotaryEncoder_Switch")
-			(description "Rotary encoder, dual channel, incremental quadrate outputs, with switch")
-			(footprints
-				(fp "RotaryEncoder*Switch*")
-			)
-			(fields
-				(field
-					(name "Reference") "SW")
-				(field
-					(name "Value") "RotaryEncoder_Switch")
-				(field
-					(name "Footprint")
-				)
-				(field
-					(name "Datasheet")
-				)
-				(field
-					(name "Description") "Rotary encoder, dual channel, incremental quadrate outputs, with switch")
-			)
-			(pins
-				(pin
-					(num "A")
-					(name "A")
-					(type "passive")
-				)
-				(pin
-					(num "B")
-					(name "B")
-					(type "passive")
-				)
-				(pin
-					(num "C")
-					(name "C")
-					(type "passive")
-				)
-				(pin
-					(num "S1")
-					(name "S1")
-					(type "passive")
-				)
-				(pin
-					(num "S2")
-					(name "S2")
 					(type "passive")
 				)
 			)
@@ -1369,6 +1491,12 @@
 				(pintype "passive")
 			)
 			(node
+				(ref "J10")
+				(pin "5")
+				(pinfunction "Pin_5_5")
+				(pintype "passive")
+			)
+			(node
 				(ref "J3")
 				(pin "3")
 				(pinfunction "Pin_3_3")
@@ -1401,18 +1529,6 @@
 				(ref "J3")
 				(pin "2")
 				(pinfunction "Pin_2_2")
-				(pintype "passive")
-			)
-			(node
-				(ref "J5")
-				(pin "9")
-				(pinfunction "Pin_9_9")
-				(pintype "passive")
-			)
-			(node
-				(ref "J6")
-				(pin "9")
-				(pinfunction "Pin_9_9")
 				(pintype "passive")
 			)
 		)
@@ -1477,8 +1593,8 @@
 			(class "Default")
 			(node
 				(ref "J5")
-				(pin "2")
-				(pinfunction "Pin_2_2")
+				(pin "3")
+				(pinfunction "Pin_3_3")
 				(pintype "passive")
 			)
 			(node
@@ -1494,8 +1610,8 @@
 			(class "Default")
 			(node
 				(ref "J5")
-				(pin "3")
-				(pinfunction "Pin_3_3")
+				(pin "5")
+				(pinfunction "Pin_5_5")
 				(pintype "passive")
 			)
 			(node
@@ -1511,8 +1627,8 @@
 			(class "Default")
 			(node
 				(ref "J5")
-				(pin "4")
-				(pinfunction "Pin_4_4")
+				(pin "7")
+				(pinfunction "Pin_7_7")
 				(pintype "passive")
 			)
 			(node
@@ -1527,9 +1643,9 @@
 			(name "/BTN_05")
 			(class "Default")
 			(node
-				(ref "J5")
-				(pin "5")
-				(pinfunction "Pin_5_5")
+				(ref "J6")
+				(pin "1")
+				(pinfunction "Pin_1_1")
 				(pintype "passive")
 			)
 			(node
@@ -1544,9 +1660,9 @@
 			(name "/BTN_06")
 			(class "Default")
 			(node
-				(ref "J5")
-				(pin "6")
-				(pinfunction "Pin_6_6")
+				(ref "J6")
+				(pin "3")
+				(pinfunction "Pin_3_3")
 				(pintype "passive")
 			)
 			(node
@@ -1561,9 +1677,9 @@
 			(name "/BTN_07")
 			(class "Default")
 			(node
-				(ref "J5")
-				(pin "7")
-				(pinfunction "Pin_7_7")
+				(ref "J6")
+				(pin "5")
+				(pinfunction "Pin_5_5")
 				(pintype "passive")
 			)
 			(node
@@ -1578,9 +1694,9 @@
 			(name "/BTN_08")
 			(class "Default")
 			(node
-				(ref "J5")
-				(pin "8")
-				(pinfunction "Pin_8_8")
+				(ref "J6")
+				(pin "7")
+				(pinfunction "Pin_7_7")
 				(pintype "passive")
 			)
 			(node
@@ -1595,7 +1711,7 @@
 			(name "/BTN_09")
 			(class "Default")
 			(node
-				(ref "J6")
+				(ref "J8")
 				(pin "1")
 				(pinfunction "Pin_1_1")
 				(pintype "passive")
@@ -1612,9 +1728,9 @@
 			(name "/BTN_10")
 			(class "Default")
 			(node
-				(ref "J6")
-				(pin "2")
-				(pinfunction "Pin_2_2")
+				(ref "J8")
+				(pin "3")
+				(pinfunction "Pin_3_3")
 				(pintype "passive")
 			)
 			(node
@@ -1629,9 +1745,9 @@
 			(name "/BTN_11")
 			(class "Default")
 			(node
-				(ref "J6")
-				(pin "3")
-				(pinfunction "Pin_3_3")
+				(ref "J8")
+				(pin "5")
+				(pinfunction "Pin_5_5")
 				(pintype "passive")
 			)
 			(node
@@ -1646,9 +1762,9 @@
 			(name "/BTN_12")
 			(class "Default")
 			(node
-				(ref "J6")
-				(pin "4")
-				(pinfunction "Pin_4_4")
+				(ref "J8")
+				(pin "7")
+				(pinfunction "Pin_7_7")
 				(pintype "passive")
 			)
 			(node
@@ -1663,9 +1779,9 @@
 			(name "/BTN_13")
 			(class "Default")
 			(node
-				(ref "J6")
-				(pin "5")
-				(pinfunction "Pin_5_5")
+				(ref "J9")
+				(pin "1")
+				(pinfunction "Pin_1_1")
 				(pintype "passive")
 			)
 			(node
@@ -1680,9 +1796,9 @@
 			(name "/BTN_14")
 			(class "Default")
 			(node
-				(ref "J6")
-				(pin "6")
-				(pinfunction "Pin_6_6")
+				(ref "J9")
+				(pin "3")
+				(pinfunction "Pin_3_3")
 				(pintype "passive")
 			)
 			(node
@@ -1697,9 +1813,9 @@
 			(name "/BTN_15")
 			(class "Default")
 			(node
-				(ref "J6")
-				(pin "7")
-				(pinfunction "Pin_7_7")
+				(ref "J9")
+				(pin "5")
+				(pinfunction "Pin_5_5")
 				(pintype "passive")
 			)
 			(node
@@ -1714,9 +1830,9 @@
 			(name "/BTN_16")
 			(class "Default")
 			(node
-				(ref "J6")
-				(pin "8")
-				(pinfunction "Pin_8_8")
+				(ref "J9")
+				(pin "7")
+				(pinfunction "Pin_7_7")
 				(pintype "passive")
 			)
 			(node
@@ -1731,9 +1847,9 @@
 			(name "/ENC_A")
 			(class "Default")
 			(node
-				(ref "ENC1")
-				(pin "A")
-				(pinfunction "A_A")
+				(ref "J10")
+				(pin "2")
+				(pinfunction "Pin_2_2")
 				(pintype "passive")
 			)
 			(node
@@ -1748,9 +1864,9 @@
 			(name "/ENC_B")
 			(class "Default")
 			(node
-				(ref "ENC1")
-				(pin "B")
-				(pinfunction "B_B")
+				(ref "J10")
+				(pin "3")
+				(pinfunction "Pin_3_3")
 				(pintype "passive")
 			)
 			(node
@@ -1765,9 +1881,9 @@
 			(name "/ENC_SW")
 			(class "Default")
 			(node
-				(ref "ENC1")
-				(pin "S1")
-				(pinfunction "S1_S1")
+				(ref "J10")
+				(pin "4")
+				(pinfunction "Pin_4_4")
 				(pintype "passive")
 			)
 			(node
@@ -1779,226 +1895,6 @@
 		)
 		(net
 			(code "24")
-			(name "/GPIO0")
-			(class "Default")
-			(node
-				(ref "J3")
-				(pin "5")
-				(pinfunction "Pin_5_5")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "25")
-			(name "/GPIO1")
-			(class "Default")
-			(node
-				(ref "J3")
-				(pin "6")
-				(pinfunction "Pin_6_6")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "26")
-			(name "/GPIO9")
-			(class "Default")
-			(node
-				(ref "J3")
-				(pin "14")
-				(pinfunction "Pin_14_14")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "27")
-			(name "/GPIO10")
-			(class "Default")
-			(node
-				(ref "J3")
-				(pin "15")
-				(pinfunction "Pin_15_15")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "28")
-			(name "/GPIO11")
-			(class "Default")
-			(node
-				(ref "J3")
-				(pin "16")
-				(pinfunction "Pin_16_16")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "29")
-			(name "/GPIO12")
-			(class "Default")
-			(node
-				(ref "J3")
-				(pin "17")
-				(pinfunction "Pin_17_17")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "30")
-			(name "/GPIO13")
-			(class "Default")
-			(node
-				(ref "J3")
-				(pin "18")
-				(pinfunction "Pin_18_18")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "31")
-			(name "/GPIO26")
-			(class "Default")
-			(node
-				(ref "J4")
-				(pin "3")
-				(pinfunction "Pin_3_3")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "32")
-			(name "/GPIO33")
-			(class "Default")
-			(node
-				(ref "J4")
-				(pin "4")
-				(pinfunction "Pin_4_4")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "33")
-			(name "/GPIO34")
-			(class "Default")
-			(node
-				(ref "J4")
-				(pin "5")
-				(pinfunction "Pin_5_5")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "34")
-			(name "/GPIO35")
-			(class "Default")
-			(node
-				(ref "J4")
-				(pin "6")
-				(pinfunction "Pin_6_6")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "35")
-			(name "/GPIO36")
-			(class "Default")
-			(node
-				(ref "J4")
-				(pin "7")
-				(pinfunction "Pin_7_7")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "36")
-			(name "/GPIO37")
-			(class "Default")
-			(node
-				(ref "J4")
-				(pin "8")
-				(pinfunction "Pin_8_8")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "37")
-			(name "/GPIO38")
-			(class "Default")
-			(node
-				(ref "J4")
-				(pin "9")
-				(pinfunction "Pin_9_9")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "38")
-			(name "/GPIO39")
-			(class "Default")
-			(node
-				(ref "J4")
-				(pin "10")
-				(pinfunction "Pin_10_10")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "39")
-			(name "/GPIO40")
-			(class "Default")
-			(node
-				(ref "J4")
-				(pin "11")
-				(pinfunction "Pin_11_11")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "40")
-			(name "/GPIO41")
-			(class "Default")
-			(node
-				(ref "J4")
-				(pin "12")
-				(pinfunction "Pin_12_12")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "41")
-			(name "/GPIO42")
-			(class "Default")
-			(node
-				(ref "J4")
-				(pin "13")
-				(pinfunction "Pin_13_13")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "42")
-			(name "/GPIO45")
-			(class "Default")
-			(node
-				(ref "J4")
-				(pin "14")
-				(pinfunction "Pin_14_14")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "43")
-			(name "/GPIO46")
-			(class "Default")
-			(node
-				(ref "J4")
-				(pin "15")
-				(pinfunction "Pin_15_15")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "44")
 			(name "/I2C_SCL")
 			(class "Default")
 			(node
@@ -2015,7 +1911,7 @@
 			)
 		)
 		(net
-			(code "45")
+			(code "25")
 			(name "/I2C_SDA")
 			(class "Default")
 			(node
@@ -2032,29 +1928,7 @@
 			)
 		)
 		(net
-			(code "46")
-			(name "/LORA_DIO1")
-			(class "Default")
-			(node
-				(ref "J4")
-				(pin "2")
-				(pinfunction "Pin_2_2")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "47")
-			(name "/LORA_NSS")
-			(class "Default")
-			(node
-				(ref "J3")
-				(pin "13")
-				(pinfunction "Pin_13_13")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "48")
+			(code "26")
 			(name "/MCP_INT")
 			(class "Default")
 			(node
@@ -2077,29 +1951,7 @@
 			)
 		)
 		(net
-			(code "49")
-			(name "/OLED_RST")
-			(class "Default")
-			(node
-				(ref "J4")
-				(pin "16")
-				(pinfunction "Pin_16_16")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "50")
-			(name "/RST")
-			(class "Default")
-			(node
-				(ref "J3")
-				(pin "4")
-				(pinfunction "Pin_4_4")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "51")
+			(code "27")
 			(name "GND")
 			(class "Default")
 			(node
@@ -2108,20 +1960,14 @@
 				(pintype "passive")
 			)
 			(node
-				(ref "ENC1")
-				(pin "C")
-				(pinfunction "C_C")
-				(pintype "passive")
-			)
-			(node
-				(ref "ENC1")
-				(pin "S2")
-				(pinfunction "S2_S2")
-				(pintype "passive")
-			)
-			(node
 				(ref "J1")
 				(pin "S")
+				(pintype "passive")
+			)
+			(node
+				(ref "J10")
+				(pin "1")
+				(pinfunction "Pin_1_1")
 				(pintype "passive")
 			)
 			(node
@@ -2144,20 +1990,104 @@
 			)
 			(node
 				(ref "J5")
-				(pin "10")
-				(pinfunction "Pin_10_10")
+				(pin "2")
+				(pinfunction "Pin_2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "J5")
+				(pin "4")
+				(pinfunction "Pin_4_4")
+				(pintype "passive")
+			)
+			(node
+				(ref "J5")
+				(pin "6")
+				(pinfunction "Pin_6_6")
+				(pintype "passive")
+			)
+			(node
+				(ref "J5")
+				(pin "8")
+				(pinfunction "Pin_8_8")
 				(pintype "passive")
 			)
 			(node
 				(ref "J6")
-				(pin "10")
-				(pinfunction "Pin_10_10")
+				(pin "2")
+				(pinfunction "Pin_2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "J6")
+				(pin "4")
+				(pinfunction "Pin_4_4")
+				(pintype "passive")
+			)
+			(node
+				(ref "J6")
+				(pin "6")
+				(pinfunction "Pin_6_6")
+				(pintype "passive")
+			)
+			(node
+				(ref "J6")
+				(pin "8")
+				(pinfunction "Pin_8_8")
 				(pintype "passive")
 			)
 			(node
 				(ref "J7")
 				(pin "2")
 				(pinfunction "Pin_2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "J8")
+				(pin "2")
+				(pinfunction "Pin_2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "J8")
+				(pin "4")
+				(pinfunction "Pin_4_4")
+				(pintype "passive")
+			)
+			(node
+				(ref "J8")
+				(pin "6")
+				(pinfunction "Pin_6_6")
+				(pintype "passive")
+			)
+			(node
+				(ref "J8")
+				(pin "8")
+				(pinfunction "Pin_8_8")
+				(pintype "passive")
+			)
+			(node
+				(ref "J9")
+				(pin "2")
+				(pinfunction "Pin_2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "J9")
+				(pin "4")
+				(pinfunction "Pin_4_4")
+				(pintype "passive")
+			)
+			(node
+				(ref "J9")
+				(pin "6")
+				(pinfunction "Pin_6_6")
+				(pintype "passive")
+			)
+			(node
+				(ref "J9")
+				(pin "8")
+				(pinfunction "Pin_8_8")
 				(pintype "passive")
 			)
 			(node
@@ -2183,6 +2113,270 @@
 				(pin "17")
 				(pinfunction "A2_17")
 				(pintype "input")
+			)
+		)
+		(net
+			(code "28")
+			(name "unconnected-(J3-Pin_4-Pad4)")
+			(class "Default")
+			(node
+				(ref "J3")
+				(pin "4")
+				(pinfunction "Pin_4_4")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "29")
+			(name "unconnected-(J3-Pin_5-Pad5)")
+			(class "Default")
+			(node
+				(ref "J3")
+				(pin "5")
+				(pinfunction "Pin_5_5")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "30")
+			(name "unconnected-(J3-Pin_6-Pad6)")
+			(class "Default")
+			(node
+				(ref "J3")
+				(pin "6")
+				(pinfunction "Pin_6_6")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "31")
+			(name "unconnected-(J3-Pin_13-Pad13)")
+			(class "Default")
+			(node
+				(ref "J3")
+				(pin "13")
+				(pinfunction "Pin_13_13")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "32")
+			(name "unconnected-(J3-Pin_14-Pad14)")
+			(class "Default")
+			(node
+				(ref "J3")
+				(pin "14")
+				(pinfunction "Pin_14_14")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "33")
+			(name "unconnected-(J3-Pin_15-Pad15)")
+			(class "Default")
+			(node
+				(ref "J3")
+				(pin "15")
+				(pinfunction "Pin_15_15")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "34")
+			(name "unconnected-(J3-Pin_16-Pad16)")
+			(class "Default")
+			(node
+				(ref "J3")
+				(pin "16")
+				(pinfunction "Pin_16_16")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "35")
+			(name "unconnected-(J3-Pin_17-Pad17)")
+			(class "Default")
+			(node
+				(ref "J3")
+				(pin "17")
+				(pinfunction "Pin_17_17")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "36")
+			(name "unconnected-(J3-Pin_18-Pad18)")
+			(class "Default")
+			(node
+				(ref "J3")
+				(pin "18")
+				(pinfunction "Pin_18_18")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "37")
+			(name "unconnected-(J4-Pin_2-Pad2)")
+			(class "Default")
+			(node
+				(ref "J4")
+				(pin "2")
+				(pinfunction "Pin_2_2")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "38")
+			(name "unconnected-(J4-Pin_3-Pad3)")
+			(class "Default")
+			(node
+				(ref "J4")
+				(pin "3")
+				(pinfunction "Pin_3_3")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "39")
+			(name "unconnected-(J4-Pin_4-Pad4)")
+			(class "Default")
+			(node
+				(ref "J4")
+				(pin "4")
+				(pinfunction "Pin_4_4")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "40")
+			(name "unconnected-(J4-Pin_5-Pad5)")
+			(class "Default")
+			(node
+				(ref "J4")
+				(pin "5")
+				(pinfunction "Pin_5_5")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "41")
+			(name "unconnected-(J4-Pin_6-Pad6)")
+			(class "Default")
+			(node
+				(ref "J4")
+				(pin "6")
+				(pinfunction "Pin_6_6")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "42")
+			(name "unconnected-(J4-Pin_7-Pad7)")
+			(class "Default")
+			(node
+				(ref "J4")
+				(pin "7")
+				(pinfunction "Pin_7_7")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "43")
+			(name "unconnected-(J4-Pin_8-Pad8)")
+			(class "Default")
+			(node
+				(ref "J4")
+				(pin "8")
+				(pinfunction "Pin_8_8")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "44")
+			(name "unconnected-(J4-Pin_9-Pad9)")
+			(class "Default")
+			(node
+				(ref "J4")
+				(pin "9")
+				(pinfunction "Pin_9_9")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "45")
+			(name "unconnected-(J4-Pin_10-Pad10)")
+			(class "Default")
+			(node
+				(ref "J4")
+				(pin "10")
+				(pinfunction "Pin_10_10")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "46")
+			(name "unconnected-(J4-Pin_11-Pad11)")
+			(class "Default")
+			(node
+				(ref "J4")
+				(pin "11")
+				(pinfunction "Pin_11_11")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "47")
+			(name "unconnected-(J4-Pin_12-Pad12)")
+			(class "Default")
+			(node
+				(ref "J4")
+				(pin "12")
+				(pinfunction "Pin_12_12")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "48")
+			(name "unconnected-(J4-Pin_13-Pad13)")
+			(class "Default")
+			(node
+				(ref "J4")
+				(pin "13")
+				(pinfunction "Pin_13_13")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "49")
+			(name "unconnected-(J4-Pin_14-Pad14)")
+			(class "Default")
+			(node
+				(ref "J4")
+				(pin "14")
+				(pinfunction "Pin_14_14")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "50")
+			(name "unconnected-(J4-Pin_15-Pad15)")
+			(class "Default")
+			(node
+				(ref "J4")
+				(pin "15")
+				(pinfunction "Pin_15_15")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "51")
+			(name "unconnected-(J4-Pin_16-Pad16)")
+			(class "Default")
+			(node
+				(ref "J4")
+				(pin "16")
+				(pinfunction "Pin_16_16")
+				(pintype "passive+no_connect")
 			)
 		)
 		(net

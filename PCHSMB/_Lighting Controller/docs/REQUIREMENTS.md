@@ -272,13 +272,14 @@ In accordance with ISO/IEC/IEEE 29148:2018, each requirement specifies one or mo
   1. Oscilloscope waveform at the end of a $5.0\,\text{m}$ cable shows edge overshoot $\le 10\%$ of rail voltage ($V_{\text{peak}} \le 5.5\,\text{V}$).
   2. Zero data bit errors across $1,000,000$ transmitted pixel frames.
 
-### `REQ-PRP-07`: Physical Hardware Rotary Address Dial
-* **Statement:** The prop receiver carrier board shall include a 16-position BCD rotary hex encoder switch (`SW1`) allowing volunteer crew members to physically set the prop's hardware ID ($0\text{–}15$) using a flathead screwdriver or finger dial without connecting a computer.
-* **Rationale:** If a prop node fails on the field, a spare node can be swapped in and dialed to the identical prop ID in 5 seconds by any parent volunteer.
+### `REQ-PRP-07`: Physical Hardware 8-Bit DIP Switch Bank
+* **Statement:** The prop receiver carrier board shall include an 8-position slide DIP switch bank (`SW1`) allowing volunteer crew members to physically set the node's unique hardware serial number ($0\text{–}255$ / `0x00`–`0xFF`) via 8 binary slide actuators without connecting a computer.
+* **Rationale:** Decouples physical hardware serial identity from software show timeline profiles. Allows all fleet nodes to run identical firmware binaries and supports transparent spare substitution.
 * **Verification:** **[I, D]**
 * **Acceptance Criteria:**
-  1. 16-position rotary switch provides clear detents labeled 0 through F (or 0 to 15).
-  2. Microcontroller reads the hardware address lines at startup and binds its radio filtering address accordingly.
+  1. 8-position DIP switch provides 8 discrete SPST slide switches connected to ESP32-S3 GPIOs 2, 3, 4, 5, 7, 8, 9, 10.
+  2. Microcontroller reads the 8-bit hardware address at boot via internal pullups ($0 = \text{ON/GND}$, $1 = \text{OFF/Pullup}$).
+  3. Microcontroller maps the 8-bit serial ID to its assigned local show configuration profile (`config.bin`) stored in flash memory.
 
 ### `REQ-PRP-08`: Weatherproof Enclosure & Moisture Protection
 * **Statement:** All electronics on the prop receiver node shall be protected against outdoor moisture, morning dew, grass sprinklers, and blowing dust, achieving an enclosure rating of IP65 or conformal coating protection per IPC-CC-830.
@@ -316,20 +317,23 @@ In accordance with ISO/IEC/IEEE 29148:2018, each requirement specifies one or mo
   1. Receiver calculates CRC-16 on every received frame; packets with mismatched CRC are dropped with zero side effects.
   2. Packet sequence counter detects dropped frames and logs link quality metrics.
 
-### `REQ-FW-04`: Global Master Clock & Sub-Frame Phase Synchronization
-* **Statement:** The master console shall broadcast a continuous global millisecond timecode packet at regular intervals ($1.0\,\text{Hz}$ to $10.0\,\text{Hz}$), and each prop node shall maintain a phase-locked local clock calibrated to the master timecode with a drift of $\le 5.0\,\text{ms}$ over a 12-minute performance.
-* **Rationale:** Dynamic chases and sweeps that travel across multiple backdrops or sideline screens require a shared timebase so cues triggered simultaneously remain aligned throughout the movement.
+### `REQ-FW-04`: Distributed Timeline Engine & Quartz Phase-Locked Clock Sync
+* **Statement:** Each prop node shall execute its programmed show animation cues autonomously from local flash memory referenced to its onboard $40\,\text{MHz}$ quartz crystal oscillator. The master console shall broadcast an elapsed millisecond clock-sync heartbeat (`Frame Type = 0x02`, payload `uint32_t master_show_ms`) at $2.0\,\text{Hz}$ ($500\,\text{ms}$ interval) to phase-lock local clocks and correct sub-millisecond crystal drift.
+* **Rationale:** Central real-time pixel streaming creates single-point RF failures and buffer starvation on outdoor fields. With distributed local timeline execution, RF dropouts never interrupt visual playback.
 * **Verification:** **[T]**
 * **Acceptance Criteria:**
-  1. Local prop clock skew remains $< 5.0\,\text{ms}$ relative to master timecode across 720 continuous seconds.
+  1. Local prop quartz crystal oscillator maintains uncorrected timeline drift $< 15.0\,\text{ms}$ across a complete 720-second (12-minute) competitive show without radio reception.
+  2. Phase-Locked Loop (PLL) slews local millisecond clock smoothly toward master time for errors $|\epsilon| \le 200\,\text{ms}$ (slew rate $\le 0.5\,\text{ms/ms}$) to prevent optical tearing.
+  3. Clock snaps immediately to master timecode if $|\epsilon| > 200\,\text{ms}$ (e.g. manual cue skip or console reboot).
 
-### `REQ-FW-05`: Autonomous Lost-Link Detection & Fail-Safe State
-* **Statement:** If a prop node fails to receive any valid wireless packet from the master console for a continuous duration of $T > 10.0\,\text{seconds}$, the prop node firmware shall automatically transition to a deterministic, non-distracting fail-safe lighting state (holding the last static scene or executing a gentle 5-second fade to warm white), and shall strictly forbid random strobing or erratic flashing.
-* **Rationale:** If RF connectivity is momentarily shadowed during a show, props must look intentional and calm to adjudicators rather than glitching.
+### `REQ-FW-05`: Autonomous Lost-Link Execution & Show Continuity
+* **Statement:** If a prop node fails to receive wireless sync packets from the master console for any duration during a performance, the firmware shall **not** halt, freeze, or extinguish; it shall continue autonomous execution of its programmed show cue timeline on local quartz crystal time. Only if the complete show duration has elapsed and RF remains absent shall it transition to a calm holding aesthetic or gentle fade to warm white.
+* **Rationale:** RF shadowing from band members, metal props, or stadium infrastructure must never cause lighting to cut out or visually stutter before judges.
 * **Verification:** **[T, D]**
 * **Acceptance Criteria:**
-  1. Lost-link timer triggers within $10.0\,\text{s} \pm 0.5\,\text{s}$ of last valid packet.
-  2. Prop output transitions smoothly to fail-safe state without visual flicker or sudden color jumps.
+  1. Prop continues seamless timeline execution during a continuous 60-second RF dropout.
+  2. Accumulated visual phase skew between disconnected nodes remains $< 2.0\,\text{ms}$ after 60 seconds of lost link.
+  3. Visual flicker, strobe, and abrupt blackout during RF loss are strictly prohibited.
 
 ### `REQ-FW-06`: Rapid Link Restoration & Cue Resynchronization
 * **Statement:** When a prop node in the lost-link fail-safe state receives a valid wireless broadcast packet from the master console, it shall restore full synchronized tracking of the active show cue within $T \le 50.0\,\text{ms}$.
@@ -353,6 +357,14 @@ In accordance with ISO/IEC/IEEE 29148:2018, each requirement specifies one or mo
 * **Acceptance Criteria:**
   1. Automated POST executes in $< 3.5\,\text{s}$ on cold boot.
   2. Identifies open circuits or dead data lines before prop rolls out of the staging chute.
+
+### `REQ-FW-09`: Dual-Path Spare Unit Re-Mapping Protocol
+* **Statement:** The system shall support rapid re-mapping of any spare receiver node's hardware serial ID to a target prop's timeline profile both off-field via a local Wi-Fi configuration portal in $T \le 2.0\,\text{s}$, and on-field via a high-priority 915 MHz configuration frame (`Frame Type = 0x05`) transmitted directly from the Synapse pit master console in $T \le 100.0\,\text{ms}$ without requiring laptops, Wi-Fi networks, or physical prop opening.
+* **Rationale:** If a prop node fails on the field immediately prior to show time, pit crew must be able to deploy a spare unit and assign the damaged prop's exact cue profile instantaneously.
+* **Verification:** **[T, D]**
+* **Acceptance Criteria:**
+  1. Off-field Wi-Fi OTA portal allows selecting and flashing any prop profile to a spare node in $< 2.0\,\text{seconds}$.
+  2. Synapse pit console menu transmits Sub-GHz quick-remap frame (`Frame Type = 0x05`) re-mapping a specified hardware DIP serial to the target profile in $< 100.0\,\text{ms}$.
 
 ---
 
@@ -448,7 +460,7 @@ In accordance with ISO/IEC/IEEE 29148:2018, each requirement specifies one or mo
 | `REQ-SYS-03` | System | Sub-GHz License-Free RF Band Standard | Ubiquitous | **[T, I]** | 902.0–928.0 MHz ISM band; zero 2.4 GHz |
 | `REQ-SYS-04` | System | End-to-End Visual Downbeat Latency | Event-Driven | **[T]** | $T_{\text{latency}} \le 25.0\,\text{ms}$ at $100\,\text{m}$ |
 | `REQ-SYS-05` | System | Multi-Prop Synchronization Jitter | Ubiquitous | **[T]** | $T_{\text{jitter}} \le 5.0\,\text{ms}$ across all nodes |
-| `REQ-SYS-06` | System | Scalable Fleet Addressing | Ubiquitous | **[I, T]** | $\ge 32$ nodes supported, scalable to 64 |
+| `REQ-SYS-06` | System | Scalable Fleet Addressing & 8-Bit Space | Ubiquitous | **[I, T]** | $\ge 32$ nodes supported, scalable to 256 |
 | `REQ-SYS-07` | System | Marching Band Rules Compliance | Ubiquitous | **[I, D]** | CBA/BOA compliant; non-marking; $< 2\,\text{min}$ egress |
 | `REQ-SYN-01` | Synapse | 16-Cue Physical Fingertip Interface | Ubiquitous | **[I, D]** | 16x 16mm momentary buttons, spacing $\ge 25\,\text{mm}$ |
 | `REQ-SYN-02` | Synapse | Switch Contact Debounce & Registration | Event-Driven | **[T]** | $5.0\,\text{ms} \le T \le 10.0\,\text{ms}$; zero false triggers |
@@ -465,16 +477,17 @@ In accordance with ISO/IEC/IEEE 29148:2018, each requirement specifies one or mo
 | `REQ-PRP-04` | Prop Node | Hardware Undervoltage Lockout (UVLO) | State-Driven | **[T]** | Disconnects at $V \le 14.8\,\text{V}$; sleep current $\le 2\,\text{mA}$ |
 | `REQ-PRP-05` | Prop Node | Quad Parallel 5.0V CMOS Level Shifting | Ubiquitous | **[T]** | 4x 74AHCT125 channels; $V_{\text{OH}} \ge 4.5\,\text{V}$ |
 | `REQ-PRP-06` | Prop Node | Transmission Line Damping & Signal Integrity | Ubiquitous | **[T]** | $33\,\Omega$ series resistors; clean edges over $5.0\,\text{m}$ |
-| `REQ-PRP-07` | Prop Node | Physical Hardware Rotary Address Dial | Ubiquitous | **[I, D]** | 16-position BCD hex dial ($0\text{–}15$ hardware ID) |
+| `REQ-PRP-07` | Prop Node | Physical Hardware 8-Bit DIP Switch Bank | Ubiquitous | **[I, D]** | 8-position slide DIP switch ($0\text{–}255$ hardware ID) |
 | `REQ-PRP-08` | Prop Node | Weatherproof Enclosure & Moisture Protection | Ubiquitous | **[I, T]** | IP65 enclosure / IPC-CC-830 conformal coating |
 | `REQ-FW-01` | Firmware | Deterministic Real-Time Execution Partitioning | Ubiquitous | **[T]** | Radio latency $\le 2.0\,\text{ms}$; zero LED frame tearing |
 | `REQ-FW-02` | Firmware | High-Speed Multi-Channel DMA LED Rendering | Ubiquitous | **[T]** | 4-channel parallel DMA; $\ge 60\,\text{FPS}$; CPU $\le 25\%$ |
 | `REQ-FW-03` | Firmware | Wireless Broadcast Framing & Error Detection | Event-Driven | **[T]** | 16-bit sync, sequence counter, CRC-16 integrity |
-| `REQ-FW-04` | Firmware | Global Master Clock & Sub-Frame Phase Sync | Ubiquitous | **[T]** | Clock skew $\le 5.0\,\text{ms}$ over 720 seconds |
-| `REQ-FW-05` | Firmware | Autonomous Lost-Link Detection & Fail-Safe | Unwanted Event | **[T, D]** | Triggers at $T > 10.0\,\text{s}$; calm fade / zero strobe |
+| `REQ-FW-04` | Firmware | Distributed Timeline Engine & Quartz Phase Sync | Ubiquitous | **[T]** | Crystal drift $< 15\,\text{ms}$ over 720s; PLL slew $\le 0.5\,\text{ms/ms}$ |
+| `REQ-FW-05` | Firmware | Autonomous Lost-Link Execution & Continuity | Unwanted Event | **[T, D]** | Seamless local timeline playback; zero visual stutter |
 | `REQ-FW-06` | Firmware | Rapid Link Restoration & Resynchronization | Event-Driven | **[T]** | Restores cue tracking within $T \le 50.0\,\text{ms}$ |
 | `REQ-FW-07` | Firmware | Real-Time Battery Telemetry & Low-V Warning | State-Driven | **[T, D]** | Visual alert when $V_{\text{bat}} \le 15.5\,\text{V}$ DC |
 | `REQ-FW-08` | Firmware | Power-On Self-Test (POST) & Channel Walk | Event-Driven | **[D, I]** | R-G-B-W channel walk in $< 3.5\,\text{s}$ on cold boot |
+| `REQ-FW-09` | Firmware | Dual-Path Spare Unit Re-Mapping Protocol | Event-Driven | **[T, D]** | Wi-Fi OTA $< 2.0\,\text{s}$; 915 MHz quick-remap $< 100\,\text{ms}$ |
 | `REQ-SW-01` | Software | Zero-Software & Zero-AI Reprogramming Mandate | Ubiquitous | **[D]** | Full show reprogramming in $< 15\,\text{min}$ with no code/AI |
 | `REQ-SW-02` | Software | Standard Human-Readable Show Definition File | Ubiquitous | **[I, D]** | Schema-validated CSV / JSON editable in Excel/Sheets |
 | `REQ-SW-03` | Software | Direct USB Mass Storage Drag-and-Drop Ingestion | Event-Driven | **[D, T]** | Mounts as USB flash drive; automatic parsing upon eject |

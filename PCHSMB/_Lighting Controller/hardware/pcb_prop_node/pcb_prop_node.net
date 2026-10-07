@@ -2,7 +2,7 @@
 	(version "E")
 	(design
 		(source "/Volumes/T9/Sync/Working/Shop/Projects/__Music/PCHSMB/_Lighting Controller/hardware/pcb_prop_node/pcb_prop_node.kicad_sch")
-		(date "2026-10-05T15:32:13")
+		(date "2026-10-07T11:23:00")
 		(tool "Eeschema 10.0.6")
 		(sheet
 			(number "1")
@@ -11,8 +11,8 @@
 			(title_block
 				(title "PCHSMB Beacon Prop Receiver & LED Driver Carrier Board")
 				(company "Pine Creek High School Marching Band")
-				(rev "v1.1")
-				(date "2026-10-05")
+				(rev "v1.3")
+				(date "2026-10-06")
 				(source "pcb_prop_node.kicad_sch")
 				(comment
 					(number "1")
@@ -20,7 +20,7 @@
 				)
 				(comment
 					(number "2")
-					(value "18-21V M18 Entry, Zero-Drop P-FET, 5V/8A Buck, 74AHCT125 Quad Shifter")
+					(value "18-21V Tool Entry, Zero-Drop P-FET, 5V/8A Buck, 100% Pluggable MSTBA Connectors")
 				)
 				(comment
 					(number "3")
@@ -93,7 +93,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "6da4c90a-6a7a-4616-89e3-ded2ad4e0713")
+			(tstamps "88a65d73-13a0-465c-8899-b000e7795ddb")
 			(units
 				(unit
 					(name "A")
@@ -147,7 +147,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "fb70b2ab-ab33-4267-94ab-941b4d559836")
+			(tstamps "9e65876a-5690-4bf0-a851-8899c8148ab3")
 			(units
 				(unit
 					(name "A")
@@ -201,7 +201,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "75fcff54-0e0a-44ac-bb77-2406557cb46b")
+			(tstamps "86d5c252-2e96-40e7-b69c-0928e943eb52")
 			(units
 				(unit
 					(name "A")
@@ -255,7 +255,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "0e3676c4-24fb-464b-8b85-e84ff6635168")
+			(tstamps "b19faa01-fa3f-40dc-9f29-23056af558d3")
 			(units
 				(unit
 					(name "A")
@@ -273,10 +273,10 @@
 		(comp
 			(ref "J1")
 			(value "M18_BATT_IN")
-			(footprint "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal")
+			(footprint "Connector_Phoenix_MSTB:PhoenixContact_MSTBA_2,5_2-G-5,08_1x02_P5.08mm_Horizontal")
 			(fields
 				(field
-					(name "Footprint") "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal")
+					(name "Footprint") "Connector_Phoenix_MSTB:PhoenixContact_MSTBA_2,5_2-G-5,08_1x02_P5.08mm_Horizontal")
 				(field
 					(name "Datasheet")
 				)
@@ -309,7 +309,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "ade238c9-00e3-4d50-9209-ab2ae14f546d")
+			(tstamps "8bf10ec9-4ebe-460e-b9e7-dcbfe1e25df1")
 			(units
 				(unit
 					(name "A")
@@ -363,7 +363,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "ada4d30b-67c4-459d-ae1d-1b27af001236")
+			(tstamps "b8a1b865-be48-46d1-b1b0-bd5e6d337ae7")
 			(units
 				(unit
 					(name "A")
@@ -465,7 +465,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "dac871fe-bbe5-44af-90a8-bc9ccde5cad0")
+			(tstamps "c8e336d4-5137-4acb-b4e9-37f4fdadd14d")
 			(units
 				(unit
 					(name "A")
@@ -531,10 +531,10 @@
 		(comp
 			(ref "J4")
 			(value "PERF_TRIGGER")
-			(footprint "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal")
+			(footprint "Connector_Phoenix_MSTB:PhoenixContact_MSTBA_2,5_2-G-5,08_1x02_P5.08mm_Horizontal")
 			(fields
 				(field
-					(name "Footprint") "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal")
+					(name "Footprint") "Connector_Phoenix_MSTB:PhoenixContact_MSTBA_2,5_2-G-5,08_1x02_P5.08mm_Horizontal")
 				(field
 					(name "Datasheet")
 				)
@@ -567,7 +567,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "6db2b2bf-29d3-4fdf-b9a6-8a8006e1484d")
+			(tstamps "35f1afd1-5688-4078-9285-83df8be33446")
 			(units
 				(unit
 					(name "A")
@@ -585,10 +585,10 @@
 		(comp
 			(ref "J5")
 			(value "LED_CH1_CH2")
-			(footprint "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-6-5.08_1x06_P5.08mm_Horizontal")
+			(footprint "Connector_Phoenix_MSTB:PhoenixContact_MSTBA_2,5_6-G-5,08_1x06_P5.08mm_Horizontal")
 			(fields
 				(field
-					(name "Footprint") "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-6-5.08_1x06_P5.08mm_Horizontal")
+					(name "Footprint") "Connector_Phoenix_MSTB:PhoenixContact_MSTBA_2,5_6-G-5,08_1x06_P5.08mm_Horizontal")
 				(field
 					(name "Datasheet")
 				)
@@ -621,7 +621,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "94fb3fbc-2843-409a-acca-691015cb37c6")
+			(tstamps "a7c6056d-4517-4d56-a940-a15d7ac400d0")
 			(units
 				(unit
 					(name "A")
@@ -687,7 +687,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "41d72581-b2c4-46a0-8162-de7412b1a22f")
+			(tstamps "e5954158-380f-4861-95dd-ab01338299a7")
 			(units
 				(unit
 					(name "A")
@@ -711,10 +711,10 @@
 		(comp
 			(ref "J7")
 			(value "LED_CH3_CH4")
-			(footprint "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-6-5.08_1x06_P5.08mm_Horizontal")
+			(footprint "Connector_Phoenix_MSTB:PhoenixContact_MSTBA_2,5_6-G-5,08_1x06_P5.08mm_Horizontal")
 			(fields
 				(field
-					(name "Footprint") "TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-6-5.08_1x06_P5.08mm_Horizontal")
+					(name "Footprint") "Connector_Phoenix_MSTB:PhoenixContact_MSTBA_2,5_6-G-5,08_1x06_P5.08mm_Horizontal")
 				(field
 					(name "Datasheet")
 				)
@@ -747,7 +747,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "2206b823-2527-4813-80ee-15e789dba623")
+			(tstamps "5c17b18a-d2be-4fd7-8e22-fb43d1eaafe1")
 			(units
 				(unit
 					(name "A")
@@ -789,7 +789,7 @@
 				)
 			)
 			(libsource
-				(lib "Transistor_FET")
+				(lib "Prop_Carrier")
 				(part "IRF4905")
 				(description "")
 			)
@@ -805,7 +805,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "75c07d7d-75fd-4b26-b59d-9e6959d1cbe1")
+			(tstamps "08c01c82-22f2-4a92-993d-cc9b0e4e1a15")
 			(units
 				(unit
 					(name "A")
@@ -862,7 +862,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "c465db9e-1e0a-421e-99c0-3581e5f2b629")
+			(tstamps "e05c16e2-6022-40ad-8db4-2a69f4e13771")
 			(units
 				(unit
 					(name "A")
@@ -916,7 +916,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "e970e44c-6c7a-4e82-9613-bda0c0a88b8e")
+			(tstamps "88bbd83e-c2ef-4c82-ac6c-f868560df382")
 			(units
 				(unit
 					(name "A")
@@ -970,7 +970,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "b0ab4566-fa79-4cd9-b497-6d618af5c67d")
+			(tstamps "02dc00fb-94dd-4dce-a051-413faae7add3")
 			(units
 				(unit
 					(name "A")
@@ -1024,7 +1024,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "32d96cfd-f93e-412d-8196-cd0d591fc54d")
+			(tstamps "abd33cb5-6123-43b2-b963-91d94acd2819")
 			(units
 				(unit
 					(name "A")
@@ -1078,7 +1078,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "fdefb6c4-8820-47c5-8934-e3852ec22a9c")
+			(tstamps "aa14b759-259b-4d07-97ac-ac7c0b829d9b")
 			(units
 				(unit
 					(name "A")
@@ -1132,7 +1132,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "5996b055-d3fe-46ab-959d-20e568005512")
+			(tstamps "799824ff-d4d5-43b7-bfba-3b9fb6640da8")
 			(units
 				(unit
 					(name "A")
@@ -1186,7 +1186,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "5e73c4a1-7dd6-4c86-b470-f8f44ed8357e")
+			(tstamps "f765178c-0f70-43dd-b913-77316a35c398")
 			(units
 				(unit
 					(name "A")
@@ -1206,11 +1206,11 @@
 		)
 		(comp
 			(ref "SW1")
-			(value "BCD_PROP_ID")
-			(footprint "Button_Switch_THT:SW_DIP_SPSTx04_Slide_6.7x11.72mm_W7.62mm_P2.54mm_LowProfile")
+			(value "8BIT_PROP_ID")
+			(footprint "Button_Switch_THT:SW_DIP_SPSTx08_Slide_6.7x21.88mm_W7.62mm_P2.54mm_LowProfile")
 			(fields
 				(field
-					(name "Footprint") "Button_Switch_THT:SW_DIP_SPSTx04_Slide_6.7x11.72mm_W7.62mm_P2.54mm_LowProfile")
+					(name "Footprint") "Button_Switch_THT:SW_DIP_SPSTx08_Slide_6.7x21.88mm_W7.62mm_P2.54mm_LowProfile")
 				(field
 					(name "Datasheet")
 				)
@@ -1220,8 +1220,8 @@
 			)
 			(libsource
 				(lib "Switch")
-				(part "SW_DIP_x04")
-				(description "4x DIP Switch, Single Pole Single Throw (SPST) switch, small symbol")
+				(part "SW_DIP_x08")
+				(description "8x DIP Switch, Single Pole Single Throw (SPST) switch, small symbol")
 			)
 			(property
 				(name "Sheetname")
@@ -1237,13 +1237,13 @@
 			)
 			(property
 				(name "ki_fp_filters")
-				(value "SW?DIP?x4*")
+				(value "SW?DIP?x8*")
 			)
 			(sheetpath
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "52f55ca5-cbf4-49c1-a4cf-4aeb9cd8cf22")
+			(tstamps "ad951cb8-ebc3-4f71-8a0a-5dfe5c84ee60")
 			(units
 				(unit
 					(name "A")
@@ -1261,16 +1261,40 @@
 							(num "4")
 						)
 						(pin
-							(num "8")
-						)
-						(pin
-							(num "7")
+							(num "5")
 						)
 						(pin
 							(num "6")
 						)
 						(pin
-							(num "5")
+							(num "7")
+						)
+						(pin
+							(num "8")
+						)
+						(pin
+							(num "16")
+						)
+						(pin
+							(num "15")
+						)
+						(pin
+							(num "14")
+						)
+						(pin
+							(num "13")
+						)
+						(pin
+							(num "12")
+						)
+						(pin
+							(num "11")
+						)
+						(pin
+							(num "10")
+						)
+						(pin
+							(num "9")
 						)
 					)
 				)
@@ -1291,7 +1315,7 @@
 				)
 			)
 			(libsource
-				(lib "74xx")
+				(lib "Prop_Carrier")
 				(part "74AHCT125")
 				(description "")
 			)
@@ -1307,7 +1331,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "55643a0e-6849-445a-ba80-c15c7347d4d7")
+			(tstamps "a50a8214-5ed5-4b59-b715-f9adb4d809b9")
 			(units
 				(unit
 					(name "A")
@@ -1362,96 +1386,6 @@
 	(groups)
 	(variants)
 	(libparts
-		(libpart
-			(lib "74xx")
-			(part "74AHCT125")
-			(fields
-				(field
-					(name "Reference") "U")
-				(field
-					(name "Value") "74AHCT125")
-				(field
-					(name "Footprint") "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm")
-				(field
-					(name "Datasheet")
-				)
-				(field
-					(name "Description")
-				)
-			)
-			(pins
-				(pin
-					(num "1")
-					(name "~{1OE}")
-					(type "input")
-				)
-				(pin
-					(num "2")
-					(name "1A")
-					(type "input")
-				)
-				(pin
-					(num "3")
-					(name "1Y")
-					(type "output")
-				)
-				(pin
-					(num "4")
-					(name "~{2OE}")
-					(type "input")
-				)
-				(pin
-					(num "5")
-					(name "2A")
-					(type "input")
-				)
-				(pin
-					(num "6")
-					(name "2Y")
-					(type "output")
-				)
-				(pin
-					(num "7")
-					(name "GND")
-					(type "power_in")
-				)
-				(pin
-					(num "8")
-					(name "3Y")
-					(type "output")
-				)
-				(pin
-					(num "9")
-					(name "3A")
-					(type "input")
-				)
-				(pin
-					(num "10")
-					(name "~{3OE}")
-					(type "input")
-				)
-				(pin
-					(num "11")
-					(name "4Y")
-					(type "output")
-				)
-				(pin
-					(num "12")
-					(name "4A")
-					(type "input")
-				)
-				(pin
-					(num "13")
-					(name "~{4OE}")
-					(type "input")
-				)
-				(pin
-					(num "14")
-					(name "VCC")
-					(type "power_in")
-				)
-			)
-		)
 		(libpart
 			(lib "Connector_Generic")
 			(part "Conn_01x02")
@@ -1914,17 +1848,142 @@
 			)
 		)
 		(libpart
+			(lib "Prop_Carrier")
+			(part "74AHCT125")
+			(fields
+				(field
+					(name "Reference") "U")
+				(field
+					(name "Value") "74AHCT125")
+				(field
+					(name "Footprint") "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "~{1OE}")
+					(type "input")
+				)
+				(pin
+					(num "2")
+					(name "1A")
+					(type "input")
+				)
+				(pin
+					(num "3")
+					(name "1Y")
+					(type "output")
+				)
+				(pin
+					(num "4")
+					(name "~{2OE}")
+					(type "input")
+				)
+				(pin
+					(num "5")
+					(name "2A")
+					(type "input")
+				)
+				(pin
+					(num "6")
+					(name "2Y")
+					(type "output")
+				)
+				(pin
+					(num "7")
+					(name "GND")
+					(type "power_in")
+				)
+				(pin
+					(num "8")
+					(name "3Y")
+					(type "output")
+				)
+				(pin
+					(num "9")
+					(name "3A")
+					(type "input")
+				)
+				(pin
+					(num "10")
+					(name "~{3OE}")
+					(type "input")
+				)
+				(pin
+					(num "11")
+					(name "4Y")
+					(type "output")
+				)
+				(pin
+					(num "12")
+					(name "4A")
+					(type "input")
+				)
+				(pin
+					(num "13")
+					(name "~{4OE}")
+					(type "input")
+				)
+				(pin
+					(num "14")
+					(name "VCC")
+					(type "power_in")
+				)
+			)
+		)
+		(libpart
+			(lib "Prop_Carrier")
+			(part "IRF4905")
+			(fields
+				(field
+					(name "Reference") "Q")
+				(field
+					(name "Value") "IRF4905")
+				(field
+					(name "Footprint") "Package_TO_SOT_THT:TO-220-3_Vertical")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description")
+				)
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "G")
+					(type "input")
+				)
+				(pin
+					(num "2")
+					(name "D")
+					(type "passive")
+				)
+				(pin
+					(num "3")
+					(name "S")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
 			(lib "Switch")
-			(part "SW_DIP_x04")
-			(description "4x DIP Switch, Single Pole Single Throw (SPST) switch, small symbol")
+			(part "SW_DIP_x08")
+			(description "8x DIP Switch, Single Pole Single Throw (SPST) switch, small symbol")
 			(footprints
-				(fp "SW?DIP?x4*")
+				(fp "SW?DIP?x8*")
 			)
 			(fields
 				(field
 					(name "Reference") "SW")
 				(field
-					(name "Value") "SW_DIP_x04")
+					(name "Value") "SW_DIP_x08")
 				(field
 					(name "Footprint")
 				)
@@ -1932,7 +1991,7 @@
 					(name "Datasheet")
 				)
 				(field
-					(name "Description") "4x DIP Switch, Single Pole Single Throw (SPST) switch, small symbol")
+					(name "Description") "8x DIP Switch, Single Pole Single Throw (SPST) switch, small symbol")
 			)
 			(pins
 				(pin
@@ -1975,49 +2034,50 @@
 					(name "")
 					(type "passive")
 				)
-			)
-		)
-		(libpart
-			(lib "Transistor_FET")
-			(part "IRF4905")
-			(fields
-				(field
-					(name "Reference") "Q")
-				(field
-					(name "Value") "IRF4905")
-				(field
-					(name "Footprint") "Package_TO_SOT_THT:TO-220-3_Vertical")
-				(field
-					(name "Datasheet")
-				)
-				(field
-					(name "Description")
-				)
-			)
-			(pins
 				(pin
-					(num "1")
-					(name "G")
-					(type "input")
-				)
-				(pin
-					(num "2")
-					(name "D")
+					(num "9")
+					(name "")
 					(type "passive")
 				)
 				(pin
-					(num "3")
-					(name "S")
+					(num "10")
+					(name "")
+					(type "passive")
+				)
+				(pin
+					(num "11")
+					(name "")
+					(type "passive")
+				)
+				(pin
+					(num "12")
+					(name "")
+					(type "passive")
+				)
+				(pin
+					(num "13")
+					(name "")
+					(type "passive")
+				)
+				(pin
+					(num "14")
+					(name "")
+					(type "passive")
+				)
+				(pin
+					(num "15")
+					(name "")
+					(type "passive")
+				)
+				(pin
+					(num "16")
+					(name "")
 					(type "passive")
 				)
 			)
 		)
 	)
 	(libraries
-		(library
-			(logical "74xx")
-			(uri "${KICAD10_SYMBOL_DIR}/74xx.kicad_sym")
-		)
 		(library
 			(logical "Connector_Generic")
 			(uri "${KICAD10_SYMBOL_DIR}/Connector_Generic.kicad_sym")
@@ -2027,18 +2087,18 @@
 			(uri "${KICAD10_SYMBOL_DIR}/Device.kicad_sym")
 		)
 		(library
-			(logical "Switch")
-			(uri "${KICAD10_SYMBOL_DIR}/Switch.kicad_sym")
+			(logical "Prop_Carrier")
+			(uri "${KIPRJMOD}/prop_carrier.kicad_sym")
 		)
 		(library
-			(logical "Transistor_FET")
-			(uri "${KICAD10_SYMBOL_DIR}/Transistor_FET.kicad_sym")
+			(logical "Switch")
+			(uri "${KICAD10_SYMBOL_DIR}/Switch.kicad_sym")
 		)
 	)
 	(nets
 		(net
 			(code "1")
-			(name "/+3V3")
+			(name "+3V3")
 			(class "Default")
 			(node
 				(ref "J2")
@@ -2055,7 +2115,7 @@
 		)
 		(net
 			(code "2")
-			(name "/+5V_POWER")
+			(name "+5V")
 			(class "Default")
 			(node
 				(ref "C3")
@@ -2111,7 +2171,7 @@
 			(class "Default")
 			(node
 				(ref "F1")
-				(pin "1")
+				(pin "2")
 				(pintype "passive")
 			)
 			(node
@@ -2127,19 +2187,19 @@
 			(class "Default")
 			(node
 				(ref "D1")
-				(pin "2")
-				(pinfunction "A2_2")
+				(pin "1")
+				(pinfunction "A1_1")
 				(pintype "passive")
 			)
 			(node
 				(ref "D2")
-				(pin "2")
-				(pinfunction "A_2")
+				(pin "1")
+				(pinfunction "K_1")
 				(pintype "passive")
 			)
 			(node
 				(ref "F1")
-				(pin "2")
+				(pin "1")
 				(pintype "passive")
 			)
 			(node
@@ -2161,7 +2221,7 @@
 			)
 			(node
 				(ref "R2")
-				(pin "1")
+				(pin "2")
 				(pintype "passive")
 			)
 			(node
@@ -2237,12 +2297,76 @@
 		)
 		(net
 			(code "10")
+			(name "/ADDR_BIT4")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "12")
+				(pinfunction "Pin_12_12")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW1")
+				(pin "5")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "11")
+			(name "/ADDR_BIT5")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "13")
+				(pinfunction "Pin_13_13")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW1")
+				(pin "6")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "12")
+			(name "/ADDR_BIT6")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "14")
+				(pinfunction "Pin_14_14")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW1")
+				(pin "7")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "13")
+			(name "/ADDR_BIT7")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "15")
+				(pinfunction "Pin_15_15")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW1")
+				(pin "8")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "14")
 			(name "/GATE_NODE")
 			(class "Default")
 			(node
 				(ref "D2")
-				(pin "1")
-				(pinfunction "K_1")
+				(pin "2")
+				(pinfunction "A_2")
 				(pintype "passive")
 			)
 			(node
@@ -2253,7 +2377,7 @@
 			)
 			(node
 				(ref "R2")
-				(pin "2")
+				(pin "1")
 				(pintype "passive")
 			)
 			(node
@@ -2263,183 +2387,7 @@
 			)
 		)
 		(net
-			(code "11")
-			(name "/GPIO0")
-			(class "Default")
-			(node
-				(ref "J2")
-				(pin "5")
-				(pinfunction "Pin_5_5")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "12")
-			(name "/GPIO7")
-			(class "Default")
-			(node
-				(ref "J2")
-				(pin "12")
-				(pinfunction "Pin_12_12")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "13")
-			(name "/GPIO9")
-			(class "Default")
-			(node
-				(ref "J2")
-				(pin "14")
-				(pinfunction "Pin_14_14")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "14")
-			(name "/GPIO10")
-			(class "Default")
-			(node
-				(ref "J2")
-				(pin "15")
-				(pinfunction "Pin_15_15")
-				(pintype "passive")
-			)
-		)
-		(net
 			(code "15")
-			(name "/GPIO11")
-			(class "Default")
-			(node
-				(ref "J2")
-				(pin "16")
-				(pinfunction "Pin_16_16")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "16")
-			(name "/GPIO12")
-			(class "Default")
-			(node
-				(ref "J2")
-				(pin "17")
-				(pinfunction "Pin_17_17")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "17")
-			(name "/GPIO13")
-			(class "Default")
-			(node
-				(ref "J2")
-				(pin "18")
-				(pinfunction "Pin_18_18")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "18")
-			(name "/GPIO26")
-			(class "Default")
-			(node
-				(ref "J3")
-				(pin "6")
-				(pinfunction "Pin_6_6")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "19")
-			(name "/GPIO33")
-			(class "Default")
-			(node
-				(ref "J3")
-				(pin "7")
-				(pinfunction "Pin_7_7")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "20")
-			(name "/GPIO34")
-			(class "Default")
-			(node
-				(ref "J3")
-				(pin "8")
-				(pinfunction "Pin_8_8")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "21")
-			(name "/GPIO35")
-			(class "Default")
-			(node
-				(ref "J3")
-				(pin "9")
-				(pinfunction "Pin_9_9")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "22")
-			(name "/GPIO36")
-			(class "Default")
-			(node
-				(ref "J3")
-				(pin "10")
-				(pinfunction "Pin_10_10")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "23")
-			(name "/GPIO37")
-			(class "Default")
-			(node
-				(ref "J3")
-				(pin "11")
-				(pinfunction "Pin_11_11")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "24")
-			(name "/GPIO38")
-			(class "Default")
-			(node
-				(ref "J3")
-				(pin "12")
-				(pinfunction "Pin_12_12")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "25")
-			(name "/GPIO39")
-			(class "Default")
-			(node
-				(ref "J3")
-				(pin "13")
-				(pinfunction "Pin_13_13")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "26")
-			(name "/GPIO40")
-			(class "Default")
-			(node
-				(ref "J3")
-				(pin "14")
-				(pinfunction "Pin_14_14")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "27")
 			(name "/I2C_SCL")
 			(class "Default")
 			(node
@@ -2456,7 +2404,7 @@
 			)
 		)
 		(net
-			(code "28")
+			(code "16")
 			(name "/I2C_SDA")
 			(class "Default")
 			(node
@@ -2473,7 +2421,7 @@
 			)
 		)
 		(net
-			(code "29")
+			(code "17")
 			(name "/LED1_DATA_3V3")
 			(class "Default")
 			(node
@@ -2490,7 +2438,7 @@
 			)
 		)
 		(net
-			(code "30")
+			(code "18")
 			(name "/LED1_DATA_5V")
 			(class "Default")
 			(node
@@ -2506,7 +2454,7 @@
 			)
 		)
 		(net
-			(code "31")
+			(code "19")
 			(name "/LED2_DATA_3V3")
 			(class "Default")
 			(node
@@ -2523,7 +2471,7 @@
 			)
 		)
 		(net
-			(code "32")
+			(code "20")
 			(name "/LED2_DATA_5V")
 			(class "Default")
 			(node
@@ -2539,7 +2487,7 @@
 			)
 		)
 		(net
-			(code "33")
+			(code "21")
 			(name "/LED3_DATA_3V3")
 			(class "Default")
 			(node
@@ -2556,7 +2504,7 @@
 			)
 		)
 		(net
-			(code "34")
+			(code "22")
 			(name "/LED3_DATA_5V")
 			(class "Default")
 			(node
@@ -2572,7 +2520,7 @@
 			)
 		)
 		(net
-			(code "35")
+			(code "23")
 			(name "/LED4_DATA_3V3")
 			(class "Default")
 			(node
@@ -2589,7 +2537,7 @@
 			)
 		)
 		(net
-			(code "36")
+			(code "24")
 			(name "/LED4_DATA_5V")
 			(class "Default")
 			(node
@@ -2605,40 +2553,7 @@
 			)
 		)
 		(net
-			(code "37")
-			(name "/LORA_DIO1")
-			(class "Default")
-			(node
-				(ref "J3")
-				(pin "2")
-				(pinfunction "Pin_2_2")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "38")
-			(name "/LORA_NSS")
-			(class "Default")
-			(node
-				(ref "J2")
-				(pin "13")
-				(pinfunction "Pin_13_13")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "39")
-			(name "/OLED_RST")
-			(class "Default")
-			(node
-				(ref "J3")
-				(pin "5")
-				(pinfunction "Pin_5_5")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "40")
+			(code "25")
 			(name "/PERF_TRIGGER")
 			(class "Default")
 			(node
@@ -2655,29 +2570,7 @@
 			)
 		)
 		(net
-			(code "41")
-			(name "/RST")
-			(class "Default")
-			(node
-				(ref "J2")
-				(pin "4")
-				(pinfunction "Pin_4_4")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "42")
-			(name "/VBAT_SENSE")
-			(class "Default")
-			(node
-				(ref "J2")
-				(pin "6")
-				(pinfunction "Pin_6_6")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "43")
+			(code "26")
 			(name "GND")
 			(class "Default")
 			(node
@@ -2687,8 +2580,8 @@
 			)
 			(node
 				(ref "D1")
-				(pin "1")
-				(pinfunction "A1_1")
+				(pin "2")
+				(pinfunction "A2_2")
 				(pintype "passive")
 			)
 			(node
@@ -2758,22 +2651,42 @@
 			)
 			(node
 				(ref "SW1")
-				(pin "5")
+				(pin "10")
 				(pintype "passive")
 			)
 			(node
 				(ref "SW1")
-				(pin "6")
+				(pin "11")
 				(pintype "passive")
 			)
 			(node
 				(ref "SW1")
-				(pin "7")
+				(pin "12")
 				(pintype "passive")
 			)
 			(node
 				(ref "SW1")
-				(pin "8")
+				(pin "13")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW1")
+				(pin "14")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW1")
+				(pin "15")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW1")
+				(pin "16")
+				(pintype "passive")
+			)
+			(node
+				(ref "SW1")
+				(pin "9")
 				(pintype "passive")
 			)
 			(node
@@ -2808,7 +2721,7 @@
 			)
 		)
 		(net
-			(code "44")
+			(code "27")
 			(name "Net-(U1-1Y)")
 			(class "Default")
 			(node
@@ -2824,7 +2737,7 @@
 			)
 		)
 		(net
-			(code "45")
+			(code "28")
 			(name "Net-(U1-2Y)")
 			(class "Default")
 			(node
@@ -2840,7 +2753,7 @@
 			)
 		)
 		(net
-			(code "46")
+			(code "29")
 			(name "Net-(U1-3Y)")
 			(class "Default")
 			(node
@@ -2856,7 +2769,7 @@
 			)
 		)
 		(net
-			(code "47")
+			(code "30")
 			(name "Net-(U1-4Y)")
 			(class "Default")
 			(node
@@ -2869,6 +2782,193 @@
 				(pin "11")
 				(pinfunction "4Y_11")
 				(pintype "output")
+			)
+		)
+		(net
+			(code "31")
+			(name "unconnected-(J2-Pin_4-Pad4)")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "4")
+				(pinfunction "Pin_4_4")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "32")
+			(name "unconnected-(J2-Pin_5-Pad5)")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "5")
+				(pinfunction "Pin_5_5")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "33")
+			(name "unconnected-(J2-Pin_6-Pad6)")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "6")
+				(pinfunction "Pin_6_6")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "34")
+			(name "unconnected-(J2-Pin_16-Pad16)")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "16")
+				(pinfunction "Pin_16_16")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "35")
+			(name "unconnected-(J2-Pin_17-Pad17)")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "17")
+				(pinfunction "Pin_17_17")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "36")
+			(name "unconnected-(J2-Pin_18-Pad18)")
+			(class "Default")
+			(node
+				(ref "J2")
+				(pin "18")
+				(pinfunction "Pin_18_18")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "37")
+			(name "unconnected-(J3-Pin_2-Pad2)")
+			(class "Default")
+			(node
+				(ref "J3")
+				(pin "2")
+				(pinfunction "Pin_2_2")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "38")
+			(name "unconnected-(J3-Pin_5-Pad5)")
+			(class "Default")
+			(node
+				(ref "J3")
+				(pin "5")
+				(pinfunction "Pin_5_5")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "39")
+			(name "unconnected-(J3-Pin_6-Pad6)")
+			(class "Default")
+			(node
+				(ref "J3")
+				(pin "6")
+				(pinfunction "Pin_6_6")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "40")
+			(name "unconnected-(J3-Pin_7-Pad7)")
+			(class "Default")
+			(node
+				(ref "J3")
+				(pin "7")
+				(pinfunction "Pin_7_7")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "41")
+			(name "unconnected-(J3-Pin_8-Pad8)")
+			(class "Default")
+			(node
+				(ref "J3")
+				(pin "8")
+				(pinfunction "Pin_8_8")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "42")
+			(name "unconnected-(J3-Pin_9-Pad9)")
+			(class "Default")
+			(node
+				(ref "J3")
+				(pin "9")
+				(pinfunction "Pin_9_9")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "43")
+			(name "unconnected-(J3-Pin_10-Pad10)")
+			(class "Default")
+			(node
+				(ref "J3")
+				(pin "10")
+				(pinfunction "Pin_10_10")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "44")
+			(name "unconnected-(J3-Pin_11-Pad11)")
+			(class "Default")
+			(node
+				(ref "J3")
+				(pin "11")
+				(pinfunction "Pin_11_11")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "45")
+			(name "unconnected-(J3-Pin_12-Pad12)")
+			(class "Default")
+			(node
+				(ref "J3")
+				(pin "12")
+				(pinfunction "Pin_12_12")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "46")
+			(name "unconnected-(J3-Pin_13-Pad13)")
+			(class "Default")
+			(node
+				(ref "J3")
+				(pin "13")
+				(pinfunction "Pin_13_13")
+				(pintype "passive+no_connect")
+			)
+		)
+		(net
+			(code "47")
+			(name "unconnected-(J3-Pin_14-Pad14)")
+			(class "Default")
+			(node
+				(ref "J3")
+				(pin "14")
+				(pinfunction "Pin_14_14")
+				(pintype "passive+no_connect")
 			)
 		)
 	)

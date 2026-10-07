@@ -25,22 +25,22 @@
   },
   "document": {
     "current": {
-      "build": "D1",
+      "build": "D3",
       "release": "v0",
       "process_state": "working_draft",
       "visible_status": "working_draft",
       "file": "Lighting_Controller_Pilot_Build_BOM.typ",
       "pdf_file": "Lighting_Controller_Pilot_Build_BOM.pdf",
-      "sha256": "ea590758685e6d224e5b2e45751e699f77e6c6acee83eb0097ca21aaff059061",
+      "sha256": "c61c56643d94417ed27b024bf46ef5e6755960efab0a88eac1be9f6527774f45",
       "page_count": 3,
-      "controlled_at": "2026-10-05T18:00:00+00:00"
+      "controlled_at": "2026-10-06T22:50:00+00:00"
     },
     "candidate": null
   },
   "versioning": {
     "current_release": "v0",
     "next_release": "v1",
-    "next_build_number": 2
+    "next_build_number": 4
   },
   "releases": [],
   "history": [
@@ -53,6 +53,26 @@
       "sha256": "ea590758685e6d224e5b2e45751e699f77e6c6acee83eb0097ca21aaff059061",
       "page_count": 3,
       "summary": "Initial baseline release of universal field prop lighting platform: Synapse Master Console, Peripheral Prop Receiver & Driver Node, pilot kit BOM (1 Synapse + 3 Peripherals), 30-prop fleet purchasing schedule, and zero-code seasonal show reprogramming software architecture."
+    },
+    {
+      "id": "D2",
+      "kind": "development_build",
+      "release": "v0",
+      "status": "working_draft",
+      "date": "2026-10-06",
+      "sha256": "c1096a5f527ed3da3bfdb58d18e1a1e56b1fe72af6e542b68afe9351f73e1c06",
+      "page_count": 3,
+      "summary": "Update Peripheral Prop Receiver carrier board (PCB-PROP-NODE-V1) to 8-bit DIP switch bank (CTS 208-8 / CT2088-ND) providing 256 unique hardware device serial IDs. Document Distributed Timeline Architecture with 40 MHz quartz phase-locked clock sync and dual-path spare unit re-mapping protocol."
+    },
+    {
+      "id": "D3",
+      "kind": "development_build",
+      "release": "v0",
+      "status": "working_draft",
+      "date": "2026-10-06",
+      "sha256": "d6dfaad5eeb4ad22dca8243650030501f595856354c7cd3b611d677ed3167d4b",
+      "page_count": 3,
+      "summary": "Transition carrier boards (PCB-SYNAPSE-V1 and PCB-PROP-NODE-V1) to 100% pluggable 5.08mm terminal blocks (Phoenix Contact COMBICON MSTBA / 2EDG-5.08). Implement 32 dedicated terminals on Synapse master controller providing individual [Signal | Ground] pairs per button sinking into PCB ground plane for tool-free field disconnection and 60-second button replacements. Preserve placed DigiKey order by sourcing pluggable kits via Amazon Prime."
     }
   ]
 }
