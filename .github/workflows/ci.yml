@@ -19,4 +19,4 @@ jobs:
       - name: Validate active plans (7 sections & portable links)
         run: python3 scripts/plan_pipeline.py validate --all
       - name: Run hermetic test suite
-        run: ./run_tests.sh
+        run: bash ./run_tests.sh

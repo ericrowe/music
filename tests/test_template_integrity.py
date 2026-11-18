@@ -44,6 +44,21 @@ class TestTemplateIntegrity(unittest.TestCase):
         status = discover_workspace_status(REPO_ROOT)
         self.assertGreaterEqual(len(status["root"]["active_plans"]), 1)
 
+    def test_scripts_have_executable_git_mode(self):
+        import subprocess
+        proc = subprocess.run(
+            ["git", "ls-files", "-s", "run_tests.sh", "scripts/plan_pipeline.py", "init_project.py"],
+            cwd=REPO_ROOT,
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+        for line in proc.stdout.strip().splitlines():
+            self.assertTrue(
+                line.startswith("100755 "),
+                f"Expected executable git mode 100755, got: {line}",
+            )
+
 
 if __name__ == "__main__":
     unittest.main()
