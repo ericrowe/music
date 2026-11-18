@@ -501,7 +501,7 @@ jobs:
       - name: Validate active plans (7 sections & portable links)
         run: python3 scripts/plan_pipeline.py validate --all
       - name: Run hermetic test suite
-        run: ./run_tests.sh
+        run: bash ./run_tests.sh
 """,
         encoding="utf-8",
     )
@@ -657,6 +657,23 @@ class TestTemplateIntegrity(unittest.TestCase):
 
         status = discover_workspace_status(REPO_ROOT)
         self.assertGreaterEqual(len(status["root"]["active_plans"]), 1)
+
+    def test_scripts_have_executable_git_mode(self):
+        if not (REPO_ROOT / ".git").exists():
+            return
+        import subprocess
+        proc = subprocess.run(
+            ["git", "ls-files", "-s", "run_tests.sh", "scripts/plan_pipeline.py", "init_project.py"],
+            cwd=REPO_ROOT,
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+        for line in proc.stdout.strip().splitlines():
+            self.assertTrue(
+                line.startswith("100755 "),
+                f"Expected executable git mode 100755, got: {line}",
+            )
 
 
 if __name__ == "__main__":
@@ -870,7 +887,6 @@ def publish_template_to_github(
                 is_public=is_public,
                 is_template=is_template,
             )
-            remote_url = f"https://github.com/{repo_slug}.git"
         else:
             # SSH push fallback (no token needed once the repository exists on GitHub)
             gh_meta = {
@@ -878,10 +894,19 @@ def publish_template_to_github(
                 "is_template": is_template,
                 "private": not is_public,
             }
-            remote_url = f"git@github.com:{repo_slug}.git"
+        remote_url = f"git@github.com:{repo_slug}.git"
 
         subprocess.run(["git", "init", "-b", "main"], cwd=str(staging_dir), check=True, capture_output=True)
         subprocess.run(["git", "add", "-A"], cwd=str(staging_dir), check=True, capture_output=True)
+        exec_scripts = ["run_tests.sh", "init_project.py", "scripts/plan_pipeline.py"]
+        for sp in staging_dir.glob(".agents/skills/*/scripts/*.py"):
+            exec_scripts.append(str(sp.relative_to(staging_dir)))
+        subprocess.run(
+            ["git", "update-index", "--chmod=+x", *exec_scripts],
+            cwd=str(staging_dir),
+            check=True,
+            capture_output=True,
+        )
         subprocess.run(
             ["git", "commit", "-m", commit_message],
             cwd=str(staging_dir),
