@@ -30,7 +30,7 @@ The manual uses a standardized cross-project appendix architecture harmonized wi
 - **Appendix B: Construction & Fabrication Manual (Sections 2.1–2.10):**
   - **2.1–2.4:** Shop safety, materials BOM, tools/equipment, and 3D printed parts.
   - **2.5 Raw Material Cutting Schedules:** 7-stick 3/4" EMT electrical conduit cutting schedule.
-  - **2.6 Estimated Fabrication Cost Breakdown:** Detailed itemized budget (~$105.00/screen; $1,680.00 fleet total, saving $440 by eliminating carts).
+  - **2.6 Estimated Fabrication Cost Breakdown:** Detailed itemized budget (~$117.50/screen; ~$1,880.00 fleet total, saving $440 by eliminating carts).
   - **2.7 Step-by-Step Frame Assembly:** Stage 1 (Outer Rectangle), Stage 2 (Cross Rails), Stage 3 (Rear Support Frame), and Stage 4 (Support Arms & Snap Clips).
   - **2.8 Mechanical Inspection & QA Protocol:** Acceptance criteria table and formal sign-off sheet.
   - **2.9 Vinyl Banner Installation:** Ordering bleed, tensioning/clamping procedure, Section 2.9.3 dedicated **Semicircular Wind Relief Flap Cutting** ($R = 4.0\text{ in.}$, $8.0\text{ in.} \times 4.0\text{ in.}$, 6-flap fleet grid $2 \times 3$, 3/8" punch holes, and [PCHSMB Field Prop Circle Cutter](../Circle%20Cutter/) tooling), and seasonal removal.
@@ -105,7 +105,7 @@ All 3D-printed parts should be printed in **Black ASA** (or UV/weather-stable PE
 
 | Fleet Category | Breakdown | Est. Total Cost |
 |---|---|:---:|
-| **16x Sideline Screens** | 16 frames @ ~$115.50 (EMT, brackets, 3D parts, snap clamps, fasteners; excl. vinyl) | ~$1,848.00 |
-| **TOTAL HARDWARE ESTIMATE** | *(No transport carts built — saves $440.00)* | **~$1,848.00** |
+| **16x Sideline Screens** | 16 frames @ ~$117.50 (EMT, brackets, 3D parts, snap clamps, fasteners; excl. vinyl) | ~$1,880.00 |
+| **TOTAL HARDWARE ESTIMATE** | *(No transport carts built — saves $440.00)* | **~$1,880.00** |
 
 > *Note: Custom printed vinyl banners (16x 4'x8' outdoor scrim vinyl) and double-bagged sandbags are quoted separately.*
