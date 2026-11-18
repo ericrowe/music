@@ -1,0 +1,49 @@
+{
+  "version": "1.0",
+  "name": "Music Fabrication & Band Prop Engineering Repository",
+  "domain": "Cyber-Physical Hybrid",
+  "author": "Eric Rowe",
+  "mode": "multi-project",
+  "plans_dir": "docs/plans",
+  "prefix": "",
+  "test_command": "./run_tests.sh",
+  "template_repo": "https://github.com/ericrowe/agentic-project-template.git",
+  "universal_skills": [
+    "plan-pipeline",
+    "idea-triage",
+    "security-auditor",
+    "requirements-engineering",
+    "cad-openscad",
+    "cad-python",
+    "cad-renderer",
+    "mesh-auditor",
+    "hardware-prototyper",
+    "operational-cadence",
+    "architecture-auditor",
+    "learning-loop",
+    "adversarial-debate",
+    "benchmark-alpha"
+  ],
+  "subprojects": [
+    {
+      "name": "PCHSMB/_Lighting Controller",
+      "plans_dir": "PCHSMB/_Lighting Controller/docs/plans"
+    },
+    {
+      "name": "PCHSMB/_Backdrop",
+      "plans_dir": "PCHSMB/_Backdrop/docs/plans"
+    },
+    {
+      "name": "PCHSMB/_Sideline Screen",
+      "plans_dir": "PCHSMB/_Sideline Screen/docs/plans"
+    },
+    {
+      "name": "PCHSMB/_Stages",
+      "plans_dir": "PCHSMB/_Stages/docs/plans"
+    },
+    {
+      "name": "PCHSMB/Circle Cutter",
+      "plans_dir": "PCHSMB/Circle Cutter/docs/plans"
+    }
+  ]
+}

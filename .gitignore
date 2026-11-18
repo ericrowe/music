@@ -29,12 +29,20 @@
 ~$*.pptx
 *.tmp
 
-# Python bytecode and caches
+# Python bytecode, virtualenvs, and caches
 __pycache__/
 *.py[cod]
 *$py.class
+.venv/
+venv/
 .pytest_cache/
 .ruff_cache/
+.coverage
+htmlcov/
+*.db
+*.sqlite3
+.env
+*secrets.h
 
 # Editor and IDE backup / swap files
 *~

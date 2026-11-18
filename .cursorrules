@@ -4,8 +4,9 @@ All AI instructions for this repository are centralized in AGENTS.md.
 
 ## Core Directives
 
-1. Read and follow AGENTS.md, nearest project AGENTS.md, and project.json before making changes.
-2. For controlled document deliverables, run scripts located in `.agents/skills/develop-versioned-documents/scripts/` (or `.codex/skills/...`).
+1. Read and follow AGENTS.md, nearest project AGENTS.md, docs/plans/AGENTS.md, and project.json before making changes.
+2. Follow the 5-Step Plan Pipeline (`.agents/skills/plan-pipeline/SKILL.md` and `python3 scripts/plan_pipeline.py status | validate | new | archive`) and `./run_tests.sh`.
+3. For controlled document deliverables, run scripts located in `.agents/skills/develop-versioned-documents/scripts/` (or `.codex/skills/...`).
 3. Never alter stable DOCX filenames to include version or build suffixes (D24, v1, etc.).
 4. Enforce strict lifecycle status labels:
    - `WORKING DRAFT — NOT FOR USE`

@@ -7,7 +7,7 @@ description: Parametric 3D modeling, CSG geometry, and STL generation using Open
 
 ## 1. Dual CAD Architecture Invariant
 
-In the **Server Rack** master workspace, **both OpenSCAD and Python-based STL generation are fully supported and approved engineering pathways** for physical components, rack brackets, sensor mounts, and 3D printable enclosures.
+In this workspace, **both OpenSCAD and Python-based STL generation are fully supported and approved engineering pathways** for physical components, rack brackets, sensor mounts, and 3D printable enclosures.
 
 > [!IMPORTANT]
 > **Use Case Evaluation Rule**: Neither approach is universally superior. Before creating physical 3D models or enclosures, evaluate the specific project requirements against the **Decision Matrix** below to select the appropriate toolchain.
@@ -100,6 +100,16 @@ difference() {
 2. **Keyhole Mounting Slots**: Standardize on dual keyhole slots with $60\text{mm}$ spacing for #6 or #8 drywall screws.
 3. **Corner Stress Relief**: Apply internal fillets ($r \ge 1.0\text{mm}$) to inner corners to eliminate stress concentration and layer delamination.
 4. **Thermal Dissipation**: Include angled convective louvers or vent slots for active electronics deployed in warm or unconditioned spaces.
+
+### 4.5. Fastener Sizing & Parts-Database Inventory Verification Standard
+> [!IMPORTANT]
+> **Live Inventory Verification Gate**: Before finalizing fastener dimensions, screw bosses, pilot hole diameters, or heat-set insert pockets in any 3D model, agents **MUST verify actual stock on hand** in the live Parts-Database running on Node 02 (`app-host.local`):
+> - **Database Location**: `/srv/database/parts/parts.db` on `app-host.local` (or HTTP API `http://app-host.local:8090/api/parts?q=<size>`).
+> - **Verification Command**:
+>   ```bash
+>   ssh detour@app-host.local "sqlite3 /srv/database/parts/parts.db \"SELECT parts.id, parts.name, parts.size, parts.length, IFNULL(sum(bin_compartments.quantity_on_hand), 0) FROM parts LEFT JOIN bin_compartments ON parts.id = bin_compartments.part_id WHERE parts.size LIKE '<size>%' GROUP BY parts.id;\""
+>   ```
+> - **Design for In-Stock Fasteners**: Never design blind standoffs or hole depths around theoretical screw lengths (e.g. 5mm or 6mm) without confirming they exist in physical inventory. If the shortest screw in stock is 8mm, ensure standoff height, boss counterbore, or floor relief accommodates that exact screw length plus PCB thickness.
 
 ---
 

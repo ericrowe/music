@@ -1,0 +1,21 @@
+{
+  "name": "project-tools",
+  "version": "1.0.0",
+  "description": "Universal Agentic Plan Pipeline & Multi-Domain Engineering Skills Suite",
+  "skills": [
+    "plan-pipeline",
+    "idea-triage",
+    "security-auditor",
+    "requirements-engineering",
+    "cad-openscad",
+    "cad-python",
+    "cad-renderer",
+    "mesh-auditor",
+    "hardware-prototyper",
+    "operational-cadence",
+    "architecture-auditor",
+    "learning-loop",
+    "adversarial-debate",
+    "benchmark-alpha"
+  ]
+}

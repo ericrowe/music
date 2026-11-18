@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "plan-pipeline"
+version = "1.0.0"
+description = "Standardized 5-step plan-driven feature development lifecycle, 7-section validator, Step 5 link-safe archiver, and multi-agent skill bundle."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "Eric Rowe" }
+]
+dependencies = []
+
+[project.scripts]
+plan-pipeline = "plan_pipeline.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

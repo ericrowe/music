@@ -4,7 +4,8 @@ This repository follows the unified instructions defined in AGENTS.md.
 
 ## Core Rules
 
-1. Source of truth is AGENTS.md and project.json manifests.
-2. For Word document projects, use the workflow scripts in `.agents/skills/develop-versioned-documents/scripts/` (or `.codex/skills/...`).
+1. Source of truth is AGENTS.md, docs/plans/AGENTS.md, and project.json manifests.
+2. Follow the 5-Step Plan Pipeline (`.agents/skills/plan-pipeline/SKILL.md` and `python3 scripts/plan_pipeline.py`) and `./run_tests.sh`.
+3. For Word document projects, use the workflow scripts in `.agents/skills/develop-versioned-documents/scripts/` (or `.codex/skills/...`).
 3. Maintain stable filenames across builds and releases without appending version numbers.
 4. Ensure 100% all-page review and automated QA passes before promoting review builds or releases.

@@ -7,7 +7,7 @@ description: Programmatic CAD, procedural mesh generation, and binary STL export
 
 ## 1. Dual CAD Architecture Invariant
 
-In the **Server Rack** master workspace, **both Python-based STL generation and OpenSCAD are fully supported and approved engineering pathways** for physical components, rack brackets, sensor mounts, and 3D printable enclosures.
+In this workspace, **both Python-based STL generation and OpenSCAD are fully supported and approved engineering pathways** for physical components, rack brackets, sensor mounts, and 3D printable enclosures.
 
 > [!IMPORTANT]
 > **Use Case Evaluation Rule**: Neither approach is universally superior. Before writing generative scripts or creating 3D models, evaluate the specific project requirements against the **Decision Matrix** below to select the appropriate toolchain.
@@ -132,6 +132,16 @@ with BuildPart() as part:
 export_stl(part.part, "build/enclosure.stl")
 export_step(part.part, "build/enclosure.step")
 ```
+
+### 4.3. Fastener Sizing & Parts-Database Inventory Verification Standard
+> [!IMPORTANT]
+> **Live Inventory Verification Gate**: Before modeling screw bosses, counterbores, pilot hole depths, or heat-set insert pockets, scripts **MUST verify actual stock on hand** in the live Parts-Database running on Node 02 (`app-host.local`):
+> - **Database Location**: `/srv/database/parts/parts.db` on `app-host.local` (or HTTP API `http://app-host.local:8090/api/parts?q=<size>`).
+> - **Verification Command**:
+>   ```bash
+>   ssh detour@app-host.local "sqlite3 /srv/database/parts/parts.db \"SELECT parts.id, parts.name, parts.size, parts.length, IFNULL(sum(bin_compartments.quantity_on_hand), 0) FROM parts LEFT JOIN bin_compartments ON parts.id = bin_compartments.part_id WHERE parts.size LIKE '<size>%' GROUP BY parts.id;\""
+>   ```
+> - **Design for In-Stock Fasteners**: Avoid designing around non-existent hardware lengths (e.g. assuming 4mm/6mm screws). If the shortest screw in stock is 8mm, ensure model depth, blind holes, or floor relief accommodates that exact screw length plus PCB thickness.
 
 ---
 

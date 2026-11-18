@@ -5,6 +5,7 @@ This repository is governed by the unified cross-agent standard in [AGENTS.md](A
 ## Quick Reference for Claude Code
 
 - **Source of Truth:** [AGENTS.md](AGENTS.md)
+- **Plan Pipeline Workflow:** Follow the 5-step Plan Pipeline in [`.agents/skills/plan-pipeline/SKILL.md`](.agents/skills/plan-pipeline/SKILL.md) and [`docs/plans/AGENTS.md`](docs/plans/AGENTS.md) (`python3 scripts/plan_pipeline.py status | validate | new | archive | sync-template` and `./run_tests.sh`).
 - **Document Workflow:** Use the helper scripts located in `.agents/skills/develop-versioned-documents/scripts/` (or `.codex/skills/develop-versioned-documents/scripts/`).
 - **Stable Filename Rule:** Word documents use one stable filename for their lifetime. Do not add `_v1`, `_D24`, or date suffixes to the filename.
 
